@@ -1,0 +1,4 @@
+baseURL = "http://indonesiadot.com/"
+languageCode = "en-us"
+title = "IndonesiaDot.Com"
+theme = "ananke"
