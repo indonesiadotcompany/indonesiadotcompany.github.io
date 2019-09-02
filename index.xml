@@ -98,7 +98,8 @@
       <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/posts/git/</guid>
-      <description>Referensi: https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f https://rogerdudler.github.io/git-guide/index.id.html</description>
+      <description>Referensi:
+https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f https://rogerdudler.github.io/git-guide/index.id.html</description>
     </item>
     
     <item>
@@ -107,7 +108,8 @@
       <pubDate>Mon, 02 Sep 2019 08:17:16 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/posts/hugo/</guid>
-      <description>referensi: Tig://gohugo.io/getting-started/quick-start/ https://gohugo.io/hosting-and-deployment/hosting-on-github/ https://themes.gohugo.io/gohugo-theme-ananke/ https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html https://github.com</description>
+      <description>referensi:
+Tig://gohugo.io/getting-started/quick-start/ https://gohugo.io/hosting-and-deployment/hosting-on-github/ https://themes.gohugo.io/gohugo-theme-ananke/ https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html https://github.com</description>
     </item>
     
     <item>
@@ -118,7 +120,8 @@
       <guid>https://blog.indonesiadot.com/posts/hijrah/</guid>
       <description>To remove a submodule you need to:
 Delete the relevant section from the .gitmodules file. Stage the .gitmodules changes git add .gitmodules Delete the relevant section from .git/config. Run git rm &amp;ndash;cached path_to_submodule (no trailing slash). Run rm -rf .git/modules/path_to_submodule (no trailing slash). Commit git commit -m &amp;ldquo;Removed submodule &amp;ldquo; Delete the now untracked submodule files rm -rf path_to_submodule
-referensi: https://indonesiadot.com https://gist.github.com/myusuf3/7f645819ded92bda6677</description>
+referensi:
+https://indonesiadot.com https://gist.github.com/myusuf3/7f645819ded92bda6677</description>
     </item>
     
     <item>
