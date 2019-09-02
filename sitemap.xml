@@ -10,14 +10,14 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/</loc>
+    <loc>https://blog.indonesiadot.com/posts/</loc>
     <lastmod>2019-09-02T08:17:58+07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/posts/</loc>
+    <loc>https://blog.indonesiadot.com/</loc>
     <lastmod>2019-09-02T08:17:58+07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -116,12 +116,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/categories/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
