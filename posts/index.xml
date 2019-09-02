@@ -1,139 +1,141 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Server Linux Indonesia</title>
-    <link>https://indonesiadot.com/posts/</link>
-    <description>Recent content in Posts on Server Linux Indonesia</description>
+    <title>Posts on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/posts/</link>
+    <description>Recent content in Posts on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Sep 2019 08:17:58 +0700</lastBuildDate>
     
-	<atom:link href="https://indonesiadot.com/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.indonesiadot.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Birau13</title>
-      <link>https://indonesiadot.com/posts/birau13/</link>
+      <link>https://blog.indonesiadot.com/posts/birau13/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:58 +0700</pubDate>
       
-      <guid>https://indonesiadot.com/posts/birau13/</guid>
+      <guid>https://blog.indonesiadot.com/posts/birau13/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Birau12</title>
-      <link>https://indonesiadot.com/posts/birau12/</link>
+      <link>https://blog.indonesiadot.com/posts/birau12/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:56 +0700</pubDate>
       
-      <guid>https://indonesiadot.com/posts/birau12/</guid>
+      <guid>https://blog.indonesiadot.com/posts/birau12/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Birau11</title>
-      <link>https://indonesiadot.com/posts/birau11/</link>
+      <link>https://blog.indonesiadot.com/posts/birau11/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:54 +0700</pubDate>
       
-      <guid>https://indonesiadot.com/posts/birau11/</guid>
+      <guid>https://blog.indonesiadot.com/posts/birau11/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sepuluh</title>
-      <link>https://indonesiadot.com/posts/sepuluh/</link>
+      <link>https://blog.indonesiadot.com/posts/sepuluh/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:48 +0700</pubDate>
       
-      <guid>https://indonesiadot.com/posts/sepuluh/</guid>
+      <guid>https://blog.indonesiadot.com/posts/sepuluh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sembilan</title>
-      <link>https://indonesiadot.com/posts/sembilan/</link>
+      <link>https://blog.indonesiadot.com/posts/sembilan/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:42 +0700</pubDate>
       
-      <guid>https://indonesiadot.com/posts/sembilan/</guid>
+      <guid>https://blog.indonesiadot.com/posts/sembilan/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Delapan</title>
-      <link>https://indonesiadot.com/posts/delapan/</link>
+      <link>https://blog.indonesiadot.com/posts/delapan/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:36 +0700</pubDate>
       
-      <guid>https://indonesiadot.com/posts/delapan/</guid>
+      <guid>https://blog.indonesiadot.com/posts/delapan/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Tujuh</title>
-      <link>https://indonesiadot.com/posts/tujuh/</link>
+      <title>All about kubernetes</title>
+      <link>https://blog.indonesiadot.com/posts/kubernetes/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:33 +0700</pubDate>
       
-      <guid>https://indonesiadot.com/posts/tujuh/</guid>
-      <description></description>
+      <guid>https://blog.indonesiadot.com/posts/kubernetes/</guid>
+      <description>Referensi: https://darxkies.github.io/k8s-tew/_build/html/index.html</description>
     </item>
     
     <item>
-      <title>Enam</title>
-      <link>https://indonesiadot.com/posts/enam/</link>
+      <title>Ubuntu upgrade 14.04 to 16.04 to 18.04</title>
+      <link>https://blog.indonesiadot.com/posts/ubuntu-upgrade/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:29 +0700</pubDate>
       
-      <guid>https://indonesiadot.com/posts/enam/</guid>
-      <description></description>
+      <guid>https://blog.indonesiadot.com/posts/ubuntu-upgrade/</guid>
+      <description>Referensi: https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4</description>
     </item>
     
     <item>
-      <title>Lima</title>
-      <link>https://indonesiadot.com/posts/lima/</link>
+      <title>Belajar Python dengan MySQL</title>
+      <link>https://blog.indonesiadot.com/posts/python-mysql/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:25 +0700</pubDate>
       
-      <guid>https://indonesiadot.com/posts/lima/</guid>
-      <description></description>
+      <guid>https://blog.indonesiadot.com/posts/python-mysql/</guid>
+      <description>Referensi: https://monicagranbois.com/blog/python/cron-and-python-virtualenv/ https://www.petanikode.com/python-virtualenv/ https://www.petanikode.com/python-mysql/ https://www.datacamp.com/community/tutorials/mysql-python</description>
     </item>
     
     <item>
-      <title>Empat</title>
-      <link>https://indonesiadot.com/posts/empat/</link>
+      <title>Belajar Git</title>
+      <link>https://blog.indonesiadot.com/posts/git/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
       
-      <guid>https://indonesiadot.com/posts/empat/</guid>
-      <description></description>
+      <guid>https://blog.indonesiadot.com/posts/git/</guid>
+      <description>Referensi: https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f https://rogerdudler.github.io/git-guide/index.id.html</description>
     </item>
     
     <item>
-      <title>Tiga</title>
-      <link>https://indonesiadot.com/posts/tiga/</link>
+      <title>Pembuatan web statis dengan hugo</title>
+      <link>https://blog.indonesiadot.com/posts/hugo/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:16 +0700</pubDate>
       
-      <guid>https://indonesiadot.com/posts/tiga/</guid>
-      <description></description>
+      <guid>https://blog.indonesiadot.com/posts/hugo/</guid>
+      <description>referensi: Tig://gohugo.io/getting-started/quick-start/ https://gohugo.io/hosting-and-deployment/hosting-on-github/ https://themes.gohugo.io/gohugo-theme-ananke/ https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html</description>
     </item>
     
     <item>
-      <title>Ahlansahlan</title>
-      <link>https://indonesiadot.com/posts/ahlansahlan/</link>
+      <title>Migrasi antar hugo</title>
+      <link>https://blog.indonesiadot.com/posts/hijrah/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:02 +0700</pubDate>
       
-      <guid>https://indonesiadot.com/posts/ahlansahlan/</guid>
-      <description>Ahlan wa sahlan bi khuduurikum :)</description>
+      <guid>https://blog.indonesiadot.com/posts/hijrah/</guid>
+      <description>To remove a submodule you need to:
+Delete the relevant section from the .gitmodules file. Stage the .gitmodules changes git add .gitmodules Delete the relevant section from .git/config. Run git rm &amp;ndash;cached path_to_submodule (no trailing slash). Run rm -rf .git/modules/path_to_submodule (no trailing slash). Commit git commit -m &amp;ldquo;Removed submodule &amp;ldquo; Delete the now untracked submodule files rm -rf path_to_submodule
+referensi: https://indonesiadot.com https://gist.github.com/myusuf3/7f645819ded92bda6677</description>
     </item>
     
     <item>
       <title>Welcome</title>
-      <link>https://indonesiadot.com/posts/welcome/</link>
+      <link>https://blog.indonesiadot.com/posts/marhaban/</link>
       <pubDate>Sun, 01 Sep 2019 14:12:09 +0700</pubDate>
       
-      <guid>https://indonesiadot.com/posts/welcome/</guid>
-      <description>Welcome wilkomen ahlan wa sahlan</description>
+      <guid>https://blog.indonesiadot.com/posts/marhaban/</guid>
+      <description>Welcome, wilkomen, marhaban, ahlan wa sahlan</description>
     </item>
     
     <item>
       <title>My First Post</title>
-      <link>https://indonesiadot.com/posts/my-first-post/</link>
+      <link>https://blog.indonesiadot.com/posts/my-first-post/</link>
       <pubDate>Sun, 01 Sep 2019 13:09:15 +0700</pubDate>
       
-      <guid>https://indonesiadot.com/posts/my-first-post/</guid>
+      <guid>https://blog.indonesiadot.com/posts/my-first-post/</guid>
       <description>ini adalah postingan pertama setelah menginstall hugo</description>
     </item>
     
