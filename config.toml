@@ -1,4 +1,32 @@
-baseURL = "http://indonesiadot.com/"
+baseURL = "https://indonesiadot.com/"
 languageCode = "en-us"
-title = "IndonesiaDot.Com"
+title = "Server Linux Indonesia"
 theme = "ananke"
+
+MetaDataFormat = "yaml"
+DefaultContentLanguage = "en"
+SectionPagesMenu = "main"
+Paginate = 9 # this is set low for demonstrating with dummy content. Set to a higher number
+googleAnalytics = ""
+enableRobotsTXT = true
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+  favicon = "/images/widyamedia-icon.jpg"
+  description = "Management Server Linux di Indonesia"
+  facebook = ""
+  twitter = "https://twitter.com/GoHugoIO"
+  instagram = ""
+  youtube = ""
+  github = "https://github.com/widyamedia/widyamedia.github.io"
+  gitlab = ""
+  linkedin = "https://www.linkedin.com/in/widyamedia/"
+  mastodon = ""
+  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
+  background_color_class = "bg-blue"
+  featured_image = "/images/gedung-cyber-1.jpg"
+  recent_posts_number = 3
