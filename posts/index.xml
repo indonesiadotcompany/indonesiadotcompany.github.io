@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Server Linux Indonesia</title>
+    <link>https://indonesiadot.com/posts/</link>
+    <description>Recent content in Posts on Server Linux Indonesia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Sep 2019 08:17:58 +0700</lastBuildDate>
+    
+	<atom:link href="https://indonesiadot.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Birau13</title>
+      <link>https://indonesiadot.com/posts/birau13/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:58 +0700</pubDate>
+      
+      <guid>https://indonesiadot.com/posts/birau13/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Birau12</title>
+      <link>https://indonesiadot.com/posts/birau12/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:56 +0700</pubDate>
+      
+      <guid>https://indonesiadot.com/posts/birau12/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Birau11</title>
+      <link>https://indonesiadot.com/posts/birau11/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://indonesiadot.com/posts/birau11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sepuluh</title>
+      <link>https://indonesiadot.com/posts/sepuluh/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:48 +0700</pubDate>
+      
+      <guid>https://indonesiadot.com/posts/sepuluh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sembilan</title>
+      <link>https://indonesiadot.com/posts/sembilan/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:42 +0700</pubDate>
+      
+      <guid>https://indonesiadot.com/posts/sembilan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Delapan</title>
+      <link>https://indonesiadot.com/posts/delapan/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:36 +0700</pubDate>
+      
+      <guid>https://indonesiadot.com/posts/delapan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tujuh</title>
+      <link>https://indonesiadot.com/posts/tujuh/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:33 +0700</pubDate>
+      
+      <guid>https://indonesiadot.com/posts/tujuh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Enam</title>
+      <link>https://indonesiadot.com/posts/enam/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:29 +0700</pubDate>
+      
+      <guid>https://indonesiadot.com/posts/enam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lima</title>
+      <link>https://indonesiadot.com/posts/lima/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:25 +0700</pubDate>
+      
+      <guid>https://indonesiadot.com/posts/lima/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Empat</title>
+      <link>https://indonesiadot.com/posts/empat/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
+      
+      <guid>https://indonesiadot.com/posts/empat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tiga</title>
+      <link>https://indonesiadot.com/posts/tiga/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:16 +0700</pubDate>
+      
+      <guid>https://indonesiadot.com/posts/tiga/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ahlansahlan</title>
+      <link>https://indonesiadot.com/posts/ahlansahlan/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:02 +0700</pubDate>
+      
+      <guid>https://indonesiadot.com/posts/ahlansahlan/</guid>
+      <description>Ahlan wa sahlan bi khuduurikum :)</description>
+    </item>
+    
+    <item>
+      <title>Welcome</title>
+      <link>https://indonesiadot.com/posts/welcome/</link>
+      <pubDate>Sun, 01 Sep 2019 14:12:09 +0700</pubDate>
+      
+      <guid>https://indonesiadot.com/posts/welcome/</guid>
+      <description>Welcome wilkomen ahlan wa sahlan</description>
+    </item>
+    
+    <item>
+      <title>My First Post</title>
+      <link>https://indonesiadot.com/posts/my-first-post/</link>
+      <pubDate>Sun, 01 Sep 2019 13:09:15 +0700</pubDate>
+      
+      <guid>https://indonesiadot.com/posts/my-first-post/</guid>
+      <description>ini adalah postingan pertama setelah menginstall hugo</description>
+    </item>
+    
+  </channel>
+</rss>
