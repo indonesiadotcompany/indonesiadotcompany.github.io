@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/web/</link>
+    <description>Recent content in web on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 May 2018 01:14:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>wordpress tips and trick</title>
+      <link>https://blog.indonesiadot.com/posts/wordpress-tips-and-trick/</link>
+      <pubDate>Wed, 30 May 2018 01:14:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/wordpress-tips-and-trick/</guid>
+      <description>themes
+
+native themes&amp;nbsp;nativewptheme.net
+https://www.cr*ckthemes.com/2018/03/27/native-v1-3-4-powerful-startup-development-tool/
+http://www91.zippyshare.com/v/y7mJuKcb/file.html
+https://www.google.co.id/search?q=aprimo+null
+https://www.null5.top/aprimo-v1-3-mobile-app-landing-wordpress-theme/
+https://www.google.co.id/search?q=upload+max+size+wordpress+.htaccess
+http://www.wpbeginner.com/wp-tutorials/how-to-increase-the-maximum-file-upload-size-in-wordpress/
+cat &amp;gt;&amp;gt; .htaccess
+php_value upload_max_filesize 64Mphp_value post_max_size 64Mphp_value max_execution_time 300php_value max_input_time 300
+https://www.google.co.id/search?q=display+error+htaccess
+https://stackoverflow.com/questions/6127980/enabling-error-display-in-php-via-htaccess-only
+cat &amp;gt;&amp;gt; .htaccess
+php_flag display_startup_errors off
+php_flag display_errors off
+php_flag html_errors off
+php_flag log_errors off
+Thanks</description>
+    </item>
+    
+    <item>
+      <title>belajar ispconfig webhosting control panel</title>
+      <link>https://blog.indonesiadot.com/posts/belajar-ispconfig-webhosting-control-panel/</link>
+      <pubDate>Sat, 26 May 2018 07:10:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/belajar-ispconfig-webhosting-control-panel/</guid>
+      <description>Berikut adalah alamat / url tutorial untuk belajar instalasi / setup ispconfig webhosting control panel :
+https://www.howtoforge.com/tutorial/perfect-server-ubuntu-with-nginx-and-ispconfig-3/3/
+https://www.howtoforge.com/tutorial/securing-ispconfig-3-with-a-free-lets-encrypt-ssl-certificate/
+https://github.com/SpeedWP/ispconfig-nginx-pagespeed/wiki/ISP-Config
+https://www.howtoforge.com/community/threads/install-monit.64712/</description>
+    </item>
+    
+    <item>
+      <title>perubahan era webhosting</title>
+      <link>https://blog.indonesiadot.com/posts/perubahan-era-webhosting/</link>
+      <pubDate>Sat, 26 May 2018 06:54:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/perubahan-era-webhosting/</guid>
+      <description>Sebelum tahun 2000 website merupakan barang berharga di indonesia, meski sudah marak di luar negeri, dengan berbagai konten dinamis seperti portal berita dan konten statik menggunakan html dan animasi css, js dan flash yang baru muncul pada tahun 1996.
+Tahun 2000 era webhosting bermunculan di indonesia, baru beberapa pemain besar webhosting yang bermain, website sudah makin marak.
+Tahun 2005 era webhosting dengan pemain baru bermunculan, di awali dengan hadirnya CMS seperti joomla dan CMS lain yang memudahkan pembuatan website instant, era website dinamis.</description>
+    </item>
+    
+    <item>
+      <title>Nginx tips and trick</title>
+      <link>https://blog.indonesiadot.com/posts/nginx-tips-and-trick/</link>
+      <pubDate>Mon, 19 Feb 2018 10:18:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/nginx-tips-and-trick/</guid>
+      <description>https://www.sitepoint.com/brotli-compression-wordpress/</description>
+    </item>
+    
+    <item>
+      <title>nginx php-fpm tuning for best performance</title>
+      <link>https://blog.indonesiadot.com/posts/nginx-php-fpm-tuning-for-best-performance/</link>
+      <pubDate>Fri, 09 Feb 2018 01:26:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/nginx-php-fpm-tuning-for-best-performance/</guid>
+      <description>&amp;lt;!&amp;ndash;td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}
+&amp;ndash;&amp;gt;
+/etc/nginx/nginx.confworker_processes 8;note: dont make auto, try to raise the worker process to get the good result, from 8, 16 or 20, and keep the good oneworker_connections 19000;worker_rlimit_nofile 20000;note: try to raise the worker connection and workekr_rlimit_nofile to get the good result, and keep the good oneworker_processes 16;events {worker_connections 30000;worker_rlimit_nofile 31000;}http {open_file_cache max=100000 inactive=10s;open_file_cache_valid 120s;/etc/nginx/sites-enable/sophieparis.confupstream backend {server unix:/run/php/pool1-fpm.sock weight=100 max_fails=5 fail_timeout=5;server unix:/run/php/pool2-fpm.sock weight=100 max_fails=5 fail_timeout=5;server unix:/run/php/pool3-fpm.</description>
+    </item>
+    
+    <item>
+      <title>Redirect to widyamedia.indonesiadot.com</title>
+      <link>https://blog.indonesiadot.com/posts/redirect-to-widyamedia.indonesiadot.com/</link>
+      <pubDate>Fri, 25 Aug 2017 03:48:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/redirect-to-widyamedia.indonesiadot.com/</guid>
+      <description>Actually this should be done long time ago, i thought it would be better if i wrote some of my experiences / experiments in public space like blogspot or wordpress, but with custom domain to be readable by all of people around the world :)
+And here are the steps for redirecting to widyamedia.indonesiadot.com
+* login to blogger.com or register if you don&amp;rsquo;t have one
+* select the account you wanna manage and choose Settings - Basic from left menu</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>monitoring on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/monitoring/</link>
+    <description>Recent content in monitoring on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Aug 2019 08:42:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>simple alert monitoring using simplemonitor</title>
+      <link>https://blog.indonesiadot.com/posts/simple-alert-monitoring-using-simplemonitor/</link>
+      <pubDate>Sun, 11 Aug 2019 08:42:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/simple-alert-monitoring-using-simplemonitor/</guid>
+      <description>googling:&amp;nbsp;https://www.google.com/search?q=simple+alert+monitoring
+https://jamesoff.github.io/simplemonitor/
+googling:&amp;nbsp;https://www.google.com/search?q=simplemonitor+docker
+https://hub.docker.com/r/braindoctor/simplemonitor-docker/
+mkdir -p /docker/simplemonitor &amp;amp;&amp;amp; cd /docker/simplemonitor
+cat &amp;gt; docker-compose.yml &amp;lt;version: &amp;lsquo;3.2&amp;rsquo;
+services:
+&amp;nbsp; simplemonitor:
+&amp;nbsp; &amp;nbsp; restart: always
+&amp;nbsp; &amp;nbsp; image: braindoctor/simplemonitor-docker:latest
+&amp;nbsp; &amp;nbsp; container_name: simplemonitor
+&amp;nbsp; &amp;nbsp; hostname: mail-124.indonesiadot.com
+&amp;nbsp; &amp;nbsp; volumes:
+&amp;nbsp; &amp;nbsp; &amp;nbsp; - ${PWD}/config:/etc/simplemonitor
+&amp;nbsp; &amp;nbsp; ports:
+&amp;nbsp; &amp;nbsp; &amp;nbsp; - &amp;ldquo;8080:8080&amp;rdquo;
+
+EOFdocker-compose up -d
+ref:
+https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files</description>
+    </item>
+    
+    <item>
+      <title>prometheus grafana</title>
+      <link>https://blog.indonesiadot.com/posts/prometheus-grafana/</link>
+      <pubDate>Fri, 13 Jul 2018 03:25:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/prometheus-grafana/</guid>
+      <description>http://www.dimasrio.com/search?q=prometheus
+https://www.youtube.com/watch?v=GZWbTch7AbM
+http://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html</description>
+    </item>
+    
+    <item>
+      <title>All about icinga monitoring</title>
+      <link>https://blog.indonesiadot.com/posts/all-about-icinga-monitoring/</link>
+      <pubDate>Wed, 04 Apr 2018 18:45:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/all-about-icinga-monitoring/</guid>
+      <description>icinga2 installation on ubuntu 16
+https://www.icinga.com/docs/icinga2/latest/doc/02-getting-started/
+https://www.icinga.com/docs/icingaweb2/latest/doc/02-Installation/
+https://www.rosehosting.com/blog/install-icinga-2-on-ubuntu-16-04/
+https://blog.x-toolz.com/installing-icinga2-icingaweb2-on-ubuntu-16-04-3-lts/
+https://github.com/jpfluger/examples/blob/master/ubuntu-14.04/icinga2-server.md
+https://www.google.co.id/search?q=icinga2+change+ssh+port
+https://monitoring-portal.org/woltlab/index.php?thread/32752-ssh-monitoring-different-port/
+added a line into the servicedefinition:Codeapply Service &amp;ldquo;ssh&amp;rdquo; {import &amp;ldquo;generic-service&amp;rdquo;check_command = &amp;ldquo;ssh&amp;rdquo;vars.port = host.vars.ssh_portassign where host.address &amp;amp;&amp;amp; host.vars.os == &amp;ldquo;Linux&amp;rdquo;ignore where host.name == &amp;ldquo;localhost&amp;rdquo; /* for upgrade safety */}and in the hostdef:Codeobject Host &amp;ldquo;webarchiv&amp;rdquo; {&amp;hellip;vars.ssh_port = 1023&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>ssl expiry check</title>
+      <link>https://blog.indonesiadot.com/posts/ssl-expiry-check/</link>
+      <pubDate>Sun, 04 Mar 2018 21:22:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/ssl-expiry-check/</guid>
+      <description>https://www.google.co.id/search?q=ssl+expiry+check
+https://github.com/Matty9191/ssl-cert-check
+https://prefetch.net/articles/checkcertificate.html
+ssl-cert-check -s mail.prefetch.net -p 443</description>
+    </item>
+    
+    <item>
+      <title>Docker monitoring</title>
+      <link>https://blog.indonesiadot.com/posts/docker-monitoring/</link>
+      <pubDate>Thu, 01 Mar 2018 05:24:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/docker-monitoring/</guid>
+      <description>http://rancher.com/comparing-monitoring-options-for-docker-deployments/https://logz.io/blog/monitoring-dockerized-elk-stack/must see:https://youtu.be/iRlWqoUVdac </description>
+    </item>
+    
+    <item>
+      <title>Elastic beats</title>
+      <link>https://blog.indonesiadot.com/posts/elastic-beats/</link>
+      <pubDate>Sun, 25 Feb 2018 10:51:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/elastic-beats/</guid>
+      <description>https://www.elastic.co/products/beats
+https://www.elastic.co/guide/en/beats/libbeat/current/community-beats.html</description>
+    </item>
+    
+    <item>
+      <title>graphite grafana things</title>
+      <link>https://blog.indonesiadot.com/posts/graphite-grafana-things/</link>
+      <pubDate>Thu, 22 Feb 2018 11:08:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/graphite-grafana-things/</guid>
+      <description>https://statusengine.org/tutorials/Graphite-Grafana/
+https://www.unixmen.com/full-monitoring-system-graphite-collectd-statsd-part-1/
+Grafana vs kibana
+https://logz.io/blog/grafana-vs-kibana/
+https://logz.io/blog/monitor-elasticsearch-graphite-grafana/
+https://logz.io/blog/monitoring-dockerized-elk-stack/
+old tutorial:
+http://www.linux-admins.net/2012/02/how-to-install-and-use-graphite.html</description>
+    </item>
+    
+    <item>
+      <title>Munin nginx</title>
+      <link>https://blog.indonesiadot.com/posts/munin-nginx/</link>
+      <pubDate>Sat, 17 Feb 2018 10:41:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/munin-nginx/</guid>
+      <description>http://guide.munin-monitoring.org/en/stable-2.0/example/webserver/nginx.html
+http://guide.munin-monitoring.org/en/latest/example/webserver/nginx.html
+http://iinclude.in/2017/12/03/how-to-install-the-munin-monitoring-tool-on-ubuntu-16-04-with-nginx/
+https://www.stephenrlang.com/2016/03/how-to-setup-munin-on-ubuntu/
+https://github.com/tjstein/php5-fpm-munin-plugins
+https://serverfault.com/questions/315460/munin-email-notification
+https://blog-en.openalfa.com/how-to-configure-alerts-in-munin
+https://prefetch.net/blog/index.php/2011/07/13/gathering-statistics-from-your-postfix-mail-logs/</description>
+    </item>
+    
+    <item>
+      <title>Linux server monitoring</title>
+      <link>https://blog.indonesiadot.com/posts/linux-server-monitoring/</link>
+      <pubDate>Fri, 16 Feb 2018 05:28:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/linux-server-monitoring/</guid>
+      <description>https://blog.serverdensity.com/80-linux-monitoring-tools-know/
+https://logz.io/blog/grafana-vs-kibana/
+http://docs.grafana.org/features/datasources/</description>
+    </item>
+    
+    <item>
+      <title>TODO web page monitoring and alert when change</title>
+      <link>https://blog.indonesiadot.com/posts/todo-web-page-monitoring-and-alert-when-change/</link>
+      <pubDate>Wed, 31 Jan 2018 20:50:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/todo-web-page-monitoring-and-alert-when-change/</guid>
+      <description>Finally it using ariya phantomjs , combine with bash script and run in cron every 9 minuteshttp://phantomjs.org/screen-capture.html
+http://phantomjs.org/related-projects.html
+https://github.com/superbrothers/capturejs
+https://github.com/hggh/phantomjs-screenshots
+https://github.com/astefanutti/decktape
+https://github.com/sindresorhus/pageres
+http://bhfsteve.blogspot.co.id/2013/03/monitoring-web-page-for-changes-using.html?m=1http://changedetection.com/https://visualping.iohttps://visualping.io/chrome-app (free forever)https://www.npmjs.com/package/page-monitorhttp://cabotapp.com/https://blog.newrelic.com/2013/06/04/simpler-ui-testing-with-casperjs-2/https://ghostinspector.comhttps://dzone.com/articles/automated-regression-testing-made-easy-with-casper </description>
+    </item>
+    
+  </channel>
+</rss>

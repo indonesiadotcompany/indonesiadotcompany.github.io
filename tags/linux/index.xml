@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/linux/</link>
+    <description>Recent content in linux on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Apr 2018 18:45:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>All about icinga monitoring</title>
+      <link>https://blog.indonesiadot.com/posts/all-about-icinga-monitoring/</link>
+      <pubDate>Wed, 04 Apr 2018 18:45:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/all-about-icinga-monitoring/</guid>
+      <description>icinga2 installation on ubuntu 16
+https://www.icinga.com/docs/icinga2/latest/doc/02-getting-started/
+https://www.icinga.com/docs/icingaweb2/latest/doc/02-Installation/
+https://www.rosehosting.com/blog/install-icinga-2-on-ubuntu-16-04/
+https://blog.x-toolz.com/installing-icinga2-icingaweb2-on-ubuntu-16-04-3-lts/
+https://github.com/jpfluger/examples/blob/master/ubuntu-14.04/icinga2-server.md
+https://www.google.co.id/search?q=icinga2+change+ssh+port
+https://monitoring-portal.org/woltlab/index.php?thread/32752-ssh-monitoring-different-port/
+added a line into the servicedefinition:Codeapply Service &amp;ldquo;ssh&amp;rdquo; {import &amp;ldquo;generic-service&amp;rdquo;check_command = &amp;ldquo;ssh&amp;rdquo;vars.port = host.vars.ssh_portassign where host.address &amp;amp;&amp;amp; host.vars.os == &amp;ldquo;Linux&amp;rdquo;ignore where host.name == &amp;ldquo;localhost&amp;rdquo; /* for upgrade safety */}and in the hostdef:Codeobject Host &amp;ldquo;webarchiv&amp;rdquo; {&amp;hellip;vars.ssh_port = 1023&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>invoice ninja free open source invoicing system</title>
+      <link>https://blog.indonesiadot.com/posts/invoice-ninja-free-open-source-invoicing-system/</link>
+      <pubDate>Thu, 22 Feb 2018 11:12:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/invoice-ninja-free-open-source-invoicing-system/</guid>
+      <description>https://www.invoiceninja.org/
+https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/</description>
+    </item>
+    
+    <item>
+      <title>Munin nginx</title>
+      <link>https://blog.indonesiadot.com/posts/munin-nginx/</link>
+      <pubDate>Sat, 17 Feb 2018 10:41:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/munin-nginx/</guid>
+      <description>http://guide.munin-monitoring.org/en/stable-2.0/example/webserver/nginx.html
+http://guide.munin-monitoring.org/en/latest/example/webserver/nginx.html
+http://iinclude.in/2017/12/03/how-to-install-the-munin-monitoring-tool-on-ubuntu-16-04-with-nginx/
+https://www.stephenrlang.com/2016/03/how-to-setup-munin-on-ubuntu/
+https://github.com/tjstein/php5-fpm-munin-plugins
+https://serverfault.com/questions/315460/munin-email-notification
+https://blog-en.openalfa.com/how-to-configure-alerts-in-munin
+https://prefetch.net/blog/index.php/2011/07/13/gathering-statistics-from-your-postfix-mail-logs/</description>
+    </item>
+    
+    <item>
+      <title>Linux server monitoring</title>
+      <link>https://blog.indonesiadot.com/posts/linux-server-monitoring/</link>
+      <pubDate>Fri, 16 Feb 2018 05:28:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/linux-server-monitoring/</guid>
+      <description>https://blog.serverdensity.com/80-linux-monitoring-tools-know/
+https://logz.io/blog/grafana-vs-kibana/
+http://docs.grafana.org/features/datasources/</description>
+    </item>
+    
+    <item>
+      <title>TODO jenkins</title>
+      <link>https://blog.indonesiadot.com/posts/todo-jenkins/</link>
+      <pubDate>Thu, 15 Feb 2018 18:47:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/todo-jenkins/</guid>
+      <description>https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04</description>
+    </item>
+    
+    <item>
+      <title>learn ansible php</title>
+      <link>https://blog.indonesiadot.com/posts/learn-ansible-php/</link>
+      <pubDate>Wed, 14 Feb 2018 19:28:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/learn-ansible-php/</guid>
+      <description>https://knpuniversity.com/screencast/ansible/ansible-composer</description>
+    </item>
+    
+    <item>
+      <title>Bash script tips and trick</title>
+      <link>https://blog.indonesiadot.com/posts/bash-script-tips-and-trick/</link>
+      <pubDate>Sun, 04 Feb 2018 23:20:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/bash-script-tips-and-trick/</guid>
+      <description>bash or and
+How to Use Logical OR &amp;amp; AND in Shell Script with ExamplesLogical&amp;nbsp;OR&amp;nbsp;&amp;amp;&amp;nbsp;AND&amp;nbsp;operations are very useful where multiple conditions are used in our programs (scripts).OR&amp;nbsp;is used between two or multiple conditions. It returns true if any one of conditions returns as true.AND&amp;nbsp;is used between two or multiple conditions. It returns true only if all the conditions returns as true.Using Logical ORLogical OR in bash script is used with operator -o.</description>
+    </item>
+    
+    <item>
+      <title>Linux Security tools</title>
+      <link>https://blog.indonesiadot.com/posts/linux-security-tools/</link>
+      <pubDate>Wed, 31 Jan 2018 21:32:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/linux-security-tools/</guid>
+      <description>Tripwire
+ref:
+https://github.com/Tripwire/tripwire-open-source
+https://www.upguard.com/articles/tripwire-enterprise-vs.-tripwire-open-source</description>
+    </item>
+    
+    <item>
+      <title>change image resolution from linux command line</title>
+      <link>https://blog.indonesiadot.com/posts/change-image-resolution-from-linux-command-line/</link>
+      <pubDate>Wed, 31 Jan 2018 20:35:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/change-image-resolution-from-linux-command-line/</guid>
+      <description>change image resolution command line
+https://imagemagick.org/discourse-server/viewtopic.php?t=24890
+https://www.howtogeek.com/109369/how-to-quickly-resize-convert-modify-images-from-the-linux-terminal/amp/</description>
+    </item>
+    
+    <item>
+      <title>Linux Tips and Trick</title>
+      <link>https://blog.indonesiadot.com/posts/linux-tips-and-trick/</link>
+      <pubDate>Mon, 29 Jan 2018 00:59:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/linux-tips-and-trick/</guid>
+      <description>cron without sending mail
+tambahkan MAILTO=&#34;&#34; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
+linux rm file list too long
+cd direktoriyangfilenyabanyak
+ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete
+find . -type f -print -delete
+incron
+http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en</description>
+    </item>
+    
+  </channel>
+</rss>

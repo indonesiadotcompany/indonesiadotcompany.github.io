@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scripts on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/scripts/</link>
+    <description>Recent content in scripts on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Mar 2018 21:22:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/scripts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ssl expiry check</title>
+      <link>https://blog.indonesiadot.com/posts/ssl-expiry-check/</link>
+      <pubDate>Sun, 04 Mar 2018 21:22:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/ssl-expiry-check/</guid>
+      <description>https://www.google.co.id/search?q=ssl+expiry+check
+https://github.com/Matty9191/ssl-cert-check
+https://prefetch.net/articles/checkcertificate.html
+ssl-cert-check -s mail.prefetch.net -p 443</description>
+    </item>
+    
+    <item>
+      <title>Bash script tips and trick</title>
+      <link>https://blog.indonesiadot.com/posts/bash-script-tips-and-trick/</link>
+      <pubDate>Sun, 04 Feb 2018 23:20:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/bash-script-tips-and-trick/</guid>
+      <description>bash or and
+How to Use Logical OR &amp;amp; AND in Shell Script with ExamplesLogical&amp;nbsp;OR&amp;nbsp;&amp;amp;&amp;nbsp;AND&amp;nbsp;operations are very useful where multiple conditions are used in our programs (scripts).OR&amp;nbsp;is used between two or multiple conditions. It returns true if any one of conditions returns as true.AND&amp;nbsp;is used between two or multiple conditions. It returns true only if all the conditions returns as true.Using Logical ORLogical OR in bash script is used with operator -o.</description>
+    </item>
+    
+  </channel>
+</rss>

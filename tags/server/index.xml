@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>server on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/server/</link>
+    <description>Recent content in server on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Aug 2019 08:42:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>simple alert monitoring using simplemonitor</title>
+      <link>https://blog.indonesiadot.com/posts/simple-alert-monitoring-using-simplemonitor/</link>
+      <pubDate>Sun, 11 Aug 2019 08:42:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/simple-alert-monitoring-using-simplemonitor/</guid>
+      <description>googling:&amp;nbsp;https://www.google.com/search?q=simple+alert+monitoring
+https://jamesoff.github.io/simplemonitor/
+googling:&amp;nbsp;https://www.google.com/search?q=simplemonitor+docker
+https://hub.docker.com/r/braindoctor/simplemonitor-docker/
+mkdir -p /docker/simplemonitor &amp;amp;&amp;amp; cd /docker/simplemonitor
+cat &amp;gt; docker-compose.yml &amp;lt;version: &amp;lsquo;3.2&amp;rsquo;
+services:
+&amp;nbsp; simplemonitor:
+&amp;nbsp; &amp;nbsp; restart: always
+&amp;nbsp; &amp;nbsp; image: braindoctor/simplemonitor-docker:latest
+&amp;nbsp; &amp;nbsp; container_name: simplemonitor
+&amp;nbsp; &amp;nbsp; hostname: mail-124.indonesiadot.com
+&amp;nbsp; &amp;nbsp; volumes:
+&amp;nbsp; &amp;nbsp; &amp;nbsp; - ${PWD}/config:/etc/simplemonitor
+&amp;nbsp; &amp;nbsp; ports:
+&amp;nbsp; &amp;nbsp; &amp;nbsp; - &amp;ldquo;8080:8080&amp;rdquo;
+
+EOFdocker-compose up -d
+ref:
+https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files</description>
+    </item>
+    
+    <item>
+      <title>belajar ispconfig webhosting control panel</title>
+      <link>https://blog.indonesiadot.com/posts/belajar-ispconfig-webhosting-control-panel/</link>
+      <pubDate>Sat, 26 May 2018 07:10:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/belajar-ispconfig-webhosting-control-panel/</guid>
+      <description>Berikut adalah alamat / url tutorial untuk belajar instalasi / setup ispconfig webhosting control panel :
+https://www.howtoforge.com/tutorial/perfect-server-ubuntu-with-nginx-and-ispconfig-3/3/
+https://www.howtoforge.com/tutorial/securing-ispconfig-3-with-a-free-lets-encrypt-ssl-certificate/
+https://github.com/SpeedWP/ispconfig-nginx-pagespeed/wiki/ISP-Config
+https://www.howtoforge.com/community/threads/install-monit.64712/</description>
+    </item>
+    
+    <item>
+      <title>Linux Tips and Trick</title>
+      <link>https://blog.indonesiadot.com/posts/linux-tips-and-trick/</link>
+      <pubDate>Mon, 29 Jan 2018 00:59:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/linux-tips-and-trick/</guid>
+      <description>cron without sending mail
+tambahkan MAILTO=&#34;&#34; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
+linux rm file list too long
+cd direktoriyangfilenyabanyak
+ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete
+find . -type f -print -delete
+incron
+http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en</description>
+    </item>
+    
+    <item>
+      <title>Learning Magento E-Commerce</title>
+      <link>https://blog.indonesiadot.com/posts/learning-magento-e-commerce/</link>
+      <pubDate>Fri, 25 Aug 2017 04:55:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/learning-magento-e-commerce/</guid>
+      <description>This month i learn about E-commerce with Magento, it&amp;rsquo;s awesome, full of feature of e-commerce.
+But it also have several steps to tweak it, to make it faster, secure and more convenient.I can&amp;rsquo;t detail all of it now, but here are the diagram that i make for easy learning flow.</description>
+    </item>
+    
+  </channel>
+</rss>

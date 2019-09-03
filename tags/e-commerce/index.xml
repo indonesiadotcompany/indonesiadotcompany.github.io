@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>e-commerce on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/e-commerce/</link>
+    <description>Recent content in e-commerce on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Jan 2018 22:41:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/e-commerce/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Recommended Magento modules</title>
+      <link>https://blog.indonesiadot.com/posts/recommended-magento-modules/</link>
+      <pubDate>Mon, 29 Jan 2018 22:41:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/recommended-magento-modules/</guid>
+      <description>Ves Megamenu http://guide.landofcoder.com/mega-menu/ http://guide.landofcoder.com/mega-menu-pro/</description>
+    </item>
+    
+    <item>
+      <title>Magento Admin tips and trick</title>
+      <link>https://blog.indonesiadot.com/posts/magento-admin-tips-and-trick/</link>
+      <pubDate>Sun, 28 Jan 2018 20:54:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/magento-admin-tips-and-trick/</guid>
+      <description>How to create admin user in Magento 2 via Command Line bin/magento admin:user:create &amp;ndash;admin-user=&amp;ldquo;admin&amp;rdquo; &amp;ndash;admin-password=&amp;ldquo;123123q&amp;rdquo; &amp;ndash;admin-email=&amp;ldquo;admin@example.com&amp;rdquo; &amp;ndash;admin-firstname=&amp;ldquo;Admin&amp;rdquo; &amp;ndash;admin-lastname=&amp;ldquo;Admin&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Install solr server</title>
+      <link>https://blog.indonesiadot.com/posts/install-solr-server/</link>
+      <pubDate>Wed, 27 Sep 2017 20:02:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/install-solr-server/</guid>
+      <description>Here are the steps for Install solr server - base of search engine for magento these steps run on ubuntu 16.04, because we follow this http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html, we must install jdk 7 from ppa, but ubuntu 16.04 default with jdk 8 add-apt-repository ppa:openjdk-r/ppa
+apt update
+apt-get install openjdk-7-jdk
+apt install supervisor
+su - user
+mkdir apps &amp;amp;&amp;amp; cd apps
+wget https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz
+tar xzf ../apache-solr-3.4.0.tgz
+mv apache-solr-3.4.0 solr34
+cp /var/www/magento/lib/Apache/Solr/conf/* solr34/example/solr/conf/
+cat &amp;gt;&amp;gt; apps/solr34/example/logging.</description>
+    </item>
+    
+    <item>
+      <title>Magento maintenance mode</title>
+      <link>https://blog.indonesiadot.com/posts/magento-maintenance-mode/</link>
+      <pubDate>Wed, 20 Sep 2017 23:45:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/magento-maintenance-mode/</guid>
+      <description>To set magento 2 in maintenance mode and to make nice maintenance page.
+1. make / get maintenance image for our maintenance page, ie: maintenance.png
+2. put at pub/errors/default/images directory under magento root directory, ie: /var/www/magento/pub/errors/default/images/maintenance.png
+3. edit and save /var/www/magento/pub/errors/default/503.phtml
+
+4. run bin/magento maintenance:enable from magento root directory
+that&amp;rsquo;s it, and you can see nicer maintenance mode in magento 2
+To set magento 1 in maintenance mode and to make nice maintenance page.</description>
+    </item>
+    
+    <item>
+      <title>Learning Magento E-Commerce</title>
+      <link>https://blog.indonesiadot.com/posts/learning-magento-e-commerce/</link>
+      <pubDate>Fri, 25 Aug 2017 04:55:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/learning-magento-e-commerce/</guid>
+      <description>This month i learn about E-commerce with Magento, it&amp;rsquo;s awesome, full of feature of e-commerce.
+But it also have several steps to tweak it, to make it faster, secure and more convenient.I can&amp;rsquo;t detail all of it now, but here are the diagram that i make for easy learning flow.</description>
+    </item>
+    
+  </channel>
+</rss>

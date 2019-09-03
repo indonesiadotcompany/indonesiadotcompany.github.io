@@ -6,9 +6,406 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sun, 11 Aug 2019 08:45:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>docker</title>
+      <link>https://blog.indonesiadot.com/tags/docker/</link>
+      <pubDate>Sun, 11 Aug 2019 08:45:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>monitoring</title>
+      <link>https://blog.indonesiadot.com/tags/monitoring/</link>
+      <pubDate>Sun, 11 Aug 2019 08:42:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/monitoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://blog.indonesiadot.com/tags/python/</link>
+      <pubDate>Sun, 11 Aug 2019 08:42:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server</title>
+      <link>https://blog.indonesiadot.com/tags/server/</link>
+      <pubDate>Sun, 11 Aug 2019 08:42:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zfs</title>
+      <link>https://blog.indonesiadot.com/tags/zfs/</link>
+      <pubDate>Sun, 15 Jul 2018 16:55:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/zfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dagang</title>
+      <link>https://blog.indonesiadot.com/tags/dagang/</link>
+      <pubDate>Fri, 13 Jul 2018 16:57:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/dagang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>niaga</title>
+      <link>https://blog.indonesiadot.com/tags/niaga/</link>
+      <pubDate>Fri, 13 Jul 2018 16:57:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/niaga/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>usaha</title>
+      <link>https://blog.indonesiadot.com/tags/usaha/</link>
+      <pubDate>Fri, 13 Jul 2018 16:57:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/usaha/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>widya</title>
+      <link>https://blog.indonesiadot.com/tags/widya/</link>
+      <pubDate>Wed, 04 Jul 2018 12:07:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/widya/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://blog.indonesiadot.com/tags/web/</link>
+      <pubDate>Wed, 30 May 2018 01:14:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wordpress</title>
+      <link>https://blog.indonesiadot.com/tags/wordpress/</link>
+      <pubDate>Wed, 30 May 2018 01:14:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/wordpress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mail</title>
+      <link>https://blog.indonesiadot.com/tags/mail/</link>
+      <pubDate>Sat, 26 May 2018 08:04:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/mail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://blog.indonesiadot.com/tags/security/</link>
+      <pubDate>Sat, 26 May 2018 07:34:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://blog.indonesiadot.com/tags/linux/</link>
+      <pubDate>Wed, 04 Apr 2018 18:45:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>air</title>
+      <link>https://blog.indonesiadot.com/tags/air/</link>
+      <pubDate>Tue, 27 Mar 2018 04:18:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/air/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>alam</title>
+      <link>https://blog.indonesiadot.com/tags/alam/</link>
+      <pubDate>Tue, 27 Mar 2018 04:18:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/alam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>diy</title>
+      <link>https://blog.indonesiadot.com/tags/diy/</link>
+      <pubDate>Tue, 27 Mar 2018 04:18:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/diy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ansible</title>
+      <link>https://blog.indonesiadot.com/tags/ansible/</link>
+      <pubDate>Mon, 19 Mar 2018 21:56:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xenserver</title>
+      <link>https://blog.indonesiadot.com/tags/xenserver/</link>
+      <pubDate>Mon, 19 Mar 2018 21:56:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/xenserver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mikrotik</title>
+      <link>https://blog.indonesiadot.com/tags/mikrotik/</link>
+      <pubDate>Wed, 07 Mar 2018 00:26:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/mikrotik/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>networking</title>
+      <link>https://blog.indonesiadot.com/tags/networking/</link>
+      <pubDate>Wed, 07 Mar 2018 00:26:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/networking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scripts</title>
+      <link>https://blog.indonesiadot.com/tags/scripts/</link>
+      <pubDate>Sun, 04 Mar 2018 21:22:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/scripts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssl</title>
+      <link>https://blog.indonesiadot.com/tags/ssl/</link>
+      <pubDate>Sun, 04 Mar 2018 21:22:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ssl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cli</title>
+      <link>https://blog.indonesiadot.com/tags/cli/</link>
+      <pubDate>Sun, 04 Mar 2018 20:58:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>digitalocean</title>
+      <link>https://blog.indonesiadot.com/tags/digitalocean/</link>
+      <pubDate>Sun, 04 Mar 2018 20:58:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/digitalocean/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>https://blog.indonesiadot.com/tags/aws/</link>
+      <pubDate>Sun, 04 Mar 2018 20:40:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elasticsearch</title>
+      <link>https://blog.indonesiadot.com/tags/elasticsearch/</link>
+      <pubDate>Sun, 04 Mar 2018 20:36:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/elasticsearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>office</title>
+      <link>https://blog.indonesiadot.com/tags/office/</link>
+      <pubDate>Thu, 22 Feb 2018 11:12:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/office/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tuning</title>
+      <link>https://blog.indonesiadot.com/tags/tuning/</link>
+      <pubDate>Mon, 19 Feb 2018 10:18:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/tuning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jenkins</title>
+      <link>https://blog.indonesiadot.com/tags/jenkins/</link>
+      <pubDate>Thu, 15 Feb 2018 18:47:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>magento</title>
+      <link>https://blog.indonesiadot.com/tags/magento/</link>
+      <pubDate>Tue, 13 Feb 2018 01:05:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/magento/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spiritual</title>
+      <link>https://blog.indonesiadot.com/tags/spiritual/</link>
+      <pubDate>Sat, 10 Feb 2018 16:41:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/spiritual/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloud</title>
+      <link>https://blog.indonesiadot.com/tags/cloud/</link>
+      <pubDate>Fri, 09 Feb 2018 03:55:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>automation</title>
+      <link>https://blog.indonesiadot.com/tags/automation/</link>
+      <pubDate>Wed, 31 Jan 2018 23:30:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vm</title>
+      <link>https://blog.indonesiadot.com/tags/vm/</link>
+      <pubDate>Wed, 31 Jan 2018 21:30:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/vm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vps</title>
+      <link>https://blog.indonesiadot.com/tags/vps/</link>
+      <pubDate>Wed, 31 Jan 2018 21:30:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/vps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>task</title>
+      <link>https://blog.indonesiadot.com/tags/task/</link>
+      <pubDate>Wed, 31 Jan 2018 20:54:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/task/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>todo</title>
+      <link>https://blog.indonesiadot.com/tags/todo/</link>
+      <pubDate>Wed, 31 Jan 2018 20:54:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/todo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>e-commerce</title>
+      <link>https://blog.indonesiadot.com/tags/e-commerce/</link>
+      <pubDate>Mon, 29 Jan 2018 22:41:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/e-commerce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>https://blog.indonesiadot.com/tags/mysql/</link>
+      <pubDate>Sun, 28 Jan 2018 21:09:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sql</title>
+      <link>https://blog.indonesiadot.com/tags/sql/</link>
+      <pubDate>Sun, 28 Jan 2018 21:09:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>health</title>
+      <link>https://blog.indonesiadot.com/tags/health/</link>
+      <pubDate>Wed, 20 Sep 2017 17:29:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/health/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sehat</title>
+      <link>https://blog.indonesiadot.com/tags/sehat/</link>
+      <pubDate>Wed, 20 Sep 2017 17:29:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/sehat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog</title>
+      <link>https://blog.indonesiadot.com/tags/blog/</link>
+      <pubDate>Fri, 25 Aug 2017 03:48:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/blog/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

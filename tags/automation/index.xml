@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>automation on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/automation/</link>
+    <description>Recent content in automation on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 31 Jan 2018 23:30:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ansible tips and trick</title>
+      <link>https://blog.indonesiadot.com/posts/ansible-tips-and-trick/</link>
+      <pubDate>Wed, 31 Jan 2018 23:30:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/ansible-tips-and-trick/</guid>
+      <description>Ansible gather facts
+Using facter too
+Ref:
+http://docs.ansible.com/ansible/latest/setup_module.html#examples</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      MySQL tips and trick &middot; Blog Indonesiadot.Com
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/poole.css">
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/syntax.css">
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blog.indonesiadot.com/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="https://blog.indonesiadot.com/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://blog.indonesiadot.com/atom.xml">
+</head>
+
+
+  <body>
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Blog dari <a href="https://indonesiadot.com" target="_blank">Indonesiadot.Com</a> adalah tempat menuliskan sesuatu mengenai teknologi, oprek, dan mengenai Indonesiadot.Com.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/">Home</a>
+    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/post">Posts</a>
+
+    
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/about/">About</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
+      
+    
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2019. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="https://blog.indonesiadot.com/" title="Home">Blog Indonesiadot.Com</a>
+            <small>Web log about technology and around indonesiadot.com</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">MySQL tips and trick</h1>
+  <span class="post-date">Jan 28, 2018</span>
+  <p><div><b><br></b></div><b><div><b>Mysql performance</b></div><div><b><br></b></div><div><b><a href="https://www.infoworld.com/article/0/database-administration/10-essential-performance-tips-for-mysql.html">https://www.infoworld.com/article/0/database-administration/10-essential-performance-tips-for-mysql.html</a></b></div><div><b><br></b></div><div><b>MySQL insert row with highest id</b><br></div></b><br>Lock tables customers write; $max = SELECT MAX( customer_id ) FROM customers; INSERT INTO customers( customer_id, firstname, surname ) VALUES ($max+1 , &lsquo;jim&rsquo;, &lsquo;sock&rsquo;) unlock tables;  ref: <a href="https://stackoverflow.com/questions/5360117/insert-and-set-value-with-max1-problems">https://stackoverflow.com/questions/5360117/insert-and-set-value-with-max1-problems</a><br><b><br></b><b>mysqldump routines triggers view</b><br><br>karena default nya mysql akan dump trigger, maka hanya store procedure / function atau yg dikenal dengan routines saja yang dimasukan parameter nya  mysqldump &ndash;routines &ndash;no-create-info &ndash;no-data &ndash;no-create-db &ndash;skip-opt <database> &gt; outputfile.sql mysqldump &ndash;routines &ndash;no-create-info &ndash;no-data &ndash;no-create-db &ndash;skip-opt <database> | gzip &gt; outputfile.sql.gz</database></database><br><database><database><b><br></b></database></database><database><database><b>mysql change definer of trigger</b></database></database><br><br>mysqldump &ndash;skip-opt &ndash;no-data &ndash;no-create-db &ndash;no-create-info &ndash;routines &ndash;add-drop-trigger <database> &gt; outputfile-trigger.sql  lalu edit outputfile-trigger.sql dengan merename user DEFINER dengan CURRENT_USER atau <code>namauser</code>@<code>namahost</code></database><br><database><database><database><br></database></database></database><database><database><database><b>mysql gui (free)</b></database></database></database><br><database><database><database><br></database></database></database><database><database><database><a href="https://www.mysql.com/products/workbench/">https://www.mysql.com/products/workbench/</a></database></database></database><br>mysql workbench has performance monitoring too :)<br><database><database><database><br></database></database></database><database><database><database><b><a href="https://www.google.co.id/search?q=mysql+change+from+innodb+to+myisam+table">https://www.google.co.id/search?q=mysql+change+from+innodb+to+myisam+table</a></b></database></database></database><br><database><database><database><br></database></database></database><database><database><database>ALTER TABLE table_name ENGINE = MyISAM;</database></database></database><br><database><database><database>ALTER TABLE table_name ENGINE = InnoDB;</database></database></database></p>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

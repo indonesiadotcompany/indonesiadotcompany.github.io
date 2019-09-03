@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>task on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/task/</link>
+    <description>Recent content in task on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 31 Jan 2018 20:54:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/task/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TODO ansible 201802</title>
+      <link>https://blog.indonesiadot.com/posts/todo-ansible-201802/</link>
+      <pubDate>Wed, 31 Jan 2018 20:54:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/todo-ansible-201802/</guid>
+      <description>Ansible tower
+Ansible awx
+Ansible for magento
+Ansible + jenkins
+install latest ansible
+apt-add-repository ppa:ansible/ansible
+[ENTER]
+apt update
+apt-get install ansible
+
+install latest docker
+apt-add-repository ppa:ansible/ansibleapt updateapt-get install ansible
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -add-apt-repository \&amp;nbsp; &amp;nbsp;&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \&amp;nbsp; &amp;nbsp;$(lsb_release -cs) \&amp;nbsp; &amp;nbsp;stable&#34;apt updateapt-get install docker-ce
+apt install makeapt install python-pippip install dockerpip install --upgrade pipapt install git
+curl -O https://raw.githubusercontent.com/geerlingguy/awx-container/master/docker-compose.yml
+docker-compose up -d
+tunggu beberapa saat lalu akses via http, misal http://localhost dengan user admin/password</description>
+    </item>
+    
+  </channel>
+</rss>

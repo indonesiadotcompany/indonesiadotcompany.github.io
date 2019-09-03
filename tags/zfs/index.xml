@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>zfs on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/zfs/</link>
+    <description>Recent content in zfs on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Jul 2018 16:55:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/zfs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>zfs cool feature, snapshot, replicate, etc</title>
+      <link>https://blog.indonesiadot.com/posts/zfs-cool-feature-snapshot-replicate-etc/</link>
+      <pubDate>Sun, 15 Jul 2018 16:55:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/zfs-cool-feature-snapshot-replicate-etc/</guid>
+      <description>https://www.google.co.id/search?q=zfs+remote+replication
+https://www.howtoforge.com/tutorial/how-to-use-snapshots-clones-and-replication-in-zfs-on-linux/
+https://zpool.org/zfs-snapshots-and-remote-replication/
+http://www.zfsnap.org/docs.html</description>
+    </item>
+    
+  </channel>
+</rss>

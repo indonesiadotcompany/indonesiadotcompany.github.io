@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>aws on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/aws/</link>
+    <description>Recent content in aws on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Mar 2018 20:40:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>aws tips and tricks</title>
+      <link>https://blog.indonesiadot.com/posts/aws-tips-and-tricks/</link>
+      <pubDate>Sun, 04 Mar 2018 20:40:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/aws-tips-and-tricks/</guid>
+      <description>aws clone
+The easier way is through the web management console:go to the instanceselect the instance and click on instance actioncreate imageOnce you have an image you can launch another cloned instance, data and all. :)</description>
+    </item>
+    
+    <item>
+      <title>All about amazon aws s3</title>
+      <link>https://blog.indonesiadot.com/posts/all-about-amazon-aws-s3/</link>
+      <pubDate>Wed, 21 Feb 2018 23:18:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/all-about-amazon-aws-s3/</guid>
+      <description>https://github.com/aws/aws-cli
+https://github.com/s3tools/s3cmd
+https://serverfault.com/questions/84815/how-can-i-get-the-size-of-an-amazon-s3-bucket
+apt install aws-cli
+aws &amp;ndash;configure
+#enter access key, secret key and region
+list files/folder di bucket s3 (ls s3)
+aws s3 ls s3://namabuckets3nya
+disk usage s3 (du -sh s3)
+s3cmd du s3://namabuckets3nya
+aws s3 rsync
+https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html</description>
+    </item>
+    
+    <item>
+      <title>AWS (amazon web services) learning</title>
+      <link>https://blog.indonesiadot.com/posts/aws-amazon-web-services-learning/</link>
+      <pubDate>Fri, 09 Feb 2018 03:55:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/aws-amazon-web-services-learning/</guid>
+      <description>https://blog.serverless.id/post/kursus-gratis-aws-di-udemy/
+https://www.udemy.com/aws-essentials</description>
+    </item>
+    
+  </channel>
+</rss>

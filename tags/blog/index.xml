@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/blog/</link>
+    <description>Recent content in blog on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Aug 2017 03:48:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redirect to widyamedia.indonesiadot.com</title>
+      <link>https://blog.indonesiadot.com/posts/redirect-to-widyamedia.indonesiadot.com/</link>
+      <pubDate>Fri, 25 Aug 2017 03:48:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/redirect-to-widyamedia.indonesiadot.com/</guid>
+      <description>Actually this should be done long time ago, i thought it would be better if i wrote some of my experiences / experiments in public space like blogspot or wordpress, but with custom domain to be readable by all of people around the world :)
+And here are the steps for redirecting to widyamedia.indonesiadot.com
+* login to blogger.com or register if you don&amp;rsquo;t have one
+* select the account you wanna manage and choose Settings - Basic from left menu</description>
+    </item>
+    
+  </channel>
+</rss>

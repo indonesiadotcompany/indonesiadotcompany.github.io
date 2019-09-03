@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mail on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/mail/</link>
+    <description>Recent content in mail on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 May 2018 08:04:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/mail/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>freebsd mailserver</title>
+      <link>https://blog.indonesiadot.com/posts/freebsd-mailserver/</link>
+      <pubDate>Sat, 26 May 2018 08:04:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/freebsd-mailserver/</guid>
+      <description>https://www.sophimail.com/configure-freebsd-email-server-using-postfix-dovecot-mysql-spamassassin/
+https://github.com/sophimail/webadmin
+https://github.com/sophimail/webadmin/blob/master/INSTALLATION.md
+https://www.cryptomonkeys.com/2016/08/building-a-mailserver/
+https://docs.iredmail.org/install.iredmail.on.freebsd.html
+note:
+iredadmin is easiest installation with all mail server package, but for administration using iredadmin free has limited function, best for personal / one domain use
+ispconfig nice to try :)</description>
+    </item>
+    
+  </channel>
+</rss>

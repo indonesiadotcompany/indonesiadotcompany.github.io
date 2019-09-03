@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>networking on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/networking/</link>
+    <description>Recent content in networking on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 Mar 2018 00:26:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Winbox Under Linux</title>
+      <link>https://blog.indonesiadot.com/posts/winbox-under-linux/</link>
+      <pubDate>Wed, 07 Mar 2018 00:26:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/winbox-under-linux/</guid>
+      <description>https://www.google.co.id/search?q=winbox+under+linux
+https://github.com/mriza/winbox-installer
+https://udariza.wordpress.com/</description>
+    </item>
+    
+  </channel>
+</rss>

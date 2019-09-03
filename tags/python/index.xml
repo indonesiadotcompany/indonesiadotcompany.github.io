@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/python/</link>
+    <description>Recent content in python on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Aug 2019 08:42:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>simple alert monitoring using simplemonitor</title>
+      <link>https://blog.indonesiadot.com/posts/simple-alert-monitoring-using-simplemonitor/</link>
+      <pubDate>Sun, 11 Aug 2019 08:42:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/posts/simple-alert-monitoring-using-simplemonitor/</guid>
+      <description>googling:&amp;nbsp;https://www.google.com/search?q=simple+alert+monitoring
+https://jamesoff.github.io/simplemonitor/
+googling:&amp;nbsp;https://www.google.com/search?q=simplemonitor+docker
+https://hub.docker.com/r/braindoctor/simplemonitor-docker/
+mkdir -p /docker/simplemonitor &amp;amp;&amp;amp; cd /docker/simplemonitor
+cat &amp;gt; docker-compose.yml &amp;lt;version: &amp;lsquo;3.2&amp;rsquo;
+services:
+&amp;nbsp; simplemonitor:
+&amp;nbsp; &amp;nbsp; restart: always
+&amp;nbsp; &amp;nbsp; image: braindoctor/simplemonitor-docker:latest
+&amp;nbsp; &amp;nbsp; container_name: simplemonitor
+&amp;nbsp; &amp;nbsp; hostname: mail-124.indonesiadot.com
+&amp;nbsp; &amp;nbsp; volumes:
+&amp;nbsp; &amp;nbsp; &amp;nbsp; - ${PWD}/config:/etc/simplemonitor
+&amp;nbsp; &amp;nbsp; ports:
+&amp;nbsp; &amp;nbsp; &amp;nbsp; - &amp;ldquo;8080:8080&amp;rdquo;
+
+EOFdocker-compose up -d
+ref:
+https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files</description>
+    </item>
+    
+  </channel>
+</rss>
