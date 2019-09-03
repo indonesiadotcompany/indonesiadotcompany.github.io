@@ -13,10 +13,10 @@
     
     <item>
       <title>TODO ansible 201802</title>
-      <link>https://blog.indonesiadot.com/posts/todo-ansible-201802/</link>
+      <link>https://blog.indonesiadot.com/todo-ansible-201802/</link>
       <pubDate>Wed, 31 Jan 2018 20:54:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/posts/todo-ansible-201802/</guid>
+      <guid>https://blog.indonesiadot.com/todo-ansible-201802/</guid>
       <description>Ansible tower
 Ansible awx
 Ansible for magento
@@ -38,10 +38,10 @@ tunggu beberapa saat lalu akses via http, misal http://localhost dengan user adm
     
     <item>
       <title>TODO web page monitoring and alert when change</title>
-      <link>https://blog.indonesiadot.com/posts/todo-web-page-monitoring-and-alert-when-change/</link>
+      <link>https://blog.indonesiadot.com/todo-web-page-monitoring-and-alert-when-change/</link>
       <pubDate>Wed, 31 Jan 2018 20:50:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/posts/todo-web-page-monitoring-and-alert-when-change/</guid>
+      <guid>https://blog.indonesiadot.com/todo-web-page-monitoring-and-alert-when-change/</guid>
       <description>Finally it using ariya phantomjs , combine with bash script and run in cron every 9 minuteshttp://phantomjs.org/screen-capture.html
 http://phantomjs.org/related-projects.html
 https://github.com/superbrothers/capturejs

@@ -13,10 +13,10 @@
     
     <item>
       <title>how to stop docker that always restart</title>
-      <link>https://blog.indonesiadot.com/posts/how-to-stop-docker-that-always-restart/</link>
+      <link>https://blog.indonesiadot.com/how-to-stop-docker-that-always-restart/</link>
       <pubDate>Sun, 11 Aug 2019 08:45:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/posts/how-to-stop-docker-that-always-restart/</guid>
+      <guid>https://blog.indonesiadot.com/how-to-stop-docker-that-always-restart/</guid>
       <description>googling: https://www.google.com/search?q=docker+restart+always+stop
 https://stackoverflow.com/questions/39072357/how-to-stop-a-docker-container-which-started-with-restart-always/39072476
 You can&amp;nbsp;update&amp;nbsp;docker container.use&amp;nbsp;sudo docker update &amp;ndash;restart=no &amp;nbsp;to update&amp;nbsp;&amp;ndash;restart&amp;nbsp;flag of the container.Now you can&amp;nbsp;stop&amp;nbsp;the container.</description>
@@ -24,10 +24,10 @@ You can&amp;nbsp;update&amp;nbsp;docker container.use&amp;nbsp;sudo docker updat
     
     <item>
       <title>simple alert monitoring using simplemonitor</title>
-      <link>https://blog.indonesiadot.com/posts/simple-alert-monitoring-using-simplemonitor/</link>
+      <link>https://blog.indonesiadot.com/simple-alert-monitoring-using-simplemonitor/</link>
       <pubDate>Sun, 11 Aug 2019 08:42:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/posts/simple-alert-monitoring-using-simplemonitor/</guid>
+      <guid>https://blog.indonesiadot.com/simple-alert-monitoring-using-simplemonitor/</guid>
       <description>googling:&amp;nbsp;https://www.google.com/search?q=simple+alert+monitoring
 https://jamesoff.github.io/simplemonitor/
 googling:&amp;nbsp;https://www.google.com/search?q=simplemonitor+docker
@@ -52,10 +52,10 @@ https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writin
     
     <item>
       <title>prometheus grafana</title>
-      <link>https://blog.indonesiadot.com/posts/prometheus-grafana/</link>
+      <link>https://blog.indonesiadot.com/prometheus-grafana/</link>
       <pubDate>Fri, 13 Jul 2018 03:25:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/posts/prometheus-grafana/</guid>
+      <guid>https://blog.indonesiadot.com/prometheus-grafana/</guid>
       <description>http://www.dimasrio.com/search?q=prometheus
 https://www.youtube.com/watch?v=GZWbTch7AbM
 http://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html</description>
@@ -63,10 +63,10 @@ http://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html</descript
     
     <item>
       <title>docker registry / docker private repository tips and tricks</title>
-      <link>https://blog.indonesiadot.com/posts/docker-registry-docker-private-repository-tips-and-tricks/</link>
+      <link>https://blog.indonesiadot.com/docker-registry-/-docker-private-repository-tips-and-tricks/</link>
       <pubDate>Sun, 08 Jul 2018 23:59:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/posts/docker-registry-docker-private-repository-tips-and-tricks/</guid>
+      <guid>https://blog.indonesiadot.com/docker-registry-/-docker-private-repository-tips-and-tricks/</guid>
       <description>https://docs.docker.com/registry/deploying/
 https://github.com/sky-uk/cleanup-docker-registry
 https://github.com/burnettk/delete-docker-registry-image
@@ -75,10 +75,10 @@ https://stackoverflow.com/questions/29802202/docker-registry-2-0-how-to-delete-u
     
     <item>
       <title>Docker things</title>
-      <link>https://blog.indonesiadot.com/posts/docker-things/</link>
+      <link>https://blog.indonesiadot.com/docker-things/</link>
       <pubDate>Sun, 04 Mar 2018 11:11:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/posts/docker-things/</guid>
+      <guid>https://blog.indonesiadot.com/docker-things/</guid>
       <description>Rancherhttps://rancher.com/swarm/https://github.com/MoimHossain/docker-viswarm
 https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host
 docker inspect -f &#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39; containernameorid
@@ -87,10 +87,10 @@ docker inspect -f &#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&
     
     <item>
       <title>Docker monitoring</title>
-      <link>https://blog.indonesiadot.com/posts/docker-monitoring/</link>
+      <link>https://blog.indonesiadot.com/docker-monitoring/</link>
       <pubDate>Thu, 01 Mar 2018 05:24:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/posts/docker-monitoring/</guid>
+      <guid>https://blog.indonesiadot.com/docker-monitoring/</guid>
       <description>http://rancher.com/comparing-monitoring-options-for-docker-deployments/https://logz.io/blog/monitoring-dockerized-elk-stack/must see:https://youtu.be/iRlWqoUVdac </description>
     </item>
     

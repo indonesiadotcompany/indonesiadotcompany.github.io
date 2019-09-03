@@ -13,10 +13,10 @@
     
     <item>
       <title>Ansible tips and trick</title>
-      <link>https://blog.indonesiadot.com/posts/ansible-tips-and-trick/</link>
+      <link>https://blog.indonesiadot.com/ansible-tips-and-trick/</link>
       <pubDate>Wed, 31 Jan 2018 23:30:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/posts/ansible-tips-and-trick/</guid>
+      <guid>https://blog.indonesiadot.com/ansible-tips-and-trick/</guid>
       <description>Ansible gather facts
 Using facter too
 Ref:

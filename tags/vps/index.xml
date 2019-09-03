@@ -13,10 +13,10 @@
     
     <item>
       <title>Xenserver tips and trick</title>
-      <link>https://blog.indonesiadot.com/posts/xenserver-tips-and-trick/</link>
+      <link>https://blog.indonesiadot.com/xenserver-tips-and-trick/</link>
       <pubDate>Wed, 31 Jan 2018 21:30:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/posts/xenserver-tips-and-trick/</guid>
+      <guid>https://blog.indonesiadot.com/xenserver-tips-and-trick/</guid>
       <description>xenserver resize memory command
 Increase RAM for XenServer VM&amp;rsquo;s through Command Line Interface.
 1.If the RAM editing option is graded out through XenCenter.
