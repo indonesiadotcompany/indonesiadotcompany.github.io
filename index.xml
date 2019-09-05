@@ -12,12 +12,29 @@
     
       
         <item>
-          <title>Birau13</title>
-          <link>https://blog.indonesiadot.com/birau13/</link>
+          <title>linux Server Tools</title>
+          <link>https://blog.indonesiadot.com/linux-server-tools/</link>
           <pubDate>Mon, 02 Sep 2019 08:17:58 WIB</pubDate>
           <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/birau13/</guid>
-          <description></description>
+          <guid>https://blog.indonesiadot.com/linux-server-tools/</guid>
+          <description>&lt;p&gt;Tools yang biasa digunakan pada server linux:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Firewall&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;iptables&lt;/li&gt;
+&lt;li&gt;shorewall&lt;/li&gt;
+&lt;li&gt;csf&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Anti Malware&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;maldet (malware detection for web directory)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
         </item>
       
     

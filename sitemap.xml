@@ -7,17 +7,52 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/birau13/</loc>
-    <lastmod>2019-09-02T08:17:58+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/</loc>
     <lastmod>2019-09-02T08:17:58+07:00</lastmod>
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/categories/</loc>
+    <lastmod>2019-09-02T08:17:58+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/categories/linux/</loc>
+    <lastmod>2019-09-02T08:17:58+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
+    <lastmod>2019-09-02T08:17:58+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/linux-server-tools/</loc>
+    <lastmod>2019-09-02T08:17:58+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2019-09-02T08:17:58+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/server/</loc>
+    <lastmod>2019-09-02T08:17:58+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2019-09-02T08:17:58+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
+    <lastmod>2019-09-02T08:17:58+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/tools/</loc>
     <lastmod>2019-09-02T08:17:58+07:00</lastmod>
   </url>
   
@@ -122,22 +157,12 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
-    <lastmod>2019-08-11T08:45:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/monitoring/</loc>
     <lastmod>2019-08-11T08:42:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/python/</loc>
-    <lastmod>2019-08-11T08:42:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/server/</loc>
     <lastmod>2019-08-11T08:42:00+00:00</lastmod>
   </url>
   
@@ -263,11 +288,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/all-about-icinga-monitoring/</loc>
-    <lastmod>2018-04-04T18:45:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
     <lastmod>2018-04-04T18:45:00+00:00</lastmod>
   </url>
   
@@ -659,10 +679,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/portfolio/</loc>
     <lastmod>2006-08-28T03:14:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/categories/</loc>
   </url>
   
   <url>
