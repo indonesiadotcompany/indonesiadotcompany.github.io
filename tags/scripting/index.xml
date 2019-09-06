@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scripting on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/scripting/</link>
+    <description>Recent content in scripting on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Sep 2019 08:17:21 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/scripting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Belajar Git</title>
+      <link>https://blog.indonesiadot.com/belajar-git/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/belajar-git/</guid>
+      <description>Referensi:
+ https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f https://rogerdudler.github.io/git-guide/index.id.html https://medium.com/@amanze.ogbonna/accessing-pushing-to-github-without-username-and-password-3022feb077fb https://stackoverflow.com/questions/18935539/authenticate-with-github-using-a-token  </description>
+    </item>
+    
+    <item>
+      <title>Pembuatan web statis dengan hugo</title>
+      <link>https://blog.indonesiadot.com/pembuatan-web-statis-dengan-hugo/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:16 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/pembuatan-web-statis-dengan-hugo/</guid>
+      <description>Referensi:
+ Tig://gohugo.io/getting-started/quick-start/ https://gohugo.io/hosting-and-deployment/hosting-on-github/ https://themes.gohugo.io/gohugo-theme-ananke/ https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html  </description>
+    </item>
+    
+  </channel>
+</rss>
