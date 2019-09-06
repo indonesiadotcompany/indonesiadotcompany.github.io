@@ -24,6 +24,17 @@
     </item>
     
     <item>
+      <title>Proxmox optimized disk for auto trim / shrink</title>
+      <link>https://blog.indonesiadot.com/proxmox-optimized-disk-for-auto-trim-/-shrink/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:56 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/proxmox-optimized-disk-for-auto-trim-/-shrink/</guid>
+      <description>Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari thin provision storage atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.
+Adapun persyaratan untuk ini yaitu:
+ menggunakan thin provisioned backing storage seperti qcow2, thin-lvm, zfs pada server proxmox nya menggunakan Virtio-SCSI controller pada guest vm nya Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya Tambahkan discard mount options di /etc/fstab nya guest vm Enable fstrim.</description>
+    </item>
+    
+    <item>
       <title>simple alert monitoring using simplemonitor</title>
       <link>https://blog.indonesiadot.com/simple-alert-monitoring-using-simplemonitor/</link>
       <pubDate>Sun, 11 Aug 2019 08:42:00 +0000</pubDate>

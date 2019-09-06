@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>virtualization on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/virtualization/</link>
+    <description>Recent content in virtualization on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Sep 2019 08:17:56 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/virtualization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Proxmox optimized disk for auto trim / shrink</title>
+      <link>https://blog.indonesiadot.com/proxmox-optimized-disk-for-auto-trim-/-shrink/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:56 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/proxmox-optimized-disk-for-auto-trim-/-shrink/</guid>
+      <description>Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari thin provision storage atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.
+Adapun persyaratan untuk ini yaitu:
+ menggunakan thin provisioned backing storage seperti qcow2, thin-lvm, zfs pada server proxmox nya menggunakan Virtio-SCSI controller pada guest vm nya Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya Tambahkan discard mount options di /etc/fstab nya guest vm Enable fstrim.</description>
+    </item>
+    
+  </channel>
+</rss>

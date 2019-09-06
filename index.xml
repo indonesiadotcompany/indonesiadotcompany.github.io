@@ -40,12 +40,32 @@
     
       
         <item>
-          <title>Birau12</title>
-          <link>https://blog.indonesiadot.com/birau12/</link>
+          <title>Proxmox optimized disk for auto trim / shrink</title>
+          <link>https://blog.indonesiadot.com/proxmox-optimized-disk-for-auto-trim-/-shrink/</link>
           <pubDate>Mon, 02 Sep 2019 08:17:56 WIB</pubDate>
           <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/birau12/</guid>
-          <description></description>
+          <guid>https://blog.indonesiadot.com/proxmox-optimized-disk-for-auto-trim-/-shrink/</guid>
+          <description>&lt;p&gt;Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari &lt;em&gt;thin provision storage&lt;/em&gt; atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.&lt;/p&gt;
+
+&lt;p&gt;Adapun persyaratan untuk ini yaitu:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;menggunakan &lt;em&gt;thin provisioned backing storage&lt;/em&gt; seperti qcow2, thin-lvm, zfs pada server proxmox nya&lt;/li&gt;
+&lt;li&gt;menggunakan Virtio-SCSI controller pada guest vm nya&lt;/li&gt;
+&lt;li&gt;Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya&lt;/li&gt;
+&lt;li&gt;Tambahkan discard mount options di /etc/fstab nya guest vm&lt;/li&gt;
+&lt;li&gt;Enable fstrim.timer pada systemctl&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Untuk membuktikannya, sambil mengecek di server proxmox dengan menggunakan command &lt;code&gt;lvs&lt;/code&gt; atau &lt;code&gt;lvdisplay&lt;/code&gt; untuk thin-lvm, atau &lt;code&gt;du -sch&lt;/code&gt; jika memakai qcow2 untuk mengetahui besar file sebelum dan setelah di guest vm nya dijalankan command &lt;code&gt;fstrim -av&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://pve.proxmox.com/wiki/Shrink_Qcow2_Disk_Files&#34;&gt;https://pve.proxmox.com/wiki/Shrink_Qcow2_Disk_Files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/&#34;&gt;https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
         </item>
       
     
