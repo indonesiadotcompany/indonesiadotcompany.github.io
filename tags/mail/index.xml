@@ -13,10 +13,10 @@
     
     <item>
       <title>freebsd mailserver</title>
-      <link>https://blog.indonesiadot.com/freebsd-mailserver/</link>
+      <link>https://blog.indonesiadot.com/2018/05/26/freebsd-mailserver/</link>
       <pubDate>Sat, 26 May 2018 08:04:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/freebsd-mailserver/</guid>
+      <guid>https://blog.indonesiadot.com/2018/05/26/freebsd-mailserver/</guid>
       <description>https://www.sophimail.com/configure-freebsd-email-server-using-postfix-dovecot-mysql-spamassassin/
 https://github.com/sophimail/webadmin
 https://github.com/sophimail/webadmin/blob/master/INSTALLATION.md

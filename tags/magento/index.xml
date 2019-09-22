@@ -13,37 +13,37 @@
     
     <item>
       <title>Jenkins magento 2</title>
-      <link>https://blog.indonesiadot.com/jenkins-magento-2/</link>
+      <link>https://blog.indonesiadot.com/2018/02/13/jenkins-magento-2/</link>
       <pubDate>Tue, 13 Feb 2018 01:05:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/jenkins-magento-2/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/13/jenkins-magento-2/</guid>
       <description>https://cloudkul.com/blog/magento2-continuous-integration-continuous-deployment-using-jenkins/</description>
     </item>
     
     <item>
       <title>Recommended Magento modules</title>
-      <link>https://blog.indonesiadot.com/recommended-magento-modules/</link>
+      <link>https://blog.indonesiadot.com/2018/01/29/recommended-magento-modules/</link>
       <pubDate>Mon, 29 Jan 2018 22:41:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/recommended-magento-modules/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/29/recommended-magento-modules/</guid>
       <description>Ves Megamenu http://guide.landofcoder.com/mega-menu/ http://guide.landofcoder.com/mega-menu-pro/</description>
     </item>
     
     <item>
       <title>Magento Admin tips and trick</title>
-      <link>https://blog.indonesiadot.com/magento-admin-tips-and-trick/</link>
+      <link>https://blog.indonesiadot.com/2018/01/28/magento-admin-tips-and-trick/</link>
       <pubDate>Sun, 28 Jan 2018 20:54:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/magento-admin-tips-and-trick/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/28/magento-admin-tips-and-trick/</guid>
       <description>How to create admin user in Magento 2 via Command Line bin/magento admin:user:create &amp;ndash;admin-user=&amp;ldquo;admin&amp;rdquo; &amp;ndash;admin-password=&amp;ldquo;123123q&amp;rdquo; &amp;ndash;admin-email=&amp;ldquo;admin@example.com&amp;rdquo; &amp;ndash;admin-firstname=&amp;ldquo;Admin&amp;rdquo; &amp;ndash;admin-lastname=&amp;ldquo;Admin&amp;rdquo;</description>
     </item>
     
     <item>
       <title>Install solr server</title>
-      <link>https://blog.indonesiadot.com/install-solr-server/</link>
+      <link>https://blog.indonesiadot.com/2017/09/27/install-solr-server/</link>
       <pubDate>Wed, 27 Sep 2017 20:02:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/install-solr-server/</guid>
+      <guid>https://blog.indonesiadot.com/2017/09/27/install-solr-server/</guid>
       <description>Here are the steps for Install solr server - base of search engine for magento these steps run on ubuntu 16.04, because we follow this http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html, we must install jdk 7 from ppa, but ubuntu 16.04 default with jdk 8 add-apt-repository ppa:openjdk-r/ppa
 apt update
 apt-get install openjdk-7-jdk
@@ -59,10 +59,10 @@ cat &amp;gt;&amp;gt; apps/solr34/example/logging.</description>
     
     <item>
       <title>Magento maintenance mode</title>
-      <link>https://blog.indonesiadot.com/magento-maintenance-mode/</link>
+      <link>https://blog.indonesiadot.com/2017/09/20/magento-maintenance-mode/</link>
       <pubDate>Wed, 20 Sep 2017 23:45:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/magento-maintenance-mode/</guid>
+      <guid>https://blog.indonesiadot.com/2017/09/20/magento-maintenance-mode/</guid>
       <description>To set magento 2 in maintenance mode and to make nice maintenance page.
 1. make / get maintenance image for our maintenance page, ie: maintenance.png
 2. put at pub/errors/default/images directory under magento root directory, ie: /var/www/magento/pub/errors/default/images/maintenance.png

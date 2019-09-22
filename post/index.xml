@@ -13,10 +13,10 @@
     
     <item>
       <title>linux Server Tools</title>
-      <link>https://blog.indonesiadot.com/linux-server-tools/</link>
+      <link>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:58 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/linux-server-tools/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
  Firewall
  iptables shorewall csf  Anti Malware
@@ -25,10 +25,10 @@
     
     <item>
       <title>Proxmox optimized disk for auto trim / shrink</title>
-      <link>https://blog.indonesiadot.com/proxmox-optimized-disk-for-auto-trim-/-shrink/</link>
+      <link>https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:56 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/proxmox-optimized-disk-for-auto-trim-/-shrink/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/</guid>
       <description>Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari thin provision storage atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.
 Adapun persyaratan untuk ini yaitu:
  menggunakan thin provisioned backing storage seperti qcow2, thin-lvm, zfs pada server proxmox nya menggunakan Virtio-SCSI controller pada guest vm nya Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya Tambahkan discard mount options di /etc/fstab nya guest vm Enable fstrim.</description>
@@ -36,94 +36,94 @@ Adapun persyaratan untuk ini yaitu:
     
     <item>
       <title>Birau11</title>
-      <link>https://blog.indonesiadot.com/birau11/</link>
+      <link>https://blog.indonesiadot.com/2019/09/02/birau11/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:54 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/birau11/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/02/birau11/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sepuluh</title>
-      <link>https://blog.indonesiadot.com/sepuluh/</link>
+      <link>https://blog.indonesiadot.com/2019/09/02/sepuluh/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:48 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/sepuluh/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/02/sepuluh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sembilan</title>
-      <link>https://blog.indonesiadot.com/sembilan/</link>
+      <link>https://blog.indonesiadot.com/2019/09/02/sembilan/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:42 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/sembilan/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/02/sembilan/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Delapan</title>
-      <link>https://blog.indonesiadot.com/delapan/</link>
+      <link>https://blog.indonesiadot.com/2019/09/02/delapan/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:36 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/delapan/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/02/delapan/</guid>
       <description></description>
     </item>
     
     <item>
       <title>All about kubernetes</title>
-      <link>https://blog.indonesiadot.com/all-about-kubernetes/</link>
+      <link>https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:33 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/all-about-kubernetes/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/</guid>
       <description>Referensi: https://darxkies.github.io/k8s-tew/_build/html/index.html</description>
     </item>
     
     <item>
       <title>Ubuntu upgrade 14.04 to 16.04 to 18.04</title>
-      <link>https://blog.indonesiadot.com/ubuntu-upgrade-14.04-to-16.04-to-18.04/</link>
+      <link>https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:29 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/ubuntu-upgrade-14.04-to-16.04-to-18.04/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/</guid>
       <description>Referensi: https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4</description>
     </item>
     
     <item>
       <title>Belajar Python dengan MySQL</title>
-      <link>https://blog.indonesiadot.com/belajar-python-dengan-mysql/</link>
+      <link>https://blog.indonesiadot.com/2019/09/02/belajar-python-dengan-mysql/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:25 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/belajar-python-dengan-mysql/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/02/belajar-python-dengan-mysql/</guid>
       <description>Referensi:
 https://monicagranbois.com/blog/python/cron-and-python-virtualenv/ https://www.petanikode.com/python-virtualenv/ https://www.petanikode.com/python-mysql/ https://www.datacamp.com/community/tutorials/mysql-python https://github.com</description>
     </item>
     
     <item>
       <title>Belajar Git</title>
-      <link>https://blog.indonesiadot.com/belajar-git/</link>
+      <link>https://blog.indonesiadot.com/2019/09/02/belajar-git/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/belajar-git/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/02/belajar-git/</guid>
       <description>Referensi:
  https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f https://rogerdudler.github.io/git-guide/index.id.html https://medium.com/@amanze.ogbonna/accessing-pushing-to-github-without-username-and-password-3022feb077fb https://stackoverflow.com/questions/18935539/authenticate-with-github-using-a-token  </description>
     </item>
     
     <item>
       <title>Pembuatan web statis dengan hugo</title>
-      <link>https://blog.indonesiadot.com/pembuatan-web-statis-dengan-hugo/</link>
+      <link>https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:16 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/pembuatan-web-statis-dengan-hugo/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/</guid>
       <description>Referensi:
- Tig://gohugo.io/getting-started/quick-start/ https://gohugo.io/hosting-and-deployment/hosting-on-github/ https://themes.gohugo.io/gohugo-theme-ananke/ https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html  </description>
+ https://gohugo.io/getting-started/quick-start/ https://gohugo.io/hosting-and-deployment/hosting-on-github/ https://themes.gohugo.io/gohugo-theme-ananke/ https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html  </description>
     </item>
     
     <item>
       <title>Migrasi antar hugo</title>
-      <link>https://blog.indonesiadot.com/migrasi-antar-hugo/</link>
+      <link>https://blog.indonesiadot.com/2019/09/02/migrasi-antar-hugo/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:02 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/migrasi-antar-hugo/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/02/migrasi-antar-hugo/</guid>
       <description>To remove a submodule you need to:
 Delete the relevant section from the .gitmodules file. Stage the .gitmodules changes git add .gitmodules Delete the relevant section from .git/config. Run git rm &amp;ndash;cached path_to_submodule (no trailing slash). Run rm -rf .git/modules/path_to_submodule (no trailing slash). Commit git commit -m &amp;ldquo;Removed submodule &amp;ldquo; Delete the now untracked submodule files rm -rf path_to_submodule
 Referensi:
@@ -132,28 +132,28 @@ https://indonesiadot.com https://gist.github.com/myusuf3/7f645819ded92bda6677</d
     
     <item>
       <title>Welcome</title>
-      <link>https://blog.indonesiadot.com/welcome/</link>
+      <link>https://blog.indonesiadot.com/2019/09/01/welcome/</link>
       <pubDate>Sun, 01 Sep 2019 14:12:09 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/welcome/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/01/welcome/</guid>
       <description>Welcome, wilkomen, marhaban, ahlan wa sahlan</description>
     </item>
     
     <item>
       <title>My First Post</title>
-      <link>https://blog.indonesiadot.com/my-first-post/</link>
+      <link>https://blog.indonesiadot.com/2019/09/01/my-first-post/</link>
       <pubDate>Sun, 01 Sep 2019 13:09:15 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/my-first-post/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/01/my-first-post/</guid>
       <description>ini adalah postingan pertama setelah menginstall hugo</description>
     </item>
     
     <item>
       <title>ubuntu 14.04 upgrade to ubuntu 16.04</title>
-      <link>https://blog.indonesiadot.com/ubuntu-14.04-upgrade-to-ubuntu-16.04/</link>
+      <link>https://blog.indonesiadot.com/2019/08/31/ubuntu-14.04-upgrade-to-ubuntu-16.04/</link>
       <pubDate>Sat, 31 Aug 2019 07:25:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/ubuntu-14.04-upgrade-to-ubuntu-16.04/</guid>
+      <guid>https://blog.indonesiadot.com/2019/08/31/ubuntu-14.04-upgrade-to-ubuntu-16.04/</guid>
       <description>https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04
 https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4
 * backup, backup and backup
@@ -162,10 +162,10 @@ sudo apt-get updatesudo apt-get upgradesudo do-release-upgrade -f DistUpgradeVie
     
     <item>
       <title>disable / ignore user process at csf firewall</title>
-      <link>https://blog.indonesiadot.com/disable-/-ignore-user-process-at-csf-firewall/</link>
+      <link>https://blog.indonesiadot.com/2019/08/14/disable-/-ignore-user-process-at-csf-firewall/</link>
       <pubDate>Wed, 14 Aug 2019 16:20:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/disable-/-ignore-user-process-at-csf-firewall/</guid>
+      <guid>https://blog.indonesiadot.com/2019/08/14/disable-/-ignore-user-process-at-csf-firewall/</guid>
       <description>https://www.google.com/search?q=csf+ignore+user
 http://g33kinfo.com/info/archives/3933
 From&amp;nbsp;configserver.comProcess TrackingThis option enables tracking of user and nobody processes and examines them for suspicious executables or open network ports. Its purpose is to identify potential exploit processes that are running on the server, even if they are obfuscated to appear as system services. If a suspicious process is found an alert email is sent with relevant information. It is then the responsibility of the recipient to investigate the process further as the script takes no further action.</description>
@@ -173,10 +173,10 @@ From&amp;nbsp;configserver.comProcess TrackingThis option enables tracking of us
     
     <item>
       <title>simplemonitor with telegram alert</title>
-      <link>https://blog.indonesiadot.com/simplemonitor-with-telegram-alert/</link>
+      <link>https://blog.indonesiadot.com/2019/08/12/simplemonitor-with-telegram-alert/</link>
       <pubDate>Mon, 12 Aug 2019 07:24:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/simplemonitor-with-telegram-alert/</guid>
+      <guid>https://blog.indonesiadot.com/2019/08/12/simplemonitor-with-telegram-alert/</guid>
       <description>https://jamesoff.github.io/simplemonitor/alerting.html
 telegram alertersSend alerts to a Telegram chat.settingdescriptionrequireddefaulttokenThe token to access telegramyes&amp;nbsp;chat_idThe chat to send toyeshttps://www.google.com/search?q=telegram+token
 https://tutorials.botsfloor.com/creating-a-bot-using-the-telegram-bot-api-5d3caed3266d
@@ -189,10 +189,10 @@ Look for the &amp;ldquo;chat&amp;rdquo; object:{&amp;ldquo;update_id&amp;rdquo;:
     
     <item>
       <title>Ubuntu dns local cache for faster dns resolver</title>
-      <link>https://blog.indonesiadot.com/ubuntu-dns-local-cache-for-faster-dns-resolver/</link>
+      <link>https://blog.indonesiadot.com/2019/08/11/ubuntu-dns-local-cache-for-faster-dns-resolver/</link>
       <pubDate>Sun, 11 Aug 2019 08:57:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/ubuntu-dns-local-cache-for-faster-dns-resolver/</guid>
+      <guid>https://blog.indonesiadot.com/2019/08/11/ubuntu-dns-local-cache-for-faster-dns-resolver/</guid>
       <description>googling:&amp;nbsp;https://www.google.com/search?q=ubuntu+dns+local+cache
 https://superuser.com/questions/1291450/how-can-i-run-a-local-caching-dns-resolver-on-ubuntu-14-04
 The easiest way is probably nscd.Install nscd, using the default config.Update /etc/nsswitch.conf and add&amp;nbsp;cache&amp;nbsp;before&amp;nbsp;dns&amp;nbsp;to the hosts line.&amp;nbsp;(Edit: this part is not applicable to glibc as used in most linux distributions but is needed on fbsd)hosts: files cache dnsthen update /etc/resolv.conf at the beginning of the nameserver use 127.0.0.1nameserver 127.0.0.1</description>
@@ -200,10 +200,10 @@ The easiest way is probably nscd.Install nscd, using the default config.Update /
     
     <item>
       <title>nginx tips n trick - 499 code on nginx access logs</title>
-      <link>https://blog.indonesiadot.com/nginx-tips-n-trick-499-code-on-nginx-access-logs/</link>
+      <link>https://blog.indonesiadot.com/2019/08/11/nginx-tips-n-trick-499-code-on-nginx-access-logs/</link>
       <pubDate>Sun, 11 Aug 2019 08:55:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/nginx-tips-n-trick-499-code-on-nginx-access-logs/</guid>
+      <guid>https://blog.indonesiadot.com/2019/08/11/nginx-tips-n-trick-499-code-on-nginx-access-logs/</guid>
       <description>googling: https://www.google.com/search?q=499+http+code
 https://stackoverflow.com/questions/12973304/nginx-499-error-codes
 In my case I got 499 when the client&amp;rsquo;s API closed the connection before it gets any response. Literally sent a POST and immediately close the connection. This is resolved by option:
@@ -213,10 +213,10 @@ I dont understand how does this help&amp;nbsp;–&amp;nbsp;Vladimir Starkov&amp;
     
     <item>
       <title>how to stop docker that always restart</title>
-      <link>https://blog.indonesiadot.com/how-to-stop-docker-that-always-restart/</link>
+      <link>https://blog.indonesiadot.com/2019/08/11/how-to-stop-docker-that-always-restart/</link>
       <pubDate>Sun, 11 Aug 2019 08:45:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/how-to-stop-docker-that-always-restart/</guid>
+      <guid>https://blog.indonesiadot.com/2019/08/11/how-to-stop-docker-that-always-restart/</guid>
       <description>googling: https://www.google.com/search?q=docker+restart+always+stop
 https://stackoverflow.com/questions/39072357/how-to-stop-a-docker-container-which-started-with-restart-always/39072476
 You can&amp;nbsp;update&amp;nbsp;docker container.use&amp;nbsp;sudo docker update &amp;ndash;restart=no &amp;nbsp;to update&amp;nbsp;&amp;ndash;restart&amp;nbsp;flag of the container.Now you can&amp;nbsp;stop&amp;nbsp;the container.</description>
@@ -224,10 +224,10 @@ You can&amp;nbsp;update&amp;nbsp;docker container.use&amp;nbsp;sudo docker updat
     
     <item>
       <title>simple alert monitoring using simplemonitor</title>
-      <link>https://blog.indonesiadot.com/simple-alert-monitoring-using-simplemonitor/</link>
+      <link>https://blog.indonesiadot.com/2019/08/11/simple-alert-monitoring-using-simplemonitor/</link>
       <pubDate>Sun, 11 Aug 2019 08:42:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/simple-alert-monitoring-using-simplemonitor/</guid>
+      <guid>https://blog.indonesiadot.com/2019/08/11/simple-alert-monitoring-using-simplemonitor/</guid>
       <description>googling:&amp;nbsp;https://www.google.com/search?q=simple+alert+monitoring
 https://jamesoff.github.io/simplemonitor/
 googling:&amp;nbsp;https://www.google.com/search?q=simplemonitor+docker
@@ -252,10 +252,10 @@ https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writin
     
     <item>
       <title>Petunjuk hidup widya nugraha based on al-quran dan hadits nabi</title>
-      <link>https://blog.indonesiadot.com/petunjuk-hidup-widya-nugraha-based-on-al-quran-dan-hadits-nabi/</link>
+      <link>https://blog.indonesiadot.com/2018/08/09/petunjuk-hidup-widya-nugraha-based-on-al-quran-dan-hadits-nabi/</link>
       <pubDate>Thu, 09 Aug 2018 04:03:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/petunjuk-hidup-widya-nugraha-based-on-al-quran-dan-hadits-nabi/</guid>
+      <guid>https://blog.indonesiadot.com/2018/08/09/petunjuk-hidup-widya-nugraha-based-on-al-quran-dan-hadits-nabi/</guid>
       <description>Petunjuk hidup widya nugraha based on al-quran dan hadits nabi
 * Sebelum lahir di rahim ibu dengan kasih sayang, sesuai dengan nama Allah Ar Rohiim, Yang Maha Penyayang, hakikat (sebenar/sesungguh) nya Allah Yang Menyayangi dan kita sebagai orang tua harus saling menyayangi, bapak, ibu, anak.
 * Setelah lahir dari bayi proses keajaiban yang menunjukan kekuasaan Allah, hakikatnya itu semua karena Allah Yang Maha Pencipta, Yang Maha menjadikan yang baru, Yang Maha membentuk dan atas rahmat Allah Yang Maha Pengasih dan Maha Penyayang, maka sebagai orang yang menyaksikan harus meyakini itu, berdoa, berpasrah, berusaha untuk menjaga ciptaan Allah yang sudah dititipkan / diamanatkan kepada orang tua, dan anak harus tahu cerita ini dan hakikatnya agar menjadi anak yang sadar sedari awal dan dapat hidup lebih baik di dunia dan akhirat, perjalanan dari awal sampai akhir semoga lebih baik.</description>
@@ -263,10 +263,10 @@ https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writin
     
     <item>
       <title>recovery procedure</title>
-      <link>https://blog.indonesiadot.com/recovery-procedure/</link>
+      <link>https://blog.indonesiadot.com/2018/08/06/recovery-procedure/</link>
       <pubDate>Mon, 06 Aug 2018 17:45:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/recovery-procedure/</guid>
+      <guid>https://blog.indonesiadot.com/2018/08/06/recovery-procedure/</guid>
       <description>boot dari live cd (latest centos based is preferable)
 rsync semua file yang bisa ke harddisk backup
 ddrescue harddisk lama ke harddisk baru yang sama size nya
@@ -278,10 +278,10 @@ https://tthtlc.wordpress.com/2014/09/16/how-to-install-reiserfs-in-centos/</desc
     
     <item>
       <title>Linux load / stress test</title>
-      <link>https://blog.indonesiadot.com/linux-load-/-stress-test/</link>
+      <link>https://blog.indonesiadot.com/2018/07/28/linux-load-/-stress-test/</link>
       <pubDate>Sat, 28 Jul 2018 08:41:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/linux-load-/-stress-test/</guid>
+      <guid>https://blog.indonesiadot.com/2018/07/28/linux-load-/-stress-test/</guid>
       <description>stress -c 8 -i 9 -m 9 --vm-bytes 1024M
 Note:
 Package for centos 7 https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2</description>
@@ -289,10 +289,10 @@ Package for centos 7 https://unix.stackexchange.com/questions/289588/no-package-
     
     <item>
       <title>zfs cool feature, snapshot, replicate, etc</title>
-      <link>https://blog.indonesiadot.com/zfs-cool-feature-snapshot-replicate-etc/</link>
+      <link>https://blog.indonesiadot.com/2018/07/15/zfs-cool-feature-snapshot-replicate-etc/</link>
       <pubDate>Sun, 15 Jul 2018 16:55:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/zfs-cool-feature-snapshot-replicate-etc/</guid>
+      <guid>https://blog.indonesiadot.com/2018/07/15/zfs-cool-feature-snapshot-replicate-etc/</guid>
       <description>https://www.google.co.id/search?q=zfs+remote+replication
 https://www.howtoforge.com/tutorial/how-to-use-snapshots-clones-and-replication-in-zfs-on-linux/
 https://zpool.org/zfs-snapshots-and-remote-replication/
@@ -301,20 +301,20 @@ http://www.zfsnap.org/docs.html</description>
     
     <item>
       <title>belajar usaha</title>
-      <link>https://blog.indonesiadot.com/belajar-usaha/</link>
+      <link>https://blog.indonesiadot.com/2018/07/13/belajar-usaha/</link>
       <pubDate>Fri, 13 Jul 2018 16:57:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/belajar-usaha/</guid>
+      <guid>https://blog.indonesiadot.com/2018/07/13/belajar-usaha/</guid>
       <description>http://www.belajareksporimpor.com/author/samian-pacing
 http://www.dimasrio.com/2017/01/peluang-usaha-untuk-mencari-pasif-income.html</description>
     </item>
     
     <item>
       <title>prometheus grafana</title>
-      <link>https://blog.indonesiadot.com/prometheus-grafana/</link>
+      <link>https://blog.indonesiadot.com/2018/07/13/prometheus-grafana/</link>
       <pubDate>Fri, 13 Jul 2018 03:25:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/prometheus-grafana/</guid>
+      <guid>https://blog.indonesiadot.com/2018/07/13/prometheus-grafana/</guid>
       <description>http://www.dimasrio.com/search?q=prometheus
 https://www.youtube.com/watch?v=GZWbTch7AbM
 http://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html</description>
@@ -322,10 +322,10 @@ http://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html</descript
     
     <item>
       <title>docker registry / docker private repository tips and tricks</title>
-      <link>https://blog.indonesiadot.com/docker-registry-/-docker-private-repository-tips-and-tricks/</link>
+      <link>https://blog.indonesiadot.com/2018/07/08/docker-registry-/-docker-private-repository-tips-and-tricks/</link>
       <pubDate>Sun, 08 Jul 2018 23:59:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/docker-registry-/-docker-private-repository-tips-and-tricks/</guid>
+      <guid>https://blog.indonesiadot.com/2018/07/08/docker-registry-/-docker-private-repository-tips-and-tricks/</guid>
       <description>https://docs.docker.com/registry/deploying/
 https://github.com/sky-uk/cleanup-docker-registry
 https://github.com/burnettk/delete-docker-registry-image
@@ -334,10 +334,10 @@ https://stackoverflow.com/questions/29802202/docker-registry-2-0-how-to-delete-u
     
     <item>
       <title>Wid think about health in global perspective - kesehatan</title>
-      <link>https://blog.indonesiadot.com/wid-think-about-health-in-global-perspective-kesehatan/</link>
+      <link>https://blog.indonesiadot.com/2018/07/04/wid-think-about-health-in-global-perspective-kesehatan/</link>
       <pubDate>Wed, 04 Jul 2018 12:07:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/wid-think-about-health-in-global-perspective-kesehatan/</guid>
+      <guid>https://blog.indonesiadot.com/2018/07/04/wid-think-about-health-in-global-perspective-kesehatan/</guid>
       <description>Health is main / important thing that must be in top priority in this world.
 Actually if we go around to many place, we can see the real situation that many of the elderly is have some same disease pattern, like diabetes, high cholesterol, stroke, cancer, etc.
 And unfortunately it happen not to only poor people that suffer from this disease pattern, but to rich people too.
@@ -346,10 +346,10 @@ And one of the major cause of it is because the food that we eat, the drinks tha
     
     <item>
       <title>Wid think about education - pendidikan</title>
-      <link>https://blog.indonesiadot.com/wid-think-about-education-pendidikan/</link>
+      <link>https://blog.indonesiadot.com/2018/07/04/wid-think-about-education-pendidikan/</link>
       <pubDate>Wed, 04 Jul 2018 11:44:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/wid-think-about-education-pendidikan/</guid>
+      <guid>https://blog.indonesiadot.com/2018/07/04/wid-think-about-education-pendidikan/</guid>
       <description>Formal education in indonesia (maybe mostly on this world) should be restructurized to get better result oriented based on unique student / unique human characteristic.
 every human is have own unique characteristic that can be group to several pattern, like there are some student that good / interest in linguistic, there are good in math, there are good in physical things, there are good in business, etx.
 Unfortunately the education in indonesia or maybe mostly in this world is designed to make a &#39;worker style&#39; people, worker in mean of people who work at office / building / industry, and that is not suit to some people who have talent in business, people who have talent in inventing something that will change the world better and or other people who hate job as a worker.</description>
@@ -357,10 +357,10 @@ Unfortunately the education in indonesia or maybe mostly in this world is design
     
     <item>
       <title>wordpress tips and trick</title>
-      <link>https://blog.indonesiadot.com/wordpress-tips-and-trick/</link>
+      <link>https://blog.indonesiadot.com/2018/05/30/wordpress-tips-and-trick/</link>
       <pubDate>Wed, 30 May 2018 01:14:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/wordpress-tips-and-trick/</guid>
+      <guid>https://blog.indonesiadot.com/2018/05/30/wordpress-tips-and-trick/</guid>
       <description>themes
 
 native themes&amp;nbsp;nativewptheme.net
@@ -384,10 +384,10 @@ Thanks</description>
     
     <item>
       <title>freebsd mailserver</title>
-      <link>https://blog.indonesiadot.com/freebsd-mailserver/</link>
+      <link>https://blog.indonesiadot.com/2018/05/26/freebsd-mailserver/</link>
       <pubDate>Sat, 26 May 2018 08:04:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/freebsd-mailserver/</guid>
+      <guid>https://blog.indonesiadot.com/2018/05/26/freebsd-mailserver/</guid>
       <description>https://www.sophimail.com/configure-freebsd-email-server-using-postfix-dovecot-mysql-spamassassin/
 https://github.com/sophimail/webadmin
 https://github.com/sophimail/webadmin/blob/master/INSTALLATION.md
@@ -400,10 +400,10 @@ ispconfig nice to try :)</description>
     
     <item>
       <title>belajar privacy (basic security on the internet)</title>
-      <link>https://blog.indonesiadot.com/belajar-privacy-basic-security-on-the-internet/</link>
+      <link>https://blog.indonesiadot.com/2018/05/26/belajar-privacy-basic-security-on-the-internet/</link>
       <pubDate>Sat, 26 May 2018 07:34:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/belajar-privacy-basic-security-on-the-internet/</guid>
+      <guid>https://blog.indonesiadot.com/2018/05/26/belajar-privacy-basic-security-on-the-internet/</guid>
       <description>Alamat / url untuk belajar privacy di internet
 https://www.privacytools.io/
 dapat dari:
@@ -415,10 +415,10 @@ http://www.freebsd.org/</description>
     
     <item>
       <title>belajar ispconfig webhosting control panel</title>
-      <link>https://blog.indonesiadot.com/belajar-ispconfig-webhosting-control-panel/</link>
+      <link>https://blog.indonesiadot.com/2018/05/26/belajar-ispconfig-webhosting-control-panel/</link>
       <pubDate>Sat, 26 May 2018 07:10:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/belajar-ispconfig-webhosting-control-panel/</guid>
+      <guid>https://blog.indonesiadot.com/2018/05/26/belajar-ispconfig-webhosting-control-panel/</guid>
       <description>Berikut adalah alamat / url tutorial untuk belajar instalasi / setup ispconfig webhosting control panel :
 https://www.howtoforge.com/tutorial/perfect-server-ubuntu-with-nginx-and-ispconfig-3/3/
 https://www.howtoforge.com/tutorial/securing-ispconfig-3-with-a-free-lets-encrypt-ssl-certificate/
@@ -428,10 +428,10 @@ https://www.howtoforge.com/community/threads/install-monit.64712/</description>
     
     <item>
       <title>perubahan era webhosting</title>
-      <link>https://blog.indonesiadot.com/perubahan-era-webhosting/</link>
+      <link>https://blog.indonesiadot.com/2018/05/26/perubahan-era-webhosting/</link>
       <pubDate>Sat, 26 May 2018 06:54:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/perubahan-era-webhosting/</guid>
+      <guid>https://blog.indonesiadot.com/2018/05/26/perubahan-era-webhosting/</guid>
       <description>Sebelum tahun 2000 website merupakan barang berharga di indonesia, meski sudah marak di luar negeri, dengan berbagai konten dinamis seperti portal berita dan konten statik menggunakan html dan animasi css, js dan flash yang baru muncul pada tahun 1996.
 Tahun 2000 era webhosting bermunculan di indonesia, baru beberapa pemain besar webhosting yang bermain, website sudah makin marak.
 Tahun 2005 era webhosting dengan pemain baru bermunculan, di awali dengan hadirnya CMS seperti joomla dan CMS lain yang memudahkan pembuatan website instant, era website dinamis.</description>
@@ -439,10 +439,10 @@ Tahun 2005 era webhosting dengan pemain baru bermunculan, di awali dengan hadirn
     
     <item>
       <title>All about icinga monitoring</title>
-      <link>https://blog.indonesiadot.com/all-about-icinga-monitoring/</link>
+      <link>https://blog.indonesiadot.com/2018/04/04/all-about-icinga-monitoring/</link>
       <pubDate>Wed, 04 Apr 2018 18:45:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/all-about-icinga-monitoring/</guid>
+      <guid>https://blog.indonesiadot.com/2018/04/04/all-about-icinga-monitoring/</guid>
       <description>icinga2 installation on ubuntu 16
 https://www.icinga.com/docs/icinga2/latest/doc/02-getting-started/
 https://www.icinga.com/docs/icingaweb2/latest/doc/02-Installation/
@@ -456,10 +456,10 @@ added a line into the servicedefinition:Codeapply Service &amp;ldquo;ssh&amp;rdq
     
     <item>
       <title>Air alkali</title>
-      <link>https://blog.indonesiadot.com/air-alkali/</link>
+      <link>https://blog.indonesiadot.com/2018/03/27/air-alkali/</link>
       <pubDate>Tue, 27 Mar 2018 04:18:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/air-alkali/</guid>
+      <guid>https://blog.indonesiadot.com/2018/03/27/air-alkali/</guid>
       <description>Listrik AC 220 volt (atau lebih)
 Colokan listrik
 Kabel listrik
@@ -473,20 +473,20 @@ http://oyee-ihiiir.blogspot.co.id/2016/06/cara-membuat-air-alkali-dari-air-hujan
     
     <item>
       <title>Xenserver provisioning with ansible</title>
-      <link>https://blog.indonesiadot.com/xenserver-provisioning-with-ansible/</link>
+      <link>https://blog.indonesiadot.com/2018/03/19/xenserver-provisioning-with-ansible/</link>
       <pubDate>Mon, 19 Mar 2018 21:56:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/xenserver-provisioning-with-ansible/</guid>
+      <guid>https://blog.indonesiadot.com/2018/03/19/xenserver-provisioning-with-ansible/</guid>
       <description>https://medium.com/@jrisch/using-ansible-to-automate-vm-creation-on-xenserver-d092aa484a06
 Using Ansible to automate VM creation on XenServerI’ve been using Xenserver at Fab:IT for the last 8 or 9 years, and during that time, I’ve automated the installation of, mostly Debian and Ubuntu, VM’s in several ways. The most successful way, was a shell script with certain sane defaults built in, combined with preseed files for the various Debian and Ubuntu versions, and small shell scripts for handling the installation of Xentools in the VM, after the initial reboot.</description>
     </item>
     
     <item>
       <title>Winbox Under Linux</title>
-      <link>https://blog.indonesiadot.com/winbox-under-linux/</link>
+      <link>https://blog.indonesiadot.com/2018/03/07/winbox-under-linux/</link>
       <pubDate>Wed, 07 Mar 2018 00:26:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/winbox-under-linux/</guid>
+      <guid>https://blog.indonesiadot.com/2018/03/07/winbox-under-linux/</guid>
       <description>https://www.google.co.id/search?q=winbox+under+linux
 https://github.com/mriza/winbox-installer
 https://udariza.wordpress.com/</description>
@@ -494,10 +494,10 @@ https://udariza.wordpress.com/</description>
     
     <item>
       <title>ssl expiry check</title>
-      <link>https://blog.indonesiadot.com/ssl-expiry-check/</link>
+      <link>https://blog.indonesiadot.com/2018/03/04/ssl-expiry-check/</link>
       <pubDate>Sun, 04 Mar 2018 21:22:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/ssl-expiry-check/</guid>
+      <guid>https://blog.indonesiadot.com/2018/03/04/ssl-expiry-check/</guid>
       <description>https://www.google.co.id/search?q=ssl+expiry+check
 https://github.com/Matty9191/ssl-cert-check
 https://prefetch.net/articles/checkcertificate.html
@@ -506,10 +506,10 @@ ssl-cert-check -s mail.prefetch.net -p 443</description>
     
     <item>
       <title>digitalocean DO cli</title>
-      <link>https://blog.indonesiadot.com/digitalocean-do-cli/</link>
+      <link>https://blog.indonesiadot.com/2018/03/04/digitalocean-do-cli/</link>
       <pubDate>Sun, 04 Mar 2018 20:58:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/digitalocean-do-cli/</guid>
+      <guid>https://blog.indonesiadot.com/2018/03/04/digitalocean-do-cli/</guid>
       <description>digitalocean snapshot and recreate based on that snapshot (clone like)
 doctl compute droplet-action snapshot DropletID &amp;ndash;snapshot-name SnapshotName
 doctl compute droplet-action snapshot 83360000 &amp;ndash;snapshot-name 20180303-birau-snap
@@ -519,20 +519,20 @@ doctl compute droplet create birau-server-2 &amp;ndash;size 512mb &amp;ndash;ima
     
     <item>
       <title>aws tips and tricks</title>
-      <link>https://blog.indonesiadot.com/aws-tips-and-tricks/</link>
+      <link>https://blog.indonesiadot.com/2018/03/04/aws-tips-and-tricks/</link>
       <pubDate>Sun, 04 Mar 2018 20:40:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/aws-tips-and-tricks/</guid>
+      <guid>https://blog.indonesiadot.com/2018/03/04/aws-tips-and-tricks/</guid>
       <description>aws clone
 The easier way is through the web management console:go to the instanceselect the instance and click on instance actioncreate imageOnce you have an image you can launch another cloned instance, data and all. :)</description>
     </item>
     
     <item>
       <title>elasticsearch tips and tricks</title>
-      <link>https://blog.indonesiadot.com/elasticsearch-tips-and-tricks/</link>
+      <link>https://blog.indonesiadot.com/2018/03/04/elasticsearch-tips-and-tricks/</link>
       <pubDate>Sun, 04 Mar 2018 20:36:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/elasticsearch-tips-and-tricks/</guid>
+      <guid>https://blog.indonesiadot.com/2018/03/04/elasticsearch-tips-and-tricks/</guid>
       <description>elasticsearch list indexes
 https://www.google.co.id/search?q=elasticsearch+list+indexes
 https://www.elastic.co/guide/en/elasticsearch/reference/1.4/_list_all_indexes.html
@@ -558,10 +558,10 @@ script.indexed: on</description>
     
     <item>
       <title>Docker things</title>
-      <link>https://blog.indonesiadot.com/docker-things/</link>
+      <link>https://blog.indonesiadot.com/2018/03/04/docker-things/</link>
       <pubDate>Sun, 04 Mar 2018 11:11:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/docker-things/</guid>
+      <guid>https://blog.indonesiadot.com/2018/03/04/docker-things/</guid>
       <description>Rancherhttps://rancher.com/swarm/https://github.com/MoimHossain/docker-viswarm
 https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host
 docker inspect -f &#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39; containernameorid
@@ -570,39 +570,39 @@ docker inspect -f &#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&
     
     <item>
       <title>Docker monitoring</title>
-      <link>https://blog.indonesiadot.com/docker-monitoring/</link>
+      <link>https://blog.indonesiadot.com/2018/03/01/docker-monitoring/</link>
       <pubDate>Thu, 01 Mar 2018 05:24:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/docker-monitoring/</guid>
+      <guid>https://blog.indonesiadot.com/2018/03/01/docker-monitoring/</guid>
       <description>http://rancher.com/comparing-monitoring-options-for-docker-deployments/https://logz.io/blog/monitoring-dockerized-elk-stack/must see:https://youtu.be/iRlWqoUVdac </description>
     </item>
     
     <item>
       <title>Elastic beats</title>
-      <link>https://blog.indonesiadot.com/elastic-beats/</link>
+      <link>https://blog.indonesiadot.com/2018/02/25/elastic-beats/</link>
       <pubDate>Sun, 25 Feb 2018 10:51:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/elastic-beats/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/25/elastic-beats/</guid>
       <description>https://www.elastic.co/products/beats
 https://www.elastic.co/guide/en/beats/libbeat/current/community-beats.html</description>
     </item>
     
     <item>
       <title>invoice ninja free open source invoicing system</title>
-      <link>https://blog.indonesiadot.com/invoice-ninja-free-open-source-invoicing-system/</link>
+      <link>https://blog.indonesiadot.com/2018/02/22/invoice-ninja-free-open-source-invoicing-system/</link>
       <pubDate>Thu, 22 Feb 2018 11:12:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/invoice-ninja-free-open-source-invoicing-system/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/22/invoice-ninja-free-open-source-invoicing-system/</guid>
       <description>https://www.invoiceninja.org/
 https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/</description>
     </item>
     
     <item>
       <title>graphite grafana things</title>
-      <link>https://blog.indonesiadot.com/graphite-grafana-things/</link>
+      <link>https://blog.indonesiadot.com/2018/02/22/graphite-grafana-things/</link>
       <pubDate>Thu, 22 Feb 2018 11:08:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/graphite-grafana-things/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/22/graphite-grafana-things/</guid>
       <description>https://statusengine.org/tutorials/Graphite-Grafana/
 https://www.unixmen.com/full-monitoring-system-graphite-collectd-statsd-part-1/
 Grafana vs kibana
@@ -615,10 +615,10 @@ http://www.linux-admins.net/2012/02/how-to-install-and-use-graphite.html</descri
     
     <item>
       <title>All about amazon aws s3</title>
-      <link>https://blog.indonesiadot.com/all-about-amazon-aws-s3/</link>
+      <link>https://blog.indonesiadot.com/2018/02/21/all-about-amazon-aws-s3/</link>
       <pubDate>Wed, 21 Feb 2018 23:18:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/all-about-amazon-aws-s3/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/21/all-about-amazon-aws-s3/</guid>
       <description>https://github.com/aws/aws-cli
 https://github.com/s3tools/s3cmd
 https://serverfault.com/questions/84815/how-can-i-get-the-size-of-an-amazon-s3-bucket
@@ -635,19 +635,19 @@ https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html</description>
     
     <item>
       <title>Nginx tips and trick</title>
-      <link>https://blog.indonesiadot.com/nginx-tips-and-trick/</link>
+      <link>https://blog.indonesiadot.com/2018/02/19/nginx-tips-and-trick/</link>
       <pubDate>Mon, 19 Feb 2018 10:18:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/nginx-tips-and-trick/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/19/nginx-tips-and-trick/</guid>
       <description>https://www.sitepoint.com/brotli-compression-wordpress/</description>
     </item>
     
     <item>
       <title>Munin nginx</title>
-      <link>https://blog.indonesiadot.com/munin-nginx/</link>
+      <link>https://blog.indonesiadot.com/2018/02/17/munin-nginx/</link>
       <pubDate>Sat, 17 Feb 2018 10:41:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/munin-nginx/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/17/munin-nginx/</guid>
       <description>http://guide.munin-monitoring.org/en/stable-2.0/example/webserver/nginx.html
 http://guide.munin-monitoring.org/en/latest/example/webserver/nginx.html
 http://iinclude.in/2017/12/03/how-to-install-the-munin-monitoring-tool-on-ubuntu-16-04-with-nginx/
@@ -660,10 +660,10 @@ https://prefetch.net/blog/index.php/2011/07/13/gathering-statistics-from-your-po
     
     <item>
       <title>Linux server monitoring</title>
-      <link>https://blog.indonesiadot.com/linux-server-monitoring/</link>
+      <link>https://blog.indonesiadot.com/2018/02/16/linux-server-monitoring/</link>
       <pubDate>Fri, 16 Feb 2018 05:28:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/linux-server-monitoring/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/16/linux-server-monitoring/</guid>
       <description>https://blog.serverdensity.com/80-linux-monitoring-tools-know/
 https://logz.io/blog/grafana-vs-kibana/
 http://docs.grafana.org/features/datasources/</description>
@@ -671,57 +671,57 @@ http://docs.grafana.org/features/datasources/</description>
     
     <item>
       <title>TODO jenkins</title>
-      <link>https://blog.indonesiadot.com/todo-jenkins/</link>
+      <link>https://blog.indonesiadot.com/2018/02/15/todo-jenkins/</link>
       <pubDate>Thu, 15 Feb 2018 18:47:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/todo-jenkins/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/15/todo-jenkins/</guid>
       <description>https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04</description>
     </item>
     
     <item>
       <title>learn ansible php</title>
-      <link>https://blog.indonesiadot.com/learn-ansible-php/</link>
+      <link>https://blog.indonesiadot.com/2018/02/14/learn-ansible-php/</link>
       <pubDate>Wed, 14 Feb 2018 19:28:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/learn-ansible-php/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/14/learn-ansible-php/</guid>
       <description>https://knpuniversity.com/screencast/ansible/ansible-composer</description>
     </item>
     
     <item>
       <title>Jenkins magento 2</title>
-      <link>https://blog.indonesiadot.com/jenkins-magento-2/</link>
+      <link>https://blog.indonesiadot.com/2018/02/13/jenkins-magento-2/</link>
       <pubDate>Tue, 13 Feb 2018 01:05:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/jenkins-magento-2/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/13/jenkins-magento-2/</guid>
       <description>https://cloudkul.com/blog/magento2-continuous-integration-continuous-deployment-using-jenkins/</description>
     </item>
     
     <item>
       <title>Al Qur-aan</title>
-      <link>https://blog.indonesiadot.com/al-qur-aan/</link>
+      <link>https://blog.indonesiadot.com/2018/02/10/al-qur-aan/</link>
       <pubDate>Sat, 10 Feb 2018 16:41:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/al-qur-aan/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/10/al-qur-aan/</guid>
       <description>http://kalamullah.com/quran.html
 http://www.quranic-healing.com/2012/01/download-audio-ruqyah-mp3.html?m=1</description>
     </item>
     
     <item>
       <title>AWS (amazon web services) learning</title>
-      <link>https://blog.indonesiadot.com/aws-amazon-web-services-learning/</link>
+      <link>https://blog.indonesiadot.com/2018/02/09/aws-amazon-web-services-learning/</link>
       <pubDate>Fri, 09 Feb 2018 03:55:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/aws-amazon-web-services-learning/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/09/aws-amazon-web-services-learning/</guid>
       <description>https://blog.serverless.id/post/kursus-gratis-aws-di-udemy/
 https://www.udemy.com/aws-essentials</description>
     </item>
     
     <item>
       <title>nginx php-fpm tuning for best performance</title>
-      <link>https://blog.indonesiadot.com/nginx-php-fpm-tuning-for-best-performance/</link>
+      <link>https://blog.indonesiadot.com/2018/02/09/nginx-php-fpm-tuning-for-best-performance/</link>
       <pubDate>Fri, 09 Feb 2018 01:26:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/nginx-php-fpm-tuning-for-best-performance/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/09/nginx-php-fpm-tuning-for-best-performance/</guid>
       <description>&amp;lt;!&amp;ndash;td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}
 &amp;ndash;&amp;gt;
 /etc/nginx/nginx.confworker_processes 8;note: dont make auto, try to raise the worker process to get the good result, from 8, 16 or 20, and keep the good oneworker_connections 19000;worker_rlimit_nofile 20000;note: try to raise the worker connection and workekr_rlimit_nofile to get the good result, and keep the good oneworker_processes 16;events {worker_connections 30000;worker_rlimit_nofile 31000;}http {open_file_cache max=100000 inactive=10s;open_file_cache_valid 120s;/etc/nginx/sites-enable/sophieparis.confupstream backend {server unix:/run/php/pool1-fpm.sock weight=100 max_fails=5 fail_timeout=5;server unix:/run/php/pool2-fpm.sock weight=100 max_fails=5 fail_timeout=5;server unix:/run/php/pool3-fpm.</description>
@@ -729,20 +729,20 @@ https://www.udemy.com/aws-essentials</description>
     
     <item>
       <title>Bash script tips and trick</title>
-      <link>https://blog.indonesiadot.com/bash-script-tips-and-trick/</link>
+      <link>https://blog.indonesiadot.com/2018/02/04/bash-script-tips-and-trick/</link>
       <pubDate>Sun, 04 Feb 2018 23:20:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/bash-script-tips-and-trick/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/04/bash-script-tips-and-trick/</guid>
       <description>bash or and
 How to Use Logical OR &amp;amp; AND in Shell Script with ExamplesLogical&amp;nbsp;OR&amp;nbsp;&amp;amp;&amp;nbsp;AND&amp;nbsp;operations are very useful where multiple conditions are used in our programs (scripts).OR&amp;nbsp;is used between two or multiple conditions. It returns true if any one of conditions returns as true.AND&amp;nbsp;is used between two or multiple conditions. It returns true only if all the conditions returns as true.Using Logical ORLogical OR in bash script is used with operator -o.</description>
     </item>
     
     <item>
       <title>Ansible tips and trick</title>
-      <link>https://blog.indonesiadot.com/ansible-tips-and-trick/</link>
+      <link>https://blog.indonesiadot.com/2018/01/31/ansible-tips-and-trick/</link>
       <pubDate>Wed, 31 Jan 2018 23:30:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/ansible-tips-and-trick/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/31/ansible-tips-and-trick/</guid>
       <description>Ansible gather facts
 Using facter too
 Ref:
@@ -751,10 +751,10 @@ http://docs.ansible.com/ansible/latest/setup_module.html#examples</description>
     
     <item>
       <title>Linux Security tools</title>
-      <link>https://blog.indonesiadot.com/linux-security-tools/</link>
+      <link>https://blog.indonesiadot.com/2018/01/31/linux-security-tools/</link>
       <pubDate>Wed, 31 Jan 2018 21:32:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/linux-security-tools/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/31/linux-security-tools/</guid>
       <description>Tripwire
 ref:
 https://github.com/Tripwire/tripwire-open-source
@@ -763,10 +763,10 @@ https://www.upguard.com/articles/tripwire-enterprise-vs.-tripwire-open-source</d
     
     <item>
       <title>Xenserver tips and trick</title>
-      <link>https://blog.indonesiadot.com/xenserver-tips-and-trick/</link>
+      <link>https://blog.indonesiadot.com/2018/01/31/xenserver-tips-and-trick/</link>
       <pubDate>Wed, 31 Jan 2018 21:30:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/xenserver-tips-and-trick/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/31/xenserver-tips-and-trick/</guid>
       <description>xenserver resize memory command
 Increase RAM for XenServer VM&amp;rsquo;s through Command Line Interface.
 1.If the RAM editing option is graded out through XenCenter.
@@ -782,10 +782,10 @@ Example :
     
     <item>
       <title>TODO ansible 201802</title>
-      <link>https://blog.indonesiadot.com/todo-ansible-201802/</link>
+      <link>https://blog.indonesiadot.com/2018/01/31/todo-ansible-201802/</link>
       <pubDate>Wed, 31 Jan 2018 20:54:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/todo-ansible-201802/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/31/todo-ansible-201802/</guid>
       <description>Ansible tower
 Ansible awx
 Ansible for magento
@@ -807,10 +807,10 @@ tunggu beberapa saat lalu akses via http, misal http://localhost dengan user adm
     
     <item>
       <title>TODO web page monitoring and alert when change</title>
-      <link>https://blog.indonesiadot.com/todo-web-page-monitoring-and-alert-when-change/</link>
+      <link>https://blog.indonesiadot.com/2018/01/31/todo-web-page-monitoring-and-alert-when-change/</link>
       <pubDate>Wed, 31 Jan 2018 20:50:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/todo-web-page-monitoring-and-alert-when-change/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/31/todo-web-page-monitoring-and-alert-when-change/</guid>
       <description>Finally it using ariya phantomjs , combine with bash script and run in cron every 9 minuteshttp://phantomjs.org/screen-capture.html
 http://phantomjs.org/related-projects.html
 https://github.com/superbrothers/capturejs
@@ -822,10 +822,10 @@ http://bhfsteve.blogspot.co.id/2013/03/monitoring-web-page-for-changes-using.htm
     
     <item>
       <title>change image resolution from linux command line</title>
-      <link>https://blog.indonesiadot.com/change-image-resolution-from-linux-command-line/</link>
+      <link>https://blog.indonesiadot.com/2018/01/31/change-image-resolution-from-linux-command-line/</link>
       <pubDate>Wed, 31 Jan 2018 20:35:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/change-image-resolution-from-linux-command-line/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/31/change-image-resolution-from-linux-command-line/</guid>
       <description>change image resolution command line
 https://imagemagick.org/discourse-server/viewtopic.php?t=24890
 https://www.howtogeek.com/109369/how-to-quickly-resize-convert-modify-images-from-the-linux-terminal/amp/</description>
@@ -833,28 +833,28 @@ https://www.howtogeek.com/109369/how-to-quickly-resize-convert-modify-images-fro
     
     <item>
       <title>Recommended Magento modules</title>
-      <link>https://blog.indonesiadot.com/recommended-magento-modules/</link>
+      <link>https://blog.indonesiadot.com/2018/01/29/recommended-magento-modules/</link>
       <pubDate>Mon, 29 Jan 2018 22:41:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/recommended-magento-modules/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/29/recommended-magento-modules/</guid>
       <description>Ves Megamenu http://guide.landofcoder.com/mega-menu/ http://guide.landofcoder.com/mega-menu-pro/</description>
     </item>
     
     <item>
       <title>vsftpd encrypted password</title>
-      <link>https://blog.indonesiadot.com/vsftpd-encrypted-password/</link>
+      <link>https://blog.indonesiadot.com/2018/01/29/vsftpd-encrypted-password/</link>
       <pubDate>Mon, 29 Jan 2018 17:42:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/vsftpd-encrypted-password/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/29/vsftpd-encrypted-password/</guid>
       <description>karena ftp agak rentan pada saat login nya tidak di encrypt, maka solusi nya adalah ftp dengan ssl / tls How to set up a secure FTP service with vsftpd on Linux Last updated on June 19, 2014 Authored by Sarmed Rahman 9 Comments FTP or File Transfer Protocol is one of the widely used services on the Internet, mainly for transferring files from one host to other. FTP itself was not designed as a secure protocol, and as such, the classic FTP service is vulnerable to common attacks such as man in the middle and brute force attacks.</description>
     </item>
     
     <item>
       <title>Linux Tips and Trick</title>
-      <link>https://blog.indonesiadot.com/linux-tips-and-trick/</link>
+      <link>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</link>
       <pubDate>Mon, 29 Jan 2018 00:59:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/linux-tips-and-trick/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</guid>
       <description>cron without sending mail
 tambahkan MAILTO=&#34;&#34; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
 linux rm file list too long
@@ -867,10 +867,10 @@ http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en</descri
     
     <item>
       <title>MySQL tips and trick</title>
-      <link>https://blog.indonesiadot.com/mysql-tips-and-trick/</link>
+      <link>https://blog.indonesiadot.com/2018/01/28/mysql-tips-and-trick/</link>
       <pubDate>Sun, 28 Jan 2018 21:09:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/mysql-tips-and-trick/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/28/mysql-tips-and-trick/</guid>
       <description>Mysql performance
 https://www.infoworld.com/article/0/database-administration/10-essential-performance-tips-for-mysql.html
 MySQL insert row with highest id
@@ -883,19 +883,19 @@ karena default nya mysql akan dump trigger, maka hanya store procedure / functio
     
     <item>
       <title>Magento Admin tips and trick</title>
-      <link>https://blog.indonesiadot.com/magento-admin-tips-and-trick/</link>
+      <link>https://blog.indonesiadot.com/2018/01/28/magento-admin-tips-and-trick/</link>
       <pubDate>Sun, 28 Jan 2018 20:54:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/magento-admin-tips-and-trick/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/28/magento-admin-tips-and-trick/</guid>
       <description>How to create admin user in Magento 2 via Command Line bin/magento admin:user:create &amp;ndash;admin-user=&amp;ldquo;admin&amp;rdquo; &amp;ndash;admin-password=&amp;ldquo;123123q&amp;rdquo; &amp;ndash;admin-email=&amp;ldquo;admin@example.com&amp;rdquo; &amp;ndash;admin-firstname=&amp;ldquo;Admin&amp;rdquo; &amp;ndash;admin-lastname=&amp;ldquo;Admin&amp;rdquo;</description>
     </item>
     
     <item>
       <title>Install solr server</title>
-      <link>https://blog.indonesiadot.com/install-solr-server/</link>
+      <link>https://blog.indonesiadot.com/2017/09/27/install-solr-server/</link>
       <pubDate>Wed, 27 Sep 2017 20:02:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/install-solr-server/</guid>
+      <guid>https://blog.indonesiadot.com/2017/09/27/install-solr-server/</guid>
       <description>Here are the steps for Install solr server - base of search engine for magento these steps run on ubuntu 16.04, because we follow this http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html, we must install jdk 7 from ppa, but ubuntu 16.04 default with jdk 8 add-apt-repository ppa:openjdk-r/ppa
 apt update
 apt-get install openjdk-7-jdk
@@ -911,10 +911,10 @@ cat &amp;gt;&amp;gt; apps/solr34/example/logging.</description>
     
     <item>
       <title>Magento maintenance mode</title>
-      <link>https://blog.indonesiadot.com/magento-maintenance-mode/</link>
+      <link>https://blog.indonesiadot.com/2017/09/20/magento-maintenance-mode/</link>
       <pubDate>Wed, 20 Sep 2017 23:45:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/magento-maintenance-mode/</guid>
+      <guid>https://blog.indonesiadot.com/2017/09/20/magento-maintenance-mode/</guid>
       <description>To set magento 2 in maintenance mode and to make nice maintenance page.
 1. make / get maintenance image for our maintenance page, ie: maintenance.png
 2. put at pub/errors/default/images directory under magento root directory, ie: /var/www/magento/pub/errors/default/images/maintenance.png
@@ -927,10 +927,10 @@ To set magento 1 in maintenance mode and to make nice maintenance page.</descrip
     
     <item>
       <title>Belajar Kultur Spirulina</title>
-      <link>https://blog.indonesiadot.com/belajar-kultur-spirulina/</link>
+      <link>https://blog.indonesiadot.com/2017/09/20/belajar-kultur-spirulina/</link>
       <pubDate>Wed, 20 Sep 2017 17:29:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/belajar-kultur-spirulina/</guid>
+      <guid>https://blog.indonesiadot.com/2017/09/20/belajar-kultur-spirulina/</guid>
       <description>Long story short&amp;hellip;
 
 
@@ -939,10 +939,10 @@ other references:https://drive.google.com/drive/folders/0B_EPO1EgzBbGc2RTczYxTXJ
     
     <item>
       <title>Unlimited Minuman Probiotik &#43; Air Kelapa Hijau</title>
-      <link>https://blog.indonesiadot.com/unlimited-minuman-probiotik-air-kelapa-hijau/</link>
+      <link>https://blog.indonesiadot.com/2017/09/15/unlimited-minuman-probiotik-air-kelapa-hijau/</link>
       <pubDate>Fri, 15 Sep 2017 05:37:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/unlimited-minuman-probiotik-air-kelapa-hijau/</guid>
+      <guid>https://blog.indonesiadot.com/2017/09/15/unlimited-minuman-probiotik-air-kelapa-hijau/</guid>
       <description>Buat yang suka dengan minuman probiotik, ada tips dan trik untuk membuat persedian minuman kita menjadi unlimited :)
 Selalu siap sedia di kulkas kapan pun kita mau tanpa harus membeli lagi *muka gretongan
 1. Beli air kelapa muda (lebih baik lagi air kelapa hijau, tapi yang muda dan segar lebih baik, syukur kalau ngambil sendiri dan tanpa dijatuhkan, karena kualitas kelapa jika sudah terkena guncangan agak menurun sedikit)
@@ -951,20 +951,20 @@ Selalu siap sedia di kulkas kapan pun kita mau tanpa harus membeli lagi *muka gr
     
     <item>
       <title>Learning Magento E-Commerce</title>
-      <link>https://blog.indonesiadot.com/learning-magento-e-commerce/</link>
+      <link>https://blog.indonesiadot.com/2017/08/25/learning-magento-e-commerce/</link>
       <pubDate>Fri, 25 Aug 2017 04:55:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/learning-magento-e-commerce/</guid>
+      <guid>https://blog.indonesiadot.com/2017/08/25/learning-magento-e-commerce/</guid>
       <description>This month i learn about E-commerce with Magento, it&amp;rsquo;s awesome, full of feature of e-commerce.
 But it also have several steps to tweak it, to make it faster, secure and more convenient.I can&amp;rsquo;t detail all of it now, but here are the diagram that i make for easy learning flow.</description>
     </item>
     
     <item>
       <title>Redirect to widyamedia.indonesiadot.com</title>
-      <link>https://blog.indonesiadot.com/redirect-to-widyamedia.indonesiadot.com/</link>
+      <link>https://blog.indonesiadot.com/2017/08/25/redirect-to-widyamedia.indonesiadot.com/</link>
       <pubDate>Fri, 25 Aug 2017 03:48:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/redirect-to-widyamedia.indonesiadot.com/</guid>
+      <guid>https://blog.indonesiadot.com/2017/08/25/redirect-to-widyamedia.indonesiadot.com/</guid>
       <description>Actually this should be done long time ago, i thought it would be better if i wrote some of my experiences / experiments in public space like blogspot or wordpress, but with custom domain to be readable by all of people around the world :)
 And here are the steps for redirecting to widyamedia.indonesiadot.com
 * login to blogger.com or register if you don&amp;rsquo;t have one
@@ -973,19 +973,19 @@ And here are the steps for redirecting to widyamedia.indonesiadot.com
     
     <item>
       <title>desember 2015</title>
-      <link>https://blog.indonesiadot.com/desember-2015/</link>
+      <link>https://blog.indonesiadot.com/2015/11/28/desember-2015/</link>
       <pubDate>Sat, 28 Nov 2015 23:35:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/desember-2015/</guid>
+      <guid>https://blog.indonesiadot.com/2015/11/28/desember-2015/</guid>
       <description>sebentar lagi bulan desember 2015 :)</description>
     </item>
     
     <item>
       <title>Intro Lanyon</title>
-      <link>https://blog.indonesiadot.com/intro-lanyon/</link>
+      <link>https://blog.indonesiadot.com/2014/01/02/intro-lanyon/</link>
       <pubDate>Thu, 02 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/intro-lanyon/</guid>
+      <guid>https://blog.indonesiadot.com/2014/01/02/intro-lanyon/</guid>
       <description>Lanyon is an unassuming Jekyll theme that places content first by tucking away navigation in a hidden drawer. It&amp;rsquo;s based on Poole, the Jekyll butler.
 Built on Poole Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by @mdo. Poole, and every theme built on it (like Lanyon here) includes the following:
  Complete Jekyll setup included (layouts, config, 404, RSS feed, posts, and example page) Mobile friendly design and development Easily scalable text and component sizing with rem units in the CSS Support for a wide gamut of HTML elements Related posts (time-based, because Jekyll) below each post Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)  Lanyon features In addition to the features of Poole, Lanyon adds the following:</description>
@@ -993,10 +993,10 @@ Built on Poole Poole is the Jekyll Butler, serving as an upstanding and effectiv
     
     <item>
       <title>Intro Lanyon Again</title>
-      <link>https://blog.indonesiadot.com/intro-lanyon-again/</link>
+      <link>https://blog.indonesiadot.com/2014/01/02/intro-lanyon-again/</link>
       <pubDate>Thu, 02 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/intro-lanyon-again/</guid>
+      <guid>https://blog.indonesiadot.com/2014/01/02/intro-lanyon-again/</guid>
       <description>Lanyon is an unassuming Jekyll theme that places content first by tucking away navigation in a hidden drawer. It&amp;rsquo;s based on Poole, the Jekyll butler.
 Built on Poole Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by @mdo. Poole, and every theme built on it (like Lanyon here) includes the following:
  Complete Jekyll setup included (layouts, config, 404, RSS feed, posts, and example page) Mobile friendly design and development Easily scalable text and component sizing with rem units in the CSS Support for a wide gamut of HTML elements Related posts (time-based, because Jekyll) below each post Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)  Lanyon features In addition to the features of Poole, Lanyon adds the following:</description>
@@ -1004,10 +1004,10 @@ Built on Poole Poole is the Jekyll Butler, serving as an upstanding and effectiv
     
     <item>
       <title>Introducing Lanyon</title>
-      <link>https://blog.indonesiadot.com/introducing-lanyon/</link>
+      <link>https://blog.indonesiadot.com/2014/01/02/introducing-lanyon/</link>
       <pubDate>Thu, 02 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/introducing-lanyon/</guid>
+      <guid>https://blog.indonesiadot.com/2014/01/02/introducing-lanyon/</guid>
       <description>Lanyon is an unassuming Jekyll theme that places content first by tucking away navigation in a hidden drawer. It&amp;rsquo;s based on Poole, the Jekyll butler.
 Built on Poole Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by @mdo. Poole, and every theme built on it (like Lanyon here) includes the following:
  Complete Jekyll setup included (layouts, config, 404, RSS feed, posts, and example page) Mobile friendly design and development Easily scalable text and component sizing with rem units in the CSS Support for a wide gamut of HTML elements Related posts (time-based, because Jekyll) below each post Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)  Lanyon features In addition to the features of Poole, Lanyon adds the following:</description>
@@ -1015,30 +1015,30 @@ Built on Poole Poole is the Jekyll Butler, serving as an upstanding and effectiv
     
     <item>
       <title>Example content</title>
-      <link>https://blog.indonesiadot.com/example-content/</link>
+      <link>https://blog.indonesiadot.com/2014/01/01/example-content/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/example-content/</guid>
+      <guid>https://blog.indonesiadot.com/2014/01/01/example-content/</guid>
       <description>Howdy! This is an example blog post that shows several types of HTML content supported in this theme.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
  Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo.</description>
     </item>
     
     <item>
       <title>What&#39;s Jekyll?</title>
-      <link>https://blog.indonesiadot.com/whats-jekyll/</link>
+      <link>https://blog.indonesiadot.com/2013/12/31/whats-jekyll/</link>
       <pubDate>Tue, 31 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/whats-jekyll/</guid>
+      <guid>https://blog.indonesiadot.com/2013/12/31/whats-jekyll/</guid>
       <description>Jekyll is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From the project&amp;rsquo;s readme:
  Jekyll is a simple, blog aware, static site generator. It takes a template directory [&amp;hellip;] and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.</description>
     </item>
     
     <item>
       <title>widyamedia blog</title>
-      <link>https://blog.indonesiadot.com/widyamedia-blog/</link>
+      <link>https://blog.indonesiadot.com/2013/07/19/widyamedia-blog/</link>
       <pubDate>Fri, 19 Jul 2013 01:50:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/widyamedia-blog/</guid>
+      <guid>https://blog.indonesiadot.com/2013/07/19/widyamedia-blog/</guid>
       <description>ini adalah percobaan blog widyamedia :)
 blogger slideshow
 https://www.tutesinside.net/2016/04/make-slideshow-in-blogger.html</description>
@@ -1046,10 +1046,10 @@ https://www.tutesinside.net/2016/04/make-slideshow-in-blogger.html</description>
     
     <item>
       <title>Portfolio</title>
-      <link>https://blog.indonesiadot.com/portfolio/</link>
+      <link>https://blog.indonesiadot.com/2006/08/28/portfolio/</link>
       <pubDate>Mon, 28 Aug 2006 03:14:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/portfolio/</guid>
+      <guid>https://blog.indonesiadot.com/2006/08/28/portfolio/</guid>
       <description>http://indonesiadot.com</description>
     </item>
     

@@ -13,29 +13,29 @@
     
     <item>
       <title>Xenserver provisioning with ansible</title>
-      <link>https://blog.indonesiadot.com/xenserver-provisioning-with-ansible/</link>
+      <link>https://blog.indonesiadot.com/2018/03/19/xenserver-provisioning-with-ansible/</link>
       <pubDate>Mon, 19 Mar 2018 21:56:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/xenserver-provisioning-with-ansible/</guid>
+      <guid>https://blog.indonesiadot.com/2018/03/19/xenserver-provisioning-with-ansible/</guid>
       <description>https://medium.com/@jrisch/using-ansible-to-automate-vm-creation-on-xenserver-d092aa484a06
 Using Ansible to automate VM creation on XenServerI’ve been using Xenserver at Fab:IT for the last 8 or 9 years, and during that time, I’ve automated the installation of, mostly Debian and Ubuntu, VM’s in several ways. The most successful way, was a shell script with certain sane defaults built in, combined with preseed files for the various Debian and Ubuntu versions, and small shell scripts for handling the installation of Xentools in the VM, after the initial reboot.</description>
     </item>
     
     <item>
       <title>learn ansible php</title>
-      <link>https://blog.indonesiadot.com/learn-ansible-php/</link>
+      <link>https://blog.indonesiadot.com/2018/02/14/learn-ansible-php/</link>
       <pubDate>Wed, 14 Feb 2018 19:28:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/learn-ansible-php/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/14/learn-ansible-php/</guid>
       <description>https://knpuniversity.com/screencast/ansible/ansible-composer</description>
     </item>
     
     <item>
       <title>Ansible tips and trick</title>
-      <link>https://blog.indonesiadot.com/ansible-tips-and-trick/</link>
+      <link>https://blog.indonesiadot.com/2018/01/31/ansible-tips-and-trick/</link>
       <pubDate>Wed, 31 Jan 2018 23:30:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/ansible-tips-and-trick/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/31/ansible-tips-and-trick/</guid>
       <description>Ansible gather facts
 Using facter too
 Ref:

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      nginx php-fpm tuning for best performance &middot; Blog Indonesiadot.Com
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/poole.css">
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/syntax.css">
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blog.indonesiadot.com/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="https://blog.indonesiadot.com/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://blog.indonesiadot.com/atom.xml">
+</head>
+
+
+  <body class="theme-base-0c">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Blog dari <a href="https://indonesiadot.com" target="_blank">Indonesiadot.Com</a> adalah tempat menuliskan sesuatu mengenai teknologi, oprek, dan mengenai Indonesiadot.Com.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/">Home</a>
+    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/post">Posts</a>
+
+    
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/about/">About</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
+      
+    
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2019. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="https://blog.indonesiadot.com/" title="Home">Blog Indonesiadot.Com</a>
+            <small>Web log of Indonesiadot.Com, Linux and updated technology</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">nginx php-fpm tuning for best performance</h1>
+  <span class="post-date">Feb 9, 2018</span>
+  <p><style type="text/css">&lt;!&ndash;td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}</style><br />&ndash;&gt;<br /><table border="1" cellpadding="0" cellspacing="0" dir="ltr" style="border-collapse: collapse; border: none; font-family: arial,sans,sans-serif; font-size: 10pt; table-layout: fixed; width: 0px;" xmlns="http://www.w3.org/1999/xhtml"><colgroup><col width="100"></col></colgroup><tbody><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;/etc/nginx/nginx.conf&quot;}" style="border-right-color: transparent; font-weight: bold; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">/etc/nginx/nginx.conf</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;worker_processes  8;&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">worker_processes  8;</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;note: dont make auto, try to raise the worker process to get the good result, from 8, 16 or 20, and keep the good one&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 701px;"><div style="float: left;">note: dont make auto, try to raise the worker process to get the good result, from 8, 16 or 20, and keep the good one</div></div></td></tr><tr style="height: 21px;"><td style="overflow: hidden; padding: 2px 3px 2px 3px; vertical-align: bottom;"></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;worker_connections 19000;&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">worker_connections 19000;</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;worker_rlimit_nofile 20000;&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">worker_rlimit_nofile 20000;</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;note: try to raise the worker connection and workekr_rlimit_nofile to get the good result, and keep the good one&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 701px;"><div style="float: left;">note: try to raise the worker connection and workekr_rlimit_nofile to get the good result, and keep the good one</div></div></td></tr><tr style="height: 21px;"><td style="overflow: hidden; padding: 2px 3px 2px 3px; vertical-align: bottom;"></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;worker_processes  16;&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">worker_processes  16;</div></div></td></tr><tr style="height: 21px;"><td style="overflow: hidden; padding: 2px 3px 2px 3px; vertical-align: bottom;"></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;events {&quot;}" style="overflow: hidden; padding: 2px 0px 2px 0px; vertical-align: bottom;">events {</td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;worker_connections  30000;&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">worker_connections  30000;</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;worker_rlimit_nofile 31000;&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">worker_rlimit_nofile 31000;</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;}&quot;}" style="overflow: hidden; padding: 2px 0px 2px 0px; vertical-align: bottom;">}</td></tr><tr style="height: 21px;"><td style="overflow: hidden; padding: 2px 3px 2px 3px; vertical-align: bottom;"></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;http {&quot;}" style="overflow: hidden; padding: 2px 0px 2px 0px; vertical-align: bottom;">http {</td></tr><tr style="height: 21px;"><td style="overflow: hidden; padding: 2px 3px 2px 3px; vertical-align: bottom;"></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;open_file_cache max=100000 inactive=10s;&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 297px;"><div style="float: left;">open_file_cache max=100000 inactive=10s;</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;open_file_cache_valid 120s;&quot;}" style="background-color: white; border-right-color: transparent; font-family: Arial; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">open_file_cache_valid 120s;</div></div></td></tr><tr style="height: 21px;"><td style="overflow: hidden; padding: 2px 3px 2px 3px; vertical-align: bottom;"></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;/etc/nginx/sites-enable/sophieparis.conf&quot;}" style="border-right-color: transparent; font-weight: bold; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 297px;"><div style="float: left;">/etc/nginx/sites-enable/sophieparis.conf</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;upstream backend {&quot;}" style="background-color: white; border-right-color: transparent; font-family: Arial; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">upstream backend {</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;server unix:/run/php/pool1-fpm.sock weight=100 max_fails=5 fail_timeout=5;&quot;}" style="background-color: white; border-right-color: transparent; font-family: Arial; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 499px;"><div style="float: left;">server unix:/run/php/pool1-fpm.sock weight=100 max_fails=5 fail_timeout=5;</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;server unix:/run/php/pool2-fpm.sock weight=100 max_fails=5 fail_timeout=5;&quot;}" style="background-color: white; border-right-color: transparent; font-family: Arial; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 499px;"><div style="float: left;">server unix:/run/php/pool2-fpm.sock weight=100 max_fails=5 fail_timeout=5;</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;server unix:/run/php/pool3-fpm.sock weight=100 max_fails=5 fail_timeout=5;&quot;}" style="background-color: white; border-right-color: transparent; font-family: Arial; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 499px;"><div style="float: left;">server unix:/run/php/pool3-fpm.sock weight=100 max_fails=5 fail_timeout=5;</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;}&quot;}" style="background-color: white; font-family: Arial; overflow: hidden; padding: 2px 0px; vertical-align: bottom;">}</td></tr></tbody></table><br /><div><style type="text/css">&lt;!&ndash;td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}</style></div>&ndash;&gt;<table border="1" cellpadding="0" cellspacing="0" dir="ltr" style="border-collapse: collapse; border: none; font-family: arial,sans,sans-serif; font-size: 10pt; table-layout: fixed; width: 0px;" xmlns="http://www.w3.org/1999/xhtml"><colgroup><col width="100"></col></colgroup><tbody><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;/etc/php/5.6/fpm/pool.d/pool1.conf&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">/etc/php/5.6/fpm/pool.d/pool1.conf</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;/etc/php/5.6/fpm/pool.d/pool2.conf&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">/etc/php/5.6/fpm/pool.d/pool2.conf</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;/etc/php/5.6/fpm/pool.d/pool3.conf&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">/etc/php/5.6/fpm/pool.d/pool3.conf</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;note: make it several php-fpm pools, raise if it's still not fit, and keep the good one&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 499px;"><div style="float: left;">note: make it several php-fpm pools, raise if it&rsquo;s still not fit, and keep the good one</div></div></td></tr><tr style="height: 21px;"><td style="overflow: hidden; padding: 2px 3px 2px 3px; vertical-align: bottom;"></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;/etc/php/5.6/fpm/pool.d/pool1.conf&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">/etc/php/5.6/fpm/pool.d/pool1.conf</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;listen = /run/php/pool1-fpm.sock&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">listen = /run/php/pool1-fpm.sock</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm = dynamic&quot;}" style="overflow: hidden; padding: 2px 0px 2px 0px; vertical-align: bottom;">pm = dynamic</td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm.max_children = 500&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">pm.max_children = 500</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm.start_servers = 200&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">pm.start_servers = 200</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm.min_spare_servers = 100&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">pm.min_spare_servers = 100</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm.max_spare_servers = 300&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">pm.max_spare_servers = 300</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm.max_requests = 5000&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">pm.max_requests = 5000</div></div></td></tr><tr style="height: 21px;"><td style="overflow: hidden; padding: 2px 3px 2px 3px; vertical-align: bottom;"></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;/etc/php/5.6/fpm/pool.d/pool2.conf&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">/etc/php/5.6/fpm/pool.d/pool2.conf</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;listen = /run/php/pool2-fpm.sock&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">listen = /run/php/pool2-fpm.sock</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm = dynamic&quot;}" style="overflow: hidden; padding: 2px 0px 2px 0px; vertical-align: bottom;">pm = dynamic</td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm.max_children = 500&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">pm.max_children = 500</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm.start_servers = 200&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">pm.start_servers = 200</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm.min_spare_servers = 100&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">pm.min_spare_servers = 100</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm.max_spare_servers = 300&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">pm.max_spare_servers = 300</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm.max_requests = 5000&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">pm.max_requests = 5000</div></div></td></tr><tr style="height: 21px;"><td style="overflow: hidden; padding: 2px 3px 2px 3px; vertical-align: bottom;"></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;/etc/php/5.6/fpm/pool.d/pool3.conf&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">/etc/php/5.6/fpm/pool.d/pool3.conf</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;listen = /run/php/pool3-fpm.sock&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">listen = /run/php/pool3-fpm.sock</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm = dynamic&quot;}" style="overflow: hidden; padding: 2px 0px 2px 0px; vertical-align: bottom;">pm = dynamic</td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm.max_children = 500&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">pm.max_children = 500</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm.start_servers = 200&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">pm.start_servers = 200</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm.min_spare_servers = 100&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">pm.min_spare_servers = 100</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm.max_spare_servers = 300&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">pm.max_spare_servers = 300</div></div></td></tr><tr style="height: 21px;"><td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;pm.max_requests = 5000&quot;}" style="border-right-color: transparent; overflow: visible; padding: 2px 0px; vertical-align: bottom;"><div style="left: 3px; overflow: hidden; position: relative; white-space: nowrap; width: 196px;"><div style="float: left;">pm.max_requests = 5000</div></div></td></tr></tbody></table><br /><div>ref:</div><div><br /></div><div><div><a href="https://www.google.co.id/search?q=tuning+nginx+for+best+performance">https://www.google.co.id/search?q=tuning+nginx+for+best+performance</a></div><div><a href="https://www.google.co.id/search?q=tuning+php-fpm+for+high+traffic">https://www.google.co.id/search?q=tuning+php-fpm+for+high+traffic</a><br /><br /><div><a href="https://blog.codeship.com/tuning-nginx/">https://blog.codeship.com/tuning-nginx/</a></div><div><a href="http://www.monitis.com/blog/6-best-practices-for-optimizing-your-nginx-performance/">http://www.monitis.com/blog/6-best-practices-for-optimizing-your-nginx-performance/</a></div><div><a href="http://highscalability.com/blog/2014/4/30/10-tips-for-optimizing-nginx-and-php-fpm-for-high-traffic-si.html">http://highscalability.com/blog/2014/4/30/10-tips-for-optimizing-nginx-and-php-fpm-for-high-traffic-si.html</a></div></div></div></p>
+
+</div>
+
+<hr/>
+
+
+ Tags:
+ <a href="https://blog.indonesiadot.com/tags/tuning/">tuning</a>, <a href="https://blog.indonesiadot.com/tags/web/">web</a>
+<br/>
+
+
+
+	</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147159427-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147159427-1');
+</script>
+
+</html>
+

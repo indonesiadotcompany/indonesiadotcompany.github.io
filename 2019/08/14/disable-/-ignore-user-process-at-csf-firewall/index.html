@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      disable / ignore user process at csf firewall &middot; Blog Indonesiadot.Com
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/poole.css">
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/syntax.css">
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blog.indonesiadot.com/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="https://blog.indonesiadot.com/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://blog.indonesiadot.com/atom.xml">
+</head>
+
+
+  <body class="theme-base-0c">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Blog dari <a href="https://indonesiadot.com" target="_blank">Indonesiadot.Com</a> adalah tempat menuliskan sesuatu mengenai teknologi, oprek, dan mengenai Indonesiadot.Com.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/">Home</a>
+    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/post">Posts</a>
+
+    
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/about/">About</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
+      
+    
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2019. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="https://blog.indonesiadot.com/" title="Home">Blog Indonesiadot.Com</a>
+            <small>Web log of Indonesiadot.Com, Linux and updated technology</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">disable / ignore user process at csf firewall</h1>
+  <span class="post-date">Aug 14, 2019</span>
+  <p><br /><a href="https://www.google.com/search?q=csf+ignore+user">https://www.google.com/search?q=csf+ignore+user</a><br /><br /><a href="http://g33kinfo.com/info/archives/3933">http://g33kinfo.com/info/archives/3933</a><br /><br /><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">From&nbsp;<a href="http://forum.configserver.com/viewtopic.php?t=2059" style="background-color: transparent; box-sizing: inherit; color: #f5876e; text-decoration-line: none;" target="_blank">configserver.com</a></div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;"><strong style="box-sizing: inherit;">Process Tracking</strong></div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">This option enables tracking of user and nobody processes and examines them for suspicious executables or open network ports. Its purpose is to identify potential exploit processes that are running on the server, even if they are obfuscated to appear as system services. If a suspicious process is found an alert email is sent with relevant information. It is then the responsibility of the recipient to investigate the process further as the script takes no further action. Processes (PIDs) are only reported once unless lfd is restarted.</div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">There is an ignore file /etc/csf/csf.pignore which can be used to whitelist either usernames or full paths to binaries. Care should be taken with ignoring users or files so that you don’t force false-negatives.</div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">You must use the following format:</div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px;"> <li style="box-sizing: inherit;">exe:/full/path/to/file</li><li style="box-sizing: inherit;">user:username</li><li style="box-sizing: inherit;">cmd:command line</li></div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;"><span id="more-3933" style="box-sizing: inherit;"></span></div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">The command line as reported in /proc has the trailing null character removed and all other occurrences replaced with a space. So, the line you specify in the file should have space separators for the command line arguments, not null characters. It is strongly recommended that you use command line ignores very carefully as any process can change what is reported to the OS. Don’t list the paths to perl or php as this will prevent detection of suspicious web scripts.</div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;"><strong style="box-sizing: inherit;">Process Tracking and csf.pignore</strong></div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">1. If you’re seeing spamd being reported after the latest update and want to ignore it, the following can be added to /etc/csf/csf.pignore (ensure that you ONLY use linux linefeeds, not WIN or MAC ones when editing Linux files):<br style="box-sizing: inherit;" /><code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: inherit; color: #c7254e; font-family: Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 1em; padding: 2px 4px;"><br style="box-sizing: inherit;" />cmd:spamd child</code><br style="box-sizing: inherit;" />Then restart lfd.</div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">2. If you’re seeing awstats.pl being reported after the latest update and want to ignore it, the following can be added to /etc/csf/csf.pignore:<br style="box-sizing: inherit;" /><code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: inherit; color: #c7254e; font-family: Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 1em; padding: 2px 4px;"><br style="box-sizing: inherit;" />pcmd:.<em>/usr/local/cpanel/3rdparty/bin/awstats.pl.</em><br style="box-sizing: inherit;" />pcmd:.<em>/usr/local/cpanel/base/awstats.pl.</em></code><br style="box-sizing: inherit;" />Then restart lfd.</div></p>
+
+</div>
+
+<hr/>
+
+
+<br/>
+
+
+
+	</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147159427-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147159427-1');
+</script>
+
+</html>
+

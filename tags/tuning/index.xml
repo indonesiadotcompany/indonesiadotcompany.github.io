@@ -13,19 +13,19 @@
     
     <item>
       <title>Nginx tips and trick</title>
-      <link>https://blog.indonesiadot.com/nginx-tips-and-trick/</link>
+      <link>https://blog.indonesiadot.com/2018/02/19/nginx-tips-and-trick/</link>
       <pubDate>Mon, 19 Feb 2018 10:18:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/nginx-tips-and-trick/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/19/nginx-tips-and-trick/</guid>
       <description>https://www.sitepoint.com/brotli-compression-wordpress/</description>
     </item>
     
     <item>
       <title>nginx php-fpm tuning for best performance</title>
-      <link>https://blog.indonesiadot.com/nginx-php-fpm-tuning-for-best-performance/</link>
+      <link>https://blog.indonesiadot.com/2018/02/09/nginx-php-fpm-tuning-for-best-performance/</link>
       <pubDate>Fri, 09 Feb 2018 01:26:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/nginx-php-fpm-tuning-for-best-performance/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/09/nginx-php-fpm-tuning-for-best-performance/</guid>
       <description>&amp;lt;!&amp;ndash;td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}
 &amp;ndash;&amp;gt;
 /etc/nginx/nginx.confworker_processes 8;note: dont make auto, try to raise the worker process to get the good result, from 8, 16 or 20, and keep the good oneworker_connections 19000;worker_rlimit_nofile 20000;note: try to raise the worker connection and workekr_rlimit_nofile to get the good result, and keep the good oneworker_processes 16;events {worker_connections 30000;worker_rlimit_nofile 31000;}http {open_file_cache max=100000 inactive=10s;open_file_cache_valid 120s;/etc/nginx/sites-enable/sophieparis.confupstream backend {server unix:/run/php/pool1-fpm.sock weight=100 max_fails=5 fail_timeout=5;server unix:/run/php/pool2-fpm.sock weight=100 max_fails=5 fail_timeout=5;server unix:/run/php/pool3-fpm.</description>

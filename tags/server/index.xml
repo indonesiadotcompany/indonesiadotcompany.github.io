@@ -13,10 +13,10 @@
     
     <item>
       <title>linux Server Tools</title>
-      <link>https://blog.indonesiadot.com/linux-server-tools/</link>
+      <link>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:58 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/linux-server-tools/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
  Firewall
  iptables shorewall csf  Anti Malware
@@ -25,10 +25,10 @@
     
     <item>
       <title>Proxmox optimized disk for auto trim / shrink</title>
-      <link>https://blog.indonesiadot.com/proxmox-optimized-disk-for-auto-trim-/-shrink/</link>
+      <link>https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:56 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/proxmox-optimized-disk-for-auto-trim-/-shrink/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/</guid>
       <description>Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari thin provision storage atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.
 Adapun persyaratan untuk ini yaitu:
  menggunakan thin provisioned backing storage seperti qcow2, thin-lvm, zfs pada server proxmox nya menggunakan Virtio-SCSI controller pada guest vm nya Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya Tambahkan discard mount options di /etc/fstab nya guest vm Enable fstrim.</description>
@@ -36,10 +36,10 @@ Adapun persyaratan untuk ini yaitu:
     
     <item>
       <title>simple alert monitoring using simplemonitor</title>
-      <link>https://blog.indonesiadot.com/simple-alert-monitoring-using-simplemonitor/</link>
+      <link>https://blog.indonesiadot.com/2019/08/11/simple-alert-monitoring-using-simplemonitor/</link>
       <pubDate>Sun, 11 Aug 2019 08:42:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/simple-alert-monitoring-using-simplemonitor/</guid>
+      <guid>https://blog.indonesiadot.com/2019/08/11/simple-alert-monitoring-using-simplemonitor/</guid>
       <description>googling:&amp;nbsp;https://www.google.com/search?q=simple+alert+monitoring
 https://jamesoff.github.io/simplemonitor/
 googling:&amp;nbsp;https://www.google.com/search?q=simplemonitor+docker
@@ -64,10 +64,10 @@ https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writin
     
     <item>
       <title>belajar ispconfig webhosting control panel</title>
-      <link>https://blog.indonesiadot.com/belajar-ispconfig-webhosting-control-panel/</link>
+      <link>https://blog.indonesiadot.com/2018/05/26/belajar-ispconfig-webhosting-control-panel/</link>
       <pubDate>Sat, 26 May 2018 07:10:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/belajar-ispconfig-webhosting-control-panel/</guid>
+      <guid>https://blog.indonesiadot.com/2018/05/26/belajar-ispconfig-webhosting-control-panel/</guid>
       <description>Berikut adalah alamat / url tutorial untuk belajar instalasi / setup ispconfig webhosting control panel :
 https://www.howtoforge.com/tutorial/perfect-server-ubuntu-with-nginx-and-ispconfig-3/3/
 https://www.howtoforge.com/tutorial/securing-ispconfig-3-with-a-free-lets-encrypt-ssl-certificate/
@@ -77,10 +77,10 @@ https://www.howtoforge.com/community/threads/install-monit.64712/</description>
     
     <item>
       <title>Linux Tips and Trick</title>
-      <link>https://blog.indonesiadot.com/linux-tips-and-trick/</link>
+      <link>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</link>
       <pubDate>Mon, 29 Jan 2018 00:59:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/linux-tips-and-trick/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</guid>
       <description>cron without sending mail
 tambahkan MAILTO=&#34;&#34; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
 linux rm file list too long
@@ -93,10 +93,10 @@ http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en</descri
     
     <item>
       <title>Learning Magento E-Commerce</title>
-      <link>https://blog.indonesiadot.com/learning-magento-e-commerce/</link>
+      <link>https://blog.indonesiadot.com/2017/08/25/learning-magento-e-commerce/</link>
       <pubDate>Fri, 25 Aug 2017 04:55:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/learning-magento-e-commerce/</guid>
+      <guid>https://blog.indonesiadot.com/2017/08/25/learning-magento-e-commerce/</guid>
       <description>This month i learn about E-commerce with Magento, it&amp;rsquo;s awesome, full of feature of e-commerce.
 But it also have several steps to tweak it, to make it faster, secure and more convenient.I can&amp;rsquo;t detail all of it now, but here are the diagram that i make for easy learning flow.</description>
     </item>

@@ -13,10 +13,10 @@
     
     <item>
       <title>simple alert monitoring using simplemonitor</title>
-      <link>https://blog.indonesiadot.com/simple-alert-monitoring-using-simplemonitor/</link>
+      <link>https://blog.indonesiadot.com/2019/08/11/simple-alert-monitoring-using-simplemonitor/</link>
       <pubDate>Sun, 11 Aug 2019 08:42:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/simple-alert-monitoring-using-simplemonitor/</guid>
+      <guid>https://blog.indonesiadot.com/2019/08/11/simple-alert-monitoring-using-simplemonitor/</guid>
       <description>googling:&amp;nbsp;https://www.google.com/search?q=simple+alert+monitoring
 https://jamesoff.github.io/simplemonitor/
 googling:&amp;nbsp;https://www.google.com/search?q=simplemonitor+docker
@@ -41,10 +41,10 @@ https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writin
     
     <item>
       <title>prometheus grafana</title>
-      <link>https://blog.indonesiadot.com/prometheus-grafana/</link>
+      <link>https://blog.indonesiadot.com/2018/07/13/prometheus-grafana/</link>
       <pubDate>Fri, 13 Jul 2018 03:25:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/prometheus-grafana/</guid>
+      <guid>https://blog.indonesiadot.com/2018/07/13/prometheus-grafana/</guid>
       <description>http://www.dimasrio.com/search?q=prometheus
 https://www.youtube.com/watch?v=GZWbTch7AbM
 http://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html</description>
@@ -52,10 +52,10 @@ http://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html</descript
     
     <item>
       <title>All about icinga monitoring</title>
-      <link>https://blog.indonesiadot.com/all-about-icinga-monitoring/</link>
+      <link>https://blog.indonesiadot.com/2018/04/04/all-about-icinga-monitoring/</link>
       <pubDate>Wed, 04 Apr 2018 18:45:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/all-about-icinga-monitoring/</guid>
+      <guid>https://blog.indonesiadot.com/2018/04/04/all-about-icinga-monitoring/</guid>
       <description>icinga2 installation on ubuntu 16
 https://www.icinga.com/docs/icinga2/latest/doc/02-getting-started/
 https://www.icinga.com/docs/icingaweb2/latest/doc/02-Installation/
@@ -69,10 +69,10 @@ added a line into the servicedefinition:Codeapply Service &amp;ldquo;ssh&amp;rdq
     
     <item>
       <title>ssl expiry check</title>
-      <link>https://blog.indonesiadot.com/ssl-expiry-check/</link>
+      <link>https://blog.indonesiadot.com/2018/03/04/ssl-expiry-check/</link>
       <pubDate>Sun, 04 Mar 2018 21:22:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/ssl-expiry-check/</guid>
+      <guid>https://blog.indonesiadot.com/2018/03/04/ssl-expiry-check/</guid>
       <description>https://www.google.co.id/search?q=ssl+expiry+check
 https://github.com/Matty9191/ssl-cert-check
 https://prefetch.net/articles/checkcertificate.html
@@ -81,29 +81,29 @@ ssl-cert-check -s mail.prefetch.net -p 443</description>
     
     <item>
       <title>Docker monitoring</title>
-      <link>https://blog.indonesiadot.com/docker-monitoring/</link>
+      <link>https://blog.indonesiadot.com/2018/03/01/docker-monitoring/</link>
       <pubDate>Thu, 01 Mar 2018 05:24:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/docker-monitoring/</guid>
+      <guid>https://blog.indonesiadot.com/2018/03/01/docker-monitoring/</guid>
       <description>http://rancher.com/comparing-monitoring-options-for-docker-deployments/https://logz.io/blog/monitoring-dockerized-elk-stack/must see:https://youtu.be/iRlWqoUVdac </description>
     </item>
     
     <item>
       <title>Elastic beats</title>
-      <link>https://blog.indonesiadot.com/elastic-beats/</link>
+      <link>https://blog.indonesiadot.com/2018/02/25/elastic-beats/</link>
       <pubDate>Sun, 25 Feb 2018 10:51:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/elastic-beats/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/25/elastic-beats/</guid>
       <description>https://www.elastic.co/products/beats
 https://www.elastic.co/guide/en/beats/libbeat/current/community-beats.html</description>
     </item>
     
     <item>
       <title>graphite grafana things</title>
-      <link>https://blog.indonesiadot.com/graphite-grafana-things/</link>
+      <link>https://blog.indonesiadot.com/2018/02/22/graphite-grafana-things/</link>
       <pubDate>Thu, 22 Feb 2018 11:08:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/graphite-grafana-things/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/22/graphite-grafana-things/</guid>
       <description>https://statusengine.org/tutorials/Graphite-Grafana/
 https://www.unixmen.com/full-monitoring-system-graphite-collectd-statsd-part-1/
 Grafana vs kibana
@@ -116,10 +116,10 @@ http://www.linux-admins.net/2012/02/how-to-install-and-use-graphite.html</descri
     
     <item>
       <title>Munin nginx</title>
-      <link>https://blog.indonesiadot.com/munin-nginx/</link>
+      <link>https://blog.indonesiadot.com/2018/02/17/munin-nginx/</link>
       <pubDate>Sat, 17 Feb 2018 10:41:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/munin-nginx/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/17/munin-nginx/</guid>
       <description>http://guide.munin-monitoring.org/en/stable-2.0/example/webserver/nginx.html
 http://guide.munin-monitoring.org/en/latest/example/webserver/nginx.html
 http://iinclude.in/2017/12/03/how-to-install-the-munin-monitoring-tool-on-ubuntu-16-04-with-nginx/
@@ -132,10 +132,10 @@ https://prefetch.net/blog/index.php/2011/07/13/gathering-statistics-from-your-po
     
     <item>
       <title>Linux server monitoring</title>
-      <link>https://blog.indonesiadot.com/linux-server-monitoring/</link>
+      <link>https://blog.indonesiadot.com/2018/02/16/linux-server-monitoring/</link>
       <pubDate>Fri, 16 Feb 2018 05:28:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/linux-server-monitoring/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/16/linux-server-monitoring/</guid>
       <description>https://blog.serverdensity.com/80-linux-monitoring-tools-know/
 https://logz.io/blog/grafana-vs-kibana/
 http://docs.grafana.org/features/datasources/</description>
@@ -143,10 +143,10 @@ http://docs.grafana.org/features/datasources/</description>
     
     <item>
       <title>TODO web page monitoring and alert when change</title>
-      <link>https://blog.indonesiadot.com/todo-web-page-monitoring-and-alert-when-change/</link>
+      <link>https://blog.indonesiadot.com/2018/01/31/todo-web-page-monitoring-and-alert-when-change/</link>
       <pubDate>Wed, 31 Jan 2018 20:50:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/todo-web-page-monitoring-and-alert-when-change/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/31/todo-web-page-monitoring-and-alert-when-change/</guid>
       <description>Finally it using ariya phantomjs , combine with bash script and run in cron every 9 minuteshttp://phantomjs.org/screen-capture.html
 http://phantomjs.org/related-projects.html
 https://github.com/superbrothers/capturejs

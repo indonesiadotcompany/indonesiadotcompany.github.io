@@ -13,10 +13,10 @@
     
     <item>
       <title>digitalocean DO cli</title>
-      <link>https://blog.indonesiadot.com/digitalocean-do-cli/</link>
+      <link>https://blog.indonesiadot.com/2018/03/04/digitalocean-do-cli/</link>
       <pubDate>Sun, 04 Mar 2018 20:58:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/digitalocean-do-cli/</guid>
+      <guid>https://blog.indonesiadot.com/2018/03/04/digitalocean-do-cli/</guid>
       <description>digitalocean snapshot and recreate based on that snapshot (clone like)
 doctl compute droplet-action snapshot DropletID &amp;ndash;snapshot-name SnapshotName
 doctl compute droplet-action snapshot 83360000 &amp;ndash;snapshot-name 20180303-birau-snap

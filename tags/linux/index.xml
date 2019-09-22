@@ -13,10 +13,10 @@
     
     <item>
       <title>linux Server Tools</title>
-      <link>https://blog.indonesiadot.com/linux-server-tools/</link>
+      <link>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:58 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/linux-server-tools/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
  Firewall
  iptables shorewall csf  Anti Malware
@@ -25,10 +25,10 @@
     
     <item>
       <title>Proxmox optimized disk for auto trim / shrink</title>
-      <link>https://blog.indonesiadot.com/proxmox-optimized-disk-for-auto-trim-/-shrink/</link>
+      <link>https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:56 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/proxmox-optimized-disk-for-auto-trim-/-shrink/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/</guid>
       <description>Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari thin provision storage atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.
 Adapun persyaratan untuk ini yaitu:
  menggunakan thin provisioned backing storage seperti qcow2, thin-lvm, zfs pada server proxmox nya menggunakan Virtio-SCSI controller pada guest vm nya Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya Tambahkan discard mount options di /etc/fstab nya guest vm Enable fstrim.</description>
@@ -36,10 +36,10 @@ Adapun persyaratan untuk ini yaitu:
     
     <item>
       <title>All about icinga monitoring</title>
-      <link>https://blog.indonesiadot.com/all-about-icinga-monitoring/</link>
+      <link>https://blog.indonesiadot.com/2018/04/04/all-about-icinga-monitoring/</link>
       <pubDate>Wed, 04 Apr 2018 18:45:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/all-about-icinga-monitoring/</guid>
+      <guid>https://blog.indonesiadot.com/2018/04/04/all-about-icinga-monitoring/</guid>
       <description>icinga2 installation on ubuntu 16
 https://www.icinga.com/docs/icinga2/latest/doc/02-getting-started/
 https://www.icinga.com/docs/icingaweb2/latest/doc/02-Installation/
@@ -53,20 +53,20 @@ added a line into the servicedefinition:Codeapply Service &amp;ldquo;ssh&amp;rdq
     
     <item>
       <title>invoice ninja free open source invoicing system</title>
-      <link>https://blog.indonesiadot.com/invoice-ninja-free-open-source-invoicing-system/</link>
+      <link>https://blog.indonesiadot.com/2018/02/22/invoice-ninja-free-open-source-invoicing-system/</link>
       <pubDate>Thu, 22 Feb 2018 11:12:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/invoice-ninja-free-open-source-invoicing-system/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/22/invoice-ninja-free-open-source-invoicing-system/</guid>
       <description>https://www.invoiceninja.org/
 https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/</description>
     </item>
     
     <item>
       <title>Munin nginx</title>
-      <link>https://blog.indonesiadot.com/munin-nginx/</link>
+      <link>https://blog.indonesiadot.com/2018/02/17/munin-nginx/</link>
       <pubDate>Sat, 17 Feb 2018 10:41:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/munin-nginx/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/17/munin-nginx/</guid>
       <description>http://guide.munin-monitoring.org/en/stable-2.0/example/webserver/nginx.html
 http://guide.munin-monitoring.org/en/latest/example/webserver/nginx.html
 http://iinclude.in/2017/12/03/how-to-install-the-munin-monitoring-tool-on-ubuntu-16-04-with-nginx/
@@ -79,10 +79,10 @@ https://prefetch.net/blog/index.php/2011/07/13/gathering-statistics-from-your-po
     
     <item>
       <title>Linux server monitoring</title>
-      <link>https://blog.indonesiadot.com/linux-server-monitoring/</link>
+      <link>https://blog.indonesiadot.com/2018/02/16/linux-server-monitoring/</link>
       <pubDate>Fri, 16 Feb 2018 05:28:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/linux-server-monitoring/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/16/linux-server-monitoring/</guid>
       <description>https://blog.serverdensity.com/80-linux-monitoring-tools-know/
 https://logz.io/blog/grafana-vs-kibana/
 http://docs.grafana.org/features/datasources/</description>
@@ -90,38 +90,38 @@ http://docs.grafana.org/features/datasources/</description>
     
     <item>
       <title>TODO jenkins</title>
-      <link>https://blog.indonesiadot.com/todo-jenkins/</link>
+      <link>https://blog.indonesiadot.com/2018/02/15/todo-jenkins/</link>
       <pubDate>Thu, 15 Feb 2018 18:47:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/todo-jenkins/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/15/todo-jenkins/</guid>
       <description>https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04</description>
     </item>
     
     <item>
       <title>learn ansible php</title>
-      <link>https://blog.indonesiadot.com/learn-ansible-php/</link>
+      <link>https://blog.indonesiadot.com/2018/02/14/learn-ansible-php/</link>
       <pubDate>Wed, 14 Feb 2018 19:28:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/learn-ansible-php/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/14/learn-ansible-php/</guid>
       <description>https://knpuniversity.com/screencast/ansible/ansible-composer</description>
     </item>
     
     <item>
       <title>Bash script tips and trick</title>
-      <link>https://blog.indonesiadot.com/bash-script-tips-and-trick/</link>
+      <link>https://blog.indonesiadot.com/2018/02/04/bash-script-tips-and-trick/</link>
       <pubDate>Sun, 04 Feb 2018 23:20:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/bash-script-tips-and-trick/</guid>
+      <guid>https://blog.indonesiadot.com/2018/02/04/bash-script-tips-and-trick/</guid>
       <description>bash or and
 How to Use Logical OR &amp;amp; AND in Shell Script with ExamplesLogical&amp;nbsp;OR&amp;nbsp;&amp;amp;&amp;nbsp;AND&amp;nbsp;operations are very useful where multiple conditions are used in our programs (scripts).OR&amp;nbsp;is used between two or multiple conditions. It returns true if any one of conditions returns as true.AND&amp;nbsp;is used between two or multiple conditions. It returns true only if all the conditions returns as true.Using Logical ORLogical OR in bash script is used with operator -o.</description>
     </item>
     
     <item>
       <title>Linux Security tools</title>
-      <link>https://blog.indonesiadot.com/linux-security-tools/</link>
+      <link>https://blog.indonesiadot.com/2018/01/31/linux-security-tools/</link>
       <pubDate>Wed, 31 Jan 2018 21:32:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/linux-security-tools/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/31/linux-security-tools/</guid>
       <description>Tripwire
 ref:
 https://github.com/Tripwire/tripwire-open-source
@@ -130,10 +130,10 @@ https://www.upguard.com/articles/tripwire-enterprise-vs.-tripwire-open-source</d
     
     <item>
       <title>change image resolution from linux command line</title>
-      <link>https://blog.indonesiadot.com/change-image-resolution-from-linux-command-line/</link>
+      <link>https://blog.indonesiadot.com/2018/01/31/change-image-resolution-from-linux-command-line/</link>
       <pubDate>Wed, 31 Jan 2018 20:35:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/change-image-resolution-from-linux-command-line/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/31/change-image-resolution-from-linux-command-line/</guid>
       <description>change image resolution command line
 https://imagemagick.org/discourse-server/viewtopic.php?t=24890
 https://www.howtogeek.com/109369/how-to-quickly-resize-convert-modify-images-from-the-linux-terminal/amp/</description>
@@ -141,10 +141,10 @@ https://www.howtogeek.com/109369/how-to-quickly-resize-convert-modify-images-fro
     
     <item>
       <title>Linux Tips and Trick</title>
-      <link>https://blog.indonesiadot.com/linux-tips-and-trick/</link>
+      <link>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</link>
       <pubDate>Mon, 29 Jan 2018 00:59:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/linux-tips-and-trick/</guid>
+      <guid>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</guid>
       <description>cron without sending mail
 tambahkan MAILTO=&#34;&#34; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
 linux rm file list too long
