@@ -1,0 +1,12 @@
++++
+title = "MySQL tips and trick"
+date = 2018-01-28T21:09:00Z
+updated = 2018-07-16T09:40:14Z
+tags = ["mysql", "sql"]
+blogimport = true 
+[author]
+	name = "widyamedia"
+	uri = "https://www.blogger.com/profile/01098412638320952520"
++++
+
+<div><b><br></b></div><b><div><b>Mysql performance</b></div><div><b><br></b></div><div><b>https://www.infoworld.com/article/0/database-administration/10-essential-performance-tips-for-mysql.html</b></div><div><b><br></b></div><div><b>MySQL insert row with highest id</b><br></div></b><br>Lock tables customers write; $max = SELECT MAX( customer_id ) FROM customers; INSERT INTO customers( customer_id, firstname, surname ) VALUES ($max+1 , 'jim', 'sock') unlock tables;  ref: https://stackoverflow.com/questions/5360117/insert-and-set-value-with-max1-problems<br><b><br></b><b>mysqldump routines triggers view</b><br><br>karena default nya mysql akan dump trigger, maka hanya store procedure / function atau yg dikenal dengan routines saja yang dimasukan parameter nya  mysqldump --routines --no-create-info --no-data --no-create-db --skip-opt <database> &gt; outputfile.sql mysqldump --routines --no-create-info --no-data --no-create-db --skip-opt <database> | gzip &gt; outputfile.sql.gz</database></database><br><database><database><b><br></b></database></database><database><database><b>mysql change definer of trigger</b></database></database><br><br>mysqldump --skip-opt --no-data --no-create-db --no-create-info --routines --add-drop-trigger <database> &gt; outputfile-trigger.sql  lalu edit outputfile-trigger.sql dengan merename user DEFINER dengan CURRENT_USER atau `namauser`@`namahost`</database><br><database><database><database><br></database></database></database><database><database><database><b>mysql gui (free)</b></database></database></database><br><database><database><database><br></database></database></database><database><database><database>https://www.mysql.com/products/workbench/</database></database></database><br>mysql workbench has performance monitoring too :)<br><database><database><database><br></database></database></database><database><database><database><b>https://www.google.co.id/search?q=mysql+change+from+innodb+to+myisam+table</b></database></database></database><br><database><database><database><br></database></database></database><database><database><database>ALTER TABLE table_name ENGINE = MyISAM;</database></database></database><br><database><database><database>ALTER TABLE table_name ENGINE = InnoDB;</database></database></database>
