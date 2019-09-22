@@ -1,14 +1,14 @@
 baseURL = "https://blog.indonesiadot.com/"
 languageCode = "en-us"
 title = "Blog Indonesiadot.Com"
-theme = "lanyon"
+theme = "lanyonindo"
 
 Paginate = 9
 Pagination = 3
 canonifyurls = true
 [permalinks]
-  #post = "/:year/:month/:day/:title/"
-  post = "/:slug/"
+  post = "/:year/:month/:day/:title/"
+  #post = "/:slug/"
   fixed = "/:title/"
 
 [params]

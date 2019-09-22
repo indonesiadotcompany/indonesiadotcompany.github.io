@@ -1,0 +1,40 @@
+<hr/>
+{{ $taxo := "tags" }}
+{{ with .Param $taxo }}
+ Tags:
+ {{ range $index, $director := . }}
+  {{- if gt $index 0 }}, {{ end -}}
+  {{ with $.Site.GetPage (printf "/%s/%s" $taxo $director) -}}
+   <a href="{{ .Permalink }}">{{ $director }}</a>
+  {{- end -}}
+ {{- end -}}
+{{ end }}
+<br/>
+{{ $taxo := "categories" }}
+{{ with .Param $taxo }}
+ Tags:
+ {{ range $index, $director := . }}
+  {{- if gt $index 0 }}, {{ end -}}
+  {{ with $.Site.GetPage (printf "/%s/%s" $taxo $director) -}}
+   <a href="{{ .Permalink }}">{{ $director }}</a>
+  {{- end -}}
+ {{- end -}}
+{{ end }}
+
+	</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147159427-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147159427-1');
+</script>
+
+</html>
