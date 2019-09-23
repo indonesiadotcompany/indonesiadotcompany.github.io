@@ -62,17 +62,27 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/virtualization/</loc>
-    <lastmod>2019-09-02T08:17:56+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/categories/virtualization/</loc>
     <lastmod>2019-09-02T08:17:56+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/2019/09/02/birau11/</loc>
+    <loc>https://blog.indonesiadot.com/tags/virtualization/</loc>
+    <lastmod>2019-09-02T08:17:56+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/mail/</loc>
+    <lastmod>2019-09-02T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/postfix/</loc>
+    <lastmod>2019-09-02T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/09/02/postfix-tips/</loc>
     <lastmod>2019-09-02T08:17:54+07:00</lastmod>
   </url>
   
@@ -138,6 +148,11 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/ssg/</loc>
+    <lastmod>2019-09-02T08:17:16+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/static-site-generator/</loc>
     <lastmod>2019-09-02T08:17:16+07:00</lastmod>
   </url>
   
@@ -293,11 +308,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2018/05/26/freebsd-mailserver/</loc>
-    <lastmod>2018-05-26T08:04:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/mail/</loc>
     <lastmod>2018-05-26T08:04:00+00:00</lastmod>
   </url>
   

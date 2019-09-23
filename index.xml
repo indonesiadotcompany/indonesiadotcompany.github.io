@@ -71,12 +71,29 @@
     
       
         <item>
-          <title>Birau11</title>
-          <link>https://blog.indonesiadot.com/2019/09/02/birau11/</link>
+          <title>Postfix tips</title>
+          <link>https://blog.indonesiadot.com/2019/09/02/postfix-tips/</link>
           <pubDate>Mon, 02 Sep 2019 08:17:54 WIB</pubDate>
           <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2019/09/02/birau11/</guid>
-          <description></description>
+          <guid>https://blog.indonesiadot.com/2019/09/02/postfix-tips/</guid>
+          <description>
+
+&lt;h3 id=&#34;postfix-send-to-local-network&#34;&gt;postfix send to local network&lt;/h3&gt;
+
+&lt;p&gt;Ini adalah langkah untuk membuat postfix mengirim ke mail server dalam LAN&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;real.net smtp:[192.168.1.108]&amp;quot; &amp;gt;&amp;gt; /etc/postfix/transport
+postmap /etc/postfix/transport
+systemctl restart postfix
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/&#34;&gt;https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.postfix.org/STANDARD_CONFIGURATION_README.html&#34;&gt;http://www.postfix.org/STANDARD_CONFIGURATION_README.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
         </item>
       
     
@@ -183,14 +200,15 @@
           <pubDate>Mon, 02 Sep 2019 08:17:16 WIB</pubDate>
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/</guid>
-          <description>&lt;p&gt;Referensi:&lt;/p&gt;
+          <description>&lt;p&gt;Referensi hugo dasar:
+* &lt;a href=&#34;https://www.petanikode.com/topik/hugo&#34;&gt;https://www.petanikode.com/topik/hugo&lt;/a&gt;
+* &lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;https://gohugo.io/getting-started/quick-start/&lt;/a&gt;
+* &lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/&#34;&gt;https://gohugo.io/hosting-and-deployment/hosting-on-github/&lt;/a&gt;
+* &lt;a href=&#34;https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html&#34;&gt;https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html&lt;/a&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;https://gohugo.io/getting-started/quick-start/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/&#34;&gt;https://gohugo.io/hosting-and-deployment/hosting-on-github/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://themes.gohugo.io/gohugo-theme-ananke/&#34;&gt;https://themes.gohugo.io/gohugo-theme-ananke/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html&#34;&gt;https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Referensi hugo dan e-commerce:
+* &lt;a href=&#34;https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf&#34;&gt;https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf&lt;/a&gt;
+* &lt;a href=&#34;https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce&#34;&gt;https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
       
