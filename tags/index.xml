@@ -6,17 +6,53 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Sep 2019 08:17:16 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 24 Sep 2019 08:17:48 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>git</title>
+      <link>https://blog.indonesiadot.com/tags/git/</link>
+      <pubDate>Tue, 24 Sep 2019 08:17:48 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>https://blog.indonesiadot.com/tags/github/</link>
+      <pubDate>Tue, 24 Sep 2019 08:17:48 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>hugo</title>
       <link>https://blog.indonesiadot.com/tags/hugo/</link>
-      <pubDate>Tue, 24 Sep 2019 08:17:16 +0700</pubDate>
+      <pubDate>Tue, 24 Sep 2019 08:17:48 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssg</title>
+      <link>https://blog.indonesiadot.com/tags/ssg/</link>
+      <pubDate>Tue, 24 Sep 2019 08:17:48 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ssg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://blog.indonesiadot.com/tags/web/</link>
+      <pubDate>Tue, 24 Sep 2019 08:17:48 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/web/</guid>
       <description></description>
     </item>
     
@@ -30,29 +66,11 @@
     </item>
     
     <item>
-      <title>ssg</title>
-      <link>https://blog.indonesiadot.com/tags/ssg/</link>
-      <pubDate>Tue, 24 Sep 2019 08:17:16 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/ssg/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>static-site-generator</title>
       <link>https://blog.indonesiadot.com/tags/static-site-generator/</link>
       <pubDate>Tue, 24 Sep 2019 08:17:16 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/static-site-generator/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>web</title>
-      <link>https://blog.indonesiadot.com/tags/web/</link>
-      <pubDate>Tue, 24 Sep 2019 08:17:16 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/web/</guid>
       <description></description>
     </item>
     
@@ -125,15 +143,6 @@
       <pubDate>Mon, 02 Sep 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/postfix/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://blog.indonesiadot.com/tags/git/</link>
-      <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/git/</guid>
       <description></description>
     </item>
     
