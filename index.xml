@@ -5,9 +5,46 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2019</rights>
-    <updated>2019-09-02 08:17:58 &#43;0700 WIB</updated>
+    <updated>2019-09-24 08:17:16 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>Markdown tips</title>
+          <link>https://blog.indonesiadot.com/2019/09/24/markdown-tips/</link>
+          <pubDate>Tue, 24 Sep 2019 08:17:16 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/09/24/markdown-tips/</guid>
+          <description>
+
+&lt;h2 id=&#34;markdown-insert-image&#34;&gt;&lt;em&gt;markdown&lt;/em&gt; insert image&lt;/h2&gt;
+
+&lt;p&gt;Ini adalah &lt;a href=&#34;https://www.petanikode.com/markdown-pemula/&#34;&gt;&lt;em&gt;markdown&lt;/em&gt;&lt;/a&gt; untuk menampilkan gambar yang terletak di dalam folder / direktori pada postingan di hugo&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;![nama-image](path/to/image)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi markdown images:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images&#34;&gt;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;markdown-insert-link&#34;&gt;markdown insert link&lt;/h2&gt;
+
+&lt;p&gt;Ini adalah markdown untuk menampilkan link &lt;em&gt;url&lt;/em&gt; pada kata atau kalimat di halaman web&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[kata atau kalimat](http://link.url/yang-dituju)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;seperti contoh diatas&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[markdown](https://www.petanikode.com/markdown-pemula/)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
       
     
       

@@ -8,7 +8,47 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2019-09-02T08:17:58+07:00</lastmod>
+    <lastmod>2019-09-24T08:17:16+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/hugo/</loc>
+    <lastmod>2019-09-24T08:17:16+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/markdown/</loc>
+    <lastmod>2019-09-24T08:17:16+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/09/24/markdown-tips/</loc>
+    <lastmod>2019-09-24T08:17:16+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2019-09-24T08:17:16+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ssg/</loc>
+    <lastmod>2019-09-24T08:17:16+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/static-site-generator/</loc>
+    <lastmod>2019-09-24T08:17:16+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2019-09-24T08:17:16+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/web/</loc>
+    <lastmod>2019-09-24T08:17:16+07:00</lastmod>
   </url>
   
   <url>
@@ -22,17 +62,7 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2019-09-02T08:17:58+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/server/</loc>
-    <lastmod>2019-09-02T08:17:58+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
     <lastmod>2019-09-02T08:17:58+07:00</lastmod>
   </url>
   
@@ -62,12 +92,12 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/categories/virtualization/</loc>
+    <loc>https://blog.indonesiadot.com/tags/virtualization/</loc>
     <lastmod>2019-09-02T08:17:56+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/virtualization/</loc>
+    <loc>https://blog.indonesiadot.com/categories/virtualization/</loc>
     <lastmod>2019-09-02T08:17:56+07:00</lastmod>
   </url>
   
@@ -132,32 +162,12 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/hugo/</loc>
-    <lastmod>2019-09-02T08:17:16+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/</loc>
     <lastmod>2019-09-02T08:17:16+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/scripting/</loc>
-    <lastmod>2019-09-02T08:17:16+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ssg/</loc>
-    <lastmod>2019-09-02T08:17:16+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/static-site-generator/</loc>
-    <lastmod>2019-09-02T08:17:16+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/web/</loc>
     <lastmod>2019-09-02T08:17:16+07:00</lastmod>
   </url>
   
