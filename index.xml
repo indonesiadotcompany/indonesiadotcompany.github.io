@@ -26,12 +26,6 @@
 &lt;pre&gt;&lt;code&gt;![nama-image](path/to/image)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Referensi markdown images:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images&#34;&gt;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
 &lt;h2 id=&#34;markdown-insert-link&#34;&gt;markdown insert link&lt;/h2&gt;
 
 &lt;p&gt;Ini adalah markdown untuk menampilkan link &lt;em&gt;url&lt;/em&gt; pada kata atau kalimat di halaman web&lt;/p&gt;
@@ -43,6 +37,12 @@
 
 &lt;pre&gt;&lt;code&gt;[markdown](https://www.petanikode.com/markdown-pemula/)
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi markdown images:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images&#34;&gt;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
       
