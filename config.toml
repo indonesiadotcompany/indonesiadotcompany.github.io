@@ -2,6 +2,7 @@ baseURL = "https://blog.indonesiadot.com/"
 languageCode = "en-us"
 title = "Blog Indonesiadot.Com"
 theme = "lanyonindo"
+show_reading_time = "true"
 
 Paginate = 9
 Pagination = 3
