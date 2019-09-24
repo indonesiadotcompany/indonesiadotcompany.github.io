@@ -17,8 +17,8 @@
       <pubDate>Tue, 24 Sep 2019 08:17:48 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/24/hugo-hosting-dengan-github/</guid>
-      <description>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh: Nama user: tpinews Nama repositori yang harus dibuat: tpinews.github.io
-Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:
+      <description>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:
+ Nama user: tpinews Nama repositori yang harus dibuat: tpinews.github.io  Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:
 hugo new site tpinews cd tpinews cp -r /path/kumpulanthemeshugo/travelify themes/ cp /path/scripts/push-deploy.sh . git init git add . git commit -m &#39;komat kamit awal&#39; git remote add origin https://tpinews.</description>
     </item>
     

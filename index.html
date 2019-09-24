@@ -382,9 +382,12 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/hugo-hosting-dengan-github/">Hugo hosting dengan github</a></h1>
         <span class="post-date">Sep 24, 2019</span>
-	<p>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:
-Nama user: tpinews
-Nama repositori yang harus dibuat: tpinews.github.io</p>
+	<p>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:</p>
+
+<ul>
+<li>Nama user: tpinews</li>
+<li>Nama repositori yang harus dibuat: tpinews.github.io</li>
+</ul>
 
 <p>Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:</p>
 
@@ -438,8 +441,9 @@ git push origin hugo
 
 <p>Note:</p>
 
-<p>Untuk lebih mudah tidak perlu memasukan password, bisa di buat dari menu settings account github, lalu pilih menu sebelah kiri bawah bagian Developer settings, lalu Personal access tokens dan generate new token.
-Lalu copy token tersebut dan tambahkan pada file .git/config dan .git/modules/public/config ,bagian url nya, sehingga menjadi seperti contoh berikut:</p>
+<p>Untuk lebih mudah tidak perlu memasukan password, bisa di buat dari menu settings account github, lalu pilih menu sebelah kiri bawah bagian Developer settings, lalu Personal access tokens dan generate new token.</p>
+
+<p>Lalu copy token tersebut dan tambahkan pada file .git/config dan .git/modules/public/config ,bagian url nya, sehingga menjadi seperti contoh berikut:</p>
 
 <pre><code>   url = https://namauser:tokenhasidaricopygeneratenewtoken@namarepository.github.io.git
 </code></pre>
