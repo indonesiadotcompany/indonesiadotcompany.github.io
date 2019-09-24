@@ -11,10 +11,6 @@ Ini adalah [*markdown*](https://www.petanikode.com/markdown-pemula/) untuk menam
 ```
 ![nama-image](path/to/image)
 ```
-Referensi markdown images:
-
-* https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images
-
 ## markdown insert link
 Ini adalah markdown untuk menampilkan link *url* pada kata atau kalimat di halaman web
 ```
@@ -24,3 +20,7 @@ seperti contoh diatas
 ```
 [markdown](https://www.petanikode.com/markdown-pemula/)
 ```
+
+Referensi markdown images:
+
+* https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images
