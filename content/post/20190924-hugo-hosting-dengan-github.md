@@ -8,8 +8,9 @@ draft: false
 ---
 
 Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:
-Nama user: tpinews
-Nama repositori yang harus dibuat: tpinews.github.io
+
+* Nama user: tpinews
+* Nama repositori yang harus dibuat: tpinews.github.io
 
 Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:
 ```
@@ -64,6 +65,7 @@ git push origin hugo
 Note:
 
 Untuk lebih mudah tidak perlu memasukan password, bisa di buat dari menu settings account github, lalu pilih menu sebelah kiri bawah bagian Developer settings, lalu Personal access tokens dan generate new token.
+
 Lalu copy token tersebut dan tambahkan pada file .git/config dan .git/modules/public/config ,bagian url nya, sehingga menjadi seperti contoh berikut:
 ```
    url = https://namauser:tokenhasidaricopygeneratenewtoken@namarepository.github.io.git
