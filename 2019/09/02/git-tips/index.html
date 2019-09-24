@@ -388,10 +388,6 @@ git merge hotfix
 
 <p><img src="https://blog.indonesiadot.com/images/2019/git-merge-2.png" alt="git-merge-1" /></p>
 
-<p>Referensi:</p>
-
-<p><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</a></p>
-
 <h2 id="git-undo-merge">git undo merge</h2>
 
 <p>Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan</p>
@@ -402,10 +398,48 @@ git reset --hard &lt;id_repository_log&gt;
 
 <p>Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</p>
 
+<h2 id="git-clear-repository">git clear repository</h2>
+
+<pre><code>rm -rf .git*
+git init
+git add .
+git commit -m 'initial commit'
+git remote add origin git@github.com:&lt;YOUR ACCOUNT&gt;/&lt;YOUR REPOS&gt;.git
+git push -u --force origin master
+</code></pre>
+
+<h2 id="git-branch">git branch</h2>
+
+<h3 id="git-create-branch">git create branch</h3>
+
+<pre><code>git checkout -b branchbaru
+git push origin branchbaru
+</code></pre>
+
+<p>jika branchbaru tersebut sudah ada di <em>remote repository</em> (repository di luar selain di lokal komputer, seperti github / gitlab / bitbucket) dan isinya ingin dihapus / diupdate sesuai dengan isi yang ada di local repository, maka harus menggunakan parameter &ndash;force
+<code>git push --force origin branchbaru</code></p>
+
+<h3 id="default-branch">default branch</h3>
+
+<p>default branch pada git biasanya adalah branch pertama yang kita push, dan biasanya adalah branch master, kecuali jika pertama kali push nya adalah nama branch lain, maka default nya adalah nama branch lain, dan jika terlanjur di awal push dengan branch lain, maka untuk merubah default branch itu tidak bisa memakai command, tapi harus melalui menu settings - branches pada remote repository.</p>
+
+<h3 id="delete-branch">delete branch</h3>
+
+<p>pertama pastikan yang ingin dihapus bukan default branch.</p>
+
+<pre><code>git checkout master
+git push origin --delete namabranchyangakandihapus
+git branch -D namabranchyangakandihapus
+</code></pre>
+
+<p>pindah dulu ke branch default, lalu hapus remote branch, kemudian hapus local branch</p>
+
 <p>Referensi:</p>
 
 <ul>
+<li><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</a></li>
 <li><a href="https://stackoverflow.com/questions/11722533/rollback-a-git-merge/29110174">https://stackoverflow.com/questions/11722533/rollback-a-git-merge/29110174</a></li>
+<li><a href="https://help.github.com/en/articles/setting-the-default-branch">https://help.github.com/en/articles/setting-the-default-branch</a></li>
 </ul>
 
 <p>Referensi belajar git:</p>

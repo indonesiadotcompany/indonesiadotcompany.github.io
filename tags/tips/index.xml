@@ -52,9 +52,7 @@ echo &amp;quot;real.net smtp:[192.168.1.108]&amp;quot; &amp;gt;&amp;gt; /etc/pos
       
       <guid>https://blog.indonesiadot.com/2019/09/02/git-tips/</guid>
       <description>git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge  untuk menggabungkan isi dari branch hotfix ke master
-git checkout master git merge hotfix  Referensi:
-https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
-git undo merge Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan
+git checkout master git merge hotfix  git undo merge Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan
 git reflog git reset --hard &amp;lt;id_repository_log&amp;gt;  Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</description>
     </item>
     
