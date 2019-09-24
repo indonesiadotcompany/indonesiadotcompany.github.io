@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>repository on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/repository/</link>
+    <description>Recent content in repository on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Sep 2019 08:17:21 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/repository/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git tips</title>
+      <link>https://blog.indonesiadot.com/2019/09/02/git-tips/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/09/02/git-tips/</guid>
+      <description>git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge  untuk menggabungkan isi dari branch hotfix ke master
+git checkout master git merge hotfix  Referensi:
+https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
+git undo merge Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan
+git reflog git reset --hard &amp;lt;id_repository_log&amp;gt;  Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</description>
+    </item>
+    
+  </channel>
+</rss>

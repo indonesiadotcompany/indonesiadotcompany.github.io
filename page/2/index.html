@@ -374,9 +374,43 @@
 <div class="post">
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/belajar-git/">Belajar Git</a></h1>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/git-tips/">Git tips</a></h1>
         <span class="post-date">Sep 2, 2019</span>
-	<p>Referensi:</p>
+	
+
+<h2 id="git-merge">git merge</h2>
+
+<p>Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap
+<img src="https://blog.indonesiadot.com/images/2019/git-merge-1.png" alt="git-merge-1" />
+lalu <em>git merge <nama-branch></em> untuk menggabungkan isi dari branch hotfix ke master</p>
+
+<pre><code>git checkout master
+git merge hotfix
+</code></pre>
+
+<p><img src="https://blog.indonesiadot.com/images/2019/git-merge-2.png" alt="git-merge-1" /></p>
+
+<p>Referensi:</p>
+
+<p><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</a></p>
+
+<h2 id="git-undo-merge">git undo merge</h2>
+
+<p>Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan</p>
+
+<pre><code>git reflog
+git reset --hard &lt;id_repository_log&gt;
+</code></pre>
+
+<p>Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</p>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/11722533/rollback-a-git-merge/29110174">https://stackoverflow.com/questions/11722533/rollback-a-git-merge/29110174</a></li>
+</ul>
+
+<p>Referensi belajar git:</p>
 
 <ul>
 <li><a href="https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f">https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f</a></li>
@@ -390,15 +424,21 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/">Pembuatan web statis dengan hugo</a></h1>
         <span class="post-date">Sep 2, 2019</span>
-	<p>Referensi hugo dasar:
-* <a href="https://www.petanikode.com/topik/hugo">https://www.petanikode.com/topik/hugo</a>
-* <a href="https://gohugo.io/getting-started/quick-start/">https://gohugo.io/getting-started/quick-start/</a>
-* <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a>
-* <a href="https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html">https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html</a></p>
+	<p>Referensi hugo dasar:</p>
 
-<p>Referensi hugo dan e-commerce:
-* <a href="https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf">https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf</a>
-* <a href="https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce">https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce</a></p>
+<ul>
+<li><a href="https://www.petanikode.com/topik/hugo">https://www.petanikode.com/topik/hugo</a></li>
+<li><a href="https://gohugo.io/getting-started/quick-start/">https://gohugo.io/getting-started/quick-start/</a></li>
+<li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></li>
+<li><a href="https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html">https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html</a></li>
+</ul>
+
+<p>Referensi hugo dan e-commerce:</p>
+
+<ul>
+<li><a href="https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf">https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf</a></li>
+<li><a href="https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce">https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce</a></li>
+</ul>
 
     </div>
   
@@ -479,15 +519,14 @@ Delete the now untracked submodule files rm -rf path_to_submodule</p>
 <hr/>
 
 
-<br/>
-
-
+<hr/>
+Dibuat dengan &hearts; menggunakan <a href="https://https://gohugo.io">hugo</a> dengan izin Yang Maha Membuat
+<p>&nbsp;</p>
 
 	</div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-
   </body>
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147159427-1"></script>

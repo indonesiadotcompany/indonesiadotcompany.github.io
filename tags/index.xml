@@ -93,20 +93,11 @@
     </item>
     
     <item>
-      <title>programming</title>
-      <link>https://blog.indonesiadot.com/tags/programming/</link>
+      <title>repository</title>
+      <link>https://blog.indonesiadot.com/tags/repository/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>scripting</title>
-      <link>https://blog.indonesiadot.com/tags/scripting/</link>
-      <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/scripting/</guid>
+      <guid>https://blog.indonesiadot.com/tags/repository/</guid>
       <description></description>
     </item>
     
@@ -116,6 +107,15 @@
       <pubDate>Mon, 02 Sep 2019 08:17:16 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scripting</title>
+      <link>https://blog.indonesiadot.com/tags/scripting/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:16 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/scripting/</guid>
       <description></description>
     </item>
     

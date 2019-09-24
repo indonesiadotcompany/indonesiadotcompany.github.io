@@ -176,12 +176,46 @@ systemctl restart postfix
     
       
         <item>
-          <title>Belajar Git</title>
-          <link>https://blog.indonesiadot.com/2019/09/02/belajar-git/</link>
+          <title>Git tips</title>
+          <link>https://blog.indonesiadot.com/2019/09/02/git-tips/</link>
           <pubDate>Mon, 02 Sep 2019 08:17:21 WIB</pubDate>
           <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2019/09/02/belajar-git/</guid>
-          <description>&lt;p&gt;Referensi:&lt;/p&gt;
+          <guid>https://blog.indonesiadot.com/2019/09/02/git-tips/</guid>
+          <description>
+
+&lt;h2 id=&#34;git-merge&#34;&gt;git merge&lt;/h2&gt;
+
+&lt;p&gt;Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap
+&lt;img src=&#34;https://blog.indonesiadot.com/images/2019/git-merge-1.png&#34; alt=&#34;git-merge-1&#34; /&gt;
+lalu &lt;em&gt;git merge &lt;nama-branch&gt;&lt;/em&gt; untuk menggabungkan isi dari branch hotfix ke master&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git checkout master
+git merge hotfix
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.indonesiadot.com/images/2019/git-merge-2.png&#34; alt=&#34;git-merge-1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging&#34;&gt;https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;git-undo-merge&#34;&gt;git undo merge&lt;/h2&gt;
+
+&lt;p&gt;Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git reflog
+git reset --hard &amp;lt;id_repository_log&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan&lt;/p&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/11722533/rollback-a-git-merge/29110174&#34;&gt;https://stackoverflow.com/questions/11722533/rollback-a-git-merge/29110174&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Referensi belajar git:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f&#34;&gt;https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f&lt;/a&gt;&lt;/li&gt;
@@ -200,15 +234,21 @@ systemctl restart postfix
           <pubDate>Mon, 02 Sep 2019 08:17:16 WIB</pubDate>
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/</guid>
-          <description>&lt;p&gt;Referensi hugo dasar:
-* &lt;a href=&#34;https://www.petanikode.com/topik/hugo&#34;&gt;https://www.petanikode.com/topik/hugo&lt;/a&gt;
-* &lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;https://gohugo.io/getting-started/quick-start/&lt;/a&gt;
-* &lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/&#34;&gt;https://gohugo.io/hosting-and-deployment/hosting-on-github/&lt;/a&gt;
-* &lt;a href=&#34;https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html&#34;&gt;https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html&lt;/a&gt;&lt;/p&gt;
+          <description>&lt;p&gt;Referensi hugo dasar:&lt;/p&gt;
 
-&lt;p&gt;Referensi hugo dan e-commerce:
-* &lt;a href=&#34;https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf&#34;&gt;https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf&lt;/a&gt;
-* &lt;a href=&#34;https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce&#34;&gt;https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.petanikode.com/topik/hugo&#34;&gt;https://www.petanikode.com/topik/hugo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;https://gohugo.io/getting-started/quick-start/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/&#34;&gt;https://gohugo.io/hosting-and-deployment/hosting-on-github/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html&#34;&gt;https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Referensi hugo dan e-commerce:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf&#34;&gt;https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce&#34;&gt;https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
       

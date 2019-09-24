@@ -24,13 +24,16 @@
     </item>
     
     <item>
-      <title>Belajar Git</title>
-      <link>https://blog.indonesiadot.com/2019/09/02/belajar-git/</link>
+      <title>Git tips</title>
+      <link>https://blog.indonesiadot.com/2019/09/02/git-tips/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2019/09/02/belajar-git/</guid>
-      <description>Referensi:
- https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f https://rogerdudler.github.io/git-guide/index.id.html https://medium.com/@amanze.ogbonna/accessing-pushing-to-github-without-username-and-password-3022feb077fb https://stackoverflow.com/questions/18935539/authenticate-with-github-using-a-token  </description>
+      <guid>https://blog.indonesiadot.com/2019/09/02/git-tips/</guid>
+      <description>git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge  untuk menggabungkan isi dari branch hotfix ke master
+git checkout master git merge hotfix  Referensi:
+https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
+git undo merge Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan
+git reflog git reset --hard &amp;lt;id_repository_log&amp;gt;  Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</description>
     </item>
     
   </channel>
