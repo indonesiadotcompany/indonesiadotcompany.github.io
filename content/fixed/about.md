@@ -5,27 +5,19 @@
 }
 
 <p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
+  Welcome to Web log of Indonesiadot.Com
 </p>
 
-In the novel, *The Strange Case of Dr. Jeykll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
+We are Widya, Nugraha, Widyamedia, Widunix, Widyaunix are all united in trying new cool things in technology, mostly internet technology, even we like to explore many things from humanity, farming, electricity, mechanical, until the spiritual things :)
 
-There are currently two themes built on Poole:
+There are currently two web sites of our brand (need to make once again to make it three):
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
+* [IndonesiaDot.Com](https://indonesiadot.com)
+* [Birau.Com](https://birau.com)
+* Fun Farming Forever :)
 
-Learn more and contribute on [GitHub](https://github.com/poole).
+Just watch out our blogs for update news.
 
-## Setup
-
-Some fun facts about the setup of this project include:
-
-* Built for [Jekyll](http://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
-* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
+Have questions or suggestions? Feel free to [Mail me](mailto:widya@indonseiadot.com?subject=Hi) or [ask me on Telegram](https://t.me/widyamedia) or [say hi on Whatsapp](https://api.whatsapp.com/send?phone=6281281037000&text=Hi%20Wid)
 
 Thanks for reading!
