@@ -26,17 +26,32 @@
 
 &lt;p&gt;Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;hugo new site tpinews
+&lt;pre&gt;&lt;code&gt;mkdir tpinews
 cd tpinews
-cp -r /path/kumpulanthemeshugo/travelify themes/
-cp /path/scripts/push-deploy.sh .
+touch .gitignore
 git init
 git add .
 git commit -m &#39;komat kamit awal&#39;
 git remote add origin https://tpinews.github.io.git
+git push origin master
+
+git checkout -b hugo
+hugo new site . --force
+cp -r /path/kumpulanthemeshugo/travelify themes/
+cp -r themes/exampleSite/* .
+cp /path/scripts/push-deploy.sh .
+git add .
+git commit -m &#39;komit hugo&#39;
+git push origin hugo
+
 git submodule add -b master https://tpinews.github.io.git public
 ./push-deploy.sh
+git branch -d master
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pastikan juga config.toml sudah sesuai, seperti nama theme dan lainnya, dan bisa di test di localhost dengan menjalankan &lt;code&gt;hugo server&lt;/code&gt; dan mengakses &lt;a href=&#34;http://localhost:1313&#34;&gt;http://localhost:1313&lt;/a&gt; di browser untuk melihat hasilnya.&lt;/p&gt;
+
+&lt;p&gt;Command di atas hanya dilakukan pertama kali saja, untuk selanjutnya yang dilakukan setelah melakukan perubahan dan ingin mengupdate di github, cukup menjalankan script push-deploy.sh&lt;/p&gt;
 
 &lt;p&gt;Disini theme yang digunakan misalnya travelify yang sudah disiapkan, dan juga script untuk push-deploy.sh untuk memudahkan deploy sebagai berikut:&lt;/p&gt;
 
