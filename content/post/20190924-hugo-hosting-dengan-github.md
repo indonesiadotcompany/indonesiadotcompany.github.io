@@ -13,18 +13,33 @@ Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelu
 * Nama repositori yang harus dibuat: tpinews.github.io
 
 Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:
+
 ```
-hugo new site tpinews
+mkdir tpinews
 cd tpinews
-cp -r /path/kumpulanthemeshugo/travelify themes/
-cp /path/scripts/push-deploy.sh .
+touch .gitignore
 git init
 git add .
 git commit -m 'komat kamit awal'
 git remote add origin https://tpinews.github.io.git
+git push origin master
+
+git checkout -b hugo
+hugo new site . --force
+cp -r /path/kumpulanthemeshugo/travelify themes/
+cp -r themes/exampleSite/* .
+cp /path/scripts/push-deploy.sh .
+git add .
+git commit -m 'komit hugo'
+git push origin hugo
+
 git submodule add -b master https://tpinews.github.io.git public
 ./push-deploy.sh
+git branch -d master
 ```
+Pastikan juga config.toml sudah sesuai, seperti nama theme dan lainnya, dan bisa di test di localhost dengan menjalankan `hugo server` dan mengakses http://localhost:1313 di browser untuk melihat hasilnya.
+
+Command di atas hanya dilakukan pertama kali saja, untuk selanjutnya yang dilakukan setelah melakukan perubahan dan ingin mengupdate di github, cukup menjalankan script push-deploy.sh
 
 Disini theme yang digunakan misalnya travelify yang sudah disiapkan, dan juga script untuk push-deploy.sh untuk memudahkan deploy sebagai berikut:
 ```
