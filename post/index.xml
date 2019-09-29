@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Sep 2019 08:17:48 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 28 Sep 2019 08:17:36 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>IDS Tripwire</title>
+      <link>https://blog.indonesiadot.com/2019/09/28/ids-tripwire/</link>
+      <pubDate>Sat, 28 Sep 2019 08:17:36 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/09/28/ids-tripwire/</guid>
+      <description>Referensi:
+ https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/  </description>
+    </item>
     
     <item>
       <title>Hugo hosting dengan github</title>
@@ -44,7 +54,8 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
       <description>Tools yang biasa digunakan pada server linux:
  Firewall
  iptables shorewall csf  Anti Malware
- maldet (malware detection for web directory)   </description>
+ maldet (malware detection for web directory)  IDS
+ tripwire   </description>
     </item>
     
     <item>
@@ -67,24 +78,6 @@ Adapun persyaratan untuk ini yaitu:
       <description> postfix send to local network Ini adalah langkah untuk membuat postfix mengirim ke mail server dalam LAN
 echo &amp;quot;real.net smtp:[192.168.1.108]&amp;quot; &amp;gt;&amp;gt; /etc/postfix/transport postmap /etc/postfix/transport systemctl restart postfix  Referensi:
  https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/ http://www.postfix.org/STANDARD_CONFIGURATION_README.html  </description>
-    </item>
-    
-    <item>
-      <title>Sembilan</title>
-      <link>https://blog.indonesiadot.com/2019/09/02/sembilan/</link>
-      <pubDate>Mon, 02 Sep 2019 08:17:42 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/2019/09/02/sembilan/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Delapan</title>
-      <link>https://blog.indonesiadot.com/2019/09/02/delapan/</link>
-      <pubDate>Mon, 02 Sep 2019 08:17:36 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/2019/09/02/delapan/</guid>
-      <description></description>
     </item>
     
     <item>
@@ -165,6 +158,16 @@ https://indonesiadot.com https://gist.github.com/myusuf3/7f645819ded92bda6677</d
       
       <guid>https://blog.indonesiadot.com/2019/09/01/my-first-post/</guid>
       <description>ini adalah postingan pertama setelah menginstall hugo</description>
+    </item>
+    
+    <item>
+      <title>Google Cloud Platform GCP Free</title>
+      <link>https://blog.indonesiadot.com/2019/09/01/google-cloud-platform-gcp-free/</link>
+      <pubDate>Sun, 01 Sep 2019 08:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/09/01/google-cloud-platform-gcp-free/</guid>
+      <description>Sangat disarankan untuk segera daftar dan mendapatkan gratis layanan cloud hosting dari Google Cloud Platform / GCP yang berguna untuk server development, trial, terutama untuk para startup.
+Syaratnya cuma account google dan kartu debit Visa, tidak perlu kartu kredit, disini digunakan kartu jenius, untuk jenius pun bisa mendaftar dengan syarat cuma KTP yang selanjutnya akan dikonfirmasikan untuk didatangi oleh pihak data dari jenius, jadi kita cukup tunggu dan terima beres, yang selanjutnya kartu pertama akan dikirim ke alamat kita.</description>
     </item>
     
     <item>

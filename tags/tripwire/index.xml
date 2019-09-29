@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tripwire on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/tripwire/</link>
+    <description>Recent content in tripwire on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Sep 2019 08:17:36 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/tripwire/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IDS Tripwire</title>
+      <link>https://blog.indonesiadot.com/2019/09/28/ids-tripwire/</link>
+      <pubDate>Sat, 28 Sep 2019 08:17:36 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/09/28/ids-tripwire/</guid>
+      <description>Referensi:
+ https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/  </description>
+    </item>
+    
+  </channel>
+</rss>

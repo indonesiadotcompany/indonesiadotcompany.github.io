@@ -5,9 +5,25 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2019</rights>
-    <updated>2019-09-24 08:17:48 &#43;0700 WIB</updated>
+    <updated>2019-09-28 08:17:36 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>IDS Tripwire</title>
+          <link>https://blog.indonesiadot.com/2019/09/28/ids-tripwire/</link>
+          <pubDate>Sat, 28 Sep 2019 08:17:36 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/09/28/ids-tripwire/</guid>
+          <description>&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/&#34;&gt;https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
       
     
       
@@ -161,6 +177,12 @@ git push origin hugo
 &lt;ul&gt;
 &lt;li&gt;maldet (malware detection for web directory)&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;IDS&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;tripwire&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -222,28 +244,6 @@ systemctl restart postfix
 &lt;li&gt;&lt;a href=&#34;http://www.postfix.org/STANDARD_CONFIGURATION_README.html&#34;&gt;http://www.postfix.org/STANDARD_CONFIGURATION_README.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        </item>
-      
-    
-      
-        <item>
-          <title>Sembilan</title>
-          <link>https://blog.indonesiadot.com/2019/09/02/sembilan/</link>
-          <pubDate>Mon, 02 Sep 2019 08:17:42 WIB</pubDate>
-          <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2019/09/02/sembilan/</guid>
-          <description></description>
-        </item>
-      
-    
-      
-        <item>
-          <title>Delapan</title>
-          <link>https://blog.indonesiadot.com/2019/09/02/delapan/</link>
-          <pubDate>Mon, 02 Sep 2019 08:17:36 WIB</pubDate>
-          <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2019/09/02/delapan/</guid>
-          <description></description>
         </item>
       
     
@@ -449,6 +449,26 @@ Delete the now untracked submodule files rm -rf path_to_submodule&lt;/p&gt;
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2019/09/01/my-first-post/</guid>
           <description>&lt;p&gt;ini adalah postingan pertama setelah menginstall hugo&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Google Cloud Platform GCP Free</title>
+          <link>https://blog.indonesiadot.com/2019/09/01/google-cloud-platform-gcp-free/</link>
+          <pubDate>Sun, 01 Sep 2019 08:17:42 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/09/01/google-cloud-platform-gcp-free/</guid>
+          <description>&lt;p&gt;Sangat disarankan untuk segera daftar dan mendapatkan gratis layanan cloud hosting dari Google Cloud Platform / GCP yang berguna untuk server development, trial, terutama untuk para startup.&lt;/p&gt;
+
+&lt;p&gt;Syaratnya cuma account google dan kartu debit Visa, tidak perlu kartu kredit, disini digunakan kartu jenius, untuk jenius pun bisa mendaftar dengan syarat cuma KTP yang selanjutnya akan dikonfirmasikan untuk didatangi oleh pihak data dari jenius, jadi kita cukup tunggu dan terima beres, yang selanjutnya kartu pertama akan dikirim ke alamat kita.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.indonesiadot.com/images/2019/gcp-console.png&#34; alt=&#34;git-merge-1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Disini terlihat console dari GCP yang sudah dipakai sebulan untuk server monitoring dan juga server percobaan untuk compile dan pekerjaan berat lain, yang sudah dihapus karena hanya untuk percobaan sementara, disini masih tersisa credit 4 juta an :)&lt;/p&gt;
+
+&lt;p&gt;So give it a try :)&lt;/p&gt;
 </description>
         </item>
       

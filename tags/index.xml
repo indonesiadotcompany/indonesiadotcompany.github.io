@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Sep 2019 08:17:48 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 28 Sep 2019 08:17:36 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ids</title>
+      <link>https://blog.indonesiadot.com/tags/ids/</link>
+      <pubDate>Sat, 28 Sep 2019 08:17:36 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ids/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://blog.indonesiadot.com/tags/linux/</link>
+      <pubDate>Sat, 28 Sep 2019 08:17:36 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://blog.indonesiadot.com/tags/security/</link>
+      <pubDate>Sat, 28 Sep 2019 08:17:36 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tripwire</title>
+      <link>https://blog.indonesiadot.com/tags/tripwire/</link>
+      <pubDate>Sat, 28 Sep 2019 08:17:36 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/tripwire/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>git</title>
@@ -75,11 +111,11 @@
     </item>
     
     <item>
-      <title>linux</title>
-      <link>https://blog.indonesiadot.com/tags/linux/</link>
+      <title>firewall</title>
+      <link>https://blog.indonesiadot.com/tags/firewall/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:58 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
+      <guid>https://blog.indonesiadot.com/tags/firewall/</guid>
       <description></description>
     </item>
     
@@ -89,15 +125,6 @@
       <pubDate>Mon, 02 Sep 2019 08:17:58 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tips</title>
-      <link>https://blog.indonesiadot.com/tags/tips/</link>
-      <pubDate>Mon, 02 Sep 2019 08:17:58 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
       <description></description>
     </item>
     
@@ -116,6 +143,15 @@
       <pubDate>Mon, 02 Sep 2019 08:17:56 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/proxmox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tips</title>
+      <link>https://blog.indonesiadot.com/tags/tips/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:56 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
       <description></description>
     </item>
     
@@ -161,6 +197,51 @@
       <pubDate>Mon, 02 Sep 2019 08:17:16 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/scripting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloud</title>
+      <link>https://blog.indonesiadot.com/tags/cloud/</link>
+      <pubDate>Sun, 01 Sep 2019 08:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>free</title>
+      <link>https://blog.indonesiadot.com/tags/free/</link>
+      <pubDate>Sun, 01 Sep 2019 08:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/free/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gcp</title>
+      <link>https://blog.indonesiadot.com/tags/gcp/</link>
+      <pubDate>Sun, 01 Sep 2019 08:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/gcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gratis</title>
+      <link>https://blog.indonesiadot.com/tags/gratis/</link>
+      <pubDate>Sun, 01 Sep 2019 08:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/gratis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vps</title>
+      <link>https://blog.indonesiadot.com/tags/vps/</link>
+      <pubDate>Sun, 01 Sep 2019 08:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/vps/</guid>
       <description></description>
     </item>
     
@@ -242,15 +323,6 @@
       <pubDate>Wed, 30 May 2018 01:14:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/wordpress/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>security</title>
-      <link>https://blog.indonesiadot.com/tags/security/</link>
-      <pubDate>Sat, 26 May 2018 07:34:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/security/</guid>
       <description></description>
     </item>
     
@@ -417,15 +489,6 @@
     </item>
     
     <item>
-      <title>cloud</title>
-      <link>https://blog.indonesiadot.com/tags/cloud/</link>
-      <pubDate>Fri, 09 Feb 2018 03:55:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/cloud/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>automation</title>
       <link>https://blog.indonesiadot.com/tags/automation/</link>
       <pubDate>Wed, 31 Jan 2018 23:30:00 +0000</pubDate>
@@ -440,15 +503,6 @@
       <pubDate>Wed, 31 Jan 2018 21:30:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/vm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vps</title>
-      <link>https://blog.indonesiadot.com/tags/vps/</link>
-      <pubDate>Wed, 31 Jan 2018 21:30:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/vps/</guid>
       <description></description>
     </item>
     

@@ -20,7 +20,8 @@
       <description>Tools yang biasa digunakan pada server linux:
  Firewall
  iptables shorewall csf  Anti Malware
- maldet (malware detection for web directory)   </description>
+ maldet (malware detection for web directory)  IDS
+ tripwire   </description>
     </item>
     
     <item>
