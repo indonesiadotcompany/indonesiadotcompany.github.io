@@ -27,7 +27,7 @@ git push origin master
 git checkout -b hugo
 hugo new site . --force
 cp -r /path/kumpulanthemeshugo/travelify themes/
-cp -r themes/exampleSite/* .
+cp -r themes/travelify/exampleSite/* .
 cp /path/scripts/push-deploy.sh .
 git add .
 git commit -m 'komit hugo'
