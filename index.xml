@@ -21,6 +21,7 @@
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/&#34;&gt;https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html&#34;&gt;https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -54,7 +55,7 @@ git push origin master
 git checkout -b hugo
 hugo new site . --force
 cp -r /path/kumpulanthemeshugo/travelify themes/
-cp -r themes/exampleSite/* .
+cp -r themes/travelify/exampleSite/* .
 cp /path/scripts/push-deploy.sh .
 git add .
 git commit -m &#39;komit hugo&#39;
@@ -168,6 +169,7 @@ git push origin hugo
 
 &lt;ul&gt;
 &lt;li&gt;iptables&lt;/li&gt;
+&lt;li&gt;ipset&lt;/li&gt;
 &lt;li&gt;shorewall&lt;/li&gt;
 &lt;li&gt;csf&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
@@ -182,6 +184,27 @@ git push origin hugo
 
 &lt;ul&gt;
 &lt;li&gt;tripwire&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Identity Server&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://freeipa.org&#34;&gt;FreeIPA (IPA = Identity, Policy, Authentication)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Video Conference&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;jitsi&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medevel.com/10-os-video-conferencing/&#34;&gt;More and more&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Customer support live chat&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;rocket.chat&lt;/li&gt;
+&lt;li&gt;tawk.to&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/juliancwirko/s-chat-app&#34;&gt;simple chat&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
@@ -201,13 +224,13 @@ git push origin hugo
 
 &lt;ul&gt;
 &lt;li&gt;menggunakan &lt;em&gt;thin provisioned backing storage&lt;/em&gt; seperti qcow2, thin-lvm, zfs pada server proxmox nya&lt;/li&gt;
-&lt;li&gt;menggunakan Virtio-SCSI controller pada guest vm nya&lt;/li&gt;
+&lt;li&gt;menggunakan Virtio SCSI controller pada guest option vm nya&lt;/li&gt;
 &lt;li&gt;Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya&lt;/li&gt;
 &lt;li&gt;Tambahkan discard mount options di /etc/fstab nya guest vm&lt;/li&gt;
 &lt;li&gt;Enable fstrim.timer pada systemctl&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Untuk membuktikannya, sambil mengecek di server proxmox dengan menggunakan command &lt;code&gt;lvs&lt;/code&gt; atau &lt;code&gt;lvdisplay&lt;/code&gt; untuk thin-lvm, atau &lt;code&gt;du -sch&lt;/code&gt; jika memakai qcow2 untuk mengetahui besar file sebelum dan setelah di guest vm nya dijalankan command &lt;code&gt;fstrim -av&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Untuk membuktikannya, sambil mengecek di server proxmox dengan menggunakan command &lt;code&gt;zfs list&lt;/code&gt; jika memakai zfs, &lt;code&gt;lvs&lt;/code&gt; atau &lt;code&gt;lvdisplay&lt;/code&gt; untuk thin-lvm, atau &lt;code&gt;du -sch&lt;/code&gt; jika memakai qcow2 untuk mengetahui besar file sebelum dan setelah di guest vm nya dijalankan command &lt;code&gt;fstrim -av&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Referensi:&lt;/p&gt;
 
@@ -267,8 +290,19 @@ systemctl restart postfix
           <pubDate>Mon, 02 Sep 2019 08:17:29 WIB</pubDate>
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/</guid>
-          <description>&lt;p&gt;Referensi:
-&lt;a href=&#34;https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4&#34;&gt;https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4&lt;/a&gt;&lt;/p&gt;
+          <description>&lt;p&gt;Berikut langkah yang dilakukan, tapi sebelumnya pastikan backup, backup dan backup&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get upgrade
+sudo do-release-upgrade -f DistUpgradeViewNonInteractive
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04&#34;&gt;https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4&#34;&gt;https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
       
@@ -443,18 +477,6 @@ Delete the now untracked submodule files rm -rf path_to_submodule&lt;/p&gt;
     
       
         <item>
-          <title>My First Post</title>
-          <link>https://blog.indonesiadot.com/2019/09/01/my-first-post/</link>
-          <pubDate>Sun, 01 Sep 2019 13:09:15 WIB</pubDate>
-          <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2019/09/01/my-first-post/</guid>
-          <description>&lt;p&gt;ini adalah postingan pertama setelah menginstall hugo&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
           <title>Google Cloud Platform GCP Free</title>
           <link>https://blog.indonesiadot.com/2019/09/01/google-cloud-platform-gcp-free/</link>
           <pubDate>Sun, 01 Sep 2019 08:17:42 WIB</pubDate>
@@ -469,18 +491,6 @@ Delete the now untracked submodule files rm -rf path_to_submodule&lt;/p&gt;
 &lt;p&gt;Disini terlihat console dari GCP yang sudah dipakai sebulan untuk server monitoring dan juga server percobaan untuk compile dan pekerjaan berat lain, yang sudah dihapus karena hanya untuk percobaan sementara, disini masih tersisa credit 4 juta an :)&lt;/p&gt;
 
 &lt;p&gt;So give it a try :)&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
-          <title>ubuntu 14.04 upgrade to ubuntu 16.04</title>
-          <link>https://blog.indonesiadot.com/2019/08/31/ubuntu-14.04-upgrade-to-ubuntu-16.04/</link>
-          <pubDate>Sat, 31 Aug 2019 07:25:00 UTC</pubDate>
-          <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2019/08/31/ubuntu-14.04-upgrade-to-ubuntu-16.04/</guid>
-          <description>&lt;p&gt;&lt;a href=&#34;https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04&#34;&gt;https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4&#34;&gt;https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;* backup, backup and backup&lt;br /&gt;&lt;br /&gt;&lt;pre class=&#34;kz la lb lc ld hx fq le&#34; style=&#34;background: rgba(0, 0, 0, 0.05); box-sizing: inherit; color: rgba(0, 0, 0, 0.8); margin-top: 56px; overflow-x: auto; padding: 20px;&#34;&gt;&lt;span class=&#34;lf lg cv bc lh b bu li lj l lk&#34; data-selectable-paragraph=&#34;&#34; id=&#34;29ab&#34; style=&#34;box-sizing: inherit; color: rgba(0, 0, 0, 0.84); display: block; font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, Courier, monospace; font-size: 16px; letter-spacing: -0.022em; line-height: 1.18; margin-bottom: -0.09em; margin-top: -0.09em; white-space: pre-wrap;&#34;&gt;sudo apt-get update&lt;/span&gt;&lt;span class=&#34;lf lg cv bc lh b bu ll lm ln lo lp lj l lk&#34; data-selectable-paragraph=&#34;&#34; id=&#34;b4d0&#34; style=&#34;box-sizing: inherit; color: rgba(0, 0, 0, 0.84); display: block; font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, Courier, monospace; font-size: 16px; letter-spacing: -0.022em; line-height: 1.18; margin-bottom: -0.09em; margin-top: 1.91em; white-space: pre-wrap;&#34;&gt;sudo apt-get upgrade&lt;/span&gt;&lt;span class=&#34;lf lg cv bc lh b bu ll lm ln lo lp lj l lk&#34; data-selectable-paragraph=&#34;&#34; id=&#34;71fb&#34; style=&#34;box-sizing: inherit; color: rgba(0, 0, 0, 0.84); display: block; font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, Courier, monospace; font-size: 16px; letter-spacing: -0.022em; line-height: 1.18; margin-bottom: -0.09em; margin-top: 1.91em; white-space: pre-wrap;&#34;&gt;sudo do-release-upgrade -f DistUpgradeViewNonInteractive&lt;/span&gt;&lt;/pre&gt;&lt;/p&gt;
 </description>
         </item>
       

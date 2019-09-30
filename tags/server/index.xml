@@ -19,9 +19,12 @@
       <guid>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
  Firewall
- iptables shorewall csf  Anti Malware
+ iptables ipset shorewall csf  Anti Malware
  maldet (malware detection for web directory)  IDS
- tripwire   </description>
+ tripwire  Identity Server
+ FreeIPA (IPA = Identity, Policy, Authentication)  Video Conference
+ jitsi More and more  Customer support live chat
+ rocket.chat tawk.to simple chat   </description>
     </item>
     
     <item>
@@ -32,7 +35,7 @@
       <guid>https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/</guid>
       <description>Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari thin provision storage atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.
 Adapun persyaratan untuk ini yaitu:
- menggunakan thin provisioned backing storage seperti qcow2, thin-lvm, zfs pada server proxmox nya menggunakan Virtio-SCSI controller pada guest vm nya Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya Tambahkan discard mount options di /etc/fstab nya guest vm Enable fstrim.</description>
+ menggunakan thin provisioned backing storage seperti qcow2, thin-lvm, zfs pada server proxmox nya menggunakan Virtio SCSI controller pada guest option vm nya Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya Tambahkan discard mount options di /etc/fstab nya guest vm Enable fstrim.</description>
     </item>
     
     <item>

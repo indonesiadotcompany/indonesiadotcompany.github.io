@@ -18,7 +18,7 @@
       
       <guid>https://blog.indonesiadot.com/2019/09/28/ids-tripwire/</guid>
       <description>Referensi:
- https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/  </description>
+ https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/ https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html  </description>
     </item>
     
     <item>
@@ -29,9 +29,12 @@
       <guid>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
  Firewall
- iptables shorewall csf  Anti Malware
+ iptables ipset shorewall csf  Anti Malware
  maldet (malware detection for web directory)  IDS
- tripwire   </description>
+ tripwire  Identity Server
+ FreeIPA (IPA = Identity, Policy, Authentication)  Video Conference
+ jitsi More and more  Customer support live chat
+ rocket.chat tawk.to simple chat   </description>
     </item>
     
   </channel>

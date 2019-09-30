@@ -355,10 +355,6 @@
       
     
       
-    
-      
-    
-      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -394,13 +390,13 @@
 
 <ul>
 <li>menggunakan <em>thin provisioned backing storage</em> seperti qcow2, thin-lvm, zfs pada server proxmox nya</li>
-<li>menggunakan Virtio-SCSI controller pada guest vm nya</li>
+<li>menggunakan Virtio SCSI controller pada guest option vm nya</li>
 <li>Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya</li>
 <li>Tambahkan discard mount options di /etc/fstab nya guest vm</li>
 <li>Enable fstrim.timer pada systemctl</li>
 </ul>
 
-<p>Untuk membuktikannya, sambil mengecek di server proxmox dengan menggunakan command <code>lvs</code> atau <code>lvdisplay</code> untuk thin-lvm, atau <code>du -sch</code> jika memakai qcow2 untuk mengetahui besar file sebelum dan setelah di guest vm nya dijalankan command <code>fstrim -av</code></p>
+<p>Untuk membuktikannya, sambil mengecek di server proxmox dengan menggunakan command <code>zfs list</code> jika memakai zfs, <code>lvs</code> atau <code>lvdisplay</code> untuk thin-lvm, atau <code>du -sch</code> jika memakai qcow2 untuk mengetahui besar file sebelum dan setelah di guest vm nya dijalankan command <code>fstrim -av</code></p>
 
 <p>Referensi:</p>
 

@@ -356,10 +356,6 @@
       
     
       
-    
-      
-    
-      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -398,8 +394,15 @@
 
 <ul>
 <li><a href="https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/">https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/</a></li>
+<li><a href="https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html">https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html</a></li>
 </ul>
 
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/tripwire/">tripwire</a>
+	 <hr/>
     </div>
   
     <div class="post">
@@ -426,7 +429,7 @@ git push origin master
 git checkout -b hugo
 hugo new site . --force
 cp -r /path/kumpulanthemeshugo/travelify themes/
-cp -r themes/exampleSite/* .
+cp -r themes/travelify/exampleSite/* .
 cp /path/scripts/push-deploy.sh .
 git add .
 git commit -m 'komit hugo'
@@ -486,6 +489,12 @@ git push origin hugo
 <pre><code>   url = https://namauser:tokenhasidaricopygeneratenewtoken@namarepository.github.io.git
 </code></pre>
 
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>, <a href="https://blog.indonesiadot.com/tags/github/">github</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>
+	 <hr/>
     </div>
   
     <div class="post">
@@ -518,6 +527,12 @@ git push origin hugo
 <li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images</a></li>
 </ul>
 
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/markdown/">markdown</a>, <a href="https://blog.indonesiadot.com/tags/static-site-generator/">static-site-generator</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>
+	 <hr/>
     </div>
   
     <div class="post">
@@ -530,6 +545,7 @@ git push origin hugo
 
 <ul>
 <li>iptables</li>
+<li>ipset</li>
 <li>shorewall</li>
 <li>csf</li>
 </ul></li>
@@ -545,8 +561,35 @@ git push origin hugo
 <ul>
 <li>tripwire</li>
 </ul></li>
+
+<li><p>Identity Server</p>
+
+<ul>
+<li><a href="https://freeipa.org">FreeIPA (IPA = Identity, Policy, Authentication)</a></li>
+</ul></li>
+
+<li><p>Video Conference</p>
+
+<ul>
+<li>jitsi</li>
+<li><a href="https://medevel.com/10-os-video-conferencing/">More and more</a></li>
+</ul></li>
+
+<li><p>Customer support live chat</p>
+
+<ul>
+<li>rocket.chat</li>
+<li>tawk.to</li>
+<li><a href="https://github.com/juliancwirko/s-chat-app">simple chat</a></li>
+</ul></li>
 </ul>
 
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>, <a href="https://blog.indonesiadot.com/tags/firewall/">firewall</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>
+	 <hr/>
     </div>
   
     <div class="post">
@@ -558,13 +601,13 @@ git push origin hugo
 
 <ul>
 <li>menggunakan <em>thin provisioned backing storage</em> seperti qcow2, thin-lvm, zfs pada server proxmox nya</li>
-<li>menggunakan Virtio-SCSI controller pada guest vm nya</li>
+<li>menggunakan Virtio SCSI controller pada guest option vm nya</li>
 <li>Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya</li>
 <li>Tambahkan discard mount options di /etc/fstab nya guest vm</li>
 <li>Enable fstrim.timer pada systemctl</li>
 </ul>
 
-<p>Untuk membuktikannya, sambil mengecek di server proxmox dengan menggunakan command <code>lvs</code> atau <code>lvdisplay</code> untuk thin-lvm, atau <code>du -sch</code> jika memakai qcow2 untuk mengetahui besar file sebelum dan setelah di guest vm nya dijalankan command <code>fstrim -av</code></p>
+<p>Untuk membuktikannya, sambil mengecek di server proxmox dengan menggunakan command <code>zfs list</code> jika memakai zfs, <code>lvs</code> atau <code>lvdisplay</code> untuk thin-lvm, atau <code>du -sch</code> jika memakai qcow2 untuk mengetahui besar file sebelum dan setelah di guest vm nya dijalankan command <code>fstrim -av</code></p>
 
 <p>Referensi:</p>
 
@@ -573,6 +616,12 @@ git push origin hugo
 <li><a href="https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/">https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/</a></li>
 </ul>
 
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/virtualization/">virtualization</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
     </div>
   
     <div class="post">
@@ -596,6 +645,12 @@ systemctl restart postfix
 <li><a href="http://www.postfix.org/STANDARD_CONFIGURATION_README.html">http://www.postfix.org/STANDARD_CONFIGURATION_README.html</a></li>
 </ul>
 
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/mail/">mail</a>, <a href="https://blog.indonesiadot.com/tags/postfix/">postfix</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
     </div>
   
     <div class="post">
@@ -604,14 +659,33 @@ systemctl restart postfix
 	<p>Referensi:
 <a href="https://darxkies.github.io/k8s-tew/_build/html/index.html">https://darxkies.github.io/k8s-tew/_build/html/index.html</a></p>
 
+	<hr/>
+	
+	
+	 <hr/>
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/">Ubuntu upgrade 14.04 to 16.04 to 18.04</a></h1>
         <span class="post-date">Sep 2, 2019</span>
-	<p>Referensi:
-<a href="https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4">https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4</a></p>
+	<p>Berikut langkah yang dilakukan, tapi sebelumnya pastikan backup, backup dan backup</p>
 
+<pre><code>sudo apt-get update
+sudo apt-get upgrade
+sudo do-release-upgrade -f DistUpgradeViewNonInteractive
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04">https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04</a></li>
+<li><a href="https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4">https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 <hr/>
     </div>
   
     <div class="post">
@@ -625,6 +699,10 @@ systemctl restart postfix
 <a href="https://www.datacamp.com/community/tutorials/mysql-python">https://www.datacamp.com/community/tutorials/mysql-python</a>
 <a href="https://github.com">https://github.com</a></p>
 
+	<hr/>
+	
+	
+	 <hr/>
     </div>
   
 </div>
