@@ -1,7 +1,9 @@
 ---
 title: "Belajar Python dengan MySQL"
-date: 2019-09-02T08:17:25+07:00
+date: 2019-08-02T08:17:25+07:00
 show_reading_time: true
+tags: ["python", "programming", "scripting", "mysql"]
+author: "Widya"
 draft: false
 ---
 
