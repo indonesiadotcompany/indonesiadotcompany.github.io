@@ -8,7 +8,92 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2019-09-28T08:17:36+07:00</lastmod>
+    <lastmod>2019-10-13T07:09:53+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/dns/</loc>
+    <lastmod>2019-10-13T07:09:53+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/dnsoverhttps/</loc>
+    <lastmod>2019-10-13T07:09:53+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/doh/</loc>
+    <lastmod>2019-10-13T07:09:53+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/</loc>
+    <lastmod>2019-10-13T07:09:53+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
+    <lastmod>2019-10-13T07:09:53+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2019-10-13T07:09:53+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2019-10-13T07:09:53+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
+    <lastmod>2019-10-10T07:09:53+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ansibletower/</loc>
+    <lastmod>2019-10-10T07:09:53+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/10/10/belajar-ansible-tower/</loc>
+    <lastmod>2019-10-10T07:09:53+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/postgresql/</loc>
+    <lastmod>2019-10-10T07:09:53+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/rabbitmq/</loc>
+    <lastmod>2019-10-10T07:09:53+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/disk/</loc>
+    <lastmod>2019-09-30T13:09:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/09/30/disk-serial-number/</loc>
+    <lastmod>2019-09-30T13:09:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/raid/</loc>
+    <lastmod>2019-09-30T13:09:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
+    <lastmod>2019-09-30T13:09:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/zfs/</loc>
+    <lastmod>2019-09-30T13:09:15+07:00</lastmod>
   </url>
   
   <url>
@@ -22,22 +107,7 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2019-09-28T08:17:36+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2019-09-28T08:17:36+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/security/</loc>
-    <lastmod>2019-09-28T08:17:36+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
     <lastmod>2019-09-28T08:17:36+07:00</lastmod>
   </url>
   
@@ -127,17 +197,12 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
+    <loc>https://blog.indonesiadot.com/tags/virtualization/</loc>
     <lastmod>2019-09-02T08:17:56+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/categories/virtualization/</loc>
-    <lastmod>2019-09-02T08:17:56+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/virtualization/</loc>
     <lastmod>2019-09-02T08:17:56+07:00</lastmod>
   </url>
   
@@ -162,13 +227,33 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/tags/container/</loc>
+    <lastmod>2019-09-02T08:17:33+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/docker/</loc>
+    <lastmod>2019-09-02T08:17:33+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/kubernetes/</loc>
+    <lastmod>2019-09-02T08:17:33+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ubuntu/</loc>
+    <lastmod>2019-09-02T08:17:29+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/</loc>
     <lastmod>2019-09-02T08:17:29+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/2019/09/02/belajar-python-dengan-mysql/</loc>
-    <lastmod>2019-09-02T08:17:25+07:00</lastmod>
+    <loc>https://blog.indonesiadot.com/tags/upgrade/</loc>
+    <lastmod>2019-09-02T08:17:29+07:00</lastmod>
   </url>
   
   <url>
@@ -252,11 +337,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/docker/</loc>
-    <lastmod>2019-08-11T08:45:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/2019/08/11/how-to-stop-docker-that-always-restart/</loc>
     <lastmod>2019-08-11T08:45:00+00:00</lastmod>
   </url>
@@ -277,6 +357,21 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/2019/08/02/belajar-python-dengan-mysql/</loc>
+    <lastmod>2019-08-02T08:17:25+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/mysql/</loc>
+    <lastmod>2019-08-02T08:17:25+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/programming/</loc>
+    <lastmod>2019-08-02T08:17:25+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/2018/08/09/petunjuk-hidup-widya-nugraha-based-on-al-quran-dan-hadits-nabi/</loc>
     <lastmod>2018-08-09T04:03:00+00:00</lastmod>
   </url>
@@ -289,11 +384,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/2018/07/28/linux-load-/-stress-test/</loc>
     <lastmod>2018-07-28T08:41:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/zfs/</loc>
-    <lastmod>2018-07-15T16:55:00+00:00</lastmod>
   </url>
   
   <url>
@@ -399,11 +489,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/tags/diy/</loc>
     <lastmod>2018-03-27T04:18:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
-    <lastmod>2018-03-19T21:56:00+00:00</lastmod>
   </url>
   
   <url>
@@ -654,11 +739,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</loc>
     <lastmod>2018-01-29T00:59:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/mysql/</loc>
-    <lastmod>2018-01-28T21:09:00+00:00</lastmod>
   </url>
   
   <url>

@@ -39,5 +39,15 @@ ref:
 https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files</description>
     </item>
     
+    <item>
+      <title>Belajar Python dengan MySQL</title>
+      <link>https://blog.indonesiadot.com/2019/08/02/belajar-python-dengan-mysql/</link>
+      <pubDate>Fri, 02 Aug 2019 08:17:25 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/08/02/belajar-python-dengan-mysql/</guid>
+      <description>Referensi:
+https://monicagranbois.com/blog/python/cron-and-python-virtualenv/ https://www.petanikode.com/python-virtualenv/ https://www.petanikode.com/python-mysql/ https://www.datacamp.com/community/tutorials/mysql-python https://github.com</description>
+    </item>
+    
   </channel>
 </rss>

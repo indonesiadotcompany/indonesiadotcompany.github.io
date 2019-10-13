@@ -6,10 +6,34 @@
     <description>Recent content in linux on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Sep 2019 08:17:36 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 13 Oct 2019 07:09:53 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DOH DNS over HTTPS</title>
+      <link>https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/</link>
+      <pubDate>Sun, 13 Oct 2019 07:09:53 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/</guid>
+      <description>Security DNS di sisi client Install dnscrypt-proxy add-apt-repository ppa:shevchuk/dnscrypt-proxy apt install dnscrypt-proxy  Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel server_name menjadi seperti contoh berikut:
+server_names = [&#39;cloudflare&#39;, &#39;google&#39;]  lalu restart service dnscrypt-proxy
+systemctl restart dnscrypt-proxy  edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy
+nameserver 127.0.2.1  Install DNS over HTTPS server Install dengan cara paket instalasi deb wget &amp;quot;https://www.aaflalo.me/?smd_process_download=1&amp;amp;download_id=1326&amp;quot; dpkg -i doh-server_*_amd64.deb  Install dengan cara compile wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz sudo tar -C /usr/local -xzf go1.</description>
+    </item>
+    
+    <item>
+      <title>Belajar Ansible Tower</title>
+      <link>https://blog.indonesiadot.com/2019/10/10/belajar-ansible-tower/</link>
+      <pubDate>Thu, 10 Oct 2019 07:09:53 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/10/belajar-ansible-tower/</guid>
+      <description>Install Ansible Tower Persyaratan:
+Hardware: RAM minimal 3,75 GB OS: Centos 7
+Langkah yang dilakukan
+yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-3.1.5.tar.gz tar -xzvf ansible-tower-setup-3.1.5.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh ## Configure Ansible Tower after installation Akses Ansible tower Web UI dari  https://``` Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
+    </item>
     
     <item>
       <title>IDS Tripwire</title>
@@ -44,8 +68,19 @@
       
       <guid>https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/</guid>
       <description>Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari thin provision storage atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.
-Adapun persyaratan untuk ini yaitu:
+Persyaratan adalah:
  menggunakan thin provisioned backing storage seperti qcow2, thin-lvm, zfs pada server proxmox nya menggunakan Virtio SCSI controller pada guest option vm nya Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya Tambahkan discard mount options di /etc/fstab nya guest vm Enable fstrim.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu upgrade 14.04 to 16.04 to 18.04</title>
+      <link>https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:29 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/</guid>
+      <description>Berikut langkah yang dilakukan, tapi sebelumnya pastikan backup, backup dan backup
+sudo apt-get update sudo apt-get upgrade sudo do-release-upgrade -f DistUpgradeViewNonInteractive  Referensi:
+ https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04 https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4  </description>
     </item>
     
     <item>

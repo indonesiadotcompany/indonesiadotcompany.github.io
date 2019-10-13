@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Belajar Ansible Tower &middot; Blog Indonesiadot.Com
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/poole.css">
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/syntax.css">
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blog.indonesiadot.com/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="https://blog.indonesiadot.com/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://blog.indonesiadot.com/atom.xml">
+</head>
+
+
+  <body class="theme-base-0c">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Blog dari <a href="https://indonesiadot.com" target="_blank">Indonesiadot.Com</a> adalah tempat menuliskan sesuatu mengenai teknologi, oprek, dan mengenai Indonesiadot.Com.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/">Home</a>
+    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/post">Posts</a>
+
+    
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/about/">About</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
+      
+    
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2019. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="https://blog.indonesiadot.com/" title="Home">Blog Indonesiadot.Com</a>
+            <small>Web log of Indonesiadot.Com, Linux and updated technology</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Belajar Ansible Tower</h1>
+  <span class="post-date">Oct 10, 2019</span>
+  
+
+<h2 id="install-ansible-tower">Install Ansible Tower</h2>
+
+<p>Persyaratan:</p>
+
+<p>Hardware: RAM minimal 3,75 GB
+OS: Centos 7</p>
+
+<p>Langkah yang dilakukan</p>
+
+<pre><code>yum install -y ansible
+wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-3.1.5.tar.gz
+tar -xzvf ansible-tower-setup-3.1.5.tar.gz
+cd ansible-tower-setup-3.1.5/
+(edit inventory file, isi bagian yang dibutuhkan terutama password)
+(edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram)
+./setup.sh
+
+## Configure Ansible Tower after installation
+Akses Ansible tower Web UI dari 
+</code></pre>
+
+<p>https://<Ansible Tower IP or Hostname>
+```
+Dapatkan lisensi dari <a href="https://www.ansible.com/license">https://www.ansible.com/license</a>
+lalu masukkan license tersebut ke halaman awal setelah login</p>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.ansible.com/products/tower/trial">https://www.ansible.com/products/tower/trial</a></li>
+<li><a href="https://docs.ansible.com/ansible-tower/">https://docs.ansible.com/ansible-tower/</a></li>
+<li><a href="http://devopstechie.com/install-and-configure-ansible-tower-centos7/">http://devopstechie.com/install-and-configure-ansible-tower-centos7/</a></li>
+<li><a href="https://www.google.com/search?q=ansible+tower+postgresql+replication">https://www.google.com/search?q=ansible+tower+postgresql+replication</a></li>
+<li><a href="https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/">https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/</a></li>
+<li><a href="https://github.com/samdoran/ansible-role-pgsql-replication">https://github.com/samdoran/ansible-role-pgsql-replication</a></li>
+</ul>
+
+</div>
+
+<hr/>
+
+
+ Tags:
+ <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>, <a href="https://blog.indonesiadot.com/tags/postgresql/">postgresql</a>, <a href="https://blog.indonesiadot.com/tags/rabbitmq/">rabbitmq</a>
+<hr/>
+Made with &hearts; using <a href="https://https://gohugo.io">hugo</a> by willing of <a href="https://www.google.com/search?q=asmaul+husna">Al-Khooliq Al-Mushowwir Al-Baari'</a>
+<p>&nbsp;</p>
+
+	</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+  </body>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147159427-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147159427-1');
+</script>
+
+</html>
+

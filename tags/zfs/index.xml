@@ -6,10 +6,21 @@
     <description>Recent content in zfs on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Jul 2018 16:55:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Sep 2019 13:09:15 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/zfs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Disk Serial Number</title>
+      <link>https://blog.indonesiadot.com/2019/09/30/disk-serial-number/</link>
+      <pubDate>Mon, 30 Sep 2019 13:09:15 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/09/30/disk-serial-number/</guid>
+      <description>Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.
+Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:
+ lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb) smartctl -a /dev/sda #lihat bagian atas serial number nya udevadm info /dev/sda  </description>
+    </item>
     
     <item>
       <title>zfs cool feature, snapshot, replicate, etc</title>

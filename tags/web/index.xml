@@ -47,6 +47,17 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
     </item>
     
     <item>
+      <title>Migrasi antar hugo</title>
+      <link>https://blog.indonesiadot.com/2019/09/02/migrasi-antar-hugo/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:02 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/09/02/migrasi-antar-hugo/</guid>
+      <description>To remove a submodule you need to:
+ Delete the relevant section from the .gitmodules file. Stage the .gitmodules changes git add .gitmodules Delete the relevant section from .git/config. Run git rm &amp;ndash;cached path_to_submodule (no trailing slash). Run rm -rf .git/modules/path_to_submodule (no trailing slash). Commit git commit -m &amp;ldquo;Removed submodule &amp;ldquo; Delete the now untracked submodule files rm -rf path_to_submodule  Referensi:
+ https://indonesiadot.com https://gist.github.com/myusuf3/7f645819ded92bda6677  </description>
+    </item>
+    
+    <item>
       <title>wordpress tips and trick</title>
       <link>https://blog.indonesiadot.com/2018/05/30/wordpress-tips-and-trick/</link>
       <pubDate>Wed, 30 May 2018 01:14:00 +0000</pubDate>

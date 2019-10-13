@@ -5,9 +5,228 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2019</rights>
-    <updated>2019-09-28 08:17:36 &#43;0700 WIB</updated>
+    <updated>2019-10-13 07:09:53 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>DOH DNS over HTTPS</title>
+          <link>https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/</link>
+          <pubDate>Sun, 13 Oct 2019 07:09:53 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/</guid>
+          <description>
+
+&lt;h2 id=&#34;security-dns-di-sisi-client&#34;&gt;Security DNS di sisi client&lt;/h2&gt;
+
+&lt;h3 id=&#34;install-dnscrypt-proxy&#34;&gt;Install dnscrypt-proxy&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;add-apt-repository ppa:shevchuk/dnscrypt-proxy
+apt install dnscrypt-proxy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel &lt;strong&gt;server_name&lt;/strong&gt; menjadi seperti contoh berikut:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;server_names = [&#39;cloudflare&#39;, &#39;google&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;lalu restart service dnscrypt-proxy&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;systemctl restart dnscrypt-proxy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;nameserver 127.0.2.1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;install-dns-over-https-server&#34;&gt;Install DNS over HTTPS server&lt;/h2&gt;
+
+&lt;h3 id=&#34;install-dengan-cara-paket-instalasi-deb&#34;&gt;Install dengan cara paket instalasi deb&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;wget &amp;quot;https://www.aaflalo.me/?smd_process_download=1&amp;amp;download_id=1326&amp;quot;
+dpkg -i doh-server_*_amd64.deb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;install-dengan-cara-compile&#34;&gt;Install dengan cara compile&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.13.linux-amd64.tar.gz
+wget https://github.com/m13253/dns-over-https/archive/v2.1.2.tar.gz
+tar xzf v2.1.2.tar.gz
+cd dns-over-https-2.1.2
+make &amp;amp;&amp;amp; make install
+add-apt-repository ppa:ondrej/nginx
+apt install nginx-full
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Buat file /etc/nginx/sites-available/doh yang isinya:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;upstream dns-backend {
+    server 127.0.0.1:8053;
+}
+server {
+        listen 80;
+        server_name dns.example.com;
+        root /var/www/html/dns;
+        access_log /var/log/nginx/dns.access.log;
+         location /dns-query {
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $http_host;
+                proxy_set_header X-NginX-Proxy true;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_redirect off;
+                proxy_set_header        X-Forwarded-Proto $scheme;
+                proxy_read_timeout 86400;
+                proxy_pass http://dns-backend/dns-query ;
+        }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;lalu jalankan&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ln -s /etc/nginx/sites-available/dns-over-https /etc/nginx/sites-enabled/dns-over-https
+nginx -t
+systemctl reload nginx
+add-apt-repository ppa:certbot/certbot
+apt install python-certbot-nginx
+certbot --nginx -d dns.example.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If that’s successful, certbot will ask how you’d like to configure your HTTPS settings.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Please choose whether or not to redirect HTTP traffic to HTTPS, removing HTTP access.
+-------------------------------------------------------------------------------
+1: No redirect - Make no further changes to the webserver configuration.
+2: Redirect - Make all requests redirect to secure HTTPS access. Choose this for
+new sites, or if you&#39;re confident your site works on HTTPS. You can undo this
+change by editing your web server&#39;s configuration.
+-------------------------------------------------------------------------------
+Select the appropriate number [1-2] then [enter] (press &#39;c&#39; to cancel):
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I advise to choose redirect to be sure it use only HTTPS.&lt;/p&gt;
+
+&lt;p&gt;Edit the file /etc/letsencrypt/options-ssl-nginx.conf and replace its content by this.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssl_session_cache shared:le_nginx_SSL:1m;
+ssl_session_timeout 1440m;
+ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
+# Enable modern TLS cipher suites
+ssl_ciphers &#39;ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256&#39;;
+# The order of cipher suites matters
+ssl_prefer_server_ciphers on;
+add_header Strict-Transport-Security &amp;quot;max-age=31536000; includeSubDomains&amp;quot; always;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then reload nginx.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;systemctl reload nginx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;tips&#34;&gt;TIPS&lt;/h2&gt;
+
+&lt;p&gt;Untuk menggunakan server DOH yang telah kita buat pada dnscrypt-proxy client, buat stamp dulu di &lt;a href=&#34;https://dnscrypt.info/stamps/&#34;&gt;https://dnscrypt.info/stamps/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;images/doh.png&#34; alt=&#34;DOH&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;lalu isi nama doh dan stamp nya seperti contoh:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[static]
+
+[static.&#39;gcp&#39;]
+   stamp = &#39;sdns://AgcAAAAAAAAADTM0Ljg3LjExNy4xMDUADWdjcC5iaXJhdS5jb20KL2Rucy1xdWVyeQ&#39;
+[static.&#39;doh&#39;]
+   stamp = &#39;sdns://AgcAAAAAAAAACzQ1Ljc3LjM2LjU0ABJkb2guYmlyYXUuY29tOjM0NDMKL2Rucy1xdWVyeQ&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;dan tambahkan dibagian server_name menjadi seperti ini:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;server_names = [&#39;doh&#39;, &#39;gcp&#39;, &#39;cloudflare&#39;, &#39;google&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.aaflalo.me/2018/10/tutorial-setup-dns-over-https-server/&#34;&gt;https://www.aaflalo.me/2018/10/tutorial-setup-dns-over-https-server/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/m13253/dns-over-https&#34;&gt;https://github.com/m13253/dns-over-https&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dnscrypt.info/stamps/&#34;&gt;https://dnscrypt.info/stamps/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Belajar Ansible Tower</title>
+          <link>https://blog.indonesiadot.com/2019/10/10/belajar-ansible-tower/</link>
+          <pubDate>Thu, 10 Oct 2019 07:09:53 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/10/10/belajar-ansible-tower/</guid>
+          <description>
+
+&lt;h2 id=&#34;install-ansible-tower&#34;&gt;Install Ansible Tower&lt;/h2&gt;
+
+&lt;p&gt;Persyaratan:&lt;/p&gt;
+
+&lt;p&gt;Hardware: RAM minimal 3,75 GB
+OS: Centos 7&lt;/p&gt;
+
+&lt;p&gt;Langkah yang dilakukan&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yum install -y ansible
+wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-3.1.5.tar.gz
+tar -xzvf ansible-tower-setup-3.1.5.tar.gz
+cd ansible-tower-setup-3.1.5/
+(edit inventory file, isi bagian yang dibutuhkan terutama password)
+(edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram)
+./setup.sh
+
+## Configure Ansible Tower after installation
+Akses Ansible tower Web UI dari 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;https://&lt;Ansible Tower IP or Hostname&gt;
+```
+Dapatkan lisensi dari &lt;a href=&#34;https://www.ansible.com/license&#34;&gt;https://www.ansible.com/license&lt;/a&gt;
+lalu masukkan license tersebut ke halaman awal setelah login&lt;/p&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.ansible.com/products/tower/trial&#34;&gt;https://www.ansible.com/products/tower/trial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible-tower/&#34;&gt;https://docs.ansible.com/ansible-tower/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://devopstechie.com/install-and-configure-ansible-tower-centos7/&#34;&gt;http://devopstechie.com/install-and-configure-ansible-tower-centos7/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.google.com/search?q=ansible+tower+postgresql+replication&#34;&gt;https://www.google.com/search?q=ansible+tower+postgresql+replication&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/&#34;&gt;https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/samdoran/ansible-role-pgsql-replication&#34;&gt;https://github.com/samdoran/ansible-role-pgsql-replication&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Disk Serial Number</title>
+          <link>https://blog.indonesiadot.com/2019/09/30/disk-serial-number/</link>
+          <pubDate>Mon, 30 Sep 2019 13:09:15 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/09/30/disk-serial-number/</guid>
+          <description>&lt;p&gt;Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.&lt;/p&gt;
+
+&lt;p&gt;Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb)&lt;/li&gt;
+&lt;li&gt;smartctl -a /dev/sda #lihat bagian atas serial number nya&lt;/li&gt;
+&lt;li&gt;udevadm info /dev/sda&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
       
     
       
@@ -220,7 +439,7 @@ git push origin hugo
           <guid>https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/</guid>
           <description>&lt;p&gt;Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari &lt;em&gt;thin provision storage&lt;/em&gt; atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.&lt;/p&gt;
 
-&lt;p&gt;Adapun persyaratan untuk ini yaitu:&lt;/p&gt;
+&lt;p&gt;Persyaratan adalah:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;menggunakan &lt;em&gt;thin provisioned backing storage&lt;/em&gt; seperti qcow2, thin-lvm, zfs pada server proxmox nya&lt;/li&gt;
@@ -230,7 +449,24 @@ git push origin hugo
 &lt;li&gt;Enable fstrim.timer pada systemctl&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Untuk membuktikannya, sambil mengecek di server proxmox dengan menggunakan command &lt;code&gt;zfs list&lt;/code&gt; jika memakai zfs, &lt;code&gt;lvs&lt;/code&gt; atau &lt;code&gt;lvdisplay&lt;/code&gt; untuk thin-lvm, atau &lt;code&gt;du -sch&lt;/code&gt; jika memakai qcow2 untuk mengetahui besar file sebelum dan setelah di guest vm nya dijalankan command &lt;code&gt;fstrim -av&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Adapun langkahnya, disini dilakukan perubahan pada VM yang sebelumnya telah terbuat dengan Virtio disk, dari disk yang kedua dari VM, agar lebih aman, dirubah satu persatu, dimulai dari disk kedua terlebih dahulu:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;edit dulu /etc/fstab bagian disk dari /dev/vdb1 menjadi /dev/sda1 (sda untuk drive scsi / sata, untuk lebih aman nya di komen dulu bagian disk /hdbck, untuk di mount manual, agar pada saat boot jika salah tidak nyangkut)&lt;/li&gt;
+&lt;li&gt;shutdown vm&lt;/li&gt;
+&lt;li&gt;detach disk&lt;/li&gt;
+&lt;li&gt;edit disk, menjadi SCSI dan klik bagian advanced, lalu check discard&lt;/li&gt;
+&lt;li&gt;start vm&lt;/li&gt;
+&lt;li&gt;setelah login, jalankan fstrim -v /hdbck/&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Untuk perubahan selanjutnya pada disk yang pertama, di edit dulu /etc/fstab nya, misal /dev/vda1 menjadi /dev/sda1, dan /dev/sda1 sebelumnya yg disk kedua yg telah di edit menjadi SCSI menjadi /dev/sdb1, lalu baru lakukan seperti langkah diatas dari shutdown vm sampai jalankan fstrim.&lt;/li&gt;
+&lt;li&gt;Masukan juga pada crontab, agar dijalankan fstrim setiap bulan, jika memakai centos 6 dan dibawahnya&lt;/li&gt;
+&lt;li&gt;Untuk membuktikannya, sambil mengecek di server proxmox dengan menggunakan command &lt;code&gt;zfs list&lt;/code&gt; jika memakai zfs, &lt;code&gt;lvs&lt;/code&gt; atau &lt;code&gt;lvdisplay&lt;/code&gt; untuk thin-lvm, atau &lt;code&gt;du -sch&lt;/code&gt; jika memakai qcow2 untuk mengetahui besar file sebelum dan setelah di guest vm nya dijalankan command &lt;code&gt;fstrim -av&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Referensi:&lt;/p&gt;
 
@@ -277,8 +513,11 @@ systemctl restart postfix
           <pubDate>Mon, 02 Sep 2019 08:17:33 WIB</pubDate>
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/</guid>
-          <description>&lt;p&gt;Referensi:
-&lt;a href=&#34;https://darxkies.github.io/k8s-tew/_build/html/index.html&#34;&gt;https://darxkies.github.io/k8s-tew/_build/html/index.html&lt;/a&gt;&lt;/p&gt;
+          <description>&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://darxkies.github.io/k8s-tew/_build/html/index.html&#34;&gt;https://darxkies.github.io/k8s-tew/_build/html/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
       
@@ -303,24 +542,6 @@ sudo do-release-upgrade -f DistUpgradeViewNonInteractive
 &lt;li&gt;&lt;a href=&#34;https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04&#34;&gt;https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4&#34;&gt;https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
-          <title>Belajar Python dengan MySQL</title>
-          <link>https://blog.indonesiadot.com/2019/09/02/belajar-python-dengan-mysql/</link>
-          <pubDate>Mon, 02 Sep 2019 08:17:25 WIB</pubDate>
-          <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2019/09/02/belajar-python-dengan-mysql/</guid>
-          <description>&lt;p&gt;Referensi:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://monicagranbois.com/blog/python/cron-and-python-virtualenv/&#34;&gt;https://monicagranbois.com/blog/python/cron-and-python-virtualenv/&lt;/a&gt;
-&lt;a href=&#34;https://www.petanikode.com/python-virtualenv/&#34;&gt;https://www.petanikode.com/python-virtualenv/&lt;/a&gt;
-&lt;a href=&#34;https://www.petanikode.com/python-mysql/&#34;&gt;https://www.petanikode.com/python-mysql/&lt;/a&gt;
-&lt;a href=&#34;https://www.datacamp.com/community/tutorials/mysql-python&#34;&gt;https://www.datacamp.com/community/tutorials/mysql-python&lt;/a&gt;
-&lt;a href=&#34;https://github.com&#34;&gt;https://github.com&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
       
@@ -447,18 +668,22 @@ git branch -D namabranchyangakandihapus
           <guid>https://blog.indonesiadot.com/2019/09/02/migrasi-antar-hugo/</guid>
           <description>&lt;p&gt;To remove a submodule you need to:&lt;/p&gt;
 
-&lt;p&gt;Delete the relevant section from the .gitmodules file.
-Stage the .gitmodules changes git add .gitmodules
-Delete the relevant section from .git/config.
-Run git rm &amp;ndash;cached path_to_submodule (no trailing slash).
-Run rm -rf .git/modules/path_to_submodule (no trailing slash).
-Commit git commit -m &amp;ldquo;Removed submodule &amp;ldquo;
-Delete the now untracked submodule files rm -rf path_to_submodule&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Delete the relevant section from the .gitmodules file.&lt;/li&gt;
+&lt;li&gt;Stage the .gitmodules changes git add .gitmodules&lt;/li&gt;
+&lt;li&gt;Delete the relevant section from .git/config.&lt;/li&gt;
+&lt;li&gt;Run git rm &amp;ndash;cached path_to_submodule (no trailing slash).&lt;/li&gt;
+&lt;li&gt;Run rm -rf .git/modules/path_to_submodule (no trailing slash).&lt;/li&gt;
+&lt;li&gt;Commit git commit -m &amp;ldquo;Removed submodule &amp;ldquo;&lt;/li&gt;
+&lt;li&gt;Delete the now untracked submodule files rm -rf path_to_submodule&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Referensi:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://indonesiadot.com&#34;&gt;https://indonesiadot.com&lt;/a&gt;
-&lt;a href=&#34;https://gist.github.com/myusuf3/7f645819ded92bda6677&#34;&gt;https://gist.github.com/myusuf3/7f645819ded92bda6677&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://indonesiadot.com&#34;&gt;https://indonesiadot.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gist.github.com/myusuf3/7f645819ded92bda6677&#34;&gt;https://gist.github.com/myusuf3/7f645819ded92bda6677&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
       
@@ -563,6 +788,24 @@ Delete the now untracked submodule files rm -rf path_to_submodule&lt;/p&gt;
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2019/08/11/simple-alert-monitoring-using-simplemonitor/</guid>
           <description>&lt;p&gt;googling:&amp;nbsp;&lt;a href=&#34;https://www.google.com/search?q=simple+alert+monitoring&#34;&gt;https://www.google.com/search?q=simple+alert+monitoring&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;https://jamesoff.github.io/simplemonitor/&#34;&gt;https://jamesoff.github.io/simplemonitor/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;googling:&amp;nbsp;&lt;a href=&#34;https://www.google.com/search?q=simplemonitor+docker&#34;&gt;https://www.google.com/search?q=simplemonitor+docker&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;https://hub.docker.com/r/braindoctor/simplemonitor-docker/&#34;&gt;https://hub.docker.com/r/braindoctor/simplemonitor-docker/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;mkdir -p /docker/simplemonitor &amp;amp;&amp;amp; cd /docker/simplemonitor&lt;br /&gt;cat &amp;gt; docker-compose.yml &amp;lt;&lt;eof p=&#34;&#34;&gt;version: &amp;lsquo;3.2&amp;rsquo;&lt;br /&gt;services:&lt;br /&gt;&amp;nbsp; simplemonitor:&lt;br /&gt;&amp;nbsp; &amp;nbsp; restart: always&lt;br /&gt;&amp;nbsp; &amp;nbsp; image: braindoctor/simplemonitor-docker:latest&lt;br /&gt;&amp;nbsp; &amp;nbsp; container_name: simplemonitor&lt;br /&gt;&amp;nbsp; &amp;nbsp; hostname: mail-124.indonesiadot.com&lt;br /&gt;&amp;nbsp; &amp;nbsp; volumes:&lt;br /&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; - ${PWD}/config:/etc/simplemonitor&lt;br /&gt;&amp;nbsp; &amp;nbsp; ports:&lt;br /&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; - &amp;ldquo;8080:8080&amp;rdquo;&lt;br /&gt;&lt;/eof&gt;&lt;br /&gt;&lt;div&gt;EOF&lt;/div&gt;&lt;div&gt;docker-compose up -d&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;ref:&lt;br /&gt;&lt;a href=&#34;https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files&#34;&gt;https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files&lt;/a&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Belajar Python dengan MySQL</title>
+          <link>https://blog.indonesiadot.com/2019/08/02/belajar-python-dengan-mysql/</link>
+          <pubDate>Fri, 02 Aug 2019 08:17:25 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/08/02/belajar-python-dengan-mysql/</guid>
+          <description>&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://monicagranbois.com/blog/python/cron-and-python-virtualenv/&#34;&gt;https://monicagranbois.com/blog/python/cron-and-python-virtualenv/&lt;/a&gt;
+&lt;a href=&#34;https://www.petanikode.com/python-virtualenv/&#34;&gt;https://www.petanikode.com/python-virtualenv/&lt;/a&gt;
+&lt;a href=&#34;https://www.petanikode.com/python-mysql/&#34;&gt;https://www.petanikode.com/python-mysql/&lt;/a&gt;
+&lt;a href=&#34;https://www.datacamp.com/community/tutorials/mysql-python&#34;&gt;https://www.datacamp.com/community/tutorials/mysql-python&lt;/a&gt;
+&lt;a href=&#34;https://github.com&#34;&gt;https://github.com&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
       

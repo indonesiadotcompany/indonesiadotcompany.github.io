@@ -6,10 +6,20 @@
     <description>Recent content in docker on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Aug 2019 08:45:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Sep 2019 08:17:33 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>All about kubernetes</title>
+      <link>https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:33 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/</guid>
+      <description>Referensi:
+ https://darxkies.github.io/k8s-tew/_build/html/index.html  </description>
+    </item>
     
     <item>
       <title>how to stop docker that always restart</title>

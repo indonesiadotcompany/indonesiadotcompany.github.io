@@ -6,19 +6,19 @@
     <description>Recent content in programming on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Sep 2019 08:17:21 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 02 Aug 2019 08:17:25 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Belajar Git</title>
-      <link>https://blog.indonesiadot.com/2019/09/02/belajar-git/</link>
-      <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
+      <title>Belajar Python dengan MySQL</title>
+      <link>https://blog.indonesiadot.com/2019/08/02/belajar-python-dengan-mysql/</link>
+      <pubDate>Fri, 02 Aug 2019 08:17:25 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2019/09/02/belajar-git/</guid>
+      <guid>https://blog.indonesiadot.com/2019/08/02/belajar-python-dengan-mysql/</guid>
       <description>Referensi:
- https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f https://rogerdudler.github.io/git-guide/index.id.html https://medium.com/@amanze.ogbonna/accessing-pushing-to-github-without-username-and-password-3022feb077fb https://stackoverflow.com/questions/18935539/authenticate-with-github-using-a-token  </description>
+https://monicagranbois.com/blog/python/cron-and-python-virtualenv/ https://www.petanikode.com/python-virtualenv/ https://www.petanikode.com/python-mysql/ https://www.datacamp.com/community/tutorials/mysql-python https://github.com</description>
     </item>
     
   </channel>

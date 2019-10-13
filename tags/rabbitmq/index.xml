@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rabbitmq on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/rabbitmq/</link>
+    <description>Recent content in rabbitmq on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Oct 2019 07:09:53 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/rabbitmq/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Belajar Ansible Tower</title>
+      <link>https://blog.indonesiadot.com/2019/10/10/belajar-ansible-tower/</link>
+      <pubDate>Thu, 10 Oct 2019 07:09:53 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/10/belajar-ansible-tower/</guid>
+      <description>Install Ansible Tower Persyaratan:
+Hardware: RAM minimal 3,75 GB OS: Centos 7
+Langkah yang dilakukan
+yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-3.1.5.tar.gz tar -xzvf ansible-tower-setup-3.1.5.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh ## Configure Ansible Tower after installation Akses Ansible tower Web UI dari  https://``` Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
+    </item>
+    
+  </channel>
+</rss>

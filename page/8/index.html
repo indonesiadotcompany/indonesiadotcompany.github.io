@@ -356,6 +356,38 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -386,6 +418,45 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/31/xenserver-tips-and-trick/">Xenserver tips and trick</a></h1>
+        <span class="post-date">Jan 31, 2018</span>
+	<p><b>xenserver resize memory command</b><br /><br />Increase RAM for XenServer VM&rsquo;s through Command Line Interface.<br /><br />1.If the RAM editing option is graded out through XenCenter.<br />Solution<br />1.Take a putty/ssh connection to pool master<br /><br />2.Power off the VM.<br /><br />Execute the Below command to configure the new RAM:<br /><br />#xe vm-memory-limits-set &nbsp; &nbsp;uuid=<uuid of="" the="" valid="" vm=""> &nbsp; static-min=<nn>GiB/MiB &nbsp;dynamic-min=<nn>GiB/MiB &nbsp;dynamic-max=<nn>GiB/MiB &nbsp; &nbsp; static-max=<nn>GiB/MiB&nbsp;</nn></nn></nn></nn></uuid><br /><br />Example :<br />#xe vm-memory-limits-set &nbsp; &nbsp;uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f &nbsp; &nbsp; &nbsp;static-min=64GiB &nbsp; dynamic-min=64GiB &nbsp; dynamic-max=64GiB &nbsp; &nbsp;static-max=64GiB<br /><br />3.Start the VM.<br /><div><br /></div></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/xenserver/">xenserver</a>, <a href="https://blog.indonesiadot.com/tags/vps/">vps</a>, <a href="https://blog.indonesiadot.com/tags/cloud/">cloud</a>, <a href="https://blog.indonesiadot.com/tags/vm/">vm</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/31/todo-ansible-201802/">TODO ansible 201802</a></h1>
+        <span class="post-date">Jan 31, 2018</span>
+	<div dir="ltr">Ansible tower<br>Ansible awx<br>Ansible for magento<br>Ansible + jenkins<br><br><b>install latest ansible</b><br><br>apt-add-repository ppa:ansible/ansible<br>[ENTER]<br>apt update<br>apt-get install ansible<br><div><br></div><div><b>install latest docker</b></div><div><br></div><div><div>apt-add-repository ppa:ansible/ansible</div><div>apt update</div><div>apt-get install ansible</div><div><br></div><div>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</div><div>add-apt-repository \</div><div>&nbsp; &nbsp;"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</div><div>&nbsp; &nbsp;$(lsb_release -cs) \</div><div>&nbsp; &nbsp;stable"</div><div>apt update</div><div>apt-get install docker-ce</div><div><br></div><div>apt install make</div><div>apt install python-pip</div><div>pip install docker</div><div>pip install --upgrade pip</div><div>apt install git</div></div><div><br>curl -O https://raw.githubusercontent.com/geerlingguy/awx-container/master/docker-compose.yml<br>docker-compose up -d</div><div><br></div><div>tunggu beberapa saat lalu akses via http, misal http://localhost dengan user admin/password</div><br></div><div dir="ltr">Ref:<br>http://www.nalashaa.com/setting-ci-deployment-automation-ansible/</div><div dir="ltr">https://chromatichq.com/blog/automated-servers-and-deployments-ansible-jenkins</div><div dir="ltr">https://medium.com/@tedchength/basic-deployment-with-ansible-docker-jenkins-and-git-4f3b42fb2f5e</div><div dir="ltr">https://dzone.com/articles/running-ansible-playbooks-from-jenkins</div><div dir="ltr"><br></div><div dir="ltr">https://www.jeffgeerling.com/blog/2017/get-started-using-ansible-awx-open-source-tower-version-one-minute</div><div dir="ltr">https://galaxy.ansible.com/geerlingguy/jenkins/</div><div dir="ltr">Jenkins-ci<br>https://galaxy.ansible.com/geerlingguy/jenkins/</div><div dir="ltr">http://rundeck.org<br>Goci / gocd</div><div dir="ltr"><br></div><div dir="ltr">belajar ansible awx 201802010830</div><div dir="ltr">https://www.youtube.com/watch?v=E5XtK7mE8_0</div><div dir="ltr">https://github.com/whiskerlabs/armsible/blob/master/local_network_inventory.py</div><div dir="ltr">https://github.com/KeksiLabs/ansible-user-management-example</div><div dir="ltr">https://keksi.io/tutorials/2016/12/05/how-to-manage-remote-server-users-with-ansible/<br><br><b>install ansible tower</b><br>https://rafishaikblog.wordpress.com/2017/01/31/ansible-tower/<br><br></div><div dir="ltr">Ansible tower</div><div dir="ltr">https://oliverveits.wordpress.com/2016/06/14/it-automation-part-iv-ansible-tower-hello-world-example/amp/</div><div dir="ltr"><br></div>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/task/">task</a>, <a href="https://blog.indonesiadot.com/tags/todo/">todo</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/31/todo-web-page-monitoring-and-alert-when-change/">TODO web page monitoring and alert when change</a></h1>
+        <span class="post-date">Jan 31, 2018</span>
+	<div dir="ltr"><br></div><div dir="ltr">Finally it using ariya phantomjs , combine with bash script and run in cron every 9 minutes</div><div dir="ltr"><br></div><div dir="ltr">http://phantomjs.org/screen-capture.html<br></div><div dir="ltr">http://phantomjs.org/related-projects.html<br></div><div dir="ltr">https://github.com/superbrothers/capturejs<br></div><div dir="ltr">https://github.com/hggh/phantomjs-screenshots<br></div><div dir="ltr">https://github.com/astefanutti/decktape<br></div><div dir="ltr">https://github.com/sindresorhus/pageres<br></div><div dir="ltr"><br>http://bhfsteve.blogspot.co.id/2013/03/monitoring-web-page-for-changes-using.html?m=1</div><div dir="ltr">http://changedetection.com/</div><div dir="ltr">https://visualping.io</div><div dir="ltr">https://visualping.io/chrome-app (free forever)</div><div dir="ltr"><br></div><div dir="ltr">https://www.npmjs.com/package/page-monitor</div><div dir="ltr">http://cabotapp.com/</div><div dir="ltr">https://blog.newrelic.com/2013/06/04/simpler-ui-testing-with-casperjs-2/</div><div dir="ltr">https://ghostinspector.com</div><div dir="ltr">https://dzone.com/articles/automated-regression-testing-made-easy-with-casper</div>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/todo/">todo</a>, <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/31/change-image-resolution-from-linux-command-line/">change image resolution from linux command line</a></h1>
@@ -460,45 +531,6 @@
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/e-commerce/">e-commerce</a>, <a href="https://blog.indonesiadot.com/tags/magento/">magento</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/27/install-solr-server/">Install solr server</a></h1>
-        <span class="post-date">Sep 27, 2017</span>
-	<p>Here are the steps for Install solr server - base of search engine for magento  these steps run on ubuntu 16.04, because we follow this <a href="http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html">http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html</a>, we must install jdk 7 from ppa, but ubuntu 16.04 default with jdk 8  <br><pre>add-apt-repository ppa:openjdk-r/ppa<br />apt update<br />apt-get install openjdk-7-jdk<br />apt install supervisor<br /><br />su - user<br />mkdir apps &amp;&amp; cd apps<br />wget <a href="https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz">https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz</a><br />tar xzf ../apache-solr-3.4.0.tgz<br />mv apache-solr-3.4.0 solr34<br />cp /var/www/magento/lib/Apache/Solr/conf/* solr34/example/solr/conf/<br />cat &gt;&gt; apps/solr34/example/logging.properties <br /><br /># Default global logging level:<br />.level = INFO<br /><br /># Write to a file:<br />handlers = java.util.logging.FileHandler<br /><br /># Write log messages in XML format:<br /># Use java.util.logging.SimpleFormatter to log like Solr logs to the screen by default<br />java.util.logging.FileHandler.formatter = java.util.logging.XMLFormatter<br /><br /># Log to the current working directory, with log files named solrxxx.log<br />java.util.logging.FileHandler.pattern = /home/ehbm2/logs/solr%u.log<br /><br />[CTRL-C]<br /><br />exit<br /><br />cat &gt;&gt; /etc/supervisor/conf.d/solr.conf <br /><br />[program:solr]<br />user=ehbm2<br />#directory=/home/ehbm2/apps/solr141/example<br />directory=/home/ehbm2/apps/solr34/example<br />command=java -Djava.util.logging.config.file=logging.properties -jar start.jar<br />autostart=true<br />autorestart=true<br /><br />[CTRL-C]<br /><br />/etc/init.d/supervisor restart<br /><br /></pre></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/e-commerce/">e-commerce</a>, <a href="https://blog.indonesiadot.com/tags/magento/">magento</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/20/magento-maintenance-mode/">Magento maintenance mode</a></h1>
-        <span class="post-date">Sep 20, 2017</span>
-	<p>To set magento 2 in maintenance mode and to make nice maintenance page.<br /><br />1. make / get maintenance image for our maintenance page, ie: maintenance.png<br /><br />2. put at pub/errors/default/images directory under magento root directory, ie: /var/www/magento/pub/errors/default/images/maintenance.png<br /><br />3. edit and save /var/www/magento/pub/errors/default/503.phtml<br /><br /><blockquote><img height="100%" src="images/maintenance.png" width="100%" /></blockquote><br />4. run bin/magento maintenance:enable from magento root directory<br /><br />that&rsquo;s it, and you can see nicer maintenance mode in magento 2<br /><br />To set magento 1 in maintenance mode and to make nice maintenance page.<br /><br />1. make / get maintenance image for our maintenance page, ie: maintenance.png<br /><br />2. put at errors/default/ directory under magento root directory, ie: /var/www/magento/errors/default/maintenance.png<br /><br />3. edit and save /var/www/magento/errors/default/503.phtml <blockquote><h1>We are currently in Maintenance</h1>                <p>The server is currently under maintenance to give better service</p></blockquote><p>4. create file maintenance.flag at magento root directory</p></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/e-commerce/">e-commerce</a>, <a href="https://blog.indonesiadot.com/tags/magento/">magento</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/20/belajar-kultur-spirulina/">Belajar Kultur Spirulina</a></h1>
-        <span class="post-date">Sep 20, 2017</span>
-	<p>Long story short&hellip;<br /><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-2Kqi_ufDQeA/WcMHuMLjO-I/AAAAAAAAEbE/Xho2FDSCqbQnMDxyHOh6R6vj8qEXFpu6QCLcBGAs/s1600/topspira-kultur-spirulina.jpeg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1040" data-original-width="780" height="320" src="https://3.bp.blogspot.com/-2Kqi_ufDQeA/WcMHuMLjO-I/AAAAAAAAEbE/Xho2FDSCqbQnMDxyHOh6R6vj8qEXFpu6QCLcBGAs/s320/topspira-kultur-spirulina.jpeg" width="240" /></a></div><div><br /></div><div>other references:</div><div><a href="https://drive.google.com/drive/folders/0B_EPO1EgzBbGc2RTczYxTXJoUE0?usp=sharing">https://drive.google.com/drive/folders/0B_EPO1EgzBbGc2RTczYxTXJoUE0?usp=sharing</a></div></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/sehat/">sehat</a>, <a href="https://blog.indonesiadot.com/tags/health/">health</a>
 	 <hr/>
     </div>
   

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kubernetes on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/kubernetes/</link>
+    <description>Recent content in kubernetes on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Sep 2019 08:17:33 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>All about kubernetes</title>
+      <link>https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/</link>
+      <pubDate>Mon, 02 Sep 2019 08:17:33 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/</guid>
+      <description>Referensi:
+ https://darxkies.github.io/k8s-tew/_build/html/index.html  </description>
+    </item>
+    
+  </channel>
+</rss>

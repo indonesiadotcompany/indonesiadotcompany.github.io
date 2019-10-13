@@ -6,10 +6,21 @@
     <description>Recent content in tips on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Sep 2019 08:17:56 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 30 Sep 2019 13:09:15 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/tips/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Disk Serial Number</title>
+      <link>https://blog.indonesiadot.com/2019/09/30/disk-serial-number/</link>
+      <pubDate>Mon, 30 Sep 2019 13:09:15 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/09/30/disk-serial-number/</guid>
+      <description>Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.
+Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:
+ lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb) smartctl -a /dev/sda #lihat bagian atas serial number nya udevadm info /dev/sda  </description>
+    </item>
     
     <item>
       <title>Proxmox optimized disk for auto trim / shrink</title>
@@ -18,7 +29,7 @@
       
       <guid>https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/</guid>
       <description>Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari thin provision storage atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.
-Adapun persyaratan untuk ini yaitu:
+Persyaratan adalah:
  menggunakan thin provisioned backing storage seperti qcow2, thin-lvm, zfs pada server proxmox nya menggunakan Virtio SCSI controller pada guest option vm nya Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya Tambahkan discard mount options di /etc/fstab nya guest vm Enable fstrim.</description>
     </item>
     
