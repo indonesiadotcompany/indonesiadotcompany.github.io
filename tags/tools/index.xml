@@ -6,10 +6,26 @@
     <description>Recent content in tools on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Sep 2019 08:17:58 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 04 Sep 2019 08:17:58 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>linux Security Tools</title>
+      <link>https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</link>
+      <pubDate>Wed, 04 Sep 2019 08:17:58 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</guid>
+      <description>Tools yang biasa digunakan pada server linux:
+ Firewall
+ iptables ipset shorewall csf  Anti Malware
+ maldet (malware detection for web directory)  IDS
+ tripwire  Identity Server
+ FreeIPA (IPA = Identity, Policy, Authentication)  Security Checking / Scanning Solution
+ OpenSCAP   Referensi Openscap:
+ https://www.open-scap.org/  </description>
+    </item>
     
     <item>
       <title>linux Server Tools</title>
@@ -18,13 +34,14 @@
       
       <guid>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
- Firewall
- iptables ipset shorewall csf  Anti Malware
- maldet (malware detection for web directory)  IDS
- tripwire  Identity Server
- FreeIPA (IPA = Identity, Policy, Authentication)  Video Conference
+ Virtualization (Desktop)
+ Virtualbox  Graphic
+ Gimp  Mail
+ Thunderbird Mail (client)  Multimedia
+ Avidemux  Video Conference
  jitsi More and more  Customer support live chat
- rocket.chat tawk.to simple chat   </description>
+ rocket.chat tawk.to simple chat   Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut
+ https://blog.indonesiadot.com/2019/09/04/linux-security-tools/  </description>
     </item>
     
     <item>

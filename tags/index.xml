@@ -6,10 +6,163 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Oct 2019 07:09:53 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 25 Oct 2019 18:17:42 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>bash</title>
+      <link>https://blog.indonesiadot.com/tags/bash/</link>
+      <pubDate>Fri, 25 Oct 2019 18:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloud</title>
+      <link>https://blog.indonesiadot.com/tags/cloud/</link>
+      <pubDate>Fri, 25 Oct 2019 18:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>command</title>
+      <link>https://blog.indonesiadot.com/tags/command/</link>
+      <pubDate>Fri, 25 Oct 2019 18:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/command/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gcloud</title>
+      <link>https://blog.indonesiadot.com/tags/gcloud/</link>
+      <pubDate>Fri, 25 Oct 2019 18:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/gcloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gcp</title>
+      <link>https://blog.indonesiadot.com/tags/gcp/</link>
+      <pubDate>Fri, 25 Oct 2019 18:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/gcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>google</title>
+      <link>https://blog.indonesiadot.com/tags/google/</link>
+      <pubDate>Fri, 25 Oct 2019 18:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/google/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>google-cloud-platform</title>
+      <link>https://blog.indonesiadot.com/tags/google-cloud-platform/</link>
+      <pubDate>Fri, 25 Oct 2019 18:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/google-cloud-platform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>script</title>
+      <link>https://blog.indonesiadot.com/tags/script/</link>
+      <pubDate>Fri, 25 Oct 2019 18:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/script/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ansible</title>
+      <link>https://blog.indonesiadot.com/tags/ansible/</link>
+      <pubDate>Fri, 25 Oct 2019 08:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>automation</title>
+      <link>https://blog.indonesiadot.com/tags/automation/</link>
+      <pubDate>Fri, 25 Oct 2019 08:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hardening</title>
+      <link>https://blog.indonesiadot.com/tags/hardening/</link>
+      <pubDate>Tue, 15 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/hardening/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kernel</title>
+      <link>https://blog.indonesiadot.com/tags/kernel/</link>
+      <pubDate>Tue, 15 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/kernel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://blog.indonesiadot.com/tags/linux/</link>
+      <pubDate>Tue, 15 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://blog.indonesiadot.com/tags/security/</link>
+      <pubDate>Tue, 15 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tips</title>
+      <link>https://blog.indonesiadot.com/tags/tips/</link>
+      <pubDate>Tue, 15 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sed</title>
+      <link>https://blog.indonesiadot.com/tags/sed/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/sed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server</title>
+      <link>https://blog.indonesiadot.com/tags/server/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/server/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>dns</title>
@@ -35,24 +188,6 @@
       <pubDate>Sun, 13 Oct 2019 07:09:53 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/doh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://blog.indonesiadot.com/tags/linux/</link>
-      <pubDate>Sun, 13 Oct 2019 07:09:53 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ansible</title>
-      <link>https://blog.indonesiadot.com/tags/ansible/</link>
-      <pubDate>Thu, 10 Oct 2019 07:09:53 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
       <description></description>
     </item>
     
@@ -102,15 +237,6 @@
     </item>
     
     <item>
-      <title>tips</title>
-      <link>https://blog.indonesiadot.com/tags/tips/</link>
-      <pubDate>Mon, 30 Sep 2019 13:09:15 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>zfs</title>
       <link>https://blog.indonesiadot.com/tags/zfs/</link>
       <pubDate>Mon, 30 Sep 2019 13:09:15 +0700</pubDate>
@@ -125,15 +251,6 @@
       <pubDate>Sat, 28 Sep 2019 08:17:36 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/ids/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>security</title>
-      <link>https://blog.indonesiadot.com/tags/security/</link>
-      <pubDate>Sat, 28 Sep 2019 08:17:36 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/security/</guid>
       <description></description>
     </item>
     
@@ -212,25 +329,16 @@
     <item>
       <title>firewall</title>
       <link>https://blog.indonesiadot.com/tags/firewall/</link>
-      <pubDate>Mon, 02 Sep 2019 08:17:58 +0700</pubDate>
+      <pubDate>Wed, 04 Sep 2019 08:17:58 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/firewall/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>server</title>
-      <link>https://blog.indonesiadot.com/tags/server/</link>
-      <pubDate>Mon, 02 Sep 2019 08:17:58 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>tools</title>
       <link>https://blog.indonesiadot.com/tags/tools/</link>
-      <pubDate>Mon, 02 Sep 2019 08:17:58 +0700</pubDate>
+      <pubDate>Wed, 04 Sep 2019 08:17:58 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/tools/</guid>
       <description></description>
@@ -336,29 +444,11 @@
     </item>
     
     <item>
-      <title>cloud</title>
-      <link>https://blog.indonesiadot.com/tags/cloud/</link>
-      <pubDate>Sun, 01 Sep 2019 08:17:42 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/cloud/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>free</title>
       <link>https://blog.indonesiadot.com/tags/free/</link>
       <pubDate>Sun, 01 Sep 2019 08:17:42 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/free/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gcp</title>
-      <link>https://blog.indonesiadot.com/tags/gcp/</link>
-      <pubDate>Sun, 01 Sep 2019 08:17:42 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/gcp/</guid>
       <description></description>
     </item>
     
@@ -611,15 +701,6 @@
       <pubDate>Sat, 10 Feb 2018 16:41:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/spiritual/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>automation</title>
-      <link>https://blog.indonesiadot.com/tags/automation/</link>
-      <pubDate>Wed, 31 Jan 2018 23:30:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/automation/</guid>
       <description></description>
     </item>
     

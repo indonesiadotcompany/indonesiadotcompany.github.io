@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bash on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/bash/</link>
+    <description>Recent content in bash on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Oct 2019 18:17:42 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Create GCP VM using gcloud from command line</title>
+      <link>https://blog.indonesiadot.com/2019/10/25/create-gcp-vm-using-gcloud-from-command-line/</link>
+      <pubDate>Fri, 25 Oct 2019 18:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/25/create-gcp-vm-using-gcloud-from-command-line/</guid>
+      <description>Pembuatan virtual machine di GCP / Google Cloud Platform menggunakan gcloud command line bermanfaat untuk mempermudah pembuatan VM tanpa harus mengakses web browser.
+Berikut langkah nya yang dilakukan di OS Centos 7:
+sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &amp;lt;&amp;lt; EOM [google-cloud-sdk] name=Google Cloud SDK baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64 enabled=1 gpgcheck=1 repo_gpgcheck=1 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg EOM sudo yum install google-cloud-sdk gcloud init  Berikut langkah yang dilakukan di OS ubuntu / debian:
+echo &amp;quot;deb http://packages.cloud.google.com/apt cloud-sdk main&amp;quot; | sudo tee -a /etc/apt/sources.</description>
+    </item>
+    
+    <item>
+      <title>Magic of Sed</title>
+      <link>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</guid>
+      <description> Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt  Referensi:
+ https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521  </description>
+    </item>
+    
+    <item>
+      <title>Bash script tips</title>
+      <link>https://blog.indonesiadot.com/2018/02/04/bash-script-tips/</link>
+      <pubDate>Sun, 04 Feb 2018 23:20:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2018/02/04/bash-script-tips/</guid>
+      <description>Bash scripting cheatsheet Referensi:
+ https://devhints.io/bash  bash or and How to Use Logical OR &amp;amp; AND in Shell Script with Examples Logical OR &amp;amp; AND operations are very useful where multiple conditions are used in our programs (scripts).
+ OR is used between two or multiple conditions. It returns true if any one of conditions returns as true. AND is used between two or multiple conditions. It returns true only if all the conditions returns as true.</description>
+    </item>
+    
+  </channel>
+</rss>

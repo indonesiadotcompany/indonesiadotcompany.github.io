@@ -6,10 +6,53 @@
     <description>Recent content in Posts on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Oct 2019 07:09:53 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 25 Oct 2019 18:17:42 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Create GCP VM using gcloud from command line</title>
+      <link>https://blog.indonesiadot.com/2019/10/25/create-gcp-vm-using-gcloud-from-command-line/</link>
+      <pubDate>Fri, 25 Oct 2019 18:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/25/create-gcp-vm-using-gcloud-from-command-line/</guid>
+      <description>Pembuatan virtual machine di GCP / Google Cloud Platform menggunakan gcloud command line bermanfaat untuk mempermudah pembuatan VM tanpa harus mengakses web browser.
+Berikut langkah nya yang dilakukan di OS Centos 7:
+sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &amp;lt;&amp;lt; EOM [google-cloud-sdk] name=Google Cloud SDK baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64 enabled=1 gpgcheck=1 repo_gpgcheck=1 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg EOM sudo yum install google-cloud-sdk gcloud init  Berikut langkah yang dilakukan di OS ubuntu / debian:
+echo &amp;quot;deb http://packages.cloud.google.com/apt cloud-sdk main&amp;quot; | sudo tee -a /etc/apt/sources.</description>
+    </item>
+    
+    <item>
+      <title>GCP and Ansible</title>
+      <link>https://blog.indonesiadot.com/2019/10/25/gcp-and-ansible/</link>
+      <pubDate>Fri, 25 Oct 2019 08:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/25/gcp-and-ansible/</guid>
+      <description>Referensi:
+ https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/  </description>
+    </item>
+    
+    <item>
+      <title>Kernel Hardening Tips</title>
+      <link>https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/</link>
+      <pubDate>Tue, 15 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/</guid>
+      <description> Disable and blacklist Linux modules Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya
+blacklist firewire_core install firewire_core /bin/true  Referensi:
+ CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/  </description>
+    </item>
+    
+    <item>
+      <title>Magic of Sed</title>
+      <link>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</guid>
+      <description> Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt  Referensi:
+ https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521  </description>
+    </item>
     
     <item>
       <title>DOH DNS over HTTPS</title>
@@ -17,10 +60,10 @@
       <pubDate>Sun, 13 Oct 2019 07:09:53 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/</guid>
-      <description>Security DNS di sisi client Install dnscrypt-proxy add-apt-repository ppa:shevchuk/dnscrypt-proxy apt install dnscrypt-proxy  Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel server_name menjadi seperti contoh berikut:
+      <description>Security DNS di sisi client Install dnscrypt-proxy add-apt-repository ppa:shevchuk/dnscrypt-proxy apt update apt install dnscrypt-proxy  Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel server_name menjadi seperti contoh berikut:
 server_names = [&#39;cloudflare&#39;, &#39;google&#39;]  lalu restart service dnscrypt-proxy
 systemctl restart dnscrypt-proxy  edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy
-nameserver 127.0.2.1  Install DNS over HTTPS server Install dengan cara paket instalasi deb wget &amp;quot;https://www.aaflalo.me/?smd_process_download=1&amp;amp;download_id=1326&amp;quot; dpkg -i doh-server_*_amd64.deb  Install dengan cara compile wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz sudo tar -C /usr/local -xzf go1.</description>
+nameserver 127.0.2.1  Install DNS over HTTPS server Install dengan cara paket instalasi deb wget &amp;quot;https://www.aaflalo.me/?smd_process_download=1&amp;amp;download_id=1326&amp;quot; mv index* doh-server.deb dpkg -i doh-server_*_amd64.deb  Install dengan cara compile wget https://dl.</description>
     </item>
     
     <item>
@@ -32,7 +75,8 @@ nameserver 127.0.2.1  Install DNS over HTTPS server Install dengan cara paket in
       <description>Install Ansible Tower Persyaratan:
 Hardware: RAM minimal 3,75 GB OS: Centos 7
 Langkah yang dilakukan
-yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-3.1.5.tar.gz tar -xzvf ansible-tower-setup-3.1.5.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh ## Configure Ansible Tower after installation Akses Ansible tower Web UI dari  https://``` Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
+yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-3.1.5.tar.gz tar -xzvf ansible-tower-setup-3.1.5.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh  Configure Ansible Tower after installation Akses Ansible tower Web UI dari
+https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
     </item>
     
     <item>
@@ -81,19 +125,36 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
     </item>
     
     <item>
+      <title>linux Security Tools</title>
+      <link>https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</link>
+      <pubDate>Wed, 04 Sep 2019 08:17:58 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</guid>
+      <description>Tools yang biasa digunakan pada server linux:
+ Firewall
+ iptables ipset shorewall csf  Anti Malware
+ maldet (malware detection for web directory)  IDS
+ tripwire  Identity Server
+ FreeIPA (IPA = Identity, Policy, Authentication)  Security Checking / Scanning Solution
+ OpenSCAP   Referensi Openscap:
+ https://www.open-scap.org/  </description>
+    </item>
+    
+    <item>
       <title>linux Server Tools</title>
       <link>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:58 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
- Firewall
- iptables ipset shorewall csf  Anti Malware
- maldet (malware detection for web directory)  IDS
- tripwire  Identity Server
- FreeIPA (IPA = Identity, Policy, Authentication)  Video Conference
+ Virtualization (Desktop)
+ Virtualbox  Graphic
+ Gimp  Mail
+ Thunderbird Mail (client)  Multimedia
+ Avidemux  Video Conference
  jitsi More and more  Customer support live chat
- rocket.chat tawk.to simple chat   </description>
+ rocket.chat tawk.to simple chat   Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut
+ https://blog.indonesiadot.com/2019/09/04/linux-security-tools/  </description>
     </item>
     
     <item>
@@ -769,13 +830,14 @@ https://www.udemy.com/aws-essentials</description>
     </item>
     
     <item>
-      <title>Bash script tips and trick</title>
-      <link>https://blog.indonesiadot.com/2018/02/04/bash-script-tips-and-trick/</link>
+      <title>Bash script tips</title>
+      <link>https://blog.indonesiadot.com/2018/02/04/bash-script-tips/</link>
       <pubDate>Sun, 04 Feb 2018 23:20:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2018/02/04/bash-script-tips-and-trick/</guid>
-      <description>bash or and
-How to Use Logical OR &amp;amp; AND in Shell Script with ExamplesLogical&amp;nbsp;OR&amp;nbsp;&amp;amp;&amp;nbsp;AND&amp;nbsp;operations are very useful where multiple conditions are used in our programs (scripts).OR&amp;nbsp;is used between two or multiple conditions. It returns true if any one of conditions returns as true.AND&amp;nbsp;is used between two or multiple conditions. It returns true only if all the conditions returns as true.Using Logical ORLogical OR in bash script is used with operator -o.</description>
+      <guid>https://blog.indonesiadot.com/2018/02/04/bash-script-tips/</guid>
+      <description>Bash scripting cheatsheet Referensi:
+ https://devhints.io/bash  bash or and How to Use Logical OR &amp;amp; AND in Shell Script with Examples Logical OR &amp;amp; AND operations are very useful where multiple conditions are used in our programs (scripts).
+ OR is used between two or multiple conditions. It returns true if any one of conditions returns as true. AND is used between two or multiple conditions. It returns true only if all the conditions returns as true.</description>
     </item>
     
     <item>

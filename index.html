@@ -388,6 +388,34 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -420,6 +448,155 @@
 <div class="post">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/25/create-gcp-vm-using-gcloud-from-command-line/">Create GCP VM using gcloud from command line</a></h1>
+        <span class="post-date">Oct 25, 2019</span>
+	<p>Pembuatan virtual machine di GCP / Google Cloud Platform menggunakan gcloud command line bermanfaat untuk mempermudah pembuatan VM tanpa harus mengakses web browser.</p>
+
+<p>Berikut langkah nya yang dilakukan di OS Centos 7:</p>
+
+<pre><code>sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &lt;&lt; EOM
+[google-cloud-sdk]
+name=Google Cloud SDK
+baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
+       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOM
+sudo yum install google-cloud-sdk
+gcloud init
+</code></pre>
+
+<p>Berikut langkah yang dilakukan di OS ubuntu / debian:</p>
+
+<pre><code>echo &quot;deb http://packages.cloud.google.com/apt cloud-sdk main&quot; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk
+gcloud init
+</code></pre>
+
+<p>Pada saat initialize ini akan diminta untuk memasukan user google yang akan digunakan, diikuti saja semua langkah nya sampai dengan memasukan verifikasi.</p>
+
+<p>Setelah itu bisa menjalankan script 1-gcp-centos.sh berikut:</p>
+
+<pre><code>bash 1-gcp-centos.sh namavm
+</code></pre>
+
+<p>Berikut script 1-gcp-centos.sh</p>
+
+<pre><code>#!/bin/bash
+
+if [ -z &quot;$1&quot; ]; then
+ NAMA=$1
+ while [ -z &quot;$NAMA&quot; ]; do
+  echo &quot;masukan nama vm:&quot;
+  read NAMA
+ done
+ # Create GCE VM with disk storage
+ gcloud compute instances create $NAMA \
+  --machine-type f1-micro \
+  --network default \
+  --subnet default \
+  --network-tier PREMIUM \
+  --maintenance-policy MIGRATE \
+  --scopes https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append \
+  --image centos-7-v20191014 \
+  --image-project centos-cloud \
+  --boot-disk-size 10GB \
+  --boot-disk-type pd-standard \
+  --boot-disk-device-name compute-disk
+fi
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://cloud.google.com/sdk/docs/quickstart-redhat-centos">https://cloud.google.com/sdk/docs/quickstart-redhat-centos</a></li>
+<li><a href="https://github.com/garystafford/ansible-gcp-demo">https://github.com/garystafford/ansible-gcp-demo</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/cloud/">cloud</a>, <a href="https://blog.indonesiadot.com/tags/gcp/">gcp</a>, <a href="https://blog.indonesiadot.com/tags/google-cloud-platform/">google-cloud-platform</a>, <a href="https://blog.indonesiadot.com/tags/google/">google</a>, <a href="https://blog.indonesiadot.com/tags/gcloud/">gcloud</a>, <a href="https://blog.indonesiadot.com/tags/command/">command</a>, <a href="https://blog.indonesiadot.com/tags/bash/">bash</a>, <a href="https://blog.indonesiadot.com/tags/script/">script</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/25/gcp-and-ansible/">GCP and Ansible</a></h1>
+        <span class="post-date">Oct 25, 2019</span>
+	<p>Referensi:</p>
+
+<ul>
+<li><a href="https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/">https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/cloud/">cloud</a>, <a href="https://blog.indonesiadot.com/tags/gcp/">gcp</a>, <a href="https://blog.indonesiadot.com/tags/google-cloud-platform/">google-cloud-platform</a>, <a href="https://blog.indonesiadot.com/tags/google/">google</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/">Kernel Hardening Tips</a></h1>
+        <span class="post-date">Oct 15, 2019</span>
+	
+
+<h2 id="disable-and-blacklist-linux-modules">Disable and blacklist Linux modules</h2>
+
+<p>Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya</p>
+
+<pre><code>blacklist firewire_core
+install firewire_core /bin/true
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li>CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf</li>
+<li><a href="https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/">https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/kernel/">kernel</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/hardening/">hardening</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/magic-of-sed/">Magic of Sed</a></h1>
+        <span class="post-date">Oct 14, 2019</span>
+	
+
+<h2 id="insert-every-line-in-linux">Insert every line in linux</h2>
+
+<pre><code>sed 's/^/apt-get purge -y /' aptwantopurge.txt &gt; aptpurge.txt
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.google.com/search?q=insert+every+line+linux&amp;oq=insert+every+line+linux">https://www.google.com/search?q=insert+every+line+linux&amp;oq=insert+every+line+linux</a></li>
+<li><a href="https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line">https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line</a></li>
+<li><a href="https://www.google.com/search?q=sed+cheatsheet&amp;oq=sed+cheatsheet">https://www.google.com/search?q=sed+cheatsheet&amp;oq=sed+cheatsheet</a></li>
+<li><a href="https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521">https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/sed/">sed</a>, <a href="https://blog.indonesiadot.com/tags/bash/">bash</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/">DOH DNS over HTTPS</a></h1>
         <span class="post-date">Oct 13, 2019</span>
 	
@@ -429,6 +606,7 @@
 <h3 id="install-dnscrypt-proxy">Install dnscrypt-proxy</h3>
 
 <pre><code>add-apt-repository ppa:shevchuk/dnscrypt-proxy
+apt update
 apt install dnscrypt-proxy
 </code></pre>
 
@@ -452,6 +630,7 @@ apt install dnscrypt-proxy
 <h3 id="install-dengan-cara-paket-instalasi-deb">Install dengan cara paket instalasi deb</h3>
 
 <pre><code>wget &quot;https://www.aaflalo.me/?smd_process_download=1&amp;download_id=1326&quot;
+mv index* doh-server.deb
 dpkg -i doh-server_*_amd64.deb
 </code></pre>
 
@@ -464,6 +643,7 @@ tar xzf v2.1.2.tar.gz
 cd dns-over-https-2.1.2
 make &amp;&amp; make install
 add-apt-repository ppa:ondrej/nginx
+apt update
 apt install nginx-full
 </code></pre>
 
@@ -498,6 +678,7 @@ server {
 nginx -t
 systemctl reload nginx
 add-apt-repository ppa:certbot/certbot
+apt update
 apt install python-certbot-nginx
 certbot --nginx -d dns.example.com
 </code></pre>
@@ -591,14 +772,16 @@ cd ansible-tower-setup-3.1.5/
 (edit inventory file, isi bagian yang dibutuhkan terutama password)
 (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram)
 ./setup.sh
-
-## Configure Ansible Tower after installation
-Akses Ansible tower Web UI dari 
 </code></pre>
 
-<p>https://<Ansible Tower IP or Hostname>
-```
-Dapatkan lisensi dari <a href="https://www.ansible.com/license">https://www.ansible.com/license</a>
+<h2 id="configure-ansible-tower-after-installation">Configure Ansible Tower after installation</h2>
+
+<p>Akses Ansible tower Web UI dari</p>
+
+<pre><code>https://&lt;Ansible Tower IP or Hostname&gt;
+</code></pre>
+
+<p>Dapatkan lisensi dari <a href="https://www.ansible.com/license">https://www.ansible.com/license</a>
 lalu masukkan license tersebut ke halaman awal setelah login</p>
 
 <p>Referensi:</p>
@@ -748,179 +931,6 @@ git push origin hugo
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>, <a href="https://blog.indonesiadot.com/tags/github/">github</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/markdown-tips/">Markdown tips</a></h1>
-        <span class="post-date">Sep 24, 2019</span>
-	
-
-<h2 id="markdown-insert-image"><em>markdown</em> insert image</h2>
-
-<p>Ini adalah <a href="https://www.petanikode.com/markdown-pemula/"><em>markdown</em></a> untuk menampilkan gambar yang terletak di dalam folder / direktori pada postingan di hugo</p>
-
-<pre><code>![nama-image](path/to/image)
-</code></pre>
-
-<h2 id="markdown-insert-link">markdown insert link</h2>
-
-<p>Ini adalah markdown untuk menampilkan link <em>url</em> pada kata atau kalimat di halaman web</p>
-
-<pre><code>[kata atau kalimat](http://link.url/yang-dituju)
-</code></pre>
-
-<p>seperti contoh diatas</p>
-
-<pre><code>[markdown](https://www.petanikode.com/markdown-pemula/)
-</code></pre>
-
-<p>Referensi markdown images:</p>
-
-<ul>
-<li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/markdown/">markdown</a>, <a href="https://blog.indonesiadot.com/tags/static-site-generator/">static-site-generator</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/linux-server-tools/">linux Server Tools</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<p>Tools yang biasa digunakan pada server linux:</p>
-
-<ul>
-<li><p>Firewall</p>
-
-<ul>
-<li>iptables</li>
-<li>ipset</li>
-<li>shorewall</li>
-<li>csf</li>
-</ul></li>
-
-<li><p>Anti Malware</p>
-
-<ul>
-<li>maldet (malware detection for web directory)</li>
-</ul></li>
-
-<li><p>IDS</p>
-
-<ul>
-<li>tripwire</li>
-</ul></li>
-
-<li><p>Identity Server</p>
-
-<ul>
-<li><a href="https://freeipa.org">FreeIPA (IPA = Identity, Policy, Authentication)</a></li>
-</ul></li>
-
-<li><p>Video Conference</p>
-
-<ul>
-<li>jitsi</li>
-<li><a href="https://medevel.com/10-os-video-conferencing/">More and more</a></li>
-</ul></li>
-
-<li><p>Customer support live chat</p>
-
-<ul>
-<li>rocket.chat</li>
-<li>tawk.to</li>
-<li><a href="https://github.com/juliancwirko/s-chat-app">simple chat</a></li>
-</ul></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>, <a href="https://blog.indonesiadot.com/tags/firewall/">firewall</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/">Proxmox optimized disk for auto trim / shrink</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<p>Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari <em>thin provision storage</em> atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.</p>
-
-<p>Persyaratan adalah:</p>
-
-<ul>
-<li>menggunakan <em>thin provisioned backing storage</em> seperti qcow2, thin-lvm, zfs pada server proxmox nya</li>
-<li>menggunakan Virtio SCSI controller pada guest option vm nya</li>
-<li>Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya</li>
-<li>Tambahkan discard mount options di /etc/fstab nya guest vm</li>
-<li>Enable fstrim.timer pada systemctl</li>
-</ul>
-
-<p>Adapun langkahnya, disini dilakukan perubahan pada VM yang sebelumnya telah terbuat dengan Virtio disk, dari disk yang kedua dari VM, agar lebih aman, dirubah satu persatu, dimulai dari disk kedua terlebih dahulu:</p>
-
-<ul>
-<li>edit dulu /etc/fstab bagian disk dari /dev/vdb1 menjadi /dev/sda1 (sda untuk drive scsi / sata, untuk lebih aman nya di komen dulu bagian disk /hdbck, untuk di mount manual, agar pada saat boot jika salah tidak nyangkut)</li>
-<li>shutdown vm</li>
-<li>detach disk</li>
-<li>edit disk, menjadi SCSI dan klik bagian advanced, lalu check discard</li>
-<li>start vm</li>
-<li>setelah login, jalankan fstrim -v /hdbck/</li>
-</ul>
-
-<p>Note:</p>
-
-<ul>
-<li>Untuk perubahan selanjutnya pada disk yang pertama, di edit dulu /etc/fstab nya, misal /dev/vda1 menjadi /dev/sda1, dan /dev/sda1 sebelumnya yg disk kedua yg telah di edit menjadi SCSI menjadi /dev/sdb1, lalu baru lakukan seperti langkah diatas dari shutdown vm sampai jalankan fstrim.</li>
-<li>Masukan juga pada crontab, agar dijalankan fstrim setiap bulan, jika memakai centos 6 dan dibawahnya</li>
-<li>Untuk membuktikannya, sambil mengecek di server proxmox dengan menggunakan command <code>zfs list</code> jika memakai zfs, <code>lvs</code> atau <code>lvdisplay</code> untuk thin-lvm, atau <code>du -sch</code> jika memakai qcow2 untuk mengetahui besar file sebelum dan setelah di guest vm nya dijalankan command <code>fstrim -av</code></li>
-</ul>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://pve.proxmox.com/wiki/Shrink_Qcow2_Disk_Files">https://pve.proxmox.com/wiki/Shrink_Qcow2_Disk_Files</a></li>
-<li><a href="https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/">https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/virtualization/">virtualization</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/postfix-tips/">Postfix tips</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	
-
-<h3 id="postfix-send-to-local-network">postfix send to local network</h3>
-
-<p>Ini adalah langkah untuk membuat postfix mengirim ke mail server dalam LAN</p>
-
-<pre><code>echo &quot;real.net smtp:[192.168.1.108]&quot; &gt;&gt; /etc/postfix/transport
-postmap /etc/postfix/transport
-systemctl restart postfix
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/">https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/</a></li>
-<li><a href="http://www.postfix.org/STANDARD_CONFIGURATION_README.html">http://www.postfix.org/STANDARD_CONFIGURATION_README.html</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/mail/">mail</a>, <a href="https://blog.indonesiadot.com/tags/postfix/">postfix</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   

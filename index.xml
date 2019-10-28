@@ -5,9 +5,154 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2019</rights>
-    <updated>2019-10-13 07:09:53 &#43;0700 WIB</updated>
+    <updated>2019-10-25 18:17:42 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>Create GCP VM using gcloud from command line</title>
+          <link>https://blog.indonesiadot.com/2019/10/25/create-gcp-vm-using-gcloud-from-command-line/</link>
+          <pubDate>Fri, 25 Oct 2019 18:17:42 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/10/25/create-gcp-vm-using-gcloud-from-command-line/</guid>
+          <description>&lt;p&gt;Pembuatan virtual machine di GCP / Google Cloud Platform menggunakan gcloud command line bermanfaat untuk mempermudah pembuatan VM tanpa harus mengakses web browser.&lt;/p&gt;
+
+&lt;p&gt;Berikut langkah nya yang dilakukan di OS Centos 7:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &amp;lt;&amp;lt; EOM
+[google-cloud-sdk]
+name=Google Cloud SDK
+baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
+       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOM
+sudo yum install google-cloud-sdk
+gcloud init
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Berikut langkah yang dilakukan di OS ubuntu / debian:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;deb http://packages.cloud.google.com/apt cloud-sdk main&amp;quot; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install google-cloud-sdk
+gcloud init
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pada saat initialize ini akan diminta untuk memasukan user google yang akan digunakan, diikuti saja semua langkah nya sampai dengan memasukan verifikasi.&lt;/p&gt;
+
+&lt;p&gt;Setelah itu bisa menjalankan script 1-gcp-centos.sh berikut:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;bash 1-gcp-centos.sh namavm
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Berikut script 1-gcp-centos.sh&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+if [ -z &amp;quot;$1&amp;quot; ]; then
+ NAMA=$1
+ while [ -z &amp;quot;$NAMA&amp;quot; ]; do
+  echo &amp;quot;masukan nama vm:&amp;quot;
+  read NAMA
+ done
+ # Create GCE VM with disk storage
+ gcloud compute instances create $NAMA \
+  --machine-type f1-micro \
+  --network default \
+  --subnet default \
+  --network-tier PREMIUM \
+  --maintenance-policy MIGRATE \
+  --scopes https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append \
+  --image centos-7-v20191014 \
+  --image-project centos-cloud \
+  --boot-disk-size 10GB \
+  --boot-disk-type pd-standard \
+  --boot-disk-device-name compute-disk
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/sdk/docs/quickstart-redhat-centos&#34;&gt;https://cloud.google.com/sdk/docs/quickstart-redhat-centos&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/garystafford/ansible-gcp-demo&#34;&gt;https://github.com/garystafford/ansible-gcp-demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>GCP and Ansible</title>
+          <link>https://blog.indonesiadot.com/2019/10/25/gcp-and-ansible/</link>
+          <pubDate>Fri, 25 Oct 2019 08:17:42 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/10/25/gcp-and-ansible/</guid>
+          <description>&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/&#34;&gt;https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Kernel Hardening Tips</title>
+          <link>https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/</link>
+          <pubDate>Tue, 15 Oct 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/</guid>
+          <description>
+
+&lt;h2 id=&#34;disable-and-blacklist-linux-modules&#34;&gt;Disable and blacklist Linux modules&lt;/h2&gt;
+
+&lt;p&gt;Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;blacklist firewire_core
+install firewire_core /bin/true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/&#34;&gt;https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Magic of Sed</title>
+          <link>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</link>
+          <pubDate>Mon, 14 Oct 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</guid>
+          <description>
+
+&lt;h2 id=&#34;insert-every-line-in-linux&#34;&gt;Insert every line in linux&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux&#34;&gt;https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line&#34;&gt;https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet&#34;&gt;https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521&#34;&gt;https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
       
     
       
@@ -24,6 +169,7 @@
 &lt;h3 id=&#34;install-dnscrypt-proxy&#34;&gt;Install dnscrypt-proxy&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;add-apt-repository ppa:shevchuk/dnscrypt-proxy
+apt update
 apt install dnscrypt-proxy
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -47,6 +193,7 @@ apt install dnscrypt-proxy
 &lt;h3 id=&#34;install-dengan-cara-paket-instalasi-deb&#34;&gt;Install dengan cara paket instalasi deb&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;wget &amp;quot;https://www.aaflalo.me/?smd_process_download=1&amp;amp;download_id=1326&amp;quot;
+mv index* doh-server.deb
 dpkg -i doh-server_*_amd64.deb
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -59,6 +206,7 @@ tar xzf v2.1.2.tar.gz
 cd dns-over-https-2.1.2
 make &amp;amp;&amp;amp; make install
 add-apt-repository ppa:ondrej/nginx
+apt update
 apt install nginx-full
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -93,6 +241,7 @@ server {
 nginx -t
 systemctl reload nginx
 add-apt-repository ppa:certbot/certbot
+apt update
 apt install python-certbot-nginx
 certbot --nginx -d dns.example.com
 &lt;/code&gt;&lt;/pre&gt;
@@ -185,14 +334,16 @@ cd ansible-tower-setup-3.1.5/
 (edit inventory file, isi bagian yang dibutuhkan terutama password)
 (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram)
 ./setup.sh
-
-## Configure Ansible Tower after installation
-Akses Ansible tower Web UI dari 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;https://&lt;Ansible Tower IP or Hostname&gt;
-```
-Dapatkan lisensi dari &lt;a href=&#34;https://www.ansible.com/license&#34;&gt;https://www.ansible.com/license&lt;/a&gt;
+&lt;h2 id=&#34;configure-ansible-tower-after-installation&#34;&gt;Configure Ansible Tower after installation&lt;/h2&gt;
+
+&lt;p&gt;Akses Ansible tower Web UI dari&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Dapatkan lisensi dari &lt;a href=&#34;https://www.ansible.com/license&#34;&gt;https://www.ansible.com/license&lt;/a&gt;
 lalu masukkan license tersebut ke halaman awal setelah login&lt;/p&gt;
 
 &lt;p&gt;Referensi:&lt;/p&gt;
@@ -376,11 +527,11 @@ git push origin hugo
     
       
         <item>
-          <title>linux Server Tools</title>
-          <link>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</link>
-          <pubDate>Mon, 02 Sep 2019 08:17:58 WIB</pubDate>
+          <title>linux Security Tools</title>
+          <link>https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</link>
+          <pubDate>Wed, 04 Sep 2019 08:17:58 WIB</pubDate>
           <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</guid>
+          <guid>https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</guid>
           <description>&lt;p&gt;Tools yang biasa digunakan pada server linux:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -411,6 +562,56 @@ git push origin hugo
 &lt;li&gt;&lt;a href=&#34;https://freeipa.org&#34;&gt;FreeIPA (IPA = Identity, Policy, Authentication)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
+&lt;li&gt;&lt;p&gt;Security Checking / Scanning Solution&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;OpenSCAP&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Referensi Openscap:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.open-scap.org/&#34;&gt;https://www.open-scap.org/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>linux Server Tools</title>
+          <link>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</link>
+          <pubDate>Mon, 02 Sep 2019 08:17:58 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</guid>
+          <description>&lt;p&gt;Tools yang biasa digunakan pada server linux:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Virtualization (Desktop)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Virtualbox&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Graphic&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Gimp&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Mail&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Thunderbird Mail (client)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Multimedia&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Avidemux&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
 &lt;li&gt;&lt;p&gt;Video Conference&lt;/p&gt;
 
 &lt;ul&gt;
@@ -425,6 +626,12 @@ git push origin hugo
 &lt;li&gt;tawk.to&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/juliancwirko/s-chat-app&#34;&gt;simple chat&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.indonesiadot.com/2019/09/04/linux-security-tools/&#34;&gt;https://blog.indonesiadot.com/2019/09/04/linux-security-tools/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -1256,12 +1463,100 @@ git branch -D namabranchyangakandihapus
     
       
         <item>
-          <title>Bash script tips and trick</title>
-          <link>https://blog.indonesiadot.com/2018/02/04/bash-script-tips-and-trick/</link>
+          <title>Bash script tips</title>
+          <link>https://blog.indonesiadot.com/2018/02/04/bash-script-tips/</link>
           <pubDate>Sun, 04 Feb 2018 23:20:00 UTC</pubDate>
           <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2018/02/04/bash-script-tips-and-trick/</guid>
-          <description>&lt;p&gt;&lt;b&gt;bash or and&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;&lt;header class=&#34;entry-header&#34; style=&#34;border-bottom: none; border-image: initial; border-left: 0px; border-right: 0px; border-top: 0px; color: #4a4949; font-family: Poppins; font-size: 13px; margin: 0px; outline: 0px; padding: 0px; position: relative; vertical-align: baseline;&#34;&gt;&lt;div class=&#34;post-title post-title-full clearfix&#34; style=&#34;border: 0px; font-size: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;&lt;div class=&#34;title-wrap&#34; style=&#34;border: 0px; font-size: inherit; margin: 0px; min-height: 20px; outline: 0px; overflow: hidden; padding: 20px 20px 15px; vertical-align: baseline;&#34;&gt;&lt;h1 class=&#34;title single-title&#34; style=&#34;border: 0px; color: #3a3a3a; font-size: 32px; line-height: 45px; margin: 0px 0px 5px; opacity: 1; outline: 0px; padding: 0px; transition: opacity 0.24s ease-in-out; vertical-align: baseline; visibility: visible;&#34;&gt;How to Use Logical OR &amp;amp; AND in Shell Script with Examples&lt;/h1&gt;&lt;/div&gt;&lt;/div&gt;&lt;/header&gt;&lt;div class=&#34;single-post-content&#34; style=&#34;border-bottom-color: initial; border-bottom-style: initial; border-image: initial; border-left-color: initial; border-left-style: initial; border-right-color: initial; border-right-style: initial; border-top-color: rgba(0, 0, 0, 0.1); border-top-style: solid; border-width: 1px 0px 0px; clear: both; color: #4a4949; font-family: Poppins; font-size: 17px; line-height: 28px; margin: 0px; opacity: 1; outline: 0px; overflow: hidden; padding: 20px 24.0799px 10px; transition: opacity 0.24s ease-in-out; vertical-align: baseline; visibility: visible; width: 754.566px;&#34;&gt;&lt;div class=&#34;apss-social-share apss-theme-1 counter-enable apss-buttons-left clearfix&#34; style=&#34;border: 0px; font-family: &amp;quot;Open Sans&amp;quot;, sans-serif; font-size: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;&lt;div class=&#34;apss-share-wrapper-div&#34; style=&#34;border: 0px; font-size: inherit; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&#34;border: 0px; font-size: inherit; margin-bottom: 20px; outline: 0px; padding: 0px; text-align: justify; vertical-align: baseline;&#34;&gt;Logical&amp;nbsp;&lt;span style=&#34;border: 0px; font-size: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;OR&lt;/span&gt;&amp;nbsp;&amp;amp;&amp;nbsp;&lt;span style=&#34;border: 0px; font-size: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;AND&lt;/span&gt;&amp;nbsp;operations are very useful where multiple conditions are used in our programs (scripts).&lt;/div&gt;&lt;ul style=&#34;border: 0px; font-size: inherit; list-style-image: initial; list-style-position: initial; margin: 0px 0px 20px; outline: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;&lt;li style=&#34;border: 0px; font-size: inherit; margin: 0px 0px 0px 30px; outline: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;&lt;orange style=&#34;color: orange;&#34;&gt;&lt;span style=&#34;border: 0px; font-size: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;OR&lt;/span&gt;&lt;/orange&gt;&amp;nbsp;is used between two or multiple conditions. It returns true if any one of conditions returns as true.&lt;/li&gt;&lt;li style=&#34;border: 0px; font-size: inherit; margin: 0px 0px 0px 30px; outline: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;&lt;orange style=&#34;color: orange;&#34;&gt;&lt;span style=&#34;border: 0px; font-size: inherit; font-weight: 700; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;AND&lt;/span&gt;&lt;/orange&gt;&amp;nbsp;is used between two or multiple conditions. It returns true only if all the conditions returns as true.&lt;/li&gt;&lt;/ul&gt;&lt;h2 class=&#34;heading1&#34; style=&#34;border-bottom-color: rgb(207, 202, 202); border-bottom-style: dashed; border-image: initial; border-left-color: initial; border-left-style: initial; border-right-color: initial; border-right-style: initial; border-top-color: initial; border-top-style: initial; border-width: 0px 0px 1px; color: #ca2129; font-family: &amp;quot;Roboto Condensed&amp;quot;, Arial, sans-serif; font-size: 26px; letter-spacing: -0.7px; line-height: 34px; margin: 45px 0px 12px; opacity: 1; outline: 0px; padding: 0px 0px 4px; transition: opacity 0.24s ease-in-out; vertical-align: baseline; visibility: visible;&#34;&gt;Using Logical OR&lt;/h2&gt;&lt;div style=&#34;border: 0px; font-size: inherit; margin-bottom: 20px; outline: 0px; padding: 0px; text-align: justify; vertical-align: baseline;&#34;&gt;Logical OR in bash script is used with operator -o. Below small shell script will show you to how to use logical OR ( -o ) between two conditions.&lt;/div&gt;&lt;pre style=&#34;background-color: #3c3f42; border-color: rgb(2, 149, 255); border-image: initial; border-style: solid; border-width: 1px 1px 1px 4px; color: white; font-size: 15px; line-height: 1.5em; margin-bottom: 24px; margin-top: 24px; outline: 0px; overflow-x: auto; overflow-y: hidden; padding: 10px; vertical-align: baseline; word-wrap: break-word;&#34;&gt;#!/bin/bash&lt;br /&gt;&lt;br /&gt;read -p &amp;ldquo;Enter First Numeric Value: &amp;ldquo;   first&lt;br /&gt;read -p &amp;ldquo;Enter Second Numeric Value: &amp;ldquo;  second&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;if [ $first -le 10  &lt;orange style=&#34;color: orange;&#34;&gt;-o&lt;/orange&gt;  $second -gt 20 ]&lt;br /&gt;then&lt;br /&gt;        echo &amp;ldquo;OK&amp;rdquo;&lt;br /&gt;else&lt;br /&gt; echo &amp;ldquo;Not OK&amp;rdquo;&lt;br /&gt;fi&lt;br /&gt;&lt;/pre&gt;&lt;h2 class=&#34;heading1&#34; style=&#34;border-bottom-color: rgb(207, 202, 202); border-bottom-style: dashed; border-image: initial; border-left-color: initial; border-left-style: initial; border-right-color: initial; border-right-style: initial; border-top-color: initial; border-top-style: initial; border-width: 0px 0px 1px; color: #ca2129; font-family: &amp;quot;Roboto Condensed&amp;quot;, Arial, sans-serif; font-size: 26px; letter-spacing: -0.7px; line-height: 34px; margin: 45px 0px 12px; opacity: 1; outline: 0px; padding: 0px 0px 4px; transition: opacity 0.24s ease-in-out; vertical-align: baseline; visibility: visible;&#34;&gt;Using Logical AND&lt;/h2&gt;&lt;div style=&#34;border: 0px; font-size: inherit; margin-bottom: 20px; outline: 0px; padding: 0px; text-align: justify; vertical-align: baseline;&#34;&gt;Logical AND in bash script is used with operator -a. Below shell script will show you to how to use logical AND ( -a ) between two conditions.&lt;/div&gt;&lt;pre style=&#34;background-color: #3c3f42; border-color: rgb(2, 149, 255); border-image: initial; border-style: solid; border-width: 1px 1px 1px 4px; color: white; font-size: 15px; line-height: 1.5em; margin-bottom: 24px; margin-top: 24px; outline: 0px; overflow-x: auto; overflow-y: hidden; padding: 10px; vertical-align: baseline; word-wrap: break-word;&#34;&gt;#!/bin/bash&lt;br /&gt;&lt;br /&gt;read -p &amp;ldquo;Enter First Numeric Value: &amp;ldquo;   first&lt;br /&gt;read -p &amp;ldquo;Enter Second Numeric Value: &amp;ldquo;  second&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;if [ $first -le 10  &lt;orange style=&#34;color: orange;&#34;&gt;-a&lt;/orange&gt;  $second -gt 20 ]&lt;br /&gt;then&lt;br /&gt;        echo &amp;ldquo;OK&amp;rdquo;&lt;br /&gt;else&lt;br /&gt; echo &amp;ldquo;Not OK&amp;rdquo;&lt;br /&gt;fi&lt;br /&gt;&lt;/pre&gt;&lt;h2 class=&#34;heading1&#34; style=&#34;border-bottom-color: rgb(207, 202, 202); border-bottom-style: dashed; border-image: initial; border-left-color: initial; border-left-style: initial; border-right-color: initial; border-right-style: initial; border-top-color: initial; border-top-style: initial; border-width: 0px 0px 1px; color: #ca2129; font-family: &amp;quot;Roboto Condensed&amp;quot;, Arial, sans-serif; font-size: 26px; letter-spacing: -0.7px; line-height: 34px; margin: 45px 0px 12px; opacity: 1; outline: 0px; padding: 0px 0px 4px; transition: opacity 0.24s ease-in-out; vertical-align: baseline; visibility: visible;&#34;&gt;Using Multiple Logical OR &amp;amp; AND&lt;/h2&gt;&lt;div style=&#34;border: 0px; font-size: inherit; margin-bottom: 20px; outline: 0px; padding: 0px; text-align: justify; vertical-align: baseline;&#34;&gt;Below example will help you to understand to how to use multiple logical operators in single statement.&lt;/div&gt;&lt;pre style=&#34;background-color: #3c3f42; border-color: rgb(2, 149, 255); border-image: initial; border-style: solid; border-width: 1px 1px 1px 4px; color: white; font-size: 15px; line-height: 1.5em; margin-bottom: 24px; margin-top: 24px; outline: 0px; overflow-x: auto; overflow-y: hidden; padding: 10px; vertical-align: baseline; word-wrap: break-word;&#34;&gt;#!/bin/bash&lt;br /&gt;&lt;br /&gt;read -p &amp;ldquo;Enter Your Number:&amp;rdquo;  i&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;if [ ( $i -ge 10  -a  $i -le 20 ) -o ( $i -ge 100  -a  $i -le 200 ) ]&lt;br /&gt;then&lt;br /&gt;        echo &amp;ldquo;OK&amp;rdquo;&lt;br /&gt;else&lt;br /&gt; echo &amp;ldquo;Not OK&amp;rdquo;&lt;br /&gt;fi&lt;/pre&gt;&lt;/div&gt;&lt;br /&gt;ref: &lt;a href=&#34;https://tecadmin.net/use-logical-or-and-in-shell-script/#&#34;&gt;https://tecadmin.net/use-logical-or-and-in-shell-script/#&lt;/a&gt;&lt;/p&gt;
+          <guid>https://blog.indonesiadot.com/2018/02/04/bash-script-tips/</guid>
+          <description>
+
+&lt;h2 id=&#34;bash-scripting-cheatsheet&#34;&gt;Bash scripting cheatsheet&lt;/h2&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devhints.io/bash&#34;&gt;https://devhints.io/bash&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;bash-or-and&#34;&gt;bash or and&lt;/h2&gt;
+
+&lt;h3 id=&#34;how-to-use-logical-or-amp-and-in-shell-script-with-examples&#34;&gt;How to Use Logical OR &amp;amp; AND in Shell Script with Examples&lt;/h3&gt;
+
+&lt;p&gt;Logical &lt;strong&gt;OR&lt;/strong&gt; &amp;amp; &lt;strong&gt;AND&lt;/strong&gt; operations are very useful where multiple conditions are used in our programs (scripts).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;OR is used between two or multiple conditions. It returns true if any one of conditions returns as true.&lt;/li&gt;
+&lt;li&gt;AND is used between two or multiple conditions. It returns true only if all the conditions returns as true.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;using-logical-or&#34;&gt;Using Logical OR&lt;/h3&gt;
+
+&lt;p&gt;Logical OR in bash script is used with operator -o. Below small shell script will show you to how to use logical OR ( -o ) between two conditions.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+read -p &amp;quot;Enter First Numeric Value: &amp;quot;   first
+read -p &amp;quot;Enter Second Numeric Value: &amp;quot;  second
+
+if [ $first -le 10 -o $second -gt 20 ]
+then
+ echo &amp;quot;OK&amp;quot;
+else
+ echo &amp;quot;Not OK&amp;quot;
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;using-logical-and&#34;&gt;Using Logical AND&lt;/h3&gt;
+
+&lt;p&gt;Logical AND in bash script is used with operator -a. Below shell script will show you to how to use logical AND ( -a ) between two conditions.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+read -p &amp;quot;Enter First Numeric Value: &amp;quot;   first
+read -p &amp;quot;Enter Second Numeric Value: &amp;quot;  second
+if [ $first -le 10 -a $second -gt 20 ]
+then
+ echo &amp;quot;OK&amp;quot;
+else
+ echo &amp;quot;Not OK&amp;quot;
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;using-multiple-logical-or-amp-and&#34;&gt;Using Multiple Logical OR &amp;amp; AND&lt;/h3&gt;
+
+&lt;p&gt;Below example will help you to understand to how to use multiple logical operators in single statement.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+read -p &amp;quot;Enter Your Number:&amp;quot;  i
+if [ ( $i -ge 10  -a  $i -le 20 ) -o ( $i -ge 100  -a  $i -le 200 ) ]
+then
+ echo &amp;quot;OK&amp;quot;
+else
+ echo &amp;quot;Not OK&amp;quot;
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://tecadmin.net/use-logical-or-and-in-shell-script/#&#34;&gt;https://tecadmin.net/use-logical-or-and-in-shell-script/#&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;insert-variable-to-bash-script-using-source&#34;&gt;insert variable to bash script using &lt;strong&gt;source&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://bash.cyberciti.biz/guide/Source_command&#34;&gt;https://bash.cyberciti.biz/guide/Source_command&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;pass-arguments-parameters-to-a-bash-script&#34;&gt;Pass Arguments / Parameters to a bash script&lt;/h2&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://linuxcommand.org/lc3_wss0120.php&#34;&gt;http://linuxcommand.org/lc3_wss0120.php&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.adminschoice.com/bash-positional-parameters&#34;&gt;https://www.adminschoice.com/bash-positional-parameters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.lifewire.com/pass-arguments-to-bash-script-2200571&#34;&gt;https://www.lifewire.com/pass-arguments-to-bash-script-2200571&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
       

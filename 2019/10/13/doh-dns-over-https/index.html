@@ -387,6 +387,34 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -423,6 +451,7 @@
 <h3 id="install-dnscrypt-proxy">Install dnscrypt-proxy</h3>
 
 <pre><code>add-apt-repository ppa:shevchuk/dnscrypt-proxy
+apt update
 apt install dnscrypt-proxy
 </code></pre>
 
@@ -446,6 +475,7 @@ apt install dnscrypt-proxy
 <h3 id="install-dengan-cara-paket-instalasi-deb">Install dengan cara paket instalasi deb</h3>
 
 <pre><code>wget &quot;https://www.aaflalo.me/?smd_process_download=1&amp;download_id=1326&quot;
+mv index* doh-server.deb
 dpkg -i doh-server_*_amd64.deb
 </code></pre>
 
@@ -458,6 +488,7 @@ tar xzf v2.1.2.tar.gz
 cd dns-over-https-2.1.2
 make &amp;&amp; make install
 add-apt-repository ppa:ondrej/nginx
+apt update
 apt install nginx-full
 </code></pre>
 
@@ -492,6 +523,7 @@ server {
 nginx -t
 systemctl reload nginx
 add-apt-repository ppa:certbot/certbot
+apt update
 apt install python-certbot-nginx
 certbot --nginx -d dns.example.com
 </code></pre>

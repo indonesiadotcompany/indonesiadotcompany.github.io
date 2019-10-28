@@ -6,10 +6,20 @@
     <description>Recent content in automation on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 Jan 2018 23:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Oct 2019 08:17:42 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GCP and Ansible</title>
+      <link>https://blog.indonesiadot.com/2019/10/25/gcp-and-ansible/</link>
+      <pubDate>Fri, 25 Oct 2019 08:17:42 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/25/gcp-and-ansible/</guid>
+      <description>Referensi:
+ https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/  </description>
+    </item>
     
     <item>
       <title>Ansible tips and trick</title>

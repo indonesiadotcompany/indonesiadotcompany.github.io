@@ -24,13 +24,14 @@ ssl-cert-check -s mail.prefetch.net -p 443</description>
     </item>
     
     <item>
-      <title>Bash script tips and trick</title>
-      <link>https://blog.indonesiadot.com/2018/02/04/bash-script-tips-and-trick/</link>
+      <title>Bash script tips</title>
+      <link>https://blog.indonesiadot.com/2018/02/04/bash-script-tips/</link>
       <pubDate>Sun, 04 Feb 2018 23:20:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2018/02/04/bash-script-tips-and-trick/</guid>
-      <description>bash or and
-How to Use Logical OR &amp;amp; AND in Shell Script with ExamplesLogical&amp;nbsp;OR&amp;nbsp;&amp;amp;&amp;nbsp;AND&amp;nbsp;operations are very useful where multiple conditions are used in our programs (scripts).OR&amp;nbsp;is used between two or multiple conditions. It returns true if any one of conditions returns as true.AND&amp;nbsp;is used between two or multiple conditions. It returns true only if all the conditions returns as true.Using Logical ORLogical OR in bash script is used with operator -o.</description>
+      <guid>https://blog.indonesiadot.com/2018/02/04/bash-script-tips/</guid>
+      <description>Bash scripting cheatsheet Referensi:
+ https://devhints.io/bash  bash or and How to Use Logical OR &amp;amp; AND in Shell Script with Examples Logical OR &amp;amp; AND operations are very useful where multiple conditions are used in our programs (scripts).
+ OR is used between two or multiple conditions. It returns true if any one of conditions returns as true. AND is used between two or multiple conditions. It returns true only if all the conditions returns as true.</description>
     </item>
     
   </channel>

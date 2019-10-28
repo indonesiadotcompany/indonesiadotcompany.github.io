@@ -6,10 +6,21 @@
     <description>Recent content in security on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Sep 2019 08:17:36 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 15 Oct 2019 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/security/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kernel Hardening Tips</title>
+      <link>https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/</link>
+      <pubDate>Tue, 15 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/</guid>
+      <description> Disable and blacklist Linux modules Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya
+blacklist firewire_core install firewire_core /bin/true  Referensi:
+ CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/  </description>
+    </item>
     
     <item>
       <title>IDS Tripwire</title>
@@ -22,19 +33,19 @@
     </item>
     
     <item>
-      <title>linux Server Tools</title>
-      <link>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</link>
-      <pubDate>Mon, 02 Sep 2019 08:17:58 +0700</pubDate>
+      <title>linux Security Tools</title>
+      <link>https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</link>
+      <pubDate>Wed, 04 Sep 2019 08:17:58 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</guid>
+      <guid>https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
  Firewall
  iptables ipset shorewall csf  Anti Malware
  maldet (malware detection for web directory)  IDS
  tripwire  Identity Server
- FreeIPA (IPA = Identity, Policy, Authentication)  Video Conference
- jitsi More and more  Customer support live chat
- rocket.chat tawk.to simple chat   </description>
+ FreeIPA (IPA = Identity, Policy, Authentication)  Security Checking / Scanning Solution
+ OpenSCAP   Referensi Openscap:
+ https://www.open-scap.org/  </description>
     </item>
     
     <item>
