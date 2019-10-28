@@ -1,26 +1,23 @@
 +++
 title = "linux Server Tools"
 date = 2019-09-02T08:17:58+07:00
-tags = ["linux", "server", "tools", "firewall", "security", "ids"]
+tags = ["linux", "server", "tools"]
 author = "Widya"
 +++
 
 Tools yang biasa digunakan pada server linux:
 
-* Firewall
- * iptables
- * ipset
- * shorewall
- * csf
+* Virtualization (Desktop)
+ * Virtualbox
 
-* Anti Malware
- * maldet (malware detection for web directory)
+* Graphic
+ * Gimp
 
-* IDS
- * tripwire
+* Mail
+ * Thunderbird Mail (client)
 
-* Identity Server
- * [FreeIPA (IPA = Identity, Policy, Authentication)](https://freeipa.org)
+* Multimedia
+ * Avidemux
 
 * Video Conference
  * jitsi
@@ -30,3 +27,7 @@ Tools yang biasa digunakan pada server linux:
  * rocket.chat
  * tawk.to
  * [simple chat](https://github.com/juliancwirko/s-chat-app)
+
+Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut
+
+* https://blog.indonesiadot.com/2019/09/04/linux-security-tools/

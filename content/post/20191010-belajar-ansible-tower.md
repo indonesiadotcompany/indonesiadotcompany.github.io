@@ -21,6 +21,7 @@ cd ansible-tower-setup-3.1.5/
 (edit inventory file, isi bagian yang dibutuhkan terutama password)
 (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram)
 ./setup.sh
+```
 
 ## Configure Ansible Tower after installation
 Akses Ansible tower Web UI dari 

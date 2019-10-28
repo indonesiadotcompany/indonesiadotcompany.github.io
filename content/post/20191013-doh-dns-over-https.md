@@ -11,6 +11,7 @@ draft: false
 
 ```
 add-apt-repository ppa:shevchuk/dnscrypt-proxy
+apt update
 apt install dnscrypt-proxy
 ```
 
@@ -34,6 +35,7 @@ nameserver 127.0.2.1
 ### Install dengan cara paket instalasi deb
 ```
 wget "https://www.aaflalo.me/?smd_process_download=1&download_id=1326"
+mv index* doh-server.deb
 dpkg -i doh-server_*_amd64.deb
 ```
 
@@ -46,6 +48,7 @@ tar xzf v2.1.2.tar.gz
 cd dns-over-https-2.1.2
 make && make install
 add-apt-repository ppa:ondrej/nginx
+apt update
 apt install nginx-full
 ```
 
@@ -79,6 +82,7 @@ ln -s /etc/nginx/sites-available/dns-over-https /etc/nginx/sites-enabled/dns-ove
 nginx -t
 systemctl reload nginx
 add-apt-repository ppa:certbot/certbot
+apt update
 apt install python-certbot-nginx
 certbot --nginx -d dns.example.com
 ```
