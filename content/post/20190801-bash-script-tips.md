@@ -63,7 +63,22 @@ then
 else
  echo "Not OK"
 fi
+
 ```
+
+## Color output on echo
+
+Ref:
+
+* https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
+
+## Search exact string using grep
+
+Ref:
+
+* https://unix.stackexchange.com/questions/206903/match-exact-string-using-grep
+* https://stackoverflow.com/questions/11287861/how-to-check-if-a-file-contains-a-specific-string-using-bash
+
 
 Ref:
 

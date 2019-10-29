@@ -62,3 +62,20 @@ Referensi:
 
 * https://serverfault.com/questions/728662/ansible-manipulate-file-with-a-date-format
 
+## Ansible check file if exists or not
+
+```
+- name: Check that the hosts.allow exists
+  stat:
+    path: /etc/hosts.allow
+  register: stat_allow
+- name: Create the file, if it doesnt exist already
+  file:
+    path: /etc/hosts.allow
+    state: touch
+  when: stat_allow.stat.exists == False
+```
+
+Ref:
+
+* https://stackoverflow.com/questions/35654286/how-check-a-file-exists-in-ansible
