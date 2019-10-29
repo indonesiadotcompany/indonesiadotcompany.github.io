@@ -1532,7 +1532,25 @@ then
 else
  echo &amp;quot;Not OK&amp;quot;
 fi
+
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;color-output-on-echo&#34;&gt;Color output on echo&lt;/h2&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux&#34;&gt;https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;search-exact-string-using-grep&#34;&gt;Search exact string using grep&lt;/h2&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://unix.stackexchange.com/questions/206903/match-exact-string-using-grep&#34;&gt;https://unix.stackexchange.com/questions/206903/match-exact-string-using-grep&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/11287861/how-to-check-if-a-file-contains-a-specific-string-using-bash&#34;&gt;https://stackoverflow.com/questions/11287861/how-to-check-if-a-file-contains-a-specific-string-using-bash&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Ref:&lt;/p&gt;
 
