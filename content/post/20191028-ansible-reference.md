@@ -79,3 +79,36 @@ Referensi:
 Ref:
 
 * https://stackoverflow.com/questions/35654286/how-check-a-file-exists-in-ansible
+
+## Ansible explicit data type casting !!str indicator
+
+!!str indicator which simply forces the value to be a string.
+
+Ref:
+
+* https://github.com/ansible/ansible/issues/11905
+* https://github.com/ansible/ansible/issues/11151
+
+## Ansible lineinfile module
+
+Ref:
+
+* https://docs.ansible.com/ansible/latest/modules/lineinfile_module.html
+
+## Ansible find, register variable, and output to terminal / echo
+
+Ref:
+
+* https://www.mydailytutorials.com/ansible-register-variables/
+* https://serverfault.com/questions/537060/how-to-see-stdout-of-ansible-commands
+* https://docs.ansible.com/ansible/latest/modules/debug_module.html
+* https://docs.ansible.com/ansible/latest/modules/find_module.html
+* https://serverfault.com/questions/945821/ansible-find-get-path-of-a-directory
+
+## Ansible show detailed output using callback plugins
+
+Ref:
+
+* https://docs.ansible.com/ansible/latest/plugins/callback.html
+* https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html
+
