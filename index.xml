@@ -5,9 +5,509 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2019</rights>
-    <updated>2019-10-25 18:17:42 &#43;0700 WIB</updated>
+    <updated>2019-10-31 16:17:54 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>Centos Syslog Server</title>
+          <link>https://blog.indonesiadot.com/2019/10/31/centos-syslog-server/</link>
+          <pubDate>Thu, 31 Oct 2019 16:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/10/31/centos-syslog-server/</guid>
+          <description>
+
+&lt;h2 id=&#34;setup-syslog-server-and-setup-syslog-client-to-it-on-centos-7&#34;&gt;Setup Syslog Server and setup syslog client to it on Centos 7&lt;/h2&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.svennd.be/setup-central-syslog-server-on-centos-7/&#34;&gt;https://www.svennd.be/setup-central-syslog-server-on-centos-7/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/&#34;&gt;https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html&#34;&gt;https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Regex / Regexp Reference</title>
+          <link>https://blog.indonesiadot.com/2019/10/31/regex-/-regexp-reference/</link>
+          <pubDate>Thu, 31 Oct 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/10/31/regex-/-regexp-reference/</guid>
+          <description>
+
+&lt;h2 id=&#34;regex-case-insensitive&#34;&gt;Regex Case insensitive&lt;/h2&gt;
+
+&lt;p&gt;(?i)&lt;/p&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean&#34;&gt;https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://regex101.com/r/hE9gB4/1&#34;&gt;https://regex101.com/r/hE9gB4/1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://regexr.com/3f4vo&#34;&gt;https://regexr.com/3f4vo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;regex-to-match-string-containing-two-names&#34;&gt;Regex to match string containing two names&lt;/h2&gt;
+
+&lt;p&gt;###Explanation of command that i am going to write:-&lt;/p&gt;
+
+&lt;p&gt;. means any character, digit can come in place of .&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;means zero or more occurrences of thing written just previous to it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;| means &amp;lsquo;or&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;So,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;james.*jack
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;would search james , then any number of character until jack comes.&lt;/p&gt;
+
+&lt;p&gt;Since you want either jack.*james or james.*jack&lt;/p&gt;
+
+&lt;p&gt;Hence Command:&lt;/p&gt;
+
+&lt;p&gt;jack.*james|james.*jack&lt;/p&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/4389644/regex-to-match-string-containing-two-names-in-any-order&#34;&gt;https://stackoverflow.com/questions/4389644/regex-to-match-string-containing-two-names-in-any-order&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;regex-not-contain-substring-a-word&#34;&gt;Regex not contain substring / a word&lt;/h2&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word&#34;&gt;https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Linux OS Hardening</title>
+          <link>https://blog.indonesiadot.com/2019/10/29/linux-os-hardening/</link>
+          <pubDate>Tue, 29 Oct 2019 14:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/10/29/linux-os-hardening/</guid>
+          <description>
+
+&lt;h2 id=&#34;password-policies-centos-7&#34;&gt;Password Policies Centos 7&lt;/h2&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/&#34;&gt;https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/&#34;&gt;https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;centos-7-hardening-guide&#34;&gt;Centos 7 Hardening Guide&lt;/h2&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.lisenet.com/2017/centos-7-server-hardening-guide/&#34;&gt;https://www.lisenet.com/2017/centos-7-server-hardening-guide/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;linux-aslr-and-kernel-randomize-va-space&#34;&gt;Linux ASLR and kernel.randomize_va_space&lt;/h2&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/&#34;&gt;https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>TCP Wrapper</title>
+          <link>https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/</link>
+          <pubDate>Tue, 29 Oct 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/</guid>
+          <description>
+
+&lt;h2 id=&#34;tcp-wrapper&#34;&gt;TCP Wrapper&lt;/h2&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.server-world.info/en/note?os=CentOS_7&amp;amp;p=tcp_wrapper&#34;&gt;https://www.server-world.info/en/note?os=CentOS_7&amp;amp;p=tcp_wrapper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/&#34;&gt;https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Ansible Reference</title>
+          <link>https://blog.indonesiadot.com/2019/10/28/ansible-reference/</link>
+          <pubDate>Mon, 28 Oct 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/10/28/ansible-reference/</guid>
+          <description>
+
+&lt;h2 id=&#34;ansible-check-disk&#34;&gt;Ansible check disk&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;- name: Ensure that free space on {{ mountname }} is grater than 40%
+  assert:
+    that: mount.size_available &amp;gt; mount.size_total|float * 0.4
+    msg: disk space has reached 60% threshold
+  vars:
+    mountname: &#39;/&#39;
+    mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;atau&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- name: Ensure that free space on the tested volume is greater than 15%
+  assert:
+    that:
+      - mount.size_available &amp;gt; mount.size_total|float * 0.15
+    msg: Disk space has reached 85% threshold
+  vars:
+    mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,item.mount) | list | first }}&amp;quot;
+  with_items:
+    - &amp;quot;{{ ansible_mounts }}&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;atau&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;name: &#39;Ensure that free space on {{ mountname }} is grater than 30%&#39;
+assert:
+  that: item.size_available &amp;gt; item.size_total|float * 0.3
+  msg: &#39;disk space has reached 70% threshold&#39;
+when: item.mount == mountname
+with_items: &#39;{{ ansible_mounts }}&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/44077630/ansible-to-check-diskspace-for-mounts-mentioned-as-variable&#34;&gt;https://stackoverflow.com/questions/44077630/ansible-to-check-diskspace-for-mounts-mentioned-as-variable&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ansible-role-tutorial&#34;&gt;Ansible role tutorial&lt;/h2&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@brad.simonin/learning-ansible-and-ansible-roles-with-centos-7-linux-817406f7b542&#34;&gt;https://medium.com/@brad.simonin/learning-ansible-and-ansible-roles-with-centos-7-linux-817406f7b542&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ansible-create-file-based-on-date&#34;&gt;Ansible create file based on date&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;- name: Backup and compress /etc/ to /data/backups based on date
+  archive:
+    path: /etc/
+    dest: /data/backups/etc-{{ date }}.tgz
+  vars:
+    date: &amp;quot;{{ lookup(&#39;pipe&#39;, &#39;date +%Y%m%d-%H%M&#39;) }}&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://serverfault.com/questions/728662/ansible-manipulate-file-with-a-date-format&#34;&gt;https://serverfault.com/questions/728662/ansible-manipulate-file-with-a-date-format&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ansible-check-file-if-exists-or-not&#34;&gt;Ansible check file if exists or not&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;- name: Check that the hosts.allow exists
+  stat:
+    path: /etc/hosts.allow
+  register: stat_allow
+- name: Create the file, if it doesnt exist already
+  file:
+    path: /etc/hosts.allow
+    state: touch
+  when: stat_allow.stat.exists == False
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/35654286/how-check-a-file-exists-in-ansible&#34;&gt;https://stackoverflow.com/questions/35654286/how-check-a-file-exists-in-ansible&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ansible-explicit-data-type-casting-str-indicator&#34;&gt;Ansible explicit data type casting !!str indicator&lt;/h2&gt;
+
+&lt;p&gt;!!str indicator which simply forces the value to be a string.&lt;/p&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ansible/ansible/issues/11905&#34;&gt;https://github.com/ansible/ansible/issues/11905&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ansible/ansible/issues/11151&#34;&gt;https://github.com/ansible/ansible/issues/11151&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ansible-lineinfile-module&#34;&gt;Ansible lineinfile module&lt;/h2&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/modules/lineinfile_module.html&#34;&gt;https://docs.ansible.com/ansible/latest/modules/lineinfile_module.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ansible-find-register-variable-and-output-to-terminal-echo&#34;&gt;Ansible find, register variable, and output to terminal / echo&lt;/h2&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.mydailytutorials.com/ansible-register-variables/&#34;&gt;https://www.mydailytutorials.com/ansible-register-variables/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://serverfault.com/questions/537060/how-to-see-stdout-of-ansible-commands&#34;&gt;https://serverfault.com/questions/537060/how-to-see-stdout-of-ansible-commands&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/modules/debug_module.html&#34;&gt;https://docs.ansible.com/ansible/latest/modules/debug_module.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/modules/find_module.html&#34;&gt;https://docs.ansible.com/ansible/latest/modules/find_module.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://serverfault.com/questions/945821/ansible-find-get-path-of-a-directory&#34;&gt;https://serverfault.com/questions/945821/ansible-find-get-path-of-a-directory&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ansible-show-detailed-output-using-callback-plugins&#34;&gt;Ansible show detailed output using callback plugins&lt;/h2&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/plugins/callback.html&#34;&gt;https://docs.ansible.com/ansible/latest/plugins/callback.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html&#34;&gt;https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Post</title>
+          <link>https://blog.indonesiadot.com/2019/10/26/post/</link>
+          <pubDate>Sat, 26 Oct 2019 16:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/10/26/post/</guid>
+          <description>
+
+&lt;h1 id=&#34;tmux-cheatsheet&#34;&gt;Tmux cheatsheet&lt;/h1&gt;
+
+&lt;h1 id=&#34;tmux-shortcuts-cheatsheet&#34;&gt;tmux shortcuts &amp;amp; cheatsheet&lt;/h1&gt;
+
+&lt;p&gt;start new:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;start new with session name:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux new -s myname
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;attach:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux a  #  (or at, or attach)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;attach to named:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux a -t myname
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;list sessions:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a name=&#34;killSessions&#34;&gt;&lt;/a&gt;kill session:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux kill-session -t myname
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a name=&#34;killAllSessions&#34;&gt;&lt;/a&gt;Kill all the tmux sessions:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#39; | xargs kill
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In tmux, hit the prefix &lt;code&gt;ctrl+b&lt;/code&gt; (my modified prefix is ctrl+a) and then:&lt;/p&gt;
+
+&lt;h2 id=&#34;sessions&#34;&gt;Sessions&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;:new&amp;lt;CR&amp;gt;  new session
+s  list sessions
+$  name session
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;a-name-windowstabs-a-windows-tabs&#34;&gt;&lt;a name=&#34;WindowsTabs&#34;&gt;&lt;/a&gt;Windows (tabs)&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;c  create window
+w  list windows
+n  next window
+p  previous window
+f  find window
+,  name window
+&amp;amp;  kill window
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;a-name-panessplits-a-panes-splits&#34;&gt;&lt;a name=&#34;PanesSplits&#34;&gt;&lt;/a&gt;Panes (splits)&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;%  vertical split
+&amp;quot;  horizontal split
+
+o  swap panes
+q  show pane numbers
+x  kill pane
++  break pane into window (e.g. to select text by mouse to copy)
+-  restore pane from window
+⍽  space - toggle between layouts
+&amp;lt;prefix&amp;gt; q (Show pane numbers, when the numbers show up type the key to goto that pane)
+&amp;lt;prefix&amp;gt; { (Move the current pane left)
+&amp;lt;prefix&amp;gt; } (Move the current pane right)
+&amp;lt;prefix&amp;gt; z toggle pane zoom
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;a-name-syncpanes-a-sync-panes&#34;&gt;&lt;a name=&#34;syncPanes&#34;&gt;&lt;/a&gt;Sync Panes&lt;/h2&gt;
+
+&lt;p&gt;You can do this by switching to the appropriate window, typing your Tmux prefix (commonly Ctrl-B or Ctrl-A) and then a colon to bring up a Tmux command line, and typing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;:setw synchronize-panes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can optionally add on or off to specify which state you want; otherwise the option is simply toggled. This option is specific to one window, so it won’t change the way your other sessions or windows operate. When you’re done, toggle it off again by repeating the command. &lt;a href=&#34;http://blog.sanctum.geek.nz/sync-tmux-panes/&#34;&gt;tip source&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;resizing-panes&#34;&gt;Resizing Panes&lt;/h2&gt;
+
+&lt;p&gt;You can also resize panes if you don’t like the layout defaults. I personally rarely need to do this, though it’s handy to know how. Here is the basic syntax to resize panes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PREFIX : resize-pane -D (Resizes the current pane down)
+PREFIX : resize-pane -U (Resizes the current pane upward)
+PREFIX : resize-pane -L (Resizes the current pane left)
+PREFIX : resize-pane -R (Resizes the current pane right)
+PREFIX : resize-pane -D 20 (Resizes the current pane down by 20 cells)
+PREFIX : resize-pane -U 20 (Resizes the current pane upward by 20 cells)
+PREFIX : resize-pane -L 20 (Resizes the current pane left by 20 cells)
+PREFIX : resize-pane -R 20 (Resizes the current pane right by 20 cells)
+PREFIX : resize-pane -t 2 20 (Resizes the pane with the id of 2 down by 20 cells)
+PREFIX : resize-pane -t -L 20 (Resizes the pane with the id of 2 left by 20 cells)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;copy-mode&#34;&gt;Copy mode:&lt;/h2&gt;
+
+&lt;p&gt;Pressing PREFIX [ places us in Copy mode. We can then use our movement keys to move our cursor around the screen. By default, the arrow keys work. we set our configuration file to use Vim keys for moving between windows and resizing panes so we wouldn’t have to take our hands off the home row. tmux has a vi mode for working with the buffer as well. To enable it, add this line to .tmux.conf:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;setw -g mode-keys vi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With this option set, we can use h, j, k, and l to move around our buffer.&lt;/p&gt;
+
+&lt;p&gt;To get out of Copy mode, we just press the ENTER key. Moving around one character at a time isn’t very efficient. Since we enabled vi mode, we can also use some other visible shortcuts to move around the buffer.&lt;/p&gt;
+
+&lt;p&gt;For example, we can use &amp;ldquo;w&amp;rdquo; to jump to the next word and &amp;ldquo;b&amp;rdquo; to jump back one word. And we can use &amp;ldquo;f&amp;rdquo;, followed by any character, to jump to that character on the same line, and &amp;ldquo;F&amp;rdquo; to jump backwards on the line.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;   Function                vi             emacs
+   Back to indentation     ^              M-m
+   Clear selection         Escape         C-g
+   Copy selection          Enter          M-w
+   Cursor down             j              Down
+   Cursor left             h              Left
+   Cursor right            l              Right
+   Cursor to bottom line   L
+   Cursor to middle line   M              M-r
+   Cursor to top line      H              M-R
+   Cursor up               k              Up
+   Delete entire line      d              C-u
+   Delete to end of line   D              C-k
+   End of line             $              C-e
+   Goto line               :              g
+   Half page down          C-d            M-Down
+   Half page up            C-u            M-Up
+   Next page               C-f            Page down
+   Next word               w              M-f
+   Paste buffer            p              C-y
+   Previous page           C-b            Page up
+   Previous word           b              M-b
+   Quit mode               q              Escape
+   Scroll down             C-Down or J    C-Down
+   Scroll up               C-Up or K      C-Up
+   Search again            n              n
+   Search backward         ?              C-r
+   Search forward          /              C-s
+   Start of line           0              C-a
+   Start selection         Space          C-Space
+   Transpose chars                        C-t
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;misc&#34;&gt;Misc&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;d  detach
+t  big clock
+?  list shortcuts
+:  prompt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;configurations-options&#34;&gt;Configurations Options:&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;# Mouse support - set to on if you want to use the mouse
+* setw -g mode-mouse off
+* set -g mouse-select-pane off
+* set -g mouse-resize-pane off
+* set -g mouse-select-window off
+
+# Set the default terminal mode to 256color mode
+set -g default-terminal &amp;quot;screen-256color&amp;quot;
+
+# enable activity alerts
+setw -g monitor-activity on
+set -g visual-activity on
+
+# Center the window list
+set -g status-justify centre
+
+# Maximize and restore a pane
+unbind Up bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t tmp
+unbind Down
+bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://pragprog.com/book/bhtmux/tmux&#34;&gt;tmux: Productive Mouse-Free Development&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://superuser.com/questions/343572/tmux-how-do-i-reorder-my-windows&#34;&gt;How to reorder windows&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;notes&#34;&gt;Notes:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;changelog&#34;&gt;Changelog:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1411143833002 - Added &lt;a href=&#34;#PanesSplits&#34;&gt;toggle zoom&lt;/a&gt; under Panes (splits) section.&lt;/li&gt;
+&lt;li&gt;1411143833002 - &lt;a href=&#34;#syncPanes&#34;&gt;Added Sync Panes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;1414276652677 - &lt;a href=&#34;#killAllSessions&#34;&gt;Added Kill all tmux sessions &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;1438585211173 - &lt;a href=&#34;#WindowsTabs&#34;&gt;corrected create and add next and previus thanks to @justinjhendrick&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;request-an-update&#34;&gt;Request an Update:&lt;/h2&gt;
+
+&lt;p&gt;We Noticed that our Cheatsheet is growing and people are coloberating to add new tips and tricks, so please tweet to me what would you like to add and let&amp;rsquo;s make it better!&lt;/p&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://tmuxcheatsheet.com/&#34;&gt;https://tmuxcheatsheet.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gist.github.com/MohamedAlaa/2961058&#34;&gt;https://gist.github.com/MohamedAlaa/2961058&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
       
     
       

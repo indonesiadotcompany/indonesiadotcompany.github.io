@@ -6,10 +6,127 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Oct 2019 18:17:42 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 31 Oct 2019 16:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>client</title>
+      <link>https://blog.indonesiadot.com/tags/client/</link>
+      <pubDate>Thu, 31 Oct 2019 16:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/client/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://blog.indonesiadot.com/tags/linux/</link>
+      <pubDate>Thu, 31 Oct 2019 16:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server</title>
+      <link>https://blog.indonesiadot.com/tags/server/</link>
+      <pubDate>Thu, 31 Oct 2019 16:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>syslog</title>
+      <link>https://blog.indonesiadot.com/tags/syslog/</link>
+      <pubDate>Thu, 31 Oct 2019 16:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/syslog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tips</title>
+      <link>https://blog.indonesiadot.com/tags/tips/</link>
+      <pubDate>Thu, 31 Oct 2019 16:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regex</title>
+      <link>https://blog.indonesiadot.com/tags/regex/</link>
+      <pubDate>Thu, 31 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/regex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regexp</title>
+      <link>https://blog.indonesiadot.com/tags/regexp/</link>
+      <pubDate>Thu, 31 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/regexp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://blog.indonesiadot.com/tags/security/</link>
+      <pubDate>Tue, 29 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tcp-wrapper</title>
+      <link>https://blog.indonesiadot.com/tags/tcp-wrapper/</link>
+      <pubDate>Tue, 29 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/tcp-wrapper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tcpwrapper</title>
+      <link>https://blog.indonesiadot.com/tags/tcpwrapper/</link>
+      <pubDate>Tue, 29 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/tcpwrapper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ansible</title>
+      <link>https://blog.indonesiadot.com/tags/ansible/</link>
+      <pubDate>Mon, 28 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reference</title>
+      <link>https://blog.indonesiadot.com/tags/reference/</link>
+      <pubDate>Mon, 28 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/reference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tmux</title>
+      <link>https://blog.indonesiadot.com/tags/tmux/</link>
+      <pubDate>Sat, 26 Oct 2019 16:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/tmux/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>bash</title>
@@ -84,15 +201,6 @@
     </item>
     
     <item>
-      <title>ansible</title>
-      <link>https://blog.indonesiadot.com/tags/ansible/</link>
-      <pubDate>Fri, 25 Oct 2019 08:17:42 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>automation</title>
       <link>https://blog.indonesiadot.com/tags/automation/</link>
       <pubDate>Fri, 25 Oct 2019 08:17:42 +0700</pubDate>
@@ -120,47 +228,11 @@
     </item>
     
     <item>
-      <title>linux</title>
-      <link>https://blog.indonesiadot.com/tags/linux/</link>
-      <pubDate>Tue, 15 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>security</title>
-      <link>https://blog.indonesiadot.com/tags/security/</link>
-      <pubDate>Tue, 15 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tips</title>
-      <link>https://blog.indonesiadot.com/tags/tips/</link>
-      <pubDate>Tue, 15 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>sed</title>
       <link>https://blog.indonesiadot.com/tags/sed/</link>
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/sed/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>server</title>
-      <link>https://blog.indonesiadot.com/tags/server/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/server/</guid>
       <description></description>
     </item>
     

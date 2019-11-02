@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>reference on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/reference/</link>
+    <description>Recent content in reference on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Oct 2019 08:17:54 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/reference/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ansible Reference</title>
+      <link>https://blog.indonesiadot.com/2019/10/28/ansible-reference/</link>
+      <pubDate>Mon, 28 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/28/ansible-reference/</guid>
+      <description>Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &#39;/&#39; mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot;  atau
+- name: Ensure that free space on the tested volume is greater than 15% assert: that: - mount.size_available &amp;gt; mount.size_total|float * 0.15 msg: Disk space has reached 85% threshold vars: mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,item.</description>
+    </item>
+    
+  </channel>
+</rss>

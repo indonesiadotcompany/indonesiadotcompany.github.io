@@ -416,6 +416,34 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -446,6 +474,84 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/03/04/aws-tips-and-tricks/">aws tips and tricks</a></h1>
+        <span class="post-date">Mar 4, 2018</span>
+	<p><b>aws clone</b><br /><br /><div style="background-color: white; border: 0px; box-sizing: inherit; clear: both; color: #242729; font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 15px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; padding: 0px; vertical-align: baseline;">The easier way is through the web management console:</div><ol style="background-color: white; border: 0px; box-sizing: inherit; color: #242729; font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 15px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; list-style-image: initial; list-style-position: initial; margin: 0px 0px 1em 30px; padding: 0px; vertical-align: baseline;"><li style="border: 0px; box-sizing: inherit; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px 0px 0.5em; padding: 0px; vertical-align: baseline; word-wrap: break-word;">go to the instance</li><li style="border: 0px; box-sizing: inherit; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px 0px 0.5em; padding: 0px; vertical-align: baseline; word-wrap: break-word;">select the instance and click on instance action</li><li style="border: 0px; box-sizing: inherit; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline; word-wrap: break-word;">create image</li></ol><div style="background-color: white; border: 0px; box-sizing: inherit; clear: both; color: #242729; font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 15px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; padding: 0px; vertical-align: baseline;">Once you have an image you can launch another cloned instance, data and all. :)</div></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/aws/">aws</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/03/04/elasticsearch-tips-and-tricks/">elasticsearch tips and tricks</a></h1>
+        <span class="post-date">Mar 4, 2018</span>
+	<p><b>elasticsearch list indexes</b><br /><br /><a href="https://www.google.co.id/search?q=elasticsearch+list+indexes">https://www.google.co.id/search?q=elasticsearch+list+indexes</a><br /><a href="https://www.elastic.co/guide/en/elasticsearch/reference/1.4/_list_all_indexes.html">https://www.elastic.co/guide/en/elasticsearch/reference/1.4/_list_all_indexes.html</a><br /><br />curl &lsquo;localhost:9200/_cat/indices?v&rsquo;<br /><br /><b>elasticsearch installation</b><br /><br /><a href="https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig-2.x">https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig-2.x</a><br /><a href="https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04">https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04</a><br /><br /><b>elasticsearch config</b><br /><br />cluster.name: namacluster<br />bootstrap.memory_lock: true<br /><br /># <a href="http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html#es-install-es">http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html#es-install-es</a><br />index.query.bool.max_clause_count: 102400<br /><br /># this must be set on non public ip<br />network.host: 127.0.0.1<br />http.port: 9200<br /># <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-threadpool.html">https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-threadpool.html</a><br />processor: 2<br />threadpool.bulk.queue_size: 4000<br /><br /># <a href="https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig#configure-elasticsearch">https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig#configure-elasticsearch</a><br />script.inline: on<br />script.indexed: on<br /><div><br /></div></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/elasticsearch/">elasticsearch</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/03/04/docker-things/">Docker things</a></h1>
+        <span class="post-date">Mar 4, 2018</span>
+	<div dir="ltr"><b>Rancher</b></div><div dir="ltr">https://rancher.com/swarm/</div><div dir="ltr"><br /></div><div dir="ltr">https://github.com/MoimHossain/docker-viswarm<br /><br />https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host<br /><br /><pre style="background-color: #eff0f1; border: 0px; box-sizing: inherit; color: #242729; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-size: 13px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;"><code style="border: 0px; box-sizing: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline; white-space: inherit;">docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' containernameorid</code></pre><br /><br /><pre style="background-color: #eff0f1; border: 0px; box-sizing: inherit; color: #242729; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-size: 13px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;"><br /></pre></div>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/03/01/docker-monitoring/">Docker monitoring</a></h1>
+        <span class="post-date">Mar 1, 2018</span>
+	<div dir="ltr">http://rancher.com/comparing-monitoring-options-for-docker-deployments/</div><div dir="ltr">https://logz.io/blog/monitoring-dockerized-elk-stack/</div><div dir="ltr"><br /></div><div dir="ltr">must see:</div><div dir="ltr">https://youtu.be/iRlWqoUVdac</div>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>, <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/25/elastic-beats/">Elastic beats</a></h1>
+        <span class="post-date">Feb 25, 2018</span>
+	<p dir="ltr">https://www.elastic.co/products/beats<br>https://www.elastic.co/guide/en/beats/libbeat/current/community-beats.html<br></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/22/invoice-ninja-free-open-source-invoicing-system/">invoice ninja free open source invoicing system</a></h1>
+        <span class="post-date">Feb 22, 2018</span>
+	<p><a href="https://www.invoiceninja.org/">https://www.invoiceninja.org/</a><br /><br /><a href="https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/">https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/</a></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/office/">office</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/22/graphite-grafana-things/">graphite grafana things</a></h1>
@@ -483,84 +589,6 @@
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/tuning/">tuning</a>, <a href="https://blog.indonesiadot.com/tags/web/">web</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/17/munin-nginx/">Munin nginx</a></h1>
-        <span class="post-date">Feb 17, 2018</span>
-	<p dir="ltr">http://guide.munin-monitoring.org/en/stable-2.0/example/webserver/nginx.html</p><p dir="ltr">http://guide.munin-monitoring.org/en/latest/example/webserver/nginx.html</p><p dir="ltr">http://iinclude.in/2017/12/03/how-to-install-the-munin-monitoring-tool-on-ubuntu-16-04-with-nginx/</p><p dir="ltr">https://www.stephenrlang.com/2016/03/how-to-setup-munin-on-ubuntu/</p><p dir="ltr">https://github.com/tjstein/php5-fpm-munin-plugins</p><p dir="ltr">https://serverfault.com/questions/315460/munin-email-notification<br>https://blog-en.openalfa.com/how-to-configure-alerts-in-munin</p><p dir="ltr">https://prefetch.net/blog/index.php/2011/07/13/gathering-statistics-from-your-postfix-mail-logs/<br><br></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/16/linux-server-monitoring/">Linux server monitoring</a></h1>
-        <span class="post-date">Feb 16, 2018</span>
-	<p dir="ltr">https://blog.serverdensity.com/80-linux-monitoring-tools-know/</p><p dir="ltr">https://logz.io/blog/grafana-vs-kibana/</p><p dir="ltr">http://docs.grafana.org/features/datasources/</p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/15/todo-jenkins/">TODO jenkins</a></h1>
-        <span class="post-date">Feb 15, 2018</span>
-	<p><div class="separator" style="clear: both; text-align: center;"><iframe width="320" height="266" class="YOUTUBE-iframe-video" data-thumbnail-src="https://i.ytimg.com/vi/8_D49wo6XKI/0.jpg" src="https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded" frameborder="0" allowfullscreen></iframe></div><br /><br /><a href="https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04">https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04</a><br /><br /></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/jenkins/">jenkins</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/14/learn-ansible-php/">learn ansible php</a></h1>
-        <span class="post-date">Feb 14, 2018</span>
-	<p><a href="https://knpuniversity.com/screencast/ansible/ansible-composer">https://knpuniversity.com/screencast/ansible/ansible-composer</a></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/13/jenkins-magento-2/">Jenkins magento 2</a></h1>
-        <span class="post-date">Feb 13, 2018</span>
-	<p dir="ltr">https://cloudkul.com/blog/magento2-continuous-integration-continuous-deployment-using-jenkins/</p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/magento/">magento</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/10/al-qur-aan/">Al Qur-aan</a></h1>
-        <span class="post-date">Feb 10, 2018</span>
-	<p dir="ltr">http://kalamullah.com/quran.html</p><p dir="ltr">http://www.quranic-healing.com/2012/01/download-audio-ruqyah-mp3.html?m=1</p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/spiritual/">spiritual</a>
 	 <hr/>
     </div>
   

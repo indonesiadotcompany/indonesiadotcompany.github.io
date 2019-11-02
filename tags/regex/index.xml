@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>regex on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/regex/</link>
+    <description>Recent content in regex on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 31 Oct 2019 08:17:54 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/regex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Regex / Regexp Reference</title>
+      <link>https://blog.indonesiadot.com/2019/10/31/regex-/-regexp-reference/</link>
+      <pubDate>Thu, 31 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/31/regex-/-regexp-reference/</guid>
+      <description>Regex Case insensitive (?i)
+Referensi:
+ https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean https://regex101.com/r/hE9gB4/1 https://regexr.com/3f4vo  Regex to match string containing two names ###Explanation of command that i am going to write:-
+. means any character, digit can come in place of .
+ means zero or more occurrences of thing written just previous to it.  | means &amp;lsquo;or&amp;rsquo;.
+So,
+james.*jack  would search james , then any number of character until jack comes.</description>
+    </item>
+    
+  </channel>
+</rss>

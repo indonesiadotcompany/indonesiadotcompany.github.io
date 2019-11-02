@@ -6,10 +6,42 @@
     <description>Recent content in server on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Oct 2019 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 31 Oct 2019 16:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/server/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Centos Syslog Server</title>
+      <link>https://blog.indonesiadot.com/2019/10/31/centos-syslog-server/</link>
+      <pubDate>Thu, 31 Oct 2019 16:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/31/centos-syslog-server/</guid>
+      <description> Setup Syslog Server and setup syslog client to it on Centos 7 Referensi:
+ https://www.svennd.be/setup-central-syslog-server-on-centos-7/ https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/ https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html  </description>
+    </item>
+    
+    <item>
+      <title>Linux OS Hardening</title>
+      <link>https://blog.indonesiadot.com/2019/10/29/linux-os-hardening/</link>
+      <pubDate>Tue, 29 Oct 2019 14:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/29/linux-os-hardening/</guid>
+      <description> Password Policies Centos 7 Referensi:
+ https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/ https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/  Centos 7 Hardening Guide Referensi:
+ https://www.lisenet.com/2017/centos-7-server-hardening-guide/  Linux ASLR and kernel.randomize_va_space Ref:
+ https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/  </description>
+    </item>
+    
+    <item>
+      <title>TCP Wrapper</title>
+      <link>https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/</link>
+      <pubDate>Tue, 29 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/</guid>
+      <description> TCP Wrapper Referensi:
+ https://www.server-world.info/en/note?os=CentOS_7&amp;amp;p=tcp_wrapper https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/  </description>
+    </item>
     
     <item>
       <title>Magic of Sed</title>

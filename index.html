@@ -416,6 +416,34 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -446,6 +474,512 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/31/centos-syslog-server/">Centos Syslog Server</a></h1>
+        <span class="post-date">Oct 31, 2019</span>
+	
+
+<h2 id="setup-syslog-server-and-setup-syslog-client-to-it-on-centos-7">Setup Syslog Server and setup syslog client to it on Centos 7</h2>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.svennd.be/setup-central-syslog-server-on-centos-7/">https://www.svennd.be/setup-central-syslog-server-on-centos-7/</a></li>
+<li><a href="https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/">https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/</a></li>
+<li><a href="https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html">https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/syslog/">syslog</a>, <a href="https://blog.indonesiadot.com/tags/client/">client</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/31/regex-/-regexp-reference/">Regex / Regexp Reference</a></h1>
+        <span class="post-date">Oct 31, 2019</span>
+	
+
+<h2 id="regex-case-insensitive">Regex Case insensitive</h2>
+
+<p>(?i)</p>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean">https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean</a></li>
+<li><a href="https://regex101.com/r/hE9gB4/1">https://regex101.com/r/hE9gB4/1</a></li>
+<li><a href="https://regexr.com/3f4vo">https://regexr.com/3f4vo</a></li>
+</ul>
+
+<h2 id="regex-to-match-string-containing-two-names">Regex to match string containing two names</h2>
+
+<p>###Explanation of command that i am going to write:-</p>
+
+<p>. means any character, digit can come in place of .</p>
+
+<ul>
+<li>means zero or more occurrences of thing written just previous to it.</li>
+</ul>
+
+<p>| means &lsquo;or&rsquo;.</p>
+
+<p>So,</p>
+
+<pre><code>james.*jack
+</code></pre>
+
+<p>would search james , then any number of character until jack comes.</p>
+
+<p>Since you want either jack.*james or james.*jack</p>
+
+<p>Hence Command:</p>
+
+<p>jack.*james|james.*jack</p>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/4389644/regex-to-match-string-containing-two-names-in-any-order">https://stackoverflow.com/questions/4389644/regex-to-match-string-containing-two-names-in-any-order</a></li>
+</ul>
+
+<h2 id="regex-not-contain-substring-a-word">Regex not contain substring / a word</h2>
+
+<p>Ref:</p>
+
+<p><a href="https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word">https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word</a></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/regex/">regex</a>, <a href="https://blog.indonesiadot.com/tags/regexp/">regexp</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/29/linux-os-hardening/">Linux OS Hardening</a></h1>
+        <span class="post-date">Oct 29, 2019</span>
+	
+
+<h2 id="password-policies-centos-7">Password Policies Centos 7</h2>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/">https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/</a></li>
+<li><a href="https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/">https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/</a></li>
+</ul>
+
+<h2 id="centos-7-hardening-guide">Centos 7 Hardening Guide</h2>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.lisenet.com/2017/centos-7-server-hardening-guide/">https://www.lisenet.com/2017/centos-7-server-hardening-guide/</a></li>
+</ul>
+
+<h2 id="linux-aslr-and-kernel-randomize-va-space">Linux ASLR and kernel.randomize_va_space</h2>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/">https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/">TCP Wrapper</a></h1>
+        <span class="post-date">Oct 29, 2019</span>
+	
+
+<h2 id="tcp-wrapper">TCP Wrapper</h2>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=tcp_wrapper">https://www.server-world.info/en/note?os=CentOS_7&amp;p=tcp_wrapper</a></li>
+<li><a href="https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/">https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/tcpwrapper/">tcpwrapper</a>, <a href="https://blog.indonesiadot.com/tags/tcp-wrapper/">tcp-wrapper</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/28/ansible-reference/">Ansible Reference</a></h1>
+        <span class="post-date">Oct 28, 2019</span>
+	
+
+<h2 id="ansible-check-disk">Ansible check disk</h2>
+
+<pre><code>- name: Ensure that free space on {{ mountname }} is grater than 40%
+  assert:
+    that: mount.size_available &gt; mount.size_total|float * 0.4
+    msg: disk space has reached 60% threshold
+  vars:
+    mountname: '/'
+    mount: &quot;{{ ansible_mounts | selectattr('mount','equalto',mountname) | list | first }}&quot;
+</code></pre>
+
+<p>atau</p>
+
+<pre><code>- name: Ensure that free space on the tested volume is greater than 15%
+  assert:
+    that:
+      - mount.size_available &gt; mount.size_total|float * 0.15
+    msg: Disk space has reached 85% threshold
+  vars:
+    mount: &quot;{{ ansible_mounts | selectattr('mount','equalto',item.mount) | list | first }}&quot;
+  with_items:
+    - &quot;{{ ansible_mounts }}&quot;
+</code></pre>
+
+<p>atau</p>
+
+<pre><code>name: 'Ensure that free space on {{ mountname }} is grater than 30%'
+assert:
+  that: item.size_available &gt; item.size_total|float * 0.3
+  msg: 'disk space has reached 70% threshold'
+when: item.mount == mountname
+with_items: '{{ ansible_mounts }}'
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/44077630/ansible-to-check-diskspace-for-mounts-mentioned-as-variable">https://stackoverflow.com/questions/44077630/ansible-to-check-diskspace-for-mounts-mentioned-as-variable</a></li>
+</ul>
+
+<h2 id="ansible-role-tutorial">Ansible role tutorial</h2>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://medium.com/@brad.simonin/learning-ansible-and-ansible-roles-with-centos-7-linux-817406f7b542">https://medium.com/@brad.simonin/learning-ansible-and-ansible-roles-with-centos-7-linux-817406f7b542</a></li>
+</ul>
+
+<h2 id="ansible-create-file-based-on-date">Ansible create file based on date</h2>
+
+<pre><code>- name: Backup and compress /etc/ to /data/backups based on date
+  archive:
+    path: /etc/
+    dest: /data/backups/etc-{{ date }}.tgz
+  vars:
+    date: &quot;{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}&quot;
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://serverfault.com/questions/728662/ansible-manipulate-file-with-a-date-format">https://serverfault.com/questions/728662/ansible-manipulate-file-with-a-date-format</a></li>
+</ul>
+
+<h2 id="ansible-check-file-if-exists-or-not">Ansible check file if exists or not</h2>
+
+<pre><code>- name: Check that the hosts.allow exists
+  stat:
+    path: /etc/hosts.allow
+  register: stat_allow
+- name: Create the file, if it doesnt exist already
+  file:
+    path: /etc/hosts.allow
+    state: touch
+  when: stat_allow.stat.exists == False
+</code></pre>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/35654286/how-check-a-file-exists-in-ansible">https://stackoverflow.com/questions/35654286/how-check-a-file-exists-in-ansible</a></li>
+</ul>
+
+<h2 id="ansible-explicit-data-type-casting-str-indicator">Ansible explicit data type casting !!str indicator</h2>
+
+<p>!!str indicator which simply forces the value to be a string.</p>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://github.com/ansible/ansible/issues/11905">https://github.com/ansible/ansible/issues/11905</a></li>
+<li><a href="https://github.com/ansible/ansible/issues/11151">https://github.com/ansible/ansible/issues/11151</a></li>
+</ul>
+
+<h2 id="ansible-lineinfile-module">Ansible lineinfile module</h2>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://docs.ansible.com/ansible/latest/modules/lineinfile_module.html">https://docs.ansible.com/ansible/latest/modules/lineinfile_module.html</a></li>
+</ul>
+
+<h2 id="ansible-find-register-variable-and-output-to-terminal-echo">Ansible find, register variable, and output to terminal / echo</h2>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://www.mydailytutorials.com/ansible-register-variables/">https://www.mydailytutorials.com/ansible-register-variables/</a></li>
+<li><a href="https://serverfault.com/questions/537060/how-to-see-stdout-of-ansible-commands">https://serverfault.com/questions/537060/how-to-see-stdout-of-ansible-commands</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/modules/debug_module.html">https://docs.ansible.com/ansible/latest/modules/debug_module.html</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/modules/find_module.html">https://docs.ansible.com/ansible/latest/modules/find_module.html</a></li>
+<li><a href="https://serverfault.com/questions/945821/ansible-find-get-path-of-a-directory">https://serverfault.com/questions/945821/ansible-find-get-path-of-a-directory</a></li>
+</ul>
+
+<h2 id="ansible-show-detailed-output-using-callback-plugins">Ansible show detailed output using callback plugins</h2>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://docs.ansible.com/ansible/latest/plugins/callback.html">https://docs.ansible.com/ansible/latest/plugins/callback.html</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html">https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/reference/">reference</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/26/post/">Post</a></h1>
+        <span class="post-date">Oct 26, 2019</span>
+	
+
+<h1 id="tmux-cheatsheet">Tmux cheatsheet</h1>
+
+<h1 id="tmux-shortcuts-cheatsheet">tmux shortcuts &amp; cheatsheet</h1>
+
+<p>start new:</p>
+
+<pre><code>tmux
+</code></pre>
+
+<p>start new with session name:</p>
+
+<pre><code>tmux new -s myname
+</code></pre>
+
+<p>attach:</p>
+
+<pre><code>tmux a  #  (or at, or attach)
+</code></pre>
+
+<p>attach to named:</p>
+
+<pre><code>tmux a -t myname
+</code></pre>
+
+<p>list sessions:</p>
+
+<pre><code>tmux ls
+</code></pre>
+
+<p><a name="killSessions"></a>kill session:</p>
+
+<pre><code>tmux kill-session -t myname
+</code></pre>
+
+<p><a name="killAllSessions"></a>Kill all the tmux sessions:</p>
+
+<pre><code>tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
+</code></pre>
+
+<p>In tmux, hit the prefix <code>ctrl+b</code> (my modified prefix is ctrl+a) and then:</p>
+
+<h2 id="sessions">Sessions</h2>
+
+<pre><code>:new&lt;CR&gt;  new session
+s  list sessions
+$  name session
+</code></pre>
+
+<h2 id="a-name-windowstabs-a-windows-tabs"><a name="WindowsTabs"></a>Windows (tabs)</h2>
+
+<pre><code>c  create window
+w  list windows
+n  next window
+p  previous window
+f  find window
+,  name window
+&amp;  kill window
+</code></pre>
+
+<h2 id="a-name-panessplits-a-panes-splits"><a name="PanesSplits"></a>Panes (splits)</h2>
+
+<pre><code>%  vertical split
+&quot;  horizontal split
+
+o  swap panes
+q  show pane numbers
+x  kill pane
++  break pane into window (e.g. to select text by mouse to copy)
+-  restore pane from window
+⍽  space - toggle between layouts
+&lt;prefix&gt; q (Show pane numbers, when the numbers show up type the key to goto that pane)
+&lt;prefix&gt; { (Move the current pane left)
+&lt;prefix&gt; } (Move the current pane right)
+&lt;prefix&gt; z toggle pane zoom
+</code></pre>
+
+<h2 id="a-name-syncpanes-a-sync-panes"><a name="syncPanes"></a>Sync Panes</h2>
+
+<p>You can do this by switching to the appropriate window, typing your Tmux prefix (commonly Ctrl-B or Ctrl-A) and then a colon to bring up a Tmux command line, and typing:</p>
+
+<pre><code>:setw synchronize-panes
+</code></pre>
+
+<p>You can optionally add on or off to specify which state you want; otherwise the option is simply toggled. This option is specific to one window, so it won’t change the way your other sessions or windows operate. When you’re done, toggle it off again by repeating the command. <a href="http://blog.sanctum.geek.nz/sync-tmux-panes/">tip source</a></p>
+
+<h2 id="resizing-panes">Resizing Panes</h2>
+
+<p>You can also resize panes if you don’t like the layout defaults. I personally rarely need to do this, though it’s handy to know how. Here is the basic syntax to resize panes:</p>
+
+<pre><code>PREFIX : resize-pane -D (Resizes the current pane down)
+PREFIX : resize-pane -U (Resizes the current pane upward)
+PREFIX : resize-pane -L (Resizes the current pane left)
+PREFIX : resize-pane -R (Resizes the current pane right)
+PREFIX : resize-pane -D 20 (Resizes the current pane down by 20 cells)
+PREFIX : resize-pane -U 20 (Resizes the current pane upward by 20 cells)
+PREFIX : resize-pane -L 20 (Resizes the current pane left by 20 cells)
+PREFIX : resize-pane -R 20 (Resizes the current pane right by 20 cells)
+PREFIX : resize-pane -t 2 20 (Resizes the pane with the id of 2 down by 20 cells)
+PREFIX : resize-pane -t -L 20 (Resizes the pane with the id of 2 left by 20 cells)
+</code></pre>
+
+<h2 id="copy-mode">Copy mode:</h2>
+
+<p>Pressing PREFIX [ places us in Copy mode. We can then use our movement keys to move our cursor around the screen. By default, the arrow keys work. we set our configuration file to use Vim keys for moving between windows and resizing panes so we wouldn’t have to take our hands off the home row. tmux has a vi mode for working with the buffer as well. To enable it, add this line to .tmux.conf:</p>
+
+<pre><code>setw -g mode-keys vi
+</code></pre>
+
+<p>With this option set, we can use h, j, k, and l to move around our buffer.</p>
+
+<p>To get out of Copy mode, we just press the ENTER key. Moving around one character at a time isn’t very efficient. Since we enabled vi mode, we can also use some other visible shortcuts to move around the buffer.</p>
+
+<p>For example, we can use &ldquo;w&rdquo; to jump to the next word and &ldquo;b&rdquo; to jump back one word. And we can use &ldquo;f&rdquo;, followed by any character, to jump to that character on the same line, and &ldquo;F&rdquo; to jump backwards on the line.</p>
+
+<pre><code>   Function                vi             emacs
+   Back to indentation     ^              M-m
+   Clear selection         Escape         C-g
+   Copy selection          Enter          M-w
+   Cursor down             j              Down
+   Cursor left             h              Left
+   Cursor right            l              Right
+   Cursor to bottom line   L
+   Cursor to middle line   M              M-r
+   Cursor to top line      H              M-R
+   Cursor up               k              Up
+   Delete entire line      d              C-u
+   Delete to end of line   D              C-k
+   End of line             $              C-e
+   Goto line               :              g
+   Half page down          C-d            M-Down
+   Half page up            C-u            M-Up
+   Next page               C-f            Page down
+   Next word               w              M-f
+   Paste buffer            p              C-y
+   Previous page           C-b            Page up
+   Previous word           b              M-b
+   Quit mode               q              Escape
+   Scroll down             C-Down or J    C-Down
+   Scroll up               C-Up or K      C-Up
+   Search again            n              n
+   Search backward         ?              C-r
+   Search forward          /              C-s
+   Start of line           0              C-a
+   Start selection         Space          C-Space
+   Transpose chars                        C-t
+</code></pre>
+
+<h2 id="misc">Misc</h2>
+
+<pre><code>d  detach
+t  big clock
+?  list shortcuts
+:  prompt
+</code></pre>
+
+<h2 id="configurations-options">Configurations Options:</h2>
+
+<pre><code># Mouse support - set to on if you want to use the mouse
+* setw -g mode-mouse off
+* set -g mouse-select-pane off
+* set -g mouse-resize-pane off
+* set -g mouse-select-window off
+
+# Set the default terminal mode to 256color mode
+set -g default-terminal &quot;screen-256color&quot;
+
+# enable activity alerts
+setw -g monitor-activity on
+set -g visual-activity on
+
+# Center the window list
+set -g status-justify centre
+
+# Maximize and restore a pane
+unbind Up bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t tmp
+unbind Down
+bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
+</code></pre>
+
+<h2 id="resources">Resources:</h2>
+
+<ul>
+<li><a href="http://pragprog.com/book/bhtmux/tmux">tmux: Productive Mouse-Free Development</a></li>
+<li><a href="http://superuser.com/questions/343572/tmux-how-do-i-reorder-my-windows">How to reorder windows</a></li>
+</ul>
+
+<h2 id="notes">Notes:</h2>
+
+<ul>
+<li></li>
+</ul>
+
+<h2 id="changelog">Changelog:</h2>
+
+<ul>
+<li>1411143833002 - Added <a href="#PanesSplits">toggle zoom</a> under Panes (splits) section.</li>
+<li>1411143833002 - <a href="#syncPanes">Added Sync Panes</a></li>
+<li>1414276652677 - <a href="#killAllSessions">Added Kill all tmux sessions </a></li>
+<li>1438585211173 - <a href="#WindowsTabs">corrected create and add next and previus thanks to @justinjhendrick</a></li>
+</ul>
+
+<h2 id="request-an-update">Request an Update:</h2>
+
+<p>We Noticed that our Cheatsheet is growing and people are coloberating to add new tips and tricks, so please tweet to me what would you like to add and let&rsquo;s make it better!</p>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://tmuxcheatsheet.com/">https://tmuxcheatsheet.com/</a></li>
+<li><a href="https://gist.github.com/MohamedAlaa/2961058">https://gist.github.com/MohamedAlaa/2961058</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tmux/">tmux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/25/create-gcp-vm-using-gcloud-from-command-line/">Create GCP VM using gcloud from command line</a></h1>
@@ -566,371 +1100,6 @@ install firewire_core /bin/true
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/kernel/">kernel</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/hardening/">hardening</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/magic-of-sed/">Magic of Sed</a></h1>
-        <span class="post-date">Oct 14, 2019</span>
-	
-
-<h2 id="insert-every-line-in-linux">Insert every line in linux</h2>
-
-<pre><code>sed 's/^/apt-get purge -y /' aptwantopurge.txt &gt; aptpurge.txt
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.google.com/search?q=insert+every+line+linux&amp;oq=insert+every+line+linux">https://www.google.com/search?q=insert+every+line+linux&amp;oq=insert+every+line+linux</a></li>
-<li><a href="https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line">https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line</a></li>
-<li><a href="https://www.google.com/search?q=sed+cheatsheet&amp;oq=sed+cheatsheet">https://www.google.com/search?q=sed+cheatsheet&amp;oq=sed+cheatsheet</a></li>
-<li><a href="https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521">https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/sed/">sed</a>, <a href="https://blog.indonesiadot.com/tags/bash/">bash</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/">DOH DNS over HTTPS</a></h1>
-        <span class="post-date">Oct 13, 2019</span>
-	
-
-<h2 id="security-dns-di-sisi-client">Security DNS di sisi client</h2>
-
-<h3 id="install-dnscrypt-proxy">Install dnscrypt-proxy</h3>
-
-<pre><code>add-apt-repository ppa:shevchuk/dnscrypt-proxy
-apt update
-apt install dnscrypt-proxy
-</code></pre>
-
-<p>Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel <strong>server_name</strong> menjadi seperti contoh berikut:</p>
-
-<pre><code>server_names = ['cloudflare', 'google']
-</code></pre>
-
-<p>lalu restart service dnscrypt-proxy</p>
-
-<pre><code>systemctl restart dnscrypt-proxy
-</code></pre>
-
-<p>edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy</p>
-
-<pre><code>nameserver 127.0.2.1
-</code></pre>
-
-<h2 id="install-dns-over-https-server">Install DNS over HTTPS server</h2>
-
-<h3 id="install-dengan-cara-paket-instalasi-deb">Install dengan cara paket instalasi deb</h3>
-
-<pre><code>wget &quot;https://www.aaflalo.me/?smd_process_download=1&amp;download_id=1326&quot;
-mv index* doh-server.deb
-dpkg -i doh-server_*_amd64.deb
-</code></pre>
-
-<h3 id="install-dengan-cara-compile">Install dengan cara compile</h3>
-
-<pre><code>wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.13.linux-amd64.tar.gz
-wget https://github.com/m13253/dns-over-https/archive/v2.1.2.tar.gz
-tar xzf v2.1.2.tar.gz
-cd dns-over-https-2.1.2
-make &amp;&amp; make install
-add-apt-repository ppa:ondrej/nginx
-apt update
-apt install nginx-full
-</code></pre>
-
-<p>Buat file /etc/nginx/sites-available/doh yang isinya:</p>
-
-<pre><code>upstream dns-backend {
-    server 127.0.0.1:8053;
-}
-server {
-        listen 80;
-        server_name dns.example.com;
-        root /var/www/html/dns;
-        access_log /var/log/nginx/dns.access.log;
-         location /dns-query {
-                proxy_set_header X-Real-IP $remote_addr;
-                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                proxy_set_header Host $http_host;
-                proxy_set_header X-NginX-Proxy true;
-                proxy_http_version 1.1;
-                proxy_set_header Upgrade $http_upgrade;
-                proxy_redirect off;
-                proxy_set_header        X-Forwarded-Proto $scheme;
-                proxy_read_timeout 86400;
-                proxy_pass http://dns-backend/dns-query ;
-        }
-}
-</code></pre>
-
-<p>lalu jalankan</p>
-
-<pre><code>ln -s /etc/nginx/sites-available/dns-over-https /etc/nginx/sites-enabled/dns-over-https
-nginx -t
-systemctl reload nginx
-add-apt-repository ppa:certbot/certbot
-apt update
-apt install python-certbot-nginx
-certbot --nginx -d dns.example.com
-</code></pre>
-
-<p>If that’s successful, certbot will ask how you’d like to configure your HTTPS settings.</p>
-
-<pre><code>Please choose whether or not to redirect HTTP traffic to HTTPS, removing HTTP access.
--------------------------------------------------------------------------------
-1: No redirect - Make no further changes to the webserver configuration.
-2: Redirect - Make all requests redirect to secure HTTPS access. Choose this for
-new sites, or if you're confident your site works on HTTPS. You can undo this
-change by editing your web server's configuration.
--------------------------------------------------------------------------------
-Select the appropriate number [1-2] then [enter] (press 'c' to cancel):
-</code></pre>
-
-<p>I advise to choose redirect to be sure it use only HTTPS.</p>
-
-<p>Edit the file /etc/letsencrypt/options-ssl-nginx.conf and replace its content by this.</p>
-
-<pre><code>ssl_session_cache shared:le_nginx_SSL:1m;
-ssl_session_timeout 1440m;
-ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
-# Enable modern TLS cipher suites
-ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
-# The order of cipher suites matters
-ssl_prefer_server_ciphers on;
-add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot; always;
-</code></pre>
-
-<p>Then reload nginx.</p>
-
-<pre><code>systemctl reload nginx
-</code></pre>
-
-<h2 id="tips">TIPS</h2>
-
-<p>Untuk menggunakan server DOH yang telah kita buat pada dnscrypt-proxy client, buat stamp dulu di <a href="https://dnscrypt.info/stamps/">https://dnscrypt.info/stamps/</a></p>
-
-<p><img src="images/doh.png" alt="DOH" /></p>
-
-<p>lalu isi nama doh dan stamp nya seperti contoh:</p>
-
-<pre><code>[static]
-
-[static.'gcp']
-   stamp = 'sdns://AgcAAAAAAAAADTM0Ljg3LjExNy4xMDUADWdjcC5iaXJhdS5jb20KL2Rucy1xdWVyeQ'
-[static.'doh']
-   stamp = 'sdns://AgcAAAAAAAAACzQ1Ljc3LjM2LjU0ABJkb2guYmlyYXUuY29tOjM0NDMKL2Rucy1xdWVyeQ'
-</code></pre>
-
-<p>dan tambahkan dibagian server_name menjadi seperti ini:</p>
-
-<pre><code>server_names = ['doh', 'gcp', 'cloudflare', 'google']
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.aaflalo.me/2018/10/tutorial-setup-dns-over-https-server/">https://www.aaflalo.me/2018/10/tutorial-setup-dns-over-https-server/</a></li>
-<li><a href="https://github.com/m13253/dns-over-https">https://github.com/m13253/dns-over-https</a></li>
-<li><a href="https://dnscrypt.info/stamps/">https://dnscrypt.info/stamps/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/dns/">dns</a>, <a href="https://blog.indonesiadot.com/tags/doh/">doh</a>, <a href="https://blog.indonesiadot.com/tags/dnsoverhttps/">dnsoverhttps</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/10/belajar-ansible-tower/">Belajar Ansible Tower</a></h1>
-        <span class="post-date">Oct 10, 2019</span>
-	
-
-<h2 id="install-ansible-tower">Install Ansible Tower</h2>
-
-<p>Persyaratan:</p>
-
-<p>Hardware: RAM minimal 3,75 GB
-OS: Centos 7</p>
-
-<p>Langkah yang dilakukan</p>
-
-<pre><code>yum install -y ansible
-wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-3.1.5.tar.gz
-tar -xzvf ansible-tower-setup-3.1.5.tar.gz
-cd ansible-tower-setup-3.1.5/
-(edit inventory file, isi bagian yang dibutuhkan terutama password)
-(edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram)
-./setup.sh
-</code></pre>
-
-<h2 id="configure-ansible-tower-after-installation">Configure Ansible Tower after installation</h2>
-
-<p>Akses Ansible tower Web UI dari</p>
-
-<pre><code>https://&lt;Ansible Tower IP or Hostname&gt;
-</code></pre>
-
-<p>Dapatkan lisensi dari <a href="https://www.ansible.com/license">https://www.ansible.com/license</a>
-lalu masukkan license tersebut ke halaman awal setelah login</p>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.ansible.com/products/tower/trial">https://www.ansible.com/products/tower/trial</a></li>
-<li><a href="https://docs.ansible.com/ansible-tower/">https://docs.ansible.com/ansible-tower/</a></li>
-<li><a href="http://devopstechie.com/install-and-configure-ansible-tower-centos7/">http://devopstechie.com/install-and-configure-ansible-tower-centos7/</a></li>
-<li><a href="https://www.google.com/search?q=ansible+tower+postgresql+replication">https://www.google.com/search?q=ansible+tower+postgresql+replication</a></li>
-<li><a href="https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/">https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/</a></li>
-<li><a href="https://github.com/samdoran/ansible-role-pgsql-replication">https://github.com/samdoran/ansible-role-pgsql-replication</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>, <a href="https://blog.indonesiadot.com/tags/postgresql/">postgresql</a>, <a href="https://blog.indonesiadot.com/tags/rabbitmq/">rabbitmq</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/30/disk-serial-number/">Disk Serial Number</a></h1>
-        <span class="post-date">Sep 30, 2019</span>
-	<p>Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.</p>
-
-<p>Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:</p>
-
-<ul>
-<li>lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb)</li>
-<li>smartctl -a /dev/sda #lihat bagian atas serial number nya</li>
-<li>udevadm info /dev/sda</li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/disk/">disk</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/raid/">raid</a>, <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/28/ids-tripwire/">IDS Tripwire</a></h1>
-        <span class="post-date">Sep 28, 2019</span>
-	<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/">https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/</a></li>
-<li><a href="https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html">https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/tripwire/">tripwire</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/hugo-hosting-dengan-github/">Hugo hosting dengan github</a></h1>
-        <span class="post-date">Sep 24, 2019</span>
-	<p>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:</p>
-
-<ul>
-<li>Nama user: tpinews</li>
-<li>Nama repositori yang harus dibuat: tpinews.github.io</li>
-</ul>
-
-<p>Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:</p>
-
-<pre><code>mkdir tpinews
-cd tpinews
-touch .gitignore
-git init
-git add .
-git commit -m 'komat kamit awal'
-git remote add origin https://tpinews.github.io.git
-git push origin master
-
-git checkout -b hugo
-hugo new site . --force
-cp -r /path/kumpulanthemeshugo/travelify themes/
-cp -r themes/travelify/exampleSite/* .
-cp /path/scripts/push-deploy.sh .
-git add .
-git commit -m 'komit hugo'
-git push origin hugo
-
-git submodule add -b master https://tpinews.github.io.git public
-./push-deploy.sh
-git branch -d master
-</code></pre>
-
-<p>Pastikan juga config.toml sudah sesuai, seperti nama theme dan lainnya, dan bisa di test di localhost dengan menjalankan <code>hugo server</code> dan mengakses <a href="http://localhost:1313">http://localhost:1313</a> di browser untuk melihat hasilnya.</p>
-
-<p>Command di atas hanya dilakukan pertama kali saja, untuk selanjutnya yang dilakukan setelah melakukan perubahan dan ingin mengupdate di github, cukup menjalankan script push-deploy.sh</p>
-
-<p>Disini theme yang digunakan misalnya travelify yang sudah disiapkan, dan juga script untuk push-deploy.sh untuk memudahkan deploy sebagai berikut:</p>
-
-<pre><code>#!/bin/sh
-# If a command fails then the deploy stops
-set -e
-printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
-git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
- msg=&quot;$*&quot;
-fi
-git commit -m &quot;$msg&quot;
-git push origin hugo
-
-printf &quot;\033[0;32mDeploy public hugo to branch master...\033[0m\n&quot;
-HUGO_ENV=production hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
-cd public
-git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
-        msg=&quot;$*&quot;
-fi
-git commit -m &quot;$msg&quot;
-git push origin master
-
-printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
-cd ..
-git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
-        msg=&quot;$*&quot;
-fi
-git commit -m &quot;$msg&quot;
-git push origin hugo
-</code></pre>
-
-<p>Note:</p>
-
-<p>Untuk lebih mudah tidak perlu memasukan password, bisa di buat dari menu settings account github, lalu pilih menu sebelah kiri bawah bagian Developer settings, lalu Personal access tokens dan generate new token.</p>
-
-<p>Lalu copy token tersebut dan tambahkan pada file .git/config dan .git/modules/public/config ,bagian url nya, sehingga menjadi seperti contoh berikut:</p>
-
-<pre><code>   url = https://namauser:tokenhasidaricopygeneratenewtoken@namarepository.github.io.git
-</code></pre>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>, <a href="https://blog.indonesiadot.com/tags/github/">github</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>
 	 <hr/>
     </div>
   

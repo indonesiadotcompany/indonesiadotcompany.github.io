@@ -6,10 +6,83 @@
     <description>Recent content in linux on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Oct 2019 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 31 Oct 2019 16:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Centos Syslog Server</title>
+      <link>https://blog.indonesiadot.com/2019/10/31/centos-syslog-server/</link>
+      <pubDate>Thu, 31 Oct 2019 16:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/31/centos-syslog-server/</guid>
+      <description> Setup Syslog Server and setup syslog client to it on Centos 7 Referensi:
+ https://www.svennd.be/setup-central-syslog-server-on-centos-7/ https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/ https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html  </description>
+    </item>
+    
+    <item>
+      <title>Regex / Regexp Reference</title>
+      <link>https://blog.indonesiadot.com/2019/10/31/regex-/-regexp-reference/</link>
+      <pubDate>Thu, 31 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/31/regex-/-regexp-reference/</guid>
+      <description>Regex Case insensitive (?i)
+Referensi:
+ https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean https://regex101.com/r/hE9gB4/1 https://regexr.com/3f4vo  Regex to match string containing two names ###Explanation of command that i am going to write:-
+. means any character, digit can come in place of .
+ means zero or more occurrences of thing written just previous to it.  | means &amp;lsquo;or&amp;rsquo;.
+So,
+james.*jack  would search james , then any number of character until jack comes.</description>
+    </item>
+    
+    <item>
+      <title>Linux OS Hardening</title>
+      <link>https://blog.indonesiadot.com/2019/10/29/linux-os-hardening/</link>
+      <pubDate>Tue, 29 Oct 2019 14:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/29/linux-os-hardening/</guid>
+      <description> Password Policies Centos 7 Referensi:
+ https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/ https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/  Centos 7 Hardening Guide Referensi:
+ https://www.lisenet.com/2017/centos-7-server-hardening-guide/  Linux ASLR and kernel.randomize_va_space Ref:
+ https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/  </description>
+    </item>
+    
+    <item>
+      <title>TCP Wrapper</title>
+      <link>https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/</link>
+      <pubDate>Tue, 29 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/</guid>
+      <description> TCP Wrapper Referensi:
+ https://www.server-world.info/en/note?os=CentOS_7&amp;amp;p=tcp_wrapper https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/  </description>
+    </item>
+    
+    <item>
+      <title>Ansible Reference</title>
+      <link>https://blog.indonesiadot.com/2019/10/28/ansible-reference/</link>
+      <pubDate>Mon, 28 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/28/ansible-reference/</guid>
+      <description>Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &#39;/&#39; mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot;  atau
+- name: Ensure that free space on the tested volume is greater than 15% assert: that: - mount.size_available &amp;gt; mount.size_total|float * 0.15 msg: Disk space has reached 85% threshold vars: mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,item.</description>
+    </item>
+    
+    <item>
+      <title>Post</title>
+      <link>https://blog.indonesiadot.com/2019/10/26/post/</link>
+      <pubDate>Sat, 26 Oct 2019 16:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/26/post/</guid>
+      <description>Tmux cheatsheet tmux shortcuts &amp;amp; cheatsheet start new:
+tmux  start new with session name:
+tmux new -s myname  attach:
+tmux a # (or at, or attach)  attach to named:
+tmux a -t myname  list sessions:
+tmux ls  kill session:
+tmux kill-session -t myname  Kill all the tmux sessions:
+tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#39; | xargs kill  In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:</description>
+    </item>
     
     <item>
       <title>Kernel Hardening Tips</title>

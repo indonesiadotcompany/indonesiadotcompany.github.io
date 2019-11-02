@@ -416,6 +416,34 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -446,6 +474,371 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/magic-of-sed/">Magic of Sed</a></h1>
+        <span class="post-date">Oct 14, 2019</span>
+	
+
+<h2 id="insert-every-line-in-linux">Insert every line in linux</h2>
+
+<pre><code>sed 's/^/apt-get purge -y /' aptwantopurge.txt &gt; aptpurge.txt
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.google.com/search?q=insert+every+line+linux&amp;oq=insert+every+line+linux">https://www.google.com/search?q=insert+every+line+linux&amp;oq=insert+every+line+linux</a></li>
+<li><a href="https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line">https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line</a></li>
+<li><a href="https://www.google.com/search?q=sed+cheatsheet&amp;oq=sed+cheatsheet">https://www.google.com/search?q=sed+cheatsheet&amp;oq=sed+cheatsheet</a></li>
+<li><a href="https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521">https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/sed/">sed</a>, <a href="https://blog.indonesiadot.com/tags/bash/">bash</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/">DOH DNS over HTTPS</a></h1>
+        <span class="post-date">Oct 13, 2019</span>
+	
+
+<h2 id="security-dns-di-sisi-client">Security DNS di sisi client</h2>
+
+<h3 id="install-dnscrypt-proxy">Install dnscrypt-proxy</h3>
+
+<pre><code>add-apt-repository ppa:shevchuk/dnscrypt-proxy
+apt update
+apt install dnscrypt-proxy
+</code></pre>
+
+<p>Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel <strong>server_name</strong> menjadi seperti contoh berikut:</p>
+
+<pre><code>server_names = ['cloudflare', 'google']
+</code></pre>
+
+<p>lalu restart service dnscrypt-proxy</p>
+
+<pre><code>systemctl restart dnscrypt-proxy
+</code></pre>
+
+<p>edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy</p>
+
+<pre><code>nameserver 127.0.2.1
+</code></pre>
+
+<h2 id="install-dns-over-https-server">Install DNS over HTTPS server</h2>
+
+<h3 id="install-dengan-cara-paket-instalasi-deb">Install dengan cara paket instalasi deb</h3>
+
+<pre><code>wget &quot;https://www.aaflalo.me/?smd_process_download=1&amp;download_id=1326&quot;
+mv index* doh-server.deb
+dpkg -i doh-server_*_amd64.deb
+</code></pre>
+
+<h3 id="install-dengan-cara-compile">Install dengan cara compile</h3>
+
+<pre><code>wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.13.linux-amd64.tar.gz
+wget https://github.com/m13253/dns-over-https/archive/v2.1.2.tar.gz
+tar xzf v2.1.2.tar.gz
+cd dns-over-https-2.1.2
+make &amp;&amp; make install
+add-apt-repository ppa:ondrej/nginx
+apt update
+apt install nginx-full
+</code></pre>
+
+<p>Buat file /etc/nginx/sites-available/doh yang isinya:</p>
+
+<pre><code>upstream dns-backend {
+    server 127.0.0.1:8053;
+}
+server {
+        listen 80;
+        server_name dns.example.com;
+        root /var/www/html/dns;
+        access_log /var/log/nginx/dns.access.log;
+         location /dns-query {
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $http_host;
+                proxy_set_header X-NginX-Proxy true;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_redirect off;
+                proxy_set_header        X-Forwarded-Proto $scheme;
+                proxy_read_timeout 86400;
+                proxy_pass http://dns-backend/dns-query ;
+        }
+}
+</code></pre>
+
+<p>lalu jalankan</p>
+
+<pre><code>ln -s /etc/nginx/sites-available/dns-over-https /etc/nginx/sites-enabled/dns-over-https
+nginx -t
+systemctl reload nginx
+add-apt-repository ppa:certbot/certbot
+apt update
+apt install python-certbot-nginx
+certbot --nginx -d dns.example.com
+</code></pre>
+
+<p>If that’s successful, certbot will ask how you’d like to configure your HTTPS settings.</p>
+
+<pre><code>Please choose whether or not to redirect HTTP traffic to HTTPS, removing HTTP access.
+-------------------------------------------------------------------------------
+1: No redirect - Make no further changes to the webserver configuration.
+2: Redirect - Make all requests redirect to secure HTTPS access. Choose this for
+new sites, or if you're confident your site works on HTTPS. You can undo this
+change by editing your web server's configuration.
+-------------------------------------------------------------------------------
+Select the appropriate number [1-2] then [enter] (press 'c' to cancel):
+</code></pre>
+
+<p>I advise to choose redirect to be sure it use only HTTPS.</p>
+
+<p>Edit the file /etc/letsencrypt/options-ssl-nginx.conf and replace its content by this.</p>
+
+<pre><code>ssl_session_cache shared:le_nginx_SSL:1m;
+ssl_session_timeout 1440m;
+ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
+# Enable modern TLS cipher suites
+ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
+# The order of cipher suites matters
+ssl_prefer_server_ciphers on;
+add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot; always;
+</code></pre>
+
+<p>Then reload nginx.</p>
+
+<pre><code>systemctl reload nginx
+</code></pre>
+
+<h2 id="tips">TIPS</h2>
+
+<p>Untuk menggunakan server DOH yang telah kita buat pada dnscrypt-proxy client, buat stamp dulu di <a href="https://dnscrypt.info/stamps/">https://dnscrypt.info/stamps/</a></p>
+
+<p><img src="images/doh.png" alt="DOH" /></p>
+
+<p>lalu isi nama doh dan stamp nya seperti contoh:</p>
+
+<pre><code>[static]
+
+[static.'gcp']
+   stamp = 'sdns://AgcAAAAAAAAADTM0Ljg3LjExNy4xMDUADWdjcC5iaXJhdS5jb20KL2Rucy1xdWVyeQ'
+[static.'doh']
+   stamp = 'sdns://AgcAAAAAAAAACzQ1Ljc3LjM2LjU0ABJkb2guYmlyYXUuY29tOjM0NDMKL2Rucy1xdWVyeQ'
+</code></pre>
+
+<p>dan tambahkan dibagian server_name menjadi seperti ini:</p>
+
+<pre><code>server_names = ['doh', 'gcp', 'cloudflare', 'google']
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.aaflalo.me/2018/10/tutorial-setup-dns-over-https-server/">https://www.aaflalo.me/2018/10/tutorial-setup-dns-over-https-server/</a></li>
+<li><a href="https://github.com/m13253/dns-over-https">https://github.com/m13253/dns-over-https</a></li>
+<li><a href="https://dnscrypt.info/stamps/">https://dnscrypt.info/stamps/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/dns/">dns</a>, <a href="https://blog.indonesiadot.com/tags/doh/">doh</a>, <a href="https://blog.indonesiadot.com/tags/dnsoverhttps/">dnsoverhttps</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/10/belajar-ansible-tower/">Belajar Ansible Tower</a></h1>
+        <span class="post-date">Oct 10, 2019</span>
+	
+
+<h2 id="install-ansible-tower">Install Ansible Tower</h2>
+
+<p>Persyaratan:</p>
+
+<p>Hardware: RAM minimal 3,75 GB
+OS: Centos 7</p>
+
+<p>Langkah yang dilakukan</p>
+
+<pre><code>yum install -y ansible
+wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-3.1.5.tar.gz
+tar -xzvf ansible-tower-setup-3.1.5.tar.gz
+cd ansible-tower-setup-3.1.5/
+(edit inventory file, isi bagian yang dibutuhkan terutama password)
+(edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram)
+./setup.sh
+</code></pre>
+
+<h2 id="configure-ansible-tower-after-installation">Configure Ansible Tower after installation</h2>
+
+<p>Akses Ansible tower Web UI dari</p>
+
+<pre><code>https://&lt;Ansible Tower IP or Hostname&gt;
+</code></pre>
+
+<p>Dapatkan lisensi dari <a href="https://www.ansible.com/license">https://www.ansible.com/license</a>
+lalu masukkan license tersebut ke halaman awal setelah login</p>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.ansible.com/products/tower/trial">https://www.ansible.com/products/tower/trial</a></li>
+<li><a href="https://docs.ansible.com/ansible-tower/">https://docs.ansible.com/ansible-tower/</a></li>
+<li><a href="http://devopstechie.com/install-and-configure-ansible-tower-centos7/">http://devopstechie.com/install-and-configure-ansible-tower-centos7/</a></li>
+<li><a href="https://www.google.com/search?q=ansible+tower+postgresql+replication">https://www.google.com/search?q=ansible+tower+postgresql+replication</a></li>
+<li><a href="https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/">https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/</a></li>
+<li><a href="https://github.com/samdoran/ansible-role-pgsql-replication">https://github.com/samdoran/ansible-role-pgsql-replication</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>, <a href="https://blog.indonesiadot.com/tags/postgresql/">postgresql</a>, <a href="https://blog.indonesiadot.com/tags/rabbitmq/">rabbitmq</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/30/disk-serial-number/">Disk Serial Number</a></h1>
+        <span class="post-date">Sep 30, 2019</span>
+	<p>Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.</p>
+
+<p>Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:</p>
+
+<ul>
+<li>lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb)</li>
+<li>smartctl -a /dev/sda #lihat bagian atas serial number nya</li>
+<li>udevadm info /dev/sda</li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/disk/">disk</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/raid/">raid</a>, <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/28/ids-tripwire/">IDS Tripwire</a></h1>
+        <span class="post-date">Sep 28, 2019</span>
+	<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/">https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/</a></li>
+<li><a href="https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html">https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/tripwire/">tripwire</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/hugo-hosting-dengan-github/">Hugo hosting dengan github</a></h1>
+        <span class="post-date">Sep 24, 2019</span>
+	<p>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:</p>
+
+<ul>
+<li>Nama user: tpinews</li>
+<li>Nama repositori yang harus dibuat: tpinews.github.io</li>
+</ul>
+
+<p>Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:</p>
+
+<pre><code>mkdir tpinews
+cd tpinews
+touch .gitignore
+git init
+git add .
+git commit -m 'komat kamit awal'
+git remote add origin https://tpinews.github.io.git
+git push origin master
+
+git checkout -b hugo
+hugo new site . --force
+cp -r /path/kumpulanthemeshugo/travelify themes/
+cp -r themes/travelify/exampleSite/* .
+cp /path/scripts/push-deploy.sh .
+git add .
+git commit -m 'komit hugo'
+git push origin hugo
+
+git submodule add -b master https://tpinews.github.io.git public
+./push-deploy.sh
+git branch -d master
+</code></pre>
+
+<p>Pastikan juga config.toml sudah sesuai, seperti nama theme dan lainnya, dan bisa di test di localhost dengan menjalankan <code>hugo server</code> dan mengakses <a href="http://localhost:1313">http://localhost:1313</a> di browser untuk melihat hasilnya.</p>
+
+<p>Command di atas hanya dilakukan pertama kali saja, untuk selanjutnya yang dilakukan setelah melakukan perubahan dan ingin mengupdate di github, cukup menjalankan script push-deploy.sh</p>
+
+<p>Disini theme yang digunakan misalnya travelify yang sudah disiapkan, dan juga script untuk push-deploy.sh untuk memudahkan deploy sebagai berikut:</p>
+
+<pre><code>#!/bin/sh
+# If a command fails then the deploy stops
+set -e
+printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
+git add .
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+ msg=&quot;$*&quot;
+fi
+git commit -m &quot;$msg&quot;
+git push origin hugo
+
+printf &quot;\033[0;32mDeploy public hugo to branch master...\033[0m\n&quot;
+HUGO_ENV=production hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
+cd public
+git add .
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+        msg=&quot;$*&quot;
+fi
+git commit -m &quot;$msg&quot;
+git push origin master
+
+printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
+cd ..
+git add .
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+        msg=&quot;$*&quot;
+fi
+git commit -m &quot;$msg&quot;
+git push origin hugo
+</code></pre>
+
+<p>Note:</p>
+
+<p>Untuk lebih mudah tidak perlu memasukan password, bisa di buat dari menu settings account github, lalu pilih menu sebelah kiri bawah bagian Developer settings, lalu Personal access tokens dan generate new token.</p>
+
+<p>Lalu copy token tersebut dan tambahkan pada file .git/config dan .git/modules/public/config ,bagian url nya, sehingga menjadi seperti contoh berikut:</p>
+
+<pre><code>   url = https://namauser:tokenhasidaricopygeneratenewtoken@namarepository.github.io.git
+</code></pre>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>, <a href="https://blog.indonesiadot.com/tags/github/">github</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/markdown-tips/">Markdown tips</a></h1>
@@ -596,241 +989,6 @@
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/">Proxmox optimized disk for auto trim / shrink</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<p>Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari <em>thin provision storage</em> atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.</p>
-
-<p>Persyaratan adalah:</p>
-
-<ul>
-<li>menggunakan <em>thin provisioned backing storage</em> seperti qcow2, thin-lvm, zfs pada server proxmox nya</li>
-<li>menggunakan Virtio SCSI controller pada guest option vm nya</li>
-<li>Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya</li>
-<li>Tambahkan discard mount options di /etc/fstab nya guest vm</li>
-<li>Enable fstrim.timer pada systemctl</li>
-</ul>
-
-<p>Adapun langkahnya, disini dilakukan perubahan pada VM yang sebelumnya telah terbuat dengan Virtio disk, dari disk yang kedua dari VM, agar lebih aman, dirubah satu persatu, dimulai dari disk kedua terlebih dahulu:</p>
-
-<ul>
-<li>edit dulu /etc/fstab bagian disk dari /dev/vdb1 menjadi /dev/sda1 (sda untuk drive scsi / sata, untuk lebih aman nya di komen dulu bagian disk /hdbck, untuk di mount manual, agar pada saat boot jika salah tidak nyangkut)</li>
-<li>shutdown vm</li>
-<li>detach disk</li>
-<li>edit disk, menjadi SCSI dan klik bagian advanced, lalu check discard</li>
-<li>start vm</li>
-<li>setelah login, jalankan fstrim -v /hdbck/</li>
-</ul>
-
-<p>Note:</p>
-
-<ul>
-<li>Untuk perubahan selanjutnya pada disk yang pertama, di edit dulu /etc/fstab nya, misal /dev/vda1 menjadi /dev/sda1, dan /dev/sda1 sebelumnya yg disk kedua yg telah di edit menjadi SCSI menjadi /dev/sdb1, lalu baru lakukan seperti langkah diatas dari shutdown vm sampai jalankan fstrim.</li>
-<li>Masukan juga pada crontab, agar dijalankan fstrim setiap bulan, jika memakai centos 6 dan dibawahnya</li>
-<li>Untuk membuktikannya, sambil mengecek di server proxmox dengan menggunakan command <code>zfs list</code> jika memakai zfs, <code>lvs</code> atau <code>lvdisplay</code> untuk thin-lvm, atau <code>du -sch</code> jika memakai qcow2 untuk mengetahui besar file sebelum dan setelah di guest vm nya dijalankan command <code>fstrim -av</code></li>
-</ul>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://pve.proxmox.com/wiki/Shrink_Qcow2_Disk_Files">https://pve.proxmox.com/wiki/Shrink_Qcow2_Disk_Files</a></li>
-<li><a href="https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/">https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/virtualization/">virtualization</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/postfix-tips/">Postfix tips</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	
-
-<h3 id="postfix-send-to-local-network">postfix send to local network</h3>
-
-<p>Ini adalah langkah untuk membuat postfix mengirim ke mail server dalam LAN</p>
-
-<pre><code>echo &quot;real.net smtp:[192.168.1.108]&quot; &gt;&gt; /etc/postfix/transport
-postmap /etc/postfix/transport
-systemctl restart postfix
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/">https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/</a></li>
-<li><a href="http://www.postfix.org/STANDARD_CONFIGURATION_README.html">http://www.postfix.org/STANDARD_CONFIGURATION_README.html</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/mail/">mail</a>, <a href="https://blog.indonesiadot.com/tags/postfix/">postfix</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/">All about kubernetes</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<p>Referensi:</p>
-
-<ul>
-<li><a href="https://darxkies.github.io/k8s-tew/_build/html/index.html">https://darxkies.github.io/k8s-tew/_build/html/index.html</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/kubernetes/">kubernetes</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/">Ubuntu upgrade 14.04 to 16.04 to 18.04</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<p>Berikut langkah yang dilakukan, tapi sebelumnya pastikan backup, backup dan backup</p>
-
-<pre><code>sudo apt-get update
-sudo apt-get upgrade
-sudo do-release-upgrade -f DistUpgradeViewNonInteractive
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04">https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04</a></li>
-<li><a href="https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4">https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ubuntu/">ubuntu</a>, <a href="https://blog.indonesiadot.com/tags/upgrade/">upgrade</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/git-tips/">Git tips</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	
-
-<h2 id="git-merge">git merge</h2>
-
-<p>Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap
-<img src="https://blog.indonesiadot.com/images/2019/git-merge-1.png" alt="git-merge-1" />
-lalu <em>git merge <nama-branch></em> untuk menggabungkan isi dari branch hotfix ke master</p>
-
-<pre><code>git checkout master
-git merge hotfix
-</code></pre>
-
-<p><img src="https://blog.indonesiadot.com/images/2019/git-merge-2.png" alt="git-merge-1" /></p>
-
-<h2 id="git-undo-merge">git undo merge</h2>
-
-<p>Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan</p>
-
-<pre><code>git reflog
-git reset --hard &lt;id_repository_log&gt;
-</code></pre>
-
-<p>Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</p>
-
-<h2 id="git-clear-repository">git clear repository</h2>
-
-<pre><code>rm -rf .git*
-git init
-git add .
-git commit -m 'initial commit'
-git remote add origin git@github.com:&lt;YOUR ACCOUNT&gt;/&lt;YOUR REPOS&gt;.git
-git push -u --force origin master
-</code></pre>
-
-<h2 id="git-branch">git branch</h2>
-
-<h3 id="git-create-branch">git create branch</h3>
-
-<pre><code>git checkout -b branchbaru
-git push origin branchbaru
-</code></pre>
-
-<p>jika branchbaru tersebut sudah ada di <em>remote repository</em> (repository di luar selain di lokal komputer, seperti github / gitlab / bitbucket) dan isinya ingin dihapus / diupdate sesuai dengan isi yang ada di local repository, maka harus menggunakan parameter &ndash;force
-<code>git push --force origin branchbaru</code></p>
-
-<h3 id="default-branch">default branch</h3>
-
-<p>default branch pada git biasanya adalah branch pertama yang kita push, dan biasanya adalah branch master, kecuali jika pertama kali push nya adalah nama branch lain, maka default nya adalah nama branch lain, dan jika terlanjur di awal push dengan branch lain, maka untuk merubah default branch itu tidak bisa memakai command, tapi harus melalui menu settings - branches pada remote repository.</p>
-
-<h3 id="delete-branch">delete branch</h3>
-
-<p>pertama pastikan yang ingin dihapus bukan default branch.</p>
-
-<pre><code>git checkout master
-git push origin --delete namabranchyangakandihapus
-git branch -D namabranchyangakandihapus
-</code></pre>
-
-<p>pindah dulu ke branch default, lalu hapus remote branch, kemudian hapus local branch</p>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</a></li>
-<li><a href="https://stackoverflow.com/questions/11722533/rollback-a-git-merge/29110174">https://stackoverflow.com/questions/11722533/rollback-a-git-merge/29110174</a></li>
-<li><a href="https://help.github.com/en/articles/setting-the-default-branch">https://help.github.com/en/articles/setting-the-default-branch</a></li>
-</ul>
-
-<p>Referensi belajar git:</p>
-
-<ul>
-<li><a href="https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f">https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f</a></li>
-<li><a href="https://rogerdudler.github.io/git-guide/index.id.html">https://rogerdudler.github.io/git-guide/index.id.html</a></li>
-<li><a href="https://medium.com/@amanze.ogbonna/accessing-pushing-to-github-without-username-and-password-3022feb077fb">https://medium.com/@amanze.ogbonna/accessing-pushing-to-github-without-username-and-password-3022feb077fb</a></li>
-<li><a href="https://stackoverflow.com/questions/18935539/authenticate-with-github-using-a-token">https://stackoverflow.com/questions/18935539/authenticate-with-github-using-a-token</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/repository/">repository</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/">Pembuatan web statis dengan hugo</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<p>Referensi hugo dasar:</p>
-
-<ul>
-<li><a href="https://www.petanikode.com/topik/hugo">https://www.petanikode.com/topik/hugo</a></li>
-<li><a href="https://gohugo.io/getting-started/quick-start/">https://gohugo.io/getting-started/quick-start/</a></li>
-<li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></li>
-<li><a href="https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html">https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html</a></li>
-</ul>
-
-<p>Referensi hugo dan e-commerce:</p>
-
-<ul>
-<li><a href="https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf">https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf</a></li>
-<li><a href="https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce">https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/scripting/">scripting</a>, <a href="https://blog.indonesiadot.com/tags/static-site-generator/">static-site-generator</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>
 	 <hr/>
     </div>
   

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Ansible Reference &middot; Blog Indonesiadot.Com
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/poole.css">
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/syntax.css">
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blog.indonesiadot.com/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="https://blog.indonesiadot.com/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://blog.indonesiadot.com/atom.xml">
+</head>
+
+
+  <body class="theme-base-0c">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Blog dari <a href="https://indonesiadot.com" target="_blank">Indonesiadot.Com</a> adalah tempat menuliskan sesuatu mengenai teknologi, oprek, dan mengenai Indonesiadot.Com.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/">Home</a>
+    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/post">Posts</a>
+
+    
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/about/">About</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
+      
+    
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2019. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="https://blog.indonesiadot.com/" title="Home">Blog Indonesiadot.Com</a>
+            <small>Web log of Indonesiadot.Com, Linux and updated technology</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Ansible Reference</h1>
+  <span class="post-date">Oct 28, 2019</span>
+  
+
+<h2 id="ansible-check-disk">Ansible check disk</h2>
+
+<pre><code>- name: Ensure that free space on {{ mountname }} is grater than 40%
+  assert:
+    that: mount.size_available &gt; mount.size_total|float * 0.4
+    msg: disk space has reached 60% threshold
+  vars:
+    mountname: '/'
+    mount: &quot;{{ ansible_mounts | selectattr('mount','equalto',mountname) | list | first }}&quot;
+</code></pre>
+
+<p>atau</p>
+
+<pre><code>- name: Ensure that free space on the tested volume is greater than 15%
+  assert:
+    that:
+      - mount.size_available &gt; mount.size_total|float * 0.15
+    msg: Disk space has reached 85% threshold
+  vars:
+    mount: &quot;{{ ansible_mounts | selectattr('mount','equalto',item.mount) | list | first }}&quot;
+  with_items:
+    - &quot;{{ ansible_mounts }}&quot;
+</code></pre>
+
+<p>atau</p>
+
+<pre><code>name: 'Ensure that free space on {{ mountname }} is grater than 30%'
+assert:
+  that: item.size_available &gt; item.size_total|float * 0.3
+  msg: 'disk space has reached 70% threshold'
+when: item.mount == mountname
+with_items: '{{ ansible_mounts }}'
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/44077630/ansible-to-check-diskspace-for-mounts-mentioned-as-variable">https://stackoverflow.com/questions/44077630/ansible-to-check-diskspace-for-mounts-mentioned-as-variable</a></li>
+</ul>
+
+<h2 id="ansible-role-tutorial">Ansible role tutorial</h2>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://medium.com/@brad.simonin/learning-ansible-and-ansible-roles-with-centos-7-linux-817406f7b542">https://medium.com/@brad.simonin/learning-ansible-and-ansible-roles-with-centos-7-linux-817406f7b542</a></li>
+</ul>
+
+<h2 id="ansible-create-file-based-on-date">Ansible create file based on date</h2>
+
+<pre><code>- name: Backup and compress /etc/ to /data/backups based on date
+  archive:
+    path: /etc/
+    dest: /data/backups/etc-{{ date }}.tgz
+  vars:
+    date: &quot;{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}&quot;
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://serverfault.com/questions/728662/ansible-manipulate-file-with-a-date-format">https://serverfault.com/questions/728662/ansible-manipulate-file-with-a-date-format</a></li>
+</ul>
+
+<h2 id="ansible-check-file-if-exists-or-not">Ansible check file if exists or not</h2>
+
+<pre><code>- name: Check that the hosts.allow exists
+  stat:
+    path: /etc/hosts.allow
+  register: stat_allow
+- name: Create the file, if it doesnt exist already
+  file:
+    path: /etc/hosts.allow
+    state: touch
+  when: stat_allow.stat.exists == False
+</code></pre>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/35654286/how-check-a-file-exists-in-ansible">https://stackoverflow.com/questions/35654286/how-check-a-file-exists-in-ansible</a></li>
+</ul>
+
+<h2 id="ansible-explicit-data-type-casting-str-indicator">Ansible explicit data type casting !!str indicator</h2>
+
+<p>!!str indicator which simply forces the value to be a string.</p>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://github.com/ansible/ansible/issues/11905">https://github.com/ansible/ansible/issues/11905</a></li>
+<li><a href="https://github.com/ansible/ansible/issues/11151">https://github.com/ansible/ansible/issues/11151</a></li>
+</ul>
+
+<h2 id="ansible-lineinfile-module">Ansible lineinfile module</h2>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://docs.ansible.com/ansible/latest/modules/lineinfile_module.html">https://docs.ansible.com/ansible/latest/modules/lineinfile_module.html</a></li>
+</ul>
+
+<h2 id="ansible-find-register-variable-and-output-to-terminal-echo">Ansible find, register variable, and output to terminal / echo</h2>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://www.mydailytutorials.com/ansible-register-variables/">https://www.mydailytutorials.com/ansible-register-variables/</a></li>
+<li><a href="https://serverfault.com/questions/537060/how-to-see-stdout-of-ansible-commands">https://serverfault.com/questions/537060/how-to-see-stdout-of-ansible-commands</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/modules/debug_module.html">https://docs.ansible.com/ansible/latest/modules/debug_module.html</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/modules/find_module.html">https://docs.ansible.com/ansible/latest/modules/find_module.html</a></li>
+<li><a href="https://serverfault.com/questions/945821/ansible-find-get-path-of-a-directory">https://serverfault.com/questions/945821/ansible-find-get-path-of-a-directory</a></li>
+</ul>
+
+<h2 id="ansible-show-detailed-output-using-callback-plugins">Ansible show detailed output using callback plugins</h2>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://docs.ansible.com/ansible/latest/plugins/callback.html">https://docs.ansible.com/ansible/latest/plugins/callback.html</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html">https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html</a></li>
+</ul>
+
+</div>
+
+<hr/>
+
+
+ Tags:
+ <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/reference/">reference</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+<hr/>
+Made with &hearts; using <a href="https://https://gohugo.io">hugo</a> by willing of <a href="https://www.google.com/search?q=asmaul+husna">Al-Khooliq Al-Mushowwir Al-Baari'</a>
+<p>&nbsp;</p>
+
+	</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+  </body>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147159427-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147159427-1');
+</script>
+
+</html>
+
