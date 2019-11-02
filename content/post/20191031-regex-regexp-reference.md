@@ -3,7 +3,7 @@ title: "Regex / Regexp Reference"
 date: 2019-10-31T08:17:54+07:00
 tags: ["linux", "regex", "regexp", "tips"]
 author: "Widya"
-draft: true
+draft: false
 ---
 
 ## Regex Case insensitive

@@ -3,7 +3,7 @@ title: "Linux OS Hardening"
 date: 2019-10-29T14:17:54+07:00
 tags: ["linux", "server", "tips"]
 author: "Widya"
-draft: true
+draft: false
 ---
 
 ## Password Policies Centos 7

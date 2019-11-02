@@ -3,7 +3,7 @@ title: "Ansible Reference"
 date: 2019-10-28T08:17:54+07:00
 tags: ["linux", "ansible", "reference", "tips"]
 author: "Widya"
-draft: true
+draft: false
 ---
 
 ## Ansible check disk

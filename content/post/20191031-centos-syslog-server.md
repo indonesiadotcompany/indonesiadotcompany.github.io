@@ -3,7 +3,7 @@ title: "Centos Syslog Server"
 date: 2019-10-31T16:17:54+07:00
 tags: ["linux", "server", "syslog", "client", "tips"]
 author: "Widya"
-draft: true
+draft: false
 ---
 
 ## Setup Syslog Server and setup syslog client to it on Centos 7
