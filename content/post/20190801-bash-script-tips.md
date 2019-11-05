@@ -98,3 +98,8 @@ Referensi:
 * https://www.adminschoice.com/bash-positional-parameters
 * https://www.lifewire.com/pass-arguments-to-bash-script-2200571
 
+## Bash interactive, menu and prompt user to input something
+
+Ref:
+
+* http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_08_02.html#sect_08_02_02
