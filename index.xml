@@ -5,9 +5,147 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2019</rights>
-    <updated>2019-10-31 16:17:54 &#43;0700 WIB</updated>
+    <updated>2019-11-05 08:17:54 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>Recommended Ansible Modules</title>
+          <link>https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/</link>
+          <pubDate>Tue, 05 Nov 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/</guid>
+          <description>
+
+&lt;h1 id=&#34;frequently-used-module&#34;&gt;Frequently Used Module&lt;/h1&gt;
+
+&lt;h2 id=&#34;blockinfile&#34;&gt;blockinfile&lt;/h2&gt;
+
+&lt;p&gt;Module ini saya gunakan ketika muncul error pada saat menggunakan module lineinfile untuk memasukan beberapa baris sekaligus dalam beberapa tasks, dan ternyata dengan menggunakan module ini dengan hanya satu task bisa memasukan langsung beberapa baris.&lt;/p&gt;
+
+&lt;p&gt;Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepada parameter minimalnya adalah path dan block saja.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- name: Insert correct line to /etc/ntp.conf
+  blockinfile:
+    path: /etc/ntp.conf
+    insertafter: ^#?server
+    state: present
+    block: |
+      server &amp;quot;{{ ntp1 }}&amp;quot;
+      server &amp;quot;{{ ntp2 }}&amp;quot;
+  notify: restart ntp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.google.com/search?q=lineinfile+multiple+lines&#34;&gt;https://www.google.com/search?q=lineinfile+multiple+lines&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines&#34;&gt;https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html&#34;&gt;https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py&#34;&gt;https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;find&#34;&gt;find&lt;/h2&gt;
+
+&lt;p&gt;Berikut contoh module find yang dicombine dengan module set_fact, when untuk menggunakan result matched (when seperti if dalam scripting / programming)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    - name: Search /etc/audit/rules.d for other DAC audit rules
+      find:
+        paths: /etc/audit/rules.d
+        recurse: false
+        contains: -F key=perm_mod$
+        patterns: &#39;*.rules&#39;
+      register: find_fchown
+      when: ansible_virtualization_role != &amp;quot;guest&amp;quot; or ansible_virtualization_type != &amp;quot;docker&amp;quot;
+    - name: If existing DAC ruleset not found, use /etc/audit/rules.d/privileged.rules as the recipient for the rule
+      set_fact:
+        all_files:
+          - /etc/audit/rules.d/privileged.rules
+      when:
+        - find_fchown.matched is defined and find_fchown.matched == 0
+        - ansible_virtualization_role != &amp;quot;guest&amp;quot; or ansible_virtualization_type != &amp;quot;docker&amp;quot;
+    - name: Use matched file as the recipient for the rule
+      set_fact:
+        all_files:
+          - &#39;{{ find_fchown.files | map(attribute=&#39;&#39;path&#39;&#39;) | list | first }}&#39;
+      when:
+        - find_fchown.matched is defined and find_fchown.matched &amp;gt; 0
+        - ansible_virtualization_role != &amp;quot;guest&amp;quot; or ansible_virtualization_type != &amp;quot;docker&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:
+* file remediation.yml dari oscap
+* &lt;a href=&#34;https://docs.ansible.com/ansible/latest/modules/find_module.html&#34;&gt;https://docs.ansible.com/ansible/latest/modules/find_module.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;pamd&#34;&gt;pamd&lt;/h2&gt;
+
+&lt;p&gt;module ini berguna untuk edit pam service tanpa harus mengedit file nya langsung, tanpa harus menggunakan module lineinfile, blockinfile, replace, etc. Dan berikut contohnya:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    - name: Add unlock_time argument to pam_faillock preauth
+      pamd:
+        name: &#39;{{ item }}&#39;
+        type: auth
+        control: required
+        module_path: pam_faillock.so
+        module_arguments: preauth silent unlock_time={{ var_accounts_passwords_pam_faillock_unlock_time
+          }}
+        state: args_present
+      loop:
+        - system-auth
+        - password-auth
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;file remediation.yml oscap&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/modules/pamd_module.html&#34;&gt;https://docs.ansible.com/ansible/latest/modules/pamd_module.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Ansible and Openscap</title>
+          <link>https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/</link>
+          <pubDate>Mon, 04 Nov 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/</guid>
+          <description>
+
+&lt;h2 id=&#34;ansible-and-openscap-for-scanning-and-remediation-server-for-security-compliance-operating-system&#34;&gt;Ansible and Openscap for scanning and remediation server for security compliance operating system&lt;/h2&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663&#34;&gt;https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Openscap Reference</title>
+          <link>https://blog.indonesiadot.com/2019/11/03/openscap-reference/</link>
+          <pubDate>Sun, 03 Nov 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/11/03/openscap-reference/</guid>
+          <description>
+
+&lt;h2 id=&#34;openscap-custom-profile&#34;&gt;Openscap Custom Profile&lt;/h2&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://martin.preisler.me/2013/11/xccdf-tailoring/&#34;&gt;https://martin.preisler.me/2013/11/xccdf-tailoring/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://static.open-scap.org/openscap-1.2/oscap_user_manual.html&#34;&gt;https://static.open-scap.org/openscap-1.2/oscap_user_manual.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
       
     
       
@@ -2074,6 +2212,14 @@ fi
 &lt;li&gt;&lt;a href=&#34;http://linuxcommand.org/lc3_wss0120.php&#34;&gt;http://linuxcommand.org/lc3_wss0120.php&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.adminschoice.com/bash-positional-parameters&#34;&gt;https://www.adminschoice.com/bash-positional-parameters&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.lifewire.com/pass-arguments-to-bash-script-2200571&#34;&gt;https://www.lifewire.com/pass-arguments-to-bash-script-2200571&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;bash-interactive-menu-and-prompt-user-to-input-something&#34;&gt;Bash interactive, menu and prompt user to input something&lt;/h2&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_08_02.html#sect_08_02_02&#34;&gt;http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_08_02.html#sect_08_02_02&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>

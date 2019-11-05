@@ -6,10 +6,31 @@
     <description>Recent content in automation on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Oct 2019 08:17:42 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 05 Nov 2019 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Recommended Ansible Modules</title>
+      <link>https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/</link>
+      <pubDate>Tue, 05 Nov 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/</guid>
+      <description>Frequently Used Module blockinfile Module ini saya gunakan ketika muncul error pada saat menggunakan module lineinfile untuk memasukan beberapa baris sekaligus dalam beberapa tasks, dan ternyata dengan menggunakan module ini dengan hanya satu task bisa memasukan langsung beberapa baris.
+Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepada parameter minimalnya adalah path dan block saja.
+- name: Insert correct line to /etc/ntp.conf blockinfile: path: /etc/ntp.conf insertafter: ^#?</description>
+    </item>
+    
+    <item>
+      <title>Ansible and Openscap</title>
+      <link>https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/</link>
+      <pubDate>Mon, 04 Nov 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/</guid>
+      <description> Ansible and Openscap for scanning and remediation server for security compliance operating system Referensi:
+ https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663  </description>
+    </item>
     
     <item>
       <title>GCP and Ansible</title>

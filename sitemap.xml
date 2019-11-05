@@ -7,8 +7,88 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
+    <lastmod>2019-11-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/automation/</loc>
+    <lastmod>2019-11-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2019-10-31T16:17:54+07:00</lastmod>
+    <lastmod>2019-11-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
+    <lastmod>2019-11-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2019-11-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/</loc>
+    <lastmod>2019-11-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2019-11-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
+    <lastmod>2019-11-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/</loc>
+    <lastmod>2019-11-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/cis/</loc>
+    <lastmod>2019-11-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/openscap/</loc>
+    <lastmod>2019-11-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/remediation/</loc>
+    <lastmod>2019-11-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/scan/</loc>
+    <lastmod>2019-11-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/security/</loc>
+    <lastmod>2019-11-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/server/</loc>
+    <lastmod>2019-11-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/stig/</loc>
+    <lastmod>2019-11-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/11/03/openscap-reference/</loc>
+    <lastmod>2019-11-03T08:17:54+07:00</lastmod>
   </url>
   
   <url>
@@ -22,32 +102,7 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2019-10-31T16:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2019-10-31T16:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/server/</loc>
-    <lastmod>2019-10-31T16:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/syslog/</loc>
-    <lastmod>2019-10-31T16:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
-    <lastmod>2019-10-31T16:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
     <lastmod>2019-10-31T16:17:54+07:00</lastmod>
   </url>
   
@@ -72,11 +127,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/security/</loc>
-    <lastmod>2019-10-29T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/</loc>
     <lastmod>2019-10-29T08:17:54+07:00</lastmod>
   </url>
@@ -89,11 +139,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/tags/tcpwrapper/</loc>
     <lastmod>2019-10-29T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
-    <lastmod>2019-10-28T08:17:54+07:00</lastmod>
   </url>
   
   <url>
@@ -159,11 +204,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/tags/script/</loc>
     <lastmod>2019-10-25T18:17:42+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/automation/</loc>
-    <lastmod>2019-10-25T08:17:42+07:00</lastmod>
   </url>
   
   <url>
