@@ -6,6 +6,15 @@ author: "Widya"
 draft: false
 ---
 
+Postingan ini adalah referensi untuk belajar ansible dan bisa juga sebagai tips, meski sudah ada postingan sebelumnya yang berisi ansible tips :)
+
+## Jenkins-ci
+
+Ref: 
+* https://galaxy.ansible.com/geerlingguy/jenkins/
+* http://rundeck.org
+* Goci / gocd
+
 ## Ansible check disk
 ```
 - name: Ensure that free space on {{ mountname }} is grater than 40%
@@ -111,4 +120,18 @@ Ref:
 
 * https://docs.ansible.com/ansible/latest/plugins/callback.html
 * https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html
+
+## ansible copy only on remote host
+
+```
+name: copy files task
+  shell: cp source/path/file destination/path/file 
+```
+
+or using remote_src flag on copy module
+
+Ref:
+
+* https://stackoverflow.com/questions/41130757/ansible-copy-or-move-files-only-on-remote-host
+
 

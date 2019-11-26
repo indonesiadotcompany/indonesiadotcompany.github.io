@@ -85,3 +85,21 @@ Referensi:
 
 * file remediation.yml oscap
 * https://docs.ansible.com/ansible/latest/modules/pamd_module.html
+
+## debug
+
+```
+    - name: download report
+      fetch:
+        src: /tmp/oscap-report.html
+        dest: /home/ansible/public_html/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
+        flat: yes
+    - debug:
+        msg: http://34.87.94.24/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
+```
+
+Ref:
+
+* https://docs.ansible.com/ansible/latest/modules/debug_module.html
+
+
