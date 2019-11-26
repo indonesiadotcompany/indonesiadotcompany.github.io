@@ -85,8 +85,9 @@ james.*jack  would search james , then any number of character until jack comes.
       <pubDate>Mon, 28 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/28/ansible-reference/</guid>
-      <description>Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &#39;/&#39; mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot;  atau
-- name: Ensure that free space on the tested volume is greater than 15% assert: that: - mount.size_available &amp;gt; mount.size_total|float * 0.15 msg: Disk space has reached 85% threshold vars: mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,item.</description>
+      <description>Postingan ini adalah referensi untuk belajar ansible dan bisa juga sebagai tips, meski sudah ada postingan sebelumnya yang berisi ansible tips :)
+Jenkins-ci Ref: * https://galaxy.ansible.com/geerlingguy/jenkins/ * http://rundeck.org * Goci / gocd
+Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &#39;/&#39; mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot;  atau</description>
     </item>
     
     <item>
@@ -134,7 +135,7 @@ blacklist firewire_core install firewire_core /bin/true  Referensi:
       <guid>https://blog.indonesiadot.com/2019/09/30/disk-serial-number/</guid>
       <description>Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.
 Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:
- lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb) smartctl -a /dev/sda #lihat bagian atas serial number nya udevadm info /dev/sda  </description>
+ lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb) smartctl -a /dev/sda #lihat bagian atas serial number nya udevadm info /dev/sda  smartctl to get disk smart status ``` smartctl -H /dev/sda smartctl -i /dev/sda smartctl &amp;ndash;test=short /dev/sda #smartctl &amp;ndash;test=long /dev/sda smartctl -a /dev/sda smartctl -a /dev/sda | grep &amp;ldquo;Short&amp;rdquo;</description>
     </item>
     
     <item>
@@ -168,6 +169,29 @@ echo &amp;quot;real.net smtp:[192.168.1.108]&amp;quot; &amp;gt;&amp;gt; /etc/pos
       <description>git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge  untuk menggabungkan isi dari branch hotfix ke master
 git checkout master git merge hotfix  git undo merge Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan
 git reflog git reset --hard &amp;lt;id_repository_log&amp;gt;  Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</description>
+    </item>
+    
+    <item>
+      <title>Stress test on Linux</title>
+      <link>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</link>
+      <pubDate>Sat, 28 Jul 2018 08:41:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</guid>
+      <description>``` stress -c 8 -i 9 -m 9 &amp;ndash;vm-bytes 1024M
+Ref:
+ https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2 https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/  </description>
+    </item>
+    
+    <item>
+      <title>Ansible tips</title>
+      <link>https://blog.indonesiadot.com/2018/01/31/ansible-tips/</link>
+      <pubDate>Wed, 31 Jan 2018 23:30:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2018/01/31/ansible-tips/</guid>
+      <description> Ansible gather facts Using facter too
+Ref:
+ http://docs.ansible.com/ansible/latest/setup_module.html#examples  ansible php composer Ref:
+ https://knpuniversity.com/screencast/ansible/ansible-composer  </description>
     </item>
     
   </channel>

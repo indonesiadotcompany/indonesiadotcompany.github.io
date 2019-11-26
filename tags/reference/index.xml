@@ -17,8 +17,9 @@
       <pubDate>Mon, 28 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/28/ansible-reference/</guid>
-      <description>Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &#39;/&#39; mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot;  atau
-- name: Ensure that free space on the tested volume is greater than 15% assert: that: - mount.size_available &amp;gt; mount.size_total|float * 0.15 msg: Disk space has reached 85% threshold vars: mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,item.</description>
+      <description>Postingan ini adalah referensi untuk belajar ansible dan bisa juga sebagai tips, meski sudah ada postingan sebelumnya yang berisi ansible tips :)
+Jenkins-ci Ref: * https://galaxy.ansible.com/geerlingguy/jenkins/ * http://rundeck.org * Goci / gocd
+Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &#39;/&#39; mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot;  atau</description>
     </item>
     
   </channel>

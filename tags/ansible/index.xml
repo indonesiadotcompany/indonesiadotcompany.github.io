@@ -38,8 +38,9 @@ Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepa
       <pubDate>Mon, 28 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/28/ansible-reference/</guid>
-      <description>Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &#39;/&#39; mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot;  atau
-- name: Ensure that free space on the tested volume is greater than 15% assert: that: - mount.size_available &amp;gt; mount.size_total|float * 0.15 msg: Disk space has reached 85% threshold vars: mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,item.</description>
+      <description>Postingan ini adalah referensi untuk belajar ansible dan bisa juga sebagai tips, meski sudah ada postingan sebelumnya yang berisi ansible tips :)
+Jenkins-ci Ref: * https://galaxy.ansible.com/geerlingguy/jenkins/ * http://rundeck.org * Goci / gocd
+Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &#39;/&#39; mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot;  atau</description>
     </item>
     
     <item>
@@ -76,24 +77,15 @@ Using Ansible to automate VM creation on XenServerI’ve been using Xenserver at
     </item>
     
     <item>
-      <title>learn ansible php</title>
-      <link>https://blog.indonesiadot.com/2018/02/14/learn-ansible-php/</link>
-      <pubDate>Wed, 14 Feb 2018 19:28:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/2018/02/14/learn-ansible-php/</guid>
-      <description>https://knpuniversity.com/screencast/ansible/ansible-composer</description>
-    </item>
-    
-    <item>
-      <title>Ansible tips and trick</title>
-      <link>https://blog.indonesiadot.com/2018/01/31/ansible-tips-and-trick/</link>
+      <title>Ansible tips</title>
+      <link>https://blog.indonesiadot.com/2018/01/31/ansible-tips/</link>
       <pubDate>Wed, 31 Jan 2018 23:30:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2018/01/31/ansible-tips-and-trick/</guid>
-      <description>Ansible gather facts
-Using facter too
+      <guid>https://blog.indonesiadot.com/2018/01/31/ansible-tips/</guid>
+      <description> Ansible gather facts Using facter too
 Ref:
-http://docs.ansible.com/ansible/latest/setup_module.html#examples</description>
+ http://docs.ansible.com/ansible/latest/setup_module.html#examples  ansible php composer Ref:
+ https://knpuniversity.com/screencast/ansible/ansible-composer  </description>
     </item>
     
   </channel>

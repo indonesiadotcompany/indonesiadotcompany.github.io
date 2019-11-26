@@ -459,6 +459,16 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -573,6 +583,23 @@
 <ul>
 <li>file remediation.yml oscap</li>
 <li><a href="https://docs.ansible.com/ansible/latest/modules/pamd_module.html">https://docs.ansible.com/ansible/latest/modules/pamd_module.html</a></li>
+</ul>
+
+<h2 id="debug">debug</h2>
+
+<pre><code>    - name: download report
+      fetch:
+        src: /tmp/oscap-report.html
+        dest: /home/ansible/public_html/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
+        flat: yes
+    - debug:
+        msg: http://34.87.94.24/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
+</code></pre>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://docs.ansible.com/ansible/latest/modules/debug_module.html">https://docs.ansible.com/ansible/latest/modules/debug_module.html</a></li>
 </ul>
 
 </div>

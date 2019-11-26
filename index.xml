@@ -5,9 +5,33 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2019</rights>
-    <updated>2019-11-05 08:17:54 &#43;0700 WIB</updated>
+    <updated>2019-11-15 08:17:54 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>Splunk Log Monitoring</title>
+          <link>https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/</link>
+          <pubDate>Fri, 15 Nov 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/</guid>
+          <description>
+
+&lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&#34; title=&#34;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;amp;wget=true&#34;&gt;deb&lt;/a&gt;
+&lt;a href=&#34;wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&#34; title=&#34;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;amp;wget=true&#34;&gt;rpm&lt;/a&gt;
+&lt;a href=&#34;wget -O splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&#34; title=&#34;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;amp;wget=true&#34;&gt;tgz&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.splunk.com/Documentation&#34;&gt;https://docs.splunk.com/Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
       
     
       
@@ -102,6 +126,23 @@
 &lt;ul&gt;
 &lt;li&gt;file remediation.yml oscap&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/modules/pamd_module.html&#34;&gt;https://docs.ansible.com/ansible/latest/modules/pamd_module.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;debug&#34;&gt;debug&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;    - name: download report
+      fetch:
+        src: /tmp/oscap-report.html
+        dest: /home/ansible/public_html/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
+        flat: yes
+    - debug:
+        msg: http://34.87.94.24/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/modules/debug_module.html&#34;&gt;https://docs.ansible.com/ansible/latest/modules/debug_module.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -298,6 +339,15 @@
           <guid>https://blog.indonesiadot.com/2019/10/28/ansible-reference/</guid>
           <description>
 
+&lt;p&gt;Postingan ini adalah referensi untuk belajar ansible dan bisa juga sebagai tips, meski sudah ada postingan sebelumnya yang berisi ansible tips :)&lt;/p&gt;
+
+&lt;h2 id=&#34;jenkins-ci&#34;&gt;Jenkins-ci&lt;/h2&gt;
+
+&lt;p&gt;Ref:
+* &lt;a href=&#34;https://galaxy.ansible.com/geerlingguy/jenkins/&#34;&gt;https://galaxy.ansible.com/geerlingguy/jenkins/&lt;/a&gt;
+* &lt;a href=&#34;http://rundeck.org&#34;&gt;http://rundeck.org&lt;/a&gt;
+* Goci / gocd&lt;/p&gt;
+
 &lt;h2 id=&#34;ansible-check-disk&#34;&gt;Ansible check disk&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;- name: Ensure that free space on {{ mountname }} is grater than 40%
@@ -419,6 +469,20 @@ with_items: &#39;{{ ansible_mounts }}&#39;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/plugins/callback.html&#34;&gt;https://docs.ansible.com/ansible/latest/plugins/callback.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html&#34;&gt;https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ansible-copy-only-on-remote-host&#34;&gt;ansible copy only on remote host&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;name: copy files task
+  shell: cp source/path/file destination/path/file 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or using remote_src flag on copy module&lt;/p&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/41130757/ansible-copy-or-move-files-only-on-remote-host&#34;&gt;https://stackoverflow.com/questions/41130757/ansible-copy-or-move-files-only-on-remote-host&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -989,6 +1053,7 @@ lalu masukkan license tersebut ke halaman awal setelah login&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.ansible.com/products/tower/trial&#34;&gt;https://www.ansible.com/products/tower/trial&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible-tower/&#34;&gt;https://docs.ansible.com/ansible-tower/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible-tower/3.1.0/html/userguide/inventories.html&#34;&gt;https://docs.ansible.com/ansible-tower/3.1.0/html/userguide/inventories.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://devopstechie.com/install-and-configure-ansible-tower-centos7/&#34;&gt;http://devopstechie.com/install-and-configure-ansible-tower-centos7/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.google.com/search?q=ansible+tower+postgresql+replication&#34;&gt;https://www.google.com/search?q=ansible+tower+postgresql+replication&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/&#34;&gt;https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/&lt;/a&gt;&lt;/li&gt;
@@ -1005,7 +1070,9 @@ lalu masukkan license tersebut ke halaman awal setelah login&lt;/p&gt;
           <pubDate>Mon, 30 Sep 2019 13:09:15 WIB</pubDate>
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2019/09/30/disk-serial-number/</guid>
-          <description>&lt;p&gt;Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.&lt;/p&gt;
+          <description>
+
+&lt;p&gt;Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.&lt;/p&gt;
 
 &lt;p&gt;Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:&lt;/p&gt;
 
@@ -1013,6 +1080,22 @@ lalu masukkan license tersebut ke halaman awal setelah login&lt;/p&gt;
 &lt;li&gt;lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb)&lt;/li&gt;
 &lt;li&gt;smartctl -a /dev/sda #lihat bagian atas serial number nya&lt;/li&gt;
 &lt;li&gt;udevadm info /dev/sda&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;smartctl-to-get-disk-smart-status&#34;&gt;smartctl to get disk smart status&lt;/h2&gt;
+
+&lt;p&gt;```
+smartctl -H /dev/sda
+smartctl -i /dev/sda
+smartctl &amp;ndash;test=short /dev/sda
+#smartctl &amp;ndash;test=long /dev/sda
+smartctl -a /dev/sda
+smartctl -a /dev/sda | grep &amp;ldquo;Short&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.techrepublic.com/blog/linux-and-open-source/using-smartctl-to-get-smart-status-information-on-your-hard-drives/&#34;&gt;https://www.techrepublic.com/blog/linux-and-open-source/using-smartctl-to-get-smart-status-information-on-your-hard-drives/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -1030,6 +1113,8 @@ lalu masukkan license tersebut ke halaman awal setelah login&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/&#34;&gt;https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html&#34;&gt;https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/&#34;&gt;https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d&#34;&gt;https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -1681,12 +1766,20 @@ git branch -D namabranchyangakandihapus
     
       
         <item>
-          <title>Linux load / stress test</title>
-          <link>https://blog.indonesiadot.com/2018/07/28/linux-load-/-stress-test/</link>
+          <title>Stress test on Linux</title>
+          <link>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</link>
           <pubDate>Sat, 28 Jul 2018 08:41:00 UTC</pubDate>
           <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2018/07/28/linux-load-/-stress-test/</guid>
-          <description>&lt;p dir=&#34;ltr&#34;&gt;stress -c 8 -i 9 -m 9 --vm-bytes &lt;u&gt;1024M&lt;/u&gt;&lt;/p&gt;&lt;p dir=&#34;ltr&#34;&gt;Note:&lt;br&gt;Package for centos 7 https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2&lt;br&gt;&lt;/p&gt;
+          <guid>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</guid>
+          <description>&lt;p&gt;```
+stress -c 8 -i 9 -m 9 &amp;ndash;vm-bytes 1024M&lt;/p&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2&#34;&gt;https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/&#34;&gt;https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
       
@@ -1866,7 +1959,13 @@ git branch -D namabranchyangakandihapus
           <pubDate>Wed, 07 Mar 2018 00:26:00 UTC</pubDate>
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2018/03/07/winbox-under-linux/</guid>
-          <description>&lt;p&gt;&lt;a href=&#34;https://www.google.co.id/search?q=winbox+under+linux&#34;&gt;https://www.google.co.id/search?q=winbox+under+linux&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;https://github.com/mriza/winbox-installer&#34;&gt;https://github.com/mriza/winbox-installer&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;https://udariza.wordpress.com/&#34;&gt;https://udariza.wordpress.com/&lt;/a&gt;&lt;/p&gt;
+          <description>&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.google.co.id/search?q=winbox+under+linux&#34;&gt;https://www.google.co.id/search?q=winbox+under+linux&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mriza/winbox-installer&#34;&gt;https://github.com/mriza/winbox-installer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://udariza.wordpress.com/&#34;&gt;https://udariza.wordpress.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
       
@@ -2035,18 +2134,6 @@ git branch -D namabranchyangakandihapus
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2018/02/15/todo-jenkins/</guid>
           <description>&lt;p&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;iframe width=&#34;320&#34; height=&#34;266&#34; class=&#34;YOUTUBE-iframe-video&#34; data-thumbnail-src=&#34;https://i.ytimg.com/vi/8_D49wo6XKI/0.jpg&#34; src=&#34;https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04&#34;&gt;https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
-          <title>learn ansible php</title>
-          <link>https://blog.indonesiadot.com/2018/02/14/learn-ansible-php/</link>
-          <pubDate>Wed, 14 Feb 2018 19:28:00 UTC</pubDate>
-          <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2018/02/14/learn-ansible-php/</guid>
-          <description>&lt;p&gt;&lt;a href=&#34;https://knpuniversity.com/screencast/ansible/ansible-composer&#34;&gt;https://knpuniversity.com/screencast/ansible/ansible-composer&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
       
@@ -2227,24 +2314,30 @@ fi
     
       
         <item>
-          <title>Ansible tips and trick</title>
-          <link>https://blog.indonesiadot.com/2018/01/31/ansible-tips-and-trick/</link>
+          <title>Ansible tips</title>
+          <link>https://blog.indonesiadot.com/2018/01/31/ansible-tips/</link>
           <pubDate>Wed, 31 Jan 2018 23:30:00 UTC</pubDate>
           <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2018/01/31/ansible-tips-and-trick/</guid>
-          <description>&lt;p dir=&#34;ltr&#34;&gt;&lt;b&gt;Ansible gather facts&lt;/b&gt;&lt;/p&gt;&lt;p dir=&#34;ltr&#34;&gt;Using facter too&lt;/p&gt;&lt;p dir=&#34;ltr&#34;&gt;Ref:&lt;/p&gt;&lt;p dir=&#34;ltr&#34;&gt;http://docs.ansible.com/ansible/latest/setup_module.html#examples&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
-          <title>Linux Security tools</title>
-          <link>https://blog.indonesiadot.com/2018/01/31/linux-security-tools/</link>
-          <pubDate>Wed, 31 Jan 2018 21:32:00 UTC</pubDate>
-          <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2018/01/31/linux-security-tools/</guid>
-          <description>&lt;p&gt;&lt;b&gt;Tripwire&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;ref:&lt;br /&gt;&lt;a href=&#34;https://github.com/Tripwire/tripwire-open-source&#34;&gt;https://github.com/Tripwire/tripwire-open-source&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;https://www.upguard.com/articles/tripwire-enterprise-vs.-tripwire-open-source&#34;&gt;https://www.upguard.com/articles/tripwire-enterprise-vs.-tripwire-open-source&lt;/a&gt;&lt;/p&gt;
+          <guid>https://blog.indonesiadot.com/2018/01/31/ansible-tips/</guid>
+          <description>
+
+&lt;h2 id=&#34;ansible-gather-facts&#34;&gt;Ansible gather facts&lt;/h2&gt;
+
+&lt;p&gt;Using facter too&lt;/p&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.ansible.com/ansible/latest/setup_module.html#examples&#34;&gt;http://docs.ansible.com/ansible/latest/setup_module.html#examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ansible-php-composer&#34;&gt;ansible php composer&lt;/h2&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://knpuniversity.com/screencast/ansible/ansible-composer&#34;&gt;https://knpuniversity.com/screencast/ansible/ansible-composer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
       
@@ -2263,12 +2356,82 @@ fi
     
       
         <item>
-          <title>TODO ansible 201802</title>
-          <link>https://blog.indonesiadot.com/2018/01/31/todo-ansible-201802/</link>
+          <title>Ansible AWX</title>
+          <link>https://blog.indonesiadot.com/2018/01/31/ansible-awx/</link>
           <pubDate>Wed, 31 Jan 2018 20:54:00 UTC</pubDate>
           <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2018/01/31/todo-ansible-201802/</guid>
-          <description>&lt;div dir=&#34;ltr&#34;&gt;Ansible tower&lt;br&gt;Ansible awx&lt;br&gt;Ansible for magento&lt;br&gt;Ansible + jenkins&lt;br&gt;&lt;br&gt;&lt;b&gt;install latest ansible&lt;/b&gt;&lt;br&gt;&lt;br&gt;apt-add-repository ppa:ansible/ansible&lt;br&gt;[ENTER]&lt;br&gt;apt update&lt;br&gt;apt-get install ansible&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;install latest docker&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;apt-add-repository ppa:ansible/ansible&lt;/div&gt;&lt;div&gt;apt update&lt;/div&gt;&lt;div&gt;apt-get install ansible&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -&lt;/div&gt;&lt;div&gt;add-apt-repository \&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;$(lsb_release -cs) \&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;stable&#34;&lt;/div&gt;&lt;div&gt;apt update&lt;/div&gt;&lt;div&gt;apt-get install docker-ce&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;apt install make&lt;/div&gt;&lt;div&gt;apt install python-pip&lt;/div&gt;&lt;div&gt;pip install docker&lt;/div&gt;&lt;div&gt;pip install --upgrade pip&lt;/div&gt;&lt;div&gt;apt install git&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;curl -O https://raw.githubusercontent.com/geerlingguy/awx-container/master/docker-compose.yml&lt;br&gt;docker-compose up -d&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;tunggu beberapa saat lalu akses via http, misal http://localhost dengan user admin/password&lt;/div&gt;&lt;br&gt;&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;Ref:&lt;br&gt;http://www.nalashaa.com/setting-ci-deployment-automation-ansible/&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;https://chromatichq.com/blog/automated-servers-and-deployments-ansible-jenkins&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;https://medium.com/@tedchength/basic-deployment-with-ansible-docker-jenkins-and-git-4f3b42fb2f5e&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;https://dzone.com/articles/running-ansible-playbooks-from-jenkins&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;&lt;br&gt;&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;https://www.jeffgeerling.com/blog/2017/get-started-using-ansible-awx-open-source-tower-version-one-minute&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;https://galaxy.ansible.com/geerlingguy/jenkins/&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;Jenkins-ci&lt;br&gt;https://galaxy.ansible.com/geerlingguy/jenkins/&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;http://rundeck.org&lt;br&gt;Goci / gocd&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;&lt;br&gt;&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;belajar ansible awx 201802010830&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;https://www.youtube.com/watch?v=E5XtK7mE8_0&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;https://github.com/whiskerlabs/armsible/blob/master/local_network_inventory.py&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;https://github.com/KeksiLabs/ansible-user-management-example&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;https://keksi.io/tutorials/2016/12/05/how-to-manage-remote-server-users-with-ansible/&lt;br&gt;&lt;br&gt;&lt;b&gt;install ansible tower&lt;/b&gt;&lt;br&gt;https://rafishaikblog.wordpress.com/2017/01/31/ansible-tower/&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;Ansible tower&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;https://oliverveits.wordpress.com/2016/06/14/it-automation-part-iv-ansible-tower-hello-world-example/amp/&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;&lt;br&gt;&lt;/div&gt;
+          <guid>https://blog.indonesiadot.com/2018/01/31/ansible-awx/</guid>
+          <description>
+
+&lt;h3 id=&#34;install-latest-ansible&#34;&gt;install latest ansible&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-add-repository ppa:ansible/ansible
+[ENTER]
+apt update
+apt-get install ansible
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;install-latest-docker&#34;&gt;install latest docker&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-add-repository ppa:ansible/ansible
+[ENTER]
+apt update
+apt-get install ansible
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+add-apt-repository \
+&amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) \
+stable&amp;quot;
+apt update
+apt-get install docker-ce
+apt install make
+apt install python-pip
+pip install docker
+pip install --upgrade pip
+apt install git
+curl -O https://raw.githubusercontent.com/geerlingguy/awx-container/master/docker-compose.yml
+docker-compose up -d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;tunggu beberapa saat lalu akses via http, misal &lt;a href=&#34;http://localhost&#34;&gt;http://localhost&lt;/a&gt; dengan user admin/password&lt;/p&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.nalashaa.com/setting-ci-deployment-automation-ansible/&#34;&gt;http://www.nalashaa.com/setting-ci-deployment-automation-ansible/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://chromatichq.com/blog/automated-servers-and-deployments-ansible-jenkins&#34;&gt;https://chromatichq.com/blog/automated-servers-and-deployments-ansible-jenkins&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@tedchength/basic-deployment-with-ansible-docker-jenkins-and-git-4f3b42fb2f5e&#34;&gt;https://medium.com/@tedchength/basic-deployment-with-ansible-docker-jenkins-and-git-4f3b42fb2f5e&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dzone.com/articles/running-ansible-playbooks-from-jenkins&#34;&gt;https://dzone.com/articles/running-ansible-playbooks-from-jenkins&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.jeffgeerling.com/blog/2017/get-started-using-ansible-awx-open-source-tower-version-one-minute&#34;&gt;https://www.jeffgeerling.com/blog/2017/get-started-using-ansible-awx-open-source-tower-version-one-minute&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://galaxy.ansible.com/geerlingguy/jenkins/&#34;&gt;https://galaxy.ansible.com/geerlingguy/jenkins/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;belajar-ansible-awx-201802010830&#34;&gt;Belajar ansible awx 201802010830&lt;/h2&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=E5XtK7mE8_0&#34;&gt;https://www.youtube.com/watch?v=E5XtK7mE8_0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/whiskerlabs/armsible/blob/master/local_network_inventory.py&#34;&gt;https://github.com/whiskerlabs/armsible/blob/master/local_network_inventory.py&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/KeksiLabs/ansible-user-management-example&#34;&gt;https://github.com/KeksiLabs/ansible-user-management-example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://keksi.io/tutorials/2016/12/05/how-to-manage-remote-server-users-with-ansible/&#34;&gt;https://keksi.io/tutorials/2016/12/05/how-to-manage-remote-server-users-with-ansible/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;install-ansible-tower&#34;&gt;install ansible tower&lt;/h2&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://rafishaikblog.wordpress.com/2017/01/31/ansible-tower/&#34;&gt;https://rafishaikblog.wordpress.com/2017/01/31/ansible-tower/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ansible tower&lt;/p&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://oliverveits.wordpress.com/2016/06/14/it-automation-part-iv-ansible-tower-hello-world-example/amp/&#34;&gt;https://oliverveits.wordpress.com/2016/06/14/it-automation-part-iv-ansible-tower-hello-world-example/amp/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
       
@@ -2328,7 +2491,37 @@ fi
           <pubDate>Mon, 29 Jan 2018 00:59:00 UTC</pubDate>
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</guid>
-          <description>&lt;p dir=&#34;ltr&#34;&gt;&lt;b&gt;cron without sending mail&lt;/b&gt;&lt;br&gt;tambahkan MAILTO=&#34;&#34; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya&lt;/p&gt;&lt;p dir=&#34;ltr&#34;&gt;&lt;b&gt;linux rm file list too long&lt;/b&gt;&lt;br&gt;cd direktoriyangfilenyabanyak&lt;br&gt;ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete&lt;br&gt;find . -type f -print -delete&lt;/p&gt;&lt;p dir=&#34;ltr&#34;&gt;incron&lt;br&gt;http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en&lt;/p&gt;
+          <description>
+
+&lt;h2 id=&#34;cron-without-sending-mail&#34;&gt;cron without sending mail&lt;/h2&gt;
+
+&lt;p&gt;tambahkan MAILTO=&amp;ldquo;&amp;rdquo; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya&lt;/p&gt;
+
+&lt;h2 id=&#34;linux-rm-file-list-too-long&#34;&gt;linux rm file list too long&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;cd direktoriyangfilenyabanyak
+ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete
+find . -type f -print -delete
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;incron&#34;&gt;incron&lt;/h2&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en&#34;&gt;http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;rsync-only-existing-file&#34;&gt;rsync only existing file&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://unix.stackexchange.com/questions/117190/best-way-to-sync-files-copy-only-existing-files-and-only-if-newer-than-target&#34;&gt;https://unix.stackexchange.com/questions/117190/best-way-to-sync-files-copy-only-existing-files-and-only-if-newer-than-target&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
       

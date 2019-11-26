@@ -6,10 +6,21 @@
     <description>Recent content in server on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Nov 2019 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 15 Nov 2019 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/server/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Splunk Log Monitoring</title>
+      <link>https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/</link>
+      <pubDate>Fri, 15 Nov 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/</guid>
+      <description> Download deb rpm tgz
+Referensi:
+ https://docs.splunk.com/Documentation  </description>
+    </item>
     
     <item>
       <title>Ansible and Openscap</title>
@@ -164,14 +175,9 @@ https://www.howtoforge.com/community/threads/install-monit.64712/</description>
       <pubDate>Mon, 29 Jan 2018 00:59:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</guid>
-      <description>cron without sending mail
-tambahkan MAILTO=&#34;&#34; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
-linux rm file list too long
-cd direktoriyangfilenyabanyak
-ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete
-find . -type f -print -delete
-incron
-http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en</description>
+      <description>cron without sending mail tambahkan MAILTO=&amp;ldquo;&amp;rdquo; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
+linux rm file list too long cd direktoriyangfilenyabanyak ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete find . -type f -print -delete  incron Ref:
+ http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en  rsync only existing file rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/  Ref:</description>
     </item>
     
     <item>

@@ -43,15 +43,15 @@ Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepa
     </item>
     
     <item>
-      <title>Ansible tips and trick</title>
-      <link>https://blog.indonesiadot.com/2018/01/31/ansible-tips-and-trick/</link>
+      <title>Ansible tips</title>
+      <link>https://blog.indonesiadot.com/2018/01/31/ansible-tips/</link>
       <pubDate>Wed, 31 Jan 2018 23:30:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2018/01/31/ansible-tips-and-trick/</guid>
-      <description>Ansible gather facts
-Using facter too
+      <guid>https://blog.indonesiadot.com/2018/01/31/ansible-tips/</guid>
+      <description> Ansible gather facts Using facter too
 Ref:
-http://docs.ansible.com/ansible/latest/setup_module.html#examples</description>
+ http://docs.ansible.com/ansible/latest/setup_module.html#examples  ansible php composer Ref:
+ https://knpuniversity.com/screencast/ansible/ansible-composer  </description>
     </item>
     
   </channel>

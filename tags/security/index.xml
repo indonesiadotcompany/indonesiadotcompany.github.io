@@ -6,10 +6,21 @@
     <description>Recent content in security on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Nov 2019 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 15 Nov 2019 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/security/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Splunk Log Monitoring</title>
+      <link>https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/</link>
+      <pubDate>Fri, 15 Nov 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/</guid>
+      <description> Download deb rpm tgz
+Referensi:
+ https://docs.splunk.com/Documentation  </description>
+    </item>
     
     <item>
       <title>Ansible and Openscap</title>
@@ -59,7 +70,7 @@ blacklist firewire_core install firewire_core /bin/true  Referensi:
       
       <guid>https://blog.indonesiadot.com/2019/09/28/ids-tripwire/</guid>
       <description>Referensi:
- https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/ https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html  </description>
+ https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/ https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/ https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d  </description>
     </item>
     
     <item>
@@ -91,18 +102,6 @@ https://www.cryptomonkeys.com/
 alamat lain yang menarik:
 https://www.infosecindustry.com/
 http://www.freebsd.org/</description>
-    </item>
-    
-    <item>
-      <title>Linux Security tools</title>
-      <link>https://blog.indonesiadot.com/2018/01/31/linux-security-tools/</link>
-      <pubDate>Wed, 31 Jan 2018 21:32:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/2018/01/31/linux-security-tools/</guid>
-      <description>Tripwire
-ref:
-https://github.com/Tripwire/tripwire-open-source
-https://www.upguard.com/articles/tripwire-enterprise-vs.-tripwire-open-source</description>
     </item>
     
   </channel>

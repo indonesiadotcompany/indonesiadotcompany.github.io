@@ -7,6 +7,46 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/</loc>
+    <lastmod>2019-11-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
+    <lastmod>2019-11-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2019-11-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/security/</loc>
+    <lastmod>2019-11-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/server/</loc>
+    <lastmod>2019-11-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/splunk/</loc>
+    <lastmod>2019-11-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/</loc>
+    <lastmod>2019-11-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2019-11-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
     <lastmod>2019-11-05T08:17:54+07:00</lastmod>
   </url>
@@ -17,27 +57,7 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2019-11-05T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2019-11-05T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2019-11-05T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/</loc>
-    <lastmod>2019-11-05T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
     <lastmod>2019-11-05T08:17:54+07:00</lastmod>
   </url>
   
@@ -68,16 +88,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/scan/</loc>
-    <lastmod>2019-11-04T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/security/</loc>
-    <lastmod>2019-11-04T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/server/</loc>
     <lastmod>2019-11-04T08:17:54+07:00</lastmod>
   </url>
   
@@ -288,6 +298,11 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/raid/</loc>
+    <lastmod>2019-09-30T13:09:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/smartctl/</loc>
     <lastmod>2019-09-30T13:09:15+07:00</lastmod>
   </url>
   
@@ -567,7 +582,22 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/2018/07/28/linux-load-/-stress-test/</loc>
+    <loc>https://blog.indonesiadot.com/tags/cpu/</loc>
+    <lastmod>2018-07-28T08:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/load/</loc>
+    <lastmod>2018-07-28T08:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</loc>
+    <lastmod>2018-07-28T08:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/stresstest/</loc>
     <lastmod>2018-07-28T08:41:00+00:00</lastmod>
   </url>
   
@@ -697,6 +727,11 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/tags/winbox/</loc>
+    <lastmod>2018-03-07T00:26:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/2018/03/07/winbox-under-linux/</loc>
     <lastmod>2018-03-07T00:26:00+00:00</lastmod>
   </url>
@@ -817,11 +852,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/2018/02/14/learn-ansible-php/</loc>
-    <lastmod>2018-02-14T19:28:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/2018/02/13/jenkins-magento-2/</loc>
     <lastmod>2018-02-13T01:05:00+00:00</lastmod>
   </url>
@@ -857,13 +887,8 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/2018/01/31/ansible-tips-and-trick/</loc>
+    <loc>https://blog.indonesiadot.com/2018/01/31/ansible-tips/</loc>
     <lastmod>2018-01-31T23:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/2018/01/31/linux-security-tools/</loc>
-    <lastmod>2018-01-31T21:32:00+00:00</lastmod>
   </url>
   
   <url>
@@ -877,17 +902,17 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/2018/01/31/ansible-awx/</loc>
+    <lastmod>2018-01-31T20:54:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/tags/task/</loc>
     <lastmod>2018-01-31T20:54:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/todo/</loc>
-    <lastmod>2018-01-31T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/2018/01/31/todo-ansible-201802/</loc>
     <lastmod>2018-01-31T20:54:00+00:00</lastmod>
   </url>
   

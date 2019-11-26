@@ -19,7 +19,18 @@
       <guid>https://blog.indonesiadot.com/2019/09/30/disk-serial-number/</guid>
       <description>Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.
 Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:
- lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb) smartctl -a /dev/sda #lihat bagian atas serial number nya udevadm info /dev/sda  </description>
+ lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb) smartctl -a /dev/sda #lihat bagian atas serial number nya udevadm info /dev/sda  smartctl to get disk smart status ``` smartctl -H /dev/sda smartctl -i /dev/sda smartctl &amp;ndash;test=short /dev/sda #smartctl &amp;ndash;test=long /dev/sda smartctl -a /dev/sda smartctl -a /dev/sda | grep &amp;ldquo;Short&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Stress test on Linux</title>
+      <link>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</link>
+      <pubDate>Sat, 28 Jul 2018 08:41:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</guid>
+      <description>``` stress -c 8 -i 9 -m 9 &amp;ndash;vm-bytes 1024M
+Ref:
+ https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2 https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/  </description>
     </item>
     
   </channel>

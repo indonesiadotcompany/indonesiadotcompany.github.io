@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Ansible AWX &middot; Blog Indonesiadot.Com
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/poole.css">
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/syntax.css">
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blog.indonesiadot.com/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="https://blog.indonesiadot.com/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://blog.indonesiadot.com/atom.xml">
+</head>
+
+
+  <body class="theme-base-0c">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Blog dari <a href="https://indonesiadot.com" target="_blank">Indonesiadot.Com</a> adalah tempat menuliskan sesuatu mengenai teknologi, oprek, dan mengenai Indonesiadot.Com.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/">Home</a>
+    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/post">Posts</a>
+
+    
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/about/">About</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
+      
+    
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2019. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="https://blog.indonesiadot.com/" title="Home">Blog Indonesiadot.Com</a>
+            <small>Web log of Indonesiadot.Com, Linux and updated technology</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Ansible AWX</h1>
+  <span class="post-date">Jan 31, 2018</span>
+  
+
+<h3 id="install-latest-ansible">install latest ansible</h3>
+
+<pre><code>apt-add-repository ppa:ansible/ansible
+[ENTER]
+apt update
+apt-get install ansible
+</code></pre>
+
+<h3 id="install-latest-docker">install latest docker</h3>
+
+<pre><code>apt-add-repository ppa:ansible/ansible
+[ENTER]
+apt update
+apt-get install ansible
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+add-apt-repository \
+&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) \
+stable&quot;
+apt update
+apt-get install docker-ce
+apt install make
+apt install python-pip
+pip install docker
+pip install --upgrade pip
+apt install git
+curl -O https://raw.githubusercontent.com/geerlingguy/awx-container/master/docker-compose.yml
+docker-compose up -d
+</code></pre>
+
+<p>tunggu beberapa saat lalu akses via http, misal <a href="http://localhost">http://localhost</a> dengan user admin/password</p>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="http://www.nalashaa.com/setting-ci-deployment-automation-ansible/">http://www.nalashaa.com/setting-ci-deployment-automation-ansible/</a></li>
+<li><a href="https://chromatichq.com/blog/automated-servers-and-deployments-ansible-jenkins">https://chromatichq.com/blog/automated-servers-and-deployments-ansible-jenkins</a></li>
+<li><a href="https://medium.com/@tedchength/basic-deployment-with-ansible-docker-jenkins-and-git-4f3b42fb2f5e">https://medium.com/@tedchength/basic-deployment-with-ansible-docker-jenkins-and-git-4f3b42fb2f5e</a></li>
+<li><a href="https://dzone.com/articles/running-ansible-playbooks-from-jenkins">https://dzone.com/articles/running-ansible-playbooks-from-jenkins</a></li>
+<li><a href="https://www.jeffgeerling.com/blog/2017/get-started-using-ansible-awx-open-source-tower-version-one-minute">https://www.jeffgeerling.com/blog/2017/get-started-using-ansible-awx-open-source-tower-version-one-minute</a></li>
+<li><a href="https://galaxy.ansible.com/geerlingguy/jenkins/">https://galaxy.ansible.com/geerlingguy/jenkins/</a></li>
+</ul>
+
+<h2 id="belajar-ansible-awx-201802010830">Belajar ansible awx 201802010830</h2>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://www.youtube.com/watch?v=E5XtK7mE8_0">https://www.youtube.com/watch?v=E5XtK7mE8_0</a></li>
+<li><a href="https://github.com/whiskerlabs/armsible/blob/master/local_network_inventory.py">https://github.com/whiskerlabs/armsible/blob/master/local_network_inventory.py</a></li>
+<li><a href="https://github.com/KeksiLabs/ansible-user-management-example">https://github.com/KeksiLabs/ansible-user-management-example</a></li>
+<li><a href="https://keksi.io/tutorials/2016/12/05/how-to-manage-remote-server-users-with-ansible/">https://keksi.io/tutorials/2016/12/05/how-to-manage-remote-server-users-with-ansible/</a></li>
+</ul>
+
+<h2 id="install-ansible-tower">install ansible tower</h2>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://rafishaikblog.wordpress.com/2017/01/31/ansible-tower/">https://rafishaikblog.wordpress.com/2017/01/31/ansible-tower/</a></li>
+</ul>
+
+<p>Ansible tower</p>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://oliverveits.wordpress.com/2016/06/14/it-automation-part-iv-ansible-tower-hello-world-example/amp/">https://oliverveits.wordpress.com/2016/06/14/it-automation-part-iv-ansible-tower-hello-world-example/amp/</a></li>
+</ul>
+
+</div>
+
+<hr/>
+
+
+ Tags:
+ <a href="https://blog.indonesiadot.com/tags/task/">task</a>, <a href="https://blog.indonesiadot.com/tags/todo/">todo</a>
+<hr/>
+Made with &hearts; using <a href="https://https://gohugo.io">hugo</a> by willing of <a href="https://www.google.com/search?q=asmaul+husna">Al-Khooliq Al-Mushowwir Al-Baari'</a>
+<p>&nbsp;</p>
+
+	</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+  </body>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147159427-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147159427-1');
+</script>
+
+</html>
+

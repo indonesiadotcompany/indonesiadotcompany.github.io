@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Nov 2019 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 15 Nov 2019 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Splunk Log Monitoring</title>
+      <link>https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/</link>
+      <pubDate>Fri, 15 Nov 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/</guid>
+      <description> Download deb rpm tgz
+Referensi:
+ https://docs.splunk.com/Documentation  </description>
+    </item>
     
     <item>
       <title>Recommended Ansible Modules</title>
@@ -95,8 +106,9 @@ james.*jack  would search james , then any number of character until jack comes.
       <pubDate>Mon, 28 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/28/ansible-reference/</guid>
-      <description>Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &#39;/&#39; mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot;  atau
-- name: Ensure that free space on the tested volume is greater than 15% assert: that: - mount.size_available &amp;gt; mount.size_total|float * 0.15 msg: Disk space has reached 85% threshold vars: mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,item.</description>
+      <description>Postingan ini adalah referensi untuk belajar ansible dan bisa juga sebagai tips, meski sudah ada postingan sebelumnya yang berisi ansible tips :)
+Jenkins-ci Ref: * https://galaxy.ansible.com/geerlingguy/jenkins/ * http://rundeck.org * Goci / gocd
+Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &#39;/&#39; mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot;  atau</description>
     </item>
     
     <item>
@@ -191,7 +203,7 @@ https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari http
       <guid>https://blog.indonesiadot.com/2019/09/30/disk-serial-number/</guid>
       <description>Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.
 Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:
- lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb) smartctl -a /dev/sda #lihat bagian atas serial number nya udevadm info /dev/sda  </description>
+ lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb) smartctl -a /dev/sda #lihat bagian atas serial number nya udevadm info /dev/sda  smartctl to get disk smart status ``` smartctl -H /dev/sda smartctl -i /dev/sda smartctl &amp;ndash;test=short /dev/sda #smartctl &amp;ndash;test=long /dev/sda smartctl -a /dev/sda smartctl -a /dev/sda | grep &amp;ldquo;Short&amp;rdquo;</description>
     </item>
     
     <item>
@@ -201,7 +213,7 @@ Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddi
       
       <guid>https://blog.indonesiadot.com/2019/09/28/ids-tripwire/</guid>
       <description>Referensi:
- https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/ https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html  </description>
+ https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/ https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/ https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d  </description>
     </item>
     
     <item>
@@ -483,14 +495,14 @@ https://tthtlc.wordpress.com/2014/09/16/how-to-install-reiserfs-in-centos/</desc
     </item>
     
     <item>
-      <title>Linux load / stress test</title>
-      <link>https://blog.indonesiadot.com/2018/07/28/linux-load-/-stress-test/</link>
+      <title>Stress test on Linux</title>
+      <link>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</link>
       <pubDate>Sat, 28 Jul 2018 08:41:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2018/07/28/linux-load-/-stress-test/</guid>
-      <description>stress -c 8 -i 9 -m 9 --vm-bytes 1024M
-Note:
-Package for centos 7 https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2</description>
+      <guid>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</guid>
+      <description>``` stress -c 8 -i 9 -m 9 &amp;ndash;vm-bytes 1024M
+Ref:
+ https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2 https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/  </description>
     </item>
     
     <item>
@@ -693,9 +705,8 @@ Using Ansible to automate VM creation on XenServerI’ve been using Xenserver at
       <pubDate>Wed, 07 Mar 2018 00:26:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/03/07/winbox-under-linux/</guid>
-      <description>https://www.google.co.id/search?q=winbox+under+linux
-https://github.com/mriza/winbox-installer
-https://udariza.wordpress.com/</description>
+      <description>Referensi:
+ https://www.google.co.id/search?q=winbox+under+linux https://github.com/mriza/winbox-installer https://udariza.wordpress.com/  </description>
     </item>
     
     <item>
@@ -885,15 +896,6 @@ http://docs.grafana.org/features/datasources/</description>
     </item>
     
     <item>
-      <title>learn ansible php</title>
-      <link>https://blog.indonesiadot.com/2018/02/14/learn-ansible-php/</link>
-      <pubDate>Wed, 14 Feb 2018 19:28:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/2018/02/14/learn-ansible-php/</guid>
-      <description>https://knpuniversity.com/screencast/ansible/ansible-composer</description>
-    </item>
-    
-    <item>
       <title>Jenkins magento 2</title>
       <link>https://blog.indonesiadot.com/2018/02/13/jenkins-magento-2/</link>
       <pubDate>Tue, 13 Feb 2018 01:05:00 +0000</pubDate>
@@ -945,27 +947,15 @@ https://www.udemy.com/aws-essentials</description>
     </item>
     
     <item>
-      <title>Ansible tips and trick</title>
-      <link>https://blog.indonesiadot.com/2018/01/31/ansible-tips-and-trick/</link>
+      <title>Ansible tips</title>
+      <link>https://blog.indonesiadot.com/2018/01/31/ansible-tips/</link>
       <pubDate>Wed, 31 Jan 2018 23:30:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2018/01/31/ansible-tips-and-trick/</guid>
-      <description>Ansible gather facts
-Using facter too
+      <guid>https://blog.indonesiadot.com/2018/01/31/ansible-tips/</guid>
+      <description> Ansible gather facts Using facter too
 Ref:
-http://docs.ansible.com/ansible/latest/setup_module.html#examples</description>
-    </item>
-    
-    <item>
-      <title>Linux Security tools</title>
-      <link>https://blog.indonesiadot.com/2018/01/31/linux-security-tools/</link>
-      <pubDate>Wed, 31 Jan 2018 21:32:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/2018/01/31/linux-security-tools/</guid>
-      <description>Tripwire
-ref:
-https://github.com/Tripwire/tripwire-open-source
-https://www.upguard.com/articles/tripwire-enterprise-vs.-tripwire-open-source</description>
+ http://docs.ansible.com/ansible/latest/setup_module.html#examples  ansible php composer Ref:
+ https://knpuniversity.com/screencast/ansible/ansible-composer  </description>
     </item>
     
     <item>
@@ -988,28 +978,12 @@ Example :
     </item>
     
     <item>
-      <title>TODO ansible 201802</title>
-      <link>https://blog.indonesiadot.com/2018/01/31/todo-ansible-201802/</link>
+      <title>Ansible AWX</title>
+      <link>https://blog.indonesiadot.com/2018/01/31/ansible-awx/</link>
       <pubDate>Wed, 31 Jan 2018 20:54:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2018/01/31/todo-ansible-201802/</guid>
-      <description>Ansible tower
-Ansible awx
-Ansible for magento
-Ansible + jenkins
-install latest ansible
-apt-add-repository ppa:ansible/ansible
-[ENTER]
-apt update
-apt-get install ansible
-
-install latest docker
-apt-add-repository ppa:ansible/ansibleapt updateapt-get install ansible
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -add-apt-repository \&amp;nbsp; &amp;nbsp;&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \&amp;nbsp; &amp;nbsp;$(lsb_release -cs) \&amp;nbsp; &amp;nbsp;stable&#34;apt updateapt-get install docker-ce
-apt install makeapt install python-pippip install dockerpip install --upgrade pipapt install git
-curl -O https://raw.githubusercontent.com/geerlingguy/awx-container/master/docker-compose.yml
-docker-compose up -d
-tunggu beberapa saat lalu akses via http, misal http://localhost dengan user admin/password</description>
+      <guid>https://blog.indonesiadot.com/2018/01/31/ansible-awx/</guid>
+      <description>install latest ansible apt-add-repository ppa:ansible/ansible [ENTER] apt update apt-get install ansible  install latest docker apt-add-repository ppa:ansible/ansible [ENTER] apt update apt-get install ansible curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - add-apt-repository \ &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable&amp;quot; apt update apt-get install docker-ce apt install make apt install python-pip pip install docker pip install --upgrade pip apt install git curl -O https://raw.githubusercontent.com/geerlingguy/awx-container/master/docker-compose.yml docker-compose up -d  tunggu beberapa saat lalu akses via http, misal http://localhost dengan user admin/password</description>
     </item>
     
     <item>
@@ -1062,14 +1036,9 @@ https://www.howtogeek.com/109369/how-to-quickly-resize-convert-modify-images-fro
       <pubDate>Mon, 29 Jan 2018 00:59:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</guid>
-      <description>cron without sending mail
-tambahkan MAILTO=&#34;&#34; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
-linux rm file list too long
-cd direktoriyangfilenyabanyak
-ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete
-find . -type f -print -delete
-incron
-http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en</description>
+      <description>cron without sending mail tambahkan MAILTO=&amp;ldquo;&amp;rdquo; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
+linux rm file list too long cd direktoriyangfilenyabanyak ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete find . -type f -print -delete  incron Ref:
+ http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en  rsync only existing file rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/  Ref:</description>
     </item>
     
     <item>

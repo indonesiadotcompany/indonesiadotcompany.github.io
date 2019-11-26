@@ -459,6 +459,16 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -489,6 +499,15 @@
   <h1 class="post-title">Ansible Reference</h1>
   <span class="post-date">Oct 28, 2019</span>
   
+
+<p>Postingan ini adalah referensi untuk belajar ansible dan bisa juga sebagai tips, meski sudah ada postingan sebelumnya yang berisi ansible tips :)</p>
+
+<h2 id="jenkins-ci">Jenkins-ci</h2>
+
+<p>Ref:
+* <a href="https://galaxy.ansible.com/geerlingguy/jenkins/">https://galaxy.ansible.com/geerlingguy/jenkins/</a>
+* <a href="http://rundeck.org">http://rundeck.org</a>
+* Goci / gocd</p>
 
 <h2 id="ansible-check-disk">Ansible check disk</h2>
 
@@ -611,6 +630,20 @@ with_items: '{{ ansible_mounts }}'
 <ul>
 <li><a href="https://docs.ansible.com/ansible/latest/plugins/callback.html">https://docs.ansible.com/ansible/latest/plugins/callback.html</a></li>
 <li><a href="https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html">https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html</a></li>
+</ul>
+
+<h2 id="ansible-copy-only-on-remote-host">ansible copy only on remote host</h2>
+
+<pre><code>name: copy files task
+  shell: cp source/path/file destination/path/file 
+</code></pre>
+
+<p>or using remote_src flag on copy module</p>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/41130757/ansible-copy-or-move-files-only-on-remote-host">https://stackoverflow.com/questions/41130757/ansible-copy-or-move-files-only-on-remote-host</a></li>
 </ul>
 
 </div>
