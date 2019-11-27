@@ -17,7 +17,7 @@
       <pubDate>Wed, 31 Jan 2018 20:54:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/31/ansible-awx/</guid>
-      <description>install latest ansible apt-add-repository ppa:ansible/ansible [ENTER] apt update apt-get install ansible  install latest docker apt-add-repository ppa:ansible/ansible [ENTER] apt update apt-get install ansible curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - add-apt-repository \ &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable&amp;quot; apt update apt-get install docker-ce apt install make apt install python-pip pip install docker pip install --upgrade pip apt install git curl -O https://raw.githubusercontent.com/geerlingguy/awx-container/master/docker-compose.yml docker-compose up -d  tunggu beberapa saat lalu akses via http, misal http://localhost dengan user admin/password</description>
+      <description>DEPRECATED install latest ansible apt-add-repository ppa:ansible/ansible [ENTER] apt update apt-get install ansible  install latest docker apt-add-repository ppa:ansible/ansible [ENTER] apt update apt-get install ansible curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - add-apt-repository \ &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable&amp;quot; apt update apt-get install docker-ce apt install make apt install python-pip pip install docker pip install --upgrade pip apt install git curl -O https://raw.githubusercontent.com/geerlingguy/awx-container/master/docker-compose.yml docker-compose up -d  tunggu beberapa saat lalu akses via http, misal http://localhost dengan user admin/password</description>
     </item>
     
   </channel>

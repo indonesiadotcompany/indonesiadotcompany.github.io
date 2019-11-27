@@ -5,9 +5,48 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2019</rights>
-    <updated>2019-11-15 08:17:54 &#43;0700 WIB</updated>
+    <updated>2019-11-26 08:17:54 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>Ansible AWX 2019</title>
+          <link>https://blog.indonesiadot.com/2019/11/26/ansible-awx-2019/</link>
+          <pubDate>Tue, 26 Nov 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/11/26/ansible-awx-2019/</guid>
+          <description>
+
+&lt;h2 id=&#34;ansible-awx&#34;&gt;Ansible AWX&lt;/h2&gt;
+
+&lt;h3 id=&#34;install-docker-compose-tanpa-pip-tanpa-compile&#34;&gt;install docker-compose tanpa pip, tanpa compile&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/&#34;&gt;https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/swlh/ansible-awx-installation-5861b115455a&#34;&gt;https://medium.com/swlh/ansible-awx-installation-5861b115455a&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devzero.co.za/2019/02/28/high-availability-awx-ansible/&#34;&gt;https://devzero.co.za/2019/02/28/high-availability-awx-ansible/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/sujiar37/AWX-HA-InstanceGroup&#34;&gt;https://github.com/sujiar37/AWX-HA-InstanceGroup&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Not yet tested:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/MrMEEE/awx-build&#34;&gt;https://github.com/MrMEEE/awx-build&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://awx.wiki/installation&#34;&gt;https://awx.wiki/installation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/powertim/deploy_awx-rpm&#34;&gt;https://github.com/powertim/deploy_awx-rpm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/&#34;&gt;https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
       
     
       
@@ -1290,6 +1329,15 @@ git push origin hugo
 &lt;ul&gt;
 &lt;li&gt;OpenSCAP&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;TeemIP&lt;/li&gt;
+&lt;li&gt;itop &lt;a href=&#34;https://github.com/Combodo/iTop&#34;&gt;https://github.com/Combodo/iTop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;infoblox&lt;/li&gt;
+&lt;li&gt;efficientip&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Referensi Openscap:&lt;/p&gt;
@@ -1646,6 +1694,12 @@ git branch -D namabranchyangakandihapus
 &lt;p&gt;Disini terlihat console dari GCP yang sudah dipakai sebulan untuk server monitoring dan juga server percobaan untuk compile dan pekerjaan berat lain, yang sudah dihapus karena hanya untuk percobaan sementara, disini masih tersisa credit 4 juta an :)&lt;/p&gt;
 
 &lt;p&gt;So give it a try :)&lt;/p&gt;
+
+&lt;p&gt;Ansible Reference:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/compute/docs/images&#34;&gt;https://cloud.google.com/compute/docs/images&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
       
@@ -2338,6 +2392,14 @@ fi
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://knpuniversity.com/screencast/ansible/ansible-composer&#34;&gt;https://knpuniversity.com/screencast/ansible/ansible-composer&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&#34;ansible-playbook-interactive-ansible-prompt&#34;&gt;ansible playbook interactive / ansible prompt&lt;/h2&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html&#34;&gt;https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
       
@@ -2362,6 +2424,8 @@ fi
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2018/01/31/ansible-awx/</guid>
           <description>
+
+&lt;h1 id=&#34;deprecated&#34;&gt;DEPRECATED&lt;/h1&gt;
 
 &lt;h3 id=&#34;install-latest-ansible&#34;&gt;install latest ansible&lt;/h3&gt;
 

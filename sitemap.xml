@@ -7,18 +7,38 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
+    <lastmod>2019-11-26T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/11/26/ansible-awx-2019/</loc>
+    <lastmod>2019-11-26T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/awx/</loc>
+    <lastmod>2019-11-26T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2019-11-15T08:17:54+07:00</lastmod>
+    <lastmod>2019-11-26T08:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2019-11-15T08:17:54+07:00</lastmod>
+    <lastmod>2019-11-26T08:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2019-11-15T08:17:54+07:00</lastmod>
+    <lastmod>2019-11-26T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2019-11-26T08:17:54+07:00</lastmod>
   </url>
   
   <url>
@@ -39,16 +59,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/</loc>
     <lastmod>2019-11-15T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
-    <lastmod>2019-11-15T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
-    <lastmod>2019-11-05T08:17:54+07:00</lastmod>
   </url>
   
   <url>
@@ -407,12 +417,12 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/virtualization/</loc>
+    <loc>https://blog.indonesiadot.com/categories/virtualization/</loc>
     <lastmod>2019-09-02T08:17:56+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/categories/virtualization/</loc>
+    <loc>https://blog.indonesiadot.com/tags/virtualization/</loc>
     <lastmod>2019-09-02T08:17:56+07:00</lastmod>
   </url>
   

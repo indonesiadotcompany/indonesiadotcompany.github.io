@@ -6,10 +6,21 @@
     <description>Recent content in linux on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Nov 2019 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 26 Nov 2019 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible AWX 2019</title>
+      <link>https://blog.indonesiadot.com/2019/11/26/ansible-awx-2019/</link>
+      <pubDate>Tue, 26 Nov 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/11/26/ansible-awx-2019/</guid>
+      <description> Ansible AWX install docker-compose tanpa pip, tanpa compile curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose  Referensi:
+ https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/ https://medium.com/swlh/ansible-awx-installation-5861b115455a https://devzero.co.za/2019/02/28/high-availability-awx-ansible/ https://github.com/sujiar37/AWX-HA-InstanceGroup  Not yet tested:
+ https://github.com/MrMEEE/awx-build https://awx.wiki/installation https://github.com/powertim/deploy_awx-rpm https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/  </description>
+    </item>
     
     <item>
       <title>Splunk Log Monitoring</title>
@@ -195,8 +206,8 @@ https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari http
  maldet (malware detection for web directory)  IDS
  tripwire  Identity Server
  FreeIPA (IPA = Identity, Policy, Authentication)  Security Checking / Scanning Solution
- OpenSCAP   Referensi Openscap:
- https://www.open-scap.org/  </description>
+ OpenSCAP  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets
+ TeemIP itop https://github.</description>
     </item>
     
     <item>
