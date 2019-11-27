@@ -25,6 +25,12 @@ Tools yang biasa digunakan pada server linux:
 * Security Checking / Scanning Solution
  * OpenSCAP
 
+* CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets
+ * TeemIP
+ * itop https://github.com/Combodo/iTop
+ * infoblox
+ * efficientip
+
 Referensi Openscap:
 
 * https://www.open-scap.org/

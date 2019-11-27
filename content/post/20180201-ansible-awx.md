@@ -9,6 +9,8 @@ blogimport = true
 	uri = "https://www.blogger.com/profile/01098412638320952520"
 +++
 
+# DEPRECATED
+
 ### install latest ansible
 ```
 apt-add-repository ppa:ansible/ansible

@@ -22,4 +22,8 @@ Ref:
 
 * https://knpuniversity.com/screencast/ansible/ansible-composer
 
+## ansible playbook interactive / ansible prompt
 
+Ref:
+
+* https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html
