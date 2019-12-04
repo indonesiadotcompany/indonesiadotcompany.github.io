@@ -15,8 +15,8 @@ OS: Centos 7
 Langkah yang dilakukan
 ```
 yum install -y ansible
-wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-3.1.5.tar.gz
-tar -xzvf ansible-tower-setup-3.1.5.tar.gz
+wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz
+tar -xzvf ansible-tower-setup-latest.tar.gz
 cd ansible-tower-setup-3.1.5/
 (edit inventory file, isi bagian yang dibutuhkan terutama password)
 (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram)
@@ -35,7 +35,6 @@ Referensi:
 
 * https://www.ansible.com/products/tower/trial
 * https://docs.ansible.com/ansible-tower/
-* https://docs.ansible.com/ansible-tower/3.1.0/html/userguide/inventories.html
 * http://devopstechie.com/install-and-configure-ansible-tower-centos7/
 * https://www.google.com/search?q=ansible+tower+postgresql+replication
 * https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/

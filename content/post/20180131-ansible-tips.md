@@ -27,3 +27,9 @@ Ref:
 Ref:
 
 * https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html
+
+## ansible-playbook command
+
+Ref:
+
+* https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/
