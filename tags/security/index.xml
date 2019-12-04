@@ -64,6 +64,17 @@ blacklist firewire_core install firewire_core /bin/true  Referensi:
     </item>
     
     <item>
+      <title>Ansible cycle evolution diagram security</title>
+      <link>https://blog.indonesiadot.com/2019/10/14/ansible-cycle-evolution-diagram-security/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/14/ansible-cycle-evolution-diagram-security/</guid>
+      <description> Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
+Referensi:
+ https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/ https://swimlane.com/blog/siem-soar/ https://www.ansible.com/blog/the-journey-to-security-automation  </description>
+    </item>
+    
+    <item>
       <title>IDS Tripwire</title>
       <link>https://blog.indonesiadot.com/2019/09/28/ids-tripwire/</link>
       <pubDate>Sat, 28 Sep 2019 08:17:36 +0700</pubDate>
@@ -85,8 +96,7 @@ blacklist firewire_core install firewire_core /bin/true  Referensi:
  maldet (malware detection for web directory)  IDS
  tripwire  Identity Server
  FreeIPA (IPA = Identity, Policy, Authentication)  Security Checking / Scanning Solution
- OpenSCAP  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets
- TeemIP itop https://github.</description>
+ OpenSCAP Rapid7  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</description>
     </item>
     
     <item>

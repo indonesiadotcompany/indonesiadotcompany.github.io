@@ -474,6 +474,20 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -504,6 +518,252 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/">DOH DNS over HTTPS</a></h1>
+        <span class="post-date">Oct 13, 2019</span>
+	
+
+<h2 id="security-dns-di-sisi-client">Security DNS di sisi client</h2>
+
+<h3 id="install-dnscrypt-proxy">Install dnscrypt-proxy</h3>
+
+<pre><code>add-apt-repository ppa:shevchuk/dnscrypt-proxy
+apt update
+apt install dnscrypt-proxy
+</code></pre>
+
+<p>Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel <strong>server_name</strong> menjadi seperti contoh berikut:</p>
+
+<pre><code>server_names = ['cloudflare', 'google']
+</code></pre>
+
+<p>lalu restart service dnscrypt-proxy</p>
+
+<pre><code>systemctl restart dnscrypt-proxy
+</code></pre>
+
+<p>edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy</p>
+
+<pre><code>nameserver 127.0.2.1
+</code></pre>
+
+<h2 id="install-dns-over-https-server">Install DNS over HTTPS server</h2>
+
+<h3 id="install-dengan-cara-paket-instalasi-deb">Install dengan cara paket instalasi deb</h3>
+
+<pre><code>wget &quot;https://www.aaflalo.me/?smd_process_download=1&amp;download_id=1326&quot;
+mv index* doh-server.deb
+dpkg -i doh-server_*_amd64.deb
+</code></pre>
+
+<h3 id="install-dengan-cara-compile">Install dengan cara compile</h3>
+
+<pre><code>wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.13.linux-amd64.tar.gz
+wget https://github.com/m13253/dns-over-https/archive/v2.1.2.tar.gz
+tar xzf v2.1.2.tar.gz
+cd dns-over-https-2.1.2
+make &amp;&amp; make install
+add-apt-repository ppa:ondrej/nginx
+apt update
+apt install nginx-full
+</code></pre>
+
+<p>Buat file /etc/nginx/sites-available/doh yang isinya:</p>
+
+<pre><code>upstream dns-backend {
+    server 127.0.0.1:8053;
+}
+server {
+        listen 80;
+        server_name dns.example.com;
+        root /var/www/html/dns;
+        access_log /var/log/nginx/dns.access.log;
+         location /dns-query {
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $http_host;
+                proxy_set_header X-NginX-Proxy true;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_redirect off;
+                proxy_set_header        X-Forwarded-Proto $scheme;
+                proxy_read_timeout 86400;
+                proxy_pass http://dns-backend/dns-query ;
+        }
+}
+</code></pre>
+
+<p>lalu jalankan</p>
+
+<pre><code>ln -s /etc/nginx/sites-available/dns-over-https /etc/nginx/sites-enabled/dns-over-https
+nginx -t
+systemctl reload nginx
+add-apt-repository ppa:certbot/certbot
+apt update
+apt install python-certbot-nginx
+certbot --nginx -d dns.example.com
+</code></pre>
+
+<p>If that’s successful, certbot will ask how you’d like to configure your HTTPS settings.</p>
+
+<pre><code>Please choose whether or not to redirect HTTP traffic to HTTPS, removing HTTP access.
+-------------------------------------------------------------------------------
+1: No redirect - Make no further changes to the webserver configuration.
+2: Redirect - Make all requests redirect to secure HTTPS access. Choose this for
+new sites, or if you're confident your site works on HTTPS. You can undo this
+change by editing your web server's configuration.
+-------------------------------------------------------------------------------
+Select the appropriate number [1-2] then [enter] (press 'c' to cancel):
+</code></pre>
+
+<p>I advise to choose redirect to be sure it use only HTTPS.</p>
+
+<p>Edit the file /etc/letsencrypt/options-ssl-nginx.conf and replace its content by this.</p>
+
+<pre><code>ssl_session_cache shared:le_nginx_SSL:1m;
+ssl_session_timeout 1440m;
+ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
+# Enable modern TLS cipher suites
+ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
+# The order of cipher suites matters
+ssl_prefer_server_ciphers on;
+add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot; always;
+</code></pre>
+
+<p>Then reload nginx.</p>
+
+<pre><code>systemctl reload nginx
+</code></pre>
+
+<h2 id="tips">TIPS</h2>
+
+<p>Untuk menggunakan server DOH yang telah kita buat pada dnscrypt-proxy client, buat stamp dulu di <a href="https://dnscrypt.info/stamps/">https://dnscrypt.info/stamps/</a></p>
+
+<p><img src="images/doh.png" alt="DOH" /></p>
+
+<p>lalu isi nama doh dan stamp nya seperti contoh:</p>
+
+<pre><code>[static]
+
+[static.'gcp']
+   stamp = 'sdns://AgcAAAAAAAAADTM0Ljg3LjExNy4xMDUADWdjcC5iaXJhdS5jb20KL2Rucy1xdWVyeQ'
+[static.'doh']
+   stamp = 'sdns://AgcAAAAAAAAACzQ1Ljc3LjM2LjU0ABJkb2guYmlyYXUuY29tOjM0NDMKL2Rucy1xdWVyeQ'
+</code></pre>
+
+<p>dan tambahkan dibagian server_name menjadi seperti ini:</p>
+
+<pre><code>server_names = ['doh', 'gcp', 'cloudflare', 'google']
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.aaflalo.me/2018/10/tutorial-setup-dns-over-https-server/">https://www.aaflalo.me/2018/10/tutorial-setup-dns-over-https-server/</a></li>
+<li><a href="https://github.com/m13253/dns-over-https">https://github.com/m13253/dns-over-https</a></li>
+<li><a href="https://dnscrypt.info/stamps/">https://dnscrypt.info/stamps/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/dns/">dns</a>, <a href="https://blog.indonesiadot.com/tags/doh/">doh</a>, <a href="https://blog.indonesiadot.com/tags/dnsoverhttps/">dnsoverhttps</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/10/belajar-ansible-tower/">Belajar Ansible Tower</a></h1>
+        <span class="post-date">Oct 10, 2019</span>
+	
+
+<h2 id="install-ansible-tower">Install Ansible Tower</h2>
+
+<p>Persyaratan:</p>
+
+<p>Hardware: RAM minimal 3,75 GB
+OS: Centos 7</p>
+
+<p>Langkah yang dilakukan</p>
+
+<pre><code>yum install -y ansible
+wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz
+tar -xzvf ansible-tower-setup-latest.tar.gz
+cd ansible-tower-setup-3.1.5/
+(edit inventory file, isi bagian yang dibutuhkan terutama password)
+(edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram)
+./setup.sh
+</code></pre>
+
+<h2 id="configure-ansible-tower-after-installation">Configure Ansible Tower after installation</h2>
+
+<p>Akses Ansible tower Web UI dari</p>
+
+<pre><code>https://&lt;Ansible Tower IP or Hostname&gt;
+</code></pre>
+
+<p>Dapatkan lisensi dari <a href="https://www.ansible.com/license">https://www.ansible.com/license</a>
+lalu masukkan license tersebut ke halaman awal setelah login</p>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.ansible.com/products/tower/trial">https://www.ansible.com/products/tower/trial</a></li>
+<li><a href="https://docs.ansible.com/ansible-tower/">https://docs.ansible.com/ansible-tower/</a></li>
+<li><a href="http://devopstechie.com/install-and-configure-ansible-tower-centos7/">http://devopstechie.com/install-and-configure-ansible-tower-centos7/</a></li>
+<li><a href="https://www.google.com/search?q=ansible+tower+postgresql+replication">https://www.google.com/search?q=ansible+tower+postgresql+replication</a></li>
+<li><a href="https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/">https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/</a></li>
+<li><a href="https://github.com/samdoran/ansible-role-pgsql-replication">https://github.com/samdoran/ansible-role-pgsql-replication</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>, <a href="https://blog.indonesiadot.com/tags/postgresql/">postgresql</a>, <a href="https://blog.indonesiadot.com/tags/rabbitmq/">rabbitmq</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/30/disk-serial-number/">Disk Serial Number</a></h1>
+        <span class="post-date">Sep 30, 2019</span>
+	
+
+<p>Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.</p>
+
+<p>Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:</p>
+
+<ul>
+<li>lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb)</li>
+<li>smartctl -a /dev/sda #lihat bagian atas serial number nya</li>
+<li>udevadm info /dev/sda</li>
+</ul>
+
+<h2 id="smartctl-to-get-disk-smart-status">smartctl to get disk smart status</h2>
+
+<p>```
+smartctl -H /dev/sda
+smartctl -i /dev/sda
+smartctl &ndash;test=short /dev/sda
+#smartctl &ndash;test=long /dev/sda
+smartctl -a /dev/sda
+smartctl -a /dev/sda | grep &ldquo;Short&rdquo;</p>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://www.techrepublic.com/blog/linux-and-open-source/using-smartctl-to-get-smart-status-information-on-your-hard-drives/">https://www.techrepublic.com/blog/linux-and-open-source/using-smartctl-to-get-smart-status-information-on-your-hard-drives/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/disk/">disk</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/smartctl/">smartctl</a>, <a href="https://blog.indonesiadot.com/tags/raid/">raid</a>, <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/28/ids-tripwire/">IDS Tripwire</a></h1>
@@ -692,6 +952,7 @@ git push origin hugo
 
 <ul>
 <li>OpenSCAP</li>
+<li>Rapid7</li>
 </ul></li>
 
 <li><p>CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</p>
@@ -701,6 +962,29 @@ git push origin hugo
 <li>itop <a href="https://github.com/Combodo/iTop">https://github.com/Combodo/iTop</a></li>
 <li>infoblox</li>
 <li>efficientip</li>
+<li>ansible-cmdb</li>
+</ul></li>
+
+<li><p>WAF</p>
+
+<ul>
+<li><a href="http://www.waf-fle.org/">http://www.waf-fle.org/</a> console / web view for modsecurity admin</li>
+<li>modsecurity</li>
+<li>naxsi <a href="https://github.com/nbs-system/naxsi">https://github.com/nbs-system/naxsi</a></li>
+<li>shadow daemon <a href="https://shadowd.zecure.org/overview/introduction/">https://shadowd.zecure.org/overview/introduction/</a></li>
+<li>imperva *berbayar</li>
+</ul></li>
+
+<li><p>Web Scanner</p>
+
+<ul>
+<li>nikto ( <a href="https://geekflare.com/nikto-webserver-scanner/">https://geekflare.com/nikto-webserver-scanner/</a> )</li>
+</ul></li>
+
+<li><p>Pentest</p>
+
+<ul>
+<li>owasp-zap <a href="https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b">https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b</a></li>
 </ul></li>
 </ul>
 
@@ -824,77 +1108,6 @@ git push origin hugo
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/virtualization/">virtualization</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/postfix-tips/">Postfix tips</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	
-
-<h3 id="postfix-send-to-local-network">postfix send to local network</h3>
-
-<p>Ini adalah langkah untuk membuat postfix mengirim ke mail server dalam LAN</p>
-
-<pre><code>echo &quot;real.net smtp:[192.168.1.108]&quot; &gt;&gt; /etc/postfix/transport
-postmap /etc/postfix/transport
-systemctl restart postfix
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/">https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/</a></li>
-<li><a href="http://www.postfix.org/STANDARD_CONFIGURATION_README.html">http://www.postfix.org/STANDARD_CONFIGURATION_README.html</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/mail/">mail</a>, <a href="https://blog.indonesiadot.com/tags/postfix/">postfix</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/">All about kubernetes</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<p>Referensi:</p>
-
-<ul>
-<li><a href="https://darxkies.github.io/k8s-tew/_build/html/index.html">https://darxkies.github.io/k8s-tew/_build/html/index.html</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/kubernetes/">kubernetes</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/">Ubuntu upgrade 14.04 to 16.04 to 18.04</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<p>Berikut langkah yang dilakukan, tapi sebelumnya pastikan backup, backup dan backup</p>
-
-<pre><code>sudo apt-get update
-sudo apt-get upgrade
-sudo do-release-upgrade -f DistUpgradeViewNonInteractive
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04">https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04</a></li>
-<li><a href="https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4">https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ubuntu/">ubuntu</a>, <a href="https://blog.indonesiadot.com/tags/upgrade/">upgrade</a>
 	 <hr/>
     </div>
   

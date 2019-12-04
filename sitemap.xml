@@ -247,12 +247,57 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/2019/10/14/ansible-cycle-evolution-diagram-security/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/lan/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</loc>
     <lastmod>2019-10-14T08:17:54+07:00</lastmod>
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/tags/openvpn/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/10/14/openvpn-routed-lans/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/proxmox/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/10/14/proxmox-add-zfs/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/tags/sed/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/siem/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/soar/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/zfs/</loc>
     <lastmod>2019-10-14T08:17:54+07:00</lastmod>
   </url>
   
@@ -313,11 +358,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/smartctl/</loc>
-    <lastmod>2019-09-30T13:09:15+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/zfs/</loc>
     <lastmod>2019-09-30T13:09:15+07:00</lastmod>
   </url>
   
@@ -403,11 +443,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/categories/</loc>
-    <lastmod>2019-09-02T08:17:56+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/proxmox/</loc>
     <lastmod>2019-09-02T08:17:56+07:00</lastmod>
   </url>
   

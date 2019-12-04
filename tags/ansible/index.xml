@@ -65,6 +65,17 @@ Ansible check disk - name: Ensure that free space on {{ mountname }} is grater t
     </item>
     
     <item>
+      <title>Ansible cycle evolution diagram security</title>
+      <link>https://blog.indonesiadot.com/2019/10/14/ansible-cycle-evolution-diagram-security/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/14/ansible-cycle-evolution-diagram-security/</guid>
+      <description> Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
+Referensi:
+ https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/ https://swimlane.com/blog/siem-soar/ https://www.ansible.com/blog/the-journey-to-security-automation  </description>
+    </item>
+    
+    <item>
       <title>Belajar Ansible Tower</title>
       <link>https://blog.indonesiadot.com/2019/10/10/belajar-ansible-tower/</link>
       <pubDate>Thu, 10 Oct 2019 07:09:53 +0700</pubDate>
@@ -73,7 +84,7 @@ Ansible check disk - name: Ensure that free space on {{ mountname }} is grater t
       <description>Install Ansible Tower Persyaratan:
 Hardware: RAM minimal 3,75 GB OS: Centos 7
 Langkah yang dilakukan
-yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-3.1.5.tar.gz tar -xzvf ansible-tower-setup-3.1.5.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh  Configure Ansible Tower after installation Akses Ansible tower Web UI dari
+yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz tar -xzvf ansible-tower-setup-latest.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh  Configure Ansible Tower after installation Akses Ansible tower Web UI dari
 https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
     </item>
     
@@ -97,7 +108,8 @@ Using Ansible to automate VM creation on XenServerI’ve been using Xenserver at
 Ref:
  http://docs.ansible.com/ansible/latest/setup_module.html#examples  ansible php composer Ref:
  https://knpuniversity.com/screencast/ansible/ansible-composer  ansible playbook interactive / ansible prompt Ref:
- https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html  </description>
+ https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html  ansible-playbook command Ref:
+ https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/  </description>
     </item>
     
   </channel>

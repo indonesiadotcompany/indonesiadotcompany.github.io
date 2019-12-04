@@ -172,6 +172,17 @@ blacklist firewire_core install firewire_core /bin/true  Referensi:
     </item>
     
     <item>
+      <title>Ansible cycle evolution diagram security</title>
+      <link>https://blog.indonesiadot.com/2019/10/14/ansible-cycle-evolution-diagram-security/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/14/ansible-cycle-evolution-diagram-security/</guid>
+      <description> Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
+Referensi:
+ https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/ https://swimlane.com/blog/siem-soar/ https://www.ansible.com/blog/the-journey-to-security-automation  </description>
+    </item>
+    
+    <item>
       <title>Magic of Sed</title>
       <link>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</link>
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
@@ -179,6 +190,30 @@ blacklist firewire_core install firewire_core /bin/true  Referensi:
       <guid>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</guid>
       <description> Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt  Referensi:
  https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521  </description>
+    </item>
+    
+    <item>
+      <title>Openvpn Routed LANS</title>
+      <link>https://blog.indonesiadot.com/2019/10/14/openvpn-routed-lans/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/14/openvpn-routed-lans/</guid>
+      <description>Open Routed Multiple LANS Lans behind OpenVPN here is an example of how to have multiple lans behind OpenVPN from #OpenVPN on freenode.
+Our user had a openvpn server with a lan (10.10.2.0/24) behind it, and 2 client with lans behind them:
+client1 with lan 10.10.1.0/24 client2 with lan 10.10.3.0/24
+He wanted machines on all 3 lans to be able to communicate using a tun (routed) setup.
+Every machine with a LAN behind it must have IP forwarding enabled.</description>
+    </item>
+    
+    <item>
+      <title>Proxmox Add ZFS</title>
+      <link>https://blog.indonesiadot.com/2019/10/14/proxmox-add-zfs/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/14/proxmox-add-zfs/</guid>
+      <description> Proxmox Add ZFS Referensi:
+ https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/ https://pve.proxmox.com/wiki/ZFS_on_Linux  Proxmox cloud-init Ref:
+ https://cloud.centos.org/centos/7/images/ https://pve.proxmox.com/wiki/Cloud-Init_Support https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/  </description>
     </item>
     
     <item>
@@ -202,7 +237,7 @@ nameserver 127.0.2.1  Install DNS over HTTPS server Install dengan cara paket in
       <description>Install Ansible Tower Persyaratan:
 Hardware: RAM minimal 3,75 GB OS: Centos 7
 Langkah yang dilakukan
-yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-3.1.5.tar.gz tar -xzvf ansible-tower-setup-3.1.5.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh  Configure Ansible Tower after installation Akses Ansible tower Web UI dari
+yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz tar -xzvf ansible-tower-setup-latest.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh  Configure Ansible Tower after installation Akses Ansible tower Web UI dari
 https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
     </item>
     
@@ -263,8 +298,7 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
  maldet (malware detection for web directory)  IDS
  tripwire  Identity Server
  FreeIPA (IPA = Identity, Policy, Authentication)  Security Checking / Scanning Solution
- OpenSCAP  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets
- TeemIP itop https://github.</description>
+ OpenSCAP Rapid7  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</description>
     </item>
     
     <item>
@@ -967,7 +1001,8 @@ https://www.udemy.com/aws-essentials</description>
 Ref:
  http://docs.ansible.com/ansible/latest/setup_module.html#examples  ansible php composer Ref:
  https://knpuniversity.com/screencast/ansible/ansible-composer  ansible playbook interactive / ansible prompt Ref:
- https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html  </description>
+ https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html  ansible-playbook command Ref:
+ https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/  </description>
     </item>
     
     <item>

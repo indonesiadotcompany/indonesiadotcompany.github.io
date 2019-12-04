@@ -872,6 +872,30 @@ install firewire_core /bin/true
     
       
         <item>
+          <title>Ansible cycle evolution diagram security</title>
+          <link>https://blog.indonesiadot.com/2019/10/14/ansible-cycle-evolution-diagram-security/</link>
+          <pubDate>Mon, 14 Oct 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/10/14/ansible-cycle-evolution-diagram-security/</guid>
+          <description>
+
+&lt;h2 id=&#34;ansible-cycle-evolution-diagram-for-security&#34;&gt;Ansible cycle evolution diagram for security&lt;/h2&gt;
+
+&lt;p&gt;searching dengan keyword: ansible security diagram&lt;/p&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/&#34;&gt;https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://swimlane.com/blog/siem-soar/&#34;&gt;https://swimlane.com/blog/siem-soar/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.ansible.com/blog/the-journey-to-security-automation&#34;&gt;https://www.ansible.com/blog/the-journey-to-security-automation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
           <title>Magic of Sed</title>
           <link>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</link>
           <pubDate>Mon, 14 Oct 2019 08:17:54 WIB</pubDate>
@@ -891,6 +915,148 @@ install firewire_core /bin/true
 &lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line&#34;&gt;https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet&#34;&gt;https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521&#34;&gt;https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Openvpn Routed LANS</title>
+          <link>https://blog.indonesiadot.com/2019/10/14/openvpn-routed-lans/</link>
+          <pubDate>Mon, 14 Oct 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/10/14/openvpn-routed-lans/</guid>
+          <description>
+
+&lt;h2 id=&#34;open-routed-multiple-lans&#34;&gt;Open Routed Multiple LANS&lt;/h2&gt;
+
+&lt;h3 id=&#34;lans-behind-openvpn&#34;&gt;Lans behind OpenVPN&lt;/h3&gt;
+
+&lt;p&gt;here is an example of how to have multiple lans behind OpenVPN from #OpenVPN on freenode.&lt;/p&gt;
+
+&lt;p&gt;Our user had a openvpn server with a lan (10.10.2.0/24) behind it, and 2 client with lans behind them:&lt;/p&gt;
+
+&lt;p&gt;client1 with lan 10.10.1.0/24
+client2 with lan 10.10.3.0/24&lt;/p&gt;
+
+&lt;p&gt;He wanted machines on all 3 lans to be able to communicate using a tun (routed) setup.&lt;/p&gt;
+
+&lt;p&gt;Every machine with a LAN behind it must have IP forwarding enabled. In this example that means the server, and client1/client2. The user needed the following in his server.conf:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;route 10.10.1.0 255.255.255.0
+route 10.10.3.0 255.255.255.0
+push &amp;quot;route 10.10.2.0 255.255.255.0&amp;quot;
+push &amp;quot;route 10.10.1.0 255.255.255.0&amp;quot;
+push &amp;quot;route 10.10.3.0 255.255.255.0&amp;quot;
+client-to-client
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The route entries adjust the local routing table, telling it to route those networks over the vpn. The push routes are added on the clients connecting, telling them to route those networks over the vpn.&lt;/p&gt;
+
+&lt;p&gt;You may realize that client1 should not route 10.10.1.0 traffic over the vpn, and that client2 should not route 10.10.3.0 traffic over the vpn (because those networks are local to each client). Because of the iroute entries you will see below, openvpn knows this too and skips the push for the client.&lt;/p&gt;
+
+&lt;p&gt;The route entries are telling his server to add a route for each of 10.10.1.0, and 10.10.3.0 to its kernel&amp;rsquo;s routing table, and both will be routed to the tunnel interface and to openvpn. How will openvpn know what client to send each network to? The answer is iroute!&lt;/p&gt;
+
+&lt;p&gt;Iroute does not bypass or alter the kernel&amp;rsquo;s routing table, it allows openvpn to know it should handle the routing when the kernel points to it but the network is not one that openvpn knows about. The iroute entry tells the openvpn server which client is responsible for the network. Without the iroute entry you will find the following in your logfiles:&lt;/p&gt;
+
+&lt;p&gt;MULTI: bad source address from client [IP ADDRESS], packet dropped&lt;/p&gt;
+
+&lt;p&gt;IP ADDRESS in that case would be the machine on client LAN which tried to talk through vpn, because openVPN has no clue what that address is. Once you give it the iroute statement, that changes. Iroute is a route internal to openVPN, and has nothing to do with the kernel&amp;rsquo;s routing table. It tells the openvpn server which client owns which network. Note that even if you only have 1 lan behind 1 client, YOU STILL NEED IROUTE. You will need it any time a clients source IP address is different from the IP given to it by the vpn server.&lt;/p&gt;
+
+&lt;p&gt;The thing is, we cant just drop the iroute into server.conf because it would then be used for every client, and iroute is only to tell the server at which client it should send traffic destined for a network that the kernel said should go to the openvpn interface. That is why we add the iroute commands to a ccd entry.&lt;/p&gt;
+
+&lt;p&gt;You will need client-config-dir /path/to/ccd/ in your server config file to enable ccd entries. ccd entries are basically included into server.conf, but only for the specified client. You put commands in ccd/client-common-name, and they are only included when the client&amp;rsquo;s common-name matches the name of the file in ccd/.&lt;/p&gt;
+
+&lt;p&gt;In this example lets assume the client owning the network 10.10.1.0 has a common-name of client1. In ccd/client1 He should have the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;iroute 10.10.1.0 255.255.255.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see our user will make a ccd/ entry for each client with a lan behind it. The ccd entry will have an iroute command for the network behind the client.&lt;/p&gt;
+
+&lt;p&gt;That means that client2 on the 10.10.3.0 LAN would have the following entry for its ccd/client2 file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;iroute 10.10.3.0 255.255.255.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.indonesiadot.com/images/2019/routed_lans.jpg&#34; alt=&#34;routed-lans&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;routes-to-add-outside-of-openvpn&#34;&gt;ROUTES TO ADD OUTSIDE OF OPENVPN&lt;/h3&gt;
+
+&lt;p&gt;If you are not running openvpn on the router for each lan, you have some more routes to add. This ​diagram explains it pretty well.&lt;/p&gt;
+
+&lt;p&gt;Lets say our server is 10.10.2.10 on its lan, and uses 10.10.2.1 as its default route, and you want the 2.x lan to be accessible or able to access over the vpn. 2.1 would need a route for every network that 2.x will access or be accessed by. That means in our example: 10.10.2.1 must know that for 10.10.1.x 10.10.3.x and the vpn internal network (for example, 10.8.0.x), it sends the traffic to 10.10.2.10 This is true for any number of lans you want to connect, whether server or client.&lt;/p&gt;
+
+&lt;p&gt;If you fail to add this route, here is what would happen if a VPN client (for example, 10.8.0.6) wanted to send traffic to 10.10.2.20:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The vpn client sends traffic to 10.10.2.20, with a source address of 10.8.0.6&lt;/li&gt;
+&lt;li&gt;The vpn server (10.8.0.1 and 10.10.2.10) receives the traffic, has IP forwarding enabled, and passes the traffic to 10.10.2.20&lt;/li&gt;
+&lt;li&gt;10.10.2.20 gets it and tries to respond to 10.8.0.6 but has no entry in its routing table&lt;/li&gt;
+&lt;li&gt;Because 10.10.2.20 has no route for 10.8.0.6, it sends the traffic to its default gateway which is 10.10.2.1&lt;/li&gt;
+&lt;li&gt;10.10.2.1 checks its routing table, has no route for 10.8.0.6, and sends the traffic to its default gateway which is likely its ISP&lt;/li&gt;
+&lt;li&gt;The ISP ignores it, because it is a RFC 1918 ip (aka lan only)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;the annoying work-around would be to add the route to every box on the LAN, in which case step 3 above would work.&lt;/p&gt;
+
+&lt;p&gt;If this needs clarification ask me about it and I will update this page after discovering how to make it clearer.&lt;/p&gt;
+
+&lt;p&gt;On Jan26, 2010 I changed this article to no longer use 192.168.1.0 192.168.2.0 and 192.168.3.0 for my subnets. I did this because it is important for people to not use common subnets such as 192.168.&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;0&lt;/sub&gt;.x when pushing routes to clients. It does not matter if you know where every client connects from, but once you add a single road warrior to the VPN you will run in to a problem. If the road warrior is connecting from a LAN where he has 192.168.0.X and he gets pushed a route to 192.168.0.0/24 to flow over the vpn, he will lose all connectivity to the internet until he kills the vpn. This is because the client loses his route to his gateway&amp;hellip; he tries to contact the gateway over the VPN, but he has no route to the VPN because he needs to access his gateway to reach it. In short, if your lan that you want to access using openvpn uses a common subnet such as 192.168.0.x or 192.168.1.x, CHANGE IT.&lt;/p&gt;
+
+&lt;h3 id=&#34;caveats&#34;&gt;Caveats&lt;/h3&gt;
+
+&lt;p&gt;If you have a problem adding routes in Windows, check the following. If you are using OpenVPN-GUI, do not run it as administrator but make sure the service OpenVPNServiceInteractive is running. If you are not using the OpenVPN-GUI make sure you have openvpn starting as administrator.&lt;/p&gt;
+
+&lt;p&gt;In some rare cases you may also need to use one of these options:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;route-method exe
+route-delay
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The first option changes how windows adds a route The second option waits to add the route (helpful for making sure you get a DHCP lease before messing with routes).
+If those don&amp;rsquo;t help, try turning off routing and remote access in administrative tools - routing and remote access&lt;/p&gt;
+
+&lt;p&gt;Written by krzee @ #OpenVPN @ freenode IRC, mirrored from ​&lt;a href=&#34;http://www.secure-computing.net/wiki/index.php/OpenVPN/Routing&#34;&gt;http://www.secure-computing.net/wiki/index.php/OpenVPN/Routing&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Feel free to discuss this document on the unofficial OpenVPN forum at: ​&lt;a href=&#34;https://forums.openvpn.net/topic98.html&#34;&gt;https://forums.openvpn.net/topic98.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://community.openvpn.net/openvpn/wiki/RoutedLans&#34;&gt;https://community.openvpn.net/openvpn/wiki/RoutedLans&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Proxmox Add ZFS</title>
+          <link>https://blog.indonesiadot.com/2019/10/14/proxmox-add-zfs/</link>
+          <pubDate>Mon, 14 Oct 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/10/14/proxmox-add-zfs/</guid>
+          <description>
+
+&lt;h2 id=&#34;proxmox-add-zfs&#34;&gt;Proxmox Add ZFS&lt;/h2&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/&#34;&gt;https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pve.proxmox.com/wiki/ZFS_on_Linux&#34;&gt;https://pve.proxmox.com/wiki/ZFS_on_Linux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;proxmox-cloud-init&#34;&gt;Proxmox cloud-init&lt;/h2&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.centos.org/centos/7/images/&#34;&gt;https://cloud.centos.org/centos/7/images/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pve.proxmox.com/wiki/Cloud-Init_Support&#34;&gt;https://pve.proxmox.com/wiki/Cloud-Init_Support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/&#34;&gt;https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -1069,8 +1235,8 @@ OS: Centos 7&lt;/p&gt;
 &lt;p&gt;Langkah yang dilakukan&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;yum install -y ansible
-wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-3.1.5.tar.gz
-tar -xzvf ansible-tower-setup-3.1.5.tar.gz
+wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz
+tar -xzvf ansible-tower-setup-latest.tar.gz
 cd ansible-tower-setup-3.1.5/
 (edit inventory file, isi bagian yang dibutuhkan terutama password)
 (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram)
@@ -1092,7 +1258,6 @@ lalu masukkan license tersebut ke halaman awal setelah login&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.ansible.com/products/tower/trial&#34;&gt;https://www.ansible.com/products/tower/trial&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible-tower/&#34;&gt;https://docs.ansible.com/ansible-tower/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible-tower/3.1.0/html/userguide/inventories.html&#34;&gt;https://docs.ansible.com/ansible-tower/3.1.0/html/userguide/inventories.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://devopstechie.com/install-and-configure-ansible-tower-centos7/&#34;&gt;http://devopstechie.com/install-and-configure-ansible-tower-centos7/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.google.com/search?q=ansible+tower+postgresql+replication&#34;&gt;https://www.google.com/search?q=ansible+tower+postgresql+replication&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/&#34;&gt;https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/&lt;/a&gt;&lt;/li&gt;
@@ -1328,6 +1493,7 @@ git push origin hugo
 
 &lt;ul&gt;
 &lt;li&gt;OpenSCAP&lt;/li&gt;
+&lt;li&gt;Rapid7&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets&lt;/p&gt;
@@ -1337,6 +1503,29 @@ git push origin hugo
 &lt;li&gt;itop &lt;a href=&#34;https://github.com/Combodo/iTop&#34;&gt;https://github.com/Combodo/iTop&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;infoblox&lt;/li&gt;
 &lt;li&gt;efficientip&lt;/li&gt;
+&lt;li&gt;ansible-cmdb&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;WAF&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.waf-fle.org/&#34;&gt;http://www.waf-fle.org/&lt;/a&gt; console / web view for modsecurity admin&lt;/li&gt;
+&lt;li&gt;modsecurity&lt;/li&gt;
+&lt;li&gt;naxsi &lt;a href=&#34;https://github.com/nbs-system/naxsi&#34;&gt;https://github.com/nbs-system/naxsi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;shadow daemon &lt;a href=&#34;https://shadowd.zecure.org/overview/introduction/&#34;&gt;https://shadowd.zecure.org/overview/introduction/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;imperva *berbayar&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Web Scanner&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;nikto ( &lt;a href=&#34;https://geekflare.com/nikto-webserver-scanner/&#34;&gt;https://geekflare.com/nikto-webserver-scanner/&lt;/a&gt; )&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Pentest&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;owasp-zap &lt;a href=&#34;https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b&#34;&gt;https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -2399,6 +2588,14 @@ fi
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html&#34;&gt;https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ansible-playbook-command&#34;&gt;ansible-playbook command&lt;/h2&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/&#34;&gt;https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
