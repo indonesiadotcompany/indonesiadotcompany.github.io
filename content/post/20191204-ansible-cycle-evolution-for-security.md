@@ -1,6 +1,6 @@
 ---
 title: "Ansible cycle evolution diagram security"
-date: 2019-10-14T08:17:54+07:00
+date: 2019-12-04T08:17:54+07:00
 tags: ["linux", "server", "ansible", "security", "siem", "soar", "tips"]
 author: "Widya"
 draft: false

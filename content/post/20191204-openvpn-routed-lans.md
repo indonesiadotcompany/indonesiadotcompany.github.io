@@ -1,6 +1,6 @@
 ---
 title: "Openvpn Routed LANS"
-date: 2019-10-14T08:17:54+07:00
+date: 2019-12-04T23:17:54+07:00
 tags: ["linux", "server", "tips", "openvpn", "lan"]
 author: "Widya"
 draft: false
