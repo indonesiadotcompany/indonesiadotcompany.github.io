@@ -6,10 +6,45 @@
     <description>Recent content in server on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Nov 2019 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 04 Dec 2019 23:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/server/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Openvpn Routed LANS</title>
+      <link>https://blog.indonesiadot.com/2019/12/04/openvpn-routed-lans/</link>
+      <pubDate>Wed, 04 Dec 2019 23:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/12/04/openvpn-routed-lans/</guid>
+      <description>Open Routed Multiple LANS Lans behind OpenVPN here is an example of how to have multiple lans behind OpenVPN from #OpenVPN on freenode.
+Our user had a openvpn server with a lan (10.10.2.0/24) behind it, and 2 client with lans behind them:
+client1 with lan 10.10.1.0/24 client2 with lan 10.10.3.0/24
+He wanted machines on all 3 lans to be able to communicate using a tun (routed) setup.
+Every machine with a LAN behind it must have IP forwarding enabled.</description>
+    </item>
+    
+    <item>
+      <title>Ansible cycle evolution diagram security</title>
+      <link>https://blog.indonesiadot.com/2019/12/04/ansible-cycle-evolution-diagram-security/</link>
+      <pubDate>Wed, 04 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/12/04/ansible-cycle-evolution-diagram-security/</guid>
+      <description> Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
+Referensi:
+ https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/ https://swimlane.com/blog/siem-soar/ https://www.ansible.com/blog/the-journey-to-security-automation  </description>
+    </item>
+    
+    <item>
+      <title>Proxmox Add ZFS</title>
+      <link>https://blog.indonesiadot.com/2019/12/03/proxmox-add-zfs/</link>
+      <pubDate>Tue, 03 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/12/03/proxmox-add-zfs/</guid>
+      <description> Proxmox Add ZFS Referensi:
+ https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/ https://pve.proxmox.com/wiki/ZFS_on_Linux  Proxmox cloud-init Ref:
+ https://cloud.centos.org/centos/7/images/ https://pve.proxmox.com/wiki/Cloud-Init_Support https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/  </description>
+    </item>
     
     <item>
       <title>Splunk Log Monitoring</title>
@@ -75,17 +110,6 @@ Referensi:
     </item>
     
     <item>
-      <title>Ansible cycle evolution diagram security</title>
-      <link>https://blog.indonesiadot.com/2019/10/14/ansible-cycle-evolution-diagram-security/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/2019/10/14/ansible-cycle-evolution-diagram-security/</guid>
-      <description> Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
-Referensi:
- https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/ https://swimlane.com/blog/siem-soar/ https://www.ansible.com/blog/the-journey-to-security-automation  </description>
-    </item>
-    
-    <item>
       <title>Magic of Sed</title>
       <link>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</link>
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
@@ -93,30 +117,6 @@ Referensi:
       <guid>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</guid>
       <description> Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt  Referensi:
  https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521  </description>
-    </item>
-    
-    <item>
-      <title>Openvpn Routed LANS</title>
-      <link>https://blog.indonesiadot.com/2019/10/14/openvpn-routed-lans/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/2019/10/14/openvpn-routed-lans/</guid>
-      <description>Open Routed Multiple LANS Lans behind OpenVPN here is an example of how to have multiple lans behind OpenVPN from #OpenVPN on freenode.
-Our user had a openvpn server with a lan (10.10.2.0/24) behind it, and 2 client with lans behind them:
-client1 with lan 10.10.1.0/24 client2 with lan 10.10.3.0/24
-He wanted machines on all 3 lans to be able to communicate using a tun (routed) setup.
-Every machine with a LAN behind it must have IP forwarding enabled.</description>
-    </item>
-    
-    <item>
-      <title>Proxmox Add ZFS</title>
-      <link>https://blog.indonesiadot.com/2019/10/14/proxmox-add-zfs/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/2019/10/14/proxmox-add-zfs/</guid>
-      <description> Proxmox Add ZFS Referensi:
- https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/ https://pve.proxmox.com/wiki/ZFS_on_Linux  Proxmox cloud-init Ref:
- https://cloud.centos.org/centos/7/images/ https://pve.proxmox.com/wiki/Cloud-Init_Support https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/  </description>
     </item>
     
     <item>

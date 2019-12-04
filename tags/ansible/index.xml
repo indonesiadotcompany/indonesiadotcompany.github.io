@@ -6,10 +6,21 @@
     <description>Recent content in ansible on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Nov 2019 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 04 Dec 2019 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible cycle evolution diagram security</title>
+      <link>https://blog.indonesiadot.com/2019/12/04/ansible-cycle-evolution-diagram-security/</link>
+      <pubDate>Wed, 04 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/12/04/ansible-cycle-evolution-diagram-security/</guid>
+      <description> Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
+Referensi:
+ https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/ https://swimlane.com/blog/siem-soar/ https://www.ansible.com/blog/the-journey-to-security-automation  </description>
+    </item>
     
     <item>
       <title>Ansible AWX 2019</title>
@@ -62,17 +73,6 @@ Ansible check disk - name: Ensure that free space on {{ mountname }} is grater t
       <guid>https://blog.indonesiadot.com/2019/10/25/gcp-and-ansible/</guid>
       <description>Referensi:
  https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/  </description>
-    </item>
-    
-    <item>
-      <title>Ansible cycle evolution diagram security</title>
-      <link>https://blog.indonesiadot.com/2019/10/14/ansible-cycle-evolution-diagram-security/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/2019/10/14/ansible-cycle-evolution-diagram-security/</guid>
-      <description> Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
-Referensi:
- https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/ https://swimlane.com/blog/siem-soar/ https://www.ansible.com/blog/the-journey-to-security-automation  </description>
     </item>
     
     <item>

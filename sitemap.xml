@@ -7,8 +7,88 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/</loc>
+    <lastmod>2019-12-04T23:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/lan/</loc>
+    <lastmod>2019-12-04T23:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
+    <lastmod>2019-12-04T23:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/openvpn/</loc>
+    <lastmod>2019-12-04T23:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/12/04/openvpn-routed-lans/</loc>
+    <lastmod>2019-12-04T23:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2019-12-04T23:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/server/</loc>
+    <lastmod>2019-12-04T23:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2019-12-04T23:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
+    <lastmod>2019-12-04T23:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
-    <lastmod>2019-11-26T08:17:54+07:00</lastmod>
+    <lastmod>2019-12-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/12/04/ansible-cycle-evolution-diagram-security/</loc>
+    <lastmod>2019-12-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/security/</loc>
+    <lastmod>2019-12-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/siem/</loc>
+    <lastmod>2019-12-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/soar/</loc>
+    <lastmod>2019-12-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/proxmox/</loc>
+    <lastmod>2019-12-03T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/12/03/proxmox-add-zfs/</loc>
+    <lastmod>2019-12-03T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/zfs/</loc>
+    <lastmod>2019-12-03T08:17:54+07:00</lastmod>
   </url>
   
   <url>
@@ -19,36 +99,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/tags/awx/</loc>
     <lastmod>2019-11-26T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2019-11-26T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2019-11-26T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2019-11-26T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
-    <lastmod>2019-11-26T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/security/</loc>
-    <lastmod>2019-11-15T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/server/</loc>
-    <lastmod>2019-11-15T08:17:54+07:00</lastmod>
   </url>
   
   <url>
@@ -68,11 +118,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/</loc>
-    <lastmod>2019-11-05T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
     <lastmod>2019-11-05T08:17:54+07:00</lastmod>
   </url>
   
@@ -247,57 +292,12 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/2019/10/14/ansible-cycle-evolution-diagram-security/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/lan/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</loc>
     <lastmod>2019-10-14T08:17:54+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/openvpn/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/2019/10/14/openvpn-routed-lans/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/proxmox/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/2019/10/14/proxmox-add-zfs/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/sed/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/siem/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/soar/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/zfs/</loc>
     <lastmod>2019-10-14T08:17:54+07:00</lastmod>
   </url>
   
