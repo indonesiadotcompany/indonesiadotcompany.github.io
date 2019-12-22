@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>file on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/file/</link>
+    <description>Recent content in file on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Oct 2019 08:17:54 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/file/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android USB File Transfer</title>
+      <link>https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/</guid>
+      <description> Android USB File Transfer add-apt-repository ppa:webupd8team/unstable apt update apt-get install go-mtpfs mkdir /media/MyAndroid  mount go-mtpfs /media/MyAndroid  unmount fusermount -u /media/MyAndroid  or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open ftp://ip.of.android:8888, so you can access from pc via ftp client like filezilla.
+Referensi:
+ http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu  </description>
+    </item>
+    
+  </channel>
+</rss>

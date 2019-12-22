@@ -6,10 +6,73 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Dec 2019 23:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 05 Dec 2019 18:47:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>jenkins</title>
+      <link>https://blog.indonesiadot.com/tags/jenkins/</link>
+      <pubDate>Thu, 05 Dec 2019 18:47:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://blog.indonesiadot.com/tags/linux/</link>
+      <pubDate>Thu, 05 Dec 2019 18:47:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>modsecurity</title>
+      <link>https://blog.indonesiadot.com/tags/modsecurity/</link>
+      <pubDate>Thu, 05 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/modsecurity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://blog.indonesiadot.com/tags/security/</link>
+      <pubDate>Thu, 05 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server</title>
+      <link>https://blog.indonesiadot.com/tags/server/</link>
+      <pubDate>Thu, 05 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>waf</title>
+      <link>https://blog.indonesiadot.com/tags/waf/</link>
+      <pubDate>Thu, 05 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/waf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webserver</title>
+      <link>https://blog.indonesiadot.com/tags/webserver/</link>
+      <pubDate>Thu, 05 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/webserver/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>lan</title>
@@ -21,29 +84,11 @@
     </item>
     
     <item>
-      <title>linux</title>
-      <link>https://blog.indonesiadot.com/tags/linux/</link>
-      <pubDate>Wed, 04 Dec 2019 23:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>openvpn</title>
       <link>https://blog.indonesiadot.com/tags/openvpn/</link>
       <pubDate>Wed, 04 Dec 2019 23:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/openvpn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>server</title>
-      <link>https://blog.indonesiadot.com/tags/server/</link>
-      <pubDate>Wed, 04 Dec 2019 23:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/server/</guid>
       <description></description>
     </item>
     
@@ -62,15 +107,6 @@
       <pubDate>Wed, 04 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>security</title>
-      <link>https://blog.indonesiadot.com/tags/security/</link>
-      <pubDate>Wed, 04 Dec 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/security/</guid>
       <description></description>
     </item>
     
@@ -341,6 +377,69 @@
       <pubDate>Tue, 15 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/kernel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>android</title>
+      <link>https://blog.indonesiadot.com/tags/android/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>centos</title>
+      <link>https://blog.indonesiadot.com/tags/centos/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/centos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>file</title>
+      <link>https://blog.indonesiadot.com/tags/file/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/file/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>firewalld</title>
+      <link>https://blog.indonesiadot.com/tags/firewalld/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/firewalld/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>masquerade</title>
+      <link>https://blog.indonesiadot.com/tags/masquerade/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/masquerade/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mtp</title>
+      <link>https://blog.indonesiadot.com/tags/mtp/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/mtp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nat</title>
+      <link>https://blog.indonesiadot.com/tags/nat/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/nat/</guid>
       <description></description>
     </item>
     
@@ -890,15 +989,6 @@
       <pubDate>Mon, 19 Feb 2018 10:18:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/tuning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jenkins</title>
-      <link>https://blog.indonesiadot.com/tags/jenkins/</link>
-      <pubDate>Thu, 15 Feb 2018 18:47:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/jenkins/</guid>
       <description></description>
     </item>
     

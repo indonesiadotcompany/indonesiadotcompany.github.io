@@ -142,13 +142,24 @@ blacklist firewire_core install firewire_core /bin/true  Referensi:
     </item>
     
     <item>
+      <title>Android USB File Transfer</title>
+      <link>https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/</guid>
+      <description> Android USB File Transfer add-apt-repository ppa:webupd8team/unstable apt update apt-get install go-mtpfs mkdir /media/MyAndroid  mount go-mtpfs /media/MyAndroid  unmount fusermount -u /media/MyAndroid  or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open ftp://ip.of.android:8888, so you can access from pc via ftp client like filezilla.
+Referensi:
+ http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu  </description>
+    </item>
+    
+    <item>
       <title>Magic of Sed</title>
       <link>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</link>
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</guid>
-      <description> Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt  Referensi:
- https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521  </description>
+      <description> Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt  comment out a line that contain string sed -i &#39;/ 2001 /s/^/#/&#39; file  Referensi:
+ https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521 https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file  </description>
     </item>
     
     <item>
@@ -201,7 +212,7 @@ git reflog git reset --hard &amp;lt;id_repository_log&amp;gt;  Langkahnya, lihat
       <pubDate>Sat, 28 Jul 2018 08:41:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</guid>
-      <description>``` stress -c 8 -i 9 -m 9 &amp;ndash;vm-bytes 1024M
+      <description>yum -y install wget wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-1.el7.rf.x86_64.rpm yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm stress -c 8 -i 4 -t 10s stress -c 8 -i 9 -m 9 --vm-bytes 1024M  On ubuntu server, use apt to install stress
 Ref:
  https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2 https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/  </description>
     </item>

@@ -488,6 +488,32 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -518,6 +544,135 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/">Kernel Hardening Tips</a></h1>
+        <span class="post-date">Oct 15, 2019</span>
+	
+
+<h2 id="disable-and-blacklist-linux-modules">Disable and blacklist Linux modules</h2>
+
+<p>Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya</p>
+
+<pre><code>blacklist firewire_core
+install firewire_core /bin/true
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li>CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf</li>
+<li><a href="https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/">https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/kernel/">kernel</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/hardening/">hardening</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/">Android USB File Transfer</a></h1>
+        <span class="post-date">Oct 14, 2019</span>
+	
+
+<h2 id="android-usb-file-transfer">Android USB File Transfer</h2>
+
+<pre><code>add-apt-repository ppa:webupd8team/unstable
+apt update
+apt-get install go-mtpfs
+mkdir /media/MyAndroid
+</code></pre>
+
+<h3 id="mount">mount</h3>
+
+<pre><code>go-mtpfs /media/MyAndroid
+</code></pre>
+
+<h3 id="unmount">unmount</h3>
+
+<pre><code>fusermount -u /media/MyAndroid
+</code></pre>
+
+<p>or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open <a href="ftp://ip.of.android:8888">ftp://ip.of.android:8888</a>, so you can access from pc via ftp client like filezilla.</p>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html">http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html</a></li>
+<li><a href="https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu">https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/android/">android</a>, <a href="https://blog.indonesiadot.com/tags/file/">file</a>, <a href="https://blog.indonesiadot.com/tags/mtp/">mtp</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/">Centos 7 Firewalld masquerade</a></h1>
+        <span class="post-date">Oct 14, 2019</span>
+	
+
+<h2 id="firewalld-masquerade">Firewalld masquerade</h2>
+
+<pre><code>firewall-cmd --get-active-zones
+firewall-cmd --list-all --zone=public
+firewall-cmd --add-masquerade --zone=public --permanent
+firewall-cmd --reload
+firewall-cmd --list-all --zone=public
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/">https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/firewalld/">firewalld</a>, <a href="https://blog.indonesiadot.com/tags/masquerade/">masquerade</a>, <a href="https://blog.indonesiadot.com/tags/nat/">nat</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/magic-of-sed/">Magic of Sed</a></h1>
+        <span class="post-date">Oct 14, 2019</span>
+	
+
+<h2 id="insert-every-line-in-linux">Insert every line in linux</h2>
+
+<pre><code>sed 's/^/apt-get purge -y /' aptwantopurge.txt &gt; aptpurge.txt
+</code></pre>
+
+<h2 id="comment-out-a-line-that-contain-string">comment out a line that contain string</h2>
+
+<pre><code>sed -i '/ 2001 /s/^/#/' file
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.google.com/search?q=insert+every+line+linux&amp;oq=insert+every+line+linux">https://www.google.com/search?q=insert+every+line+linux&amp;oq=insert+every+line+linux</a></li>
+<li><a href="https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line">https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line</a></li>
+<li><a href="https://www.google.com/search?q=sed+cheatsheet&amp;oq=sed+cheatsheet">https://www.google.com/search?q=sed+cheatsheet&amp;oq=sed+cheatsheet</a></li>
+<li><a href="https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521">https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521</a></li>
+<li><a href="https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file">https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/sed/">sed</a>, <a href="https://blog.indonesiadot.com/tags/bash/">bash</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/">DOH DNS over HTTPS</a></h1>
@@ -874,240 +1029,6 @@ git push origin hugo
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>, <a href="https://blog.indonesiadot.com/tags/github/">github</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/markdown-tips/">Markdown tips</a></h1>
-        <span class="post-date">Sep 24, 2019</span>
-	
-
-<h2 id="markdown-insert-image"><em>markdown</em> insert image</h2>
-
-<p>Ini adalah <a href="https://www.petanikode.com/markdown-pemula/"><em>markdown</em></a> untuk menampilkan gambar yang terletak di dalam folder / direktori pada postingan di hugo</p>
-
-<pre><code>![nama-image](path/to/image)
-</code></pre>
-
-<h2 id="markdown-insert-link">markdown insert link</h2>
-
-<p>Ini adalah markdown untuk menampilkan link <em>url</em> pada kata atau kalimat di halaman web</p>
-
-<pre><code>[kata atau kalimat](http://link.url/yang-dituju)
-</code></pre>
-
-<p>seperti contoh diatas</p>
-
-<pre><code>[markdown](https://www.petanikode.com/markdown-pemula/)
-</code></pre>
-
-<p>Referensi markdown images:</p>
-
-<ul>
-<li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/markdown/">markdown</a>, <a href="https://blog.indonesiadot.com/tags/static-site-generator/">static-site-generator</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/04/linux-security-tools/">linux Security Tools</a></h1>
-        <span class="post-date">Sep 4, 2019</span>
-	<p>Tools yang biasa digunakan pada server linux:</p>
-
-<ul>
-<li><p>Firewall</p>
-
-<ul>
-<li>iptables</li>
-<li>ipset</li>
-<li>shorewall</li>
-<li>csf</li>
-</ul></li>
-
-<li><p>Anti Malware</p>
-
-<ul>
-<li>maldet (malware detection for web directory)</li>
-</ul></li>
-
-<li><p>IDS</p>
-
-<ul>
-<li>tripwire</li>
-</ul></li>
-
-<li><p>Identity Server</p>
-
-<ul>
-<li><a href="https://freeipa.org">FreeIPA (IPA = Identity, Policy, Authentication)</a></li>
-</ul></li>
-
-<li><p>Security Checking / Scanning Solution</p>
-
-<ul>
-<li>OpenSCAP</li>
-<li>Rapid7</li>
-</ul></li>
-
-<li><p>CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</p>
-
-<ul>
-<li>TeemIP</li>
-<li>itop <a href="https://github.com/Combodo/iTop">https://github.com/Combodo/iTop</a></li>
-<li>infoblox</li>
-<li>efficientip</li>
-<li>ansible-cmdb</li>
-</ul></li>
-
-<li><p>WAF</p>
-
-<ul>
-<li><a href="http://www.waf-fle.org/">http://www.waf-fle.org/</a> console / web view for modsecurity admin</li>
-<li>modsecurity</li>
-<li>naxsi <a href="https://github.com/nbs-system/naxsi">https://github.com/nbs-system/naxsi</a></li>
-<li>shadow daemon <a href="https://shadowd.zecure.org/overview/introduction/">https://shadowd.zecure.org/overview/introduction/</a></li>
-<li>imperva *berbayar</li>
-</ul></li>
-
-<li><p>Web Scanner</p>
-
-<ul>
-<li>nikto ( <a href="https://geekflare.com/nikto-webserver-scanner/">https://geekflare.com/nikto-webserver-scanner/</a> )</li>
-</ul></li>
-
-<li><p>Pentest</p>
-
-<ul>
-<li>owasp-zap <a href="https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b">https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b</a></li>
-</ul></li>
-</ul>
-
-<p>Referensi Openscap:</p>
-
-<ul>
-<li><a href="https://www.open-scap.org/">https://www.open-scap.org/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>, <a href="https://blog.indonesiadot.com/tags/firewall/">firewall</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/linux-server-tools/">linux Server Tools</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<p>Tools yang biasa digunakan pada server linux:</p>
-
-<ul>
-<li><p>Virtualization (Desktop)</p>
-
-<ul>
-<li>Virtualbox</li>
-</ul></li>
-
-<li><p>Graphic</p>
-
-<ul>
-<li>Gimp</li>
-</ul></li>
-
-<li><p>Mail</p>
-
-<ul>
-<li>Thunderbird Mail (client)</li>
-</ul></li>
-
-<li><p>Multimedia</p>
-
-<ul>
-<li>Avidemux</li>
-</ul></li>
-
-<li><p>Video Conference</p>
-
-<ul>
-<li>jitsi</li>
-<li><a href="https://medevel.com/10-os-video-conferencing/">More and more</a></li>
-</ul></li>
-
-<li><p>Customer support live chat</p>
-
-<ul>
-<li>rocket.chat</li>
-<li>tawk.to</li>
-<li><a href="https://github.com/juliancwirko/s-chat-app">simple chat</a></li>
-</ul></li>
-</ul>
-
-<p>Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut</p>
-
-<ul>
-<li><a href="https://blog.indonesiadot.com/2019/09/04/linux-security-tools/">https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/">Proxmox optimized disk for auto trim / shrink</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<p>Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari <em>thin provision storage</em> atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.</p>
-
-<p>Persyaratan adalah:</p>
-
-<ul>
-<li>menggunakan <em>thin provisioned backing storage</em> seperti qcow2, thin-lvm, zfs pada server proxmox nya</li>
-<li>menggunakan Virtio SCSI controller pada guest option vm nya</li>
-<li>Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya</li>
-<li>Tambahkan discard mount options di /etc/fstab nya guest vm</li>
-<li>Enable fstrim.timer pada systemctl</li>
-</ul>
-
-<p>Adapun langkahnya, disini dilakukan perubahan pada VM yang sebelumnya telah terbuat dengan Virtio disk, dari disk yang kedua dari VM, agar lebih aman, dirubah satu persatu, dimulai dari disk kedua terlebih dahulu:</p>
-
-<ul>
-<li>edit dulu /etc/fstab bagian disk dari /dev/vdb1 menjadi /dev/sda1 (sda untuk drive scsi / sata, untuk lebih aman nya di komen dulu bagian disk /hdbck, untuk di mount manual, agar pada saat boot jika salah tidak nyangkut)</li>
-<li>shutdown vm</li>
-<li>detach disk</li>
-<li>edit disk, menjadi SCSI dan klik bagian advanced, lalu check discard</li>
-<li>start vm</li>
-<li>setelah login, jalankan fstrim -v /hdbck/</li>
-</ul>
-
-<p>Note:</p>
-
-<ul>
-<li>Untuk perubahan selanjutnya pada disk yang pertama, di edit dulu /etc/fstab nya, misal /dev/vda1 menjadi /dev/sda1, dan /dev/sda1 sebelumnya yg disk kedua yg telah di edit menjadi SCSI menjadi /dev/sdb1, lalu baru lakukan seperti langkah diatas dari shutdown vm sampai jalankan fstrim.</li>
-<li>Masukan juga pada crontab, agar dijalankan fstrim setiap bulan, jika memakai centos 6 dan dibawahnya</li>
-<li>Untuk membuktikannya, sambil mengecek di server proxmox dengan menggunakan command <code>zfs list</code> jika memakai zfs, <code>lvs</code> atau <code>lvdisplay</code> untuk thin-lvm, atau <code>du -sch</code> jika memakai qcow2 untuk mengetahui besar file sebelum dan setelah di guest vm nya dijalankan command <code>fstrim -av</code></li>
-</ul>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://pve.proxmox.com/wiki/Shrink_Qcow2_Disk_Files">https://pve.proxmox.com/wiki/Shrink_Qcow2_Disk_Files</a></li>
-<li><a href="https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/">https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/virtualization/">virtualization</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   

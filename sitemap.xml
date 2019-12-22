@@ -8,16 +8,66 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2019-12-04T23:17:54+07:00</lastmod>
+    <lastmod>2019-12-05T18:47:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/lan/</loc>
-    <lastmod>2019-12-04T23:17:54+07:00</lastmod>
+    <loc>https://blog.indonesiadot.com/tags/jenkins/</loc>
+    <lastmod>2019-12-05T18:47:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/12/05/jenkins-for-beginner/</loc>
+    <lastmod>2019-12-05T18:47:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/linux/</loc>
+    <lastmod>2019-12-05T18:47:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2019-12-05T18:47:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2019-12-05T18:47:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/modsecurity/</loc>
+    <lastmod>2019-12-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/12/05/modsecurity-waf/</loc>
+    <lastmod>2019-12-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/security/</loc>
+    <lastmod>2019-12-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/server/</loc>
+    <lastmod>2019-12-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/waf/</loc>
+    <lastmod>2019-12-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/webserver/</loc>
+    <lastmod>2019-12-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/lan/</loc>
     <lastmod>2019-12-04T23:17:54+07:00</lastmod>
   </url>
   
@@ -28,21 +78,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2019/12/04/openvpn-routed-lans/</loc>
-    <lastmod>2019-12-04T23:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2019-12-04T23:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/server/</loc>
-    <lastmod>2019-12-04T23:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
     <lastmod>2019-12-04T23:17:54+07:00</lastmod>
   </url>
   
@@ -58,11 +93,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2019/12/04/ansible-cycle-evolution-diagram-security/</loc>
-    <lastmod>2019-12-04T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/security/</loc>
     <lastmod>2019-12-04T08:17:54+07:00</lastmod>
   </url>
   
@@ -292,7 +322,52 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/tags/android/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/centos/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/file/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/firewalld/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/masquerade/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/mtp/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/nat/</loc>
     <lastmod>2019-10-14T08:17:54+07:00</lastmod>
   </url>
   
@@ -884,16 +959,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/2018/02/16/linux-server-monitoring/</loc>
     <lastmod>2018-02-16T05:28:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/jenkins/</loc>
-    <lastmod>2018-02-15T18:47:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/2018/02/15/todo-jenkins/</loc>
-    <lastmod>2018-02-15T18:47:00+00:00</lastmod>
   </url>
   
   <url>

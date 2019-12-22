@@ -487,6 +487,32 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -516,8 +542,14 @@
 <div class="post">
   <h1 class="post-title">Stress test on Linux</h1>
   <span class="post-date">Jul 28, 2018</span>
-  <p>```
-stress -c 8 -i 9 -m 9 &ndash;vm-bytes 1024M</p>
+  <pre><code>yum -y install wget
+wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-1.el7.rf.x86_64.rpm
+yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm
+stress -c 8 -i 4 -t 10s
+stress -c 8 -i 9 -m 9 --vm-bytes 1024M
+</code></pre>
+
+<p>On ubuntu server, use apt to install stress</p>
 
 <p>Ref:</p>
 

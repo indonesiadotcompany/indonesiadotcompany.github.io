@@ -5,9 +5,56 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2019</rights>
-    <updated>2019-12-04 23:17:54 &#43;0700 WIB</updated>
+    <updated>2019-12-05 18:47:00 &#43;0000 UTC</updated>
 
     
+      
+    
+      
+        <item>
+          <title>jenkins for beginner</title>
+          <link>https://blog.indonesiadot.com/2019/12/05/jenkins-for-beginner/</link>
+          <pubDate>Thu, 05 Dec 2019 18:47:00 UTC</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/12/05/jenkins-for-beginner/</guid>
+          <description>&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded&#34;&gt;https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04&#34;&gt;https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hub.docker.com/r/bitnami/jenkins/&#34;&gt;https://hub.docker.com/r/bitnami/jenkins/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jenkinsci/docker/blob/master/README.md&#34;&gt;https://github.com/jenkinsci/docker/blob/master/README.md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://linuxize.com/post/how-to-install-jenkins-on-centos-7/&#34;&gt;https://linuxize.com/post/how-to-install-jenkins-on-centos-7/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Modsecurity WAF</title>
+          <link>https://blog.indonesiadot.com/2019/12/05/modsecurity-waf/</link>
+          <pubDate>Thu, 05 Dec 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/12/05/modsecurity-waf/</guid>
+          <description>
+
+&lt;h2 id=&#34;modsecurity-waf&#34;&gt;Modsecurity WAF&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.indonesiadot.com/images/2019/modsecurity-architecture.jpg&#34; alt=&#34;routed-lans&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;user yg mau sql injection di scan dulu sama modsecurity yg modsecurity baca ruleset (crs) kalau ada di rules nya di deny.
+kalau false positive, dinyatakan oleh client / developer bahwa itu sbnrnya aman, baru di exclude rule tersebut, kalau developer bisa nambel supaya bisa rubah supaya lebih sesuai ruleset nya lebih baik.&lt;/p&gt;
+
+&lt;p&gt;intinya mudah sih yg opensource, cuma kelemahan nya nempel di host dan atau nempel di webserver, lalu kelemahan lain banyak false positive, sama ga ada ui nya, meski berjalan bagus bisa menahan serangan cuma agak sulit manage nya, terutama klo aplikasi yg ga standar, klo yg standar misal kaya wordpress mungkin lebih mudah.&lt;/p&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Searching modsecurity architecture&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
       
     
       
@@ -1038,6 +1085,72 @@ install firewire_core /bin/true
     
       
         <item>
+          <title>Android USB File Transfer</title>
+          <link>https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/</link>
+          <pubDate>Mon, 14 Oct 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/</guid>
+          <description>
+
+&lt;h2 id=&#34;android-usb-file-transfer&#34;&gt;Android USB File Transfer&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;add-apt-repository ppa:webupd8team/unstable
+apt update
+apt-get install go-mtpfs
+mkdir /media/MyAndroid
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;mount&#34;&gt;mount&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;go-mtpfs /media/MyAndroid
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;unmount&#34;&gt;unmount&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;fusermount -u /media/MyAndroid
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open &lt;a href=&#34;ftp://ip.of.android:8888&#34;&gt;ftp://ip.of.android:8888&lt;/a&gt;, so you can access from pc via ftp client like filezilla.&lt;/p&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html&#34;&gt;http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu&#34;&gt;https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Centos 7 Firewalld masquerade</title>
+          <link>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/</link>
+          <pubDate>Mon, 14 Oct 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/</guid>
+          <description>
+
+&lt;h2 id=&#34;firewalld-masquerade&#34;&gt;Firewalld masquerade&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;firewall-cmd --get-active-zones
+firewall-cmd --list-all --zone=public
+firewall-cmd --add-masquerade --zone=public --permanent
+firewall-cmd --reload
+firewall-cmd --list-all --zone=public
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/&#34;&gt;https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
           <title>Magic of Sed</title>
           <link>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</link>
           <pubDate>Mon, 14 Oct 2019 08:17:54 WIB</pubDate>
@@ -1050,6 +1163,11 @@ install firewire_core /bin/true
 &lt;pre&gt;&lt;code&gt;sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;h2 id=&#34;comment-out-a-line-that-contain-string&#34;&gt;comment out a line that contain string&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;sed -i &#39;/ 2001 /s/^/#/&#39; file
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;Referensi:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -1057,6 +1175,7 @@ install firewire_core /bin/true
 &lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line&#34;&gt;https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet&#34;&gt;https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521&#34;&gt;https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file&#34;&gt;https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -1680,7 +1799,55 @@ systemctl restart postfix
           <pubDate>Mon, 02 Sep 2019 08:17:33 WIB</pubDate>
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/</guid>
-          <description>&lt;p&gt;Referensi:&lt;/p&gt;
+          <description>
+
+&lt;h2 id=&#34;kubernetes-container-runtime-with-docker&#34;&gt;Kubernetes Container runtime with docker&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;# Install Docker CE
+## Set up the repository
+### Install required packages.
+yum install yum-utils device-mapper-persistent-data lvm2
+
+### Add Docker repository.
+yum-config-manager \
+  --add-repo \
+  https://download.docker.com/linux/centos/docker-ce.repo
+
+## Install Docker CE.
+yum update &amp;amp;&amp;amp; yum install docker-ce-18.06.2.ce
+
+## Create /etc/docker directory.
+mkdir /etc/docker
+
+# Setup daemon.
+cat &amp;gt; /etc/docker/daemon.json &amp;lt;&amp;lt;EOF
+{
+  &amp;quot;exec-opts&amp;quot;: [&amp;quot;native.cgroupdriver=systemd&amp;quot;],
+  &amp;quot;log-driver&amp;quot;: &amp;quot;json-file&amp;quot;,
+  &amp;quot;log-opts&amp;quot;: {
+    &amp;quot;max-size&amp;quot;: &amp;quot;100m&amp;quot;
+  },
+  &amp;quot;storage-driver&amp;quot;: &amp;quot;overlay2&amp;quot;,
+  &amp;quot;storage-opts&amp;quot;: [
+    &amp;quot;overlay2.override_kernel_check=true&amp;quot;
+  ]
+}
+EOF
+
+mkdir -p /etc/systemd/system/docker.service.d
+
+# Restart Docker
+systemctl daemon-reload
+systemctl restart docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/setup/production-environment/container-runtimes/&#34;&gt;https://kubernetes.io/docs/setup/production-environment/container-runtimes/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://darxkies.github.io/k8s-tew/_build/html/index.html&#34;&gt;https://darxkies.github.io/k8s-tew/_build/html/index.html&lt;/a&gt;&lt;/li&gt;
@@ -2014,8 +2181,14 @@ git branch -D namabranchyangakandihapus
           <pubDate>Sat, 28 Jul 2018 08:41:00 UTC</pubDate>
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</guid>
-          <description>&lt;p&gt;```
-stress -c 8 -i 9 -m 9 &amp;ndash;vm-bytes 1024M&lt;/p&gt;
+          <description>&lt;pre&gt;&lt;code&gt;yum -y install wget
+wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-1.el7.rf.x86_64.rpm
+yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm
+stress -c 8 -i 4 -t 10s
+stress -c 8 -i 9 -m 9 --vm-bytes 1024M
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;On ubuntu server, use apt to install stress&lt;/p&gt;
 
 &lt;p&gt;Ref:&lt;/p&gt;
 
@@ -2365,18 +2538,6 @@ stress -c 8 -i 9 -m 9 &amp;ndash;vm-bytes 1024M&lt;/p&gt;
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2018/02/16/linux-server-monitoring/</guid>
           <description>&lt;p dir=&#34;ltr&#34;&gt;https://blog.serverdensity.com/80-linux-monitoring-tools-know/&lt;/p&gt;&lt;p dir=&#34;ltr&#34;&gt;https://logz.io/blog/grafana-vs-kibana/&lt;/p&gt;&lt;p dir=&#34;ltr&#34;&gt;http://docs.grafana.org/features/datasources/&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
-          <title>TODO jenkins</title>
-          <link>https://blog.indonesiadot.com/2018/02/15/todo-jenkins/</link>
-          <pubDate>Thu, 15 Feb 2018 18:47:00 UTC</pubDate>
-          <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2018/02/15/todo-jenkins/</guid>
-          <description>&lt;p&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;iframe width=&#34;320&#34; height=&#34;266&#34; class=&#34;YOUTUBE-iframe-video&#34; data-thumbnail-src=&#34;https://i.ytimg.com/vi/8_D49wo6XKI/0.jpg&#34; src=&#34;https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04&#34;&gt;https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 </description>
         </item>
       

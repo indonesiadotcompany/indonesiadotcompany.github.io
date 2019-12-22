@@ -28,7 +28,7 @@ Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddi
       <pubDate>Sat, 28 Jul 2018 08:41:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</guid>
-      <description>``` stress -c 8 -i 9 -m 9 &amp;ndash;vm-bytes 1024M
+      <description>yum -y install wget wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-1.el7.rf.x86_64.rpm yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm stress -c 8 -i 4 -t 10s stress -c 8 -i 9 -m 9 --vm-bytes 1024M  On ubuntu server, use apt to install stress
 Ref:
  https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2 https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/  </description>
     </item>

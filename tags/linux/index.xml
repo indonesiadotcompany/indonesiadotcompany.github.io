@@ -6,10 +6,30 @@
     <description>Recent content in linux on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Dec 2019 23:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 05 Dec 2019 18:47:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>jenkins for beginner</title>
+      <link>https://blog.indonesiadot.com/2019/12/05/jenkins-for-beginner/</link>
+      <pubDate>Thu, 05 Dec 2019 18:47:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/12/05/jenkins-for-beginner/</guid>
+      <description>Ref:
+ https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04 https://hub.docker.com/r/bitnami/jenkins/ https://github.com/jenkinsci/docker/blob/master/README.md https://linuxize.com/post/how-to-install-jenkins-on-centos-7/  </description>
+    </item>
+    
+    <item>
+      <title>Modsecurity WAF</title>
+      <link>https://blog.indonesiadot.com/2019/12/05/modsecurity-waf/</link>
+      <pubDate>Thu, 05 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/12/05/modsecurity-waf/</guid>
+      <description>Modsecurity WAF user yg mau sql injection di scan dulu sama modsecurity yg modsecurity baca ruleset (crs) kalau ada di rules nya di deny. kalau false positive, dinyatakan oleh client / developer bahwa itu sbnrnya aman, baru di exclude rule tersebut, kalau developer bisa nambel supaya bisa rubah supaya lebih sesuai ruleset nya lebih baik.
+intinya mudah sih yg opensource, cuma kelemahan nya nempel di host dan atau nempel di webserver, lalu kelemahan lain banyak false positive, sama ga ada ui nya, meski berjalan bagus bisa menahan serangan cuma agak sulit manage nya, terutama klo aplikasi yg ga standar, klo yg standar misal kaya wordpress mungkin lebih mudah.</description>
+    </item>
     
     <item>
       <title>Openvpn Routed LANS</title>
@@ -185,13 +205,34 @@ blacklist firewire_core install firewire_core /bin/true  Referensi:
     </item>
     
     <item>
+      <title>Android USB File Transfer</title>
+      <link>https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/</guid>
+      <description> Android USB File Transfer add-apt-repository ppa:webupd8team/unstable apt update apt-get install go-mtpfs mkdir /media/MyAndroid  mount go-mtpfs /media/MyAndroid  unmount fusermount -u /media/MyAndroid  or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open ftp://ip.of.android:8888, so you can access from pc via ftp client like filezilla.
+Referensi:
+ http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu  </description>
+    </item>
+    
+    <item>
+      <title>Centos 7 Firewalld masquerade</title>
+      <link>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/</guid>
+      <description> Firewalld masquerade firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public  Referensi:
+ https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/  </description>
+    </item>
+    
+    <item>
       <title>Magic of Sed</title>
       <link>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</link>
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</guid>
-      <description> Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt  Referensi:
- https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521  </description>
+      <description> Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt  comment out a line that contain string sed -i &#39;/ 2001 /s/^/#/&#39; file  Referensi:
+ https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521 https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file  </description>
     </item>
     
     <item>
@@ -289,7 +330,7 @@ sudo apt-get update sudo apt-get upgrade sudo do-release-upgrade -f DistUpgradeV
       <pubDate>Sat, 28 Jul 2018 08:41:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</guid>
-      <description>``` stress -c 8 -i 9 -m 9 &amp;ndash;vm-bytes 1024M
+      <description>yum -y install wget wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-1.el7.rf.x86_64.rpm yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm stress -c 8 -i 4 -t 10s stress -c 8 -i 9 -m 9 --vm-bytes 1024M  On ubuntu server, use apt to install stress
 Ref:
  https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2 https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/  </description>
     </item>
@@ -356,15 +397,6 @@ https://prefetch.net/blog/index.php/2011/07/13/gathering-statistics-from-your-po
       <description>https://blog.serverdensity.com/80-linux-monitoring-tools-know/
 https://logz.io/blog/grafana-vs-kibana/
 http://docs.grafana.org/features/datasources/</description>
-    </item>
-    
-    <item>
-      <title>TODO jenkins</title>
-      <link>https://blog.indonesiadot.com/2018/02/15/todo-jenkins/</link>
-      <pubDate>Thu, 15 Feb 2018 18:47:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/2018/02/15/todo-jenkins/</guid>
-      <description>https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04</description>
     </item>
     
     <item>
