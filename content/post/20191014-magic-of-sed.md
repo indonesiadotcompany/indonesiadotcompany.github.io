@@ -12,9 +12,15 @@ draft: false
 sed 's/^/apt-get purge -y /' aptwantopurge.txt > aptpurge.txt
 ```
 
+## comment out a line that contain string
+```
+sed -i '/ 2001 /s/^/#/' file
+```
+
 Referensi:
 
 * https://www.google.com/search?q=insert+every+line+linux&oq=insert+every+line+linux
 * https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line
 * https://www.google.com/search?q=sed+cheatsheet&oq=sed+cheatsheet
 * https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521
+* https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file

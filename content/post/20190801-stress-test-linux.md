@@ -8,7 +8,14 @@ tags: ["disk", "cpu", "tips", "stresstest", "linux", "load"]
 ---
 
 ```
+yum -y install wget
+wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-1.el7.rf.x86_64.rpm
+yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm
+stress -c 8 -i 4 -t 10s
 stress -c 8 -i 9 -m 9 --vm-bytes 1024M
+```
+
+On ubuntu server, use apt to install stress
 
 Ref:
 
