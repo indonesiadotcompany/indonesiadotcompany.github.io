@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Blog Indonesiadot.Com</title>
@@ -6,10 +6,73 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Dec 2019 18:47:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Dec 2019 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>kvm</title>
+      <link>https://blog.indonesiadot.com/tags/kvm/</link>
+      <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/kvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://blog.indonesiadot.com/tags/linux/</link>
+      <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>qemu</title>
+      <link>https://blog.indonesiadot.com/tags/qemu/</link>
+      <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/qemu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server</title>
+      <link>https://blog.indonesiadot.com/tags/server/</link>
+      <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tips</title>
+      <link>https://blog.indonesiadot.com/tags/tips/</link>
+      <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>virt-install</title>
+      <link>https://blog.indonesiadot.com/tags/virt-install/</link>
+      <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/virt-install/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>virtualization</title>
+      <link>https://blog.indonesiadot.com/tags/virtualization/</link>
+      <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/virtualization/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>jenkins</title>
@@ -17,15 +80,6 @@
       <pubDate>Thu, 05 Dec 2019 18:47:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/jenkins/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://blog.indonesiadot.com/tags/linux/</link>
-      <pubDate>Thu, 05 Dec 2019 18:47:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -44,15 +98,6 @@
       <pubDate>Thu, 05 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>server</title>
-      <link>https://blog.indonesiadot.com/tags/server/</link>
-      <pubDate>Thu, 05 Dec 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/server/</guid>
       <description></description>
     </item>
     
@@ -89,15 +134,6 @@
       <pubDate>Wed, 04 Dec 2019 23:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/openvpn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tips</title>
-      <link>https://blog.indonesiadot.com/tags/tips/</link>
-      <pubDate>Wed, 04 Dec 2019 23:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
       <description></description>
     </item>
     
@@ -399,6 +435,42 @@
     </item>
     
     <item>
+      <title>certbot</title>
+      <link>https://blog.indonesiadot.com/tags/certbot/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/certbot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>container</title>
+      <link>https://blog.indonesiadot.com/tags/container/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://blog.indonesiadot.com/tags/docker/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker-compose</title>
+      <link>https://blog.indonesiadot.com/tags/docker-compose/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/docker-compose/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>file</title>
       <link>https://blog.indonesiadot.com/tags/file/</link>
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
@@ -413,6 +485,42 @@
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/firewalld/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://blog.indonesiadot.com/tags/git/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gitlab</title>
+      <link>https://blog.indonesiadot.com/tags/gitlab/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/gitlab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>https</title>
+      <link>https://blog.indonesiadot.com/tags/https/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/https/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>letsencrypt</title>
+      <link>https://blog.indonesiadot.com/tags/letsencrypt/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/letsencrypt/</guid>
       <description></description>
     </item>
     
@@ -444,11 +552,29 @@
     </item>
     
     <item>
+      <title>repository</title>
+      <link>https://blog.indonesiadot.com/tags/repository/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/repository/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>sed</title>
       <link>https://blog.indonesiadot.com/tags/sed/</link>
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/sed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssl</title>
+      <link>https://blog.indonesiadot.com/tags/ssl/</link>
+      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ssl/</guid>
       <description></description>
     </item>
     
@@ -552,15 +678,6 @@
     </item>
     
     <item>
-      <title>git</title>
-      <link>https://blog.indonesiadot.com/tags/git/</link>
-      <pubDate>Tue, 24 Sep 2019 08:17:48 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>github</title>
       <link>https://blog.indonesiadot.com/tags/github/</link>
       <pubDate>Tue, 24 Sep 2019 08:17:48 +0700</pubDate>
@@ -633,15 +750,6 @@
     </item>
     
     <item>
-      <title>virtualization</title>
-      <link>https://blog.indonesiadot.com/tags/virtualization/</link>
-      <pubDate>Mon, 02 Sep 2019 08:17:56 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/virtualization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>mail</title>
       <link>https://blog.indonesiadot.com/tags/mail/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:54 +0700</pubDate>
@@ -656,24 +764,6 @@
       <pubDate>Mon, 02 Sep 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/postfix/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>container</title>
-      <link>https://blog.indonesiadot.com/tags/container/</link>
-      <pubDate>Mon, 02 Sep 2019 08:17:33 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/container/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://blog.indonesiadot.com/tags/docker/</link>
-      <pubDate>Mon, 02 Sep 2019 08:17:33 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/docker/</guid>
       <description></description>
     </item>
     
@@ -701,15 +791,6 @@
       <pubDate>Mon, 02 Sep 2019 08:17:29 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/upgrade/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>repository</title>
-      <link>https://blog.indonesiadot.com/tags/repository/</link>
-      <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/repository/</guid>
       <description></description>
     </item>
     
@@ -926,15 +1007,6 @@
       <pubDate>Sun, 04 Mar 2018 21:22:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/scripts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ssl</title>
-      <link>https://blog.indonesiadot.com/tags/ssl/</link>
-      <pubDate>Sun, 04 Mar 2018 21:22:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/ssl/</guid>
       <description></description>
     </item>
     

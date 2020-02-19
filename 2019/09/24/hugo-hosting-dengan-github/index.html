@@ -513,6 +513,30 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -543,14 +567,11 @@
   <h1 class="post-title">Hugo hosting dengan github</h1>
   <span class="post-date">Sep 24, 2019</span>
   <p>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:</p>
-
 <ul>
 <li>Nama user: tpinews</li>
 <li>Nama repositori yang harus dibuat: tpinews.github.io</li>
 </ul>
-
 <p>Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:</p>
-
 <pre><code>mkdir tpinews
 cd tpinews
 touch .gitignore
@@ -572,14 +593,9 @@ git push origin hugo
 git submodule add -b master https://tpinews.github.io.git public
 ./push-deploy.sh
 git branch -d master
-</code></pre>
-
-<p>Pastikan juga config.toml sudah sesuai, seperti nama theme dan lainnya, dan bisa di test di localhost dengan menjalankan <code>hugo server</code> dan mengakses <a href="http://localhost:1313">http://localhost:1313</a> di browser untuk melihat hasilnya.</p>
-
+</code></pre><p>Pastikan juga config.toml sudah sesuai, seperti nama theme dan lainnya, dan bisa di test di localhost dengan menjalankan <code>hugo server</code> dan mengakses http://localhost:1313 di browser untuk melihat hasilnya.</p>
 <p>Command di atas hanya dilakukan pertama kali saja, untuk selanjutnya yang dilakukan setelah melakukan perubahan dan ingin mengupdate di github, cukup menjalankan script push-deploy.sh</p>
-
 <p>Disini theme yang digunakan misalnya travelify yang sudah disiapkan, dan juga script untuk push-deploy.sh untuk memudahkan deploy sebagai berikut:</p>
-
 <pre><code>#!/bin/sh
 # If a command fails then the deploy stops
 set -e
@@ -612,17 +628,11 @@ if [ -n &quot;$*&quot; ]; then
 fi
 git commit -m &quot;$msg&quot;
 git push origin hugo
-</code></pre>
-
-<p>Note:</p>
-
+</code></pre><p>Note:</p>
 <p>Untuk lebih mudah tidak perlu memasukan password, bisa di buat dari menu settings account github, lalu pilih menu sebelah kiri bawah bagian Developer settings, lalu Personal access tokens dan generate new token.</p>
-
 <p>Lalu copy token tersebut dan tambahkan pada file .git/config dan .git/modules/public/config ,bagian url nya, sehingga menjadi seperti contoh berikut:</p>
-
 <pre><code>   url = https://namauser:tokenhasidaricopygeneratenewtoken@namarepository.github.io.git
 </code></pre>
-
 </div>
 
 <hr/>

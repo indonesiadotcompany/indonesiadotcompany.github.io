@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.57.2" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -514,6 +514,30 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -546,10 +570,57 @@
 <div class="post">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/11/ubuntu-dns-local-cache-for-faster-dns-resolver/">Ubuntu dns local cache for faster dns resolver</a></h1>
+        <span class="post-date">Aug 11, 2019</span>
+	<p>googling: https://www.google.com/search?q=ubuntu+dns+local+cache<!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://superuser.com/questions/1291450/how-can-i-run-a-local-caching-dns-resolver-on-ubuntu-14-04%3Cbr">https://superuser.com/questions/1291450/how-can-i-run-a-local-caching-dns-resolver-on-ubuntu-14-04&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->The easiest way is probably nscd.<!-- raw HTML omitted --><!-- raw HTML omitted -->Install nscd, using the default config.<!-- raw HTML omitted --><!-- raw HTML omitted -->Update /etc/nsswitch.conf and add <!-- raw HTML omitted -->cache<!-- raw HTML omitted --> before <!-- raw HTML omitted -->dns<!-- raw HTML omitted --> to the hosts line. <!-- raw HTML omitted -->(Edit: this part is not applicable to glibc as used in most linux distributions but is needed on fbsd)<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->hosts: files cache dns<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->then update /etc/resolv.conf at the beginning of the nameserver use 127.0.0.1<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->nameserver 127.0.0.1<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/11/nginx-tips-n-trick-499-code-on-nginx-access-logs/">nginx tips n trick - 499 code on nginx access logs</a></h1>
+        <span class="post-date">Aug 11, 2019</span>
+	<p>googling: <a href="https://www.google.com/search?q=499+http+code%3Cbr">https://www.google.com/search?q=499+http+code&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="https://stackoverflow.com/questions/12973304/nginx-499-error-codes%3Cbr">https://stackoverflow.com/questions/12973304/nginx-499-error-codes&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->In my case I got 499 when the client's API closed the connection before it gets any response. Literally sent a POST and immediately close the connection. This is resolved by option:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->proxy_ignore_client_abort on<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->I dont understand how does this help<!-- raw HTML omitted --> – <!-- raw HTML omitted -->Vladimir Starkov<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->Jul 2 at 7:45<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Maybe it's not your case? The client sends the data and is not interested in what will happen to them and what will be the answer. But my application should process the data. Without this option, the data simply does not have time to reach my application.<!-- raw HTML omitted --> – <!-- raw HTML omitted -->DerSkythe<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->Jul 2 at 11:34<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Thank you. Exact symptoms and perfect fix.<!-- raw HTML omitted --> – <!-- raw HTML omitted -->TTimo<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->Jul 23 at 16:29<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/11/how-to-stop-docker-that-always-restart/">how to stop docker that always restart</a></h1>
+        <span class="post-date">Aug 11, 2019</span>
+	<p>googling: <a href="https://www.google.com/search?q=docker+restart+always+stop%3Cbr">https://www.google.com/search?q=docker+restart+always+stop&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="https://stackoverflow.com/questions/39072357/how-to-stop-a-docker-container-which-started-with-restart-always/39072476%3Cbr">https://stackoverflow.com/questions/39072357/how-to-stop-a-docker-container-which-started-with-restart-always/39072476&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->You can <!-- raw HTML omitted --><!-- raw HTML omitted -->update<!-- raw HTML omitted --><!-- raw HTML omitted --> docker container.<!-- raw HTML omitted --><!-- raw HTML omitted -->use <!-- raw HTML omitted --><!-- raw HTML omitted -->sudo docker update &ndash;restart=no &lt;container_id&gt;&lt;/container_id&gt;<!-- raw HTML omitted --><!-- raw HTML omitted --> to update <!-- raw HTML omitted -->&ndash;restart<!-- raw HTML omitted --> flag of the container.<!-- raw HTML omitted --><!-- raw HTML omitted -->Now you can <!-- raw HTML omitted --><!-- raw HTML omitted -->stop<!-- raw HTML omitted --><!-- raw HTML omitted --> the container.<!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/11/simple-alert-monitoring-using-simplemonitor/">simple alert monitoring using simplemonitor</a></h1>
+        <span class="post-date">Aug 11, 2019</span>
+	<p>googling: https://www.google.com/search?q=simple+alert+monitoring<!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://jamesoff.github.io/simplemonitor/%3Cbr">https://jamesoff.github.io/simplemonitor/&lt;br</a> /&gt;<!-- raw HTML omitted -->googling: https://www.google.com/search?q=simplemonitor+docker<!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://hub.docker.com/r/braindoctor/simplemonitor-docker/%3Cbr">https://hub.docker.com/r/braindoctor/simplemonitor-docker/&lt;br</a> /&gt;<!-- raw HTML omitted -->mkdir -p /docker/simplemonitor &amp;&amp; cd /docker/simplemonitor<!-- raw HTML omitted -->cat &gt; docker-compose.yml &lt;<!-- raw HTML omitted -->version: &lsquo;3.2'<!-- raw HTML omitted -->services:<!-- raw HTML omitted -->  simplemonitor:<!-- raw HTML omitted -->    restart: always<!-- raw HTML omitted -->    image: braindoctor/simplemonitor-docker:latest<!-- raw HTML omitted -->    container_name: simplemonitor<!-- raw HTML omitted -->    hostname: mail-124.indonesiadot.com<!-- raw HTML omitted -->    volumes:<!-- raw HTML omitted -->      - ${PWD}/config:/etc/simplemonitor<!-- raw HTML omitted -->    ports:<!-- raw HTML omitted -->      - &ldquo;8080:8080&quot;<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->EOF<!-- raw HTML omitted --><!-- raw HTML omitted -->docker-compose up -d<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->ref:<!-- raw HTML omitted --><a href="https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files%3C/div%3E">https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files&lt;/div&gt;</a></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/python/">python</a>, <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/02/belajar-python-dengan-mysql/">Belajar Python dengan MySQL</a></h1>
         <span class="post-date">Aug 2, 2019</span>
 	<p>Referensi:</p>
-
 <p><a href="https://monicagranbois.com/blog/python/cron-and-python-virtualenv/">https://monicagranbois.com/blog/python/cron-and-python-virtualenv/</a>
 <a href="https://www.petanikode.com/python-virtualenv/">https://www.petanikode.com/python-virtualenv/</a>
 <a href="https://www.petanikode.com/python-mysql/">https://www.petanikode.com/python-mysql/</a>
@@ -567,7 +638,7 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/08/09/petunjuk-hidup-widya-nugraha-based-on-al-quran-dan-hadits-nabi/">Petunjuk hidup widya nugraha based on al-quran dan hadits nabi</a></h1>
         <span class="post-date">Aug 9, 2018</span>
-	<p dir="ltr">Petunjuk hidup widya nugraha based on al-quran dan hadits nabi</p><p dir="ltr">* Sebelum lahir di rahim ibu dengan kasih sayang, sesuai dengan nama Allah Ar Rohiim, Yang Maha Penyayang, hakikat (sebenar/sesungguh) nya Allah Yang Menyayangi dan kita sebagai orang tua harus saling menyayangi, bapak, ibu, anak.</p><p dir="ltr">* Setelah lahir dari bayi proses keajaiban yang menunjukan kekuasaan Allah, hakikatnya itu semua karena Allah Yang Maha Pencipta, Yang Maha menjadikan yang baru, Yang Maha membentuk dan atas rahmat Allah Yang Maha Pengasih dan Maha Penyayang, maka sebagai orang yang menyaksikan harus meyakini itu, berdoa, berpasrah, berusaha untuk menjaga ciptaan Allah yang sudah dititipkan / diamanatkan kepada orang tua, dan anak harus tahu cerita ini dan hakikatnya agar menjadi anak yang sadar sedari awal dan dapat hidup lebih baik di dunia dan akhirat, perjalanan dari awal sampai akhir semoga lebih baik.</p><p dir="ltr">* Balita merupakan proses pembentukan alam dan sebaiknya seperti dicontohkan oleh metode balita Nabi Rosulullah Sallallahu 'alaihi wassalaam&nbsp; , yang mendapatkan pendidikan awal di kampung yang jauh dari keramaian, di desa yang hawa udara nya tidak terkontaminasi, baik itu hawa udara segar, oksigen ataupun hawa yang berupa hawa nafsu duniawi yang banyak dikota, atau polusi jika di ibaratkan udara, pendidikan awal ini untuk mendapatkan kemurnian fikiran awal yang masih bersih dan menjaga nya sedari kecil dari pengaruh hawa yang kurang baik, bisa di analogikan udara bersih dan udara kotor atau polusi, bisa dianalogikan sinyal bersih dan sinyal yang banyak interference atau gangguan dari sinyal lain jika di jaringan wireless / wifi / gsm / 3g, bisa dianalogikan ibarat minum air dari mata air yg belum tercemar dan sebaliknya yang pastinya orang tua yang sudah faham akan memilih yang lebih baik.</p><p dir="ltr">* Menjelang dewasa sama seperti balita yang mendapatkan pendidikan alam, tapi lebih diarahkan seperti contoh Nabi Rosulullah Sallallahu 'alaihi wassalaam, diarahkan untuk menggembala kambing, suatu pelajaran kepemimpinan sejak awal, bukan untuk bekerja tapi untuk belajar sambil menikmati alam, hewan, ciptaan Allah yang lain dan sekitar yang berkaitan sampai akhirnya bisa lulus menjaga, merawat, mengembang biakan, sampai bisa memimpin hewan yang mungkin lebih sulit dipimpin dari manusia yang punya akal pikiran, tapi intinya adalah masa menjelang dewasa, orang tua atau yang lebih faham harus mengarahkan sesuai dengan konsep kenabian, bukan untuk menjadi nabi, tapi mencontoh agar bisa, menyamakan, membiasakan, menjiwai ruh / semangat dari contoh manusia yang terpuji (Muhammad) Nabi Rosulullah Sallallahu 'alaihi wassalaam, agar semoga di kehendaki oleh Allah menjadi lebih baik.</p><p dir="ltr">* Masa dewasa adalah masa pematangan dengan juga sama diarahkan oleh orang tua dan yang lebih faham (orang tua bisa berkordinasi dengan orang lain yang lebih faham/ulama/ahli dzikir mengingat Allah yang sebenarnya)(hati-hati dalam pemilihan kordinasi ini, orang tua harus bijak, intinya harus sesuai dengan al-quran kalamullah dan hadits nabi), dimana dicontohkan pada masa dewasa nabi diajak berdagang, diajarkan bertanggungjawab, memberikan manfaat, ditingkatkan kejujuran, kecerdasan, amanah dan penyampaian kebaikan melalui perbuatan yang baik dan berhasil dipercaya dan memajukan usaha dagang orang lain dengan memuaskan pelanggan.</p><p dir="ltr">* Masa setelah dewasa, dicontohkan lagi oleh Nabi Rosulullah Sallallahu 'alaihi wassalaam, dengan menikah jika sudah waktunya karena akan lebih mendapat pelajaran hidup (disarankan tahapan sebelumnya sudah lulus, terutama tahap berdagang/usaha karena setelah menikah ada tanggung jawab lebih yang mana jika sudah lulus dalam berdagang diharapkan sudah mengerti tentang tanggung jawab ini) dan selalu menjaga hal-hal baik lain nya, berfikir kritis untuk perbaikan sekitar, berinovasi, berdoa dan berusaha untuk kebaikan yang saat menikah pastinya dihadapkan dengan lingkungan keluarga, tetangga dan lingkungan lain yang harus diperbaiki terus menerus agar lebih baik, meski sudah baik dibuat lebih baik, improvement setiap saat sampai akhir hayat.</p><p dir="ltr">* Masa paruh baya (kurleb 40 tahun) masa kritis untuk menuju istiqomah di waktu akhir kehidupan manusia, harus lebih banyak berdoa agar diberi petunjuk ke arah yang lebih baik sampai akhir, petunjuk itulah yang akan menjadi patokan langkah sampai akhir, semoga diberi petunjuk dan bisa menjalani petunjuk yang baik sampai akhir yang lebih baik.</p><p dir="ltr">* Masa tua adalah masa regenerasi, semoga generasi selanjutnya yang menjalani dapat lebih baik.</p>
+	<!-- raw HTML omitted -->
 
 	<hr/>
 	
@@ -578,7 +649,7 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/08/06/recovery-procedure/">recovery procedure</a></h1>
         <span class="post-date">Aug 6, 2018</span>
-	<p>boot dari live cd (latest centos based is preferable)<br />rsync semua file yang bisa ke harddisk backup<br />ddrescue harddisk lama ke harddisk baru yang sama size nya<br />fsck harddisk baru<br /><br />ref:<br /><a href="https://www.cyberciti.biz/tips/how-do-i-save-recover-data-from-crashed-disks-with-dd-and-ddrescue-command.html">https://www.cyberciti.biz/tips/how-do-i-save-recover-data-from-crashed-disks-with-dd-and-ddrescue-command.html</a><br /><a href="https://tthtlc.wordpress.com/2014/09/16/how-to-install-reiserfs-in-centos/">https://tthtlc.wordpress.com/2014/09/16/how-to-install-reiserfs-in-centos/</a><br /><br /></p>
+	<p>boot dari live cd (latest centos based is preferable)<!-- raw HTML omitted -->rsync semua file yang bisa ke harddisk backup<!-- raw HTML omitted -->ddrescue harddisk lama ke harddisk baru yang sama size nya<!-- raw HTML omitted -->fsck harddisk baru<!-- raw HTML omitted --><!-- raw HTML omitted -->ref:<!-- raw HTML omitted --><a href="https://www.cyberciti.biz/tips/how-do-i-save-recover-data-from-crashed-disks-with-dd-and-ddrescue-command.html%3Cbr">https://www.cyberciti.biz/tips/how-do-i-save-recover-data-from-crashed-disks-with-dd-and-ddrescue-command.html&lt;br</a> /&gt;https://tthtlc.wordpress.com/2014/09/16/how-to-install-reiserfs-in-centos/<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 
 	<hr/>
 	
@@ -594,12 +665,8 @@ wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-
 yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm
 stress -c 8 -i 4 -t 10s
 stress -c 8 -i 9 -m 9 --vm-bytes 1024M
-</code></pre>
-
-<p>On ubuntu server, use apt to install stress</p>
-
+</code></pre><p>On ubuntu server, use apt to install stress</p>
 <p>Ref:</p>
-
 <ul>
 <li><a href="https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2">https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2</a></li>
 <li><a href="https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/">https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/</a></li>
@@ -616,65 +683,13 @@ stress -c 8 -i 9 -m 9 --vm-bytes 1024M
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/07/15/zfs-cool-feature-snapshot-replicate-etc/">zfs cool feature, snapshot, replicate, etc</a></h1>
         <span class="post-date">Jul 15, 2018</span>
-	<p><a href="https://www.google.co.id/search?q=zfs+remote+replication">https://www.google.co.id/search?q=zfs+remote+replication</a><br /><a href="https://www.howtoforge.com/tutorial/how-to-use-snapshots-clones-and-replication-in-zfs-on-linux/">https://www.howtoforge.com/tutorial/how-to-use-snapshots-clones-and-replication-in-zfs-on-linux/</a><br /><a href="https://zpool.org/zfs-snapshots-and-remote-replication/">https://zpool.org/zfs-snapshots-and-remote-replication/</a><br /><a href="http://www.zfsnap.org/docs.html">http://www.zfsnap.org/docs.html</a></p>
+	<p><a href="https://www.google.co.id/search?q=zfs+remote+replication%3Cbr">https://www.google.co.id/search?q=zfs+remote+replication&lt;br</a> /&gt;https://www.howtoforge.com/tutorial/how-to-use-snapshots-clones-and-replication-in-zfs-on-linux/<!-- raw HTML omitted --><a href="https://zpool.org/zfs-snapshots-and-remote-replication/%3Cbr">https://zpool.org/zfs-snapshots-and-remote-replication/&lt;br</a> /&gt;http://www.zfsnap.org/docs.html</p>
 
 	<hr/>
 	
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/07/13/belajar-usaha/">belajar usaha</a></h1>
-        <span class="post-date">Jul 13, 2018</span>
-	<p><a href="http://www.belajareksporimpor.com/author/samian-pacing">http://www.belajareksporimpor.com/author/samian-pacing</a><br /><a href="http://www.dimasrio.com/2017/01/peluang-usaha-untuk-mencari-pasif-income.html">http://www.dimasrio.com/2017/01/peluang-usaha-untuk-mencari-pasif-income.html</a></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/usaha/">usaha</a>, <a href="https://blog.indonesiadot.com/tags/dagang/">dagang</a>, <a href="https://blog.indonesiadot.com/tags/niaga/">niaga</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/07/13/prometheus-grafana/">prometheus grafana</a></h1>
-        <span class="post-date">Jul 13, 2018</span>
-	<p><a href="http://www.dimasrio.com/search?q=prometheus">http://www.dimasrio.com/search?q=prometheus</a><br /><a href="https://www.youtube.com/watch?v=GZWbTch7AbM">https://www.youtube.com/watch?v=GZWbTch7AbM</a><br /><a href="http://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html">http://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html</a><br /><br /></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>, <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/07/08/docker-registry-/-docker-private-repository-tips-and-tricks/">docker registry / docker private repository tips and tricks</a></h1>
-        <span class="post-date">Jul 8, 2018</span>
-	<p><a href="https://docs.docker.com/registry/deploying/">https://docs.docker.com/registry/deploying/</a><br /><br /><a href="https://github.com/sky-uk/cleanup-docker-registry">https://github.com/sky-uk/cleanup-docker-registry</a><br /><br /><a href="https://github.com/burnettk/delete-docker-registry-image">https://github.com/burnettk/delete-docker-registry-image</a><br /><br /><a href="https://stackoverflow.com/questions/29802202/docker-registry-2-0-how-to-delete-unused-images">https://stackoverflow.com/questions/29802202/docker-registry-2-0-how-to-delete-unused-images</a></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/07/04/wid-think-about-health-in-global-perspective-kesehatan/">Wid think about health in global perspective - kesehatan</a></h1>
-        <span class="post-date">Jul 4, 2018</span>
-	<p dir="ltr">Health is main / important thing that must be in top priority in this world.</p><p dir="ltr">Actually if we go around to many place, we can see the real situation that many of the elderly is have some same disease pattern, like diabetes, high cholesterol, stroke, cancer, etc.</p><p dir="ltr">And unfortunately it happen not to only poor people that suffer from this disease pattern, but to rich people too.</p><p dir="ltr">And one of the major cause of it is because the food that we eat, the drinks that we drink, even there are another cause like stress level, bad environtment that make people have a bad stamina, like polution and so on.</p><p dir="ltr">And unfortunately that major cause issue and another causes is not taken good care, so the people who got this disease is increase year by year.</p><p dir="ltr">Again there are 5W1H and other questions around that have to be solved.</p><p dir="ltr">201807050205 tangerang, banten, indonesia</p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/widya/">widya</a>
 	 <hr/>
     </div>
   

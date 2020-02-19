@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mail on Blog Indonesiadot.Com</title>
@@ -17,8 +17,8 @@
       <pubDate>Mon, 02 Sep 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/postfix-tips/</guid>
-      <description> postfix send to local network Ini adalah langkah untuk membuat postfix mengirim ke mail server dalam LAN
-echo &amp;quot;real.net smtp:[192.168.1.108]&amp;quot; &amp;gt;&amp;gt; /etc/postfix/transport postmap /etc/postfix/transport systemctl restart postfix  Referensi:
+      <description>postfix send to local network Ini adalah langkah untuk membuat postfix mengirim ke mail server dalam LAN
+echo &amp;quot;real.net smtp:[192.168.1.108]&amp;quot; &amp;gt;&amp;gt; /etc/postfix/transport postmap /etc/postfix/transport systemctl restart postfix Referensi:
  https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/ http://www.postfix.org/STANDARD_CONFIGURATION_README.html  </description>
     </item>
     
@@ -28,14 +28,7 @@ echo &amp;quot;real.net smtp:[192.168.1.108]&amp;quot; &amp;gt;&amp;gt; /etc/pos
       <pubDate>Sat, 26 May 2018 08:04:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/05/26/freebsd-mailserver/</guid>
-      <description>https://www.sophimail.com/configure-freebsd-email-server-using-postfix-dovecot-mysql-spamassassin/
-https://github.com/sophimail/webadmin
-https://github.com/sophimail/webadmin/blob/master/INSTALLATION.md
-https://www.cryptomonkeys.com/2016/08/building-a-mailserver/
-https://docs.iredmail.org/install.iredmail.on.freebsd.html
-note:
-iredadmin is easiest installation with all mail server package, but for administration using iredadmin free has limited function, best for personal / one domain use
-ispconfig nice to try :)</description>
+      <description>https://www.sophimail.com/configure-freebsd-email-server-using-postfix-dovecot-mysql-spamassassin/&amp;lt;br /&amp;gt;https://github.com/sophimail/webadmin&amp;lt;br /&amp;gt;https://github.com/sophimail/webadmin/blob/master/INSTALLATION.md&amp;lt;br /&amp;gt;https://www.cryptomonkeys.com/2016/08/building-a-mailserver/&amp;lt;br /&amp;gt;https://docs.iredmail.org/install.iredmail.on.freebsd.html&amp;lt;br /&amp;gt;note:iredadmin is easiest installation with all mail server package, but for administration using iredadmin free has limited function, best for personal / one domain useispconfig nice to try :)</description>
     </item>
     
   </channel>

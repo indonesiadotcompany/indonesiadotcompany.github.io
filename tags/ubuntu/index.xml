@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ubuntu on Blog Indonesiadot.Com</title>
@@ -18,7 +18,7 @@
       
       <guid>https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/</guid>
       <description>Berikut langkah yang dilakukan, tapi sebelumnya pastikan backup, backup dan backup
-sudo apt-get update sudo apt-get upgrade sudo do-release-upgrade -f DistUpgradeViewNonInteractive  Referensi:
+sudo apt-get update sudo apt-get upgrade sudo do-release-upgrade -f DistUpgradeViewNonInteractive Referensi:
  https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04 https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4  </description>
     </item>
     

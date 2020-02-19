@@ -513,6 +513,30 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -542,7 +566,7 @@
 <div class="post">
   <h1 class="post-title">MySQL tips and trick</h1>
   <span class="post-date">Jan 28, 2018</span>
-  <p><div><b><br></b></div><b><div><b>Mysql performance</b></div><div><b><br></b></div><div><b><a href="https://www.infoworld.com/article/0/database-administration/10-essential-performance-tips-for-mysql.html">https://www.infoworld.com/article/0/database-administration/10-essential-performance-tips-for-mysql.html</a></b></div><div><b><br></b></div><div><b>MySQL insert row with highest id</b><br></div></b><br>Lock tables customers write; $max = SELECT MAX( customer_id ) FROM customers; INSERT INTO customers( customer_id, firstname, surname ) VALUES ($max+1 , &lsquo;jim&rsquo;, &lsquo;sock&rsquo;) unlock tables;  ref: <a href="https://stackoverflow.com/questions/5360117/insert-and-set-value-with-max1-problems">https://stackoverflow.com/questions/5360117/insert-and-set-value-with-max1-problems</a><br><b><br></b><b>mysqldump routines triggers view</b><br><br>karena default nya mysql akan dump trigger, maka hanya store procedure / function atau yg dikenal dengan routines saja yang dimasukan parameter nya  mysqldump &ndash;routines &ndash;no-create-info &ndash;no-data &ndash;no-create-db &ndash;skip-opt <database> &gt; outputfile.sql mysqldump &ndash;routines &ndash;no-create-info &ndash;no-data &ndash;no-create-db &ndash;skip-opt <database> | gzip &gt; outputfile.sql.gz</database></database><br><database><database><b><br></b></database></database><database><database><b>mysql change definer of trigger</b></database></database><br><br>mysqldump &ndash;skip-opt &ndash;no-data &ndash;no-create-db &ndash;no-create-info &ndash;routines &ndash;add-drop-trigger <database> &gt; outputfile-trigger.sql  lalu edit outputfile-trigger.sql dengan merename user DEFINER dengan CURRENT_USER atau <code>namauser</code>@<code>namahost</code></database><br><database><database><database><br></database></database></database><database><database><database><b>mysql gui (free)</b></database></database></database><br><database><database><database><br></database></database></database><database><database><database><a href="https://www.mysql.com/products/workbench/">https://www.mysql.com/products/workbench/</a></database></database></database><br>mysql workbench has performance monitoring too :)<br><database><database><database><br></database></database></database><database><database><database><b><a href="https://www.google.co.id/search?q=mysql+change+from+innodb+to+myisam+table">https://www.google.co.id/search?q=mysql+change+from+innodb+to+myisam+table</a></b></database></database></database><br><database><database><database><br></database></database></database><database><database><database>ALTER TABLE table_name ENGINE = MyISAM;</database></database></database><br><database><database><database>ALTER TABLE table_name ENGINE = InnoDB;</database></database></database></p>
+  <!-- raw HTML omitted -->
 
 </div>
 

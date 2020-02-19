@@ -513,6 +513,30 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -542,34 +566,20 @@
 <div class="post">
   <h1 class="post-title">Linux Tips and Trick</h1>
   <span class="post-date">Jan 29, 2018</span>
-  
-
-<h2 id="cron-without-sending-mail">cron without sending mail</h2>
-
-<p>tambahkan MAILTO=&ldquo;&rdquo; di awal cron nya tambahkan &gt;/dev/null 2&gt;&amp;&amp;1 atau &gt; /dev/null atau &gt; /dev/null 2&gt;&amp;1 || true di belakang command cron nya</p>
-
+  <h2 id="cron-without-sending-mail">cron without sending mail</h2>
+<p>tambahkan MAILTO=&rdquo;&rdquo; di awal cron nya tambahkan &gt;/dev/null 2&gt;&amp;&amp;1 atau &gt; /dev/null atau &gt; /dev/null 2&gt;&amp;1 || true di belakang command cron nya</p>
 <h2 id="linux-rm-file-list-too-long">linux rm file list too long</h2>
-
 <pre><code>cd direktoriyangfilenyabanyak
 ls -1 | wc -l &amp;&amp; time find . -type f -delete
 find . -type f -print -delete
-</code></pre>
-
-<h2 id="incron">incron</h2>
-
+</code></pre><h2 id="incron">incron</h2>
 <p>Ref:</p>
-
 <ul>
 <li><a href="http://inotify.aiken.cz/?section=incron&amp;page=faq&amp;lang=en">http://inotify.aiken.cz/?section=incron&amp;page=faq&amp;lang=en</a></li>
 </ul>
-
 <h2 id="rsync-only-existing-file">rsync only existing file</h2>
-
 <pre><code>rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/
-</code></pre>
-
-<p>Ref:</p>
-
+</code></pre><p>Ref:</p>
 <ul>
 <li><a href="https://unix.stackexchange.com/questions/117190/best-way-to-sync-files-copy-only-existing-files-and-only-if-newer-than-target">https://unix.stackexchange.com/questions/117190/best-way-to-sync-files-copy-only-existing-files-and-only-if-newer-than-target</a></li>
 </ul>

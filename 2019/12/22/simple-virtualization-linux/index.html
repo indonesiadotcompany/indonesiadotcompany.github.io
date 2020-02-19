@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Simple Virtualization Linux &middot; Blog Indonesiadot.Com
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/poole.css">
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/syntax.css">
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blog.indonesiadot.com/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="https://blog.indonesiadot.com/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://blog.indonesiadot.com/atom.xml">
+</head>
+
+
+  <body class="theme-base-0c">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Blog dari <a href="https://indonesiadot.com" target="_blank">Indonesiadot.Com</a> adalah tempat menuliskan sesuatu mengenai teknologi, oprek, dan mengenai Indonesiadot.Com.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/">Home</a>
+    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/post">Posts</a>
+
+    
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/about/">About</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
+      
+    
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2019. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="https://blog.indonesiadot.com/" title="Home">Blog Indonesiadot.Com</a>
+            <small>Web log of Indonesiadot.Com, Linux and updated technology</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Simple Virtualization Linux</h1>
+  <span class="post-date">Dec 22, 2019</span>
+  <h2 id="list-kvm-using-virsh">List kvm using virsh</h2>
+<pre><code>virsh list
+virsh list --all
+virsh --help
+</code></pre><h2 id="create-vm-on-kvm--qemu-via-libvirt-with-command-line">Create vm on kvm / qemu via libvirt with command line</h2>
+<h3 id="pembuatan-vm-centos-7">Pembuatan vm centos 7</h3>
+<p>script bash virtcen.sh</p>
+<pre><code>#!/bin/bash
+
+NAMA=$1
+
+if [ -z &quot;$1&quot; ]; then
+ while [ -z &quot;$NAMA&quot; ]; do
+  echo -n &quot;masukan nama vm: &quot;
+  read NAMA
+ done
+fi
+
+virt-install \
+ --name $NAMA \
+ --ram 900 \
+ --disk path=$NAMA.qcow,size=6,bus=scsi,discard='unmap',format='qcow2' \
+ --controller type=scsi,model=virtio-scsi \
+ --vcpus 1 \
+ --cpu host \
+ --console pty,target_type=serial \
+ --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso \
+ --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot; \
+ --noautoconsole
+</code></pre><p>file kickstart cenks.cfg</p>
+<pre><code>text
+install
+
+ignoredisk --only-use=sda
+clearpart --all
+autopart
+bootloader --location=mbr --driveorder=sda
+
+rootpw --iscrypted $1$R69aiGHP$BmqNaQ1ckncOT0I3t6DlN1
+user widysible --name widysible --iscrypted --password $1$u08OmYWr$s3v/lOnNMVyb5SCEwFFLG1
+
+timezone Asia/Jakarta
+network --bootproto=dhcp
+
+firewall --disabled
+#reboot --eject
+shutdown
+
+%packages
+@Core
+%end
+%post --interpreter=/bin/bash
+#exec &lt; /dev/tty6 &gt; /dev/tty6
+#chvt 6
+echo ### Add public ssh key for Ansible
+mkdir -m0700 -p /home/widysible/.ssh
+cat &lt;&lt;EOF &gt;/home/widysible/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTIv6ziCUfRwMfGGVwZoKtWLf51+OLzDwwQYXyrf8vmnY7tZB7GLWAWCmto2nsNfwBQiXBXWZ7rUfTM2og/xfTerrDexyBg1Polm0FAK9zNwDE77WqSeirCQFAQ0Q+GaJaERitrF5h+SfDBHIgoMEuWJMzCQvzaI/3WU2YB//LzcM3NckfxolxQbjMzPNweVZ6BpEOGB7a9BQh370+EFj8h9suOVPYmqV5L5M0gMrYiQ7qA2Zzf442g5AElJqU7p8EFUI4ttLnP8AlkxQvRQOWRcf11iQDAbJNF7UDh0iqYOe0cynnMUZQp1nmQD5t65L8tHp0k94P3bdN7FHvbjBL root@wid
+EOF
+chown -R widysible:widysible /home/ansible
+chmod 0600 /home/widysible/.ssh/authorized_keys
+# Allow Ansible to sudo w/o a password
+echo &quot;widysible ALL=(ALL) NOPASSWD:ALL&quot; &gt; /etc/sudoers.d/widysible
+# trim
+sed -i 's/issue_discards = 0/issue_discards = 1/' /etc/lvm/lvm.conf
+echo &quot;0 0 1 0 0 fstrim /&quot; | tee /etc/cron.d/fstrim
+sed -i '/ swap /s/^/#/' /etc/fstab
+sed -i 's/defaults/defaults,discard/' /etc/fstab
+echo ### Change back to terminal 1
+#chvt 1
+%end
+
+</code></pre><p>Create VM using ansible playbook</p>
+<pre><code>---
+- name: create VMs
+  hosts: localhost
+  gather_facts: no
+  connection: local
+  become: true
+  vars_prompt:
+    - name: NAMA
+      prompt: &quot;Enter VM name&quot;
+      default: &quot;c7&quot;
+      private: no
+#  vars_files:
+#    - vms.yml
+
+  tasks:
+    - name: get VM disks
+      command: &quot;ls /var/lib/libvirt/images&quot;
+      register: disks
+      changed_when: &quot;disks.rc != 0&quot;
+
+    - name: get list of VMs
+      virt:
+        command: &quot;list_vms&quot;
+      register: vms
+
+    - name: create vm
+      command: &gt;
+                virt-install --name {{ NAMA }}
+                --cpu host --vcpus 1 --ram 900
+                --disk path=$NAMA.qcow,size=6,bus=scsi,discard='unmap',format='qcow2'
+                --controller type=scsi,model=virtio-scsi
+                --console pty,target_type=serial
+                --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso
+                --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot;
+                --noautoconsole
+</code></pre><h2 id="get-vms-ip">Get VMs IP</h2>
+<pre><code>virsh domifaddr c7
+</code></pre><p>Referensi:</p>
+<ul>
+<li><a href="https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/">https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/</a></li>
+<li><a href="https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/">https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/</a></li>
+<li><a href="http://blog.leifmadsen.com/blog/2016/12/16/creating-virtual-machines-in-libvirt-with-virt-install/">http://blog.leifmadsen.com/blog/2016/12/16/creating-virtual-machines-in-libvirt-with-virt-install/</a></li>
+<li><a href="http://kvmonz.blogspot.com/p/knowledge-use-virt-install-for-kvm.html">http://kvmonz.blogspot.com/p/knowledge-use-virt-install-for-kvm.html</a></li>
+<li><a href="https://earlruby.org/2018/12/use-iso-and-kickstart-files-to-automatically-create-vms/">https://earlruby.org/2018/12/use-iso-and-kickstart-files-to-automatically-create-vms/</a></li>
+<li><a href="https://graspingtech.com/creating-virtual-machine-virt-install/">https://graspingtech.com/creating-virtual-machine-virt-install/</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Ubuntu_18.04&amp;p=kvm&amp;f=2">https://www.server-world.info/en/note?os=Ubuntu_18.04&amp;p=kvm&amp;f=2</a></li>
+<li><a href="http://blog.zencoffee.org/2016/06/easy-headless-kvm-deployment-virt-install/">http://blog.zencoffee.org/2016/06/easy-headless-kvm-deployment-virt-install/</a></li>
+<li><a href="https://gist.github.com/aladuca/854b78585c2bba961386">https://gist.github.com/aladuca/854b78585c2bba961386</a></li>
+<li><a href="https://www.cyberciti.biz/faq/find-ip-address-of-linux-kvm-guest-virtual-machine/">https://www.cyberciti.biz/faq/find-ip-address-of-linux-kvm-guest-virtual-machine/</a></li>
+<li><a href="https://www.cyberciti.biz/faq/linux-list-a-kvm-vm-guest-using-virsh-command/">https://www.cyberciti.biz/faq/linux-list-a-kvm-vm-guest-using-virsh-command/</a></li>
+</ul>
+
+</div>
+
+<hr/>
+
+
+ Tags:
+ <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/virtualization/">virtualization</a>, <a href="https://blog.indonesiadot.com/tags/kvm/">kvm</a>, <a href="https://blog.indonesiadot.com/tags/qemu/">qemu</a>, <a href="https://blog.indonesiadot.com/tags/virt-install/">virt-install</a>
+<hr/>
+Made with &hearts; using <a href="https://https://gohugo.io">hugo</a> by willing of <a href="https://www.google.com/search?q=asmaul+husna">Al-Khooliq Al-Mushowwir Al-Baari'</a>
+<p>&nbsp;</p>
+
+	</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+  </body>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147159427-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147159427-1');
+</script>
+
+</html>
+

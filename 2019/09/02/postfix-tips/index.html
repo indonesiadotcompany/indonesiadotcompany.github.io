@@ -513,6 +513,30 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -542,19 +566,12 @@
 <div class="post">
   <h1 class="post-title">Postfix tips</h1>
   <span class="post-date">Sep 2, 2019</span>
-  
-
-<h3 id="postfix-send-to-local-network">postfix send to local network</h3>
-
+  <h3 id="postfix-send-to-local-network">postfix send to local network</h3>
 <p>Ini adalah langkah untuk membuat postfix mengirim ke mail server dalam LAN</p>
-
 <pre><code>echo &quot;real.net smtp:[192.168.1.108]&quot; &gt;&gt; /etc/postfix/transport
 postmap /etc/postfix/transport
 systemctl restart postfix
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/">https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/</a></li>
 <li><a href="http://www.postfix.org/STANDARD_CONFIGURATION_README.html">http://www.postfix.org/STANDARD_CONFIGURATION_README.html</a></li>

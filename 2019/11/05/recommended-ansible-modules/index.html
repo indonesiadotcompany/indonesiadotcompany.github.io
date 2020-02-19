@@ -513,6 +513,30 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -542,16 +566,10 @@
 <div class="post">
   <h1 class="post-title">Recommended Ansible Modules</h1>
   <span class="post-date">Nov 5, 2019</span>
-  
-
-<h1 id="frequently-used-module">Frequently Used Module</h1>
-
+  <h1 id="frequently-used-module">Frequently Used Module</h1>
 <h2 id="blockinfile">blockinfile</h2>
-
 <p>Module ini saya gunakan ketika muncul error pada saat menggunakan module lineinfile untuk memasukan beberapa baris sekaligus dalam beberapa tasks, dan ternyata dengan menggunakan module ini dengan hanya satu task bisa memasukan langsung beberapa baris.</p>
-
 <p>Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepada parameter minimalnya adalah path dan block saja.</p>
-
 <pre><code>- name: Insert correct line to /etc/ntp.conf
   blockinfile:
     path: /etc/ntp.conf
@@ -561,21 +579,15 @@
       server &quot;{{ ntp1 }}&quot;
       server &quot;{{ ntp2 }}&quot;
   notify: restart ntp
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.google.com/search?q=lineinfile+multiple+lines">https://www.google.com/search?q=lineinfile+multiple+lines</a></li>
 <li><a href="https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines">https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines</a></li>
 <li><a href="https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html">https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html</a></li>
 <li><a href="https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py">https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py</a></li>
 </ul>
-
 <h2 id="find">find</h2>
-
 <p>Berikut contoh module find yang dicombine dengan module set_fact, when untuk menggunakan result matched (when seperti if dalam scripting / programming)</p>
-
 <pre><code>    - name: Search /etc/audit/rules.d for other DAC audit rules
       find:
         paths: /etc/audit/rules.d
@@ -598,16 +610,13 @@
       when:
         - find_fchown.matched is defined and find_fchown.matched &gt; 0
         - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
-</code></pre>
-
-<p>Referensi:
-* file remediation.yml dari oscap
-* <a href="https://docs.ansible.com/ansible/latest/modules/find_module.html">https://docs.ansible.com/ansible/latest/modules/find_module.html</a></p>
-
+</code></pre><p>Referensi:</p>
+<ul>
+<li>file remediation.yml dari oscap</li>
+<li><a href="https://docs.ansible.com/ansible/latest/modules/find_module.html">https://docs.ansible.com/ansible/latest/modules/find_module.html</a></li>
+</ul>
 <h2 id="pamd">pamd</h2>
-
 <p>module ini berguna untuk edit pam service tanpa harus mengedit file nya langsung, tanpa harus menggunakan module lineinfile, blockinfile, replace, etc. Dan berikut contohnya:</p>
-
 <pre><code>    - name: Add unlock_time argument to pam_faillock preauth
       pamd:
         name: '{{ item }}'
@@ -620,17 +629,12 @@
       loop:
         - system-auth
         - password-auth
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><p>Referensi:</p>
 <ul>
 <li>file remediation.yml oscap</li>
 <li><a href="https://docs.ansible.com/ansible/latest/modules/pamd_module.html">https://docs.ansible.com/ansible/latest/modules/pamd_module.html</a></li>
 </ul>
-
 <h2 id="debug">debug</h2>
-
 <pre><code>    - name: download report
       fetch:
         src: /tmp/oscap-report.html
@@ -638,10 +642,7 @@
         flat: yes
     - debug:
         msg: http://34.87.94.24/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
-</code></pre>
-
-<p>Ref:</p>
-
+</code></pre><p>Ref:</p>
 <ul>
 <li><a href="https://docs.ansible.com/ansible/latest/modules/debug_module.html">https://docs.ansible.com/ansible/latest/modules/debug_module.html</a></li>
 </ul>

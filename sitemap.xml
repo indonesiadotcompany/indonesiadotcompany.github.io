@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -8,7 +8,57 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2019-12-05T18:47:00+00:00</lastmod>
+    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/kvm/</loc>
+    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
+    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/qemu/</loc>
+    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/server/</loc>
+    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</loc>
+    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
+    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/virt-install/</loc>
+    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/virtualization/</loc>
+    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
   </url>
   
   <url>
@@ -18,21 +68,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2019/12/05/jenkins-for-beginner/</loc>
-    <lastmod>2019-12-05T18:47:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2019-12-05T18:47:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2019-12-05T18:47:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
     <lastmod>2019-12-05T18:47:00+00:00</lastmod>
   </url>
   
@@ -48,11 +83,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/security/</loc>
-    <lastmod>2019-12-05T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/server/</loc>
     <lastmod>2019-12-05T08:17:54+07:00</lastmod>
   </url>
   
@@ -78,11 +108,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2019/12/04/openvpn-routed-lans/</loc>
-    <lastmod>2019-12-04T23:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
     <lastmod>2019-12-04T23:17:54+07:00</lastmod>
   </url>
   
@@ -342,12 +367,67 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/tags/certbot/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/container/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/docker/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/10/14/docker-compose-on-linux/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/docker-compose/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/tags/file/</loc>
     <lastmod>2019-10-14T08:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/firewalld/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/git/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/gitlab/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/10/14/gitlab-on-ubuntu-16.04/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/https/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/letsencrypt/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/10/14/letsencrypt-certbot-unatteded/</loc>
     <lastmod>2019-10-14T08:17:54+07:00</lastmod>
   </url>
   
@@ -372,7 +452,17 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/tags/repository/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/tags/sed/</loc>
+    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ssl/</loc>
     <lastmod>2019-10-14T08:17:54+07:00</lastmod>
   </url>
   
@@ -452,11 +542,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/git/</loc>
-    <lastmod>2019-09-24T08:17:48+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/github/</loc>
     <lastmod>2019-09-24T08:17:48+07:00</lastmod>
   </url>
@@ -532,11 +617,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/virtualization/</loc>
-    <lastmod>2019-09-02T08:17:56+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/mail/</loc>
     <lastmod>2019-09-02T08:17:54+07:00</lastmod>
   </url>
@@ -553,16 +633,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/</loc>
-    <lastmod>2019-09-02T08:17:33+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/container/</loc>
-    <lastmod>2019-09-02T08:17:33+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/docker/</loc>
     <lastmod>2019-09-02T08:17:33+07:00</lastmod>
   </url>
   
@@ -588,11 +658,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2019/09/02/git-tips/</loc>
-    <lastmod>2019-09-02T08:17:21+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/repository/</loc>
     <lastmod>2019-09-02T08:17:21+07:00</lastmod>
   </url>
   
@@ -752,7 +817,7 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/2018/07/08/docker-registry-/-docker-private-repository-tips-and-tricks/</loc>
+    <loc>https://blog.indonesiadot.com/2018/07/08/docker-registry-docker-private-repository/</loc>
     <lastmod>2018-07-08T23:59:00+00:00</lastmod>
   </url>
   
@@ -858,11 +923,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/scripts/</loc>
-    <lastmod>2018-03-04T21:22:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ssl/</loc>
     <lastmod>2018-03-04T21:22:00+00:00</lastmod>
   </url>
   
