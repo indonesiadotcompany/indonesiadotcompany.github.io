@@ -1,6 +1,6 @@
 ---
 title: "Docker Compose on Linux"
-date: 2019-10-14T08:17:54+07:00
+date: 2020-01-15T08:17:54+07:00
 tags: ["linux", "docker", "docker-compose", "container"]
 author: "Widya"
 draft: false

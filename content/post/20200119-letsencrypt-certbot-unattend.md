@@ -1,6 +1,6 @@
 ---
 title: "Letsencrypt certbot unatteded"
-date: 2019-10-14T08:17:54+07:00
+date: 2020-01-19T08:17:54+07:00
 tags: ["linux", "server", "letsencrypt", "https", "ssl", "certbot"]
 author: "Widya"
 draft: false
