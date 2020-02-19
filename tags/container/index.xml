@@ -6,17 +6,17 @@
     <description>Recent content in container on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Oct 2019 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/container/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Docker Compose on Linux</title>
-      <link>https://blog.indonesiadot.com/2019/10/14/docker-compose-on-linux/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
+      <link>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</link>
+      <pubDate>Wed, 15 Jan 2020 08:17:54 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2019/10/14/docker-compose-on-linux/</guid>
+      <guid>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</guid>
       <description>Setup sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
  https://docs.docker.com/compose/install/  </description>
     </item>

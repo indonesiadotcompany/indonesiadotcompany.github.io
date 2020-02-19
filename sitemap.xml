@@ -7,22 +7,117 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
+    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
+    <lastmod>2020-01-19T15:17:54+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/kvm/</loc>
-    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
+    <loc>https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/</loc>
+    <lastmod>2020-01-19T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ansibletower/</loc>
+    <lastmod>2020-01-19T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/</loc>
+    <lastmod>2020-01-19T15:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
+    <lastmod>2020-01-19T15:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2020-01-19T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2020-01-19T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/tower/</loc>
+    <lastmod>2020-01-19T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/certbot/</loc>
+    <lastmod>2020-01-19T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/https/</loc>
+    <lastmod>2020-01-19T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/letsencrypt/</loc>
+    <lastmod>2020-01-19T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/</loc>
+    <lastmod>2020-01-19T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/server/</loc>
+    <lastmod>2020-01-19T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ssl/</loc>
+    <lastmod>2020-01-19T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/container/</loc>
+    <lastmod>2020-01-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/docker/</loc>
+    <lastmod>2020-01-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</loc>
+    <lastmod>2020-01-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/docker-compose/</loc>
+    <lastmod>2020-01-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/git/</loc>
+    <lastmod>2020-01-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/gitlab/</loc>
+    <lastmod>2020-01-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</loc>
+    <lastmod>2020-01-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/repository/</loc>
+    <lastmod>2020-01-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/kvm/</loc>
     <lastmod>2019-12-22T08:17:54+07:00</lastmod>
   </url>
   
@@ -32,17 +127,7 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/server/</loc>
-    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</loc>
-    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
     <lastmod>2019-12-22T08:17:54+07:00</lastmod>
   </url>
   
@@ -109,11 +194,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/2019/12/04/openvpn-routed-lans/</loc>
     <lastmod>2019-12-04T23:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
-    <lastmod>2019-12-04T08:17:54+07:00</lastmod>
   </url>
   
   <url>
@@ -367,67 +447,12 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/certbot/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/container/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/docker/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/2019/10/14/docker-compose-on-linux/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/docker-compose/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/file/</loc>
     <lastmod>2019-10-14T08:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/firewalld/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/git/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/gitlab/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/2019/10/14/gitlab-on-ubuntu-16.04/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/https/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/letsencrypt/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/2019/10/14/letsencrypt-certbot-unatteded/</loc>
     <lastmod>2019-10-14T08:17:54+07:00</lastmod>
   </url>
   
@@ -452,17 +477,7 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/repository/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/sed/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ssl/</loc>
     <lastmod>2019-10-14T08:17:54+07:00</lastmod>
   </url>
   
@@ -484,11 +499,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/</loc>
     <lastmod>2019-10-13T07:09:53+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ansibletower/</loc>
-    <lastmod>2019-10-10T07:09:53+07:00</lastmod>
   </url>
   
   <url>

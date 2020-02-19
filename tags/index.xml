@@ -6,10 +6,145 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Dec 2019 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jan 2020 15:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ansible</title>
+      <link>https://blog.indonesiadot.com/tags/ansible/</link>
+      <pubDate>Sun, 19 Jan 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ansibletower</title>
+      <link>https://blog.indonesiadot.com/tags/ansibletower/</link>
+      <pubDate>Sun, 19 Jan 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ansibletower/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://blog.indonesiadot.com/tags/linux/</link>
+      <pubDate>Sun, 19 Jan 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tower</title>
+      <link>https://blog.indonesiadot.com/tags/tower/</link>
+      <pubDate>Sun, 19 Jan 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/tower/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>certbot</title>
+      <link>https://blog.indonesiadot.com/tags/certbot/</link>
+      <pubDate>Sun, 19 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/certbot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>https</title>
+      <link>https://blog.indonesiadot.com/tags/https/</link>
+      <pubDate>Sun, 19 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/https/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>letsencrypt</title>
+      <link>https://blog.indonesiadot.com/tags/letsencrypt/</link>
+      <pubDate>Sun, 19 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/letsencrypt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server</title>
+      <link>https://blog.indonesiadot.com/tags/server/</link>
+      <pubDate>Sun, 19 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssl</title>
+      <link>https://blog.indonesiadot.com/tags/ssl/</link>
+      <pubDate>Sun, 19 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ssl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>container</title>
+      <link>https://blog.indonesiadot.com/tags/container/</link>
+      <pubDate>Wed, 15 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://blog.indonesiadot.com/tags/docker/</link>
+      <pubDate>Wed, 15 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker-compose</title>
+      <link>https://blog.indonesiadot.com/tags/docker-compose/</link>
+      <pubDate>Wed, 15 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/docker-compose/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://blog.indonesiadot.com/tags/git/</link>
+      <pubDate>Tue, 14 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gitlab</title>
+      <link>https://blog.indonesiadot.com/tags/gitlab/</link>
+      <pubDate>Tue, 14 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/gitlab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>repository</title>
+      <link>https://blog.indonesiadot.com/tags/repository/</link>
+      <pubDate>Tue, 14 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/repository/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>kvm</title>
@@ -21,29 +156,11 @@
     </item>
     
     <item>
-      <title>linux</title>
-      <link>https://blog.indonesiadot.com/tags/linux/</link>
-      <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>qemu</title>
       <link>https://blog.indonesiadot.com/tags/qemu/</link>
       <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/qemu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>server</title>
-      <link>https://blog.indonesiadot.com/tags/server/</link>
-      <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/server/</guid>
       <description></description>
     </item>
     
@@ -134,15 +251,6 @@
       <pubDate>Wed, 04 Dec 2019 23:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/openvpn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ansible</title>
-      <link>https://blog.indonesiadot.com/tags/ansible/</link>
-      <pubDate>Wed, 04 Dec 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
       <description></description>
     </item>
     
@@ -435,42 +543,6 @@
     </item>
     
     <item>
-      <title>certbot</title>
-      <link>https://blog.indonesiadot.com/tags/certbot/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/certbot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>container</title>
-      <link>https://blog.indonesiadot.com/tags/container/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/container/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://blog.indonesiadot.com/tags/docker/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker-compose</title>
-      <link>https://blog.indonesiadot.com/tags/docker-compose/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/docker-compose/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>file</title>
       <link>https://blog.indonesiadot.com/tags/file/</link>
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
@@ -485,42 +557,6 @@
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/firewalld/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://blog.indonesiadot.com/tags/git/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gitlab</title>
-      <link>https://blog.indonesiadot.com/tags/gitlab/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/gitlab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>https</title>
-      <link>https://blog.indonesiadot.com/tags/https/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/https/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>letsencrypt</title>
-      <link>https://blog.indonesiadot.com/tags/letsencrypt/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/letsencrypt/</guid>
       <description></description>
     </item>
     
@@ -552,29 +588,11 @@
     </item>
     
     <item>
-      <title>repository</title>
-      <link>https://blog.indonesiadot.com/tags/repository/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/repository/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>sed</title>
       <link>https://blog.indonesiadot.com/tags/sed/</link>
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/sed/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ssl</title>
-      <link>https://blog.indonesiadot.com/tags/ssl/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/ssl/</guid>
       <description></description>
     </item>
     
@@ -602,15 +620,6 @@
       <pubDate>Sun, 13 Oct 2019 07:09:53 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/doh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ansibletower</title>
-      <link>https://blog.indonesiadot.com/tags/ansibletower/</link>
-      <pubDate>Thu, 10 Oct 2019 07:09:53 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/ansibletower/</guid>
       <description></description>
     </item>
     

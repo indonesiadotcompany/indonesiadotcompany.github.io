@@ -6,10 +6,49 @@
     <description>Recent content in linux on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Dec 2019 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jan 2020 15:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible Tower first Implementation</title>
+      <link>https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/</link>
+      <pubDate>Sun, 19 Jan 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/</guid>
+      <description>Ansible Tower first Implementation  Install ansible tower masukan license tambahkan access - organization tambahkan access - users tambahkan access - teams tambahkan resources - inventory siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses) tambahkan resources - projects buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine tambahkan resources - credentials tambahkan resources - templates test launch jobs based on template yg baru dibuat  Referensi:</description>
+    </item>
+    
+    <item>
+      <title>Letsencrypt certbot unatteded</title>
+      <link>https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/</link>
+      <pubDate>Sun, 19 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/</guid>
+      <description>Letsencrypt with certbot unatteded way This is for ubuntu linux
+add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonly --standalone --preferred-challenges http --non-interactive --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com Note:  before running certbot command, you must already pointing domain / subdomain address to destination ip  Referensi:  https://indonesiadot.com  </description>
+    </item>
+    
+    <item>
+      <title>Docker Compose on Linux</title>
+      <link>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</link>
+      <pubDate>Wed, 15 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</guid>
+      <description>Setup sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
+ https://docs.docker.com/compose/install/  </description>
+    </item>
+    
+    <item>
+      <title>Gitlab on Ubuntu 16.04</title>
+      <link>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</link>
+      <pubDate>Tue, 14 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</guid>
+      <description>Instalasi Gitlab di Ubuntu 16.04 Referensi:
+ https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04  </description>
+    </item>
     
     <item>
       <title>Simple Virtualization Linux</title>
@@ -234,36 +273,6 @@ Referensi:
       <guid>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/</guid>
       <description>Firewalld masquerade firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public Referensi:
  https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/  </description>
-    </item>
-    
-    <item>
-      <title>Docker Compose on Linux</title>
-      <link>https://blog.indonesiadot.com/2019/10/14/docker-compose-on-linux/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/2019/10/14/docker-compose-on-linux/</guid>
-      <description>Setup sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
- https://docs.docker.com/compose/install/  </description>
-    </item>
-    
-    <item>
-      <title>Gitlab on Ubuntu 16.04</title>
-      <link>https://blog.indonesiadot.com/2019/10/14/gitlab-on-ubuntu-16.04/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/2019/10/14/gitlab-on-ubuntu-16.04/</guid>
-      <description>Instalasi Gitlab di Ubuntu 16.04 Referensi:
- https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04  </description>
-    </item>
-    
-    <item>
-      <title>Letsencrypt certbot unatteded</title>
-      <link>https://blog.indonesiadot.com/2019/10/14/letsencrypt-certbot-unatteded/</link>
-      <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/2019/10/14/letsencrypt-certbot-unatteded/</guid>
-      <description>Letsencrypt with certbot unatteded way This is for ubuntu linux
-add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonly --standalone --preferred-challenges http --non-interactive --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com Note:  before running certbot command, you must already pointing domain / subdomain address to destination ip  Referensi:  https://indonesiadot.com  </description>
     </item>
     
     <item>
