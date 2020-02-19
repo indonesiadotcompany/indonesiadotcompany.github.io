@@ -708,7 +708,15 @@ git branch -D namabranchyangakandihapus
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/">Pembuatan web statis dengan hugo</a></h1>
         <span class="post-date">Sep 2, 2019</span>
-	<p>Referensi hugo dasar:</p>
+	<h2 id="manage-hugo-dari-pc--laptop-lain">manage hugo dari pc / laptop lain</h2>
+<pre><code>git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io
+git checkout hugo
+rm -rf public
+git add .
+git commit -m 'remove public'
+git push
+git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public
+</code></pre><p>Referensi hugo dasar:</p>
 <ul>
 <li><a href="https://www.petanikode.com/topik/hugo">https://www.petanikode.com/topik/hugo</a></li>
 <li><a href="https://gohugo.io/getting-started/quick-start/">https://gohugo.io/getting-started/quick-start/</a></li>
