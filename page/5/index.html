@@ -542,6 +542,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -572,6 +578,47 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/">Proxmox optimized disk for auto trim / shrink</a></h1>
+        <span class="post-date">Sep 2, 2019</span>
+	<p>Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari <em>thin provision storage</em> atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.</p>
+<p>Persyaratan adalah:</p>
+<ul>
+<li>menggunakan <em>thin provisioned backing storage</em> seperti qcow2, thin-lvm, zfs pada server proxmox nya</li>
+<li>menggunakan Virtio SCSI controller pada guest option vm nya</li>
+<li>Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya</li>
+<li>Tambahkan discard mount options di /etc/fstab nya guest vm</li>
+<li>Enable fstrim.timer pada systemctl</li>
+</ul>
+<p>Adapun langkahnya, disini dilakukan perubahan pada VM yang sebelumnya telah terbuat dengan Virtio disk, dari disk yang kedua dari VM, agar lebih aman, dirubah satu persatu, dimulai dari disk kedua terlebih dahulu:</p>
+<ul>
+<li>edit dulu /etc/fstab bagian disk dari /dev/vdb1 menjadi /dev/sda1 (sda untuk drive scsi / sata, untuk lebih aman nya di komen dulu bagian disk /hdbck, untuk di mount manual, agar pada saat boot jika salah tidak nyangkut)</li>
+<li>shutdown vm</li>
+<li>detach disk</li>
+<li>edit disk, menjadi SCSI dan klik bagian advanced, lalu check discard</li>
+<li>start vm</li>
+<li>setelah login, jalankan fstrim -v /hdbck/</li>
+</ul>
+<p>Note:</p>
+<ul>
+<li>Untuk perubahan selanjutnya pada disk yang pertama, di edit dulu /etc/fstab nya, misal /dev/vda1 menjadi /dev/sda1, dan /dev/sda1 sebelumnya yg disk kedua yg telah di edit menjadi SCSI menjadi /dev/sdb1, lalu baru lakukan seperti langkah diatas dari shutdown vm sampai jalankan fstrim.</li>
+<li>Masukan juga pada crontab, agar dijalankan fstrim setiap bulan, jika memakai centos 6 dan dibawahnya</li>
+<li>Untuk membuktikannya, sambil mengecek di server proxmox dengan menggunakan command <code>zfs list</code> jika memakai zfs, <code>lvs</code> atau <code>lvdisplay</code> untuk thin-lvm, atau <code>du -sch</code> jika memakai qcow2 untuk mengetahui besar file sebelum dan setelah di guest vm nya dijalankan command <code>fstrim -av</code></li>
+</ul>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://pve.proxmox.com/wiki/Shrink_Qcow2_Disk_Files">https://pve.proxmox.com/wiki/Shrink_Qcow2_Disk_Files</a></li>
+<li><a href="https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/">https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/virtualization/">virtualization</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/postfix-tips/">Postfix tips</a></h1>
@@ -819,17 +866,6 @@ git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiad
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/cloud/">cloud</a>, <a href="https://blog.indonesiadot.com/tags/gcp/">gcp</a>, <a href="https://blog.indonesiadot.com/tags/vps/">vps</a>, <a href="https://blog.indonesiadot.com/tags/free/">free</a>, <a href="https://blog.indonesiadot.com/tags/gratis/">gratis</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/14/disable-/-ignore-user-process-at-csf-firewall/">disable / ignore user process at csf firewall</a></h1>
-        <span class="post-date">Aug 14, 2019</span>
-	<p><!-- raw HTML omitted --><a href="https://www.google.com/search?q=csf+ignore+user%3Cbr">https://www.google.com/search?q=csf+ignore+user&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="http://g33kinfo.com/info/archives/3933%3Cbr">http://g33kinfo.com/info/archives/3933&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->From <!-- raw HTML omitted -->configserver.com<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Process Tracking<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->This option enables tracking of user and nobody processes and examines them for suspicious executables or open network ports. Its purpose is to identify potential exploit processes that are running on the server, even if they are obfuscated to appear as system services. If a suspicious process is found an alert email is sent with relevant information. It is then the responsibility of the recipient to investigate the process further as the script takes no further action. Processes (PIDs) are only reported once unless lfd is restarted.<!-- raw HTML omitted --><!-- raw HTML omitted -->There is an ignore file /etc/csf/csf.pignore which can be used to whitelist either usernames or full paths to binaries. Care should be taken with ignoring users or files so that you don’t force false-negatives.<!-- raw HTML omitted --><!-- raw HTML omitted -->You must use the following format:<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->exe:/full/path/to/file<!-- raw HTML omitted --><!-- raw HTML omitted -->user:username<!-- raw HTML omitted --><!-- raw HTML omitted -->cmd:command line<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->The command line as reported in /proc has the trailing null character removed and all other occurrences replaced with a space. So, the line you specify in the file should have space separators for the command line arguments, not null characters. It is strongly recommended that you use command line ignores very carefully as any process can change what is reported to the OS. Don’t list the paths to perl or php as this will prevent detection of suspicious web scripts.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Process Tracking and csf.pignore<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->1. If you’re seeing spamd being reported after the latest update and want to ignore it, the following can be added to /etc/csf/csf.pignore (ensure that you ONLY use linux linefeeds, not WIN or MAC ones when editing Linux files):<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->cmd:spamd child<!-- raw HTML omitted --><!-- raw HTML omitted -->Then restart lfd.<!-- raw HTML omitted --><!-- raw HTML omitted -->2. If you’re seeing awstats.pl being reported after the latest update and want to ignore it, the following can be added to /etc/csf/csf.pignore:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->pcmd:.*/usr/local/cpanel/3rdparty/bin/awstats.pl.<em><!-- raw HTML omitted -->pcmd:.</em>/usr/local/cpanel/base/awstats.pl.*<!-- raw HTML omitted --><!-- raw HTML omitted -->Then restart lfd.<!-- raw HTML omitted --></p>
-
-	<hr/>
-	
-	
 	 <hr/>
     </div>
   

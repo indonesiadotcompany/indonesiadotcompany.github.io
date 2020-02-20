@@ -7,6 +7,51 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/</loc>
+    <lastmod>2020-01-20T07:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/container/</loc>
+    <lastmod>2020-01-20T07:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/docker/</loc>
+    <lastmod>2020-01-20T07:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/harbor/</loc>
+    <lastmod>2020-01-20T07:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</loc>
+    <lastmod>2020-01-20T07:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
+    <lastmod>2020-01-20T07:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2020-01-20T07:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/registry/</loc>
+    <lastmod>2020-01-20T07:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2020-01-20T07:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
     <lastmod>2020-01-19T15:17:54+07:00</lastmod>
   </url>
@@ -18,26 +63,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/ansibletower/</loc>
-    <lastmod>2020-01-19T15:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2020-01-19T15:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2020-01-19T15:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2020-01-19T15:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
     <lastmod>2020-01-19T15:17:54+07:00</lastmod>
   </url>
   
@@ -74,16 +99,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/tags/ssl/</loc>
     <lastmod>2020-01-19T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/container/</loc>
-    <lastmod>2020-01-15T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/docker/</loc>
-    <lastmod>2020-01-15T08:17:54+07:00</lastmod>
   </url>
   
   <url>

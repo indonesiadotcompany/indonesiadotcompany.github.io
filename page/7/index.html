@@ -542,6 +542,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -572,6 +578,29 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/">Stress test on Linux</a></h1>
+        <span class="post-date">Jul 28, 2018</span>
+	<pre><code>yum -y install wget
+wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-1.el7.rf.x86_64.rpm
+yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm
+stress -c 8 -i 4 -t 10s
+stress -c 8 -i 9 -m 9 --vm-bytes 1024M
+</code></pre><p>On ubuntu server, use apt to install stress</p>
+<p>Ref:</p>
+<ul>
+<li><a href="https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2">https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2</a></li>
+<li><a href="https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/">https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/disk/">disk</a>, <a href="https://blog.indonesiadot.com/tags/cpu/">cpu</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/stresstest/">stresstest</a>, <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/load/">load</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/07/15/zfs-cool-feature-snapshot-replicate-etc/">zfs cool feature, snapshot, replicate, etc</a></h1>
@@ -681,19 +710,6 @@
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/mail/">mail</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/05/26/belajar-privacy-basic-security-on-the-internet/">belajar privacy (basic security on the internet)</a></h1>
-        <span class="post-date">May 26, 2018</span>
-	<p>Alamat / url untuk belajar privacy di internet<!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://www.privacytools.io/%3Cbr">https://www.privacytools.io/&lt;br</a> /&gt;<!-- raw HTML omitted -->dapat dari:<!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://www.cryptomonkeys.com/%3Cbr">https://www.cryptomonkeys.com/&lt;br</a> /&gt;<!-- raw HTML omitted -->alamat lain yang menarik:<!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://www.infosecindustry.com/%3Cbr">https://www.infosecindustry.com/&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="http://www.freebsd.org/%3Cbr">http://www.freebsd.org/&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/security/">security</a>
 	 <hr/>
     </div>
   

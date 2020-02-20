@@ -542,6 +542,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -572,6 +578,17 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/14/disable-/-ignore-user-process-at-csf-firewall/">disable / ignore user process at csf firewall</a></h1>
+        <span class="post-date">Aug 14, 2019</span>
+	<p><!-- raw HTML omitted --><a href="https://www.google.com/search?q=csf+ignore+user%3Cbr">https://www.google.com/search?q=csf+ignore+user&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="http://g33kinfo.com/info/archives/3933%3Cbr">http://g33kinfo.com/info/archives/3933&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->From <!-- raw HTML omitted -->configserver.com<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Process Tracking<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->This option enables tracking of user and nobody processes and examines them for suspicious executables or open network ports. Its purpose is to identify potential exploit processes that are running on the server, even if they are obfuscated to appear as system services. If a suspicious process is found an alert email is sent with relevant information. It is then the responsibility of the recipient to investigate the process further as the script takes no further action. Processes (PIDs) are only reported once unless lfd is restarted.<!-- raw HTML omitted --><!-- raw HTML omitted -->There is an ignore file /etc/csf/csf.pignore which can be used to whitelist either usernames or full paths to binaries. Care should be taken with ignoring users or files so that you don’t force false-negatives.<!-- raw HTML omitted --><!-- raw HTML omitted -->You must use the following format:<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->exe:/full/path/to/file<!-- raw HTML omitted --><!-- raw HTML omitted -->user:username<!-- raw HTML omitted --><!-- raw HTML omitted -->cmd:command line<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->The command line as reported in /proc has the trailing null character removed and all other occurrences replaced with a space. So, the line you specify in the file should have space separators for the command line arguments, not null characters. It is strongly recommended that you use command line ignores very carefully as any process can change what is reported to the OS. Don’t list the paths to perl or php as this will prevent detection of suspicious web scripts.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Process Tracking and csf.pignore<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->1. If you’re seeing spamd being reported after the latest update and want to ignore it, the following can be added to /etc/csf/csf.pignore (ensure that you ONLY use linux linefeeds, not WIN or MAC ones when editing Linux files):<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->cmd:spamd child<!-- raw HTML omitted --><!-- raw HTML omitted -->Then restart lfd.<!-- raw HTML omitted --><!-- raw HTML omitted -->2. If you’re seeing awstats.pl being reported after the latest update and want to ignore it, the following can be added to /etc/csf/csf.pignore:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->pcmd:.*/usr/local/cpanel/3rdparty/bin/awstats.pl.<em><!-- raw HTML omitted -->pcmd:.</em>/usr/local/cpanel/base/awstats.pl.*<!-- raw HTML omitted --><!-- raw HTML omitted -->Then restart lfd.<!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/12/simplemonitor-with-telegram-alert/">simplemonitor with telegram alert</a></h1>
@@ -669,29 +686,6 @@
 	<hr/>
 	
 	
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/">Stress test on Linux</a></h1>
-        <span class="post-date">Jul 28, 2018</span>
-	<pre><code>yum -y install wget
-wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-1.el7.rf.x86_64.rpm
-yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm
-stress -c 8 -i 4 -t 10s
-stress -c 8 -i 9 -m 9 --vm-bytes 1024M
-</code></pre><p>On ubuntu server, use apt to install stress</p>
-<p>Ref:</p>
-<ul>
-<li><a href="https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2">https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2</a></li>
-<li><a href="https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/">https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/disk/">disk</a>, <a href="https://blog.indonesiadot.com/tags/cpu/">cpu</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/stresstest/">stresstest</a>, <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/load/">load</a>
 	 <hr/>
     </div>
   

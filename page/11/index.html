@@ -542,6 +542,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -572,6 +578,71 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/31/ansible-awx/">Ansible AWX</a></h1>
+        <span class="post-date">Jan 31, 2018</span>
+	<h1 id="deprecated">DEPRECATED</h1>
+<h3 id="install-latest-ansible">install latest ansible</h3>
+<pre><code>apt-add-repository ppa:ansible/ansible
+[ENTER]
+apt update
+apt-get install ansible
+</code></pre><h3 id="install-latest-docker">install latest docker</h3>
+<pre><code>apt-add-repository ppa:ansible/ansible
+[ENTER]
+apt update
+apt-get install ansible
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+add-apt-repository \
+&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) \
+stable&quot;
+apt update
+apt-get install docker-ce
+apt install make
+apt install python-pip
+pip install docker
+pip install --upgrade pip
+apt install git
+curl -O https://raw.githubusercontent.com/geerlingguy/awx-container/master/docker-compose.yml
+docker-compose up -d
+</code></pre><p>tunggu beberapa saat lalu akses via http, misal http://localhost dengan user admin/password</p>
+<p>Ref:</p>
+<ul>
+<li><a href="http://www.nalashaa.com/setting-ci-deployment-automation-ansible/">http://www.nalashaa.com/setting-ci-deployment-automation-ansible/</a></li>
+<li><a href="https://chromatichq.com/blog/automated-servers-and-deployments-ansible-jenkins">https://chromatichq.com/blog/automated-servers-and-deployments-ansible-jenkins</a></li>
+<li><a href="https://medium.com/@tedchength/basic-deployment-with-ansible-docker-jenkins-and-git-4f3b42fb2f5e">https://medium.com/@tedchength/basic-deployment-with-ansible-docker-jenkins-and-git-4f3b42fb2f5e</a></li>
+<li><a href="https://dzone.com/articles/running-ansible-playbooks-from-jenkins">https://dzone.com/articles/running-ansible-playbooks-from-jenkins</a></li>
+<li><a href="https://www.jeffgeerling.com/blog/2017/get-started-using-ansible-awx-open-source-tower-version-one-minute">https://www.jeffgeerling.com/blog/2017/get-started-using-ansible-awx-open-source-tower-version-one-minute</a></li>
+<li><a href="https://galaxy.ansible.com/geerlingguy/jenkins/">https://galaxy.ansible.com/geerlingguy/jenkins/</a></li>
+</ul>
+<h2 id="belajar-ansible-awx-201802010830">Belajar ansible awx 201802010830</h2>
+<p>Ref:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=E5XtK7mE8_0">https://www.youtube.com/watch?v=E5XtK7mE8_0</a></li>
+<li><a href="https://github.com/whiskerlabs/armsible/blob/master/local_network_inventory.py">https://github.com/whiskerlabs/armsible/blob/master/local_network_inventory.py</a></li>
+<li><a href="https://github.com/KeksiLabs/ansible-user-management-example">https://github.com/KeksiLabs/ansible-user-management-example</a></li>
+<li><a href="https://keksi.io/tutorials/2016/12/05/how-to-manage-remote-server-users-with-ansible/">https://keksi.io/tutorials/2016/12/05/how-to-manage-remote-server-users-with-ansible/</a></li>
+</ul>
+<h2 id="install-ansible-tower">install ansible tower</h2>
+<p>Ref:</p>
+<ul>
+<li><a href="https://rafishaikblog.wordpress.com/2017/01/31/ansible-tower/">https://rafishaikblog.wordpress.com/2017/01/31/ansible-tower/</a></li>
+</ul>
+<p>Ansible tower</p>
+<p>Ref:</p>
+<ul>
+<li><a href="https://oliverveits.wordpress.com/2016/06/14/it-automation-part-iv-ansible-tower-hello-world-example/amp/">https://oliverveits.wordpress.com/2016/06/14/it-automation-part-iv-ansible-tower-hello-world-example/amp/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/task/">task</a>, <a href="https://blog.indonesiadot.com/tags/todo/">todo</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/31/todo-web-page-monitoring-and-alert-when-change/">TODO web page monitoring and alert when change</a></h1>
@@ -682,19 +753,6 @@ find . -type f -print -delete
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/27/install-solr-server/">Install solr server</a></h1>
         <span class="post-date">Sep 27, 2017</span>
 	<p>Here are the steps for Install solr server - base of search engine for magento  these steps run on ubuntu 16.04, because we follow this <a href="http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html,">http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html,</a> we must install jdk 7 from ppa, but ubuntu 16.04 default with jdk 8  <!-- raw HTML omitted --><!-- raw HTML omitted -->add-apt-repository ppa:openjdk-r/ppa<!-- raw HTML omitted -->apt update<!-- raw HTML omitted -->apt-get install openjdk-7-jdk<!-- raw HTML omitted -->apt install supervisor<!-- raw HTML omitted --><!-- raw HTML omitted -->su - user<!-- raw HTML omitted -->mkdir apps &amp;&amp; cd apps<!-- raw HTML omitted -->wget <a href="https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz%3Cbr">https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz&lt;br</a> /&gt;tar xzf ../apache-solr-3.4.0.tgz<!-- raw HTML omitted -->mv apache-solr-3.4.0 solr34<!-- raw HTML omitted -->cp /var/www/magento/lib/Apache/Solr/conf/* solr34/example/solr/conf/<!-- raw HTML omitted -->cat &gt;&gt; apps/solr34/example/logging.properties <!-- raw HTML omitted --><!-- raw HTML omitted --># Default global logging level:<!-- raw HTML omitted -->.level = INFO<!-- raw HTML omitted --><!-- raw HTML omitted --># Write to a file:<!-- raw HTML omitted -->handlers = java.util.logging.FileHandler<!-- raw HTML omitted --><!-- raw HTML omitted --># Write log messages in XML format:<!-- raw HTML omitted --># Use java.util.logging.SimpleFormatter to log like Solr logs to the screen by default<!-- raw HTML omitted -->java.util.logging.FileHandler.formatter = java.util.logging.XMLFormatter<!-- raw HTML omitted --><!-- raw HTML omitted --># Log to the current working directory, with log files named solrxxx.log<!-- raw HTML omitted -->java.util.logging.FileHandler.pattern = /home/ehbm2/logs/solr%u.log<!-- raw HTML omitted --><!-- raw HTML omitted -->[CTRL-C]<!-- raw HTML omitted --><!-- raw HTML omitted -->exit<!-- raw HTML omitted --><!-- raw HTML omitted -->cat &gt;&gt; /etc/supervisor/conf.d/solr.conf <!-- raw HTML omitted --><!-- raw HTML omitted -->[program:solr]<!-- raw HTML omitted -->user=ehbm2<!-- raw HTML omitted -->#directory=/home/ehbm2/apps/solr141/example<!-- raw HTML omitted -->directory=/home/ehbm2/apps/solr34/example<!-- raw HTML omitted -->command=java -Djava.util.logging.config.file=logging.properties -jar start.jar<!-- raw HTML omitted -->autostart=true<!-- raw HTML omitted -->autorestart=true<!-- raw HTML omitted --><!-- raw HTML omitted -->[CTRL-C]<!-- raw HTML omitted --><!-- raw HTML omitted -->/etc/init.d/supervisor restart<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/e-commerce/">e-commerce</a>, <a href="https://blog.indonesiadot.com/tags/magento/">magento</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/20/magento-maintenance-mode/">Magento maintenance mode</a></h1>
-        <span class="post-date">Sep 20, 2017</span>
-	<p>To set magento 2 in maintenance mode and to make nice maintenance page.<!-- raw HTML omitted --><!-- raw HTML omitted -->1. make / get maintenance image for our maintenance page, ie: maintenance.png<!-- raw HTML omitted --><!-- raw HTML omitted -->2. put at pub/errors/default/images directory under magento root directory, ie: /var/www/magento/pub/errors/default/images/maintenance.png<!-- raw HTML omitted --><!-- raw HTML omitted -->3. edit and save /var/www/magento/pub/errors/default/503.phtml<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->4. run bin/magento maintenance:enable from magento root directory<!-- raw HTML omitted --><!-- raw HTML omitted -->that's it, and you can see nicer maintenance mode in magento 2<!-- raw HTML omitted --><!-- raw HTML omitted -->To set magento 1 in maintenance mode and to make nice maintenance page.<!-- raw HTML omitted --><!-- raw HTML omitted -->1. make / get maintenance image for our maintenance page, ie: maintenance.png<!-- raw HTML omitted --><!-- raw HTML omitted -->2. put at errors/default/ directory under magento root directory, ie: /var/www/magento/errors/default/maintenance.png<!-- raw HTML omitted --><!-- raw HTML omitted -->3. edit and save /var/www/magento/errors/default/503.phtml <!-- raw HTML omitted --><!-- raw HTML omitted -->We are currently in Maintenance<!-- raw HTML omitted -->                <!-- raw HTML omitted -->The server is currently under maintenance to give better service<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->4. create file maintenance.flag at magento root directory<!-- raw HTML omitted --></p>
 
 	<hr/>
 	

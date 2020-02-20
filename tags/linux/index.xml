@@ -6,10 +6,20 @@
     <description>Recent content in linux on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Jan 2020 15:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jan 2020 07:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Harbor Container Registry</title>
+      <link>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</link>
+      <pubDate>Mon, 20 Jan 2020 07:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</guid>
+      <description>Widya Harbor Container Registry  https://widharbor.birau.com/  Referensi:
+ https://indonesiadot.com  </description>
+    </item>
     
     <item>
       <title>Ansible Tower first Implementation</title>
@@ -46,7 +56,7 @@ add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonl
       <pubDate>Tue, 14 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</guid>
-      <description>Instalasi Gitlab di Ubuntu 16.04 Referensi:
+      <description>Instalasi Gitlab di Ubuntu 16.04 Widya Gitlab  https://widgitgog.birau.com/dashboard/projects  Referensi:
  https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04  </description>
     </item>
     
