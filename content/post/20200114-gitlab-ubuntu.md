@@ -8,7 +8,9 @@ draft: false
 
 ## Instalasi Gitlab di Ubuntu 16.04
 
+## Widya Gitlab
 
+* https://widgitgog.birau.com/dashboard/projects
 
 Referensi:
 
