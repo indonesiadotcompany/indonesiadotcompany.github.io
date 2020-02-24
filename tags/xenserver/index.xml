@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>xenserver on Blog Indonesiadot.Com</title>
@@ -17,8 +17,7 @@
       <pubDate>Mon, 19 Mar 2018 21:56:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/03/19/xenserver-provisioning-with-ansible/</guid>
-      <description>https://medium.com/@jrisch/using-ansible-to-automate-vm-creation-on-xenserver-d092aa484a06
-Using Ansible to automate VM creation on XenServerI’ve been using Xenserver at Fab:IT for the last 8 or 9 years, and during that time, I’ve automated the installation of, mostly Debian and Ubuntu, VM’s in several ways. The most successful way, was a shell script with certain sane defaults built in, combined with preseed files for the various Debian and Ubuntu versions, and small shell scripts for handling the installation of Xentools in the VM, after the initial reboot.</description>
+      <description>https://medium.com/@jrisch/using-ansible-to-automate-vm-creation-on-xenserver-d092aa484a06&amp;lt;br /&amp;gt;Using Ansible to automate VM creation on XenServerI’ve been using Xenserver at Fab:ITfor the last 8 or 9 years, and during that time, I’ve automated the installation of, mostly Debian and Ubuntu, VM’s in several ways. The most successful way, was a shell script with certain sane defaults built in, combined with preseed files for the various Debian and Ubuntu versions, and small shell scripts for handling the installation of Xentools in the VM, after the initial reboot.</description>
     </item>
     
     <item>
@@ -27,17 +26,7 @@ Using Ansible to automate VM creation on XenServerI’ve been using Xenserver at
       <pubDate>Wed, 31 Jan 2018 21:30:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/31/xenserver-tips-and-trick/</guid>
-      <description>xenserver resize memory command
-Increase RAM for XenServer VM&amp;rsquo;s through Command Line Interface.
-1.If the RAM editing option is graded out through XenCenter.
-Solution
-1.Take a putty/ssh connection to pool master
-2.Power off the VM.
-Execute the Below command to configure the new RAM:
-#xe vm-memory-limits-set &amp;nbsp; &amp;nbsp;uuid=&amp;nbsp; static-min=GiB/MiB &amp;nbsp;dynamic-min=GiB/MiB &amp;nbsp;dynamic-max=GiB/MiB &amp;nbsp; &amp;nbsp; static-max=GiB/MiB&amp;nbsp;
-Example :
-#xe vm-memory-limits-set &amp;nbsp; &amp;nbsp;uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f &amp;nbsp; &amp;nbsp; &amp;nbsp;static-min=64GiB &amp;nbsp; dynamic-min=64GiB &amp;nbsp; dynamic-max=64GiB &amp;nbsp; &amp;nbsp;static-max=64GiB
-3.Start the VM.</description>
+      <description>xenserver resize memory commandIncrease RAM for XenServer VM&#39;s through Command Line Interface.1.If the RAM editing option is graded out through XenCenter.Solution1.Take a putty/ssh connection to pool master2.Power off the VM.Execute the Below command to configure the new RAM:#xe vm-memory-limits-set uuid=static-min=GiB/MiB dynamic-min=GiB/MiB dynamic-max=GiB/MiB static-max=GiB/MiB Example :#xe vm-memory-limits-set uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f static-min=64GiB dynamic-min=64GiB dynamic-max=64GiB static-max=64GiB3.Start the VM.</description>
     </item>
     
   </channel>

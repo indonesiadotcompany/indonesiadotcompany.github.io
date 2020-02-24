@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hugo on Blog Indonesiadot.Com</title>
@@ -28,10 +28,10 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
       <pubDate>Tue, 24 Sep 2019 08:17:16 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/24/markdown-tips/</guid>
-      <description> markdown insert image Ini adalah markdown untuk menampilkan gambar yang terletak di dalam folder / direktori pada postingan di hugo
-![nama-image](path/to/image)  markdown insert link Ini adalah markdown untuk menampilkan link url pada kata atau kalimat di halaman web
-[kata atau kalimat](http://link.url/yang-dituju)  seperti contoh diatas
-[markdown](https://www.petanikode.com/markdown-pemula/)  Referensi markdown images:
+      <description>markdown insert image Ini adalah markdown untuk menampilkan gambar yang terletak di dalam folder / direktori pada postingan di hugo
+![nama-image](path/to/image) markdown insert link Ini adalah markdown untuk menampilkan link url pada kata atau kalimat di halaman web
+[kata atau kalimat](http://link.url/yang-dituju) seperti contoh diatas
+[markdown](https://www.petanikode.com/markdown-pemula/) Referensi markdown images:
  https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images  </description>
     </item>
     
@@ -41,7 +41,11 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
       <pubDate>Mon, 02 Sep 2019 08:17:16 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/</guid>
+<<<<<<< HEAD
       <description> manage hugo dari pc / laptop lain git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io git checkout hugo rm -rf public git add . git commit -m &#39;remove public&#39; git push git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public  Referensi hugo dasar:
+=======
+      <description>manage hugo dari pc / laptop lain git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io git checkout hugo rm -rf public git add . git commit -m &#39;remove public&#39; git push git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public Referensi hugo dasar:
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
  https://www.petanikode.com/topik/hugo https://gohugo.io/getting-started/quick-start/ https://gohugo.io/hosting-and-deployment/hosting-on-github/ https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html  Referensi hugo dan e-commerce:
  https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce  </description>
     </item>
@@ -53,7 +57,7 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
       
       <guid>https://blog.indonesiadot.com/2019/09/02/migrasi-antar-hugo/</guid>
       <description>To remove a submodule you need to:
- Delete the relevant section from the .gitmodules file. Stage the .gitmodules changes git add .gitmodules Delete the relevant section from .git/config. Run git rm &amp;ndash;cached path_to_submodule (no trailing slash). Run rm -rf .git/modules/path_to_submodule (no trailing slash). Commit git commit -m &amp;ldquo;Removed submodule &amp;ldquo; Delete the now untracked submodule files rm -rf path_to_submodule  Referensi:
+ Delete the relevant section from the .gitmodules file. Stage the .gitmodules changes git add .gitmodules Delete the relevant section from .git/config. Run git rm &amp;ndash;cached path_to_submodule (no trailing slash). Run rm -rf .git/modules/path_to_submodule (no trailing slash). Commit git commit -m &amp;ldquo;Removed submodule &amp;quot; Delete the now untracked submodule files rm -rf path_to_submodule  Referensi:
  https://indonesiadot.com https://gist.github.com/myusuf3/7f645819ded92bda6677  </description>
     </item>
     

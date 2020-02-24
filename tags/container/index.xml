@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>container on Blog Indonesiadot.Com</title>
@@ -17,7 +17,11 @@
       <pubDate>Thu, 20 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</guid>
+<<<<<<< HEAD
       <description> Ansible Tower tips and trick Change admin password awx-manage changepassword admin  backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
+=======
+      <description>Ansible Tower tips and trick Change admin password awx-manage changepassword admin backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
  https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html  </description>
     </item>
     
@@ -27,7 +31,11 @@
       <pubDate>Mon, 20 Jan 2020 07:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</guid>
+<<<<<<< HEAD
       <description> Widya Harbor Container Registry  https://widharbor.birau.com/  Referensi:
+=======
+      <description>Widya Harbor Container Registry  https://widharbor.birau.com/  Referensi:
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
  https://indonesiadot.com  </description>
     </item>
     
@@ -37,7 +45,11 @@
       <pubDate>Wed, 15 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</guid>
+<<<<<<< HEAD
       <description> Setup sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose  Referensi:
+=======
+      <description>Setup sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
  https://docs.docker.com/compose/install/  </description>
     </item>
     
@@ -47,7 +59,17 @@
       <pubDate>Mon, 02 Sep 2019 08:17:33 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/</guid>
-      <description>Kubernetes Container runtime with docker # Install Docker CE ## Set up the repository ### Install required packages. yum install yum-utils device-mapper-persistent-data lvm2 ### Add Docker repository. yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo ## Install Docker CE. yum update &amp;amp;&amp;amp; yum install docker-ce-18.06.2.ce ## Create /etc/docker directory. mkdir /etc/docker # Setup daemon. cat &amp;gt; /etc/docker/daemon.json &amp;lt;&amp;lt;EOF { &amp;quot;exec-opts&amp;quot;: [&amp;quot;native.cgroupdriver=systemd&amp;quot;], &amp;quot;log-driver&amp;quot;: &amp;quot;json-file&amp;quot;, &amp;quot;log-opts&amp;quot;: { &amp;quot;max-size&amp;quot;: &amp;quot;100m&amp;quot; }, &amp;quot;storage-driver&amp;quot;: &amp;quot;overlay2&amp;quot;, &amp;quot;storage-opts&amp;quot;: [ &amp;quot;overlay2.</description>
+      <description>Kubernetes Container runtime with docker # Install Docker CE ## Set up the repository ### Install required packages. yum install yum-utils device-mapper-persistent-data lvm2 ### Add Docker repository. yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo ## Install Docker CE. yum update &amp;amp;&amp;amp; yum install docker-ce-18.06.2.ce ## Create /etc/docker directory. mkdir /etc/docker # Setup daemon. cat &amp;gt; /etc/docker/daemon.json &amp;lt;&amp;lt;EOF { &amp;quot;exec-opts&amp;quot;: [&amp;quot;native.cgroupdriver=systemd&amp;quot;], &amp;quot;log-driver&amp;quot;: &amp;quot;json-file&amp;quot;, &amp;quot;log-opts&amp;quot;: { &amp;quot;max-size&amp;quot;: &amp;quot;100m&amp;quot; }, &amp;quot;storage-driver&amp;quot;: &amp;quot;overlay2&amp;quot;, &amp;quot;storage-opts&amp;quot;: [ &amp;quot;overlay2.override_kernel_check=true&amp;quot; ] } EOF mkdir -p /etc/systemd/system/docker.</description>
+    </item>
+    
+    <item>
+      <title>docker registry, docker private repository</title>
+      <link>https://blog.indonesiadot.com/2018/07/08/docker-registry-docker-private-repository/</link>
+      <pubDate>Sun, 08 Jul 2018 23:59:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2018/07/08/docker-registry-docker-private-repository/</guid>
+      <description>Ref:
+ https://docs.docker.com/registry/deploying/ https://github.com/sky-uk/cleanup-docker-registry https://github.com/burnettk/delete-docker-registry-image https://stackoverflow.com/questions/29802202/docker-registry-2-0-how-to-delete-unused-images https://gist.github.com/PieterScheffers/63e4c2fd5553af8a35101b5e868a811e (Start docker registry with letsencrypt certificates (Linux Ubuntu))  </description>
     </item>
     
     <item>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sql on Blog Indonesiadot.Com</title>
@@ -17,14 +17,7 @@
       <pubDate>Sun, 28 Jan 2018 21:09:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/28/mysql-tips-and-trick/</guid>
-      <description>Mysql performance
-https://www.infoworld.com/article/0/database-administration/10-essential-performance-tips-for-mysql.html
-MySQL insert row with highest id
-
-Lock tables customers write; $max = SELECT MAX( customer_id ) FROM customers; INSERT INTO customers( customer_id, firstname, surname ) VALUES ($max+1 , &amp;lsquo;jim&amp;rsquo;, &amp;lsquo;sock&amp;rsquo;) unlock tables; ref: https://stackoverflow.com/questions/5360117/insert-and-set-value-with-max1-problems
-
-mysqldump routines triggers view
-karena default nya mysql akan dump trigger, maka hanya store procedure / function atau yg dikenal dengan routines saja yang dimasukan parameter nya mysqldump &amp;ndash;routines &amp;ndash;no-create-info &amp;ndash;no-data &amp;ndash;no-create-db &amp;ndash;skip-opt  &amp;gt; outputfile.</description>
+      <description></description>
     </item>
     
   </channel>

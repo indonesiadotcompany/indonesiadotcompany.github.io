@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+=======
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kvm on Blog Indonesiadot.Com</title>
@@ -17,7 +21,11 @@
       <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</guid>
+<<<<<<< HEAD
       <description>List kvm using virsh virsh list virsh list --all virsh --help  Create vm on kvm / qemu via libvirt with command line Pembuatan vm centos 7 script bash virtcen.sh
+=======
+      <description>List kvm using virsh virsh list virsh list --all virsh --help Create vm on kvm / qemu via libvirt with command line Pembuatan vm centos 7 script bash virtcen.sh
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 #!/bin/bash NAMA=$1 if [ -z &amp;quot;$1&amp;quot; ]; then while [ -z &amp;quot;$NAMA&amp;quot; ]; do echo -n &amp;quot;masukan nama vm: &amp;quot; read NAMA done fi virt-install \ --name $NAMA \ --ram 900 \ --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&#39;unmap&#39;,format=&#39;qcow2&#39; \ --controller type=scsi,model=virtio-scsi \ --vcpus 1 \ --cpu host \ --console pty,target_type=serial \ --location /iso/CentOS-7.</description>
     </item>
     

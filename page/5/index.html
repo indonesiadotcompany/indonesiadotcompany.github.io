@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.57.2" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -582,6 +582,7 @@
       
     
       
+<<<<<<< HEAD
     
       
     
@@ -594,6 +595,8 @@
       
     
       
+=======
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -626,6 +629,7 @@
 <div class="post">
   
     <div class="post">
+<<<<<<< HEAD
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/10/belajar-ansible-tower/">Belajar Ansible Tower</a></h1>
         <span class="post-date">Oct 10, 2019</span>
 	
@@ -696,17 +700,32 @@ systemctl restart firewalld
 <li><a href="https://www.google.com/search?q=ansible+tower+postgresql+replication">https://www.google.com/search?q=ansible+tower+postgresql+replication</a></li>
 <li><a href="https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/">https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/</a></li>
 <li><a href="https://github.com/samdoran/ansible-role-pgsql-replication">https://github.com/samdoran/ansible-role-pgsql-replication</a></li>
+=======
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/28/ids-tripwire/">IDS Tripwire</a></h1>
+        <span class="post-date">Sep 28, 2019</span>
+	<p>Referensi:</p>
+<ul>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/">https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/</a></li>
+<li><a href="https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html">https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html</a></li>
+<li><a href="https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/">https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/</a></li>
+<li><a href="https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d">https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d</a></li>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
+<<<<<<< HEAD
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>, <a href="https://blog.indonesiadot.com/tags/postgresql/">postgresql</a>, <a href="https://blog.indonesiadot.com/tags/rabbitmq/">rabbitmq</a>
+=======
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/tripwire/">tripwire</a>, <a href="https://blog.indonesiadot.com/tags/splunk/">splunk</a>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 	 <hr/>
     </div>
   
     <div class="post">
+<<<<<<< HEAD
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/30/disk-serial-number/">Disk Serial Number</a></h1>
         <span class="post-date">Sep 30, 2019</span>
 	
@@ -736,16 +755,91 @@ smartctl -a /dev/sda | grep &ldquo;Short&rdquo;</p>
 <ul>
 <li><a href="https://www.techrepublic.com/blog/linux-and-open-source/using-smartctl-to-get-smart-status-information-on-your-hard-drives/">https://www.techrepublic.com/blog/linux-and-open-source/using-smartctl-to-get-smart-status-information-on-your-hard-drives/</a></li>
 </ul>
+=======
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/hugo-hosting-dengan-github/">Hugo hosting dengan github</a></h1>
+        <span class="post-date">Sep 24, 2019</span>
+	<p>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:</p>
+<ul>
+<li>Nama user: tpinews</li>
+<li>Nama repositori yang harus dibuat: tpinews.github.io</li>
+</ul>
+<p>Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:</p>
+<pre><code>mkdir tpinews
+cd tpinews
+touch .gitignore
+git init
+git add .
+git commit -m 'komat kamit awal'
+git remote add origin https://tpinews.github.io.git
+git push origin master
 
+git checkout -b hugo
+hugo new site . --force
+cp -r /path/kumpulanthemeshugo/travelify themes/
+cp -r themes/travelify/exampleSite/* .
+cp /path/scripts/push-deploy.sh .
+git add .
+git commit -m 'komit hugo'
+git push origin hugo
+
+git submodule add -b master https://tpinews.github.io.git public
+./push-deploy.sh
+git branch -d master
+</code></pre><p>Pastikan juga config.toml sudah sesuai, seperti nama theme dan lainnya, dan bisa di test di localhost dengan menjalankan <code>hugo server</code> dan mengakses http://localhost:1313 di browser untuk melihat hasilnya.</p>
+<p>Command di atas hanya dilakukan pertama kali saja, untuk selanjutnya yang dilakukan setelah melakukan perubahan dan ingin mengupdate di github, cukup menjalankan script push-deploy.sh</p>
+<p>Disini theme yang digunakan misalnya travelify yang sudah disiapkan, dan juga script untuk push-deploy.sh untuk memudahkan deploy sebagai berikut:</p>
+<pre><code>#!/bin/sh
+# If a command fails then the deploy stops
+set -e
+printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
+git add .
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+ msg=&quot;$*&quot;
+fi
+git commit -m &quot;$msg&quot;
+git push origin hugo
+
+printf &quot;\033[0;32mDeploy public hugo to branch master...\033[0m\n&quot;
+HUGO_ENV=production hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
+cd public
+git add .
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+        msg=&quot;$*&quot;
+fi
+git commit -m &quot;$msg&quot;
+git push origin master
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
+
+printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
+cd ..
+git add .
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+        msg=&quot;$*&quot;
+fi
+git commit -m &quot;$msg&quot;
+git push origin hugo
+</code></pre><p>Note:</p>
+<p>Untuk lebih mudah tidak perlu memasukan password, bisa di buat dari menu settings account github, lalu pilih menu sebelah kiri bawah bagian Developer settings, lalu Personal access tokens dan generate new token.</p>
+<p>Lalu copy token tersebut dan tambahkan pada file .git/config dan .git/modules/public/config ,bagian url nya, sehingga menjadi seperti contoh berikut:</p>
+<pre><code>   url = https://namauser:tokenhasidaricopygeneratenewtoken@namarepository.github.io.git
+</code></pre>
 	<hr/>
 	
 	
 	 Tags:
+<<<<<<< HEAD
 	  <a href="https://blog.indonesiadot.com/tags/disk/">disk</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/smartctl/">smartctl</a>, <a href="https://blog.indonesiadot.com/tags/raid/">raid</a>, <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
+=======
+	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>, <a href="https://blog.indonesiadot.com/tags/github/">github</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 	 <hr/>
     </div>
   
     <div class="post">
+<<<<<<< HEAD
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/28/ids-tripwire/">IDS Tripwire</a></h1>
         <span class="post-date">Sep 28, 2019</span>
 	<p>Referensi:</p>
@@ -755,17 +849,37 @@ smartctl -a /dev/sda | grep &ldquo;Short&rdquo;</p>
 <li><a href="https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html">https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html</a></li>
 <li><a href="https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/">https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/</a></li>
 <li><a href="https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d">https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d</a></li>
+=======
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/markdown-tips/">Markdown tips</a></h1>
+        <span class="post-date">Sep 24, 2019</span>
+	<h2 id="markdown-insert-image"><em>markdown</em> insert image</h2>
+<p>Ini adalah <a href="https://www.petanikode.com/markdown-pemula/"><em>markdown</em></a> untuk menampilkan gambar yang terletak di dalam folder / direktori pada postingan di hugo</p>
+<pre><code>![nama-image](path/to/image)
+</code></pre><h2 id="markdown-insert-link">markdown insert link</h2>
+<p>Ini adalah markdown untuk menampilkan link <em>url</em> pada kata atau kalimat di halaman web</p>
+<pre><code>[kata atau kalimat](http://link.url/yang-dituju)
+</code></pre><p>seperti contoh diatas</p>
+<pre><code>[markdown](https://www.petanikode.com/markdown-pemula/)
+</code></pre><p>Referensi markdown images:</p>
+<ul>
+<li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images</a></li>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
+<<<<<<< HEAD
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/tripwire/">tripwire</a>, <a href="https://blog.indonesiadot.com/tags/splunk/">splunk</a>
+=======
+	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/markdown/">markdown</a>, <a href="https://blog.indonesiadot.com/tags/static-site-generator/">static-site-generator</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 	 <hr/>
     </div>
   
     <div class="post">
+<<<<<<< HEAD
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/hugo-hosting-dengan-github/">Hugo hosting dengan github</a></h1>
         <span class="post-date">Sep 24, 2019</span>
 	<p>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:</p>
@@ -848,16 +962,122 @@ git push origin hugo
 
 <pre><code>   url = https://namauser:tokenhasidaricopygeneratenewtoken@namarepository.github.io.git
 </code></pre>
+=======
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/04/linux-security-tools/">linux Security Tools</a></h1>
+        <span class="post-date">Sep 4, 2019</span>
+	<p>Tools yang biasa digunakan pada server linux:</p>
+<ul>
+<li>
+<p>Firewall</p>
+</li>
+<li>
+<p>iptables</p>
+</li>
+<li>
+<p>ipset</p>
+</li>
+<li>
+<p>shorewall</p>
+</li>
+<li>
+<p>csf</p>
+</li>
+<li>
+<p>Anti Malware</p>
+</li>
+<li>
+<p>maldet (malware detection for web directory)</p>
+</li>
+<li>
+<p>IDS</p>
+</li>
+<li>
+<p>tripwire</p>
+</li>
+<li>
+<p>Identity Server</p>
+</li>
+<li>
+<p><a href="https://freeipa.org">FreeIPA (IPA = Identity, Policy, Authentication)</a></p>
+</li>
+<li>
+<p>Security Checking / Scanning Solution</p>
+</li>
+<li>
+<p>OpenSCAP</p>
+</li>
+<li>
+<p>Rapid7</p>
+</li>
+<li>
+<p>CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</p>
+</li>
+<li>
+<p>TeemIP</p>
+</li>
+<li>
+<p>itop <a href="https://github.com/Combodo/iTop">https://github.com/Combodo/iTop</a></p>
+</li>
+<li>
+<p>infoblox</p>
+</li>
+<li>
+<p>efficientip</p>
+</li>
+<li>
+<p>ansible-cmdb</p>
+</li>
+<li>
+<p>WAF</p>
+</li>
+<li>
+<p><a href="http://www.waf-fle.org/">http://www.waf-fle.org/</a> console / web view for modsecurity admin</p>
+</li>
+<li>
+<p>modsecurity</p>
+</li>
+<li>
+<p>naxsi <a href="https://github.com/nbs-system/naxsi">https://github.com/nbs-system/naxsi</a></p>
+</li>
+<li>
+<p>shadow daemon <a href="https://shadowd.zecure.org/overview/introduction/">https://shadowd.zecure.org/overview/introduction/</a></p>
+</li>
+<li>
+<p>imperva *berbayar</p>
+</li>
+<li>
+<p>Web Scanner</p>
+</li>
+<li>
+<p>nikto ( <a href="https://geekflare.com/nikto-webserver-scanner/">https://geekflare.com/nikto-webserver-scanner/</a> )</p>
+</li>
+<li>
+<p>Pentest</p>
+</li>
+<li>
+<p>owasp-zap <a href="https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b">https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b</a></p>
+</li>
+</ul>
+<p>Referensi Openscap:</p>
+<ul>
+<li><a href="https://www.open-scap.org/">https://www.open-scap.org/</a></li>
+</ul>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 
 	<hr/>
 	
 	
 	 Tags:
+<<<<<<< HEAD
 	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>, <a href="https://blog.indonesiadot.com/tags/github/">github</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>
+=======
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>, <a href="https://blog.indonesiadot.com/tags/firewall/">firewall</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 	 <hr/>
     </div>
   
     <div class="post">
+<<<<<<< HEAD
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/markdown-tips/">Markdown tips</a></h1>
         <span class="post-date">Sep 24, 2019</span>
 	
@@ -885,17 +1105,77 @@ git push origin hugo
 
 <ul>
 <li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images</a></li>
+=======
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/linux-server-tools/">linux Server Tools</a></h1>
+        <span class="post-date">Sep 2, 2019</span>
+	<p>Tools yang biasa digunakan pada server linux:</p>
+<ul>
+<li>
+<p>Virtualization (Desktop)</p>
+</li>
+<li>
+<p>Virtualbox</p>
+</li>
+<li>
+<p>Graphic</p>
+</li>
+<li>
+<p>Gimp</p>
+</li>
+<li>
+<p>Mail</p>
+</li>
+<li>
+<p>Thunderbird Mail (client)</p>
+</li>
+<li>
+<p>Multimedia</p>
+</li>
+<li>
+<p>Avidemux</p>
+</li>
+<li>
+<p>Video Conference</p>
+</li>
+<li>
+<p>jitsi</p>
+</li>
+<li>
+<p><a href="https://medevel.com/10-os-video-conferencing/">More and more</a></p>
+</li>
+<li>
+<p>Customer support live chat</p>
+</li>
+<li>
+<p>rocket.chat</p>
+</li>
+<li>
+<p>tawk.to</p>
+</li>
+<li>
+<p><a href="https://github.com/juliancwirko/s-chat-app">simple chat</a></p>
+</li>
+</ul>
+<p>Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut</p>
+<ul>
+<li><a href="https://blog.indonesiadot.com/2019/09/04/linux-security-tools/">https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</a></li>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
+<<<<<<< HEAD
 	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/markdown/">markdown</a>, <a href="https://blog.indonesiadot.com/tags/static-site-generator/">static-site-generator</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>
+=======
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 	 <hr/>
     </div>
   
     <div class="post">
+<<<<<<< HEAD
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/04/linux-security-tools/">linux Security Tools</a></h1>
         <span class="post-date">Sep 4, 2019</span>
 	<p>Tools yang biasa digunakan pada server linux:</p>
@@ -972,17 +1252,54 @@ git push origin hugo
 
 <ul>
 <li><a href="https://www.open-scap.org/">https://www.open-scap.org/</a></li>
+=======
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/">Proxmox optimized disk for auto trim / shrink</a></h1>
+        <span class="post-date">Sep 2, 2019</span>
+	<p>Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari <em>thin provision storage</em> atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.</p>
+<p>Persyaratan adalah:</p>
+<ul>
+<li>menggunakan <em>thin provisioned backing storage</em> seperti qcow2, thin-lvm, zfs pada server proxmox nya</li>
+<li>menggunakan Virtio SCSI controller pada guest option vm nya</li>
+<li>Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya</li>
+<li>Tambahkan discard mount options di /etc/fstab nya guest vm</li>
+<li>Enable fstrim.timer pada systemctl</li>
+</ul>
+<p>Adapun langkahnya, disini dilakukan perubahan pada VM yang sebelumnya telah terbuat dengan Virtio disk, dari disk yang kedua dari VM, agar lebih aman, dirubah satu persatu, dimulai dari disk kedua terlebih dahulu:</p>
+<ul>
+<li>edit dulu /etc/fstab bagian disk dari /dev/vdb1 menjadi /dev/sda1 (sda untuk drive scsi / sata, untuk lebih aman nya di komen dulu bagian disk /hdbck, untuk di mount manual, agar pada saat boot jika salah tidak nyangkut)</li>
+<li>shutdown vm</li>
+<li>detach disk</li>
+<li>edit disk, menjadi SCSI dan klik bagian advanced, lalu check discard</li>
+<li>start vm</li>
+<li>setelah login, jalankan fstrim -v /hdbck/</li>
+</ul>
+<p>Note:</p>
+<ul>
+<li>Untuk perubahan selanjutnya pada disk yang pertama, di edit dulu /etc/fstab nya, misal /dev/vda1 menjadi /dev/sda1, dan /dev/sda1 sebelumnya yg disk kedua yg telah di edit menjadi SCSI menjadi /dev/sdb1, lalu baru lakukan seperti langkah diatas dari shutdown vm sampai jalankan fstrim.</li>
+<li>Masukan juga pada crontab, agar dijalankan fstrim setiap bulan, jika memakai centos 6 dan dibawahnya</li>
+<li>Untuk membuktikannya, sambil mengecek di server proxmox dengan menggunakan command <code>zfs list</code> jika memakai zfs, <code>lvs</code> atau <code>lvdisplay</code> untuk thin-lvm, atau <code>du -sch</code> jika memakai qcow2 untuk mengetahui besar file sebelum dan setelah di guest vm nya dijalankan command <code>fstrim -av</code></li>
+</ul>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://pve.proxmox.com/wiki/Shrink_Qcow2_Disk_Files">https://pve.proxmox.com/wiki/Shrink_Qcow2_Disk_Files</a></li>
+<li><a href="https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/">https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/</a></li>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
+<<<<<<< HEAD
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>, <a href="https://blog.indonesiadot.com/tags/firewall/">firewall</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>
+=======
+	  <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/virtualization/">virtualization</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 	 <hr/>
     </div>
   
     <div class="post">
+<<<<<<< HEAD
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/linux-server-tools/">linux Server Tools</a></h1>
         <span class="post-date">Sep 2, 2019</span>
 	<p>Tools yang biasa digunakan pada server linux:</p>
@@ -1032,17 +1349,35 @@ git push origin hugo
 
 <ul>
 <li><a href="https://blog.indonesiadot.com/2019/09/04/linux-security-tools/">https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</a></li>
+=======
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/postfix-tips/">Postfix tips</a></h1>
+        <span class="post-date">Sep 2, 2019</span>
+	<h3 id="postfix-send-to-local-network">postfix send to local network</h3>
+<p>Ini adalah langkah untuk membuat postfix mengirim ke mail server dalam LAN</p>
+<pre><code>echo &quot;real.net smtp:[192.168.1.108]&quot; &gt;&gt; /etc/postfix/transport
+postmap /etc/postfix/transport
+systemctl restart postfix
+</code></pre><p>Referensi:</p>
+<ul>
+<li><a href="https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/">https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/</a></li>
+<li><a href="http://www.postfix.org/STANDARD_CONFIGURATION_README.html">http://www.postfix.org/STANDARD_CONFIGURATION_README.html</a></li>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
+<<<<<<< HEAD
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>
+=======
+	  <a href="https://blog.indonesiadot.com/tags/mail/">mail</a>, <a href="https://blog.indonesiadot.com/tags/postfix/">postfix</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 	 <hr/>
     </div>
   
     <div class="post">
+<<<<<<< HEAD
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/">Proxmox optimized disk for auto trim / shrink</a></h1>
         <span class="post-date">Sep 2, 2019</span>
 	<p>Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari <em>thin provision storage</em> atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.</p>
@@ -1081,17 +1416,70 @@ git push origin hugo
 <ul>
 <li><a href="https://pve.proxmox.com/wiki/Shrink_Qcow2_Disk_Files">https://pve.proxmox.com/wiki/Shrink_Qcow2_Disk_Files</a></li>
 <li><a href="https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/">https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/</a></li>
+=======
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/">All about kubernetes</a></h1>
+        <span class="post-date">Sep 2, 2019</span>
+	<h2 id="kubernetes-container-runtime-with-docker">Kubernetes Container runtime with docker</h2>
+<pre><code># Install Docker CE
+## Set up the repository
+### Install required packages.
+yum install yum-utils device-mapper-persistent-data lvm2
+
+### Add Docker repository.
+yum-config-manager \
+  --add-repo \
+  https://download.docker.com/linux/centos/docker-ce.repo
+
+## Install Docker CE.
+yum update &amp;&amp; yum install docker-ce-18.06.2.ce
+
+## Create /etc/docker directory.
+mkdir /etc/docker
+
+# Setup daemon.
+cat &gt; /etc/docker/daemon.json &lt;&lt;EOF
+{
+  &quot;exec-opts&quot;: [&quot;native.cgroupdriver=systemd&quot;],
+  &quot;log-driver&quot;: &quot;json-file&quot;,
+  &quot;log-opts&quot;: {
+    &quot;max-size&quot;: &quot;100m&quot;
+  },
+  &quot;storage-driver&quot;: &quot;overlay2&quot;,
+  &quot;storage-opts&quot;: [
+    &quot;overlay2.override_kernel_check=true&quot;
+  ]
+}
+EOF
+
+mkdir -p /etc/systemd/system/docker.service.d
+
+# Restart Docker
+systemctl daemon-reload
+systemctl restart docker
+</code></pre><p>Ref:</p>
+<ul>
+<li><a href="https://kubernetes.io/docs/setup/production-environment/container-runtimes/">https://kubernetes.io/docs/setup/production-environment/container-runtimes/</a></li>
+</ul>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://darxkies.github.io/k8s-tew/_build/html/index.html">https://darxkies.github.io/k8s-tew/_build/html/index.html</a></li>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
+<<<<<<< HEAD
 	  <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/virtualization/">virtualization</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+=======
+	  <a href="https://blog.indonesiadot.com/tags/kubernetes/">kubernetes</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 	 <hr/>
     </div>
   
     <div class="post">
+<<<<<<< HEAD
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/postfix-tips/">Postfix tips</a></h1>
         <span class="post-date">Sep 2, 2019</span>
 	
@@ -1110,13 +1498,29 @@ systemctl restart postfix
 <ul>
 <li><a href="https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/">https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/</a></li>
 <li><a href="http://www.postfix.org/STANDARD_CONFIGURATION_README.html">http://www.postfix.org/STANDARD_CONFIGURATION_README.html</a></li>
+=======
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/">Ubuntu upgrade 14.04 to 16.04 to 18.04</a></h1>
+        <span class="post-date">Sep 2, 2019</span>
+	<p>Berikut langkah yang dilakukan, tapi sebelumnya pastikan backup, backup dan backup</p>
+<pre><code>sudo apt-get update
+sudo apt-get upgrade
+sudo do-release-upgrade -f DistUpgradeViewNonInteractive
+</code></pre><p>Referensi:</p>
+<ul>
+<li><a href="https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04">https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04</a></li>
+<li><a href="https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4">https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4</a></li>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
+<<<<<<< HEAD
 	  <a href="https://blog.indonesiadot.com/tags/mail/">mail</a>, <a href="https://blog.indonesiadot.com/tags/postfix/">postfix</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+=======
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ubuntu/">ubuntu</a>, <a href="https://blog.indonesiadot.com/tags/upgrade/">upgrade</a>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 	 <hr/>
     </div>
   

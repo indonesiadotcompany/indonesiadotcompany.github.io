@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+=======
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>editing on Blog Indonesiadot.Com</title>
@@ -18,7 +22,11 @@
       
       <guid>https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/</guid>
       <description>Cut and Combine Video Avidemux
+<<<<<<< HEAD
 Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &amp;gt; Youtube Studio 2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks 3. Untuk video baru, klik set languages, lalu confirm 4. Klik tombol ADD / Tambahkan subtitel atau CC baru.  Add watermark ffmpeg -i input.mp4 -i watermark.</description>
+=======
+Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &amp;gt; Youtube Studio 2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks 3. Untuk video baru, klik set languages, lalu confirm 4. Klik tombol ADD / Tambahkan subtitel atau CC baru. Add watermark ffmpeg -i input.mp4 -i watermark.png -filter_complex &amp;quot;overlay=1500:1000&amp;quot; output.</description>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ssl on Blog Indonesiadot.Com</title>
@@ -17,8 +17,13 @@
       <pubDate>Sun, 19 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/</guid>
+<<<<<<< HEAD
       <description> Letsencrypt with certbot unatteded way This is for ubuntu linux
 add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonly --standalone --preferred-challenges http --non-interactive --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com  Note:  before running certbot command, you must already pointing domain / subdomain address to destination ip  Referensi:  https://indonesiadot.com  </description>
+=======
+      <description>Letsencrypt with certbot unatteded way This is for ubuntu linux
+add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonly --standalone --preferred-challenges http --non-interactive --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com Note:  before running certbot command, you must already pointing domain / subdomain address to destination ip  Referensi:  https://indonesiadot.com  </description>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
     </item>
     
     <item>
@@ -27,10 +32,7 @@ add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonl
       <pubDate>Sun, 04 Mar 2018 21:22:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/03/04/ssl-expiry-check/</guid>
-      <description>https://www.google.co.id/search?q=ssl+expiry+check
-https://github.com/Matty9191/ssl-cert-check
-https://prefetch.net/articles/checkcertificate.html
-ssl-cert-check -s mail.prefetch.net -p 443</description>
+      <description>https://www.google.co.id/search?q=ssl+expiry+check&amp;lt;br /&amp;gt;https://github.com/Matty9191/ssl-cert-checkhttps://prefetch.net/articles/checkcertificate.html&amp;lt;br /&amp;gt;ssl-cert-check -s mail.prefetch.net -p 443</description>
     </item>
     
   </channel>

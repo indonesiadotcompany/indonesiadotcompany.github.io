@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dns on Blog Indonesiadot.Com</title>
@@ -17,10 +17,10 @@
       <pubDate>Sun, 13 Oct 2019 07:09:53 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/</guid>
-      <description>Security DNS di sisi client Install dnscrypt-proxy add-apt-repository ppa:shevchuk/dnscrypt-proxy apt update apt install dnscrypt-proxy  Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel server_name menjadi seperti contoh berikut:
-server_names = [&#39;cloudflare&#39;, &#39;google&#39;]  lalu restart service dnscrypt-proxy
-systemctl restart dnscrypt-proxy  edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy
-nameserver 127.0.2.1  Install DNS over HTTPS server Install dengan cara paket instalasi deb wget &amp;quot;https://www.aaflalo.me/?smd_process_download=1&amp;amp;download_id=1326&amp;quot; mv index* doh-server.deb dpkg -i doh-server_*_amd64.deb  Install dengan cara compile wget https://dl.</description>
+      <description>Security DNS di sisi client Install dnscrypt-proxy add-apt-repository ppa:shevchuk/dnscrypt-proxy apt update apt install dnscrypt-proxy Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel server_name menjadi seperti contoh berikut:
+server_names = [&#39;cloudflare&#39;, &#39;google&#39;] lalu restart service dnscrypt-proxy
+systemctl restart dnscrypt-proxy edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy
+nameserver 127.0.2.1 Install DNS over HTTPS server Install dengan cara paket instalasi deb wget &amp;quot;https://www.aaflalo.me/?smd_process_download=1&amp;amp;download_id=1326&amp;quot; mv index* doh-server.deb dpkg -i doh-server_*_amd64.deb Install dengan cara compile wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz sudo tar -C /usr/local -xzf go1.</description>
     </item>
     
   </channel>

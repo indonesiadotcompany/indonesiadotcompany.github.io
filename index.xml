@@ -9,6 +9,7 @@
 
     
       
+<<<<<<< HEAD
     
       
         <item>
@@ -4038,14 +4039,15 @@ find . -type f -print -delete
       
     
       
+=======
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
         <item>
-          <title>Portfolio</title>
-          <link>https://blog.indonesiadot.com/2006/08/28/portfolio/</link>
-          <pubDate>Mon, 28 Aug 2006 03:14:00 UTC</pubDate>
+          <title>Posts</title>
+          <link>https://blog.indonesiadot.com/post/</link>
+          <pubDate>Mon, 24 Feb 2020 22:17:54 WIB</pubDate>
           <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2006/08/28/portfolio/</guid>
-          <description>&lt;p&gt;&lt;br/&gt;&lt;br /&gt;&lt;a href=&#34;http://indonesiadot.com&#34; alt=&#34;http://indonesiadot.com&#34;&gt;&lt;a href=&#34;http://indonesiadot.com&#34;&gt;http://indonesiadot.com&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
+          <guid>https://blog.indonesiadot.com/post/</guid>
+          <description></description>
         </item>
       
     

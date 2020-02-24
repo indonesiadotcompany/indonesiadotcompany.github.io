@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on Blog Indonesiadot.Com</title>
@@ -17,7 +17,11 @@
       <pubDate>Mon, 24 Feb 2020 22:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/24/analisa-virus-dengan-virustotal/</guid>
+<<<<<<< HEAD
       <description> Analisa Virus dengan virustotal Referensi:
+=======
+      <description>Analisa Virus dengan virustotal Referensi:
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
  https://www.virustotal.com/gui/home/upload  </description>
     </item>
     
@@ -28,7 +32,11 @@
       
       <guid>https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/</guid>
       <description>Cut and Combine Video Avidemux
+<<<<<<< HEAD
 Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &amp;gt; Youtube Studio 2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks 3. Untuk video baru, klik set languages, lalu confirm 4. Klik tombol ADD / Tambahkan subtitel atau CC baru.  Add watermark ffmpeg -i input.mp4 -i watermark.</description>
+=======
+Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &amp;gt; Youtube Studio 2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks 3. Untuk video baru, klik set languages, lalu confirm 4. Klik tombol ADD / Tambahkan subtitel atau CC baru. Add watermark ffmpeg -i input.mp4 -i watermark.png -filter_complex &amp;quot;overlay=1500:1000&amp;quot; output.</description>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
     </item>
     
     <item>
@@ -37,7 +45,11 @@ Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio 
       <pubDate>Thu, 20 Feb 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</guid>
+<<<<<<< HEAD
       <description> Ansible OS Hardening mkdir -p /data/backups  Referensi:
+=======
+      <description>Ansible OS Hardening mkdir -p /data/backups Referensi:
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
  https://indonesiadot.com  </description>
     </item>
     
@@ -47,7 +59,11 @@ Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio 
       <pubDate>Thu, 20 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</guid>
+<<<<<<< HEAD
       <description> Ansible Tower tips and trick Change admin password awx-manage changepassword admin  backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
+=======
+      <description>Ansible Tower tips and trick Change admin password awx-manage changepassword admin backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
  https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html  </description>
     </item>
     
@@ -57,9 +73,15 @@ Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio 
       <pubDate>Mon, 20 Jan 2020 09:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</guid>
+<<<<<<< HEAD
       <description> Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
 adapun command nya sebelum bisa diakses yaitu:
 chcon -Rv --type=httpd_sys_rw_content_t /webserver  Referensi:
+=======
+      <description>Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
+adapun command nya sebelum bisa diakses yaitu:
+chcon -Rv --type=httpd_sys_rw_content_t /webserver Referensi:
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
  https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/  </description>
     </item>
     
@@ -69,7 +91,11 @@ chcon -Rv --type=httpd_sys_rw_content_t /webserver  Referensi:
       <pubDate>Mon, 20 Jan 2020 07:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</guid>
+<<<<<<< HEAD
       <description> Widya Harbor Container Registry  https://widharbor.birau.com/  Referensi:
+=======
+      <description>Widya Harbor Container Registry  https://widharbor.birau.com/  Referensi:
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
  https://indonesiadot.com  </description>
     </item>
     
@@ -79,9 +105,13 @@ chcon -Rv --type=httpd_sys_rw_content_t /webserver  Referensi:
       <pubDate>Sun, 19 Jan 2020 15:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/</guid>
+<<<<<<< HEAD
       <description>Ansible Tower first Implementation  Install ansible tower masukan license tambahkan access - organization tambahkan access - users tambahkan access - teams tambahkan resources - inventory siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)
 chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/  tambahkan resources - projects
  buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine</description>
+=======
+      <description>Ansible Tower first Implementation  Install ansible tower masukan license tambahkan access - organization tambahkan access - users tambahkan access - teams tambahkan resources - inventory siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)  chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/  tambahkan resources - projects buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine buat host client / node yang mau di manage di /etc/hosts tambahkan resources - credentials tambahkan resources - templates test launch jobs based on template yg baru dibuat  Ansible tower + openscap  install scap-workbench  yum install scap-workbench xauth -y  buat direktori report  mkdir /report chgrp awx /report chmod g+s /report/ chcon -Rv --type=httpd_sys_rw_content_t /report/ ln -s /report /var/lib/awx/public/  tambahkan direktori report di nginx   location /report { alias /var/lib/awx/public/report; autoindex on; }  akses scap-workbench dari laptop  ssh -X -C tower1 scap-workbench  jalankan Scan Remote Machine (over SSH) ke ansible@client1 (jika muncul popup, pilih centos7) Save generate result html ke /report (tambahkan pembeda semisal datetime untuk membedakan tiap file report)  Referensi:</description>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
     </item>
     
     <item>
@@ -90,8 +120,13 @@ chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/  tambahkan res
       <pubDate>Sun, 19 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/</guid>
+<<<<<<< HEAD
       <description> Letsencrypt with certbot unatteded way This is for ubuntu linux
 add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonly --standalone --preferred-challenges http --non-interactive --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com  Note:  before running certbot command, you must already pointing domain / subdomain address to destination ip  Referensi:  https://indonesiadot.com  </description>
+=======
+      <description>Letsencrypt with certbot unatteded way This is for ubuntu linux
+add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonly --standalone --preferred-challenges http --non-interactive --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com Note:  before running certbot command, you must already pointing domain / subdomain address to destination ip  Referensi:  https://indonesiadot.com  </description>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
     </item>
     
     <item>
@@ -100,7 +135,11 @@ add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonl
       <pubDate>Wed, 15 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</guid>
+<<<<<<< HEAD
       <description> Setup sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose  Referensi:
+=======
+      <description>Setup sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
  https://docs.docker.com/compose/install/  </description>
     </item>
     
@@ -110,11 +149,16 @@ add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonl
       <pubDate>Tue, 14 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</guid>
+<<<<<<< HEAD
       <description> Instalasi Gitlab di Ubuntu 16.04 Widya Gitlab  https://widgitgog.birau.com/dashboard/projects  Referensi:
+=======
+      <description>Instalasi Gitlab di Ubuntu 16.04 Widya Gitlab  https://widgitgog.birau.com/dashboard/projects  Referensi:
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
  https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04  </description>
     </item>
     
     <item>
+<<<<<<< HEAD
       <title>Centos 7 Resize Partition</title>
       <link>https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/</link>
       <pubDate>Wed, 08 Jan 2020 08:17:54 +0700</pubDate>
@@ -141,12 +185,18 @@ systemctl restart sshd  Referensi:</description>
     </item>
     
     <item>
+=======
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
       <title>Simple Virtualization Linux</title>
       <link>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</link>
       <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</guid>
+<<<<<<< HEAD
       <description>List kvm using virsh virsh list virsh list --all virsh --help  Create vm on kvm / qemu via libvirt with command line Pembuatan vm centos 7 script bash virtcen.sh
+=======
+      <description>List kvm using virsh virsh list virsh list --all virsh --help Create vm on kvm / qemu via libvirt with command line Pembuatan vm centos 7 script bash virtcen.sh
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 #!/bin/bash NAMA=$1 if [ -z &amp;quot;$1&amp;quot; ]; then while [ -z &amp;quot;$NAMA&amp;quot; ]; do echo -n &amp;quot;masukan nama vm: &amp;quot; read NAMA done fi virt-install \ --name $NAMA \ --ram 900 \ --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&#39;unmap&#39;,format=&#39;qcow2&#39; \ --controller type=scsi,model=virtio-scsi \ --vcpus 1 \ --cpu host \ --console pty,target_type=serial \ --location /iso/CentOS-7.</description>
     </item>
     
@@ -189,7 +239,7 @@ Every machine with a LAN behind it must have IP forwarding enabled.</description
       <pubDate>Wed, 04 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/12/04/ansible-cycle-evolution-diagram-security/</guid>
-      <description> Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
+      <description>Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
 Referensi:
  https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/ https://swimlane.com/blog/siem-soar/ https://www.ansible.com/blog/the-journey-to-security-automation  </description>
     </item>
@@ -200,7 +250,7 @@ Referensi:
       <pubDate>Tue, 03 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/12/03/proxmox-add-zfs/</guid>
-      <description> Proxmox Add ZFS Referensi:
+      <description>Proxmox Add ZFS Referensi:
  https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/ https://pve.proxmox.com/wiki/ZFS_on_Linux  Proxmox cloud-init Ref:
  https://cloud.centos.org/centos/7/images/ https://pve.proxmox.com/wiki/Cloud-Init_Support https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/  </description>
     </item>
@@ -211,7 +261,7 @@ Referensi:
       <pubDate>Tue, 26 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/26/ansible-awx-2019/</guid>
-      <description> Ansible AWX install docker-compose tanpa pip, tanpa compile curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose  Referensi:
+      <description>Ansible AWX install docker-compose tanpa pip, tanpa compile curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
  https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/ https://medium.com/swlh/ansible-awx-installation-5861b115455a https://devzero.co.za/2019/02/28/high-availability-awx-ansible/ https://github.com/sujiar37/AWX-HA-InstanceGroup  Not yet tested:
  https://github.com/MrMEEE/awx-build https://awx.wiki/installation https://github.com/powertim/deploy_awx-rpm https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/  </description>
     </item>
@@ -222,7 +272,7 @@ Referensi:
       <pubDate>Fri, 15 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/</guid>
-      <description> Download deb rpm tgz
+      <description>Download [deb](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;amp;wget=true&#39;) [rpm](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;amp;wget=true&#39;) [tgz](wget -O splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;amp;wget=true&#39;)
 Referensi:
  https://docs.splunk.com/Documentation  </description>
     </item>
@@ -235,7 +285,7 @@ Referensi:
       <guid>https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/</guid>
       <description>Frequently Used Module blockinfile Module ini saya gunakan ketika muncul error pada saat menggunakan module lineinfile untuk memasukan beberapa baris sekaligus dalam beberapa tasks, dan ternyata dengan menggunakan module ini dengan hanya satu task bisa memasukan langsung beberapa baris.
 Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepada parameter minimalnya adalah path dan block saja.
-- name: Insert correct line to /etc/ntp.conf blockinfile: path: /etc/ntp.conf insertafter: ^#?</description>
+- name: Insert correct line to /etc/ntp.conf blockinfile: path: /etc/ntp.conf insertafter: ^#?server state: present block: | server &amp;quot;{{ ntp1 }}&amp;quot; server &amp;quot;{{ ntp2 }}&amp;quot; notify: restart ntp Referensi:</description>
     </item>
     
     <item>
@@ -244,7 +294,7 @@ Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepa
       <pubDate>Mon, 04 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/</guid>
-      <description> Ansible and Openscap for scanning and remediation server for security compliance operating system Referensi:
+      <description>Ansible and Openscap for scanning and remediation server for security compliance operating system Referensi:
  https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663  </description>
     </item>
     
@@ -254,7 +304,7 @@ Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepa
       <pubDate>Sun, 03 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/03/openscap-reference/</guid>
-      <description> Openscap Custom Profile Referensi:
+      <description>Openscap Custom Profile Referensi:
  https://martin.preisler.me/2013/11/xccdf-tailoring/ https://static.open-scap.org/openscap-1.2/oscap_user_manual.html  </description>
     </item>
     
@@ -264,7 +314,7 @@ Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepa
       <pubDate>Thu, 31 Oct 2019 16:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/31/centos-syslog-server/</guid>
-      <description> Setup Syslog Server and setup syslog client to it on Centos 7 Referensi:
+      <description>Setup Syslog Server and setup syslog client to it on Centos 7 Referensi:
  https://www.svennd.be/setup-central-syslog-server-on-centos-7/ https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/ https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html  </description>
     </item>
     
@@ -280,7 +330,8 @@ Referensi:
 . means any character, digit can come in place of .
  means zero or more occurrences of thing written just previous to it.  | means &amp;lsquo;or&amp;rsquo;.
 So,
-james.*jack  would search james , then any number of character until jack comes.</description>
+james.*jack would search james , then any number of character until jack comes.
+Since you want either jack.</description>
     </item>
     
     <item>
@@ -289,7 +340,7 @@ james.*jack  would search james , then any number of character until jack comes.
       <pubDate>Tue, 29 Oct 2019 14:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/29/linux-os-hardening/</guid>
-      <description> Password Policies Centos 7 Referensi:
+      <description>Password Policies Centos 7 Referensi:
  https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/ https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/  Centos 7 Hardening Guide Referensi:
  https://www.lisenet.com/2017/centos-7-server-hardening-guide/  Linux ASLR and kernel.randomize_va_space Ref:
  https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/  </description>
@@ -301,7 +352,7 @@ james.*jack  would search james , then any number of character until jack comes.
       <pubDate>Tue, 29 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/</guid>
-      <description> TCP Wrapper Referensi:
+      <description>TCP Wrapper Referensi:
  https://www.server-world.info/en/note?os=CentOS_7&amp;amp;p=tcp_wrapper https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/  </description>
     </item>
     
@@ -312,8 +363,8 @@ james.*jack  would search james , then any number of character until jack comes.
       
       <guid>https://blog.indonesiadot.com/2019/10/28/ansible-reference/</guid>
       <description>Postingan ini adalah referensi untuk belajar ansible dan bisa juga sebagai tips, meski sudah ada postingan sebelumnya yang berisi ansible tips :)
-Jenkins-ci Ref: * https://galaxy.ansible.com/geerlingguy/jenkins/ * http://rundeck.org * Goci / gocd
-Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &#39;/&#39; mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot;  atau</description>
+Jenkins-ci Ref:
+ https://galaxy.ansible.com/geerlingguy/jenkins/ http://rundeck.org Goci / gocd  Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &#39;/&#39; mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot; atau</description>
     </item>
     
     <item>
@@ -338,8 +389,8 @@ tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#3
       <pubDate>Tue, 15 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/</guid>
-      <description> Disable and blacklist Linux modules Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya
-blacklist firewire_core install firewire_core /bin/true  Referensi:
+      <description>Disable and blacklist Linux modules Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya
+blacklist firewire_core install firewire_core /bin/true Referensi:
  CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/  </description>
     </item>
     
@@ -349,7 +400,7 @@ blacklist firewire_core install firewire_core /bin/true  Referensi:
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/</guid>
-      <description> Android USB File Transfer add-apt-repository ppa:webupd8team/unstable apt update apt-get install go-mtpfs mkdir /media/MyAndroid  mount go-mtpfs /media/MyAndroid  unmount fusermount -u /media/MyAndroid  or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open ftp://ip.of.android:8888, so you can access from pc via ftp client like filezilla.
+      <description>Android USB File Transfer add-apt-repository ppa:webupd8team/unstable apt update apt-get install go-mtpfs mkdir /media/MyAndroid mount go-mtpfs /media/MyAndroid unmount fusermount -u /media/MyAndroid or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open ftp://ip.of.android:8888, so you can access from pc via ftp client like filezilla.
 Referensi:
  http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu  </description>
     </item>
@@ -360,7 +411,7 @@ Referensi:
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/</guid>
-      <description> Firewalld masquerade firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public  Referensi:
+      <description>Firewalld masquerade firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public Referensi:
  https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/  </description>
     </item>
     
@@ -370,7 +421,7 @@ Referensi:
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</guid>
-      <description> Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt  comment out a line that contain string sed -i &#39;/ 2001 /s/^/#/&#39; file  Referensi:
+      <description>Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt comment out a line that contain string sed -i &#39;/ 2001 /s/^/#/&#39; file Referensi:
  https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521 https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file  </description>
     </item>
     
@@ -380,10 +431,10 @@ Referensi:
       <pubDate>Sun, 13 Oct 2019 07:09:53 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/</guid>
-      <description>Security DNS di sisi client Install dnscrypt-proxy add-apt-repository ppa:shevchuk/dnscrypt-proxy apt update apt install dnscrypt-proxy  Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel server_name menjadi seperti contoh berikut:
-server_names = [&#39;cloudflare&#39;, &#39;google&#39;]  lalu restart service dnscrypt-proxy
-systemctl restart dnscrypt-proxy  edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy
-nameserver 127.0.2.1  Install DNS over HTTPS server Install dengan cara paket instalasi deb wget &amp;quot;https://www.aaflalo.me/?smd_process_download=1&amp;amp;download_id=1326&amp;quot; mv index* doh-server.deb dpkg -i doh-server_*_amd64.deb  Install dengan cara compile wget https://dl.</description>
+      <description>Security DNS di sisi client Install dnscrypt-proxy add-apt-repository ppa:shevchuk/dnscrypt-proxy apt update apt install dnscrypt-proxy Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel server_name menjadi seperti contoh berikut:
+server_names = [&#39;cloudflare&#39;, &#39;google&#39;] lalu restart service dnscrypt-proxy
+systemctl restart dnscrypt-proxy edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy
+nameserver 127.0.2.1 Install DNS over HTTPS server Install dengan cara paket instalasi deb wget &amp;quot;https://www.aaflalo.me/?smd_process_download=1&amp;amp;download_id=1326&amp;quot; mv index* doh-server.deb dpkg -i doh-server_*_amd64.deb Install dengan cara compile wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz sudo tar -C /usr/local -xzf go1.</description>
     </item>
     
     <item>
@@ -395,8 +446,8 @@ nameserver 127.0.2.1  Install DNS over HTTPS server Install dengan cara paket in
       <description>Install Ansible Tower Persyaratan:
 Hardware: RAM minimal 3,75 GB OS: Centos 7
 Langkah yang dilakukan
-yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz tar -xzvf ansible-tower-setup-latest.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh  Configure Ansible Tower after installation Akses Ansible tower Web UI dari
-https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
+yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz tar -xzvf ansible-tower-setup-latest.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh Configure Ansible Tower after installation Akses Ansible tower Web UI dari
+https://&amp;lt;Ansible Tower IP or Hostname&amp;gt; Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
     </item>
     
     <item>
@@ -416,12 +467,21 @@ https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari http
       
       <guid>https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
- Firewall
- iptables ipset shorewall csf  Anti Malware
- maldet (malware detection for web directory)  IDS
- tripwire  Identity Server
- FreeIPA (IPA = Identity, Policy, Authentication)  Security Checking / Scanning Solution
- OpenSCAP Rapid7  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</description>
+  Firewall
+  iptables
+  ipset
+  shorewall
+  csf
+  Anti Malware
+  maldet (malware detection for web directory)
+  IDS
+  tripwire
+  Identity Server
+  FreeIPA (IPA = Identity, Policy, Authentication)
+  Security Checking / Scanning Solution
+  OpenSCAP
+  Rapid7
+  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</description>
     </item>
     
     <item>
@@ -431,14 +491,22 @@ https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari http
       
       <guid>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
- Virtualization (Desktop)
- Virtualbox  Graphic
- Gimp  Mail
- Thunderbird Mail (client)  Multimedia
- Avidemux  Video Conference
- jitsi More and more  Customer support live chat
- rocket.chat tawk.to simple chat   Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut
- https://blog.indonesiadot.com/2019/09/04/linux-security-tools/  </description>
+  Virtualization (Desktop)
+  Virtualbox
+  Graphic
+  Gimp
+  Mail
+  Thunderbird Mail (client)
+  Multimedia
+  Avidemux
+  Video Conference
+  jitsi
+  More and more
+  Customer support live chat
+  rocket.chat
+  tawk.to
+  simple chat
+  Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut</description>
     </item>
     
     <item>
@@ -459,7 +527,7 @@ Persyaratan adalah:
       
       <guid>https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/</guid>
       <description>Berikut langkah yang dilakukan, tapi sebelumnya pastikan backup, backup dan backup
-sudo apt-get update sudo apt-get upgrade sudo do-release-upgrade -f DistUpgradeViewNonInteractive  Referensi:
+sudo apt-get update sudo apt-get upgrade sudo do-release-upgrade -f DistUpgradeViewNonInteractive Referensi:
  https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04 https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4  </description>
     </item>
     
@@ -469,7 +537,7 @@ sudo apt-get update sudo apt-get upgrade sudo do-release-upgrade -f DistUpgradeV
       <pubDate>Sat, 28 Jul 2018 08:41:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</guid>
-      <description>yum -y install wget wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-1.el7.rf.x86_64.rpm yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm stress -c 8 -i 4 -t 10s stress -c 8 -i 9 -m 9 --vm-bytes 1024M  On ubuntu server, use apt to install stress
+      <description>yum -y install wget wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-1.el7.rf.x86_64.rpm yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm stress -c 8 -i 4 -t 10s stress -c 8 -i 9 -m 9 --vm-bytes 1024M On ubuntu server, use apt to install stress
 Ref:
  https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2 https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/  </description>
     </item>
@@ -480,15 +548,7 @@ Ref:
       <pubDate>Wed, 04 Apr 2018 18:45:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/04/04/all-about-icinga-monitoring/</guid>
-      <description>icinga2 installation on ubuntu 16
-https://www.icinga.com/docs/icinga2/latest/doc/02-getting-started/
-https://www.icinga.com/docs/icingaweb2/latest/doc/02-Installation/
-https://www.rosehosting.com/blog/install-icinga-2-on-ubuntu-16-04/
-https://blog.x-toolz.com/installing-icinga2-icingaweb2-on-ubuntu-16-04-3-lts/
-https://github.com/jpfluger/examples/blob/master/ubuntu-14.04/icinga2-server.md
-https://www.google.co.id/search?q=icinga2+change+ssh+port
-https://monitoring-portal.org/woltlab/index.php?thread/32752-ssh-monitoring-different-port/
-added a line into the servicedefinition:Codeapply Service &amp;ldquo;ssh&amp;rdquo; {import &amp;ldquo;generic-service&amp;rdquo;check_command = &amp;ldquo;ssh&amp;rdquo;vars.port = host.vars.ssh_portassign where host.address &amp;amp;&amp;amp; host.vars.os == &amp;ldquo;Linux&amp;rdquo;ignore where host.name == &amp;ldquo;localhost&amp;rdquo; /* for upgrade safety */}and in the hostdef:Codeobject Host &amp;ldquo;webarchiv&amp;rdquo; {&amp;hellip;vars.ssh_port = 1023&amp;hellip;</description>
+      <description>icinga2 installation on ubuntu 16https://www.icinga.com/docs/icinga2/latest/doc/02-getting-started/&amp;lt;br&amp;gt;https://www.icinga.com/docs/icingaweb2/latest/doc/02-Installation/&amp;lt;br&amp;gt;https://www.rosehosting.com/blog/install-icinga-2-on-ubuntu-16-04/&amp;lt;br&amp;gt;https://blog.x-toolz.com/installing-icinga2-icingaweb2-on-ubuntu-16-04-3-lts/&amp;lt;br&amp;gt;https://github.com/jpfluger/examples/blob/master/ubuntu-14.04/icinga2-server.md&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&amp;lt;b&amp;gt;https://www.google.co.id/search?q=icinga2+change+ssh+port&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;https://monitoring-portal.org/woltlab/index.php?thread/32752-ssh-monitoring-different-port/&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div style=&amp;quot;background-color: #fafafa; border: 0px; box-sizing: inherit; color: #2c3e50; font-family: &amp;quot;Open Sans&amp;quot;, Arial, Helvetica, sans-serif; font-size: 14px; min-width: 0px; padding: 0px;&amp;ldquo;&amp;gt;added a line into the servicedefinition:Codeapply Service &amp;ldquo;ssh&amp;rdquo; {import &amp;ldquo;generic-service&amp;quot;check_command = &amp;ldquo;ssh&amp;quot;vars.port = host.vars.ssh_portassign where host.address &amp;amp;&amp;amp; host.vars.os == &amp;ldquo;Linux&amp;quot;ignore where host.name == &amp;ldquo;localhost&amp;rdquo; /* for upgrade safety */}and in the hostdef:Codeobject Host &amp;ldquo;webarchiv&amp;rdquo; {&amp;hellip;vars.ssh_port = 1023&amp;hellip;</description>
     </item>
     
     <item>
@@ -507,8 +567,7 @@ added a line into the servicedefinition:Codeapply Service &amp;ldquo;ssh&amp;rdq
       <pubDate>Thu, 22 Feb 2018 11:12:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/22/invoice-ninja-free-open-source-invoicing-system/</guid>
-      <description>https://www.invoiceninja.org/
-https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/</description>
+      <description>https://www.invoiceninja.org/&amp;lt;br /&amp;gt;https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/</description>
     </item>
     
     <item>
@@ -517,14 +576,7 @@ https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/</description
       <pubDate>Sat, 17 Feb 2018 10:41:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/17/munin-nginx/</guid>
-      <description>http://guide.munin-monitoring.org/en/stable-2.0/example/webserver/nginx.html
-http://guide.munin-monitoring.org/en/latest/example/webserver/nginx.html
-http://iinclude.in/2017/12/03/how-to-install-the-munin-monitoring-tool-on-ubuntu-16-04-with-nginx/
-https://www.stephenrlang.com/2016/03/how-to-setup-munin-on-ubuntu/
-https://github.com/tjstein/php5-fpm-munin-plugins
-https://serverfault.com/questions/315460/munin-email-notification
-https://blog-en.openalfa.com/how-to-configure-alerts-in-munin
-https://prefetch.net/blog/index.php/2011/07/13/gathering-statistics-from-your-postfix-mail-logs/</description>
+      <description></description>
     </item>
     
     <item>
@@ -533,9 +585,7 @@ https://prefetch.net/blog/index.php/2011/07/13/gathering-statistics-from-your-po
       <pubDate>Fri, 16 Feb 2018 05:28:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/16/linux-server-monitoring/</guid>
-      <description>https://blog.serverdensity.com/80-linux-monitoring-tools-know/
-https://logz.io/blog/grafana-vs-kibana/
-http://docs.grafana.org/features/datasources/</description>
+      <description></description>
     </item>
     
     <item>
@@ -555,9 +605,7 @@ http://docs.grafana.org/features/datasources/</description>
       <pubDate>Wed, 31 Jan 2018 20:35:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/31/change-image-resolution-from-linux-command-line/</guid>
-      <description>change image resolution command line
-https://imagemagick.org/discourse-server/viewtopic.php?t=24890
-https://www.howtogeek.com/109369/how-to-quickly-resize-convert-modify-images-from-the-linux-terminal/amp/</description>
+      <description></description>
     </item>
     
     <item>
@@ -566,9 +614,15 @@ https://www.howtogeek.com/109369/how-to-quickly-resize-convert-modify-images-fro
       <pubDate>Mon, 29 Jan 2018 00:59:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</guid>
+<<<<<<< HEAD
       <description>cron without sending mail tambahkan MAILTO=&amp;ldquo;&amp;rdquo; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
 linux rm file list too long cd direktoriyangfilenyabanyak ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete find . -type f -print -delete  incron Ref:
  http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en  rsync only existing file rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/  Umask follow parent / setgid chmod g+s /namafolder  Ref:</description>
+=======
+      <description>cron without sending mail tambahkan MAILTO=&amp;rdquo;&amp;rdquo; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
+linux rm file list too long cd direktoriyangfilenyabanyak ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete find . -type f -print -delete incron Ref:
+ http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en  rsync only existing file rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/ Umask follow parent / setgid chmod g+s /namafolder Ref:</description>
+>>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
     </item>
     
   </channel>
