@@ -1,8 +1,8 @@
 +++
 title = "Linux Tips and Trick"
 date = 2018-01-29T00:59:00Z
-updated = 2018-02-17T17:37:10Z
-tags = ["linux", "server"]
+updated = 2020-01-20T09:37:10Z
+tags = ["linux", "server", "tips", "trick"]
 blogimport = true 
 [author]
 	name = "widyamedia"
@@ -31,8 +31,13 @@ Ref:
 rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/
 ```
 
+## Umask follow parent / setgid
+```
+chmod g+s /namafolder
+```
+
 Ref:
 
 * https://unix.stackexchange.com/questions/117190/best-way-to-sync-files-copy-only-existing-files-and-only-if-newer-than-target
-
+* https://superuser.com/questions/151911/how-to-make-new-file-permission-inherit-from-the-parent-directory
 
