@@ -31,6 +31,33 @@ https://<Ansible Tower IP or Hostname>
 Dapatkan lisensi dari https://www.ansible.com/license
 lalu masukkan license tersebut ke halaman awal setelah login
 
+## Untuk centos 7
+seting selinux state ke permissive
+```
+SELINUX=permissive
+```
+tambahkan firewall untuk https
+```
+systemctl enable firewalld
+firewall-cmd --add-service=http --permanent;firewall-cmd --add-service=https --permanent
+systemctl restart firewalld
+```
+
+## Ansible tower license
+```
+{
+    "company_name": "widyamedia",
+    "contact_email": "widyamedia@gmail.com",
+    "contact_name": "widya media",
+    "hostname": "0f6a792b962445f2b0cd337a1ebb05c2",
+    "instance_count": 10,
+    "license_date": 2116912142,
+    "license_key": "0c8906958684422f6b25a2748a285f3c63601899b0bca26df2dc4d2805ec05c6",
+    "license_type": "basic",
+    "subscription_name": "Red Hat Ansible Tower, Self-Support (10 Managed Nodes)"
+}
+```
+
 Referensi:
 
 * https://www.ansible.com/products/tower/trial

@@ -6,6 +6,17 @@ tags: ["web", "scripting", "static-site-generator", "ssg", "hugo"]
 author: "Widya"
 ---
 
+## manage hugo dari pc / laptop lain
+```
+git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io
+git checkout hugo
+rm -rf public
+git add .
+git commit -m 'remove public'
+git push
+git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public
+```
+
 Referensi hugo dasar:
 
 * https://www.petanikode.com/topik/hugo
