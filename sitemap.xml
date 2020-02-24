@@ -7,8 +7,283 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/2020/02/24/analisa-virus-dengan-virustotal/</loc>
+    <lastmod>2020-02-24T22:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2019-12-05T18:47:00+00:00</lastmod>
+    <lastmod>2020-02-24T22:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
+    <lastmod>2020-02-24T22:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2020-02-24T22:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2020-02-24T22:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/trojan/</loc>
+    <lastmod>2020-02-24T22:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/virus/</loc>
+    <lastmod>2020-02-24T22:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/virustotal/</loc>
+    <lastmod>2020-02-24T22:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/worm/</loc>
+    <lastmod>2020-02-24T22:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/editing/</loc>
+    <lastmod>2020-02-24T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
+    <lastmod>2020-02-24T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/video/</loc>
+    <lastmod>2020-02-24T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/</loc>
+    <lastmod>2020-02-24T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/youtube/</loc>
+    <lastmod>2020-02-24T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
+    <lastmod>2020-02-20T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</loc>
+    <lastmod>2020-02-20T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/hardening/</loc>
+    <lastmod>2020-02-20T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/os-hardening/</loc>
+    <lastmod>2020-02-20T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/security/</loc>
+    <lastmod>2020-02-20T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</loc>
+    <lastmod>2020-02-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/container/</loc>
+    <lastmod>2020-02-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/docker/</loc>
+    <lastmod>2020-02-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/harbor/</loc>
+    <lastmod>2020-02-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/registry/</loc>
+    <lastmod>2020-02-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/centos/</loc>
+    <lastmod>2020-01-20T09:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/permission/</loc>
+    <lastmod>2020-01-20T09:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/redhat/</loc>
+    <lastmod>2020-01-20T09:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/selinux/</loc>
+    <lastmod>2020-01-20T09:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</loc>
+    <lastmod>2020-01-20T09:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</loc>
+    <lastmod>2020-01-20T07:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/</loc>
+    <lastmod>2020-01-19T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ansibletower/</loc>
+    <lastmod>2020-01-19T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/tower/</loc>
+    <lastmod>2020-01-19T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/certbot/</loc>
+    <lastmod>2020-01-19T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/https/</loc>
+    <lastmod>2020-01-19T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/letsencrypt/</loc>
+    <lastmod>2020-01-19T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/</loc>
+    <lastmod>2020-01-19T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/server/</loc>
+    <lastmod>2020-01-19T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ssl/</loc>
+    <lastmod>2020-01-19T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</loc>
+    <lastmod>2020-01-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/docker-compose/</loc>
+    <lastmod>2020-01-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/git/</loc>
+    <lastmod>2020-01-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/gitlab/</loc>
+    <lastmod>2020-01-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</loc>
+    <lastmod>2020-01-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/repository/</loc>
+    <lastmod>2020-01-14T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/</loc>
+    <lastmod>2020-01-08T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/centos7/</loc>
+    <lastmod>2020-01-08T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/partition/</loc>
+    <lastmod>2020-01-08T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/rhel/</loc>
+    <lastmod>2019-12-23T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/12/23/selinux-semanage/</loc>
+    <lastmod>2019-12-23T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/semanage/</loc>
+    <lastmod>2019-12-23T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/kvm/</loc>
+    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/qemu/</loc>
+    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</loc>
+    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/virt-install/</loc>
+    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/virtualization/</loc>
+    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
   </url>
   
   <url>
@@ -22,37 +297,12 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2019-12-05T18:47:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2019-12-05T18:47:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
-    <lastmod>2019-12-05T18:47:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/modsecurity/</loc>
     <lastmod>2019-12-05T08:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/2019/12/05/modsecurity-waf/</loc>
-    <lastmod>2019-12-05T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/security/</loc>
-    <lastmod>2019-12-05T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/server/</loc>
     <lastmod>2019-12-05T08:17:54+07:00</lastmod>
   </url>
   
@@ -79,16 +329,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/2019/12/04/openvpn-routed-lans/</loc>
     <lastmod>2019-12-04T23:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
-    <lastmod>2019-12-04T23:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
-    <lastmod>2019-12-04T08:17:54+07:00</lastmod>
   </url>
   
   <url>
@@ -247,12 +487,12 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/2019/10/26/post/</loc>
+    <loc>https://blog.indonesiadot.com/tags/tmux/</loc>
     <lastmod>2019-10-26T16:17:54+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/tmux/</loc>
+    <loc>https://blog.indonesiadot.com/2019/10/26/tmux-screen-tips/</loc>
     <lastmod>2019-10-26T16:17:54+07:00</lastmod>
   </url>
   
@@ -307,11 +547,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/hardening/</loc>
-    <lastmod>2019-10-15T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/kernel/</loc>
     <lastmod>2019-10-15T08:17:54+07:00</lastmod>
   </url>
@@ -328,11 +563,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/</loc>
-    <lastmod>2019-10-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/centos/</loc>
     <lastmod>2019-10-14T08:17:54+07:00</lastmod>
   </url>
   
@@ -397,11 +627,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/ansibletower/</loc>
-    <lastmod>2019-10-10T07:09:53+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/2019/10/10/belajar-ansible-tower/</loc>
     <lastmod>2019-10-10T07:09:53+07:00</lastmod>
   </url>
@@ -449,11 +674,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/tags/tripwire/</loc>
     <lastmod>2019-09-28T08:17:36+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/git/</loc>
-    <lastmod>2019-09-24T08:17:48+07:00</lastmod>
   </url>
   
   <url>
@@ -532,11 +752,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/virtualization/</loc>
-    <lastmod>2019-09-02T08:17:56+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/mail/</loc>
     <lastmod>2019-09-02T08:17:54+07:00</lastmod>
   </url>
@@ -553,16 +768,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/</loc>
-    <lastmod>2019-09-02T08:17:33+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/container/</loc>
-    <lastmod>2019-09-02T08:17:33+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/docker/</loc>
     <lastmod>2019-09-02T08:17:33+07:00</lastmod>
   </url>
   
@@ -588,11 +793,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2019/09/02/git-tips/</loc>
-    <lastmod>2019-09-02T08:17:21+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/repository/</loc>
     <lastmod>2019-09-02T08:17:21+07:00</lastmod>
   </url>
   
@@ -752,7 +952,7 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/2018/07/08/docker-registry-/-docker-private-repository-tips-and-tricks/</loc>
+    <loc>https://blog.indonesiadot.com/2018/07/08/docker-registry-docker-private-repository/</loc>
     <lastmod>2018-07-08T23:59:00+00:00</lastmod>
   </url>
   
@@ -858,11 +1058,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/scripts/</loc>
-    <lastmod>2018-03-04T21:22:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ssl/</loc>
     <lastmod>2018-03-04T21:22:00+00:00</lastmod>
   </url>
   
@@ -1053,6 +1248,11 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</loc>
+    <lastmod>2018-01-29T00:59:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/trick/</loc>
     <lastmod>2018-01-29T00:59:00+00:00</lastmod>
   </url>
   

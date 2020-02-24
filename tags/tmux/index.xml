@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Post</title>
-      <link>https://blog.indonesiadot.com/2019/10/26/post/</link>
+      <title>Tmux screen tips</title>
+      <link>https://blog.indonesiadot.com/2019/10/26/tmux-screen-tips/</link>
       <pubDate>Sat, 26 Oct 2019 16:17:54 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2019/10/26/post/</guid>
+      <guid>https://blog.indonesiadot.com/2019/10/26/tmux-screen-tips/</guid>
       <description>Tmux cheatsheet tmux shortcuts &amp;amp; cheatsheet start new:
 tmux  start new with session name:
 tmux new -s myname  attach:

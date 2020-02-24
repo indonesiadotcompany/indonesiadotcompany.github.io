@@ -6,10 +6,31 @@
     <description>Recent content in ansible on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Dec 2019 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 20 Feb 2020 18:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible OS Hardening</title>
+      <link>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</link>
+      <pubDate>Thu, 20 Feb 2020 18:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</guid>
+      <description> Ansible OS Hardening mkdir -p /data/backups  Referensi:
+ https://indonesiadot.com  </description>
+    </item>
+    
+    <item>
+      <title>Ansible Tower first Implementation</title>
+      <link>https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/</link>
+      <pubDate>Sun, 19 Jan 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/</guid>
+      <description>Ansible Tower first Implementation  Install ansible tower masukan license tambahkan access - organization tambahkan access - users tambahkan access - teams tambahkan resources - inventory siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)
+chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/  tambahkan resources - projects
+ buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine</description>
+    </item>
     
     <item>
       <title>Ansible cycle evolution diagram security</title>

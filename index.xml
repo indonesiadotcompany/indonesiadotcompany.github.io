@@ -4,10 +4,583 @@
     <link>https://blog.indonesiadot.com/</link>
     <language>en-us</language>
     <author>Widya</author>
-    <rights>(C) 2019</rights>
-    <updated>2019-12-05 18:47:00 &#43;0000 UTC</updated>
+    <rights>(C) 2020</rights>
+    <updated>2020-02-24 22:17:54 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>Analisa Virus dengan virustotal</title>
+          <link>https://blog.indonesiadot.com/2020/02/24/analisa-virus-dengan-virustotal/</link>
+          <pubDate>Mon, 24 Feb 2020 22:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/02/24/analisa-virus-dengan-virustotal/</guid>
+          <description>
+
+&lt;h2 id=&#34;analisa-virus-dengan-virustotal&#34;&gt;Analisa Virus dengan virustotal&lt;/h2&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.virustotal.com/gui/home/upload&#34;&gt;https://www.virustotal.com/gui/home/upload&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Video Editing On Linux</title>
+          <link>https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/</link>
+          <pubDate>Mon, 24 Feb 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/</guid>
+          <description>
+
+&lt;h2 id=&#34;cut-and-combine-video&#34;&gt;Cut and Combine Video&lt;/h2&gt;
+
+&lt;p&gt;Avidemux&lt;/p&gt;
+
+&lt;h2 id=&#34;youtube&#34;&gt;Youtube&lt;/h2&gt;
+
+&lt;h3 id=&#34;add-text-caption-subtitle-anotasi-on-video&#34;&gt;Add text / caption / subtitle / Anotasi on video&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &amp;gt; Youtube Studio
+2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks
+3. Untuk video baru, klik set languages, lalu confirm
+4. Klik tombol ADD / Tambahkan subtitel atau CC baru.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;add-watermark&#34;&gt;Add watermark&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;ffmpeg -i input.mp4 -i watermark.png -filter_complex &amp;quot;overlay=1500:1000&amp;quot; output.mp4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.nesabamedia.com/cara-membuat-subtitle-video-youtube/&#34;&gt;https://www.nesabamedia.com/cara-membuat-subtitle-video-youtube/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://readmoremyblog.wordpress.com/2012/03/11/cara-membuat-teks-atau-anotasi-pada-video-youtube/&#34;&gt;https://readmoremyblog.wordpress.com/2012/03/11/cara-membuat-teks-atau-anotasi-pada-video-youtube/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://shkspr.mobi/blog/2016/08/easy-ways-to-add-watermarks-to-images-and-videos-in-linux/&#34;&gt;https://shkspr.mobi/blog/2016/08/easy-ways-to-add-watermarks-to-images-and-videos-in-linux/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.vlchelp.com/how-to-change-subtitle-position-in-vlc/&#34;&gt;https://www.vlchelp.com/how-to-change-subtitle-position-in-vlc/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://downsub.com/&#34;&gt;https://downsub.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Ansible OS Hardening</title>
+          <link>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</link>
+          <pubDate>Thu, 20 Feb 2020 18:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</guid>
+          <description>
+
+&lt;h2 id=&#34;ansible-os-hardening&#34;&gt;Ansible OS Hardening&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir -p /data/backups
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://indonesiadot.com&#34;&gt;https://indonesiadot.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Ansible Tower tips and trick</title>
+          <link>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</link>
+          <pubDate>Thu, 20 Feb 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</guid>
+          <description>
+
+&lt;h2 id=&#34;ansible-tower-tips-and-trick&#34;&gt;Ansible Tower tips and trick&lt;/h2&gt;
+
+&lt;h3 id=&#34;change-admin-password&#34;&gt;Change admin password&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;awx-manage changepassword admin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;backup-and-restore&#34;&gt;backup and restore&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html&#34;&gt;https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html&#34;&gt;https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Selinux Web Directory Permission</title>
+          <link>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</link>
+          <pubDate>Mon, 20 Jan 2020 09:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</guid>
+          <description>
+
+&lt;h2 id=&#34;selinux-web-directory-permission&#34;&gt;Selinux Web Directory Permission&lt;/h2&gt;
+
+&lt;p&gt;Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.&lt;/p&gt;
+
+&lt;p&gt;adapun command nya sebelum bisa diakses yaitu:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;chcon -Rv --type=httpd_sys_rw_content_t /webserver
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/&#34;&gt;https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Harbor Container Registry</title>
+          <link>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</link>
+          <pubDate>Mon, 20 Jan 2020 07:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</guid>
+          <description>
+
+&lt;h2 id=&#34;widya-harbor-container-registry&#34;&gt;Widya Harbor Container Registry&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://widharbor.birau.com/&#34;&gt;https://widharbor.birau.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://indonesiadot.com&#34;&gt;https://indonesiadot.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Ansible Tower first Implementation</title>
+          <link>https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/</link>
+          <pubDate>Sun, 19 Jan 2020 15:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/</guid>
+          <description>
+
+&lt;h2 id=&#34;ansible-tower-first-implementation&#34;&gt;Ansible Tower first Implementation&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Install ansible tower&lt;/li&gt;
+&lt;li&gt;masukan license&lt;/li&gt;
+&lt;li&gt;tambahkan &lt;strong&gt;access - organization&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;tambahkan &lt;strong&gt;access - users&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;tambahkan &lt;strong&gt;access - teams&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;tambahkan &lt;strong&gt;resources - inventory&lt;/strong&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;chmod g+s /var/lib/awx/projects
+cp -r test /var/lib/awx/projects/
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;tambahkan &lt;strong&gt;resources - projects&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;buat host client / node yang mau di manage di /etc/hosts&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;tambahkan &lt;strong&gt;resources - credentials&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;tambahkan &lt;strong&gt;resources - templates&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;test launch jobs based on template yg baru dibuat&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ansible-tower-openscap&#34;&gt;Ansible tower + openscap&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;install scap-workbench&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yum install scap-workbench xauth -y
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;buat direktori report&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir /report                                                                                                                                                                                               
+chgrp awx /report                                                                                                                                                                                           
+chmod g+s /report/
+chcon -Rv --type=httpd_sys_rw_content_t /report/
+ln -s /report /var/lib/awx/public/
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;tambahkan direktori report di nginx&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    location /report {
+            alias /var/lib/awx/public/report;
+            autoindex on;
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;akses scap-workbench dari laptop&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh -X -C tower1
+scap-workbench
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;jalankan &lt;strong&gt;Scan&lt;/strong&gt; Remote Machine (over SSH) ke ansible@client1 (jika muncul popup, pilih centos7)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Save generate result html ke /report (tambahkan pembeda semisal datetime untuk membedakan tiap file report)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://indonesiadot.com&#34;&gt;https://indonesiadot.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Letsencrypt certbot unatteded</title>
+          <link>https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/</link>
+          <pubDate>Sun, 19 Jan 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/</guid>
+          <description>
+
+&lt;h2 id=&#34;letsencrypt-with-certbot-unatteded-way&#34;&gt;Letsencrypt with certbot unatteded way&lt;/h2&gt;
+
+&lt;p&gt;This is for ubuntu linux&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;add-apt-repository ppa:certbot/certbot -y
+apt install certbot -y
+certbot certonly --standalone --preferred-challenges http --non-interactive  --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;note&#34;&gt;Note:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;before running certbot command, you must already pointing domain / subdomain address to destination ip&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;referensi&#34;&gt;Referensi:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://indonesiadot.com&#34;&gt;https://indonesiadot.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Docker Compose on Linux</title>
+          <link>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</link>
+          <pubDate>Wed, 15 Jan 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</guid>
+          <description>
+
+&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/compose/install/&#34;&gt;https://docs.docker.com/compose/install/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Gitlab on Ubuntu 16.04</title>
+          <link>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</link>
+          <pubDate>Tue, 14 Jan 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</guid>
+          <description>
+
+&lt;h2 id=&#34;instalasi-gitlab-di-ubuntu-16-04&#34;&gt;Instalasi Gitlab di Ubuntu 16.04&lt;/h2&gt;
+
+&lt;h2 id=&#34;widya-gitlab&#34;&gt;Widya Gitlab&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://widgitgog.birau.com/dashboard/projects&#34;&gt;https://widgitgog.birau.com/dashboard/projects&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/&#34;&gt;https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04&#34;&gt;https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Centos 7 Resize Partition</title>
+          <link>https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/</link>
+          <pubDate>Wed, 08 Jan 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/</guid>
+          <description>
+
+&lt;h2 id=&#34;step-to-reproduce-on-vm&#34;&gt;Step to reproduce on VM&lt;/h2&gt;
+
+&lt;p&gt;Turn off the VM&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qemu-img resize image.qcow2 +SIZE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;where SIZE is the size to add (e.g. 10G for 10 gibibytes).&lt;/p&gt;
+
+&lt;p&gt;Turn on the VM, fdisk /dev/vda, delete and create /dev/vda2, restart&lt;/p&gt;
+
+&lt;p&gt;Login after restart, then run this command&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pvresize /dev/vda2
+lvextend -r -l +100%FREE /dev/mapper/centos-root
+df -hl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://maunium.net/blog/resizing-qcow2-images/&#34;&gt;https://maunium.net/blog/resizing-qcow2-images/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Selinux semanage</title>
+          <link>https://blog.indonesiadot.com/2019/12/23/selinux-semanage/</link>
+          <pubDate>Mon, 23 Dec 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/12/23/selinux-semanage/</guid>
+          <description>
+
+&lt;p&gt;content of selinux config /etc/selinux/config&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SELINUX=enforcing
+SELINUXTYPE=targeted 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;semanage-packages&#34;&gt;semanage packages&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;yum provides semanage
+yum install -y policycoreutils-python
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;semanage-list-port&#34;&gt;semanage list port&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;semanage port -l | grep ssh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;semanage-open-ssh-on-different-port&#34;&gt;semanage open ssh on different port&lt;/h2&gt;
+
+&lt;p&gt;add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;semanage port -a -t ssh_port_t -p tcp 1022
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;then restart sshd service&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;systemctl restart sshd
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/&#34;&gt;https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Simple Virtualization Linux</title>
+          <link>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</link>
+          <pubDate>Sun, 22 Dec 2019 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</guid>
+          <description>
+
+&lt;h2 id=&#34;list-kvm-using-virsh&#34;&gt;List kvm using virsh&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;virsh list
+virsh list --all
+virsh --help
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;create-vm-on-kvm-qemu-via-libvirt-with-command-line&#34;&gt;Create vm on kvm / qemu via libvirt with command line&lt;/h2&gt;
+
+&lt;h3 id=&#34;pembuatan-vm-centos-7&#34;&gt;Pembuatan vm centos 7&lt;/h3&gt;
+
+&lt;p&gt;script bash virtcen.sh&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+NAMA=$1
+
+if [ -z &amp;quot;$1&amp;quot; ]; then
+ while [ -z &amp;quot;$NAMA&amp;quot; ]; do
+  echo -n &amp;quot;masukan nama vm: &amp;quot;
+  read NAMA
+ done
+fi
+
+virt-install \
+ --name $NAMA \
+ --ram 900 \
+ --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&#39;unmap&#39;,format=&#39;qcow2&#39; \
+ --controller type=scsi,model=virtio-scsi \
+ --vcpus 1 \
+ --cpu host \
+ --console pty,target_type=serial \
+ --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso \
+ --initrd-inject=cenks.cfg --extra-args &amp;quot;inst.ks=file:/cenks.cfg&amp;quot; \
+ --noautoconsole
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;file kickstart cenks.cfg&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;text
+install
+
+ignoredisk --only-use=sda
+clearpart --all
+autopart
+bootloader --location=mbr --driveorder=sda
+
+rootpw --iscrypted $1$R69aiGHP$BmqNaQ1ckncOT0I3t6DlN1
+user widysible --name widysible --iscrypted --password $1$u08OmYWr$s3v/lOnNMVyb5SCEwFFLG1
+
+timezone Asia/Jakarta
+network --bootproto=dhcp
+
+firewall --disabled
+#reboot --eject
+shutdown
+
+%packages
+@Core
+%end
+%post --interpreter=/bin/bash
+#exec &amp;lt; /dev/tty6 &amp;gt; /dev/tty6
+#chvt 6
+echo ### Add public ssh key for Ansible
+mkdir -m0700 -p /home/widysible/.ssh
+cat &amp;lt;&amp;lt;EOF &amp;gt;/home/widysible/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTIv6ziCUfRwMfGGVwZoKtWLf51+OLzDwwQYXyrf8vmnY7tZB7GLWAWCmto2nsNfwBQiXBXWZ7rUfTM2og/xfTerrDexyBg1Polm0FAK9zNwDE77WqSeirCQFAQ0Q+GaJaERitrF5h+SfDBHIgoMEuWJMzCQvzaI/3WU2YB//LzcM3NckfxolxQbjMzPNweVZ6BpEOGB7a9BQh370+EFj8h9suOVPYmqV5L5M0gMrYiQ7qA2Zzf442g5AElJqU7p8EFUI4ttLnP8AlkxQvRQOWRcf11iQDAbJNF7UDh0iqYOe0cynnMUZQp1nmQD5t65L8tHp0k94P3bdN7FHvbjBL root@wid
+EOF
+chown -R widysible:widysible /home/ansible
+chmod 0600 /home/widysible/.ssh/authorized_keys
+# Allow Ansible to sudo w/o a password
+echo &amp;quot;widysible ALL=(ALL) NOPASSWD:ALL&amp;quot; &amp;gt; /etc/sudoers.d/widysible
+# trim
+sed -i &#39;s/issue_discards = 0/issue_discards = 1/&#39; /etc/lvm/lvm.conf
+echo &amp;quot;0 0 1 0 0 fstrim /&amp;quot; | tee /etc/cron.d/fstrim
+sed -i &#39;/ swap /s/^/#/&#39; /etc/fstab
+sed -i &#39;s/defaults/defaults,discard/&#39; /etc/fstab
+echo ### Change back to terminal 1
+#chvt 1
+%end
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Create VM using ansible playbook&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+- name: create VMs
+  hosts: localhost
+  gather_facts: no
+  connection: local
+  become: true
+  vars_prompt:
+    - name: NAMA
+      prompt: &amp;quot;Enter VM name&amp;quot;
+      default: &amp;quot;c7&amp;quot;
+      private: no
+#  vars_files:
+#    - vms.yml
+
+  tasks:
+    - name: get VM disks
+      command: &amp;quot;ls /var/lib/libvirt/images&amp;quot;
+      register: disks
+      changed_when: &amp;quot;disks.rc != 0&amp;quot;
+
+    - name: get list of VMs
+      virt:
+        command: &amp;quot;list_vms&amp;quot;
+      register: vms
+
+    - name: create vm
+      command: &amp;gt;
+                virt-install --name {{ NAMA }}
+                --cpu host --vcpus 1 --ram 900
+                --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&#39;unmap&#39;,format=&#39;qcow2&#39;
+                --controller type=scsi,model=virtio-scsi
+                --console pty,target_type=serial
+                --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso
+                --initrd-inject=cenks.cfg --extra-args &amp;quot;inst.ks=file:/cenks.cfg&amp;quot;
+                --noautoconsole
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;get-vms-ip&#34;&gt;Get VMs IP&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;virsh domifaddr c7
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/&#34;&gt;https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/&#34;&gt;https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.leifmadsen.com/blog/2016/12/16/creating-virtual-machines-in-libvirt-with-virt-install/&#34;&gt;http://blog.leifmadsen.com/blog/2016/12/16/creating-virtual-machines-in-libvirt-with-virt-install/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://kvmonz.blogspot.com/p/knowledge-use-virt-install-for-kvm.html&#34;&gt;http://kvmonz.blogspot.com/p/knowledge-use-virt-install-for-kvm.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://earlruby.org/2018/12/use-iso-and-kickstart-files-to-automatically-create-vms/&#34;&gt;https://earlruby.org/2018/12/use-iso-and-kickstart-files-to-automatically-create-vms/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://graspingtech.com/creating-virtual-machine-virt-install/&#34;&gt;https://graspingtech.com/creating-virtual-machine-virt-install/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.server-world.info/en/note?os=Ubuntu_18.04&amp;amp;p=kvm&amp;amp;f=2&#34;&gt;https://www.server-world.info/en/note?os=Ubuntu_18.04&amp;amp;p=kvm&amp;amp;f=2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.zencoffee.org/2016/06/easy-headless-kvm-deployment-virt-install/&#34;&gt;http://blog.zencoffee.org/2016/06/easy-headless-kvm-deployment-virt-install/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gist.github.com/aladuca/854b78585c2bba961386&#34;&gt;https://gist.github.com/aladuca/854b78585c2bba961386&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cyberciti.biz/faq/find-ip-address-of-linux-kvm-guest-virtual-machine/&#34;&gt;https://www.cyberciti.biz/faq/find-ip-address-of-linux-kvm-guest-virtual-machine/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cyberciti.biz/faq/linux-list-a-kvm-vm-guest-using-virsh-command/&#34;&gt;https://www.cyberciti.biz/faq/linux-list-a-kvm-vm-guest-using-virsh-command/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hooks.technology/2017/10/create-vms-on-kvm-with-ansible/&#34;&gt;https://hooks.technology/2017/10/create-vms-on-kvm-with-ansible/&lt;/a&gt; (virt-builder and virt-install)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
       
     
       
@@ -742,11 +1315,11 @@ with_items: &#39;{{ ansible_mounts }}&#39;
     
       
         <item>
-          <title>Post</title>
-          <link>https://blog.indonesiadot.com/2019/10/26/post/</link>
+          <title>Tmux screen tips</title>
+          <link>https://blog.indonesiadot.com/2019/10/26/tmux-screen-tips/</link>
           <pubDate>Sat, 26 Oct 2019 16:17:54 WIB</pubDate>
           <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2019/10/26/post/</guid>
+          <guid>https://blog.indonesiadot.com/2019/10/26/tmux-screen-tips/</guid>
           <description>
 
 &lt;h1 id=&#34;tmux-cheatsheet&#34;&gt;Tmux cheatsheet&lt;/h1&gt;
@@ -1372,6 +1945,35 @@ cd ansible-tower-setup-3.1.5/
 &lt;p&gt;Dapatkan lisensi dari &lt;a href=&#34;https://www.ansible.com/license&#34;&gt;https://www.ansible.com/license&lt;/a&gt;
 lalu masukkan license tersebut ke halaman awal setelah login&lt;/p&gt;
 
+&lt;h2 id=&#34;untuk-centos-7&#34;&gt;Untuk centos 7&lt;/h2&gt;
+
+&lt;p&gt;seting selinux state ke permissive&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SELINUX=permissive
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;tambahkan firewall untuk https&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;systemctl enable firewalld
+firewall-cmd --add-service=http --permanent;firewall-cmd --add-service=https --permanent
+systemctl restart firewalld
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;ansible-tower-license&#34;&gt;Ansible tower license&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+    &amp;quot;company_name&amp;quot;: &amp;quot;widyamedia&amp;quot;,
+    &amp;quot;contact_email&amp;quot;: &amp;quot;widyamedia@gmail.com&amp;quot;,
+    &amp;quot;contact_name&amp;quot;: &amp;quot;widya media&amp;quot;,
+    &amp;quot;hostname&amp;quot;: &amp;quot;0f6a792b962445f2b0cd337a1ebb05c2&amp;quot;,
+    &amp;quot;instance_count&amp;quot;: 10,
+    &amp;quot;license_date&amp;quot;: 2116912142,
+    &amp;quot;license_key&amp;quot;: &amp;quot;0c8906958684422f6b25a2748a285f3c63601899b0bca26df2dc4d2805ec05c6&amp;quot;,
+    &amp;quot;license_type&amp;quot;: &amp;quot;basic&amp;quot;,
+    &amp;quot;subscription_name&amp;quot;: &amp;quot;Red Hat Ansible Tower, Self-Support (10 Managed Nodes)&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;Referensi:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -1889,6 +2491,15 @@ sudo do-release-upgrade -f DistUpgradeViewNonInteractive
           <guid>https://blog.indonesiadot.com/2019/09/02/git-tips/</guid>
           <description>
 
+&lt;h2 id=&#34;git-without-gnome-askpass&#34;&gt;git without gnome-askpass&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;unset SSH_ASKPASS
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gist.github.com/joseluisq/d0e66c5f718250c90075&#34;&gt;https://gist.github.com/joseluisq/d0e66c5f718250c90075&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&#34;git-merge&#34;&gt;git merge&lt;/h2&gt;
 
 &lt;p&gt;Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap
@@ -1974,7 +2585,20 @@ git branch -D namabranchyangakandihapus
           <pubDate>Mon, 02 Sep 2019 08:17:16 WIB</pubDate>
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/</guid>
-          <description>&lt;p&gt;Referensi hugo dasar:&lt;/p&gt;
+          <description>
+
+&lt;h2 id=&#34;manage-hugo-dari-pc-laptop-lain&#34;&gt;manage hugo dari pc / laptop lain&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io
+git checkout hugo
+rm -rf public
+git add .
+git commit -m &#39;remove public&#39;
+git push
+git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi hugo dasar:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.petanikode.com/topik/hugo&#34;&gt;https://www.petanikode.com/topik/hugo&lt;/a&gt;&lt;/li&gt;
@@ -2238,12 +2862,20 @@ stress -c 8 -i 9 -m 9 --vm-bytes 1024M
     
       
         <item>
-          <title>docker registry / docker private repository tips and tricks</title>
-          <link>https://blog.indonesiadot.com/2018/07/08/docker-registry-/-docker-private-repository-tips-and-tricks/</link>
+          <title>docker registry, docker private repository</title>
+          <link>https://blog.indonesiadot.com/2018/07/08/docker-registry-docker-private-repository/</link>
           <pubDate>Sun, 08 Jul 2018 23:59:00 UTC</pubDate>
           <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2018/07/08/docker-registry-/-docker-private-repository-tips-and-tricks/</guid>
-          <description>&lt;p&gt;&lt;a href=&#34;https://docs.docker.com/registry/deploying/&#34;&gt;https://docs.docker.com/registry/deploying/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;https://github.com/sky-uk/cleanup-docker-registry&#34;&gt;https://github.com/sky-uk/cleanup-docker-registry&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;https://github.com/burnettk/delete-docker-registry-image&#34;&gt;https://github.com/burnettk/delete-docker-registry-image&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;https://stackoverflow.com/questions/29802202/docker-registry-2-0-how-to-delete-unused-images&#34;&gt;https://stackoverflow.com/questions/29802202/docker-registry-2-0-how-to-delete-unused-images&lt;/a&gt;&lt;/p&gt;
+          <guid>https://blog.indonesiadot.com/2018/07/08/docker-registry-docker-private-repository/</guid>
+          <description>&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/registry/deploying/&#34;&gt;https://docs.docker.com/registry/deploying/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/sky-uk/cleanup-docker-registry&#34;&gt;https://github.com/sky-uk/cleanup-docker-registry&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/burnettk/delete-docker-registry-image&#34;&gt;https://github.com/burnettk/delete-docker-registry-image&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/29802202/docker-registry-2-0-how-to-delete-unused-images&#34;&gt;https://stackoverflow.com/questions/29802202/docker-registry-2-0-how-to-delete-unused-images&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gist.github.com/PieterScheffers/63e4c2fd5553af8a35101b5e868a811e&#34;&gt;https://gist.github.com/PieterScheffers/63e4c2fd5553af8a35101b5e868a811e&lt;/a&gt; (Start docker registry with letsencrypt certificates (Linux Ubuntu))&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
       
@@ -2442,6 +3074,13 @@ stress -c 8 -i 9 -m 9 --vm-bytes 1024M
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2018/03/04/docker-things/</guid>
           <description>&lt;div dir=&#34;ltr&#34;&gt;&lt;b&gt;Rancher&lt;/b&gt;&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;https://rancher.com/swarm/&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;https://github.com/MoimHossain/docker-viswarm&lt;br /&gt;&lt;br /&gt;https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host&lt;br /&gt;&lt;br /&gt;&lt;pre style=&#34;background-color: #eff0f1; border: 0px; box-sizing: inherit; color: #242729; font-family: Consolas, Menlo, Monaco, &amp;quot;Lucida Console&amp;quot;, &amp;quot;Liberation Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;Courier New&amp;quot;, monospace, sans-serif; font-size: 13px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;&#34;&gt;&lt;code style=&#34;border: 0px; box-sizing: inherit; font-family: Consolas, Menlo, Monaco, &amp;quot;Lucida Console&amp;quot;, &amp;quot;Liberation Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;Courier New&amp;quot;, monospace, sans-serif; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline; white-space: inherit;&#34;&gt;docker inspect -f &#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39; containernameorid&lt;/code&gt;&lt;/pre&gt;&lt;br /&gt;&lt;br /&gt;&lt;pre style=&#34;background-color: #eff0f1; border: 0px; box-sizing: inherit; color: #242729; font-family: Consolas, Menlo, Monaco, &amp;quot;Lucida Console&amp;quot;, &amp;quot;Liberation Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;Courier New&amp;quot;, monospace, sans-serif; font-size: 13px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;&#34;&gt;&lt;br /&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/engine/security/certificates/&#34;&gt;https://docs.docker.com/engine/security/certificates/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/engine/security/https/&#34;&gt;https://docs.docker.com/engine/security/https/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
       
@@ -2513,7 +3152,25 @@ stress -c 8 -i 9 -m 9 --vm-bytes 1024M
           <pubDate>Mon, 19 Feb 2018 10:18:00 UTC</pubDate>
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2018/02/19/nginx-tips-and-trick/</guid>
-          <description>&lt;p dir=&#34;ltr&#34;&gt;https://www.sitepoint.com/brotli-compression-wordpress/&lt;/p&gt;
+          <description>
+
+&lt;h2 id=&#34;nginx-location-directory&#34;&gt;Nginx location directory&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;  location /static/ {
+    alias /web/test.example.com/static/;
+    autoindex on;
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/11570321/configure-nginx-with-multiple-locations-with-different-root-folders-on-subdomain&#34;&gt;https://stackoverflow.com/questions/11570321/configure-nginx-with-multiple-locations-with-different-root-folders-on-subdomain&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sitepoint.com/brotli-compression-wordpress/&#34;&gt;https://www.sitepoint.com/brotli-compression-wordpress/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
       
@@ -2939,10 +3596,16 @@ find . -type f -print -delete
 &lt;pre&gt;&lt;code&gt;rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;h2 id=&#34;umask-follow-parent-setgid&#34;&gt;Umask follow parent / setgid&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;chmod g+s /namafolder
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;Ref:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://unix.stackexchange.com/questions/117190/best-way-to-sync-files-copy-only-existing-files-and-only-if-newer-than-target&#34;&gt;https://unix.stackexchange.com/questions/117190/best-way-to-sync-files-copy-only-existing-files-and-only-if-newer-than-target&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://superuser.com/questions/151911/how-to-make-new-file-permission-inherit-from-the-parent-directory&#34;&gt;https://superuser.com/questions/151911/how-to-make-new-file-permission-inherit-from-the-parent-directory&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>

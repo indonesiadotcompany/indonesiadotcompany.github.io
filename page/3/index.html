@@ -514,6 +514,86 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -521,7 +601,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2019. All rights reserved.</p>
+    <p>&copy; 2020. All rights reserved.</p>
   </div>
 </div>
 
@@ -546,489 +626,370 @@
 <div class="post">
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/">Kernel Hardening Tips</a></h1>
-        <span class="post-date">Oct 15, 2019</span>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/26/ansible-awx-2019/">Ansible AWX 2019</a></h1>
+        <span class="post-date">Nov 26, 2019</span>
 	
 
-<h2 id="disable-and-blacklist-linux-modules">Disable and blacklist Linux modules</h2>
+<h2 id="ansible-awx">Ansible AWX</h2>
 
-<p>Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya</p>
+<h3 id="install-docker-compose-tanpa-pip-tanpa-compile">install docker-compose tanpa pip, tanpa compile</h3>
 
-<pre><code>blacklist firewire_core
-install firewire_core /bin/true
+<pre><code>curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 </code></pre>
 
 <p>Referensi:</p>
 
 <ul>
-<li>CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf</li>
-<li><a href="https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/">https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/">https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/</a></li>
+<li><a href="https://medium.com/swlh/ansible-awx-installation-5861b115455a">https://medium.com/swlh/ansible-awx-installation-5861b115455a</a></li>
+<li><a href="https://devzero.co.za/2019/02/28/high-availability-awx-ansible/">https://devzero.co.za/2019/02/28/high-availability-awx-ansible/</a></li>
+<li><a href="https://github.com/sujiar37/AWX-HA-InstanceGroup">https://github.com/sujiar37/AWX-HA-InstanceGroup</a></li>
+</ul>
+
+<p>Not yet tested:</p>
+
+<ul>
+<li><a href="https://github.com/MrMEEE/awx-build">https://github.com/MrMEEE/awx-build</a></li>
+<li><a href="https://awx.wiki/installation">https://awx.wiki/installation</a></li>
+<li><a href="https://github.com/powertim/deploy_awx-rpm">https://github.com/powertim/deploy_awx-rpm</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/">https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/</a></li>
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/kernel/">kernel</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/hardening/">hardening</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/awx/">awx</a>
 	 <hr/>
     </div>
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/">Android USB File Transfer</a></h1>
-        <span class="post-date">Oct 14, 2019</span>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/">Splunk Log Monitoring</a></h1>
+        <span class="post-date">Nov 15, 2019</span>
 	
 
-<h2 id="android-usb-file-transfer">Android USB File Transfer</h2>
+<h2 id="download">Download</h2>
 
-<pre><code>add-apt-repository ppa:webupd8team/unstable
-apt update
-apt-get install go-mtpfs
-mkdir /media/MyAndroid
-</code></pre>
-
-<h3 id="mount">mount</h3>
-
-<pre><code>go-mtpfs /media/MyAndroid
-</code></pre>
-
-<h3 id="unmount">unmount</h3>
-
-<pre><code>fusermount -u /media/MyAndroid
-</code></pre>
-
-<p>or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open <a href="ftp://ip.of.android:8888">ftp://ip.of.android:8888</a>, so you can access from pc via ftp client like filezilla.</p>
+<p><a href="wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb" title="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;wget=true">deb</a>
+<a href="wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm" title="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;wget=true">rpm</a>
+<a href="wget -O splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz" title="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;wget=true">tgz</a></p>
 
 <p>Referensi:</p>
 
 <ul>
-<li><a href="http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html">http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html</a></li>
-<li><a href="https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu">https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu</a></li>
+<li><a href="https://docs.splunk.com/Documentation">https://docs.splunk.com/Documentation</a></li>
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/android/">android</a>, <a href="https://blog.indonesiadot.com/tags/file/">file</a>, <a href="https://blog.indonesiadot.com/tags/mtp/">mtp</a>
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/splunk/">splunk</a>
 	 <hr/>
     </div>
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/">Centos 7 Firewalld masquerade</a></h1>
-        <span class="post-date">Oct 14, 2019</span>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/">Recommended Ansible Modules</a></h1>
+        <span class="post-date">Nov 5, 2019</span>
 	
 
-<h2 id="firewalld-masquerade">Firewalld masquerade</h2>
+<h1 id="frequently-used-module">Frequently Used Module</h1>
 
-<pre><code>firewall-cmd --get-active-zones
-firewall-cmd --list-all --zone=public
-firewall-cmd --add-masquerade --zone=public --permanent
-firewall-cmd --reload
-firewall-cmd --list-all --zone=public
+<h2 id="blockinfile">blockinfile</h2>
+
+<p>Module ini saya gunakan ketika muncul error pada saat menggunakan module lineinfile untuk memasukan beberapa baris sekaligus dalam beberapa tasks, dan ternyata dengan menggunakan module ini dengan hanya satu task bisa memasukan langsung beberapa baris.</p>
+
+<p>Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepada parameter minimalnya adalah path dan block saja.</p>
+
+<pre><code>- name: Insert correct line to /etc/ntp.conf
+  blockinfile:
+    path: /etc/ntp.conf
+    insertafter: ^#?server
+    state: present
+    block: |
+      server &quot;{{ ntp1 }}&quot;
+      server &quot;{{ ntp2 }}&quot;
+  notify: restart ntp
 </code></pre>
 
 <p>Referensi:</p>
 
 <ul>
-<li><a href="https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/">https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/</a></li>
+<li><a href="https://www.google.com/search?q=lineinfile+multiple+lines">https://www.google.com/search?q=lineinfile+multiple+lines</a></li>
+<li><a href="https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines">https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html">https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html</a></li>
+<li><a href="https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py">https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py</a></li>
 </ul>
 
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/firewalld/">firewalld</a>, <a href="https://blog.indonesiadot.com/tags/masquerade/">masquerade</a>, <a href="https://blog.indonesiadot.com/tags/nat/">nat</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/magic-of-sed/">Magic of Sed</a></h1>
-        <span class="post-date">Oct 14, 2019</span>
-	
+<h2 id="find">find</h2>
 
-<h2 id="insert-every-line-in-linux">Insert every line in linux</h2>
+<p>Berikut contoh module find yang dicombine dengan module set_fact, when untuk menggunakan result matched (when seperti if dalam scripting / programming)</p>
 
-<pre><code>sed 's/^/apt-get purge -y /' aptwantopurge.txt &gt; aptpurge.txt
+<pre><code>    - name: Search /etc/audit/rules.d for other DAC audit rules
+      find:
+        paths: /etc/audit/rules.d
+        recurse: false
+        contains: -F key=perm_mod$
+        patterns: '*.rules'
+      register: find_fchown
+      when: ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
+    - name: If existing DAC ruleset not found, use /etc/audit/rules.d/privileged.rules as the recipient for the rule
+      set_fact:
+        all_files:
+          - /etc/audit/rules.d/privileged.rules
+      when:
+        - find_fchown.matched is defined and find_fchown.matched == 0
+        - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
+    - name: Use matched file as the recipient for the rule
+      set_fact:
+        all_files:
+          - '{{ find_fchown.files | map(attribute=''path'') | list | first }}'
+      when:
+        - find_fchown.matched is defined and find_fchown.matched &gt; 0
+        - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
 </code></pre>
 
-<h2 id="comment-out-a-line-that-contain-string">comment out a line that contain string</h2>
+<p>Referensi:
+* file remediation.yml dari oscap
+* <a href="https://docs.ansible.com/ansible/latest/modules/find_module.html">https://docs.ansible.com/ansible/latest/modules/find_module.html</a></p>
 
-<pre><code>sed -i '/ 2001 /s/^/#/' file
+<h2 id="pamd">pamd</h2>
+
+<p>module ini berguna untuk edit pam service tanpa harus mengedit file nya langsung, tanpa harus menggunakan module lineinfile, blockinfile, replace, etc. Dan berikut contohnya:</p>
+
+<pre><code>    - name: Add unlock_time argument to pam_faillock preauth
+      pamd:
+        name: '{{ item }}'
+        type: auth
+        control: required
+        module_path: pam_faillock.so
+        module_arguments: preauth silent unlock_time={{ var_accounts_passwords_pam_faillock_unlock_time
+          }}
+        state: args_present
+      loop:
+        - system-auth
+        - password-auth
 </code></pre>
 
 <p>Referensi:</p>
 
 <ul>
-<li><a href="https://www.google.com/search?q=insert+every+line+linux&amp;oq=insert+every+line+linux">https://www.google.com/search?q=insert+every+line+linux&amp;oq=insert+every+line+linux</a></li>
-<li><a href="https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line">https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line</a></li>
-<li><a href="https://www.google.com/search?q=sed+cheatsheet&amp;oq=sed+cheatsheet">https://www.google.com/search?q=sed+cheatsheet&amp;oq=sed+cheatsheet</a></li>
-<li><a href="https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521">https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521</a></li>
-<li><a href="https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file">https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file</a></li>
+<li>file remediation.yml oscap</li>
+<li><a href="https://docs.ansible.com/ansible/latest/modules/pamd_module.html">https://docs.ansible.com/ansible/latest/modules/pamd_module.html</a></li>
 </ul>
 
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/sed/">sed</a>, <a href="https://blog.indonesiadot.com/tags/bash/">bash</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/">DOH DNS over HTTPS</a></h1>
-        <span class="post-date">Oct 13, 2019</span>
-	
+<h2 id="debug">debug</h2>
 
-<h2 id="security-dns-di-sisi-client">Security DNS di sisi client</h2>
-
-<h3 id="install-dnscrypt-proxy">Install dnscrypt-proxy</h3>
-
-<pre><code>add-apt-repository ppa:shevchuk/dnscrypt-proxy
-apt update
-apt install dnscrypt-proxy
+<pre><code>    - name: download report
+      fetch:
+        src: /tmp/oscap-report.html
+        dest: /home/ansible/public_html/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
+        flat: yes
+    - debug:
+        msg: http://34.87.94.24/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
 </code></pre>
-
-<p>Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel <strong>server_name</strong> menjadi seperti contoh berikut:</p>
-
-<pre><code>server_names = ['cloudflare', 'google']
-</code></pre>
-
-<p>lalu restart service dnscrypt-proxy</p>
-
-<pre><code>systemctl restart dnscrypt-proxy
-</code></pre>
-
-<p>edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy</p>
-
-<pre><code>nameserver 127.0.2.1
-</code></pre>
-
-<h2 id="install-dns-over-https-server">Install DNS over HTTPS server</h2>
-
-<h3 id="install-dengan-cara-paket-instalasi-deb">Install dengan cara paket instalasi deb</h3>
-
-<pre><code>wget &quot;https://www.aaflalo.me/?smd_process_download=1&amp;download_id=1326&quot;
-mv index* doh-server.deb
-dpkg -i doh-server_*_amd64.deb
-</code></pre>
-
-<h3 id="install-dengan-cara-compile">Install dengan cara compile</h3>
-
-<pre><code>wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.13.linux-amd64.tar.gz
-wget https://github.com/m13253/dns-over-https/archive/v2.1.2.tar.gz
-tar xzf v2.1.2.tar.gz
-cd dns-over-https-2.1.2
-make &amp;&amp; make install
-add-apt-repository ppa:ondrej/nginx
-apt update
-apt install nginx-full
-</code></pre>
-
-<p>Buat file /etc/nginx/sites-available/doh yang isinya:</p>
-
-<pre><code>upstream dns-backend {
-    server 127.0.0.1:8053;
-}
-server {
-        listen 80;
-        server_name dns.example.com;
-        root /var/www/html/dns;
-        access_log /var/log/nginx/dns.access.log;
-         location /dns-query {
-                proxy_set_header X-Real-IP $remote_addr;
-                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                proxy_set_header Host $http_host;
-                proxy_set_header X-NginX-Proxy true;
-                proxy_http_version 1.1;
-                proxy_set_header Upgrade $http_upgrade;
-                proxy_redirect off;
-                proxy_set_header        X-Forwarded-Proto $scheme;
-                proxy_read_timeout 86400;
-                proxy_pass http://dns-backend/dns-query ;
-        }
-}
-</code></pre>
-
-<p>lalu jalankan</p>
-
-<pre><code>ln -s /etc/nginx/sites-available/dns-over-https /etc/nginx/sites-enabled/dns-over-https
-nginx -t
-systemctl reload nginx
-add-apt-repository ppa:certbot/certbot
-apt update
-apt install python-certbot-nginx
-certbot --nginx -d dns.example.com
-</code></pre>
-
-<p>If that’s successful, certbot will ask how you’d like to configure your HTTPS settings.</p>
-
-<pre><code>Please choose whether or not to redirect HTTP traffic to HTTPS, removing HTTP access.
--------------------------------------------------------------------------------
-1: No redirect - Make no further changes to the webserver configuration.
-2: Redirect - Make all requests redirect to secure HTTPS access. Choose this for
-new sites, or if you're confident your site works on HTTPS. You can undo this
-change by editing your web server's configuration.
--------------------------------------------------------------------------------
-Select the appropriate number [1-2] then [enter] (press 'c' to cancel):
-</code></pre>
-
-<p>I advise to choose redirect to be sure it use only HTTPS.</p>
-
-<p>Edit the file /etc/letsencrypt/options-ssl-nginx.conf and replace its content by this.</p>
-
-<pre><code>ssl_session_cache shared:le_nginx_SSL:1m;
-ssl_session_timeout 1440m;
-ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
-# Enable modern TLS cipher suites
-ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
-# The order of cipher suites matters
-ssl_prefer_server_ciphers on;
-add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot; always;
-</code></pre>
-
-<p>Then reload nginx.</p>
-
-<pre><code>systemctl reload nginx
-</code></pre>
-
-<h2 id="tips">TIPS</h2>
-
-<p>Untuk menggunakan server DOH yang telah kita buat pada dnscrypt-proxy client, buat stamp dulu di <a href="https://dnscrypt.info/stamps/">https://dnscrypt.info/stamps/</a></p>
-
-<p><img src="images/doh.png" alt="DOH" /></p>
-
-<p>lalu isi nama doh dan stamp nya seperti contoh:</p>
-
-<pre><code>[static]
-
-[static.'gcp']
-   stamp = 'sdns://AgcAAAAAAAAADTM0Ljg3LjExNy4xMDUADWdjcC5iaXJhdS5jb20KL2Rucy1xdWVyeQ'
-[static.'doh']
-   stamp = 'sdns://AgcAAAAAAAAACzQ1Ljc3LjM2LjU0ABJkb2guYmlyYXUuY29tOjM0NDMKL2Rucy1xdWVyeQ'
-</code></pre>
-
-<p>dan tambahkan dibagian server_name menjadi seperti ini:</p>
-
-<pre><code>server_names = ['doh', 'gcp', 'cloudflare', 'google']
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.aaflalo.me/2018/10/tutorial-setup-dns-over-https-server/">https://www.aaflalo.me/2018/10/tutorial-setup-dns-over-https-server/</a></li>
-<li><a href="https://github.com/m13253/dns-over-https">https://github.com/m13253/dns-over-https</a></li>
-<li><a href="https://dnscrypt.info/stamps/">https://dnscrypt.info/stamps/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/dns/">dns</a>, <a href="https://blog.indonesiadot.com/tags/doh/">doh</a>, <a href="https://blog.indonesiadot.com/tags/dnsoverhttps/">dnsoverhttps</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/10/belajar-ansible-tower/">Belajar Ansible Tower</a></h1>
-        <span class="post-date">Oct 10, 2019</span>
-	
-
-<h2 id="install-ansible-tower">Install Ansible Tower</h2>
-
-<p>Persyaratan:</p>
-
-<p>Hardware: RAM minimal 3,75 GB
-OS: Centos 7</p>
-
-<p>Langkah yang dilakukan</p>
-
-<pre><code>yum install -y ansible
-wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz
-tar -xzvf ansible-tower-setup-latest.tar.gz
-cd ansible-tower-setup-3.1.5/
-(edit inventory file, isi bagian yang dibutuhkan terutama password)
-(edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram)
-./setup.sh
-</code></pre>
-
-<h2 id="configure-ansible-tower-after-installation">Configure Ansible Tower after installation</h2>
-
-<p>Akses Ansible tower Web UI dari</p>
-
-<pre><code>https://&lt;Ansible Tower IP or Hostname&gt;
-</code></pre>
-
-<p>Dapatkan lisensi dari <a href="https://www.ansible.com/license">https://www.ansible.com/license</a>
-lalu masukkan license tersebut ke halaman awal setelah login</p>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.ansible.com/products/tower/trial">https://www.ansible.com/products/tower/trial</a></li>
-<li><a href="https://docs.ansible.com/ansible-tower/">https://docs.ansible.com/ansible-tower/</a></li>
-<li><a href="http://devopstechie.com/install-and-configure-ansible-tower-centos7/">http://devopstechie.com/install-and-configure-ansible-tower-centos7/</a></li>
-<li><a href="https://www.google.com/search?q=ansible+tower+postgresql+replication">https://www.google.com/search?q=ansible+tower+postgresql+replication</a></li>
-<li><a href="https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/">https://servicesblog.redhat.com/2019/04/08/ansible-tower-high-availability-and-disaster-recovery/</a></li>
-<li><a href="https://github.com/samdoran/ansible-role-pgsql-replication">https://github.com/samdoran/ansible-role-pgsql-replication</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>, <a href="https://blog.indonesiadot.com/tags/postgresql/">postgresql</a>, <a href="https://blog.indonesiadot.com/tags/rabbitmq/">rabbitmq</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/30/disk-serial-number/">Disk Serial Number</a></h1>
-        <span class="post-date">Sep 30, 2019</span>
-	
-
-<p>Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.</p>
-
-<p>Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:</p>
-
-<ul>
-<li>lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb)</li>
-<li>smartctl -a /dev/sda #lihat bagian atas serial number nya</li>
-<li>udevadm info /dev/sda</li>
-</ul>
-
-<h2 id="smartctl-to-get-disk-smart-status">smartctl to get disk smart status</h2>
-
-<p>```
-smartctl -H /dev/sda
-smartctl -i /dev/sda
-smartctl &ndash;test=short /dev/sda
-#smartctl &ndash;test=long /dev/sda
-smartctl -a /dev/sda
-smartctl -a /dev/sda | grep &ldquo;Short&rdquo;</p>
 
 <p>Ref:</p>
 
 <ul>
-<li><a href="https://www.techrepublic.com/blog/linux-and-open-source/using-smartctl-to-get-smart-status-information-on-your-hard-drives/">https://www.techrepublic.com/blog/linux-and-open-source/using-smartctl-to-get-smart-status-information-on-your-hard-drives/</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/modules/debug_module.html">https://docs.ansible.com/ansible/latest/modules/debug_module.html</a></li>
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/disk/">disk</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/smartctl/">smartctl</a>, <a href="https://blog.indonesiadot.com/tags/raid/">raid</a>, <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>
 	 <hr/>
     </div>
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/28/ids-tripwire/">IDS Tripwire</a></h1>
-        <span class="post-date">Sep 28, 2019</span>
-	<p>Referensi:</p>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/">Ansible and Openscap</a></h1>
+        <span class="post-date">Nov 4, 2019</span>
+	
+
+<h2 id="ansible-and-openscap-for-scanning-and-remediation-server-for-security-compliance-operating-system">Ansible and Openscap for scanning and remediation server for security compliance operating system</h2>
+
+<p>Referensi:</p>
 
 <ul>
-<li><a href="https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/">https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/</a></li>
-<li><a href="https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html">https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html</a></li>
-<li><a href="https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/">https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/</a></li>
-<li><a href="https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d">https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d</a></li>
+<li><a href="https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663">https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663</a></li>
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/tripwire/">tripwire</a>, <a href="https://blog.indonesiadot.com/tags/splunk/">splunk</a>
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>, <a href="https://blog.indonesiadot.com/tags/openscap/">openscap</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/cis/">cis</a>, <a href="https://blog.indonesiadot.com/tags/stig/">stig</a>, <a href="https://blog.indonesiadot.com/tags/scan/">scan</a>, <a href="https://blog.indonesiadot.com/tags/remediation/">remediation</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/hugo-hosting-dengan-github/">Hugo hosting dengan github</a></h1>
-        <span class="post-date">Sep 24, 2019</span>
-	<p>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:</p>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/03/openscap-reference/">Openscap Reference</a></h1>
+        <span class="post-date">Nov 3, 2019</span>
+	
+
+<h2 id="openscap-custom-profile">Openscap Custom Profile</h2>
+
+<p>Referensi:</p>
 
 <ul>
-<li>Nama user: tpinews</li>
-<li>Nama repositori yang harus dibuat: tpinews.github.io</li>
+<li><a href="https://martin.preisler.me/2013/11/xccdf-tailoring/">https://martin.preisler.me/2013/11/xccdf-tailoring/</a></li>
+<li><a href="https://static.open-scap.org/openscap-1.2/oscap_user_manual.html">https://static.open-scap.org/openscap-1.2/oscap_user_manual.html</a></li>
 </ul>
-
-<p>Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:</p>
-
-<pre><code>mkdir tpinews
-cd tpinews
-touch .gitignore
-git init
-git add .
-git commit -m 'komat kamit awal'
-git remote add origin https://tpinews.github.io.git
-git push origin master
-
-git checkout -b hugo
-hugo new site . --force
-cp -r /path/kumpulanthemeshugo/travelify themes/
-cp -r themes/travelify/exampleSite/* .
-cp /path/scripts/push-deploy.sh .
-git add .
-git commit -m 'komit hugo'
-git push origin hugo
-
-git submodule add -b master https://tpinews.github.io.git public
-./push-deploy.sh
-git branch -d master
-</code></pre>
-
-<p>Pastikan juga config.toml sudah sesuai, seperti nama theme dan lainnya, dan bisa di test di localhost dengan menjalankan <code>hugo server</code> dan mengakses <a href="http://localhost:1313">http://localhost:1313</a> di browser untuk melihat hasilnya.</p>
-
-<p>Command di atas hanya dilakukan pertama kali saja, untuk selanjutnya yang dilakukan setelah melakukan perubahan dan ingin mengupdate di github, cukup menjalankan script push-deploy.sh</p>
-
-<p>Disini theme yang digunakan misalnya travelify yang sudah disiapkan, dan juga script untuk push-deploy.sh untuk memudahkan deploy sebagai berikut:</p>
-
-<pre><code>#!/bin/sh
-# If a command fails then the deploy stops
-set -e
-printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
-git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
- msg=&quot;$*&quot;
-fi
-git commit -m &quot;$msg&quot;
-git push origin hugo
-
-printf &quot;\033[0;32mDeploy public hugo to branch master...\033[0m\n&quot;
-HUGO_ENV=production hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
-cd public
-git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
-        msg=&quot;$*&quot;
-fi
-git commit -m &quot;$msg&quot;
-git push origin master
-
-printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
-cd ..
-git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
-        msg=&quot;$*&quot;
-fi
-git commit -m &quot;$msg&quot;
-git push origin hugo
-</code></pre>
-
-<p>Note:</p>
-
-<p>Untuk lebih mudah tidak perlu memasukan password, bisa di buat dari menu settings account github, lalu pilih menu sebelah kiri bawah bagian Developer settings, lalu Personal access tokens dan generate new token.</p>
-
-<p>Lalu copy token tersebut dan tambahkan pada file .git/config dan .git/modules/public/config ,bagian url nya, sehingga menjadi seperti contoh berikut:</p>
-
-<pre><code>   url = https://namauser:tokenhasidaricopygeneratenewtoken@namarepository.github.io.git
-</code></pre>
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>, <a href="https://blog.indonesiadot.com/tags/github/">github</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/openscap/">openscap</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/31/centos-syslog-server/">Centos Syslog Server</a></h1>
+        <span class="post-date">Oct 31, 2019</span>
+	
+
+<h2 id="setup-syslog-server-and-setup-syslog-client-to-it-on-centos-7">Setup Syslog Server and setup syslog client to it on Centos 7</h2>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.svennd.be/setup-central-syslog-server-on-centos-7/">https://www.svennd.be/setup-central-syslog-server-on-centos-7/</a></li>
+<li><a href="https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/">https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/</a></li>
+<li><a href="https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html">https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/syslog/">syslog</a>, <a href="https://blog.indonesiadot.com/tags/client/">client</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/31/regex-/-regexp-reference/">Regex / Regexp Reference</a></h1>
+        <span class="post-date">Oct 31, 2019</span>
+	
+
+<h2 id="regex-case-insensitive">Regex Case insensitive</h2>
+
+<p>(?i)</p>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean">https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean</a></li>
+<li><a href="https://regex101.com/r/hE9gB4/1">https://regex101.com/r/hE9gB4/1</a></li>
+<li><a href="https://regexr.com/3f4vo">https://regexr.com/3f4vo</a></li>
+</ul>
+
+<h2 id="regex-to-match-string-containing-two-names">Regex to match string containing two names</h2>
+
+<p>###Explanation of command that i am going to write:-</p>
+
+<p>. means any character, digit can come in place of .</p>
+
+<ul>
+<li>means zero or more occurrences of thing written just previous to it.</li>
+</ul>
+
+<p>| means &lsquo;or&rsquo;.</p>
+
+<p>So,</p>
+
+<pre><code>james.*jack
+</code></pre>
+
+<p>would search james , then any number of character until jack comes.</p>
+
+<p>Since you want either jack.*james or james.*jack</p>
+
+<p>Hence Command:</p>
+
+<p>jack.*james|james.*jack</p>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/4389644/regex-to-match-string-containing-two-names-in-any-order">https://stackoverflow.com/questions/4389644/regex-to-match-string-containing-two-names-in-any-order</a></li>
+</ul>
+
+<h2 id="regex-not-contain-substring-a-word">Regex not contain substring / a word</h2>
+
+<p>Ref:</p>
+
+<p><a href="https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word">https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word</a></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/regex/">regex</a>, <a href="https://blog.indonesiadot.com/tags/regexp/">regexp</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/29/linux-os-hardening/">Linux OS Hardening</a></h1>
+        <span class="post-date">Oct 29, 2019</span>
+	
+
+<h2 id="password-policies-centos-7">Password Policies Centos 7</h2>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/">https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/</a></li>
+<li><a href="https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/">https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/</a></li>
+</ul>
+
+<h2 id="centos-7-hardening-guide">Centos 7 Hardening Guide</h2>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.lisenet.com/2017/centos-7-server-hardening-guide/">https://www.lisenet.com/2017/centos-7-server-hardening-guide/</a></li>
+</ul>
+
+<h2 id="linux-aslr-and-kernel-randomize-va-space">Linux ASLR and kernel.randomize_va_space</h2>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/">https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/">TCP Wrapper</a></h1>
+        <span class="post-date">Oct 29, 2019</span>
+	
+
+<h2 id="tcp-wrapper">TCP Wrapper</h2>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=tcp_wrapper">https://www.server-world.info/en/note?os=CentOS_7&amp;p=tcp_wrapper</a></li>
+<li><a href="https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/">https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/tcpwrapper/">tcpwrapper</a>, <a href="https://blog.indonesiadot.com/tags/tcp-wrapper/">tcp-wrapper</a>
 	 <hr/>
     </div>
   

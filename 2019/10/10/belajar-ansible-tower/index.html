@@ -513,6 +513,86 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -520,7 +600,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2019. All rights reserved.</p>
+    <p>&copy; 2020. All rights reserved.</p>
   </div>
 </div>
 
@@ -571,6 +651,35 @@ cd ansible-tower-setup-3.1.5/
 
 <p>Dapatkan lisensi dari <a href="https://www.ansible.com/license">https://www.ansible.com/license</a>
 lalu masukkan license tersebut ke halaman awal setelah login</p>
+
+<h2 id="untuk-centos-7">Untuk centos 7</h2>
+
+<p>seting selinux state ke permissive</p>
+
+<pre><code>SELINUX=permissive
+</code></pre>
+
+<p>tambahkan firewall untuk https</p>
+
+<pre><code>systemctl enable firewalld
+firewall-cmd --add-service=http --permanent;firewall-cmd --add-service=https --permanent
+systemctl restart firewalld
+</code></pre>
+
+<h2 id="ansible-tower-license">Ansible tower license</h2>
+
+<pre><code>{
+    &quot;company_name&quot;: &quot;widyamedia&quot;,
+    &quot;contact_email&quot;: &quot;widyamedia@gmail.com&quot;,
+    &quot;contact_name&quot;: &quot;widya media&quot;,
+    &quot;hostname&quot;: &quot;0f6a792b962445f2b0cd337a1ebb05c2&quot;,
+    &quot;instance_count&quot;: 10,
+    &quot;license_date&quot;: 2116912142,
+    &quot;license_key&quot;: &quot;0c8906958684422f6b25a2748a285f3c63601899b0bca26df2dc4d2805ec05c6&quot;,
+    &quot;license_type&quot;: &quot;basic&quot;,
+    &quot;subscription_name&quot;: &quot;Red Hat Ansible Tower, Self-Support (10 Managed Nodes)&quot;
+}
+</code></pre>
 
 <p>Referensi:</p>
 

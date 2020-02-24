@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>redhat on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/redhat/</link>
+    <description>Recent content in redhat on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Jan 2020 09:17:54 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/redhat/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Selinux Web Directory Permission</title>
+      <link>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</link>
+      <pubDate>Mon, 20 Jan 2020 09:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</guid>
+      <description> Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
+adapun command nya sebelum bisa diakses yaitu:
+chcon -Rv --type=httpd_sys_rw_content_t /webserver  Referensi:
+ https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/  </description>
+    </item>
+    
+  </channel>
+</rss>

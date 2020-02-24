@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rhel on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/rhel/</link>
+    <description>Recent content in rhel on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Dec 2019 08:17:54 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/rhel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Selinux semanage</title>
+      <link>https://blog.indonesiadot.com/2019/12/23/selinux-semanage/</link>
+      <pubDate>Mon, 23 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/12/23/selinux-semanage/</guid>
+      <description>content of selinux config /etc/selinux/config
+SELINUX=enforcing SELINUXTYPE=targeted  semanage packages yum provides semanage yum install -y policycoreutils-python  semanage list port semanage port -l | grep ssh  semanage open ssh on different port add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port
+semanage port -a -t ssh_port_t -p tcp 1022  then restart sshd service
+systemctl restart sshd  Referensi:</description>
+    </item>
+    
+  </channel>
+</rss>

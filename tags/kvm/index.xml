@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kvm on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/kvm/</link>
+    <description>Recent content in kvm on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Dec 2019 08:17:54 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/kvm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Simple Virtualization Linux</title>
+      <link>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</link>
+      <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</guid>
+      <description>List kvm using virsh virsh list virsh list --all virsh --help  Create vm on kvm / qemu via libvirt with command line Pembuatan vm centos 7 script bash virtcen.sh
+#!/bin/bash NAMA=$1 if [ -z &amp;quot;$1&amp;quot; ]; then while [ -z &amp;quot;$NAMA&amp;quot; ]; do echo -n &amp;quot;masukan nama vm: &amp;quot; read NAMA done fi virt-install \ --name $NAMA \ --ram 900 \ --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&#39;unmap&#39;,format=&#39;qcow2&#39; \ --controller type=scsi,model=virtio-scsi \ --vcpus 1 \ --cpu host \ --console pty,target_type=serial \ --location /iso/CentOS-7.</description>
+    </item>
+    
+  </channel>
+</rss>

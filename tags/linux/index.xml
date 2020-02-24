@@ -6,10 +6,149 @@
     <description>Recent content in linux on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Dec 2019 18:47:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Feb 2020 22:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Analisa Virus dengan virustotal</title>
+      <link>https://blog.indonesiadot.com/2020/02/24/analisa-virus-dengan-virustotal/</link>
+      <pubDate>Mon, 24 Feb 2020 22:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/02/24/analisa-virus-dengan-virustotal/</guid>
+      <description> Analisa Virus dengan virustotal Referensi:
+ https://www.virustotal.com/gui/home/upload  </description>
+    </item>
+    
+    <item>
+      <title>Video Editing On Linux</title>
+      <link>https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/</link>
+      <pubDate>Mon, 24 Feb 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/</guid>
+      <description>Cut and Combine Video Avidemux
+Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &amp;gt; Youtube Studio 2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks 3. Untuk video baru, klik set languages, lalu confirm 4. Klik tombol ADD / Tambahkan subtitel atau CC baru.  Add watermark ffmpeg -i input.mp4 -i watermark.</description>
+    </item>
+    
+    <item>
+      <title>Ansible OS Hardening</title>
+      <link>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</link>
+      <pubDate>Thu, 20 Feb 2020 18:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</guid>
+      <description> Ansible OS Hardening mkdir -p /data/backups  Referensi:
+ https://indonesiadot.com  </description>
+    </item>
+    
+    <item>
+      <title>Ansible Tower tips and trick</title>
+      <link>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</link>
+      <pubDate>Thu, 20 Feb 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</guid>
+      <description> Ansible Tower tips and trick Change admin password awx-manage changepassword admin  backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
+ https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html  </description>
+    </item>
+    
+    <item>
+      <title>Selinux Web Directory Permission</title>
+      <link>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</link>
+      <pubDate>Mon, 20 Jan 2020 09:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</guid>
+      <description> Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
+adapun command nya sebelum bisa diakses yaitu:
+chcon -Rv --type=httpd_sys_rw_content_t /webserver  Referensi:
+ https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/  </description>
+    </item>
+    
+    <item>
+      <title>Harbor Container Registry</title>
+      <link>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</link>
+      <pubDate>Mon, 20 Jan 2020 07:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</guid>
+      <description> Widya Harbor Container Registry  https://widharbor.birau.com/  Referensi:
+ https://indonesiadot.com  </description>
+    </item>
+    
+    <item>
+      <title>Ansible Tower first Implementation</title>
+      <link>https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/</link>
+      <pubDate>Sun, 19 Jan 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/</guid>
+      <description>Ansible Tower first Implementation  Install ansible tower masukan license tambahkan access - organization tambahkan access - users tambahkan access - teams tambahkan resources - inventory siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)
+chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/  tambahkan resources - projects
+ buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine</description>
+    </item>
+    
+    <item>
+      <title>Letsencrypt certbot unatteded</title>
+      <link>https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/</link>
+      <pubDate>Sun, 19 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/</guid>
+      <description> Letsencrypt with certbot unatteded way This is for ubuntu linux
+add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonly --standalone --preferred-challenges http --non-interactive --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com  Note:  before running certbot command, you must already pointing domain / subdomain address to destination ip  Referensi:  https://indonesiadot.com  </description>
+    </item>
+    
+    <item>
+      <title>Docker Compose on Linux</title>
+      <link>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</link>
+      <pubDate>Wed, 15 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</guid>
+      <description> Setup sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose  Referensi:
+ https://docs.docker.com/compose/install/  </description>
+    </item>
+    
+    <item>
+      <title>Gitlab on Ubuntu 16.04</title>
+      <link>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</link>
+      <pubDate>Tue, 14 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</guid>
+      <description> Instalasi Gitlab di Ubuntu 16.04 Widya Gitlab  https://widgitgog.birau.com/dashboard/projects  Referensi:
+ https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04  </description>
+    </item>
+    
+    <item>
+      <title>Centos 7 Resize Partition</title>
+      <link>https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/</link>
+      <pubDate>Wed, 08 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/</guid>
+      <description> Step to reproduce on VM Turn off the VM
+qemu-img resize image.qcow2 +SIZE  where SIZE is the size to add (e.g. 10G for 10 gibibytes).
+Turn on the VM, fdisk /dev/vda, delete and create /dev/vda2, restart
+Login after restart, then run this command
+pvresize /dev/vda2 lvextend -r -l +100%FREE /dev/mapper/centos-root df -hl  Referensi:
+ https://maunium.net/blog/resizing-qcow2-images/  </description>
+    </item>
+    
+    <item>
+      <title>Selinux semanage</title>
+      <link>https://blog.indonesiadot.com/2019/12/23/selinux-semanage/</link>
+      <pubDate>Mon, 23 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/12/23/selinux-semanage/</guid>
+      <description>content of selinux config /etc/selinux/config
+SELINUX=enforcing SELINUXTYPE=targeted  semanage packages yum provides semanage yum install -y policycoreutils-python  semanage list port semanage port -l | grep ssh  semanage open ssh on different port add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port
+semanage port -a -t ssh_port_t -p tcp 1022  then restart sshd service
+systemctl restart sshd  Referensi:</description>
+    </item>
+    
+    <item>
+      <title>Simple Virtualization Linux</title>
+      <link>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</link>
+      <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</guid>
+      <description>List kvm using virsh virsh list virsh list --all virsh --help  Create vm on kvm / qemu via libvirt with command line Pembuatan vm centos 7 script bash virtcen.sh
+#!/bin/bash NAMA=$1 if [ -z &amp;quot;$1&amp;quot; ]; then while [ -z &amp;quot;$NAMA&amp;quot; ]; do echo -n &amp;quot;masukan nama vm: &amp;quot; read NAMA done fi virt-install \ --name $NAMA \ --ram 900 \ --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&#39;unmap&#39;,format=&#39;qcow2&#39; \ --controller type=scsi,model=virtio-scsi \ --vcpus 1 \ --cpu host \ --console pty,target_type=serial \ --location /iso/CentOS-7.</description>
+    </item>
     
     <item>
       <title>jenkins for beginner</title>
@@ -178,11 +317,11 @@ Ansible check disk - name: Ensure that free space on {{ mountname }} is grater t
     </item>
     
     <item>
-      <title>Post</title>
-      <link>https://blog.indonesiadot.com/2019/10/26/post/</link>
+      <title>Tmux screen tips</title>
+      <link>https://blog.indonesiadot.com/2019/10/26/tmux-screen-tips/</link>
       <pubDate>Sat, 26 Oct 2019 16:17:54 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2019/10/26/post/</guid>
+      <guid>https://blog.indonesiadot.com/2019/10/26/tmux-screen-tips/</guid>
       <description>Tmux cheatsheet tmux shortcuts &amp;amp; cheatsheet start new:
 tmux  start new with session name:
 tmux new -s myname  attach:
@@ -429,7 +568,7 @@ https://www.howtogeek.com/109369/how-to-quickly-resize-convert-modify-images-fro
       <guid>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</guid>
       <description>cron without sending mail tambahkan MAILTO=&amp;ldquo;&amp;rdquo; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
 linux rm file list too long cd direktoriyangfilenyabanyak ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete find . -type f -print -delete  incron Ref:
- http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en  rsync only existing file rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/  Ref:</description>
+ http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en  rsync only existing file rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/  Umask follow parent / setgid chmod g+s /namafolder  Ref:</description>
     </item>
     
   </channel>

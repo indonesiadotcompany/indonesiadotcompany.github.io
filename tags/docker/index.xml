@@ -6,10 +6,40 @@
     <description>Recent content in docker on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Sep 2019 08:17:33 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 20 Feb 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible Tower tips and trick</title>
+      <link>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</link>
+      <pubDate>Thu, 20 Feb 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</guid>
+      <description> Ansible Tower tips and trick Change admin password awx-manage changepassword admin  backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
+ https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html  </description>
+    </item>
+    
+    <item>
+      <title>Harbor Container Registry</title>
+      <link>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</link>
+      <pubDate>Mon, 20 Jan 2020 07:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</guid>
+      <description> Widya Harbor Container Registry  https://widharbor.birau.com/  Referensi:
+ https://indonesiadot.com  </description>
+    </item>
+    
+    <item>
+      <title>Docker Compose on Linux</title>
+      <link>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</link>
+      <pubDate>Wed, 15 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</guid>
+      <description> Setup sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose  Referensi:
+ https://docs.docker.com/compose/install/  </description>
+    </item>
     
     <item>
       <title>All about kubernetes</title>
@@ -71,15 +101,13 @@ http://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html</descript
     </item>
     
     <item>
-      <title>docker registry / docker private repository tips and tricks</title>
-      <link>https://blog.indonesiadot.com/2018/07/08/docker-registry-/-docker-private-repository-tips-and-tricks/</link>
+      <title>docker registry, docker private repository</title>
+      <link>https://blog.indonesiadot.com/2018/07/08/docker-registry-docker-private-repository/</link>
       <pubDate>Sun, 08 Jul 2018 23:59:00 +0000</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2018/07/08/docker-registry-/-docker-private-repository-tips-and-tricks/</guid>
-      <description>https://docs.docker.com/registry/deploying/
-https://github.com/sky-uk/cleanup-docker-registry
-https://github.com/burnettk/delete-docker-registry-image
-https://stackoverflow.com/questions/29802202/docker-registry-2-0-how-to-delete-unused-images</description>
+      <guid>https://blog.indonesiadot.com/2018/07/08/docker-registry-docker-private-repository/</guid>
+      <description>Ref:
+ https://docs.docker.com/registry/deploying/ https://github.com/sky-uk/cleanup-docker-registry https://github.com/burnettk/delete-docker-registry-image https://stackoverflow.com/questions/29802202/docker-registry-2-0-how-to-delete-unused-images https://gist.github.com/PieterScheffers/63e4c2fd5553af8a35101b5e868a811e (Start docker registry with letsencrypt certificates (Linux Ubuntu))  </description>
     </item>
     
     <item>
@@ -91,7 +119,8 @@ https://stackoverflow.com/questions/29802202/docker-registry-2-0-how-to-delete-u
       <description>Rancherhttps://rancher.com/swarm/https://github.com/MoimHossain/docker-viswarm
 https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host
 docker inspect -f &#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39; containernameorid
- </description>
+ Ref:
+ https://docs.docker.com/engine/security/certificates/ https://docs.docker.com/engine/security/https/  </description>
     </item>
     
     <item>

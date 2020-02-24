@@ -6,10 +6,48 @@
     <description>Recent content in centos on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Oct 2019 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jan 2020 09:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/centos/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Selinux Web Directory Permission</title>
+      <link>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</link>
+      <pubDate>Mon, 20 Jan 2020 09:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</guid>
+      <description> Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
+adapun command nya sebelum bisa diakses yaitu:
+chcon -Rv --type=httpd_sys_rw_content_t /webserver  Referensi:
+ https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/  </description>
+    </item>
+    
+    <item>
+      <title>Centos 7 Resize Partition</title>
+      <link>https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/</link>
+      <pubDate>Wed, 08 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/</guid>
+      <description> Step to reproduce on VM Turn off the VM
+qemu-img resize image.qcow2 +SIZE  where SIZE is the size to add (e.g. 10G for 10 gibibytes).
+Turn on the VM, fdisk /dev/vda, delete and create /dev/vda2, restart
+Login after restart, then run this command
+pvresize /dev/vda2 lvextend -r -l +100%FREE /dev/mapper/centos-root df -hl  Referensi:
+ https://maunium.net/blog/resizing-qcow2-images/  </description>
+    </item>
+    
+    <item>
+      <title>Selinux semanage</title>
+      <link>https://blog.indonesiadot.com/2019/12/23/selinux-semanage/</link>
+      <pubDate>Mon, 23 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/12/23/selinux-semanage/</guid>
+      <description>content of selinux config /etc/selinux/config
+SELINUX=enforcing SELINUXTYPE=targeted  semanage packages yum provides semanage yum install -y policycoreutils-python  semanage list port semanage port -l | grep ssh  semanage open ssh on different port add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port
+semanage port -a -t ssh_port_t -p tcp 1022  then restart sshd service
+systemctl restart sshd  Referensi:</description>
+    </item>
     
     <item>
       <title>Centos 7 Firewalld masquerade</title>

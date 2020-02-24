@@ -17,7 +17,8 @@
       <pubDate>Mon, 19 Feb 2018 10:18:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/19/nginx-tips-and-trick/</guid>
-      <description>https://www.sitepoint.com/brotli-compression-wordpress/</description>
+      <description> Nginx location directory  location /static/ { alias /web/test.example.com/static/; autoindex on; }   https://stackoverflow.com/questions/11570321/configure-nginx-with-multiple-locations-with-different-root-folders-on-subdomain  Referensi:
+ https://www.sitepoint.com/brotli-compression-wordpress/  </description>
     </item>
     
     <item>

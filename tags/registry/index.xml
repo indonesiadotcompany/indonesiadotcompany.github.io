@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>registry on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/registry/</link>
+    <description>Recent content in registry on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 Feb 2020 08:17:54 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/registry/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ansible Tower tips and trick</title>
+      <link>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</link>
+      <pubDate>Thu, 20 Feb 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</guid>
+      <description> Ansible Tower tips and trick Change admin password awx-manage changepassword admin  backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
+ https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html  </description>
+    </item>
+    
+    <item>
+      <title>Harbor Container Registry</title>
+      <link>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</link>
+      <pubDate>Mon, 20 Jan 2020 07:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</guid>
+      <description> Widya Harbor Container Registry  https://widharbor.birau.com/  Referensi:
+ https://indonesiadot.com  </description>
+    </item>
+    
+  </channel>
+</rss>

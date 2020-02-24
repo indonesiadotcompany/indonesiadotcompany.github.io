@@ -6,10 +6,20 @@
     <description>Recent content in virtualization on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Sep 2019 08:17:56 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 22 Dec 2019 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/virtualization/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Simple Virtualization Linux</title>
+      <link>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</link>
+      <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</guid>
+      <description>List kvm using virsh virsh list virsh list --all virsh --help  Create vm on kvm / qemu via libvirt with command line Pembuatan vm centos 7 script bash virtcen.sh
+#!/bin/bash NAMA=$1 if [ -z &amp;quot;$1&amp;quot; ]; then while [ -z &amp;quot;$NAMA&amp;quot; ]; do echo -n &amp;quot;masukan nama vm: &amp;quot; read NAMA done fi virt-install \ --name $NAMA \ --ram 900 \ --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&#39;unmap&#39;,format=&#39;qcow2&#39; \ --controller type=scsi,model=virtio-scsi \ --vcpus 1 \ --cpu host \ --console pty,target_type=serial \ --location /iso/CentOS-7.</description>
+    </item>
     
     <item>
       <title>Proxmox optimized disk for auto trim / shrink</title>

@@ -6,10 +6,20 @@
     <description>Recent content in security on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Dec 2019 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 20 Feb 2020 18:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/security/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible OS Hardening</title>
+      <link>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</link>
+      <pubDate>Thu, 20 Feb 2020 18:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</guid>
+      <description> Ansible OS Hardening mkdir -p /data/backups  Referensi:
+ https://indonesiadot.com  </description>
+    </item>
     
     <item>
       <title>Modsecurity WAF</title>

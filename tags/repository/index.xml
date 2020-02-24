@@ -6,10 +6,20 @@
     <description>Recent content in repository on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Sep 2019 08:17:21 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jan 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/repository/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gitlab on Ubuntu 16.04</title>
+      <link>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</link>
+      <pubDate>Tue, 14 Jan 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</guid>
+      <description> Instalasi Gitlab di Ubuntu 16.04 Widya Gitlab  https://widgitgog.birau.com/dashboard/projects  Referensi:
+ https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04  </description>
+    </item>
     
     <item>
       <title>Git tips</title>
@@ -17,7 +27,7 @@
       <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/git-tips/</guid>
-      <description>git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge  untuk menggabungkan isi dari branch hotfix ke master
+      <description>git without gnome-askpass unset SSH_ASKPASS   https://gist.github.com/joseluisq/d0e66c5f718250c90075  git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge  untuk menggabungkan isi dari branch hotfix ke master
 git checkout master git merge hotfix  git undo merge Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan
 git reflog git reset --hard &amp;lt;id_repository_log&amp;gt;  Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</description>
     </item>
