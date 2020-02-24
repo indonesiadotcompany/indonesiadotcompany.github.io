@@ -29,3 +29,5 @@ Referensi:
 * https://www.nesabamedia.com/cara-membuat-subtitle-video-youtube/
 * https://readmoremyblog.wordpress.com/2012/03/11/cara-membuat-teks-atau-anotasi-pada-video-youtube/
 * https://shkspr.mobi/blog/2016/08/easy-ways-to-add-watermarks-to-images-and-videos-in-linux/
+* https://www.vlchelp.com/how-to-change-subtitle-position-in-vlc/
+* https://downsub.com/
