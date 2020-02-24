@@ -572,6 +572,16 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -602,6 +612,69 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/git-tips/">Git tips</a></h1>
+        <span class="post-date">Sep 2, 2019</span>
+	<h2 id="git-without-gnome-askpass">git without gnome-askpass</h2>
+<pre><code>unset SSH_ASKPASS
+</code></pre><ul>
+<li><a href="https://gist.github.com/joseluisq/d0e66c5f718250c90075">https://gist.github.com/joseluisq/d0e66c5f718250c90075</a></li>
+</ul>
+<h2 id="git-merge">git merge</h2>
+<p>Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap
+<img src="https://blog.indonesiadot.com/images/2019/git-merge-1.png" alt="git-merge-1">
+lalu <em>git merge <!-- raw HTML omitted --></em> untuk menggabungkan isi dari branch hotfix ke master</p>
+<pre><code>git checkout master
+git merge hotfix
+</code></pre><p><img src="https://blog.indonesiadot.com/images/2019/git-merge-2.png" alt="git-merge-1"></p>
+<h2 id="git-undo-merge">git undo merge</h2>
+<p>Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan</p>
+<pre><code>git reflog
+git reset --hard &lt;id_repository_log&gt;
+</code></pre><p>Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</p>
+<h2 id="git-clear-repository">git clear repository</h2>
+<pre><code>rm -rf .git*
+git init
+git add .
+git commit -m 'initial commit'
+git remote add origin git@github.com:&lt;YOUR ACCOUNT&gt;/&lt;YOUR REPOS&gt;.git
+git push -u --force origin master
+</code></pre><h2 id="git-branch">git branch</h2>
+<h3 id="git-create-branch">git create branch</h3>
+<pre><code>git checkout -b branchbaru
+git push origin branchbaru
+</code></pre><p>jika branchbaru tersebut sudah ada di <em>remote repository</em> (repository di luar selain di lokal komputer, seperti github / gitlab / bitbucket) dan isinya ingin dihapus / diupdate sesuai dengan isi yang ada di local repository, maka harus menggunakan parameter &ndash;force
+<code>git push --force origin branchbaru</code></p>
+<h3 id="default-branch">default branch</h3>
+<p>default branch pada git biasanya adalah branch pertama yang kita push, dan biasanya adalah branch master, kecuali jika pertama kali push nya adalah nama branch lain, maka default nya adalah nama branch lain, dan jika terlanjur di awal push dengan branch lain, maka untuk merubah default branch itu tidak bisa memakai command, tapi harus melalui menu settings - branches pada remote repository.</p>
+<h3 id="delete-branch">delete branch</h3>
+<p>pertama pastikan yang ingin dihapus bukan default branch.</p>
+<pre><code>git checkout master
+git push origin --delete namabranchyangakandihapus
+git branch -D namabranchyangakandihapus
+</code></pre><p>pindah dulu ke branch default, lalu hapus remote branch, kemudian hapus local branch</p>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</a></li>
+<li><a href="https://stackoverflow.com/questions/11722533/rollback-a-git-merge/29110174">https://stackoverflow.com/questions/11722533/rollback-a-git-merge/29110174</a></li>
+<li><a href="https://help.github.com/en/articles/setting-the-default-branch">https://help.github.com/en/articles/setting-the-default-branch</a></li>
+</ul>
+<p>Referensi belajar git:</p>
+<ul>
+<li><a href="https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f">https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f</a></li>
+<li><a href="https://rogerdudler.github.io/git-guide/index.id.html">https://rogerdudler.github.io/git-guide/index.id.html</a></li>
+<li><a href="https://medium.com/@amanze.ogbonna/accessing-pushing-to-github-without-username-and-password-3022feb077fb">https://medium.com/@amanze.ogbonna/accessing-pushing-to-github-without-username-and-password-3022feb077fb</a></li>
+<li><a href="https://stackoverflow.com/questions/18935539/authenticate-with-github-using-a-token">https://stackoverflow.com/questions/18935539/authenticate-with-github-using-a-token</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/repository/">repository</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/">Pembuatan web statis dengan hugo</a></h1>
@@ -735,19 +808,6 @@ git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiad
 	<hr/>
 	
 	
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/11/how-to-stop-docker-that-always-restart/">how to stop docker that always restart</a></h1>
-        <span class="post-date">Aug 11, 2019</span>
-	<p>googling: <a href="https://www.google.com/search?q=docker+restart+always+stop%3Cbr">https://www.google.com/search?q=docker+restart+always+stop&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="https://stackoverflow.com/questions/39072357/how-to-stop-a-docker-container-which-started-with-restart-always/39072476%3Cbr">https://stackoverflow.com/questions/39072357/how-to-stop-a-docker-container-which-started-with-restart-always/39072476&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->You can <!-- raw HTML omitted --><!-- raw HTML omitted -->update<!-- raw HTML omitted --><!-- raw HTML omitted --> docker container.<!-- raw HTML omitted --><!-- raw HTML omitted -->use <!-- raw HTML omitted --><!-- raw HTML omitted -->sudo docker update &ndash;restart=no &lt;container_id&gt;&lt;/container_id&gt;<!-- raw HTML omitted --><!-- raw HTML omitted --> to update <!-- raw HTML omitted -->&ndash;restart<!-- raw HTML omitted --> flag of the container.<!-- raw HTML omitted --><!-- raw HTML omitted -->Now you can <!-- raw HTML omitted --><!-- raw HTML omitted -->stop<!-- raw HTML omitted --><!-- raw HTML omitted --> the container.<!-- raw HTML omitted --></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
 	 <hr/>
     </div>
   
