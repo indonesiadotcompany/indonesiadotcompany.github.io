@@ -147,4 +147,4 @@ Referensi:
 * https://gist.github.com/aladuca/854b78585c2bba961386
 * https://www.cyberciti.biz/faq/find-ip-address-of-linux-kvm-guest-virtual-machine/
 * https://www.cyberciti.biz/faq/linux-list-a-kvm-vm-guest-using-virsh-command/
-
+* https://hooks.technology/2017/10/create-vms-on-kvm-with-ansible/ (virt-builder and virt-install)
