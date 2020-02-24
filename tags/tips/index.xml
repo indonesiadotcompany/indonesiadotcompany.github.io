@@ -6,10 +6,20 @@
     <description>Recent content in tips on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Dec 2019 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 24 Feb 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/tips/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Video Editing On Linux</title>
+      <link>https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/</link>
+      <pubDate>Mon, 24 Feb 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/</guid>
+      <description>Cut and Combine Video Avidemux
+Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &amp;gt; Youtube Studio 2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks 3. Untuk video baru, klik set languages, lalu confirm 4. Klik tombol ADD / Tambahkan subtitel atau CC baru. Add watermark ffmpeg -i input.mp4 -i watermark.png -filter_complex &amp;quot;overlay=1500:1000&amp;quot; output.</description>
+    </item>
     
     <item>
       <title>Simple Virtualization Linux</title>
@@ -212,10 +222,9 @@ echo &amp;quot;real.net smtp:[192.168.1.108]&amp;quot; &amp;gt;&amp;gt; /etc/pos
       <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/git-tips/</guid>
-      <description>git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge  untuk menggabungkan isi dari branch hotfix ke master
+      <description>git without gnome-askpass unset SSH_ASKPASS  https://gist.github.com/joseluisq/d0e66c5f718250c90075  git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge  untuk menggabungkan isi dari branch hotfix ke master
 git checkout master git merge hotfix git undo merge Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan
-git reflog git reset --hard &amp;lt;id_repository_log&amp;gt; Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan
-git clear repository rm -rf .</description>
+git reflog git reset --hard &amp;lt;id_repository_log&amp;gt; Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</description>
     </item>
     
     <item>
@@ -241,6 +250,17 @@ Ref:
  https://knpuniversity.com/screencast/ansible/ansible-composer  ansible playbook interactive / ansible prompt Ref:
  https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html  ansible-playbook command Ref:
  https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/  </description>
+    </item>
+    
+    <item>
+      <title>Linux Tips and Trick</title>
+      <link>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</link>
+      <pubDate>Mon, 29 Jan 2018 00:59:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</guid>
+      <description>cron without sending mail tambahkan MAILTO=&amp;rdquo;&amp;rdquo; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
+linux rm file list too long cd direktoriyangfilenyabanyak ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete find . -type f -print -delete incron Ref:
+ http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en  rsync only existing file rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/ Umask follow parent / setgid chmod g+s /namafolder Ref:</description>
     </item>
     
   </channel>

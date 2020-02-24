@@ -548,6 +548,30 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -578,6 +602,92 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/25/gcp-and-ansible/">GCP and Ansible</a></h1>
+        <span class="post-date">Oct 25, 2019</span>
+	<p>Referensi:</p>
+<ul>
+<li><a href="https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/">https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/cloud/">cloud</a>, <a href="https://blog.indonesiadot.com/tags/gcp/">gcp</a>, <a href="https://blog.indonesiadot.com/tags/google-cloud-platform/">google-cloud-platform</a>, <a href="https://blog.indonesiadot.com/tags/google/">google</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/">Kernel Hardening Tips</a></h1>
+        <span class="post-date">Oct 15, 2019</span>
+	<h2 id="disable-and-blacklist-linux-modules">Disable and blacklist Linux modules</h2>
+<p>Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya</p>
+<pre><code>blacklist firewire_core
+install firewire_core /bin/true
+</code></pre><p>Referensi:</p>
+<ul>
+<li>CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf</li>
+<li><a href="https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/">https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/kernel/">kernel</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/hardening/">hardening</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/">Android USB File Transfer</a></h1>
+        <span class="post-date">Oct 14, 2019</span>
+	<h2 id="android-usb-file-transfer">Android USB File Transfer</h2>
+<pre><code>add-apt-repository ppa:webupd8team/unstable
+apt update
+apt-get install go-mtpfs
+mkdir /media/MyAndroid
+</code></pre><h3 id="mount">mount</h3>
+<pre><code>go-mtpfs /media/MyAndroid
+</code></pre><h3 id="unmount">unmount</h3>
+<pre><code>fusermount -u /media/MyAndroid
+</code></pre><p>or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open <a href="ftp://ip.of.android:8888,">ftp://ip.of.android:8888,</a> so you can access from pc via ftp client like filezilla.</p>
+<p>Referensi:</p>
+<ul>
+<li><a href="http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html">http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html</a></li>
+<li><a href="https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu">https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/android/">android</a>, <a href="https://blog.indonesiadot.com/tags/file/">file</a>, <a href="https://blog.indonesiadot.com/tags/mtp/">mtp</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/">Centos 7 Firewalld masquerade</a></h1>
+        <span class="post-date">Oct 14, 2019</span>
+	<h2 id="firewalld-masquerade">Firewalld masquerade</h2>
+<pre><code>firewall-cmd --get-active-zones
+firewall-cmd --list-all --zone=public
+firewall-cmd --add-masquerade --zone=public --permanent
+firewall-cmd --reload
+firewall-cmd --list-all --zone=public
+</code></pre><p>Referensi:</p>
+<ul>
+<li><a href="https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/">https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/firewalld/">firewalld</a>, <a href="https://blog.indonesiadot.com/tags/masquerade/">masquerade</a>, <a href="https://blog.indonesiadot.com/tags/nat/">nat</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/magic-of-sed/">Magic of Sed</a></h1>
@@ -813,281 +923,6 @@ Ref:
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/tripwire/">tripwire</a>, <a href="https://blog.indonesiadot.com/tags/splunk/">splunk</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/hugo-hosting-dengan-github/">Hugo hosting dengan github</a></h1>
-        <span class="post-date">Sep 24, 2019</span>
-	<p>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:</p>
-<ul>
-<li>Nama user: tpinews</li>
-<li>Nama repositori yang harus dibuat: tpinews.github.io</li>
-</ul>
-<p>Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:</p>
-<pre><code>mkdir tpinews
-cd tpinews
-touch .gitignore
-git init
-git add .
-git commit -m 'komat kamit awal'
-git remote add origin https://tpinews.github.io.git
-git push origin master
-
-git checkout -b hugo
-hugo new site . --force
-cp -r /path/kumpulanthemeshugo/travelify themes/
-cp -r themes/travelify/exampleSite/* .
-cp /path/scripts/push-deploy.sh .
-git add .
-git commit -m 'komit hugo'
-git push origin hugo
-
-git submodule add -b master https://tpinews.github.io.git public
-./push-deploy.sh
-git branch -d master
-</code></pre><p>Pastikan juga config.toml sudah sesuai, seperti nama theme dan lainnya, dan bisa di test di localhost dengan menjalankan <code>hugo server</code> dan mengakses http://localhost:1313 di browser untuk melihat hasilnya.</p>
-<p>Command di atas hanya dilakukan pertama kali saja, untuk selanjutnya yang dilakukan setelah melakukan perubahan dan ingin mengupdate di github, cukup menjalankan script push-deploy.sh</p>
-<p>Disini theme yang digunakan misalnya travelify yang sudah disiapkan, dan juga script untuk push-deploy.sh untuk memudahkan deploy sebagai berikut:</p>
-<pre><code>#!/bin/sh
-# If a command fails then the deploy stops
-set -e
-printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
-git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
- msg=&quot;$*&quot;
-fi
-git commit -m &quot;$msg&quot;
-git push origin hugo
-
-printf &quot;\033[0;32mDeploy public hugo to branch master...\033[0m\n&quot;
-HUGO_ENV=production hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
-cd public
-git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
-        msg=&quot;$*&quot;
-fi
-git commit -m &quot;$msg&quot;
-git push origin master
-
-printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
-cd ..
-git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
-        msg=&quot;$*&quot;
-fi
-git commit -m &quot;$msg&quot;
-git push origin hugo
-</code></pre><p>Note:</p>
-<p>Untuk lebih mudah tidak perlu memasukan password, bisa di buat dari menu settings account github, lalu pilih menu sebelah kiri bawah bagian Developer settings, lalu Personal access tokens dan generate new token.</p>
-<p>Lalu copy token tersebut dan tambahkan pada file .git/config dan .git/modules/public/config ,bagian url nya, sehingga menjadi seperti contoh berikut:</p>
-<pre><code>   url = https://namauser:tokenhasidaricopygeneratenewtoken@namarepository.github.io.git
-</code></pre>
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>, <a href="https://blog.indonesiadot.com/tags/github/">github</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/markdown-tips/">Markdown tips</a></h1>
-        <span class="post-date">Sep 24, 2019</span>
-	<h2 id="markdown-insert-image"><em>markdown</em> insert image</h2>
-<p>Ini adalah <a href="https://www.petanikode.com/markdown-pemula/"><em>markdown</em></a> untuk menampilkan gambar yang terletak di dalam folder / direktori pada postingan di hugo</p>
-<pre><code>![nama-image](path/to/image)
-</code></pre><h2 id="markdown-insert-link">markdown insert link</h2>
-<p>Ini adalah markdown untuk menampilkan link <em>url</em> pada kata atau kalimat di halaman web</p>
-<pre><code>[kata atau kalimat](http://link.url/yang-dituju)
-</code></pre><p>seperti contoh diatas</p>
-<pre><code>[markdown](https://www.petanikode.com/markdown-pemula/)
-</code></pre><p>Referensi markdown images:</p>
-<ul>
-<li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/markdown/">markdown</a>, <a href="https://blog.indonesiadot.com/tags/static-site-generator/">static-site-generator</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/04/linux-security-tools/">linux Security Tools</a></h1>
-        <span class="post-date">Sep 4, 2019</span>
-	<p>Tools yang biasa digunakan pada server linux:</p>
-<ul>
-<li>
-<p>Firewall</p>
-</li>
-<li>
-<p>iptables</p>
-</li>
-<li>
-<p>ipset</p>
-</li>
-<li>
-<p>shorewall</p>
-</li>
-<li>
-<p>csf</p>
-</li>
-<li>
-<p>Anti Malware</p>
-</li>
-<li>
-<p>maldet (malware detection for web directory)</p>
-</li>
-<li>
-<p>IDS</p>
-</li>
-<li>
-<p>tripwire</p>
-</li>
-<li>
-<p>Identity Server</p>
-</li>
-<li>
-<p><a href="https://freeipa.org">FreeIPA (IPA = Identity, Policy, Authentication)</a></p>
-</li>
-<li>
-<p>Security Checking / Scanning Solution</p>
-</li>
-<li>
-<p>OpenSCAP</p>
-</li>
-<li>
-<p>Rapid7</p>
-</li>
-<li>
-<p>CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</p>
-</li>
-<li>
-<p>TeemIP</p>
-</li>
-<li>
-<p>itop <a href="https://github.com/Combodo/iTop">https://github.com/Combodo/iTop</a></p>
-</li>
-<li>
-<p>infoblox</p>
-</li>
-<li>
-<p>efficientip</p>
-</li>
-<li>
-<p>ansible-cmdb</p>
-</li>
-<li>
-<p>WAF</p>
-</li>
-<li>
-<p><a href="http://www.waf-fle.org/">http://www.waf-fle.org/</a> console / web view for modsecurity admin</p>
-</li>
-<li>
-<p>modsecurity</p>
-</li>
-<li>
-<p>naxsi <a href="https://github.com/nbs-system/naxsi">https://github.com/nbs-system/naxsi</a></p>
-</li>
-<li>
-<p>shadow daemon <a href="https://shadowd.zecure.org/overview/introduction/">https://shadowd.zecure.org/overview/introduction/</a></p>
-</li>
-<li>
-<p>imperva *berbayar</p>
-</li>
-<li>
-<p>Web Scanner</p>
-</li>
-<li>
-<p>nikto ( <a href="https://geekflare.com/nikto-webserver-scanner/">https://geekflare.com/nikto-webserver-scanner/</a> )</p>
-</li>
-<li>
-<p>Pentest</p>
-</li>
-<li>
-<p>owasp-zap <a href="https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b">https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b</a></p>
-</li>
-</ul>
-<p>Referensi Openscap:</p>
-<ul>
-<li><a href="https://www.open-scap.org/">https://www.open-scap.org/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>, <a href="https://blog.indonesiadot.com/tags/firewall/">firewall</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/linux-server-tools/">linux Server Tools</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<p>Tools yang biasa digunakan pada server linux:</p>
-<ul>
-<li>
-<p>Virtualization (Desktop)</p>
-</li>
-<li>
-<p>Virtualbox</p>
-</li>
-<li>
-<p>Graphic</p>
-</li>
-<li>
-<p>Gimp</p>
-</li>
-<li>
-<p>Mail</p>
-</li>
-<li>
-<p>Thunderbird Mail (client)</p>
-</li>
-<li>
-<p>Multimedia</p>
-</li>
-<li>
-<p>Avidemux</p>
-</li>
-<li>
-<p>Video Conference</p>
-</li>
-<li>
-<p>jitsi</p>
-</li>
-<li>
-<p><a href="https://medevel.com/10-os-video-conferencing/">More and more</a></p>
-</li>
-<li>
-<p>Customer support live chat</p>
-</li>
-<li>
-<p>rocket.chat</p>
-</li>
-<li>
-<p>tawk.to</p>
-</li>
-<li>
-<p><a href="https://github.com/juliancwirko/s-chat-app">simple chat</a></p>
-</li>
-</ul>
-<p>Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut</p>
-<ul>
-<li><a href="https://blog.indonesiadot.com/2019/09/04/linux-security-tools/">https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>
 	 <hr/>
     </div>
   

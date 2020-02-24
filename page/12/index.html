@@ -548,6 +548,30 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -578,6 +602,77 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/">Linux Tips and Trick</a></h1>
+        <span class="post-date">Jan 29, 2018</span>
+	<h2 id="cron-without-sending-mail">cron without sending mail</h2>
+<p>tambahkan MAILTO=&rdquo;&rdquo; di awal cron nya tambahkan &gt;/dev/null 2&gt;&amp;&amp;1 atau &gt; /dev/null atau &gt; /dev/null 2&gt;&amp;1 || true di belakang command cron nya</p>
+<h2 id="linux-rm-file-list-too-long">linux rm file list too long</h2>
+<pre><code>cd direktoriyangfilenyabanyak
+ls -1 | wc -l &amp;&amp; time find . -type f -delete
+find . -type f -print -delete
+</code></pre><h2 id="incron">incron</h2>
+<p>Ref:</p>
+<ul>
+<li><a href="http://inotify.aiken.cz/?section=incron&amp;page=faq&amp;lang=en">http://inotify.aiken.cz/?section=incron&amp;page=faq&amp;lang=en</a></li>
+</ul>
+<h2 id="rsync-only-existing-file">rsync only existing file</h2>
+<pre><code>rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/
+</code></pre><h2 id="umask-follow-parent--setgid">Umask follow parent / setgid</h2>
+<pre><code>chmod g+s /namafolder
+</code></pre><p>Ref:</p>
+<ul>
+<li><a href="https://unix.stackexchange.com/questions/117190/best-way-to-sync-files-copy-only-existing-files-and-only-if-newer-than-target">https://unix.stackexchange.com/questions/117190/best-way-to-sync-files-copy-only-existing-files-and-only-if-newer-than-target</a></li>
+<li><a href="https://superuser.com/questions/151911/how-to-make-new-file-permission-inherit-from-the-parent-directory">https://superuser.com/questions/151911/how-to-make-new-file-permission-inherit-from-the-parent-directory</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/trick/">trick</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/28/mysql-tips-and-trick/">MySQL tips and trick</a></h1>
+        <span class="post-date">Jan 28, 2018</span>
+	<!-- raw HTML omitted -->
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/mysql/">mysql</a>, <a href="https://blog.indonesiadot.com/tags/sql/">sql</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/28/magento-admin-tips-and-trick/">Magento Admin tips and trick</a></h1>
+        <span class="post-date">Jan 28, 2018</span>
+	<p>How to create admin user in Magento 2 via Command Line  bin/magento admin:user:create &ndash;admin-user=&quot;admin&rdquo; &ndash;admin-password=&quot;123123q&rdquo; &ndash;admin-email=&quot;admin@example.com&rdquo; &ndash;admin-firstname=&quot;Admin&rdquo; &ndash;admin-lastname=&quot;Admin&rdquo;</p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/e-commerce/">e-commerce</a>, <a href="https://blog.indonesiadot.com/tags/magento/">magento</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/27/install-solr-server/">Install solr server</a></h1>
+        <span class="post-date">Sep 27, 2017</span>
+	<p>Here are the steps for Install solr server - base of search engine for magento  these steps run on ubuntu 16.04, because we follow this <a href="http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html,">http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html,</a> we must install jdk 7 from ppa, but ubuntu 16.04 default with jdk 8  <!-- raw HTML omitted --><!-- raw HTML omitted -->add-apt-repository ppa:openjdk-r/ppa<!-- raw HTML omitted -->apt update<!-- raw HTML omitted -->apt-get install openjdk-7-jdk<!-- raw HTML omitted -->apt install supervisor<!-- raw HTML omitted --><!-- raw HTML omitted -->su - user<!-- raw HTML omitted -->mkdir apps &amp;&amp; cd apps<!-- raw HTML omitted -->wget <a href="https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz%3Cbr">https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz&lt;br</a> /&gt;tar xzf ../apache-solr-3.4.0.tgz<!-- raw HTML omitted -->mv apache-solr-3.4.0 solr34<!-- raw HTML omitted -->cp /var/www/magento/lib/Apache/Solr/conf/* solr34/example/solr/conf/<!-- raw HTML omitted -->cat &gt;&gt; apps/solr34/example/logging.properties <!-- raw HTML omitted --><!-- raw HTML omitted --># Default global logging level:<!-- raw HTML omitted -->.level = INFO<!-- raw HTML omitted --><!-- raw HTML omitted --># Write to a file:<!-- raw HTML omitted -->handlers = java.util.logging.FileHandler<!-- raw HTML omitted --><!-- raw HTML omitted --># Write log messages in XML format:<!-- raw HTML omitted --># Use java.util.logging.SimpleFormatter to log like Solr logs to the screen by default<!-- raw HTML omitted -->java.util.logging.FileHandler.formatter = java.util.logging.XMLFormatter<!-- raw HTML omitted --><!-- raw HTML omitted --># Log to the current working directory, with log files named solrxxx.log<!-- raw HTML omitted -->java.util.logging.FileHandler.pattern = /home/ehbm2/logs/solr%u.log<!-- raw HTML omitted --><!-- raw HTML omitted -->[CTRL-C]<!-- raw HTML omitted --><!-- raw HTML omitted -->exit<!-- raw HTML omitted --><!-- raw HTML omitted -->cat &gt;&gt; /etc/supervisor/conf.d/solr.conf <!-- raw HTML omitted --><!-- raw HTML omitted -->[program:solr]<!-- raw HTML omitted -->user=ehbm2<!-- raw HTML omitted -->#directory=/home/ehbm2/apps/solr141/example<!-- raw HTML omitted -->directory=/home/ehbm2/apps/solr34/example<!-- raw HTML omitted -->command=java -Djava.util.logging.config.file=logging.properties -jar start.jar<!-- raw HTML omitted -->autostart=true<!-- raw HTML omitted -->autorestart=true<!-- raw HTML omitted --><!-- raw HTML omitted -->[CTRL-C]<!-- raw HTML omitted --><!-- raw HTML omitted -->/etc/init.d/supervisor restart<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/e-commerce/">e-commerce</a>, <a href="https://blog.indonesiadot.com/tags/magento/">magento</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/20/magento-maintenance-mode/">Magento maintenance mode</a></h1>
@@ -641,122 +736,6 @@
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/blog/">blog</a>, <a href="https://blog.indonesiadot.com/tags/web/">web</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2015/11/28/desember-2015/">desember 2015</a></h1>
-        <span class="post-date">Nov 28, 2015</span>
-	<p>sebentar lagi bulan desember 2015 :)</p>
-
-	<hr/>
-	
-	
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2014/01/02/intro-lanyon/">Intro Lanyon</a></h1>
-        <span class="post-date">Jan 2, 2014</span>
-	<p>Lanyon is an unassuming <a href="http://jekyllrb.com">Jekyll</a> theme that places content first by tucking away navigation in a hidden drawer. It's based on <a href="http://getpoole.com">Poole</a>, the Jekyll butler.</p>
-<h3 id="built-on-poole">Built on Poole</h3>
-<p>Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by <a href="https://twitter.com/mdo">@mdo</a>. Poole, and every theme built on it (like Lanyon here) includes the following:</p>
-<ul>
-<li>Complete Jekyll setup included (layouts, config, <a href="https://blog.indonesiadot.com/404">404</a>, <a href="https://blog.indonesiadot.com/index.xml">RSS feed</a>, posts, and <a href="https://blog.indonesiadot.com/about">example page</a>)</li>
-<li>Mobile friendly design and development</li>
-<li>Easily scalable text and component sizing with <code>rem</code> units in the CSS</li>
-<li>Support for a wide gamut of HTML elements</li>
-<li>Related posts (time-based, because Jekyll) below each post</li>
-<li>Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)</li>
-</ul>
-<h3 id="lanyon-features">Lanyon features</h3>
-<p>In addition to the features of Poole, Lanyon adds the following:</p>
-<ul>
-<li>Toggleable sliding sidebar (built with only CSS) via <strong>☰</strong> link in top corner</li>
-<li>Sidebar includes support for textual modules and a dynamically generated navigation with active link support</li>
-<li>Two orientations for content and sidebar, default (left sidebar) and <a href="https://github.com/poole/lanyon#reverse-layout">reverse</a> (right sidebar), available via <code>&lt;body&gt;</code> classes</li>
-<li><a href="https://github.com/poole/lanyon#themes">Eight optional color schemes</a>, available via <code>&lt;body&gt;</code> classes</li>
-</ul>
-<p><a href="https://github.com/poole/lanyon#readme">Head to the readme</a> to learn more.</p>
-<h3 id="browser-support">Browser support</h3>
-<p>Lanyon is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.</p>
-<h3 id="download">Download</h3>
-<p>Lanyon is developed on and hosted with GitHub. Head to the <!-- raw HTML omitted -->GitHub repository<!-- raw HTML omitted --> for downloads, bug reports, and features requests.</p>
-<p>Thanks!</p>
-
-	<hr/>
-	
-	
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2014/01/02/intro-lanyon-again/">Intro Lanyon Again</a></h1>
-        <span class="post-date">Jan 2, 2014</span>
-	<p>Lanyon is an unassuming <a href="http://jekyllrb.com">Jekyll</a> theme that places content first by tucking away navigation in a hidden drawer. It's based on <a href="http://getpoole.com">Poole</a>, the Jekyll butler.</p>
-<h3 id="built-on-poole">Built on Poole</h3>
-<p>Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by <a href="https://twitter.com/mdo">@mdo</a>. Poole, and every theme built on it (like Lanyon here) includes the following:</p>
-<ul>
-<li>Complete Jekyll setup included (layouts, config, <a href="https://blog.indonesiadot.com/404">404</a>, <a href="https://blog.indonesiadot.com/index.xml">RSS feed</a>, posts, and <a href="https://blog.indonesiadot.com/about">example page</a>)</li>
-<li>Mobile friendly design and development</li>
-<li>Easily scalable text and component sizing with <code>rem</code> units in the CSS</li>
-<li>Support for a wide gamut of HTML elements</li>
-<li>Related posts (time-based, because Jekyll) below each post</li>
-<li>Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)</li>
-</ul>
-<h3 id="lanyon-features">Lanyon features</h3>
-<p>In addition to the features of Poole, Lanyon adds the following:</p>
-<ul>
-<li>Toggleable sliding sidebar (built with only CSS) via <strong>☰</strong> link in top corner</li>
-<li>Sidebar includes support for textual modules and a dynamically generated navigation with active link support</li>
-<li>Two orientations for content and sidebar, default (left sidebar) and <a href="https://github.com/poole/lanyon#reverse-layout">reverse</a> (right sidebar), available via <code>&lt;body&gt;</code> classes</li>
-<li><a href="https://github.com/poole/lanyon#themes">Eight optional color schemes</a>, available via <code>&lt;body&gt;</code> classes</li>
-</ul>
-<p><a href="https://github.com/poole/lanyon#readme">Head to the readme</a> to learn more.</p>
-<h3 id="browser-support">Browser support</h3>
-<p>Lanyon is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.</p>
-<h3 id="download">Download</h3>
-<p>Lanyon is developed on and hosted with GitHub. Head to the <!-- raw HTML omitted -->GitHub repository<!-- raw HTML omitted --> for downloads, bug reports, and features requests.</p>
-<p>Thanks!</p>
-
-	<hr/>
-	
-	
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2014/01/02/introducing-lanyon/">Introducing Lanyon</a></h1>
-        <span class="post-date">Jan 2, 2014</span>
-	<p>Lanyon is an unassuming <a href="http://jekyllrb.com">Jekyll</a> theme that places content first by tucking away navigation in a hidden drawer. It's based on <a href="http://getpoole.com">Poole</a>, the Jekyll butler.</p>
-<h3 id="built-on-poole">Built on Poole</h3>
-<p>Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by <a href="https://twitter.com/mdo">@mdo</a>. Poole, and every theme built on it (like Lanyon here) includes the following:</p>
-<ul>
-<li>Complete Jekyll setup included (layouts, config, <a href="https://blog.indonesiadot.com/404">404</a>, <a href="https://blog.indonesiadot.com/index.xml">RSS feed</a>, posts, and <a href="https://blog.indonesiadot.com/about">example page</a>)</li>
-<li>Mobile friendly design and development</li>
-<li>Easily scalable text and component sizing with <code>rem</code> units in the CSS</li>
-<li>Support for a wide gamut of HTML elements</li>
-<li>Related posts (time-based, because Jekyll) below each post</li>
-<li>Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)</li>
-</ul>
-<h3 id="lanyon-features">Lanyon features</h3>
-<p>In addition to the features of Poole, Lanyon adds the following:</p>
-<ul>
-<li>Toggleable sliding sidebar (built with only CSS) via <strong>☰</strong> link in top corner</li>
-<li>Sidebar includes support for textual modules and a dynamically generated navigation with active link support</li>
-<li>Two orientations for content and sidebar, default (left sidebar) and <a href="https://github.com/poole/lanyon#reverse-layout">reverse</a> (right sidebar), available via <code>&lt;body&gt;</code> classes</li>
-<li><a href="https://github.com/poole/lanyon#themes">Eight optional color schemes</a>, available via <code>&lt;body&gt;</code> classes</li>
-</ul>
-<p><a href="https://github.com/poole/lanyon#readme">Head to the readme</a> to learn more.</p>
-<h3 id="browser-support">Browser support</h3>
-<p>Lanyon is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.</p>
-<h3 id="download">Download</h3>
-<p>Lanyon is developed on and hosted with GitHub. Head to the <!-- raw HTML omitted -->GitHub repository<!-- raw HTML omitted --> for downloads, bug reports, and features requests.</p>
-<p>Thanks!</p>
-
-	<hr/>
-	
-	
 	 <hr/>
     </div>
   

@@ -38,10 +38,9 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
       <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/git-tips/</guid>
-      <description>git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge  untuk menggabungkan isi dari branch hotfix ke master
+      <description>git without gnome-askpass unset SSH_ASKPASS  https://gist.github.com/joseluisq/d0e66c5f718250c90075  git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge  untuk menggabungkan isi dari branch hotfix ke master
 git checkout master git merge hotfix git undo merge Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan
-git reflog git reset --hard &amp;lt;id_repository_log&amp;gt; Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan
-git clear repository rm -rf .</description>
+git reflog git reset --hard &amp;lt;id_repository_log&amp;gt; Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</description>
     </item>
     
   </channel>

@@ -547,6 +547,30 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -585,11 +609,45 @@
 <li>tambahkan <strong>access - teams</strong></li>
 <li>tambahkan <strong>resources - inventory</strong></li>
 <li>siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)</li>
+</ul>
+<pre><code>chmod g+s /var/lib/awx/projects
+cp -r test /var/lib/awx/projects/
+</code></pre><ul>
 <li>tambahkan <strong>resources - projects</strong></li>
 <li>buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine</li>
+<li>buat host client / node yang mau di manage di /etc/hosts</li>
 <li>tambahkan <strong>resources - credentials</strong></li>
 <li>tambahkan <strong>resources - templates</strong></li>
 <li>test launch jobs based on template yg baru dibuat</li>
+</ul>
+<h2 id="ansible-tower--openscap">Ansible tower + openscap</h2>
+<ul>
+<li>install scap-workbench</li>
+</ul>
+<pre><code>yum install scap-workbench xauth -y
+</code></pre><ul>
+<li>buat direktori report</li>
+</ul>
+<pre><code>mkdir /report                                                                                                                                                                                               
+chgrp awx /report                                                                                                                                                                                           
+chmod g+s /report/
+chcon -Rv --type=httpd_sys_rw_content_t /report/
+ln -s /report /var/lib/awx/public/
+</code></pre><ul>
+<li>tambahkan direktori report di nginx</li>
+</ul>
+<pre><code>        location /report {
+                alias /var/lib/awx/public/report;
+                autoindex on;
+        }
+</code></pre><ul>
+<li>akses scap-workbench dari laptop</li>
+</ul>
+<pre><code>ssh -X -C tower1
+scap-workbench
+</code></pre><ul>
+<li>jalankan <strong>Scan</strong> Remote Machine (over SSH) ke ansible@client1 (jika muncul popup, pilih centos7)</li>
+<li>Save generate result html ke /report (tambahkan pembeda semisal datetime untuk membedakan tiap file report)</li>
 </ul>
 <p>Referensi:</p>
 <ul>

@@ -6,10 +6,52 @@
     <description>Recent content in Posts on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Jan 2020 07:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 24 Feb 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Video Editing On Linux</title>
+      <link>https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/</link>
+      <pubDate>Mon, 24 Feb 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/</guid>
+      <description>Cut and Combine Video Avidemux
+Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &amp;gt; Youtube Studio 2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks 3. Untuk video baru, klik set languages, lalu confirm 4. Klik tombol ADD / Tambahkan subtitel atau CC baru. Add watermark ffmpeg -i input.mp4 -i watermark.png -filter_complex &amp;quot;overlay=1500:1000&amp;quot; output.</description>
+    </item>
+    
+    <item>
+      <title>Ansible OS Hardening</title>
+      <link>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</link>
+      <pubDate>Thu, 20 Feb 2020 18:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</guid>
+      <description>Ansible OS Hardening mkdir -p /data/backups Referensi:
+ https://indonesiadot.com  </description>
+    </item>
+    
+    <item>
+      <title>Ansible Tower tips and trick</title>
+      <link>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</link>
+      <pubDate>Thu, 20 Feb 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</guid>
+      <description>Ansible Tower tips and trick Change admin password awx-manage changepassword admin backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
+ https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html  </description>
+    </item>
+    
+    <item>
+      <title>Selinux Web Directory Permission</title>
+      <link>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</link>
+      <pubDate>Mon, 20 Jan 2020 09:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</guid>
+      <description>Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
+adapun command nya sebelum bisa diakses yaitu:
+chcon -Rv --type=httpd_sys_rw_content_t /webserver Referensi:
+ https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/  </description>
+    </item>
     
     <item>
       <title>Harbor Container Registry</title>
@@ -27,7 +69,7 @@
       <pubDate>Sun, 19 Jan 2020 15:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/</guid>
-      <description>Ansible Tower first Implementation  Install ansible tower masukan license tambahkan access - organization tambahkan access - users tambahkan access - teams tambahkan resources - inventory siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses) tambahkan resources - projects buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine tambahkan resources - credentials tambahkan resources - templates test launch jobs based on template yg baru dibuat  Referensi:</description>
+      <description>Ansible Tower first Implementation  Install ansible tower masukan license tambahkan access - organization tambahkan access - users tambahkan access - teams tambahkan resources - inventory siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)  chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/  tambahkan resources - projects buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine buat host client / node yang mau di manage di /etc/hosts tambahkan resources - credentials tambahkan resources - templates test launch jobs based on template yg baru dibuat  Ansible tower + openscap  install scap-workbench  yum install scap-workbench xauth -y  buat direktori report  mkdir /report chgrp awx /report chmod g+s /report/ chcon -Rv --type=httpd_sys_rw_content_t /report/ ln -s /report /var/lib/awx/public/  tambahkan direktori report di nginx   location /report { alias /var/lib/awx/public/report; autoindex on; }  akses scap-workbench dari laptop  ssh -X -C tower1 scap-workbench  jalankan Scan Remote Machine (over SSH) ke ansible@client1 (jika muncul popup, pilih centos7) Save generate result html ke /report (tambahkan pembeda semisal datetime untuk membedakan tiap file report)  Referensi:</description>
     </item>
     
     <item>
@@ -484,10 +526,9 @@ sudo apt-get update sudo apt-get upgrade sudo do-release-upgrade -f DistUpgradeV
       <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/git-tips/</guid>
-      <description>git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge  untuk menggabungkan isi dari branch hotfix ke master
+      <description>git without gnome-askpass unset SSH_ASKPASS  https://gist.github.com/joseluisq/d0e66c5f718250c90075  git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge  untuk menggabungkan isi dari branch hotfix ke master
 git checkout master git merge hotfix git undo merge Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan
-git reflog git reset --hard &amp;lt;id_repository_log&amp;gt; Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan
-git clear repository rm -rf .</description>
+git reflog git reset --hard &amp;lt;id_repository_log&amp;gt; Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</description>
     </item>
     
     <item>
@@ -858,7 +899,8 @@ Ref:
       <pubDate>Mon, 19 Feb 2018 10:18:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/19/nginx-tips-and-trick/</guid>
-      <description></description>
+      <description>Nginx location directory  location /static/ { alias /web/test.example.com/static/; autoindex on; }  https://stackoverflow.com/questions/11570321/configure-nginx-with-multiple-locations-with-different-root-folders-on-subdomain  Referensi:
+ https://www.sitepoint.com/brotli-compression-wordpress/  </description>
     </item>
     
     <item>
@@ -1002,8 +1044,7 @@ Ref:
       <guid>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</guid>
       <description>cron without sending mail tambahkan MAILTO=&amp;rdquo;&amp;rdquo; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
 linux rm file list too long cd direktoriyangfilenyabanyak ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete find . -type f -print -delete incron Ref:
- http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en  rsync only existing file rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/ Ref:
- https://unix.stackexchange.com/questions/117190/best-way-to-sync-files-copy-only-existing-files-and-only-if-newer-than-target  </description>
+ http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en  rsync only existing file rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/ Umask follow parent / setgid chmod g+s /namafolder Ref:</description>
     </item>
     
     <item>
