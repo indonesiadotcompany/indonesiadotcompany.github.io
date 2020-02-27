@@ -1,7 +1,7 @@
 ---
 title: "Ubiquiti Unifi on Linux Ubuntu"
 date: 2020-02-25T08:17:54+07:00
-tags: ["linux", "ubiquiti, "unifi", "ubiquiti-unifi", "wireless", "access-point"]
+tags: ["linux", "ubiquiti", "unifi", "ubiquiti-unifi", "wireless", "access-point"]
 author: "Widya"
 draft: false
 ---
