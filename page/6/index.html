@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.62.2" />
+	<meta name="generator" content="Hugo 0.57.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -582,7 +582,6 @@
       
     
       
-<<<<<<< HEAD
     
       
     
@@ -595,8 +594,18 @@
       
     
       
-=======
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -629,7 +638,35 @@
 <div class="post">
   
     <div class="post">
-<<<<<<< HEAD
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/postfix-tips/">Postfix tips</a></h1>
+        <span class="post-date">Sep 2, 2019</span>
+	
+
+<h3 id="postfix-send-to-local-network">postfix send to local network</h3>
+
+<p>Ini adalah langkah untuk membuat postfix mengirim ke mail server dalam LAN</p>
+
+<pre><code>echo &quot;real.net smtp:[192.168.1.108]&quot; &gt;&gt; /etc/postfix/transport
+postmap /etc/postfix/transport
+systemctl restart postfix
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/">https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/</a></li>
+<li><a href="http://www.postfix.org/STANDARD_CONFIGURATION_README.html">http://www.postfix.org/STANDARD_CONFIGURATION_README.html</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/mail/">mail</a>, <a href="https://blog.indonesiadot.com/tags/postfix/">postfix</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/">All about kubernetes</a></h1>
         <span class="post-date">Sep 2, 2019</span>
 	
@@ -684,76 +721,17 @@ systemctl restart docker
 
 <ul>
 <li><a href="https://darxkies.github.io/k8s-tew/_build/html/index.html">https://darxkies.github.io/k8s-tew/_build/html/index.html</a></li>
-=======
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/git-tips/">Git tips</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<h2 id="git-without-gnome-askpass">git without gnome-askpass</h2>
-<pre><code>unset SSH_ASKPASS
-</code></pre><ul>
-<li><a href="https://gist.github.com/joseluisq/d0e66c5f718250c90075">https://gist.github.com/joseluisq/d0e66c5f718250c90075</a></li>
-</ul>
-<h2 id="git-merge">git merge</h2>
-<p>Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap
-<img src="https://blog.indonesiadot.com/images/2019/git-merge-1.png" alt="git-merge-1">
-lalu <em>git merge <!-- raw HTML omitted --></em> untuk menggabungkan isi dari branch hotfix ke master</p>
-<pre><code>git checkout master
-git merge hotfix
-</code></pre><p><img src="https://blog.indonesiadot.com/images/2019/git-merge-2.png" alt="git-merge-1"></p>
-<h2 id="git-undo-merge">git undo merge</h2>
-<p>Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan</p>
-<pre><code>git reflog
-git reset --hard &lt;id_repository_log&gt;
-</code></pre><p>Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</p>
-<h2 id="git-clear-repository">git clear repository</h2>
-<pre><code>rm -rf .git*
-git init
-git add .
-git commit -m 'initial commit'
-git remote add origin git@github.com:&lt;YOUR ACCOUNT&gt;/&lt;YOUR REPOS&gt;.git
-git push -u --force origin master
-</code></pre><h2 id="git-branch">git branch</h2>
-<h3 id="git-create-branch">git create branch</h3>
-<pre><code>git checkout -b branchbaru
-git push origin branchbaru
-</code></pre><p>jika branchbaru tersebut sudah ada di <em>remote repository</em> (repository di luar selain di lokal komputer, seperti github / gitlab / bitbucket) dan isinya ingin dihapus / diupdate sesuai dengan isi yang ada di local repository, maka harus menggunakan parameter &ndash;force
-<code>git push --force origin branchbaru</code></p>
-<h3 id="default-branch">default branch</h3>
-<p>default branch pada git biasanya adalah branch pertama yang kita push, dan biasanya adalah branch master, kecuali jika pertama kali push nya adalah nama branch lain, maka default nya adalah nama branch lain, dan jika terlanjur di awal push dengan branch lain, maka untuk merubah default branch itu tidak bisa memakai command, tapi harus melalui menu settings - branches pada remote repository.</p>
-<h3 id="delete-branch">delete branch</h3>
-<p>pertama pastikan yang ingin dihapus bukan default branch.</p>
-<pre><code>git checkout master
-git push origin --delete namabranchyangakandihapus
-git branch -D namabranchyangakandihapus
-</code></pre><p>pindah dulu ke branch default, lalu hapus remote branch, kemudian hapus local branch</p>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</a></li>
-<li><a href="https://stackoverflow.com/questions/11722533/rollback-a-git-merge/29110174">https://stackoverflow.com/questions/11722533/rollback-a-git-merge/29110174</a></li>
-<li><a href="https://help.github.com/en/articles/setting-the-default-branch">https://help.github.com/en/articles/setting-the-default-branch</a></li>
-</ul>
-<p>Referensi belajar git:</p>
-<ul>
-<li><a href="https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f">https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f</a></li>
-<li><a href="https://rogerdudler.github.io/git-guide/index.id.html">https://rogerdudler.github.io/git-guide/index.id.html</a></li>
-<li><a href="https://medium.com/@amanze.ogbonna/accessing-pushing-to-github-without-username-and-password-3022feb077fb">https://medium.com/@amanze.ogbonna/accessing-pushing-to-github-without-username-and-password-3022feb077fb</a></li>
-<li><a href="https://stackoverflow.com/questions/18935539/authenticate-with-github-using-a-token">https://stackoverflow.com/questions/18935539/authenticate-with-github-using-a-token</a></li>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-<<<<<<< HEAD
 	  <a href="https://blog.indonesiadot.com/tags/kubernetes/">kubernetes</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
-=======
-	  <a href="https://blog.indonesiadot.com/tags/repository/">repository</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 	 <hr/>
     </div>
   
     <div class="post">
-<<<<<<< HEAD
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/">Ubuntu upgrade 14.04 to 16.04 to 18.04</a></h1>
         <span class="post-date">Sep 2, 2019</span>
 	<p>Berikut langkah yang dilakukan, tapi sebelumnya pastikan backup, backup dan backup</p>
@@ -768,45 +746,17 @@ sudo do-release-upgrade -f DistUpgradeViewNonInteractive
 <ul>
 <li><a href="https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04">https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04</a></li>
 <li><a href="https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4">https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4</a></li>
-=======
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/">Pembuatan web statis dengan hugo</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<h2 id="manage-hugo-dari-pc--laptop-lain">manage hugo dari pc / laptop lain</h2>
-<pre><code>git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io
-git checkout hugo
-rm -rf public
-git add .
-git commit -m 'remove public'
-git push
-git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public
-</code></pre><p>Referensi hugo dasar:</p>
-<ul>
-<li><a href="https://www.petanikode.com/topik/hugo">https://www.petanikode.com/topik/hugo</a></li>
-<li><a href="https://gohugo.io/getting-started/quick-start/">https://gohugo.io/getting-started/quick-start/</a></li>
-<li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></li>
-<li><a href="https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html">https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html</a></li>
-</ul>
-<p>Referensi hugo dan e-commerce:</p>
-<ul>
-<li><a href="https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf">https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf</a></li>
-<li><a href="https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce">https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce</a></li>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-<<<<<<< HEAD
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ubuntu/">ubuntu</a>, <a href="https://blog.indonesiadot.com/tags/upgrade/">upgrade</a>
-=======
-	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/scripting/">scripting</a>, <a href="https://blog.indonesiadot.com/tags/static-site-generator/">static-site-generator</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 	 <hr/>
     </div>
   
     <div class="post">
-<<<<<<< HEAD
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/git-tips/">Git tips</a></h1>
         <span class="post-date">Sep 2, 2019</span>
 	
@@ -893,40 +843,17 @@ git branch -D namabranchyangakandihapus
 <li><a href="https://rogerdudler.github.io/git-guide/index.id.html">https://rogerdudler.github.io/git-guide/index.id.html</a></li>
 <li><a href="https://medium.com/@amanze.ogbonna/accessing-pushing-to-github-without-username-and-password-3022feb077fb">https://medium.com/@amanze.ogbonna/accessing-pushing-to-github-without-username-and-password-3022feb077fb</a></li>
 <li><a href="https://stackoverflow.com/questions/18935539/authenticate-with-github-using-a-token">https://stackoverflow.com/questions/18935539/authenticate-with-github-using-a-token</a></li>
-=======
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/migrasi-antar-hugo/">Migrasi antar hugo</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<p>To remove a submodule you need to:</p>
-<ul>
-<li>Delete the relevant section from the .gitmodules file.</li>
-<li>Stage the .gitmodules changes git add .gitmodules</li>
-<li>Delete the relevant section from .git/config.</li>
-<li>Run git rm &ndash;cached path_to_submodule (no trailing slash).</li>
-<li>Run rm -rf .git/modules/path_to_submodule (no trailing slash).</li>
-<li>Commit git commit -m &ldquo;Removed submodule &quot;</li>
-<li>Delete the now untracked submodule files rm -rf path_to_submodule</li>
-</ul>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
-<li><a href="https://gist.github.com/myusuf3/7f645819ded92bda6677">https://gist.github.com/myusuf3/7f645819ded92bda6677</a></li>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-<<<<<<< HEAD
 	  <a href="https://blog.indonesiadot.com/tags/repository/">repository</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-=======
-	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/static-site-generator/">static-site-generator</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 	 <hr/>
     </div>
   
     <div class="post">
-<<<<<<< HEAD
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/">Pembuatan web statis dengan hugo</a></h1>
         <span class="post-date">Sep 2, 2019</span>
 	
@@ -957,25 +884,16 @@ git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiad
 <li><a href="https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf">https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf</a></li>
 <li><a href="https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce">https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce</a></li>
 </ul>
-=======
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/01/welcome/">Welcome</a></h1>
-        <span class="post-date">Sep 1, 2019</span>
-	<p>Welcome, wilkomen, marhaban, ahlan wa sahlan</p>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 
 	<hr/>
 	
 	
-<<<<<<< HEAD
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/scripting/">scripting</a>, <a href="https://blog.indonesiadot.com/tags/static-site-generator/">static-site-generator</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>
-=======
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 	 <hr/>
     </div>
   
     <div class="post">
-<<<<<<< HEAD
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/migrasi-antar-hugo/">Migrasi antar hugo</a></h1>
         <span class="post-date">Sep 2, 2019</span>
 	<p>To remove a submodule you need to:</p>
@@ -995,42 +913,20 @@ git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiad
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 <li><a href="https://gist.github.com/myusuf3/7f645819ded92bda6677">https://gist.github.com/myusuf3/7f645819ded92bda6677</a></li>
-=======
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/01/google-cloud-platform-gcp-free/">Google Cloud Platform GCP Free</a></h1>
-        <span class="post-date">Sep 1, 2019</span>
-	<p>Sangat disarankan untuk segera daftar dan mendapatkan gratis layanan cloud hosting dari Google Cloud Platform / GCP yang berguna untuk server development, trial, terutama untuk para startup.</p>
-<p>Syaratnya cuma account google dan kartu debit Visa, tidak perlu kartu kredit, disini digunakan kartu jenius, untuk jenius pun bisa mendaftar dengan syarat cuma KTP yang selanjutnya akan dikonfirmasikan untuk didatangi oleh pihak data dari jenius, jadi kita cukup tunggu dan terima beres, yang selanjutnya kartu pertama akan dikirim ke alamat kita.</p>
-<p><img src="https://blog.indonesiadot.com/images/2019/gcp-console.png" alt="git-merge-1"></p>
-<p>Disini terlihat console dari GCP yang sudah dipakai sebulan untuk server monitoring dan juga server percobaan untuk compile dan pekerjaan berat lain, yang sudah dihapus karena hanya untuk percobaan sementara, disini masih tersisa credit 4 juta an :)</p>
-<p>So give it a try :)</p>
-<p>Ansible Reference:</p>
-<ul>
-<li><a href="https://cloud.google.com/compute/docs/images">https://cloud.google.com/compute/docs/images</a></li>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-<<<<<<< HEAD
 	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/static-site-generator/">static-site-generator</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>
-=======
-	  <a href="https://blog.indonesiadot.com/tags/cloud/">cloud</a>, <a href="https://blog.indonesiadot.com/tags/gcp/">gcp</a>, <a href="https://blog.indonesiadot.com/tags/vps/">vps</a>, <a href="https://blog.indonesiadot.com/tags/free/">free</a>, <a href="https://blog.indonesiadot.com/tags/gratis/">gratis</a>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 	 <hr/>
     </div>
   
     <div class="post">
-<<<<<<< HEAD
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/01/welcome/">Welcome</a></h1>
         <span class="post-date">Sep 1, 2019</span>
 	<p>Welcome, wilkomen, marhaban, ahlan wa sahlan</p>
-=======
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/14/disable-/-ignore-user-process-at-csf-firewall/">disable / ignore user process at csf firewall</a></h1>
-        <span class="post-date">Aug 14, 2019</span>
-	<p><!-- raw HTML omitted --><a href="https://www.google.com/search?q=csf+ignore+user%3Cbr">https://www.google.com/search?q=csf+ignore+user&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="http://g33kinfo.com/info/archives/3933%3Cbr">http://g33kinfo.com/info/archives/3933&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->From <!-- raw HTML omitted -->configserver.com<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Process Tracking<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->This option enables tracking of user and nobody processes and examines them for suspicious executables or open network ports. Its purpose is to identify potential exploit processes that are running on the server, even if they are obfuscated to appear as system services. If a suspicious process is found an alert email is sent with relevant information. It is then the responsibility of the recipient to investigate the process further as the script takes no further action. Processes (PIDs) are only reported once unless lfd is restarted.<!-- raw HTML omitted --><!-- raw HTML omitted -->There is an ignore file /etc/csf/csf.pignore which can be used to whitelist either usernames or full paths to binaries. Care should be taken with ignoring users or files so that you don’t force false-negatives.<!-- raw HTML omitted --><!-- raw HTML omitted -->You must use the following format:<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->exe:/full/path/to/file<!-- raw HTML omitted --><!-- raw HTML omitted -->user:username<!-- raw HTML omitted --><!-- raw HTML omitted -->cmd:command line<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->The command line as reported in /proc has the trailing null character removed and all other occurrences replaced with a space. So, the line you specify in the file should have space separators for the command line arguments, not null characters. It is strongly recommended that you use command line ignores very carefully as any process can change what is reported to the OS. Don’t list the paths to perl or php as this will prevent detection of suspicious web scripts.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Process Tracking and csf.pignore<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->1. If you’re seeing spamd being reported after the latest update and want to ignore it, the following can be added to /etc/csf/csf.pignore (ensure that you ONLY use linux linefeeds, not WIN or MAC ones when editing Linux files):<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->cmd:spamd child<!-- raw HTML omitted --><!-- raw HTML omitted -->Then restart lfd.<!-- raw HTML omitted --><!-- raw HTML omitted -->2. If you’re seeing awstats.pl being reported after the latest update and want to ignore it, the following can be added to /etc/csf/csf.pignore:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->pcmd:.*/usr/local/cpanel/3rdparty/bin/awstats.pl.<em><!-- raw HTML omitted -->pcmd:.</em>/usr/local/cpanel/base/awstats.pl.*<!-- raw HTML omitted --><!-- raw HTML omitted -->Then restart lfd.<!-- raw HTML omitted --></p>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 
 	<hr/>
 	
@@ -1039,7 +935,6 @@ git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiad
     </div>
   
     <div class="post">
-<<<<<<< HEAD
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/01/google-cloud-platform-gcp-free/">Google Cloud Platform GCP Free</a></h1>
         <span class="post-date">Sep 1, 2019</span>
 	<p>Sangat disarankan untuk segera daftar dan mendapatkan gratis layanan cloud hosting dari Google Cloud Platform / GCP yang berguna untuk server development, trial, terutama untuk para startup.</p>
@@ -1057,50 +952,19 @@ git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiad
 <ul>
 <li><a href="https://cloud.google.com/compute/docs/images">https://cloud.google.com/compute/docs/images</a></li>
 </ul>
-=======
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/12/simplemonitor-with-telegram-alert/">simplemonitor with telegram alert</a></h1>
-        <span class="post-date">Aug 12, 2019</span>
-	<p><a href="https://jamesoff.github.io/simplemonitor/alerting.html%3Cbr">https://jamesoff.github.io/simplemonitor/alerting.html&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->telegram alerters<!-- raw HTML omitted --><!-- raw HTML omitted -->Send alerts to a Telegram chat.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->setting<!-- raw HTML omitted --><!-- raw HTML omitted -->description<!-- raw HTML omitted --><!-- raw HTML omitted -->required<!-- raw HTML omitted --><!-- raw HTML omitted -->default<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->token<!-- raw HTML omitted --><!-- raw HTML omitted -->The token to access telegram<!-- raw HTML omitted --><!-- raw HTML omitted -->yes<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->chat_id<!-- raw HTML omitted --><!-- raw HTML omitted -->The chat to send to<!-- raw HTML omitted --><!-- raw HTML omitted -->yes<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://www.google.com/search?q=telegram+token%3Cbr">https://www.google.com/search?q=telegram+token&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="https://tutorials.botsfloor.com/creating-a-bot-using-the-telegram-bot-api-5d3caed3266d%3Cbr">https://tutorials.botsfloor.com/creating-a-bot-using-the-telegram-bot-api-5d3caed3266d&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="https://www.google.com/search?q=chat_id+telegram%3Cbr">https://www.google.com/search?q=chat_id+telegram&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id%3Cbr">https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->In order to get the group chat id, do as follows:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Add the Telegram BOT to the group.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Get the list of updates for your BOT:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://api.telegram.org/bot%3Cyourbottoken%3E/getUpdates%3Cbr">https://api.telegram.org/bot&lt;yourbottoken&gt;/getUpdates&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Ex:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://api.telegram.org/bot123456789:jbd78sadvbdy63d37gda37bd8/getUpdates%3Cbr">https://api.telegram.org/bot123456789:jbd78sadvbdy63d37gda37bd8/getUpdates&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Look for the &ldquo;chat&rdquo; object:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->{&ldquo;update_id&rdquo;:8393,&ldquo;message&rdquo;:{&ldquo;message_id&rdquo;:3,&ldquo;from&rdquo;:{&ldquo;id&rdquo;:7474,&ldquo;first_name&rdquo;:&ldquo;AAA&rdquo;},&ldquo;chat&rdquo;:{&ldquo;id&rdquo;:,&ldquo;title&rdquo;:&quot;&quot;},&ldquo;date&rdquo;:25497,&ldquo;new_chat_participant&rdquo;:{&ldquo;id&rdquo;:71,&ldquo;first_name&rdquo;:&ldquo;NAME&rdquo;,&ldquo;username&rdquo;:&ldquo;YOUR_BOT_NAME&rdquo;}}}<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->This is a sample of the response when you add your BOT into a group.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Use the &ldquo;id&rdquo; of the &ldquo;chat&rdquo; object to send your messages.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->note:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->setelah dapat token dan chat_id, masukan ke monitor.ini, contohnya:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->[reporting]<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->; be sure to leave the json logger on, otherwise Docker health check will fail!<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->loggers=json,html<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->;alerters=email,email_escalate<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->alerters=telegram<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->&hellip;<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->[telegram]<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->type=telegram<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->token=123fdfdf-fdaf:fadf<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->chat_id=-1234<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 
 	<hr/>
 	
 	
-<<<<<<< HEAD
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/cloud/">cloud</a>, <a href="https://blog.indonesiadot.com/tags/gcp/">gcp</a>, <a href="https://blog.indonesiadot.com/tags/vps/">vps</a>, <a href="https://blog.indonesiadot.com/tags/free/">free</a>, <a href="https://blog.indonesiadot.com/tags/gratis/">gratis</a>
-=======
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 	 <hr/>
     </div>
   
     <div class="post">
-<<<<<<< HEAD
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/14/disable-/-ignore-user-process-at-csf-firewall/">disable / ignore user process at csf firewall</a></h1>
         <span class="post-date">Aug 14, 2019</span>
 	<p><br /><a href="https://www.google.com/search?q=csf+ignore+user">https://www.google.com/search?q=csf+ignore+user</a><br /><br /><a href="http://g33kinfo.com/info/archives/3933">http://g33kinfo.com/info/archives/3933</a><br /><br /><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">From&nbsp;<a href="http://forum.configserver.com/viewtopic.php?t=2059" style="background-color: transparent; box-sizing: inherit; color: #f5876e; text-decoration-line: none;" target="_blank">configserver.com</a></div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;"><strong style="box-sizing: inherit;">Process Tracking</strong></div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">This option enables tracking of user and nobody processes and examines them for suspicious executables or open network ports. Its purpose is to identify potential exploit processes that are running on the server, even if they are obfuscated to appear as system services. If a suspicious process is found an alert email is sent with relevant information. It is then the responsibility of the recipient to investigate the process further as the script takes no further action. Processes (PIDs) are only reported once unless lfd is restarted.</div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">There is an ignore file /etc/csf/csf.pignore which can be used to whitelist either usernames or full paths to binaries. Care should be taken with ignoring users or files so that you don’t force false-negatives.</div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">You must use the following format:</div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px;"> <li style="box-sizing: inherit;">exe:/full/path/to/file</li><li style="box-sizing: inherit;">user:username</li><li style="box-sizing: inherit;">cmd:command line</li></div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;"><span id="more-3933" style="box-sizing: inherit;"></span></div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">The command line as reported in /proc has the trailing null character removed and all other occurrences replaced with a space. So, the line you specify in the file should have space separators for the command line arguments, not null characters. It is strongly recommended that you use command line ignores very carefully as any process can change what is reported to the OS. Don’t list the paths to perl or php as this will prevent detection of suspicious web scripts.</div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;"><strong style="box-sizing: inherit;">Process Tracking and csf.pignore</strong></div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">1. If you’re seeing spamd being reported after the latest update and want to ignore it, the following can be added to /etc/csf/csf.pignore (ensure that you ONLY use linux linefeeds, not WIN or MAC ones when editing Linux files):<br style="box-sizing: inherit;" /><code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: inherit; color: #c7254e; font-family: Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 1em; padding: 2px 4px;"><br style="box-sizing: inherit;" />cmd:spamd child</code><br style="box-sizing: inherit;" />Then restart lfd.</div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">2. If you’re seeing awstats.pl being reported after the latest update and want to ignore it, the following can be added to /etc/csf/csf.pignore:<br style="box-sizing: inherit;" /><code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: inherit; color: #c7254e; font-family: Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 1em; padding: 2px 4px;"><br style="box-sizing: inherit;" />pcmd:.<em>/usr/local/cpanel/3rdparty/bin/awstats.pl.</em><br style="box-sizing: inherit;" />pcmd:.<em>/usr/local/cpanel/base/awstats.pl.</em></code><br style="box-sizing: inherit;" />Then restart lfd.</div></p>
-=======
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/11/ubuntu-dns-local-cache-for-faster-dns-resolver/">Ubuntu dns local cache for faster dns resolver</a></h1>
-        <span class="post-date">Aug 11, 2019</span>
-	<p>googling: https://www.google.com/search?q=ubuntu+dns+local+cache<!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://superuser.com/questions/1291450/how-can-i-run-a-local-caching-dns-resolver-on-ubuntu-14-04%3Cbr">https://superuser.com/questions/1291450/how-can-i-run-a-local-caching-dns-resolver-on-ubuntu-14-04&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->The easiest way is probably nscd.<!-- raw HTML omitted --><!-- raw HTML omitted -->Install nscd, using the default config.<!-- raw HTML omitted --><!-- raw HTML omitted -->Update /etc/nsswitch.conf and add <!-- raw HTML omitted -->cache<!-- raw HTML omitted --> before <!-- raw HTML omitted -->dns<!-- raw HTML omitted --> to the hosts line. <!-- raw HTML omitted -->(Edit: this part is not applicable to glibc as used in most linux distributions but is needed on fbsd)<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->hosts: files cache dns<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->then update /etc/resolv.conf at the beginning of the nameserver use 127.0.0.1<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->nameserver 127.0.0.1<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
-
-	<hr/>
-	
-	
-	 <hr/>
-    </div>
-  
-    <div class="post">
-<<<<<<< HEAD
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/12/simplemonitor-with-telegram-alert/">simplemonitor with telegram alert</a></h1>
-        <span class="post-date">Aug 12, 2019</span>
-	<p><a href="https://jamesoff.github.io/simplemonitor/alerting.html">https://jamesoff.github.io/simplemonitor/alerting.html</a><br /><br /><h2 id="telegram-alerters" style="background-color: #151515; color: #b5e853; font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace; font-weight: normal; letter-spacing: -0.03em; margin: 0px 0px 20px; text-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px, rgba(181, 232, 83, 0.1) 0px 0px 5px, rgba(181, 232, 83, 0.1) 0px 0px 10px;">telegram alerters</h2><div style="background-color: #151515; color: #eaeaea; font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;">Send alerts to a Telegram chat.</div><table style="background-color: #151515; color: #eaeaea; font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace; margin: 0px 0px 20px; width: 900px;"><thead><tr><th style="border-bottom: 1px dashed rgb(181, 232, 83); padding: 5px 10px; text-align: left;">setting</th><th style="border-bottom: 1px dashed rgb(181, 232, 83); padding: 5px 10px; text-align: left;">description</th><th style="border-bottom: 1px dashed rgb(181, 232, 83); padding: 5px 10px; text-align: left;">required</th><th style="border-bottom: 1px dashed rgb(181, 232, 83); padding: 5px 10px; text-align: left;">default</th></tr></thead><tbody><tr><td style="background-color: rgba(30, 30, 30, 0.9); padding: 5px 10px; vertical-align: top;">token</td><td style="background-color: rgba(30, 30, 30, 0.9); padding: 5px 10px; vertical-align: top;">The token to access telegram</td><td style="background-color: rgba(30, 30, 30, 0.9); padding: 5px 10px; vertical-align: top;">yes</td><td style="background-color: rgba(30, 30, 30, 0.9); padding: 5px 10px; vertical-align: top;">&nbsp;</td></tr><tr><td style="background-color: rgba(30, 30, 30, 0.9); padding: 5px 10px; vertical-align: top;">chat_id</td><td style="background-color: rgba(30, 30, 30, 0.9); padding: 5px 10px; vertical-align: top;">The chat to send to</td><td style="background-color: rgba(30, 30, 30, 0.9); padding: 5px 10px; vertical-align: top;">yes</td></tr></tbody></table><a href="https://www.google.com/search?q=telegram+token">https://www.google.com/search?q=telegram+token</a><br /><br /><a href="https://tutorials.botsfloor.com/creating-a-bot-using-the-telegram-bot-api-5d3caed3266d">https://tutorials.botsfloor.com/creating-a-bot-using-the-telegram-bot-api-5d3caed3266d</a><br /><br /><a href="https://www.google.com/search?q=chat_id+telegram">https://www.google.com/search?q=chat_id+telegram</a><br /><br /><a href="https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id">https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id</a><br /><br /><div style="background-color: white; border: 0px; box-sizing: inherit; clear: both; color: #242729; font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 15px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; padding: 0px; vertical-align: baseline;">In order to get the group chat id, do as follows:</div><ol style="background-color: white; border: 0px; box-sizing: inherit; color: #242729; font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 15px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; list-style-image: initial; list-style-position: initial; margin: 0px 0px 1em 30px; padding: 0px; vertical-align: baseline;"><li style="border: 0px; box-sizing: inherit; font-family: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px 0px 0.5em; padding: 0px; vertical-align: baseline; word-wrap: break-word;"><div style="border: 0px; box-sizing: inherit; clear: both; font-family: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; padding: 0px; vertical-align: baseline;">Add the Telegram BOT to the group.</div></li><li style="border: 0px; box-sizing: inherit; font-family: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px 0px 0.5em; padding: 0px; vertical-align: baseline; word-wrap: break-word;"><div style="border: 0px; box-sizing: inherit; clear: both; font-family: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin-bottom: 1em; padding: 0px; vertical-align: baseline;">Get the list of updates for your BOT:</div><pre style="background-color: #eff0f1; border-radius: 3px; border: 0px; box-sizing: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-size: 13px; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin-bottom: 1em; margin-top: 0.5em; max-height: 600px; overflow: auto; padding: 12px 8px; vertical-align: baseline; width: auto; word-wrap: normal;"><code style="border: 0px; box-sizing: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline; white-space: inherit;"><a href="https://api.telegram.org/bot">https://api.telegram.org/bot</a><yourbottoken>/getUpdates<br /></yourbottoken></code></pre><div style="border: 0px; box-sizing: inherit; clear: both; font-family: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; padding: 0px; vertical-align: baseline;">Ex:</div><pre style="background-color: #eff0f1; border-radius: 3px; border: 0px; box-sizing: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-size: 13px; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin-bottom: 1em; margin-top: 0.5em; max-height: 600px; overflow: auto; padding: 12px 8px; vertical-align: baseline; width: auto; word-wrap: normal;"><code style="border: 0px; box-sizing: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline; white-space: inherit;"><a href="https://api.telegram.org/bot123456789:jbd78sadvbdy63d37gda37bd8/getUpdates">https://api.telegram.org/bot123456789:jbd78sadvbdy63d37gda37bd8/getUpdates</a><br /></code></pre></li><li style="border: 0px; box-sizing: inherit; font-family: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline; word-wrap: break-word;"><div style="border: 0px; box-sizing: inherit; clear: both; font-family: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; padding: 0px; vertical-align: baseline;">Look for the &ldquo;chat&rdquo; object:</div></li></ol><blockquote style="background-color: cornsilk; border-bottom-color: initial; border-bottom-style: initial; border-image: initial; border-left-color: rgb(255, 235, 142); border-left-style: solid; border-right-color: initial; border-right-style: initial; border-top-color: initial; border-top-style: initial; border-width: 0px 0px 0px 2px; box-sizing: inherit; color: #242729; font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 15px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin: 0px 0px 10px; padding: 10px; quotes: none; vertical-align: baseline;"><div style="border: 0px; box-sizing: inherit; clear: both; font-family: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; padding: 0px; vertical-align: baseline;">{&ldquo;update_id&rdquo;:8393,&ldquo;message&rdquo;:{&ldquo;message_id&rdquo;:3,&ldquo;from&rdquo;:{&ldquo;id&rdquo;:7474,&ldquo;first_name&rdquo;:&ldquo;AAA&rdquo;},&ldquo;chat&rdquo;:{&ldquo;id&rdquo;:,&ldquo;title&rdquo;:&ldquo;&rdquo;},&ldquo;date&rdquo;:25497,&ldquo;new_chat_participant&rdquo;:{&ldquo;id&rdquo;:71,&ldquo;first_name&rdquo;:&ldquo;NAME&rdquo;,&ldquo;username&rdquo;:&ldquo;YOUR_BOT_NAME&rdquo;}}}</div></blockquote><div style="background-color: white; border: 0px; box-sizing: inherit; clear: both; color: #242729; font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 15px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; padding: 0px; vertical-align: baseline;">This is a sample of the response when you add your BOT into a group.</div><ol start="4" style="background-color: white; border: 0px; box-sizing: inherit; color: #242729; font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 15px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; list-style-image: initial; list-style-position: initial; margin: 0px 0px 1em 30px; padding: 0px; vertical-align: baseline;"><li style="border: 0px; box-sizing: inherit; font-family: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline; word-wrap: break-word;">Use the &ldquo;id&rdquo; of the &ldquo;chat&rdquo; object to send your messages.</li></ol><div><span style="color: #242729; font-family: Arial, Helvetica Neue, Helvetica, sans-serif;"><span style="font-size: 15px;">note:</span></span></div><div><span style="color: #242729; font-family: Arial, Helvetica Neue, Helvetica, sans-serif;"><span style="font-size: 15px;">setelah dapat token dan chat_id, masukan ke monitor.ini, contohnya:</span></span></div><div><span style="color: #242729; font-family: Arial, Helvetica Neue, Helvetica, sans-serif;"><span style="font-size: 15px;"><br /></span></span></div><div><span style="color: #242729; font-family: Arial, Helvetica Neue, Helvetica, sans-serif;"><div><span style="font-size: 15px;">[reporting]</span></div><div><span style="font-size: 15px;">; be sure to leave the json logger on, otherwise Docker health check will fail!</span></div><div><span style="font-size: 15px;">loggers=json,html</span></div><div><span style="font-size: 15px;">;alerters=email,email_escalate</span></div><div><span style="font-size: 15px;">alerters=telegram</span></div><div style="font-size: 15px;"><br /></div><div style="font-size: 15px;">&hellip;</div></span></div><div><span style="color: #242729; font-family: Arial, Helvetica Neue, Helvetica, sans-serif;"><span style="font-size: 15px;"><br /></span></span></div><div><span style="color: #242729; font-family: Arial, Helvetica Neue, Helvetica, sans-serif;"><div><span style="font-size: 15px;">[telegram]</span></div><div><span style="font-size: 15px;">type=telegram</span></div><div><span style="font-size: 15px;">token=123fdfdf-fdaf:fadf</span></div><div><span style="font-size: 15px;">chat_id=-1234</span></div><div style="font-size: 15px;"><br /></div></span></div><br /></p>
-=======
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/11/nginx-tips-n-trick-499-code-on-nginx-access-logs/">nginx tips n trick - 499 code on nginx access logs</a></h1>
-        <span class="post-date">Aug 11, 2019</span>
-	<p>googling: <a href="https://www.google.com/search?q=499+http+code%3Cbr">https://www.google.com/search?q=499+http+code&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="https://stackoverflow.com/questions/12973304/nginx-499-error-codes%3Cbr">https://stackoverflow.com/questions/12973304/nginx-499-error-codes&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->In my case I got 499 when the client's API closed the connection before it gets any response. Literally sent a POST and immediately close the connection. This is resolved by option:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->proxy_ignore_client_abort on<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->I dont understand how does this help<!-- raw HTML omitted --> – <!-- raw HTML omitted -->Vladimir Starkov<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->Jul 2 at 7:45<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Maybe it's not your case? The client sends the data and is not interested in what will happen to them and what will be the answer. But my application should process the data. Without this option, the data simply does not have time to reach my application.<!-- raw HTML omitted --> – <!-- raw HTML omitted -->DerSkythe<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->Jul 2 at 11:34<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Thank you. Exact symptoms and perfect fix.<!-- raw HTML omitted --> – <!-- raw HTML omitted -->TTimo<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->Jul 23 at 16:29<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 
 	<hr/>
 	

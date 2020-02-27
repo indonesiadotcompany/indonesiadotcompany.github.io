@@ -581,7 +581,6 @@
       
     
       
-<<<<<<< HEAD
     
       
     
@@ -594,8 +593,18 @@
       
     
       
-=======
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -625,11 +634,17 @@
 <div class="post">
   <h1 class="post-title">Belajar Ansible Tower</h1>
   <span class="post-date">Oct 10, 2019</span>
-  <h2 id="install-ansible-tower">Install Ansible Tower</h2>
+  
+
+<h2 id="install-ansible-tower">Install Ansible Tower</h2>
+
 <p>Persyaratan:</p>
+
 <p>Hardware: RAM minimal 3,75 GB
 OS: Centos 7</p>
+
 <p>Langkah yang dilakukan</p>
+
 <pre><code>yum install -y ansible
 wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz
 tar -xzvf ansible-tower-setup-latest.tar.gz
@@ -637,12 +652,17 @@ cd ansible-tower-setup-3.1.5/
 (edit inventory file, isi bagian yang dibutuhkan terutama password)
 (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram)
 ./setup.sh
-</code></pre><h2 id="configure-ansible-tower-after-installation">Configure Ansible Tower after installation</h2>
+</code></pre>
+
+<h2 id="configure-ansible-tower-after-installation">Configure Ansible Tower after installation</h2>
+
 <p>Akses Ansible tower Web UI dari</p>
+
 <pre><code>https://&lt;Ansible Tower IP or Hostname&gt;
-</code></pre><p>Dapatkan lisensi dari <a href="https://www.ansible.com/license">https://www.ansible.com/license</a>
+</code></pre>
+
+<p>Dapatkan lisensi dari <a href="https://www.ansible.com/license">https://www.ansible.com/license</a>
 lalu masukkan license tersebut ke halaman awal setelah login</p>
-<<<<<<< HEAD
 
 <h2 id="untuk-centos-7">Untuk centos 7</h2>
 
@@ -660,16 +680,6 @@ systemctl restart firewalld
 
 <h2 id="ansible-tower-license">Ansible tower license</h2>
 
-=======
-<h2 id="untuk-centos-7">Untuk centos 7</h2>
-<p>seting selinux state ke permissive</p>
-<pre><code>SELINUX=permissive
-</code></pre><p>tambahkan firewall untuk https</p>
-<pre><code>systemctl enable firewalld
-firewall-cmd --add-service=http --permanent;firewall-cmd --add-service=https --permanent
-systemctl restart firewalld
-</code></pre><h2 id="ansible-tower-license">Ansible tower license</h2>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 <pre><code>{
     &quot;company_name&quot;: &quot;widyamedia&quot;,
     &quot;contact_email&quot;: &quot;widyamedia@gmail.com&quot;,
@@ -681,14 +691,10 @@ systemctl restart firewalld
     &quot;license_type&quot;: &quot;basic&quot;,
     &quot;subscription_name&quot;: &quot;Red Hat Ansible Tower, Self-Support (10 Managed Nodes)&quot;
 }
-<<<<<<< HEAD
 </code></pre>
 
 <p>Referensi:</p>
 
-=======
-</code></pre><p>Referensi:</p>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 <ul>
 <li><a href="https://www.ansible.com/products/tower/trial">https://www.ansible.com/products/tower/trial</a></li>
 <li><a href="https://docs.ansible.com/ansible-tower/">https://docs.ansible.com/ansible-tower/</a></li>

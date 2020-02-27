@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -7,27 +7,57 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/2020/02/24/analisa-virus-dengan-virustotal/</loc>
-    <lastmod>2020-02-24T22:17:54+07:00</lastmod>
+    <loc>https://blog.indonesiadot.com/tags/access-point/</loc>
+    <lastmod>2020-02-25T08:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2020-02-24T22:17:54+07:00</lastmod>
+    <lastmod>2020-02-25T08:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2020-02-24T22:17:54+07:00</lastmod>
+    <lastmod>2020-02-25T08:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2020-02-24T22:17:54+07:00</lastmod>
+    <lastmod>2020-02-25T08:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2020-02-25T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ubiquiti/</loc>
+    <lastmod>2020-02-25T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/02/25/ubiquiti-unifi-on-linux-ubuntu/</loc>
+    <lastmod>2020-02-25T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ubiquiti-unifi/</loc>
+    <lastmod>2020-02-25T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/unifi/</loc>
+    <lastmod>2020-02-25T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/wireless/</loc>
+    <lastmod>2020-02-25T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/02/24/analisa-virus-dengan-virustotal/</loc>
     <lastmod>2020-02-24T22:17:54+07:00</lastmod>
   </url>
   
@@ -232,7 +262,6 @@
   </url>
   
   <url>
-<<<<<<< HEAD
     <loc>https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/</loc>
     <lastmod>2020-01-08T08:17:54+07:00</lastmod>
   </url>
@@ -263,8 +292,6 @@
   </url>
   
   <url>
-=======
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
     <loc>https://blog.indonesiadot.com/tags/kvm/</loc>
     <lastmod>2019-12-22T08:17:54+07:00</lastmod>
   </url>

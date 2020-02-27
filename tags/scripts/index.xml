@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>scripts on Blog Indonesiadot.Com</title>
@@ -17,7 +17,10 @@
       <pubDate>Sun, 04 Mar 2018 21:22:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/03/04/ssl-expiry-check/</guid>
-      <description>https://www.google.co.id/search?q=ssl+expiry+check&amp;lt;br /&amp;gt;https://github.com/Matty9191/ssl-cert-checkhttps://prefetch.net/articles/checkcertificate.html&amp;lt;br /&amp;gt;ssl-cert-check -s mail.prefetch.net -p 443</description>
+      <description>https://www.google.co.id/search?q=ssl+expiry+check
+https://github.com/Matty9191/ssl-cert-check
+https://prefetch.net/articles/checkcertificate.html
+ssl-cert-check -s mail.prefetch.net -p 443</description>
     </item>
     
     <item>

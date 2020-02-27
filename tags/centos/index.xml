@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>centos on Blog Indonesiadot.Com</title>
@@ -17,20 +17,13 @@
       <pubDate>Mon, 20 Jan 2020 09:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</guid>
-<<<<<<< HEAD
       <description> Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
 adapun command nya sebelum bisa diakses yaitu:
 chcon -Rv --type=httpd_sys_rw_content_t /webserver  Referensi:
-=======
-      <description>Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
-adapun command nya sebelum bisa diakses yaitu:
-chcon -Rv --type=httpd_sys_rw_content_t /webserver Referensi:
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
  https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/  </description>
     </item>
     
     <item>
-<<<<<<< HEAD
       <title>Centos 7 Resize Partition</title>
       <link>https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/</link>
       <pubDate>Wed, 08 Jan 2020 08:17:54 +0700</pubDate>
@@ -57,14 +50,12 @@ systemctl restart sshd  Referensi:</description>
     </item>
     
     <item>
-=======
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
       <title>Centos 7 Firewalld masquerade</title>
       <link>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/</link>
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/</guid>
-      <description>Firewalld masquerade firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public Referensi:
+      <description> Firewalld masquerade firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public  Referensi:
  https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/  </description>
     </item>
     

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on Blog Indonesiadot.Com</title>
@@ -17,7 +17,26 @@
       <pubDate>Sun, 11 Aug 2019 08:42:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/08/11/simple-alert-monitoring-using-simplemonitor/</guid>
-      <description>googling: https://www.google.com/search?q=simple+alert+monitoringhttps://jamesoff.github.io/simplemonitor/&amp;lt;br /&amp;gt;googling: https://www.google.com/search?q=simplemonitor+dockerhttps://hub.docker.com/r/braindoctor/simplemonitor-docker/&amp;lt;br /&amp;gt;mkdir -p /docker/simplemonitor &amp;amp;&amp;amp; cd /docker/simplemonitorcat &amp;gt; docker-compose.yml &amp;lt;version: &amp;lsquo;3.2&#39;services:simplemonitor:restart: alwaysimage: braindoctor/simplemonitor-docker:latestcontainer_name: simplemonitorhostname: mail-124.indonesiadot.comvolumes:- ${PWD}/config:/etc/simplemonitorports:- &amp;ldquo;8080:8080&amp;quot;EOFdocker-compose up -dref:https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files&amp;lt;/div&amp;gt;</description>
+      <description>googling:&amp;nbsp;https://www.google.com/search?q=simple+alert+monitoring
+https://jamesoff.github.io/simplemonitor/
+googling:&amp;nbsp;https://www.google.com/search?q=simplemonitor+docker
+https://hub.docker.com/r/braindoctor/simplemonitor-docker/
+mkdir -p /docker/simplemonitor &amp;amp;&amp;amp; cd /docker/simplemonitor
+cat &amp;gt; docker-compose.yml &amp;lt;version: &amp;lsquo;3.2&amp;rsquo;
+services:
+&amp;nbsp; simplemonitor:
+&amp;nbsp; &amp;nbsp; restart: always
+&amp;nbsp; &amp;nbsp; image: braindoctor/simplemonitor-docker:latest
+&amp;nbsp; &amp;nbsp; container_name: simplemonitor
+&amp;nbsp; &amp;nbsp; hostname: mail-124.indonesiadot.com
+&amp;nbsp; &amp;nbsp; volumes:
+&amp;nbsp; &amp;nbsp; &amp;nbsp; - ${PWD}/config:/etc/simplemonitor
+&amp;nbsp; &amp;nbsp; ports:
+&amp;nbsp; &amp;nbsp; &amp;nbsp; - &amp;ldquo;8080:8080&amp;rdquo;
+
+EOFdocker-compose up -d
+ref:
+https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files</description>
     </item>
     
     <item>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ubiquiti-unifi on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/ubiquiti-unifi/</link>
+    <description>Recent content in ubiquiti-unifi on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Feb 2020 08:17:54 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/ubiquiti-unifi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ubiquiti Unifi on Linux Ubuntu</title>
+      <link>https://blog.indonesiadot.com/2020/02/25/ubiquiti-unifi-on-linux-ubuntu/</link>
+      <pubDate>Tue, 25 Feb 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/02/25/ubiquiti-unifi-on-linux-ubuntu/</guid>
+      <description> Ubiquiti Unifi on Linux Ubuntu apt-get update; apt-get install ca-certificates wget -y wget https://get.glennr.nl/unifi/install/unifi-5.12.35.sh bash unifi-5.12.35.sh  access your unifi controller at https://ip.of.your.server:8443
+Referensi:
+ https://community.ui.com/questions/UniFi-Installation-Scripts-or-UniFi-Easy-Update-Script-or-UniFi-Lets-Encrypt-or-Ubuntu-16-04-18-04-/ccbc7530-dd61-40a7-82ec-22b17f027776 https://github.com/widcampur/ubiquiti-unifi-controller-install  </description>
+    </item>
+    
+  </channel>
+</rss>

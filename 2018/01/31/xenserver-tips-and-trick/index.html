@@ -581,7 +581,6 @@
       
     
       
-<<<<<<< HEAD
     
       
     
@@ -594,8 +593,18 @@
       
     
       
-=======
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -625,7 +634,7 @@
 <div class="post">
   <h1 class="post-title">Xenserver tips and trick</h1>
   <span class="post-date">Jan 31, 2018</span>
-  <p><!-- raw HTML omitted -->xenserver resize memory command<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Increase RAM for XenServer VM's through Command Line Interface.<!-- raw HTML omitted --><!-- raw HTML omitted -->1.If the RAM editing option is graded out through XenCenter.<!-- raw HTML omitted -->Solution<!-- raw HTML omitted -->1.Take a putty/ssh connection to pool master<!-- raw HTML omitted --><!-- raw HTML omitted -->2.Power off the VM.<!-- raw HTML omitted --><!-- raw HTML omitted -->Execute the Below command to configure the new RAM:<!-- raw HTML omitted --><!-- raw HTML omitted -->#xe vm-memory-limits-set    uuid=<!-- raw HTML omitted -->   static-min=<!-- raw HTML omitted -->GiB/MiB  dynamic-min=<!-- raw HTML omitted -->GiB/MiB  dynamic-max=<!-- raw HTML omitted -->GiB/MiB     static-max=<!-- raw HTML omitted -->GiB/MiB <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Example :<!-- raw HTML omitted -->#xe vm-memory-limits-set    uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f      static-min=64GiB   dynamic-min=64GiB   dynamic-max=64GiB    static-max=64GiB<!-- raw HTML omitted --><!-- raw HTML omitted -->3.Start the VM.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+  <p><b>xenserver resize memory command</b><br /><br />Increase RAM for XenServer VM&rsquo;s through Command Line Interface.<br /><br />1.If the RAM editing option is graded out through XenCenter.<br />Solution<br />1.Take a putty/ssh connection to pool master<br /><br />2.Power off the VM.<br /><br />Execute the Below command to configure the new RAM:<br /><br />#xe vm-memory-limits-set &nbsp; &nbsp;uuid=<uuid of="" the="" valid="" vm=""> &nbsp; static-min=<nn>GiB/MiB &nbsp;dynamic-min=<nn>GiB/MiB &nbsp;dynamic-max=<nn>GiB/MiB &nbsp; &nbsp; static-max=<nn>GiB/MiB&nbsp;</nn></nn></nn></nn></uuid><br /><br />Example :<br />#xe vm-memory-limits-set &nbsp; &nbsp;uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f &nbsp; &nbsp; &nbsp;static-min=64GiB &nbsp; dynamic-min=64GiB &nbsp; dynamic-max=64GiB &nbsp; &nbsp;static-max=64GiB<br /><br />3.Start the VM.<br /><div><br /></div></p>
 
 </div>
 

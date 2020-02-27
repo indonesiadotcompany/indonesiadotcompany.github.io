@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-=======
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gitlab on Blog Indonesiadot.Com</title>
@@ -21,11 +17,7 @@
       <pubDate>Tue, 14 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</guid>
-<<<<<<< HEAD
       <description> Instalasi Gitlab di Ubuntu 16.04 Widya Gitlab  https://widgitgog.birau.com/dashboard/projects  Referensi:
-=======
-      <description>Instalasi Gitlab di Ubuntu 16.04 Widya Gitlab  https://widgitgog.birau.com/dashboard/projects  Referensi:
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
  https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04  </description>
     </item>
     

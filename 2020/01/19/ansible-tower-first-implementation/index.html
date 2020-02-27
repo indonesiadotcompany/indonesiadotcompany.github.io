@@ -581,7 +581,6 @@
       
     
       
-<<<<<<< HEAD
     
       
     
@@ -594,8 +593,18 @@
       
     
       
-=======
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -625,14 +634,10 @@
 <div class="post">
   <h1 class="post-title">Ansible Tower first Implementation</h1>
   <span class="post-date">Jan 19, 2020</span>
-<<<<<<< HEAD
   
 
 <h2 id="ansible-tower-first-implementation">Ansible Tower first Implementation</h2>
 
-=======
-  <h2 id="ansible-tower-first-implementation">Ansible Tower first Implementation</h2>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 <ul>
 <li>Install ansible tower</li>
 <li>masukan license</li>
@@ -640,7 +645,6 @@
 <li>tambahkan <strong>access - users</strong></li>
 <li>tambahkan <strong>access - teams</strong></li>
 <li>tambahkan <strong>resources - inventory</strong></li>
-<<<<<<< HEAD
 
 <li><p>siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)</p>
 
@@ -671,34 +675,11 @@ cp -r test /var/lib/awx/projects/
 
 <li><p>buat direktori report</p>
 
-=======
-<li>siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)</li>
-</ul>
-<pre><code>chmod g+s /var/lib/awx/projects
-cp -r test /var/lib/awx/projects/
-</code></pre><ul>
-<li>tambahkan <strong>resources - projects</strong></li>
-<li>buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine</li>
-<li>buat host client / node yang mau di manage di /etc/hosts</li>
-<li>tambahkan <strong>resources - credentials</strong></li>
-<li>tambahkan <strong>resources - templates</strong></li>
-<li>test launch jobs based on template yg baru dibuat</li>
-</ul>
-<h2 id="ansible-tower--openscap">Ansible tower + openscap</h2>
-<ul>
-<li>install scap-workbench</li>
-</ul>
-<pre><code>yum install scap-workbench xauth -y
-</code></pre><ul>
-<li>buat direktori report</li>
-</ul>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 <pre><code>mkdir /report                                                                                                                                                                                               
 chgrp awx /report                                                                                                                                                                                           
 chmod g+s /report/
 chcon -Rv --type=httpd_sys_rw_content_t /report/
 ln -s /report /var/lib/awx/public/
-<<<<<<< HEAD
 </code></pre></li>
 
 <li><p>tambahkan direktori report di nginx</p>
@@ -722,25 +703,6 @@ scap-workbench
 
 <p>Referensi:</p>
 
-=======
-</code></pre><ul>
-<li>tambahkan direktori report di nginx</li>
-</ul>
-<pre><code>        location /report {
-                alias /var/lib/awx/public/report;
-                autoindex on;
-        }
-</code></pre><ul>
-<li>akses scap-workbench dari laptop</li>
-</ul>
-<pre><code>ssh -X -C tower1
-scap-workbench
-</code></pre><ul>
-<li>jalankan <strong>Scan</strong> Remote Machine (over SSH) ke ansible@client1 (jika muncul popup, pilih centos7)</li>
-<li>Save generate result html ke /report (tambahkan pembeda semisal datetime untuk membedakan tiap file report)</li>
-</ul>
-<p>Referensi:</p>
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>

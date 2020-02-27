@@ -5,11 +5,38 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2020</rights>
-    <updated>2020-02-24 22:17:54 &#43;0700 WIB</updated>
+    <updated>2020-02-25 08:17:54 &#43;0700 WIB</updated>
 
     
       
-<<<<<<< HEAD
+    
+      
+        <item>
+          <title>Ubiquiti Unifi on Linux Ubuntu</title>
+          <link>https://blog.indonesiadot.com/2020/02/25/ubiquiti-unifi-on-linux-ubuntu/</link>
+          <pubDate>Tue, 25 Feb 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/02/25/ubiquiti-unifi-on-linux-ubuntu/</guid>
+          <description>
+
+&lt;h2 id=&#34;ubiquiti-unifi-on-linux-ubuntu&#34;&gt;Ubiquiti Unifi on Linux Ubuntu&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-get update; apt-get install ca-certificates wget -y
+wget https://get.glennr.nl/unifi/install/unifi-5.12.35.sh
+bash unifi-5.12.35.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;access your unifi controller at &lt;a href=&#34;https://ip.of.your.server:8443&#34;&gt;https://ip.of.your.server:8443&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://community.ui.com/questions/UniFi-Installation-Scripts-or-UniFi-Easy-Update-Script-or-UniFi-Lets-Encrypt-or-Ubuntu-16-04-18-04-/ccbc7530-dd61-40a7-82ec-22b17f027776&#34;&gt;https://community.ui.com/questions/UniFi-Installation-Scripts-or-UniFi-Easy-Update-Script-or-UniFi-Lets-Encrypt-or-Ubuntu-16-04-18-04-/ccbc7530-dd61-40a7-82ec-22b17f027776&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/widcampur/ubiquiti-unifi-controller-install&#34;&gt;https://github.com/widcampur/ubiquiti-unifi-controller-install&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
     
       
         <item>
@@ -4039,15 +4066,14 @@ find . -type f -print -delete
       
     
       
-=======
->>>>>>> 76b9dfedd4f807c5ef234d4614aced0b6b7eeca5
         <item>
-          <title>Posts</title>
-          <link>https://blog.indonesiadot.com/post/</link>
-          <pubDate>Mon, 24 Feb 2020 22:17:54 WIB</pubDate>
+          <title>Portfolio</title>
+          <link>https://blog.indonesiadot.com/2006/08/28/portfolio/</link>
+          <pubDate>Mon, 28 Aug 2006 03:14:00 UTC</pubDate>
           <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/post/</guid>
-          <description></description>
+          <guid>https://blog.indonesiadot.com/2006/08/28/portfolio/</guid>
+          <description>&lt;p&gt;&lt;br/&gt;&lt;br /&gt;&lt;a href=&#34;http://indonesiadot.com&#34; alt=&#34;http://indonesiadot.com&#34;&gt;&lt;a href=&#34;http://indonesiadot.com&#34;&gt;http://indonesiadot.com&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
         </item>
       
     

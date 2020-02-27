@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>elasticsearch on Blog Indonesiadot.Com</title>
@@ -17,7 +17,27 @@
       <pubDate>Sun, 04 Mar 2018 20:36:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/03/04/elasticsearch-tips-and-tricks/</guid>
-      <description>elasticsearch list indexeshttps://www.google.co.id/search?q=elasticsearch+list+indexes&amp;lt;br /&amp;gt;https://www.elastic.co/guide/en/elasticsearch/reference/1.4/_list_all_indexes.htmlcurl &amp;lsquo;localhost:9200/_cat/indices?v&#39;elasticsearch installationhttps://github.com/Smile-SA/elasticsuite/wiki/ServerConfig-2.x&amp;lt;br /&amp;gt;https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04elasticsearch configcluster.name: namaclusterbootstrap.memory_lock: true# http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html#es-install-es&amp;lt;br /&amp;gt;index.query.bool.max_clause_count: 102400# this must be set on non public ipnetwork.host: 127.0.0.1http.port: 9200# https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-threadpool.html&amp;lt;br /&amp;gt;processor: 2threadpool.bulk.queue_size: 4000# https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig#configure-elasticsearch&amp;lt;br /&amp;gt;script.inline: onscript.indexed: on</description>
+      <description>elasticsearch list indexes
+https://www.google.co.id/search?q=elasticsearch+list+indexes
+https://www.elastic.co/guide/en/elasticsearch/reference/1.4/_list_all_indexes.html
+curl &amp;lsquo;localhost:9200/_cat/indices?v&amp;rsquo;
+elasticsearch installation
+https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig-2.x
+https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04
+elasticsearch config
+cluster.name: namacluster
+bootstrap.memory_lock: true
+# http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html#es-install-es
+index.query.bool.max_clause_count: 102400
+# this must be set on non public ip
+network.host: 127.0.0.1
+http.port: 9200
+# https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-threadpool.html
+processor: 2
+threadpool.bulk.queue_size: 4000
+# https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig#configure-elasticsearch
+script.inline: on
+script.indexed: on</description>
     </item>
     
   </channel>

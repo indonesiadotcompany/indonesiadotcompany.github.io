@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>todo on Blog Indonesiadot.Com</title>
@@ -17,7 +17,7 @@
       <pubDate>Wed, 31 Jan 2018 20:54:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/31/ansible-awx/</guid>
-      <description>DEPRECATED install latest ansible apt-add-repository ppa:ansible/ansible [ENTER] apt update apt-get install ansible install latest docker apt-add-repository ppa:ansible/ansible [ENTER] apt update apt-get install ansible curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - add-apt-repository \ &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable&amp;quot; apt update apt-get install docker-ce apt install make apt install python-pip pip install docker pip install --upgrade pip apt install git curl -O https://raw.githubusercontent.com/geerlingguy/awx-container/master/docker-compose.yml docker-compose up -d tunggu beberapa saat lalu akses via http, misal http://localhost dengan user admin/password</description>
+      <description>DEPRECATED install latest ansible apt-add-repository ppa:ansible/ansible [ENTER] apt update apt-get install ansible  install latest docker apt-add-repository ppa:ansible/ansible [ENTER] apt update apt-get install ansible curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - add-apt-repository \ &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable&amp;quot; apt update apt-get install docker-ce apt install make apt install python-pip pip install docker pip install --upgrade pip apt install git curl -O https://raw.githubusercontent.com/geerlingguy/awx-container/master/docker-compose.yml docker-compose up -d  tunggu beberapa saat lalu akses via http, misal http://localhost dengan user admin/password</description>
     </item>
     
     <item>
@@ -26,7 +26,13 @@
       <pubDate>Wed, 31 Jan 2018 20:50:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/31/todo-web-page-monitoring-and-alert-when-change/</guid>
-      <description></description>
+      <description>Finally it using ariya phantomjs , combine with bash script and run in cron every 9 minuteshttp://phantomjs.org/screen-capture.html
+http://phantomjs.org/related-projects.html
+https://github.com/superbrothers/capturejs
+https://github.com/hggh/phantomjs-screenshots
+https://github.com/astefanutti/decktape
+https://github.com/sindresorhus/pageres
+http://bhfsteve.blogspot.co.id/2013/03/monitoring-web-page-for-changes-using.html?m=1http://changedetection.com/https://visualping.iohttps://visualping.io/chrome-app (free forever)https://www.npmjs.com/package/page-monitorhttp://cabotapp.com/https://blog.newrelic.com/2013/06/04/simpler-ui-testing-with-casperjs-2/https://ghostinspector.comhttps://dzone.com/articles/automated-regression-testing-made-easy-with-casper </description>
     </item>
     
   </channel>
