@@ -605,6 +605,16 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -634,31 +644,20 @@
 <div class="post">
   <h1 class="post-title">Bash script tips</h1>
   <span class="post-date">Feb 4, 2018</span>
-  
-
-<h2 id="bash-scripting-cheatsheet">Bash scripting cheatsheet</h2>
-
+  <h2 id="bash-scripting-cheatsheet">Bash scripting cheatsheet</h2>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://devhints.io/bash">https://devhints.io/bash</a></li>
 </ul>
-
 <h2 id="bash-or-and">bash or and</h2>
-
 <h3 id="how-to-use-logical-or-amp-and-in-shell-script-with-examples">How to Use Logical OR &amp; AND in Shell Script with Examples</h3>
-
 <p>Logical <strong>OR</strong> &amp; <strong>AND</strong> operations are very useful where multiple conditions are used in our programs (scripts).</p>
-
 <ul>
 <li>OR is used between two or multiple conditions. It returns true if any one of conditions returns as true.</li>
 <li>AND is used between two or multiple conditions. It returns true only if all the conditions returns as true.</li>
 </ul>
-
 <h3 id="using-logical-or">Using Logical OR</h3>
-
 <p>Logical OR in bash script is used with operator -o. Below small shell script will show you to how to use logical OR ( -o ) between two conditions.</p>
-
 <pre><code>#!/bin/bash
 read -p &quot;Enter First Numeric Value: &quot;   first
 read -p &quot;Enter Second Numeric Value: &quot;  second
@@ -669,12 +668,8 @@ then
 else
  echo &quot;Not OK&quot;
 fi
-</code></pre>
-
-<h3 id="using-logical-and">Using Logical AND</h3>
-
+</code></pre><h3 id="using-logical-and">Using Logical AND</h3>
 <p>Logical AND in bash script is used with operator -a. Below shell script will show you to how to use logical AND ( -a ) between two conditions.</p>
-
 <pre><code>#!/bin/bash
 read -p &quot;Enter First Numeric Value: &quot;   first
 read -p &quot;Enter Second Numeric Value: &quot;  second
@@ -684,12 +679,8 @@ then
 else
  echo &quot;Not OK&quot;
 fi
-</code></pre>
-
-<h3 id="using-multiple-logical-or-amp-and">Using Multiple Logical OR &amp; AND</h3>
-
+</code></pre><h3 id="using-multiple-logical-or-amp-and">Using Multiple Logical OR &amp; AND</h3>
 <p>Below example will help you to understand to how to use multiple logical operators in single statement.</p>
-
 <pre><code>#!/bin/bash
 read -p &quot;Enter Your Number:&quot;  i
 if [ ( $i -ge 10  -a  $i -le 20 ) -o ( $i -ge 100  -a  $i -le 200 ) ]
@@ -699,53 +690,35 @@ else
  echo &quot;Not OK&quot;
 fi
 
-</code></pre>
-
-<h2 id="color-output-on-echo">Color output on echo</h2>
-
+</code></pre><h2 id="color-output-on-echo">Color output on echo</h2>
 <p>Ref:</p>
-
 <ul>
 <li><a href="https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux">https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux</a></li>
 </ul>
-
 <h2 id="search-exact-string-using-grep">Search exact string using grep</h2>
-
 <p>Ref:</p>
-
 <ul>
 <li><a href="https://unix.stackexchange.com/questions/206903/match-exact-string-using-grep">https://unix.stackexchange.com/questions/206903/match-exact-string-using-grep</a></li>
 <li><a href="https://stackoverflow.com/questions/11287861/how-to-check-if-a-file-contains-a-specific-string-using-bash">https://stackoverflow.com/questions/11287861/how-to-check-if-a-file-contains-a-specific-string-using-bash</a></li>
 </ul>
-
 <p>Ref:</p>
-
 <ul>
 <li><a href="https://tecadmin.net/use-logical-or-and-in-shell-script/#">https://tecadmin.net/use-logical-or-and-in-shell-script/#</a></li>
 </ul>
-
 <h2 id="insert-variable-to-bash-script-using-source">insert variable to bash script using <strong>source</strong></h2>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://bash.cyberciti.biz/guide/Source_command">https://bash.cyberciti.biz/guide/Source_command</a></li>
 </ul>
-
-<h2 id="pass-arguments-parameters-to-a-bash-script">Pass Arguments / Parameters to a bash script</h2>
-
+<h2 id="pass-arguments--parameters-to-a-bash-script">Pass Arguments / Parameters to a bash script</h2>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="http://linuxcommand.org/lc3_wss0120.php">http://linuxcommand.org/lc3_wss0120.php</a></li>
 <li><a href="https://www.adminschoice.com/bash-positional-parameters">https://www.adminschoice.com/bash-positional-parameters</a></li>
 <li><a href="https://www.lifewire.com/pass-arguments-to-bash-script-2200571">https://www.lifewire.com/pass-arguments-to-bash-script-2200571</a></li>
 </ul>
-
 <h2 id="bash-interactive-menu-and-prompt-user-to-input-something">Bash interactive, menu and prompt user to input something</h2>
-
 <p>Ref:</p>
-
 <ul>
 <li><a href="http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_08_02.html#sect_08_02_02">http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_08_02.html#sect_08_02_02</a></li>
 </ul>

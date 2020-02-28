@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.57.2" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -606,6 +606,16 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -638,9 +648,48 @@
 <div class="post">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/03/04/ssl-expiry-check/">ssl expiry check</a></h1>
+        <span class="post-date">Mar 4, 2018</span>
+	<p><a href="https://www.google.co.id/search?q=ssl+expiry+check%3Cbr">https://www.google.co.id/search?q=ssl+expiry+check&lt;br</a> /&gt;https://github.com/Matty9191/ssl-cert-check<!-- raw HTML omitted --><a href="https://prefetch.net/articles/checkcertificate.html%3Cbr">https://prefetch.net/articles/checkcertificate.html&lt;br</a> /&gt;<!-- raw HTML omitted -->ssl-cert-check -s mail.prefetch.net -p 443<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/ssl/">ssl</a>, <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>, <a href="https://blog.indonesiadot.com/tags/scripts/">scripts</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/03/04/digitalocean-do-cli/">digitalocean DO cli</a></h1>
+        <span class="post-date">Mar 4, 2018</span>
+	<p><!-- raw HTML omitted -->digitalocean snapshot and recreate based on that snapshot (clone like)<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->doctl compute droplet-action snapshot <!-- raw HTML omitted -->DropletID<!-- raw HTML omitted --> &ndash;snapshot-name <!-- raw HTML omitted -->SnapshotName<!-- raw HTML omitted --><!-- raw HTML omitted -->doctl compute droplet-action snapshot 83360000 &ndash;snapshot-name 20180303-birau-snap<!-- raw HTML omitted --><!-- raw HTML omitted -->doctl compute droplet create <!-- raw HTML omitted -->NewDropletName<!-- raw HTML omitted --> &ndash;size 512mb &ndash;image <!-- raw HTML omitted -->SnapshotID<!-- raw HTML omitted --> &ndash;region sgp1 &ndash;ssh-keys <!-- raw HTML omitted -->Ssh:key:hexadecimal<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->doctl compute droplet create birau-server-2 &ndash;size 512mb &ndash;image 32187000 &ndash;region sgp1 &ndash;ssh-keys b0:10:00:d6:8b:00:4f:96:39:1b:89:00:00:00:00:00<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/digitalocean/">digitalocean</a>, <a href="https://blog.indonesiadot.com/tags/cli/">cli</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/03/04/aws-tips-and-tricks/">aws tips and tricks</a></h1>
+        <span class="post-date">Mar 4, 2018</span>
+	<p><!-- raw HTML omitted -->aws clone<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->The easier way is through the web management console:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->go to the instance<!-- raw HTML omitted --><!-- raw HTML omitted -->select the instance and click on instance action<!-- raw HTML omitted --><!-- raw HTML omitted -->create image<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Once you have an image you can launch another cloned instance, data and all. :)<!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/aws/">aws</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/03/04/elasticsearch-tips-and-tricks/">elasticsearch tips and tricks</a></h1>
         <span class="post-date">Mar 4, 2018</span>
-	<p><b>elasticsearch list indexes</b><br /><br /><a href="https://www.google.co.id/search?q=elasticsearch+list+indexes">https://www.google.co.id/search?q=elasticsearch+list+indexes</a><br /><a href="https://www.elastic.co/guide/en/elasticsearch/reference/1.4/_list_all_indexes.html">https://www.elastic.co/guide/en/elasticsearch/reference/1.4/_list_all_indexes.html</a><br /><br />curl &lsquo;localhost:9200/_cat/indices?v&rsquo;<br /><br /><b>elasticsearch installation</b><br /><br /><a href="https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig-2.x">https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig-2.x</a><br /><a href="https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04">https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04</a><br /><br /><b>elasticsearch config</b><br /><br />cluster.name: namacluster<br />bootstrap.memory_lock: true<br /><br /># <a href="http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html#es-install-es">http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html#es-install-es</a><br />index.query.bool.max_clause_count: 102400<br /><br /># this must be set on non public ip<br />network.host: 127.0.0.1<br />http.port: 9200<br /># <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-threadpool.html">https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-threadpool.html</a><br />processor: 2<br />threadpool.bulk.queue_size: 4000<br /><br /># <a href="https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig#configure-elasticsearch">https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig#configure-elasticsearch</a><br />script.inline: on<br />script.indexed: on<br /><div><br /></div></p>
+	<p><!-- raw HTML omitted -->elasticsearch list indexes<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://www.google.co.id/search?q=elasticsearch+list+indexes%3Cbr">https://www.google.co.id/search?q=elasticsearch+list+indexes&lt;br</a> /&gt;https://www.elastic.co/guide/en/elasticsearch/reference/1.4/_list_all_indexes.html<!-- raw HTML omitted --><!-- raw HTML omitted -->curl &lsquo;localhost:9200/_cat/indices?v'<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->elasticsearch installation<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig-2.x%3Cbr">https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig-2.x&lt;br</a> /&gt;https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->elasticsearch config<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->cluster.name: namacluster<!-- raw HTML omitted -->bootstrap.memory_lock: true<!-- raw HTML omitted --><!-- raw HTML omitted --># <a href="http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html#es-install-es%3Cbr">http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html#es-install-es&lt;br</a> /&gt;index.query.bool.max_clause_count: 102400<!-- raw HTML omitted --><!-- raw HTML omitted --># this must be set on non public ip<!-- raw HTML omitted -->network.host: 127.0.0.1<!-- raw HTML omitted -->http.port: 9200<!-- raw HTML omitted --># <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-threadpool.html%3Cbr">https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-threadpool.html&lt;br</a> /&gt;processor: 2<!-- raw HTML omitted -->threadpool.bulk.queue_size: 4000<!-- raw HTML omitted --><!-- raw HTML omitted --># <a href="https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig#configure-elasticsearch%3Cbr">https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig#configure-elasticsearch&lt;br</a> /&gt;script.inline: on<!-- raw HTML omitted -->script.indexed: on<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 
 	<hr/>
 	
@@ -653,10 +702,8 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/03/04/docker-things/">Docker things</a></h1>
         <span class="post-date">Mar 4, 2018</span>
-	<div dir="ltr"><b>Rancher</b></div><div dir="ltr">https://rancher.com/swarm/</div><div dir="ltr"><br /></div><div dir="ltr">https://github.com/MoimHossain/docker-viswarm<br /><br />https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host<br /><br /><pre style="background-color: #eff0f1; border: 0px; box-sizing: inherit; color: #242729; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-size: 13px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;"><code style="border: 0px; box-sizing: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline; white-space: inherit;">docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' containernameorid</code></pre><br /><br /><pre style="background-color: #eff0f1; border: 0px; box-sizing: inherit; color: #242729; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-size: 13px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;"><br /></pre></div>
-
+	<!-- raw HTML omitted -->
 <p>Ref:</p>
-
 <ul>
 <li><a href="https://docs.docker.com/engine/security/certificates/">https://docs.docker.com/engine/security/certificates/</a></li>
 <li><a href="https://docs.docker.com/engine/security/https/">https://docs.docker.com/engine/security/https/</a></li>
@@ -673,7 +720,12 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/03/01/docker-monitoring/">Docker monitoring</a></h1>
         <span class="post-date">Mar 1, 2018</span>
-	<div dir="ltr">http://rancher.com/comparing-monitoring-options-for-docker-deployments/</div><div dir="ltr">https://logz.io/blog/monitoring-dockerized-elk-stack/</div><div dir="ltr"><br /></div><div dir="ltr">must see:</div><div dir="ltr">https://youtu.be/iRlWqoUVdac</div>
+	<p>Ref:</p>
+<ul>
+<li><a href="http://rancher.com/comparing-monitoring-options-for-docker-deployments/">http://rancher.com/comparing-monitoring-options-for-docker-deployments/</a></li>
+<li><a href="https://logz.io/blog/monitoring-dockerized-elk-stack/">https://logz.io/blog/monitoring-dockerized-elk-stack/</a></li>
+<li><a href="https://youtu.be/iRlWqoUVdac">https://youtu.be/iRlWqoUVdac</a></li>
+</ul>
 
 	<hr/>
 	
@@ -686,7 +738,7 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/25/elastic-beats/">Elastic beats</a></h1>
         <span class="post-date">Feb 25, 2018</span>
-	<p dir="ltr">https://www.elastic.co/products/beats<br>https://www.elastic.co/guide/en/beats/libbeat/current/community-beats.html<br></p>
+	<!-- raw HTML omitted -->
 
 	<hr/>
 	
@@ -699,7 +751,7 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/22/invoice-ninja-free-open-source-invoicing-system/">invoice ninja free open source invoicing system</a></h1>
         <span class="post-date">Feb 22, 2018</span>
-	<p><a href="https://www.invoiceninja.org/">https://www.invoiceninja.org/</a><br /><br /><a href="https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/">https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/</a></p>
+	<p><a href="https://www.invoiceninja.org/%3Cbr">https://www.invoiceninja.org/&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/">https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/</a></p>
 
 	<hr/>
 	
@@ -712,70 +764,13 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/22/graphite-grafana-things/">graphite grafana things</a></h1>
         <span class="post-date">Feb 22, 2018</span>
-	<p dir="ltr">https://statusengine.org/tutorials/Graphite-Grafana/</p><p dir="ltr">https://www.unixmen.com/full-monitoring-system-graphite-collectd-statsd-part-1/</p><p dir="ltr"><b>Grafana</b><b> vs kibana</b><br>https://logz.io/blog/grafana-vs-kibana/<br>https://logz.io/blog/monitor-elasticsearch-graphite-grafana/<br>https://logz.io/blog/monitoring-dockerized-elk-stack/</p><p dir="ltr">old tutorial:<br>http://www.linux-admins.net/2012/02/how-to-install-and-use-graphite.html</p>
+	<!-- raw HTML omitted -->
 
 	<hr/>
 	
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/21/all-about-amazon-aws-s3/">All about amazon aws s3</a></h1>
-        <span class="post-date">Feb 21, 2018</span>
-	<p><a href="https://github.com/aws/aws-cli">https://github.com/aws/aws-cli</a><br /><a href="https://github.com/s3tools/s3cmd">https://github.com/s3tools/s3cmd</a><br /><a href="https://serverfault.com/questions/84815/how-can-i-get-the-size-of-an-amazon-s3-bucket">https://serverfault.com/questions/84815/how-can-i-get-the-size-of-an-amazon-s3-bucket</a><br /><br />apt install aws-cli<br />aws &ndash;configure<br />#enter access key, secret key and region<br /><br /><b>list files/folder di bucket s3 (ls s3)</b><br />aws s3 ls s3://namabuckets3nya<br /><br /><b>disk usage s3 (du -sh s3)</b><br />s3cmd du s3://namabuckets3nya<br /><br /><b>aws s3 rsync</b><br /><a href="https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html">https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html</a></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/aws/">aws</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/19/nginx-tips-and-trick/">Nginx tips and trick</a></h1>
-        <span class="post-date">Feb 19, 2018</span>
-	
-
-<h2 id="nginx-location-directory">Nginx location directory</h2>
-
-<pre><code>  location /static/ {
-    alias /web/test.example.com/static/;
-    autoindex on;
-  }
-</code></pre>
-
-<ul>
-<li><a href="https://stackoverflow.com/questions/11570321/configure-nginx-with-multiple-locations-with-different-root-folders-on-subdomain">https://stackoverflow.com/questions/11570321/configure-nginx-with-multiple-locations-with-different-root-folders-on-subdomain</a></li>
-</ul>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.sitepoint.com/brotli-compression-wordpress/">https://www.sitepoint.com/brotli-compression-wordpress/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/tuning/">tuning</a>, <a href="https://blog.indonesiadot.com/tags/web/">web</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/17/munin-nginx/">Munin nginx</a></h1>
-        <span class="post-date">Feb 17, 2018</span>
-	<p dir="ltr">http://guide.munin-monitoring.org/en/stable-2.0/example/webserver/nginx.html</p><p dir="ltr">http://guide.munin-monitoring.org/en/latest/example/webserver/nginx.html</p><p dir="ltr">http://iinclude.in/2017/12/03/how-to-install-the-munin-monitoring-tool-on-ubuntu-16-04-with-nginx/</p><p dir="ltr">https://www.stephenrlang.com/2016/03/how-to-setup-munin-on-ubuntu/</p><p dir="ltr">https://github.com/tjstein/php5-fpm-munin-plugins</p><p dir="ltr">https://serverfault.com/questions/315460/munin-email-notification<br>https://blog-en.openalfa.com/how-to-configure-alerts-in-munin</p><p dir="ltr">https://prefetch.net/blog/index.php/2011/07/13/gathering-statistics-from-your-postfix-mail-logs/<br><br></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
 	 <hr/>
     </div>
   

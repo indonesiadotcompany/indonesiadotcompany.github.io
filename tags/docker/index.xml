@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>docker on Blog Indonesiadot.Com</title>
@@ -6,10 +6,22 @@
     <description>Recent content in docker on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Feb 2020 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 28 Feb 2020 08:07:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker Tips</title>
+      <link>https://blog.indonesiadot.com/2020/02/28/docker-tips/</link>
+      <pubDate>Fri, 28 Feb 2020 08:07:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/02/28/docker-tips/</guid>
+      <description>Docker run example docker run -it alpine /bin/ash Where -i = interactive, -t make tty for the running process, /bin/ash is the command to run.
+docker run &amp;ndash;help
+How to get ip of running docker docker ps docker inspect &amp;lt;containernameorid&amp;gt; docker inspect &amp;lt;containernameorid&amp;gt; | grep &#39;&amp;quot;IPAddress&amp;quot;&#39; | head -n 1 Where head is opossite from tail, man head, man tail
+ https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17.  </description>
+    </item>
     
     <item>
       <title>Ansible Tower tips and trick</title>
@@ -17,7 +29,7 @@
       <pubDate>Thu, 20 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</guid>
-      <description> Ansible Tower tips and trick Change admin password awx-manage changepassword admin  backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
+      <description>Ansible Tower tips and trick Change admin password awx-manage changepassword admin backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
  https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html  </description>
     </item>
     
@@ -27,7 +39,7 @@
       <pubDate>Mon, 20 Jan 2020 07:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</guid>
-      <description> Widya Harbor Container Registry  https://widharbor.birau.com/  Referensi:
+      <description>Widya Harbor Container Registry  https://widharbor.birau.com/  Referensi:
  https://indonesiadot.com  </description>
     </item>
     
@@ -37,7 +49,7 @@
       <pubDate>Wed, 15 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</guid>
-      <description> Setup sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose  Referensi:
+      <description>Setup sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
  https://docs.docker.com/compose/install/  </description>
     </item>
     
@@ -47,7 +59,7 @@
       <pubDate>Mon, 02 Sep 2019 08:17:33 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/</guid>
-      <description>Kubernetes Container runtime with docker # Install Docker CE ## Set up the repository ### Install required packages. yum install yum-utils device-mapper-persistent-data lvm2 ### Add Docker repository. yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo ## Install Docker CE. yum update &amp;amp;&amp;amp; yum install docker-ce-18.06.2.ce ## Create /etc/docker directory. mkdir /etc/docker # Setup daemon. cat &amp;gt; /etc/docker/daemon.json &amp;lt;&amp;lt;EOF { &amp;quot;exec-opts&amp;quot;: [&amp;quot;native.cgroupdriver=systemd&amp;quot;], &amp;quot;log-driver&amp;quot;: &amp;quot;json-file&amp;quot;, &amp;quot;log-opts&amp;quot;: { &amp;quot;max-size&amp;quot;: &amp;quot;100m&amp;quot; }, &amp;quot;storage-driver&amp;quot;: &amp;quot;overlay2&amp;quot;, &amp;quot;storage-opts&amp;quot;: [ &amp;quot;overlay2.</description>
+      <description>Kubernetes Container runtime with docker # Install Docker CE ## Set up the repository ### Install required packages. yum install yum-utils device-mapper-persistent-data lvm2 ### Add Docker repository. yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo ## Install Docker CE. yum update &amp;amp;&amp;amp; yum install docker-ce-18.06.2.ce ## Create /etc/docker directory. mkdir /etc/docker # Setup daemon. cat &amp;gt; /etc/docker/daemon.json &amp;lt;&amp;lt;EOF { &amp;quot;exec-opts&amp;quot;: [&amp;quot;native.cgroupdriver=systemd&amp;quot;], &amp;quot;log-driver&amp;quot;: &amp;quot;json-file&amp;quot;, &amp;quot;log-opts&amp;quot;: { &amp;quot;max-size&amp;quot;: &amp;quot;100m&amp;quot; }, &amp;quot;storage-driver&amp;quot;: &amp;quot;overlay2&amp;quot;, &amp;quot;storage-opts&amp;quot;: [ &amp;quot;overlay2.override_kernel_check=true&amp;quot; ] } EOF mkdir -p /etc/systemd/system/docker.</description>
     </item>
     
     <item>
@@ -56,9 +68,7 @@
       <pubDate>Sun, 11 Aug 2019 08:45:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/08/11/how-to-stop-docker-that-always-restart/</guid>
-      <description>googling: https://www.google.com/search?q=docker+restart+always+stop
-https://stackoverflow.com/questions/39072357/how-to-stop-a-docker-container-which-started-with-restart-always/39072476
-You can&amp;nbsp;update&amp;nbsp;docker container.use&amp;nbsp;sudo docker update &amp;ndash;restart=no &amp;nbsp;to update&amp;nbsp;&amp;ndash;restart&amp;nbsp;flag of the container.Now you can&amp;nbsp;stop&amp;nbsp;the container.</description>
+      <description>googling: https://www.google.com/search?q=docker+restart+always+stop&amp;lt;br /&amp;gt;https://stackoverflow.com/questions/39072357/how-to-stop-a-docker-container-which-started-with-restart-always/39072476&amp;lt;br /&amp;gt;You can updatedocker container.use sudo docker update &amp;ndash;restart=no &amp;lt;container_id&amp;gt;&amp;lt;/container_id&amp;gt;to update &amp;ndash;restartflag of the container.Now you can stopthe container.</description>
     </item>
     
     <item>
@@ -67,26 +77,7 @@ You can&amp;nbsp;update&amp;nbsp;docker container.use&amp;nbsp;sudo docker updat
       <pubDate>Sun, 11 Aug 2019 08:42:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/08/11/simple-alert-monitoring-using-simplemonitor/</guid>
-      <description>googling:&amp;nbsp;https://www.google.com/search?q=simple+alert+monitoring
-https://jamesoff.github.io/simplemonitor/
-googling:&amp;nbsp;https://www.google.com/search?q=simplemonitor+docker
-https://hub.docker.com/r/braindoctor/simplemonitor-docker/
-mkdir -p /docker/simplemonitor &amp;amp;&amp;amp; cd /docker/simplemonitor
-cat &amp;gt; docker-compose.yml &amp;lt;version: &amp;lsquo;3.2&amp;rsquo;
-services:
-&amp;nbsp; simplemonitor:
-&amp;nbsp; &amp;nbsp; restart: always
-&amp;nbsp; &amp;nbsp; image: braindoctor/simplemonitor-docker:latest
-&amp;nbsp; &amp;nbsp; container_name: simplemonitor
-&amp;nbsp; &amp;nbsp; hostname: mail-124.indonesiadot.com
-&amp;nbsp; &amp;nbsp; volumes:
-&amp;nbsp; &amp;nbsp; &amp;nbsp; - ${PWD}/config:/etc/simplemonitor
-&amp;nbsp; &amp;nbsp; ports:
-&amp;nbsp; &amp;nbsp; &amp;nbsp; - &amp;ldquo;8080:8080&amp;rdquo;
-
-EOFdocker-compose up -d
-ref:
-https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files</description>
+      <description>googling: https://www.google.com/search?q=simple+alert+monitoringhttps://jamesoff.github.io/simplemonitor/&amp;lt;br /&amp;gt;googling: https://www.google.com/search?q=simplemonitor+dockerhttps://hub.docker.com/r/braindoctor/simplemonitor-docker/&amp;lt;br /&amp;gt;mkdir -p /docker/simplemonitor &amp;amp;&amp;amp; cd /docker/simplemonitorcat &amp;gt; docker-compose.yml &amp;lt;version: &amp;lsquo;3.2&#39;services:simplemonitor:restart: alwaysimage: braindoctor/simplemonitor-docker:latestcontainer_name: simplemonitorhostname: mail-124.indonesiadot.comvolumes:- ${PWD}/config:/etc/simplemonitorports:- &amp;ldquo;8080:8080&amp;quot;EOFdocker-compose up -dref:https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files&amp;lt;/div&amp;gt;</description>
     </item>
     
     <item>
@@ -95,9 +86,7 @@ https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writin
       <pubDate>Fri, 13 Jul 2018 03:25:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/07/13/prometheus-grafana/</guid>
-      <description>http://www.dimasrio.com/search?q=prometheus
-https://www.youtube.com/watch?v=GZWbTch7AbM
-http://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html</description>
+      <description>http://www.dimasrio.com/search?q=prometheus&amp;lt;br /&amp;gt;https://www.youtube.com/watch?v=GZWbTch7AbMhttp://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html&amp;lt;br /&amp;gt;</description>
     </item>
     
     <item>
@@ -116,10 +105,7 @@ http://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html</descript
       <pubDate>Sun, 04 Mar 2018 11:11:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/03/04/docker-things/</guid>
-      <description>Rancherhttps://rancher.com/swarm/https://github.com/MoimHossain/docker-viswarm
-https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host
-docker inspect -f &#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39; containernameorid
- Ref:
+      <description>Ref:
  https://docs.docker.com/engine/security/certificates/ https://docs.docker.com/engine/security/https/  </description>
     </item>
     
@@ -129,7 +115,8 @@ docker inspect -f &#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&
       <pubDate>Thu, 01 Mar 2018 05:24:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/03/01/docker-monitoring/</guid>
-      <description>http://rancher.com/comparing-monitoring-options-for-docker-deployments/https://logz.io/blog/monitoring-dockerized-elk-stack/must see:https://youtu.be/iRlWqoUVdac </description>
+      <description>Ref:
+ http://rancher.com/comparing-monitoring-options-for-docker-deployments/ https://logz.io/blog/monitoring-dockerized-elk-stack/ https://youtu.be/iRlWqoUVdac  </description>
     </item>
     
   </channel>

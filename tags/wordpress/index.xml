@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>wordpress on Blog Indonesiadot.Com</title>
@@ -17,25 +17,7 @@
       <pubDate>Wed, 30 May 2018 01:14:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/05/30/wordpress-tips-and-trick/</guid>
-      <description>themes
-
-native themes&amp;nbsp;nativewptheme.net
-https://www.cr*ckthemes.com/2018/03/27/native-v1-3-4-powerful-startup-development-tool/
-http://www91.zippyshare.com/v/y7mJuKcb/file.html
-https://www.google.co.id/search?q=aprimo+null
-https://www.null5.top/aprimo-v1-3-mobile-app-landing-wordpress-theme/
-https://www.google.co.id/search?q=upload+max+size+wordpress+.htaccess
-http://www.wpbeginner.com/wp-tutorials/how-to-increase-the-maximum-file-upload-size-in-wordpress/
-cat &amp;gt;&amp;gt; .htaccess
-php_value upload_max_filesize 64Mphp_value post_max_size 64Mphp_value max_execution_time 300php_value max_input_time 300
-https://www.google.co.id/search?q=display+error+htaccess
-https://stackoverflow.com/questions/6127980/enabling-error-display-in-php-via-htaccess-only
-cat &amp;gt;&amp;gt; .htaccess
-php_flag display_startup_errors off
-php_flag display_errors off
-php_flag html_errors off
-php_flag log_errors off
-Thanks</description>
+      <description>themesnative themes nativewptheme.nethttps://www.cr*ckthemes.com/2018/03/27/native-v1-3-4-powerful-startup-development-tool/http://www91.zippyshare.com/v/y7mJuKcb/file.html&amp;lt;/span&amp;gt;&amp;lt;br /&amp;gt;https://www.google.co.id/search?q=aprimo+null&amp;lt;/b&amp;gt;&amp;lt;br /&amp;gt;https://www.null5.top/aprimo-v1-3-mobile-app-landing-wordpress-theme/https://www.google.co.id/search?q=upload+max+size+wordpress+.htaccess&amp;lt;/b&amp;gt;&amp;lt;br /&amp;gt;http://www.wpbeginner.com/wp-tutorials/how-to-increase-the-maximum-file-upload-size-in-wordpress/&amp;lt;br /&amp;gt;cat &amp;gt;&amp;gt; .htaccessphp_value upload_max_filesize 64Mphp_value post_max_size 64Mphp_value max_execution_time 300php_value max_input_time 300https://www.google.co.id/search?q=display+error+htaccess&amp;lt;/b&amp;gt;&amp;lt;br /&amp;gt;https://stackoverflow.com/questions/6127980/enabling-error-display-in-php-via-htaccess-only&amp;lt;br /&amp;gt;cat &amp;gt;&amp;gt; .htaccessphp_flag display_startup_errors offphp_flag display_errors offphp_flag html_errors offphp_flag log_errors offThanks</description>
     </item>
     
   </channel>

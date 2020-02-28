@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>security on Blog Indonesiadot.Com</title>
@@ -17,7 +17,7 @@
       <pubDate>Thu, 20 Feb 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</guid>
-      <description> Ansible OS Hardening mkdir -p /data/backups  Referensi:
+      <description>Ansible OS Hardening mkdir -p /data/backups Referensi:
  https://indonesiadot.com  </description>
     </item>
     
@@ -37,7 +37,7 @@ intinya mudah sih yg opensource, cuma kelemahan nya nempel di host dan atau nemp
       <pubDate>Wed, 04 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/12/04/ansible-cycle-evolution-diagram-security/</guid>
-      <description> Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
+      <description>Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
 Referensi:
  https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/ https://swimlane.com/blog/siem-soar/ https://www.ansible.com/blog/the-journey-to-security-automation  </description>
     </item>
@@ -48,7 +48,7 @@ Referensi:
       <pubDate>Fri, 15 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/</guid>
-      <description> Download deb rpm tgz
+      <description>Download [deb](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;amp;wget=true&#39;) [rpm](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;amp;wget=true&#39;) [tgz](wget -O splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;amp;wget=true&#39;)
 Referensi:
  https://docs.splunk.com/Documentation  </description>
     </item>
@@ -59,7 +59,7 @@ Referensi:
       <pubDate>Mon, 04 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/</guid>
-      <description> Ansible and Openscap for scanning and remediation server for security compliance operating system Referensi:
+      <description>Ansible and Openscap for scanning and remediation server for security compliance operating system Referensi:
  https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663  </description>
     </item>
     
@@ -69,7 +69,7 @@ Referensi:
       <pubDate>Sun, 03 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/03/openscap-reference/</guid>
-      <description> Openscap Custom Profile Referensi:
+      <description>Openscap Custom Profile Referensi:
  https://martin.preisler.me/2013/11/xccdf-tailoring/ https://static.open-scap.org/openscap-1.2/oscap_user_manual.html  </description>
     </item>
     
@@ -79,7 +79,7 @@ Referensi:
       <pubDate>Tue, 29 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/</guid>
-      <description> TCP Wrapper Referensi:
+      <description>TCP Wrapper Referensi:
  https://www.server-world.info/en/note?os=CentOS_7&amp;amp;p=tcp_wrapper https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/  </description>
     </item>
     
@@ -89,8 +89,8 @@ Referensi:
       <pubDate>Tue, 15 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/</guid>
-      <description> Disable and blacklist Linux modules Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya
-blacklist firewire_core install firewire_core /bin/true  Referensi:
+      <description>Disable and blacklist Linux modules Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya
+blacklist firewire_core install firewire_core /bin/true Referensi:
  CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/  </description>
     </item>
     
@@ -111,12 +111,21 @@ blacklist firewire_core install firewire_core /bin/true  Referensi:
       
       <guid>https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
- Firewall
- iptables ipset shorewall csf  Anti Malware
- maldet (malware detection for web directory)  IDS
- tripwire  Identity Server
- FreeIPA (IPA = Identity, Policy, Authentication)  Security Checking / Scanning Solution
- OpenSCAP Rapid7  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</description>
+  Firewall
+  iptables
+  ipset
+  shorewall
+  csf
+  Anti Malware
+  maldet (malware detection for web directory)
+  IDS
+  tripwire
+  Identity Server
+  FreeIPA (IPA = Identity, Policy, Authentication)
+  Security Checking / Scanning Solution
+  OpenSCAP
+  Rapid7
+  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</description>
     </item>
     
     <item>
@@ -125,13 +134,7 @@ blacklist firewire_core install firewire_core /bin/true  Referensi:
       <pubDate>Sat, 26 May 2018 07:34:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/05/26/belajar-privacy-basic-security-on-the-internet/</guid>
-      <description>Alamat / url untuk belajar privacy di internet
-https://www.privacytools.io/
-dapat dari:
-https://www.cryptomonkeys.com/
-alamat lain yang menarik:
-https://www.infosecindustry.com/
-http://www.freebsd.org/</description>
+      <description>Alamat / url untuk belajar privacy di internethttps://www.privacytools.io/&amp;lt;br /&amp;gt;dapat dari:https://www.cryptomonkeys.com/&amp;lt;br /&amp;gt;alamat lain yang menarik:https://www.infosecindustry.com/&amp;lt;br /&amp;gt;http://www.freebsd.org/&amp;lt;br /&amp;gt;</description>
     </item>
     
   </channel>

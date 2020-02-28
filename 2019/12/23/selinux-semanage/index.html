@@ -605,6 +605,16 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -634,39 +644,20 @@
 <div class="post">
   <h1 class="post-title">Selinux semanage</h1>
   <span class="post-date">Dec 23, 2019</span>
-  
-
-<p>content of selinux config /etc/selinux/config</p>
-
+  <p>content of selinux config /etc/selinux/config</p>
 <pre><code>SELINUX=enforcing
 SELINUXTYPE=targeted 
-</code></pre>
-
-<h2 id="semanage-packages">semanage packages</h2>
-
+</code></pre><h2 id="semanage-packages">semanage packages</h2>
 <pre><code>yum provides semanage
 yum install -y policycoreutils-python
-</code></pre>
-
-<h2 id="semanage-list-port">semanage list port</h2>
-
+</code></pre><h2 id="semanage-list-port">semanage list port</h2>
 <pre><code>semanage port -l | grep ssh
-</code></pre>
-
-<h2 id="semanage-open-ssh-on-different-port">semanage open ssh on different port</h2>
-
+</code></pre><h2 id="semanage-open-ssh-on-different-port">semanage open ssh on different port</h2>
 <p>add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port</p>
-
 <pre><code>semanage port -a -t ssh_port_t -p tcp 1022
-</code></pre>
-
-<p>then restart sshd service</p>
-
+</code></pre><p>then restart sshd service</p>
 <pre><code>systemctl restart sshd
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/">https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/</a></li>
 </ul>
