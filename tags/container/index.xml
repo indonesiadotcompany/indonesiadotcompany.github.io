@@ -20,7 +20,8 @@
       <description>Docker run example docker run -it alpine /bin/ash Where -i = interactive, -t make tty for the running process, /bin/ash is the command to run.
 docker run &amp;ndash;help
 How to get ip of running docker docker ps docker inspect &amp;lt;containernameorid&amp;gt; docker inspect &amp;lt;containernameorid&amp;gt; | grep &#39;&amp;quot;IPAddress&amp;quot;&#39; | head -n 1 Where head is opossite from tail, man head, man tail
- https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17.  </description>
+ https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17.  Ref:
+ https://docs.docker.com/engine/security/certificates/ https://docs.docker.com/engine/security/https/  </description>
     </item>
     
     <item>

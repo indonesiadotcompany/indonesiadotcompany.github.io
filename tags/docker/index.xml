@@ -20,7 +20,8 @@
       <description>Docker run example docker run -it alpine /bin/ash Where -i = interactive, -t make tty for the running process, /bin/ash is the command to run.
 docker run &amp;ndash;help
 How to get ip of running docker docker ps docker inspect &amp;lt;containernameorid&amp;gt; docker inspect &amp;lt;containernameorid&amp;gt; | grep &#39;&amp;quot;IPAddress&amp;quot;&#39; | head -n 1 Where head is opossite from tail, man head, man tail
- https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17.  </description>
+ https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17.  Ref:
+ https://docs.docker.com/engine/security/certificates/ https://docs.docker.com/engine/security/https/  </description>
     </item>
     
     <item>
@@ -97,16 +98,6 @@ How to get ip of running docker docker ps docker inspect &amp;lt;containernameor
       <guid>https://blog.indonesiadot.com/2018/07/08/docker-registry-docker-private-repository/</guid>
       <description>Ref:
  https://docs.docker.com/registry/deploying/ https://github.com/sky-uk/cleanup-docker-registry https://github.com/burnettk/delete-docker-registry-image https://stackoverflow.com/questions/29802202/docker-registry-2-0-how-to-delete-unused-images https://gist.github.com/PieterScheffers/63e4c2fd5553af8a35101b5e868a811e (Start docker registry with letsencrypt certificates (Linux Ubuntu))  </description>
-    </item>
-    
-    <item>
-      <title>Docker things</title>
-      <link>https://blog.indonesiadot.com/2018/03/04/docker-things/</link>
-      <pubDate>Sun, 04 Mar 2018 11:11:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/2018/03/04/docker-things/</guid>
-      <description>Ref:
- https://docs.docker.com/engine/security/certificates/ https://docs.docker.com/engine/security/https/  </description>
     </item>
     
     <item>

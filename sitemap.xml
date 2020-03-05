@@ -7,27 +7,47 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2020-02-28T08:17:54+07:00</lastmod>
+    <loc>https://blog.indonesiadot.com/2020/03/05/</loc>
+    <lastmod>2020-03-05T08:17:54+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/centos/</loc>
-    <lastmod>2020-02-28T08:17:54+07:00</lastmod>
+    <loc>https://blog.indonesiadot.com/</loc>
+    <lastmod>2020-03-05T08:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2020-02-28T08:17:54+07:00</lastmod>
+    <lastmod>2020-03-05T08:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2020-02-28T08:17:54+07:00</lastmod>
+    <lastmod>2020-03-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/python/</loc>
+    <lastmod>2020-03-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/05/python-tips/</loc>
+    <lastmod>2020-03-05T08:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2020-03-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
+    <lastmod>2020-03-05T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/centos/</loc>
     <lastmod>2020-02-28T08:17:54+07:00</lastmod>
   </url>
   
@@ -53,11 +73,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2020/02/28/docker-tips/</loc>
-    <lastmod>2020-02-28T08:07:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
     <lastmod>2020-02-28T08:07:54+07:00</lastmod>
   </url>
   
@@ -927,11 +942,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/python/</loc>
-    <lastmod>2019-08-11T08:42:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/2019/08/11/simple-alert-monitoring-using-simplemonitor/</loc>
     <lastmod>2019-08-11T08:42:00+00:00</lastmod>
   </url>
@@ -1154,11 +1164,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/2018/03/04/elasticsearch-tips-and-tricks/</loc>
     <lastmod>2018-03-04T20:36:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/2018/03/04/docker-things/</loc>
-    <lastmod>2018-03-04T11:11:00+00:00</lastmod>
   </url>
   
   <url>

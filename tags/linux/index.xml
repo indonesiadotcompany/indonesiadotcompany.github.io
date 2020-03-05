@@ -6,10 +6,30 @@
     <description>Recent content in linux on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Feb 2020 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://blog.indonesiadot.com/2020/03/05/</link>
+      <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/05/</guid>
+      <description>Post Ini adalah contoh post
+Referensi:
+ https://indonesiadot.com  </description>
+    </item>
+    
+    <item>
+      <title>Python Tips</title>
+      <link>https://blog.indonesiadot.com/2020/03/05/python-tips/</link>
+      <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/05/python-tips/</guid>
+      <description>module python web server python -m SimpleHTTPServer 8001 python -m SimpleHTTPServer 8002  https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver https://www.pcsuggest.com/best-lightweight-web-server-linux/  </description>
+    </item>
     
     <item>
       <title>Yum tips</title>
@@ -486,6 +506,8 @@ https://&amp;lt;Ansible Tower IP or Hostname&amp;gt; Dapatkan lisensi dari https
   rocket.chat
   tawk.to
   simple chat
+  Networking
+  nload
   Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut</description>
     </item>
     

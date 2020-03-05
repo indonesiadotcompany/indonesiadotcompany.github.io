@@ -615,6 +615,8 @@
       
     
       
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -681,15 +683,12 @@ mkdir -p /etc/systemd/system/docker.service.d
 # Restart Docker
 systemctl daemon-reload
 systemctl restart docker
-</code></pre><p>Ref:</p>
-<ul>
+</code></pre><ul>
 <li><a href="https://kubernetes.io/docs/setup/production-environment/container-runtimes/">https://kubernetes.io/docs/setup/production-environment/container-runtimes/</a></li>
 </ul>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://darxkies.github.io/k8s-tew/_build/html/index.html">https://darxkies.github.io/k8s-tew/_build/html/index.html</a></li>
-</ul>
-
+<h2 id="kubernetes-kubeadm-show-join-command">kubernetes kubeadm show join command</h2>
+<pre><code>kubeadm token create --print-join-command
+</code></pre>
 </div>
 
 <hr/>

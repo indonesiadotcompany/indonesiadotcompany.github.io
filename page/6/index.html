@@ -616,6 +616,8 @@
       
     
       
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -646,6 +648,108 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/hugo-hosting-dengan-github/">Hugo hosting dengan github</a></h1>
+        <span class="post-date">Sep 24, 2019</span>
+	<p>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:</p>
+<ul>
+<li>Nama user: tpinews</li>
+<li>Nama repositori yang harus dibuat: tpinews.github.io</li>
+</ul>
+<p>Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:</p>
+<pre><code>mkdir tpinews
+cd tpinews
+touch .gitignore
+git init
+git add .
+git commit -m 'komat kamit awal'
+git remote add origin https://tpinews.github.io.git
+git push origin master
+
+git checkout -b hugo
+hugo new site . --force
+cp -r /path/kumpulanthemeshugo/travelify themes/
+cp -r themes/travelify/exampleSite/* .
+cp /path/scripts/push-deploy.sh .
+git add .
+git commit -m 'komit hugo'
+git push origin hugo
+
+git submodule add -b master https://tpinews.github.io.git public
+./push-deploy.sh
+git branch -d master
+</code></pre><p>Pastikan juga config.toml sudah sesuai, seperti nama theme dan lainnya, dan bisa di test di localhost dengan menjalankan <code>hugo server</code> dan mengakses http://localhost:1313 di browser untuk melihat hasilnya.</p>
+<p>Command di atas hanya dilakukan pertama kali saja, untuk selanjutnya yang dilakukan setelah melakukan perubahan dan ingin mengupdate di github, cukup menjalankan script push-deploy.sh</p>
+<p>Disini theme yang digunakan misalnya travelify yang sudah disiapkan, dan juga script untuk push-deploy.sh untuk memudahkan deploy sebagai berikut:</p>
+<pre><code>#!/bin/sh
+# If a command fails then the deploy stops
+set -e
+printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
+git add .
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+ msg=&quot;$*&quot;
+fi
+git commit -m &quot;$msg&quot;
+git push origin hugo
+
+printf &quot;\033[0;32mDeploy public hugo to branch master...\033[0m\n&quot;
+HUGO_ENV=production hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
+cd public
+git add .
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+        msg=&quot;$*&quot;
+fi
+git commit -m &quot;$msg&quot;
+git push origin master
+
+printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
+cd ..
+git add .
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+        msg=&quot;$*&quot;
+fi
+git commit -m &quot;$msg&quot;
+git push origin hugo
+</code></pre><p>Note:</p>
+<p>Untuk lebih mudah tidak perlu memasukan password, bisa di buat dari menu settings account github, lalu pilih menu sebelah kiri bawah bagian Developer settings, lalu Personal access tokens dan generate new token.</p>
+<p>Lalu copy token tersebut dan tambahkan pada file .git/config dan .git/modules/public/config ,bagian url nya, sehingga menjadi seperti contoh berikut:</p>
+<pre><code>   url = https://namauser:tokenhasidaricopygeneratenewtoken@namarepository.github.io.git
+</code></pre>
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>, <a href="https://blog.indonesiadot.com/tags/github/">github</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/markdown-tips/">Markdown tips</a></h1>
+        <span class="post-date">Sep 24, 2019</span>
+	<h2 id="markdown-insert-image"><em>markdown</em> insert image</h2>
+<p>Ini adalah <a href="https://www.petanikode.com/markdown-pemula/"><em>markdown</em></a> untuk menampilkan gambar yang terletak di dalam folder / direktori pada postingan di hugo</p>
+<pre><code>![nama-image](path/to/image)
+</code></pre><h2 id="markdown-insert-link">markdown insert link</h2>
+<p>Ini adalah markdown untuk menampilkan link <em>url</em> pada kata atau kalimat di halaman web</p>
+<pre><code>[kata atau kalimat](http://link.url/yang-dituju)
+</code></pre><p>seperti contoh diatas</p>
+<pre><code>[markdown](https://www.petanikode.com/markdown-pemula/)
+</code></pre><p>Referensi markdown images:</p>
+<ul>
+<li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/markdown/">markdown</a>, <a href="https://blog.indonesiadot.com/tags/static-site-generator/">static-site-generator</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/04/linux-security-tools/">linux Security Tools</a></h1>
@@ -728,7 +832,7 @@
 <p>shadow daemon <a href="https://shadowd.zecure.org/overview/introduction/">https://shadowd.zecure.org/overview/introduction/</a></p>
 </li>
 <li>
-<p>imperva *berbayar</p>
+<p>imperva berbayar</p>
 </li>
 <li>
 <p>Web Scanner</p>
@@ -742,10 +846,14 @@
 <li>
 <p>owasp-zap <a href="https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b">https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b</a></p>
 </li>
+<li>
+<p>nessus <a href="https://www.tenable.com/tenable-for-education">https://www.tenable.com/tenable-for-education</a></p>
+</li>
 </ul>
 <p>Referensi Openscap:</p>
 <ul>
 <li><a href="https://www.open-scap.org/">https://www.open-scap.org/</a></li>
+<li><a href="https://lifehacker.com/how-to-use-nessus-to-scan-a-network-for-vulnerabilities-1788261156">https://lifehacker.com/how-to-use-nessus-to-scan-a-network-for-vulnerabilities-1788261156</a></li>
 </ul>
 
 	<hr/>
@@ -805,6 +913,12 @@
 </li>
 <li>
 <p><a href="https://github.com/juliancwirko/s-chat-app">simple chat</a></p>
+</li>
+<li>
+<p>Networking</p>
+</li>
+<li>
+<p><a href="https://www.linux.com/tutorials/monitoring-network-load-nload-part-2/">nload</a></p>
 </li>
 </ul>
 <p>Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut</p>
@@ -923,15 +1037,12 @@ mkdir -p /etc/systemd/system/docker.service.d
 # Restart Docker
 systemctl daemon-reload
 systemctl restart docker
-</code></pre><p>Ref:</p>
-<ul>
+</code></pre><ul>
 <li><a href="https://kubernetes.io/docs/setup/production-environment/container-runtimes/">https://kubernetes.io/docs/setup/production-environment/container-runtimes/</a></li>
 </ul>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://darxkies.github.io/k8s-tew/_build/html/index.html">https://darxkies.github.io/k8s-tew/_build/html/index.html</a></li>
-</ul>
-
+<h2 id="kubernetes-kubeadm-show-join-command">kubernetes kubeadm show join command</h2>
+<pre><code>kubeadm token create --print-join-command
+</code></pre>
 	<hr/>
 	
 	
@@ -1021,65 +1132,6 @@ git branch -D namabranchyangakandihapus
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/repository/">repository</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/">Pembuatan web statis dengan hugo</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<h2 id="manage-hugo-dari-pc--laptop-lain">manage hugo dari pc / laptop lain</h2>
-<pre><code>git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io
-git checkout hugo
-rm -rf public
-git add .
-git commit -m 'remove public'
-git push
-git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public
-</code></pre><p>Referensi hugo dasar:</p>
-<ul>
-<li><a href="https://www.petanikode.com/topik/hugo">https://www.petanikode.com/topik/hugo</a></li>
-<li><a href="https://gohugo.io/getting-started/quick-start/">https://gohugo.io/getting-started/quick-start/</a></li>
-<li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></li>
-<li><a href="https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html">https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html</a></li>
-</ul>
-<p>Referensi hugo dan e-commerce:</p>
-<ul>
-<li><a href="https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf">https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf</a></li>
-<li><a href="https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce">https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/scripting/">scripting</a>, <a href="https://blog.indonesiadot.com/tags/static-site-generator/">static-site-generator</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/migrasi-antar-hugo/">Migrasi antar hugo</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<p>To remove a submodule you need to:</p>
-<ul>
-<li>Delete the relevant section from the .gitmodules file.</li>
-<li>Stage the .gitmodules changes git add .gitmodules</li>
-<li>Delete the relevant section from .git/config.</li>
-<li>Run git rm &ndash;cached path_to_submodule (no trailing slash).</li>
-<li>Run rm -rf .git/modules/path_to_submodule (no trailing slash).</li>
-<li>Commit git commit -m &ldquo;Removed submodule &quot;</li>
-<li>Delete the now untracked submodule files rm -rf path_to_submodule</li>
-</ul>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
-<li><a href="https://gist.github.com/myusuf3/7f645819ded92bda6677">https://gist.github.com/myusuf3/7f645819ded92bda6677</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/static-site-generator/">static-site-generator</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>
 	 <hr/>
     </div>
   

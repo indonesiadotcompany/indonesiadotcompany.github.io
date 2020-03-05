@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Feb 2020 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>linux</title>
+      <link>https://blog.indonesiadot.com/tags/linux/</link>
+      <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://blog.indonesiadot.com/tags/python/</link>
+      <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tips</title>
+      <link>https://blog.indonesiadot.com/tags/tips/</link>
+      <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>centos</title>
@@ -17,15 +44,6 @@
       <pubDate>Fri, 28 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/centos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://blog.indonesiadot.com/tags/linux/</link>
-      <pubDate>Fri, 28 Feb 2020 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -53,15 +71,6 @@
       <pubDate>Fri, 28 Feb 2020 08:07:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tips</title>
-      <link>https://blog.indonesiadot.com/tags/tips/</link>
-      <pubDate>Fri, 28 Feb 2020 08:07:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
       <description></description>
     </item>
     
@@ -1070,15 +1079,6 @@
       <pubDate>Sun, 11 Aug 2019 08:42:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/monitoring/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://blog.indonesiadot.com/tags/python/</link>
-      <pubDate>Sun, 11 Aug 2019 08:42:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/python/</guid>
       <description></description>
     </item>
     

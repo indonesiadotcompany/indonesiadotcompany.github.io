@@ -6,10 +6,30 @@
     <description>Recent content in tips on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Feb 2020 08:07:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/tips/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://blog.indonesiadot.com/2020/03/05/</link>
+      <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/05/</guid>
+      <description>Post Ini adalah contoh post
+Referensi:
+ https://indonesiadot.com  </description>
+    </item>
+    
+    <item>
+      <title>Python Tips</title>
+      <link>https://blog.indonesiadot.com/2020/03/05/python-tips/</link>
+      <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/05/python-tips/</guid>
+      <description>module python web server python -m SimpleHTTPServer 8001 python -m SimpleHTTPServer 8002  https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver https://www.pcsuggest.com/best-lightweight-web-server-linux/  </description>
+    </item>
     
     <item>
       <title>Docker Tips</title>
@@ -20,7 +40,8 @@
       <description>Docker run example docker run -it alpine /bin/ash Where -i = interactive, -t make tty for the running process, /bin/ash is the command to run.
 docker run &amp;ndash;help
 How to get ip of running docker docker ps docker inspect &amp;lt;containernameorid&amp;gt; docker inspect &amp;lt;containernameorid&amp;gt; | grep &#39;&amp;quot;IPAddress&amp;quot;&#39; | head -n 1 Where head is opossite from tail, man head, man tail
- https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17.  </description>
+ https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17.  Ref:
+ https://docs.docker.com/engine/security/certificates/ https://docs.docker.com/engine/security/https/  </description>
     </item>
     
     <item>

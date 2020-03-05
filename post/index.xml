@@ -6,10 +6,30 @@
     <description>Recent content in Posts on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Feb 2020 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://blog.indonesiadot.com/2020/03/05/</link>
+      <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/05/</guid>
+      <description>Post Ini adalah contoh post
+Referensi:
+ https://indonesiadot.com  </description>
+    </item>
+    
+    <item>
+      <title>Python Tips</title>
+      <link>https://blog.indonesiadot.com/2020/03/05/python-tips/</link>
+      <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/05/python-tips/</guid>
+      <description>module python web server python -m SimpleHTTPServer 8001 python -m SimpleHTTPServer 8002  https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver https://www.pcsuggest.com/best-lightweight-web-server-linux/  </description>
+    </item>
     
     <item>
       <title>Yum tips</title>
@@ -29,7 +49,8 @@
       <description>Docker run example docker run -it alpine /bin/ash Where -i = interactive, -t make tty for the running process, /bin/ash is the command to run.
 docker run &amp;ndash;help
 How to get ip of running docker docker ps docker inspect &amp;lt;containernameorid&amp;gt; docker inspect &amp;lt;containernameorid&amp;gt; | grep &#39;&amp;quot;IPAddress&amp;quot;&#39; | head -n 1 Where head is opossite from tail, man head, man tail
- https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17.  </description>
+ https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17.  Ref:
+ https://docs.docker.com/engine/security/certificates/ https://docs.docker.com/engine/security/https/  </description>
     </item>
     
     <item>
@@ -555,6 +576,8 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
   rocket.chat
   tawk.to
   simple chat
+  Networking
+  nload
   Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut</description>
     </item>
     
@@ -916,16 +939,6 @@ Ref:
       
       <guid>https://blog.indonesiadot.com/2018/03/04/elasticsearch-tips-and-tricks/</guid>
       <description>elasticsearch list indexeshttps://www.google.co.id/search?q=elasticsearch+list+indexes&amp;lt;br /&amp;gt;https://www.elastic.co/guide/en/elasticsearch/reference/1.4/_list_all_indexes.htmlcurl &amp;lsquo;localhost:9200/_cat/indices?v&#39;elasticsearch installationhttps://github.com/Smile-SA/elasticsuite/wiki/ServerConfig-2.x&amp;lt;br /&amp;gt;https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04elasticsearch configcluster.name: namaclusterbootstrap.memory_lock: true# http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html#es-install-es&amp;lt;br /&amp;gt;index.query.bool.max_clause_count: 102400# this must be set on non public ipnetwork.host: 127.0.0.1http.port: 9200# https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-threadpool.html&amp;lt;br /&amp;gt;processor: 2threadpool.bulk.queue_size: 4000# https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig#configure-elasticsearch&amp;lt;br /&amp;gt;script.inline: onscript.indexed: on</description>
-    </item>
-    
-    <item>
-      <title>Docker things</title>
-      <link>https://blog.indonesiadot.com/2018/03/04/docker-things/</link>
-      <pubDate>Sun, 04 Mar 2018 11:11:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/2018/03/04/docker-things/</guid>
-      <description>Ref:
- https://docs.docker.com/engine/security/certificates/ https://docs.docker.com/engine/security/https/  </description>
     </item>
     
     <item>

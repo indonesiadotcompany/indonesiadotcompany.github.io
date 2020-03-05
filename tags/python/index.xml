@@ -6,10 +6,19 @@
     <description>Recent content in python on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Aug 2019 08:42:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python Tips</title>
+      <link>https://blog.indonesiadot.com/2020/03/05/python-tips/</link>
+      <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/05/python-tips/</guid>
+      <description>module python web server python -m SimpleHTTPServer 8001 python -m SimpleHTTPServer 8002  https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver https://www.pcsuggest.com/best-lightweight-web-server-linux/  </description>
+    </item>
     
     <item>
       <title>simple alert monitoring using simplemonitor</title>
