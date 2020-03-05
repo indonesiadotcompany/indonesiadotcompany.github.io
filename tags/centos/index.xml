@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>centos on Blog Indonesiadot.Com</title>
@@ -17,7 +17,7 @@
       <pubDate>Fri, 28 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/28/yum-tips/</guid>
-      <description>Yum install specific version yum list docker-ce.x86_64 --showduplicates yum list docker-ce.x86_64 --showduplicates | sort -r yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09  https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos  </description>
+      <description> Yum install specific version yum list docker-ce.x86_64 --showduplicates yum list docker-ce.x86_64 --showduplicates | sort -r yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09   https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos  </description>
     </item>
     
     <item>
@@ -26,9 +26,9 @@
       <pubDate>Mon, 20 Jan 2020 09:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</guid>
-      <description>Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
+      <description> Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
 adapun command nya sebelum bisa diakses yaitu:
-chcon -Rv --type=httpd_sys_rw_content_t /webserver Referensi:
+chcon -Rv --type=httpd_sys_rw_content_t /webserver  Referensi:
  https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/  </description>
     </item>
     
@@ -38,11 +38,11 @@ chcon -Rv --type=httpd_sys_rw_content_t /webserver Referensi:
       <pubDate>Wed, 08 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/</guid>
-      <description>Step to reproduce on VM Turn off the VM
-qemu-img resize image.qcow2 +SIZE where SIZE is the size to add (e.g. 10G for 10 gibibytes).
+      <description> Step to reproduce on VM Turn off the VM
+qemu-img resize image.qcow2 +SIZE  where SIZE is the size to add (e.g. 10G for 10 gibibytes).
 Turn on the VM, fdisk /dev/vda, delete and create /dev/vda2, restart
 Login after restart, then run this command
-pvresize /dev/vda2 lvextend -r -l +100%FREE /dev/mapper/centos-root df -hl Referensi:
+pvresize /dev/vda2 lvextend -r -l +100%FREE /dev/mapper/centos-root df -hl  Referensi:
  https://maunium.net/blog/resizing-qcow2-images/  </description>
     </item>
     
@@ -53,10 +53,9 @@ pvresize /dev/vda2 lvextend -r -l +100%FREE /dev/mapper/centos-root df -hl Refer
       
       <guid>https://blog.indonesiadot.com/2019/12/23/selinux-semanage/</guid>
       <description>content of selinux config /etc/selinux/config
-SELINUX=enforcing SELINUXTYPE=targeted semanage packages yum provides semanage yum install -y policycoreutils-python semanage list port semanage port -l | grep ssh semanage open ssh on different port add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port
-semanage port -a -t ssh_port_t -p tcp 1022 then restart sshd service
-systemctl restart sshd Referensi:
- https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/  </description>
+SELINUX=enforcing SELINUXTYPE=targeted  semanage packages yum provides semanage yum install -y policycoreutils-python  semanage list port semanage port -l | grep ssh  semanage open ssh on different port add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port
+semanage port -a -t ssh_port_t -p tcp 1022  then restart sshd service
+systemctl restart sshd  Referensi:</description>
     </item>
     
     <item>
@@ -65,7 +64,7 @@ systemctl restart sshd Referensi:
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/</guid>
-      <description>Firewalld masquerade firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public Referensi:
+      <description> Firewalld masquerade firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public  Referensi:
  https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/  </description>
     </item>
     

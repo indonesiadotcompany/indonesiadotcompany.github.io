@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>postgresql on Blog Indonesiadot.Com</title>
@@ -20,8 +20,8 @@
       <description>Install Ansible Tower Persyaratan:
 Hardware: RAM minimal 3,75 GB OS: Centos 7
 Langkah yang dilakukan
-yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz tar -xzvf ansible-tower-setup-latest.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh Configure Ansible Tower after installation Akses Ansible tower Web UI dari
-https://&amp;lt;Ansible Tower IP or Hostname&amp;gt; Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
+yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz tar -xzvf ansible-tower-setup-latest.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh  Configure Ansible Tower after installation Akses Ansible tower Web UI dari
+https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
     </item>
     
   </channel>

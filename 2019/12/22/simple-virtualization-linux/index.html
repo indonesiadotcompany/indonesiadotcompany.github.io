@@ -617,6 +617,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -646,13 +654,21 @@
 <div class="post">
   <h1 class="post-title">Simple Virtualization Linux</h1>
   <span class="post-date">Dec 22, 2019</span>
-  <h2 id="list-kvm-using-virsh">List kvm using virsh</h2>
+  
+
+<h2 id="list-kvm-using-virsh">List kvm using virsh</h2>
+
 <pre><code>virsh list
 virsh list --all
 virsh --help
-</code></pre><h2 id="create-vm-on-kvm--qemu-via-libvirt-with-command-line">Create vm on kvm / qemu via libvirt with command line</h2>
+</code></pre>
+
+<h2 id="create-vm-on-kvm-qemu-via-libvirt-with-command-line">Create vm on kvm / qemu via libvirt with command line</h2>
+
 <h3 id="pembuatan-vm-centos-7">Pembuatan vm centos 7</h3>
+
 <p>script bash virtcen.sh</p>
+
 <pre><code>#!/bin/bash
 
 NAMA=$1
@@ -675,7 +691,10 @@ virt-install \
  --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso \
  --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot; \
  --noautoconsole
-</code></pre><p>file kickstart cenks.cfg</p>
+</code></pre>
+
+<p>file kickstart cenks.cfg</p>
+
 <pre><code>text
 install
 
@@ -718,7 +737,10 @@ echo ### Change back to terminal 1
 #chvt 1
 %end
 
-</code></pre><p>Create VM using ansible playbook</p>
+</code></pre>
+
+<p>Create VM using ansible playbook</p>
+
 <pre><code>---
 - name: create VMs
   hosts: localhost
@@ -754,9 +776,15 @@ echo ### Change back to terminal 1
                 --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso
                 --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot;
                 --noautoconsole
-</code></pre><h2 id="get-vms-ip">Get VMs IP</h2>
+</code></pre>
+
+<h2 id="get-vms-ip">Get VMs IP</h2>
+
 <pre><code>virsh domifaddr c7
-</code></pre><p>Referensi:</p>
+</code></pre>
+
+<p>Referensi:</p>
+
 <ul>
 <li><a href="https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/">https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/</a></li>
 <li><a href="https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/">https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/</a></li>
@@ -769,7 +797,7 @@ echo ### Change back to terminal 1
 <li><a href="https://gist.github.com/aladuca/854b78585c2bba961386">https://gist.github.com/aladuca/854b78585c2bba961386</a></li>
 <li><a href="https://www.cyberciti.biz/faq/find-ip-address-of-linux-kvm-guest-virtual-machine/">https://www.cyberciti.biz/faq/find-ip-address-of-linux-kvm-guest-virtual-machine/</a></li>
 <li><a href="https://www.cyberciti.biz/faq/linux-list-a-kvm-vm-guest-using-virsh-command/">https://www.cyberciti.biz/faq/linux-list-a-kvm-vm-guest-using-virsh-command/</a></li>
-<li>https://hooks.technology/2017/10/create-vms-on-kvm-with-ansible/ (virt-builder and virt-install)</li>
+<li><a href="https://hooks.technology/2017/10/create-vms-on-kvm-with-ansible/">https://hooks.technology/2017/10/create-vms-on-kvm-with-ansible/</a> (virt-builder and virt-install)</li>
 </ul>
 
 </div>

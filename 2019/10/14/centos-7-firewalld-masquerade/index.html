@@ -617,6 +617,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -646,13 +654,19 @@
 <div class="post">
   <h1 class="post-title">Centos 7 Firewalld masquerade</h1>
   <span class="post-date">Oct 14, 2019</span>
-  <h2 id="firewalld-masquerade">Firewalld masquerade</h2>
+  
+
+<h2 id="firewalld-masquerade">Firewalld masquerade</h2>
+
 <pre><code>firewall-cmd --get-active-zones
 firewall-cmd --list-all --zone=public
 firewall-cmd --add-masquerade --zone=public --permanent
 firewall-cmd --reload
 firewall-cmd --list-all --zone=public
-</code></pre><p>Referensi:</p>
+</code></pre>
+
+<p>Referensi:</p>
+
 <ul>
 <li><a href="https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/">https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/</a></li>
 </ul>

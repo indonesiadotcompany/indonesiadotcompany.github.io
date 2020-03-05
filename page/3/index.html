@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.62.2" />
+	<meta name="generator" content="Hugo 0.57.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -618,6 +618,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -650,15 +658,108 @@
 <div class="post">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/">Centos 7 Resize Partition</a></h1>
+        <span class="post-date">Jan 8, 2020</span>
+	
+
+<h2 id="step-to-reproduce-on-vm">Step to reproduce on VM</h2>
+
+<p>Turn off the VM</p>
+
+<pre><code>qemu-img resize image.qcow2 +SIZE
+</code></pre>
+
+<p>where SIZE is the size to add (e.g. 10G for 10 gibibytes).</p>
+
+<p>Turn on the VM, fdisk /dev/vda, delete and create /dev/vda2, restart</p>
+
+<p>Login after restart, then run this command</p>
+
+<pre><code>pvresize /dev/vda2
+lvextend -r -l +100%FREE /dev/mapper/centos-root
+df -hl
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://maunium.net/blog/resizing-qcow2-images/">https://maunium.net/blog/resizing-qcow2-images/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/centos7/">centos7</a>, <a href="https://blog.indonesiadot.com/tags/partition/">partition</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/23/selinux-semanage/">Selinux semanage</a></h1>
+        <span class="post-date">Dec 23, 2019</span>
+	
+
+<p>content of selinux config /etc/selinux/config</p>
+
+<pre><code>SELINUX=enforcing
+SELINUXTYPE=targeted 
+</code></pre>
+
+<h2 id="semanage-packages">semanage packages</h2>
+
+<pre><code>yum provides semanage
+yum install -y policycoreutils-python
+</code></pre>
+
+<h2 id="semanage-list-port">semanage list port</h2>
+
+<pre><code>semanage port -l | grep ssh
+</code></pre>
+
+<h2 id="semanage-open-ssh-on-different-port">semanage open ssh on different port</h2>
+
+<p>add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port</p>
+
+<pre><code>semanage port -a -t ssh_port_t -p tcp 1022
+</code></pre>
+
+<p>then restart sshd service</p>
+
+<pre><code>systemctl restart sshd
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/">https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/rhel/">rhel</a>, <a href="https://blog.indonesiadot.com/tags/selinux/">selinux</a>, <a href="https://blog.indonesiadot.com/tags/semanage/">semanage</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/">Simple Virtualization Linux</a></h1>
         <span class="post-date">Dec 22, 2019</span>
-	<h2 id="list-kvm-using-virsh">List kvm using virsh</h2>
+	
+
+<h2 id="list-kvm-using-virsh">List kvm using virsh</h2>
+
 <pre><code>virsh list
 virsh list --all
 virsh --help
-</code></pre><h2 id="create-vm-on-kvm--qemu-via-libvirt-with-command-line">Create vm on kvm / qemu via libvirt with command line</h2>
+</code></pre>
+
+<h2 id="create-vm-on-kvm-qemu-via-libvirt-with-command-line">Create vm on kvm / qemu via libvirt with command line</h2>
+
 <h3 id="pembuatan-vm-centos-7">Pembuatan vm centos 7</h3>
+
 <p>script bash virtcen.sh</p>
+
 <pre><code>#!/bin/bash
 
 NAMA=$1
@@ -681,7 +782,10 @@ virt-install \
  --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso \
  --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot; \
  --noautoconsole
-</code></pre><p>file kickstart cenks.cfg</p>
+</code></pre>
+
+<p>file kickstart cenks.cfg</p>
+
 <pre><code>text
 install
 
@@ -724,7 +828,10 @@ echo ### Change back to terminal 1
 #chvt 1
 %end
 
-</code></pre><p>Create VM using ansible playbook</p>
+</code></pre>
+
+<p>Create VM using ansible playbook</p>
+
 <pre><code>---
 - name: create VMs
   hosts: localhost
@@ -760,9 +867,15 @@ echo ### Change back to terminal 1
                 --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso
                 --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot;
                 --noautoconsole
-</code></pre><h2 id="get-vms-ip">Get VMs IP</h2>
+</code></pre>
+
+<h2 id="get-vms-ip">Get VMs IP</h2>
+
 <pre><code>virsh domifaddr c7
-</code></pre><p>Referensi:</p>
+</code></pre>
+
+<p>Referensi:</p>
+
 <ul>
 <li><a href="https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/">https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/</a></li>
 <li><a href="https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/">https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/</a></li>
@@ -775,7 +888,7 @@ echo ### Change back to terminal 1
 <li><a href="https://gist.github.com/aladuca/854b78585c2bba961386">https://gist.github.com/aladuca/854b78585c2bba961386</a></li>
 <li><a href="https://www.cyberciti.biz/faq/find-ip-address-of-linux-kvm-guest-virtual-machine/">https://www.cyberciti.biz/faq/find-ip-address-of-linux-kvm-guest-virtual-machine/</a></li>
 <li><a href="https://www.cyberciti.biz/faq/linux-list-a-kvm-vm-guest-using-virsh-command/">https://www.cyberciti.biz/faq/linux-list-a-kvm-vm-guest-using-virsh-command/</a></li>
-<li>https://hooks.technology/2017/10/create-vms-on-kvm-with-ansible/ (virt-builder and virt-install)</li>
+<li><a href="https://hooks.technology/2017/10/create-vms-on-kvm-with-ansible/">https://hooks.technology/2017/10/create-vms-on-kvm-with-ansible/</a> (virt-builder and virt-install)</li>
 </ul>
 
 	<hr/>
@@ -790,6 +903,7 @@ echo ### Change back to terminal 1
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/05/jenkins-for-beginner/">jenkins for beginner</a></h1>
         <span class="post-date">Dec 5, 2019</span>
 	<p>Ref:</p>
+
 <ul>
 <li><a href="https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded">https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded</a></li>
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04">https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04</a></li>
@@ -809,12 +923,19 @@ echo ### Change back to terminal 1
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/05/modsecurity-waf/">Modsecurity WAF</a></h1>
         <span class="post-date">Dec 5, 2019</span>
-	<h2 id="modsecurity-waf">Modsecurity WAF</h2>
-<p><img src="https://blog.indonesiadot.com/images/2019/modsecurity-architecture.jpg" alt="routed-lans"></p>
+	
+
+<h2 id="modsecurity-waf">Modsecurity WAF</h2>
+
+<p><img src="https://blog.indonesiadot.com/images/2019/modsecurity-architecture.jpg" alt="routed-lans" /></p>
+
 <p>user yg mau sql injection di scan dulu sama modsecurity yg modsecurity baca ruleset (crs) kalau ada di rules nya di deny.
 kalau false positive, dinyatakan oleh client / developer bahwa itu sbnrnya aman, baru di exclude rule tersebut, kalau developer bisa nambel supaya bisa rubah supaya lebih sesuai ruleset nya lebih baik.</p>
+
 <p>intinya mudah sih yg opensource, cuma kelemahan nya nempel di host dan atau nempel di webserver, lalu kelemahan lain banyak false positive, sama ga ada ui nya, meski berjalan bagus bisa menahan serangan cuma agak sulit manage nya, terutama klo aplikasi yg ga standar, klo yg standar misal kaya wordpress mungkin lebih mudah.</p>
+
 <p>Referensi:</p>
+
 <ul>
 <li>Searching modsecurity architecture</li>
 </ul>
@@ -830,38 +951,69 @@ kalau false positive, dinyatakan oleh client / developer bahwa itu sbnrnya aman,
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/04/openvpn-routed-lans/">Openvpn Routed LANS</a></h1>
         <span class="post-date">Dec 4, 2019</span>
-	<h2 id="open-routed-multiple-lans">Open Routed Multiple LANS</h2>
+	
+
+<h2 id="open-routed-multiple-lans">Open Routed Multiple LANS</h2>
+
 <h3 id="lans-behind-openvpn">Lans behind OpenVPN</h3>
+
 <p>here is an example of how to have multiple lans behind OpenVPN from #OpenVPN on freenode.</p>
+
 <p>Our user had a openvpn server with a lan (10.10.2.0/24) behind it, and 2 client with lans behind them:</p>
+
 <p>client1 with lan 10.10.1.0/24
 client2 with lan 10.10.3.0/24</p>
+
 <p>He wanted machines on all 3 lans to be able to communicate using a tun (routed) setup.</p>
+
 <p>Every machine with a LAN behind it must have IP forwarding enabled. In this example that means the server, and client1/client2. The user needed the following in his server.conf:</p>
+
 <pre><code>route 10.10.1.0 255.255.255.0
 route 10.10.3.0 255.255.255.0
 push &quot;route 10.10.2.0 255.255.255.0&quot;
 push &quot;route 10.10.1.0 255.255.255.0&quot;
 push &quot;route 10.10.3.0 255.255.255.0&quot;
 client-to-client
-</code></pre><p>The route entries adjust the local routing table, telling it to route those networks over the vpn. The push routes are added on the clients connecting, telling them to route those networks over the vpn.</p>
+</code></pre>
+
+<p>The route entries adjust the local routing table, telling it to route those networks over the vpn. The push routes are added on the clients connecting, telling them to route those networks over the vpn.</p>
+
 <p>You may realize that client1 should not route 10.10.1.0 traffic over the vpn, and that client2 should not route 10.10.3.0 traffic over the vpn (because those networks are local to each client). Because of the iroute entries you will see below, openvpn knows this too and skips the push for the client.</p>
-<p>The route entries are telling his server to add a route for each of 10.10.1.0, and 10.10.3.0 to its kernel's routing table, and both will be routed to the tunnel interface and to openvpn. How will openvpn know what client to send each network to? The answer is iroute!</p>
-<p>Iroute does not bypass or alter the kernel's routing table, it allows openvpn to know it should handle the routing when the kernel points to it but the network is not one that openvpn knows about. The iroute entry tells the openvpn server which client is responsible for the network. Without the iroute entry you will find the following in your logfiles:</p>
+
+<p>The route entries are telling his server to add a route for each of 10.10.1.0, and 10.10.3.0 to its kernel&rsquo;s routing table, and both will be routed to the tunnel interface and to openvpn. How will openvpn know what client to send each network to? The answer is iroute!</p>
+
+<p>Iroute does not bypass or alter the kernel&rsquo;s routing table, it allows openvpn to know it should handle the routing when the kernel points to it but the network is not one that openvpn knows about. The iroute entry tells the openvpn server which client is responsible for the network. Without the iroute entry you will find the following in your logfiles:</p>
+
 <p>MULTI: bad source address from client [IP ADDRESS], packet dropped</p>
-<p>IP ADDRESS in that case would be the machine on client LAN which tried to talk through vpn, because openVPN has no clue what that address is. Once you give it the iroute statement, that changes. Iroute is a route internal to openVPN, and has nothing to do with the kernel's routing table. It tells the openvpn server which client owns which network. Note that even if you only have 1 lan behind 1 client, YOU STILL NEED IROUTE. You will need it any time a clients source IP address is different from the IP given to it by the vpn server.</p>
+
+<p>IP ADDRESS in that case would be the machine on client LAN which tried to talk through vpn, because openVPN has no clue what that address is. Once you give it the iroute statement, that changes. Iroute is a route internal to openVPN, and has nothing to do with the kernel&rsquo;s routing table. It tells the openvpn server which client owns which network. Note that even if you only have 1 lan behind 1 client, YOU STILL NEED IROUTE. You will need it any time a clients source IP address is different from the IP given to it by the vpn server.</p>
+
 <p>The thing is, we cant just drop the iroute into server.conf because it would then be used for every client, and iroute is only to tell the server at which client it should send traffic destined for a network that the kernel said should go to the openvpn interface. That is why we add the iroute commands to a ccd entry.</p>
-<p>You will need client-config-dir /path/to/ccd/ in your server config file to enable ccd entries. ccd entries are basically included into server.conf, but only for the specified client. You put commands in ccd/client-common-name, and they are only included when the client's common-name matches the name of the file in ccd/.</p>
+
+<p>You will need client-config-dir /path/to/ccd/ in your server config file to enable ccd entries. ccd entries are basically included into server.conf, but only for the specified client. You put commands in ccd/client-common-name, and they are only included when the client&rsquo;s common-name matches the name of the file in ccd/.</p>
+
 <p>In this example lets assume the client owning the network 10.10.1.0 has a common-name of client1. In ccd/client1 He should have the following:</p>
+
 <pre><code>iroute 10.10.1.0 255.255.255.0
-</code></pre><p>As you can see our user will make a ccd/ entry for each client with a lan behind it. The ccd entry will have an iroute command for the network behind the client.</p>
+</code></pre>
+
+<p>As you can see our user will make a ccd/ entry for each client with a lan behind it. The ccd entry will have an iroute command for the network behind the client.</p>
+
 <p>That means that client2 on the 10.10.3.0 LAN would have the following entry for its ccd/client2 file:</p>
+
 <pre><code>iroute 10.10.3.0 255.255.255.0
-</code></pre><p><img src="https://blog.indonesiadot.com/images/2019/routed_lans.jpg" alt="routed-lans"></p>
+</code></pre>
+
+<p><img src="https://blog.indonesiadot.com/images/2019/routed_lans.jpg" alt="routed-lans" /></p>
+
 <h3 id="routes-to-add-outside-of-openvpn">ROUTES TO ADD OUTSIDE OF OPENVPN</h3>
+
 <p>If you are not running openvpn on the router for each lan, you have some more routes to add. This ​diagram explains it pretty well.</p>
+
 <p>Lets say our server is 10.10.2.10 on its lan, and uses 10.10.2.1 as its default route, and you want the 2.x lan to be accessible or able to access over the vpn. 2.1 would need a route for every network that 2.x will access or be accessed by. That means in our example: 10.10.2.1 must know that for 10.10.1.x 10.10.3.x and the vpn internal network (for example, 10.8.0.x), it sends the traffic to 10.10.2.10 This is true for any number of lans you want to connect, whether server or client.</p>
+
 <p>If you fail to add this route, here is what would happen if a VPN client (for example, 10.8.0.6) wanted to send traffic to 10.10.2.20:</p>
+
 <ol>
 <li>The vpn client sends traffic to 10.10.2.20, with a source address of 10.8.0.6</li>
 <li>The vpn server (10.8.0.1 and 10.10.2.10) receives the traffic, has IP forwarding enabled, and passes the traffic to 10.10.2.20</li>
@@ -870,19 +1022,32 @@ client-to-client
 <li>10.10.2.1 checks its routing table, has no route for 10.8.0.6, and sends the traffic to its default gateway which is likely its ISP</li>
 <li>The ISP ignores it, because it is a RFC 1918 ip (aka lan only)</li>
 </ol>
+
 <p>the annoying work-around would be to add the route to every box on the LAN, in which case step 3 above would work.</p>
+
 <p>If this needs clarification ask me about it and I will update this page after discovering how to make it clearer.</p>
-<p>On Jan26, 2010 I changed this article to no longer use 192.168.1.0 192.168.2.0 and 192.168.3.0 for my subnets. I did this because it is important for people to not use common subnets such as 192.168.1/0.x when pushing routes to clients. It does not matter if you know where every client connects from, but once you add a single road warrior to the VPN you will run in to a problem. If the road warrior is connecting from a LAN where he has 192.168.0.X and he gets pushed a route to 192.168.0.0/24 to flow over the vpn, he will lose all connectivity to the internet until he kills the vpn. This is because the client loses his route to his gateway&hellip; he tries to contact the gateway over the VPN, but he has no route to the VPN because he needs to access his gateway to reach it. In short, if your lan that you want to access using openvpn uses a common subnet such as 192.168.0.x or 192.168.1.x, CHANGE IT.</p>
+
+<p>On Jan26, 2010 I changed this article to no longer use 192.168.1.0 192.168.2.0 and 192.168.3.0 for my subnets. I did this because it is important for people to not use common subnets such as 192.168.<sup>1</sup>&frasl;<sub>0</sub>.x when pushing routes to clients. It does not matter if you know where every client connects from, but once you add a single road warrior to the VPN you will run in to a problem. If the road warrior is connecting from a LAN where he has 192.168.0.X and he gets pushed a route to 192.168.0.0/24 to flow over the vpn, he will lose all connectivity to the internet until he kills the vpn. This is because the client loses his route to his gateway&hellip; he tries to contact the gateway over the VPN, but he has no route to the VPN because he needs to access his gateway to reach it. In short, if your lan that you want to access using openvpn uses a common subnet such as 192.168.0.x or 192.168.1.x, CHANGE IT.</p>
+
 <h3 id="caveats">Caveats</h3>
+
 <p>If you have a problem adding routes in Windows, check the following. If you are using OpenVPN-GUI, do not run it as administrator but make sure the service OpenVPNServiceInteractive is running. If you are not using the OpenVPN-GUI make sure you have openvpn starting as administrator.</p>
+
 <p>In some rare cases you may also need to use one of these options:</p>
+
 <pre><code>route-method exe
 route-delay
-</code></pre><p>The first option changes how windows adds a route The second option waits to add the route (helpful for making sure you get a DHCP lease before messing with routes).
-If those don't help, try turning off routing and remote access in administrative tools - routing and remote access</p>
-<p>Written by krzee @ #OpenVPN @ freenode IRC, mirrored from ​http://www.secure-computing.net/wiki/index.php/OpenVPN/Routing</p>
-<p>Feel free to discuss this document on the unofficial OpenVPN forum at: ​https://forums.openvpn.net/topic98.html</p>
+</code></pre>
+
+<p>The first option changes how windows adds a route The second option waits to add the route (helpful for making sure you get a DHCP lease before messing with routes).
+If those don&rsquo;t help, try turning off routing and remote access in administrative tools - routing and remote access</p>
+
+<p>Written by krzee @ #OpenVPN @ freenode IRC, mirrored from ​<a href="http://www.secure-computing.net/wiki/index.php/OpenVPN/Routing">http://www.secure-computing.net/wiki/index.php/OpenVPN/Routing</a></p>
+
+<p>Feel free to discuss this document on the unofficial OpenVPN forum at: ​<a href="https://forums.openvpn.net/topic98.html">https://forums.openvpn.net/topic98.html</a></p>
+
 <p>Referensi:</p>
+
 <ul>
 <li><a href="https://community.openvpn.net/openvpn/wiki/RoutedLans">https://community.openvpn.net/openvpn/wiki/RoutedLans</a></li>
 </ul>
@@ -898,9 +1063,14 @@ If those don't help, try turning off routing and remote access in administrative
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/04/ansible-cycle-evolution-diagram-security/">Ansible cycle evolution diagram security</a></h1>
         <span class="post-date">Dec 4, 2019</span>
-	<h2 id="ansible-cycle-evolution-diagram-for-security">Ansible cycle evolution diagram for security</h2>
+	
+
+<h2 id="ansible-cycle-evolution-diagram-for-security">Ansible cycle evolution diagram for security</h2>
+
 <p>searching dengan keyword: ansible security diagram</p>
+
 <p>Referensi:</p>
+
 <ul>
 <li><a href="https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/">https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/</a></li>
 <li><a href="https://swimlane.com/blog/siem-soar/">https://swimlane.com/blog/siem-soar/</a></li>
@@ -918,14 +1088,21 @@ If those don't help, try turning off routing and remote access in administrative
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/03/proxmox-add-zfs/">Proxmox Add ZFS</a></h1>
         <span class="post-date">Dec 3, 2019</span>
-	<h2 id="proxmox-add-zfs">Proxmox Add ZFS</h2>
+	
+
+<h2 id="proxmox-add-zfs">Proxmox Add ZFS</h2>
+
 <p>Referensi:</p>
+
 <ul>
 <li><a href="https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/">https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/</a></li>
 <li><a href="https://pve.proxmox.com/wiki/ZFS_on_Linux">https://pve.proxmox.com/wiki/ZFS_on_Linux</a></li>
 </ul>
+
 <h2 id="proxmox-cloud-init">Proxmox cloud-init</h2>
+
 <p>Ref:</p>
+
 <ul>
 <li><a href="https://cloud.centos.org/centos/7/images/">https://cloud.centos.org/centos/7/images/</a></li>
 <li><a href="https://pve.proxmox.com/wiki/Cloud-Init_Support">https://pve.proxmox.com/wiki/Cloud-Init_Support</a></li>
@@ -943,19 +1120,28 @@ If those don't help, try turning off routing and remote access in administrative
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/26/ansible-awx-2019/">Ansible AWX 2019</a></h1>
         <span class="post-date">Nov 26, 2019</span>
-	<h2 id="ansible-awx">Ansible AWX</h2>
+	
+
+<h2 id="ansible-awx">Ansible AWX</h2>
+
 <h3 id="install-docker-compose-tanpa-pip-tanpa-compile">install docker-compose tanpa pip, tanpa compile</h3>
+
 <pre><code>curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-</code></pre><p>Referensi:</p>
+</code></pre>
+
+<p>Referensi:</p>
+
 <ul>
 <li><a href="https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/">https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/</a></li>
 <li><a href="https://medium.com/swlh/ansible-awx-installation-5861b115455a">https://medium.com/swlh/ansible-awx-installation-5861b115455a</a></li>
 <li><a href="https://devzero.co.za/2019/02/28/high-availability-awx-ansible/">https://devzero.co.za/2019/02/28/high-availability-awx-ansible/</a></li>
 <li><a href="https://github.com/sujiar37/AWX-HA-InstanceGroup">https://github.com/sujiar37/AWX-HA-InstanceGroup</a></li>
 </ul>
+
 <p>Not yet tested:</p>
+
 <ul>
 <li><a href="https://github.com/MrMEEE/awx-build">https://github.com/MrMEEE/awx-build</a></li>
 <li><a href="https://awx.wiki/installation">https://awx.wiki/installation</a></li>
@@ -968,118 +1154,6 @@ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/awx/">awx</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/">Splunk Log Monitoring</a></h1>
-        <span class="post-date">Nov 15, 2019</span>
-	<h2 id="download">Download</h2>
-<p>[deb](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb &lsquo;<a href="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;wget=true'">https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;wget=true'</a>)
-[rpm](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm &lsquo;<a href="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;wget=true'">https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;wget=true'</a>)
-[tgz](wget -O splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz &lsquo;<a href="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;wget=true'">https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;wget=true'</a>)</p>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://docs.splunk.com/Documentation">https://docs.splunk.com/Documentation</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/splunk/">splunk</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/">Recommended Ansible Modules</a></h1>
-        <span class="post-date">Nov 5, 2019</span>
-	<h1 id="frequently-used-module">Frequently Used Module</h1>
-<h2 id="blockinfile">blockinfile</h2>
-<p>Module ini saya gunakan ketika muncul error pada saat menggunakan module lineinfile untuk memasukan beberapa baris sekaligus dalam beberapa tasks, dan ternyata dengan menggunakan module ini dengan hanya satu task bisa memasukan langsung beberapa baris.</p>
-<p>Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepada parameter minimalnya adalah path dan block saja.</p>
-<pre><code>- name: Insert correct line to /etc/ntp.conf
-  blockinfile:
-    path: /etc/ntp.conf
-    insertafter: ^#?server
-    state: present
-    block: |
-      server &quot;{{ ntp1 }}&quot;
-      server &quot;{{ ntp2 }}&quot;
-  notify: restart ntp
-</code></pre><p>Referensi:</p>
-<ul>
-<li><a href="https://www.google.com/search?q=lineinfile+multiple+lines">https://www.google.com/search?q=lineinfile+multiple+lines</a></li>
-<li><a href="https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines">https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines</a></li>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html">https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html</a></li>
-<li><a href="https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py">https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py</a></li>
-</ul>
-<h2 id="find">find</h2>
-<p>Berikut contoh module find yang dicombine dengan module set_fact, when untuk menggunakan result matched (when seperti if dalam scripting / programming)</p>
-<pre><code>    - name: Search /etc/audit/rules.d for other DAC audit rules
-      find:
-        paths: /etc/audit/rules.d
-        recurse: false
-        contains: -F key=perm_mod$
-        patterns: '*.rules'
-      register: find_fchown
-      when: ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
-    - name: If existing DAC ruleset not found, use /etc/audit/rules.d/privileged.rules as the recipient for the rule
-      set_fact:
-        all_files:
-          - /etc/audit/rules.d/privileged.rules
-      when:
-        - find_fchown.matched is defined and find_fchown.matched == 0
-        - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
-    - name: Use matched file as the recipient for the rule
-      set_fact:
-        all_files:
-          - '{{ find_fchown.files | map(attribute=''path'') | list | first }}'
-      when:
-        - find_fchown.matched is defined and find_fchown.matched &gt; 0
-        - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
-</code></pre><p>Referensi:</p>
-<ul>
-<li>file remediation.yml dari oscap</li>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/find_module.html">https://docs.ansible.com/ansible/latest/modules/find_module.html</a></li>
-</ul>
-<h2 id="pamd">pamd</h2>
-<p>module ini berguna untuk edit pam service tanpa harus mengedit file nya langsung, tanpa harus menggunakan module lineinfile, blockinfile, replace, etc. Dan berikut contohnya:</p>
-<pre><code>    - name: Add unlock_time argument to pam_faillock preauth
-      pamd:
-        name: '{{ item }}'
-        type: auth
-        control: required
-        module_path: pam_faillock.so
-        module_arguments: preauth silent unlock_time={{ var_accounts_passwords_pam_faillock_unlock_time
-          }}
-        state: args_present
-      loop:
-        - system-auth
-        - password-auth
-</code></pre><p>Referensi:</p>
-<ul>
-<li>file remediation.yml oscap</li>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/pamd_module.html">https://docs.ansible.com/ansible/latest/modules/pamd_module.html</a></li>
-</ul>
-<h2 id="debug">debug</h2>
-<pre><code>    - name: download report
-      fetch:
-        src: /tmp/oscap-report.html
-        dest: /home/ansible/public_html/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
-        flat: yes
-    - debug:
-        msg: http://34.87.94.24/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
-</code></pre><p>Ref:</p>
-<ul>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/debug_module.html">https://docs.ansible.com/ansible/latest/modules/debug_module.html</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>
 	 <hr/>
     </div>
   

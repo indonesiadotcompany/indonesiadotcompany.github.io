@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bash on Blog Indonesiadot.Com</title>
@@ -19,7 +19,7 @@
       <guid>https://blog.indonesiadot.com/2019/10/25/create-gcp-vm-using-gcloud-from-command-line/</guid>
       <description>Pembuatan virtual machine di GCP / Google Cloud Platform menggunakan gcloud command line bermanfaat untuk mempermudah pembuatan VM tanpa harus mengakses web browser.
 Berikut langkah nya yang dilakukan di OS Centos 7:
-sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &amp;lt;&amp;lt; EOM [google-cloud-sdk] name=Google Cloud SDK baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64 enabled=1 gpgcheck=1 repo_gpgcheck=1 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg EOM sudo yum install google-cloud-sdk gcloud init Berikut langkah yang dilakukan di OS ubuntu / debian:
+sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &amp;lt;&amp;lt; EOM [google-cloud-sdk] name=Google Cloud SDK baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64 enabled=1 gpgcheck=1 repo_gpgcheck=1 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg EOM sudo yum install google-cloud-sdk gcloud init  Berikut langkah yang dilakukan di OS ubuntu / debian:
 echo &amp;quot;deb http://packages.cloud.google.com/apt cloud-sdk main&amp;quot; | sudo tee -a /etc/apt/sources.</description>
     </item>
     
@@ -29,7 +29,7 @@ echo &amp;quot;deb http://packages.cloud.google.com/apt cloud-sdk main&amp;quot;
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</guid>
-      <description>Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt comment out a line that contain string sed -i &#39;/ 2001 /s/^/#/&#39; file Referensi:
+      <description> Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt  comment out a line that contain string sed -i &#39;/ 2001 /s/^/#/&#39; file  Referensi:
  https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521 https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file  </description>
     </item>
     
