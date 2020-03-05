@@ -48,11 +48,12 @@ systemctl daemon-reload
 systemctl restart docker
 ```
 
-Ref:
-
 * https://kubernetes.io/docs/setup/production-environment/container-runtimes/
 
-Referensi:
+## kubernetes kubeadm show join command
 
-* https://darxkies.github.io/k8s-tew/_build/html/index.html
+```
+kubeadm token create --print-join-command
+```
+
 

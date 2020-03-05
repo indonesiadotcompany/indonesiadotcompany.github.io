@@ -28,6 +28,9 @@ Tools yang biasa digunakan pada server linux:
  * tawk.to
  * [simple chat](https://github.com/juliancwirko/s-chat-app)
 
+* Networking
+ * [nload](https://www.linux.com/tutorials/monitoring-network-load-nload-part-2/)
+
 Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut
 
 * https://blog.indonesiadot.com/2019/09/04/linux-security-tools/

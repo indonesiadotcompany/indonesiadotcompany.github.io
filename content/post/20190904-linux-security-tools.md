@@ -38,15 +38,17 @@ Tools yang biasa digunakan pada server linux:
  * modsecurity
  * naxsi https://github.com/nbs-system/naxsi
  * shadow daemon https://shadowd.zecure.org/overview/introduction/
- * imperva *berbayar
+ * imperva berbayar
 
 * Web Scanner
  * nikto ( https://geekflare.com/nikto-webserver-scanner/ )
 
 * Pentest
  * owasp-zap https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b
+ * nessus https://www.tenable.com/tenable-for-education
+
 
 Referensi Openscap:
 
 * https://www.open-scap.org/
-
+* https://lifehacker.com/how-to-use-nessus-to-scan-a-network-for-vulnerabilities-1788261156
