@@ -12,6 +12,15 @@ draft: false
 
 * https://widgitgog.birau.com/dashboard/projects
 
+### change / update hostname
+```
+sed -i 's/widgitgog/widgit/g' /etc/gitlab/gitlab.rb
+gitlab-ctl reconfigure
+gitlab-ctl restart
+```
+
+* https://docs.gitlab.com/omnibus/settings/configuration.html
+
 Referensi:
 
 * https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/

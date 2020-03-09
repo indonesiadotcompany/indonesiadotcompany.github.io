@@ -41,3 +41,14 @@ Ref:
 * https://unix.stackexchange.com/questions/117190/best-way-to-sync-files-copy-only-existing-files-and-only-if-newer-than-target
 * https://superuser.com/questions/151911/how-to-make-new-file-permission-inherit-from-the-parent-directory
 
+## awk example
+```
+docker images
+docker images | grep widharbor.birau.com
+docker images | grep widharbor.birau.com | wc -l
+docker images | grep widharbor.birau.com | awk '{ print $1 ":" $2 }'
+docker rmi `docker images | grep widharbor.birau.com | awk '{ print $1 ":" $2 }'`
+```
+
+* https://www.linuxtechi.com/awk-command-tutorial-with-examples/
+
