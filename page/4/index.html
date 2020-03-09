@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.57.2" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -626,6 +626,8 @@
       
     
       
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -658,18 +660,44 @@
 <div class="post">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/26/ansible-awx-2019/">Ansible AWX 2019</a></h1>
+        <span class="post-date">Nov 26, 2019</span>
+	<h2 id="ansible-awx">Ansible AWX</h2>
+<h3 id="install-docker-compose-tanpa-pip-tanpa-compile">install docker-compose tanpa pip, tanpa compile</h3>
+<pre><code>curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+</code></pre><p>Referensi:</p>
+<ul>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/">https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/</a></li>
+<li><a href="https://medium.com/swlh/ansible-awx-installation-5861b115455a">https://medium.com/swlh/ansible-awx-installation-5861b115455a</a></li>
+<li><a href="https://devzero.co.za/2019/02/28/high-availability-awx-ansible/">https://devzero.co.za/2019/02/28/high-availability-awx-ansible/</a></li>
+<li><a href="https://github.com/sujiar37/AWX-HA-InstanceGroup">https://github.com/sujiar37/AWX-HA-InstanceGroup</a></li>
+</ul>
+<p>Not yet tested:</p>
+<ul>
+<li><a href="https://github.com/MrMEEE/awx-build">https://github.com/MrMEEE/awx-build</a></li>
+<li><a href="https://awx.wiki/installation">https://awx.wiki/installation</a></li>
+<li><a href="https://github.com/powertim/deploy_awx-rpm">https://github.com/powertim/deploy_awx-rpm</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/">https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/awx/">awx</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/">Splunk Log Monitoring</a></h1>
         <span class="post-date">Nov 15, 2019</span>
-	
-
-<h2 id="download">Download</h2>
-
-<p><a href="wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb" title="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;wget=true">deb</a>
-<a href="wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm" title="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;wget=true">rpm</a>
-<a href="wget -O splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz" title="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;wget=true">tgz</a></p>
-
+	<h2 id="download">Download</h2>
+<p>[deb](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb &lsquo;<a href="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;wget=true'">https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;wget=true'</a>)
+[rpm](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm &lsquo;<a href="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;wget=true'">https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;wget=true'</a>)
+[tgz](wget -O splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz &lsquo;<a href="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;wget=true'">https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;wget=true'</a>)</p>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://docs.splunk.com/Documentation">https://docs.splunk.com/Documentation</a></li>
 </ul>
@@ -685,16 +713,10 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/">Recommended Ansible Modules</a></h1>
         <span class="post-date">Nov 5, 2019</span>
-	
-
-<h1 id="frequently-used-module">Frequently Used Module</h1>
-
+	<h1 id="frequently-used-module">Frequently Used Module</h1>
 <h2 id="blockinfile">blockinfile</h2>
-
 <p>Module ini saya gunakan ketika muncul error pada saat menggunakan module lineinfile untuk memasukan beberapa baris sekaligus dalam beberapa tasks, dan ternyata dengan menggunakan module ini dengan hanya satu task bisa memasukan langsung beberapa baris.</p>
-
 <p>Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepada parameter minimalnya adalah path dan block saja.</p>
-
 <pre><code>- name: Insert correct line to /etc/ntp.conf
   blockinfile:
     path: /etc/ntp.conf
@@ -704,21 +726,15 @@
       server &quot;{{ ntp1 }}&quot;
       server &quot;{{ ntp2 }}&quot;
   notify: restart ntp
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.google.com/search?q=lineinfile+multiple+lines">https://www.google.com/search?q=lineinfile+multiple+lines</a></li>
 <li><a href="https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines">https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines</a></li>
 <li><a href="https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html">https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html</a></li>
 <li><a href="https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py">https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py</a></li>
 </ul>
-
 <h2 id="find">find</h2>
-
 <p>Berikut contoh module find yang dicombine dengan module set_fact, when untuk menggunakan result matched (when seperti if dalam scripting / programming)</p>
-
 <pre><code>    - name: Search /etc/audit/rules.d for other DAC audit rules
       find:
         paths: /etc/audit/rules.d
@@ -741,16 +757,13 @@
       when:
         - find_fchown.matched is defined and find_fchown.matched &gt; 0
         - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
-</code></pre>
-
-<p>Referensi:
-* file remediation.yml dari oscap
-* <a href="https://docs.ansible.com/ansible/latest/modules/find_module.html">https://docs.ansible.com/ansible/latest/modules/find_module.html</a></p>
-
+</code></pre><p>Referensi:</p>
+<ul>
+<li>file remediation.yml dari oscap</li>
+<li><a href="https://docs.ansible.com/ansible/latest/modules/find_module.html">https://docs.ansible.com/ansible/latest/modules/find_module.html</a></li>
+</ul>
 <h2 id="pamd">pamd</h2>
-
 <p>module ini berguna untuk edit pam service tanpa harus mengedit file nya langsung, tanpa harus menggunakan module lineinfile, blockinfile, replace, etc. Dan berikut contohnya:</p>
-
 <pre><code>    - name: Add unlock_time argument to pam_faillock preauth
       pamd:
         name: '{{ item }}'
@@ -763,17 +776,12 @@
       loop:
         - system-auth
         - password-auth
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><p>Referensi:</p>
 <ul>
 <li>file remediation.yml oscap</li>
 <li><a href="https://docs.ansible.com/ansible/latest/modules/pamd_module.html">https://docs.ansible.com/ansible/latest/modules/pamd_module.html</a></li>
 </ul>
-
 <h2 id="debug">debug</h2>
-
 <pre><code>    - name: download report
       fetch:
         src: /tmp/oscap-report.html
@@ -781,10 +789,7 @@
         flat: yes
     - debug:
         msg: http://34.87.94.24/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
-</code></pre>
-
-<p>Ref:</p>
-
+</code></pre><p>Ref:</p>
 <ul>
 <li><a href="https://docs.ansible.com/ansible/latest/modules/debug_module.html">https://docs.ansible.com/ansible/latest/modules/debug_module.html</a></li>
 </ul>
@@ -800,12 +805,8 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/">Ansible and Openscap</a></h1>
         <span class="post-date">Nov 4, 2019</span>
-	
-
-<h2 id="ansible-and-openscap-for-scanning-and-remediation-server-for-security-compliance-operating-system">Ansible and Openscap for scanning and remediation server for security compliance operating system</h2>
-
+	<h2 id="ansible-and-openscap-for-scanning-and-remediation-server-for-security-compliance-operating-system">Ansible and Openscap for scanning and remediation server for security compliance operating system</h2>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663">https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663</a></li>
 </ul>
@@ -821,12 +822,8 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/03/openscap-reference/">Openscap Reference</a></h1>
         <span class="post-date">Nov 3, 2019</span>
-	
-
-<h2 id="openscap-custom-profile">Openscap Custom Profile</h2>
-
+	<h2 id="openscap-custom-profile">Openscap Custom Profile</h2>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://martin.preisler.me/2013/11/xccdf-tailoring/">https://martin.preisler.me/2013/11/xccdf-tailoring/</a></li>
 <li><a href="https://static.open-scap.org/openscap-1.2/oscap_user_manual.html">https://static.open-scap.org/openscap-1.2/oscap_user_manual.html</a></li>
@@ -843,12 +840,8 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/31/centos-syslog-server/">Centos Syslog Server</a></h1>
         <span class="post-date">Oct 31, 2019</span>
-	
-
-<h2 id="setup-syslog-server-and-setup-syslog-client-to-it-on-centos-7">Setup Syslog Server and setup syslog client to it on Centos 7</h2>
-
+	<h2 id="setup-syslog-server-and-setup-syslog-client-to-it-on-centos-7">Setup Syslog Server and setup syslog client to it on Centos 7</h2>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://www.svennd.be/setup-central-syslog-server-on-centos-7/">https://www.svennd.be/setup-central-syslog-server-on-centos-7/</a></li>
 <li><a href="https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/">https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/</a></li>
@@ -866,55 +859,33 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/31/regex-/-regexp-reference/">Regex / Regexp Reference</a></h1>
         <span class="post-date">Oct 31, 2019</span>
-	
-
-<h2 id="regex-case-insensitive">Regex Case insensitive</h2>
-
+	<h2 id="regex-case-insensitive">Regex Case insensitive</h2>
 <p>(?i)</p>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean">https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean</a></li>
 <li><a href="https://regex101.com/r/hE9gB4/1">https://regex101.com/r/hE9gB4/1</a></li>
 <li><a href="https://regexr.com/3f4vo">https://regexr.com/3f4vo</a></li>
 </ul>
-
 <h2 id="regex-to-match-string-containing-two-names">Regex to match string containing two names</h2>
-
 <p>###Explanation of command that i am going to write:-</p>
-
 <p>. means any character, digit can come in place of .</p>
-
 <ul>
 <li>means zero or more occurrences of thing written just previous to it.</li>
 </ul>
-
 <p>| means &lsquo;or&rsquo;.</p>
-
 <p>So,</p>
-
 <pre><code>james.*jack
-</code></pre>
-
-<p>would search james , then any number of character until jack comes.</p>
-
+</code></pre><p>would search james , then any number of character until jack comes.</p>
 <p>Since you want either jack.*james or james.*jack</p>
-
 <p>Hence Command:</p>
-
 <p>jack.*james|james.*jack</p>
-
 <p>Ref:</p>
-
 <ul>
 <li><a href="https://stackoverflow.com/questions/4389644/regex-to-match-string-containing-two-names-in-any-order">https://stackoverflow.com/questions/4389644/regex-to-match-string-containing-two-names-in-any-order</a></li>
 </ul>
-
-<h2 id="regex-not-contain-substring-a-word">Regex not contain substring / a word</h2>
-
+<h2 id="regex-not-contain-substring--a-word">Regex not contain substring / a word</h2>
 <p>Ref:</p>
-
 <p><a href="https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word">https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word</a></p>
 
 	<hr/>
@@ -928,29 +899,19 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/29/linux-os-hardening/">Linux OS Hardening</a></h1>
         <span class="post-date">Oct 29, 2019</span>
-	
-
-<h2 id="password-policies-centos-7">Password Policies Centos 7</h2>
-
+	<h2 id="password-policies-centos-7">Password Policies Centos 7</h2>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/">https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/</a></li>
 <li><a href="https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/">https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/</a></li>
 </ul>
-
 <h2 id="centos-7-hardening-guide">Centos 7 Hardening Guide</h2>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://www.lisenet.com/2017/centos-7-server-hardening-guide/">https://www.lisenet.com/2017/centos-7-server-hardening-guide/</a></li>
 </ul>
-
-<h2 id="linux-aslr-and-kernel-randomize-va-space">Linux ASLR and kernel.randomize_va_space</h2>
-
+<h2 id="linux-aslr-and-kernelrandomize_va_space">Linux ASLR and kernel.randomize_va_space</h2>
 <p>Ref:</p>
-
 <ul>
 <li><a href="https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/">https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/</a></li>
 </ul>
@@ -966,12 +927,8 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/">TCP Wrapper</a></h1>
         <span class="post-date">Oct 29, 2019</span>
-	
-
-<h2 id="tcp-wrapper">TCP Wrapper</h2>
-
+	<h2 id="tcp-wrapper">TCP Wrapper</h2>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=tcp_wrapper">https://www.server-world.info/en/note?os=CentOS_7&amp;p=tcp_wrapper</a></li>
 <li><a href="https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/">https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/</a></li>
@@ -982,165 +939,6 @@
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/tcpwrapper/">tcpwrapper</a>, <a href="https://blog.indonesiadot.com/tags/tcp-wrapper/">tcp-wrapper</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/28/ansible-reference/">Ansible Reference</a></h1>
-        <span class="post-date">Oct 28, 2019</span>
-	
-
-<p>Postingan ini adalah referensi untuk belajar ansible dan bisa juga sebagai tips, meski sudah ada postingan sebelumnya yang berisi ansible tips :)</p>
-
-<h2 id="jenkins-ci">Jenkins-ci</h2>
-
-<p>Ref:
-* <a href="https://galaxy.ansible.com/geerlingguy/jenkins/">https://galaxy.ansible.com/geerlingguy/jenkins/</a>
-* <a href="http://rundeck.org">http://rundeck.org</a>
-* Goci / gocd</p>
-
-<h2 id="ansible-check-disk">Ansible check disk</h2>
-
-<pre><code>- name: Ensure that free space on {{ mountname }} is grater than 40%
-  assert:
-    that: mount.size_available &gt; mount.size_total|float * 0.4
-    msg: disk space has reached 60% threshold
-  vars:
-    mountname: '/'
-    mount: &quot;{{ ansible_mounts | selectattr('mount','equalto',mountname) | list | first }}&quot;
-</code></pre>
-
-<p>atau</p>
-
-<pre><code>- name: Ensure that free space on the tested volume is greater than 15%
-  assert:
-    that:
-      - mount.size_available &gt; mount.size_total|float * 0.15
-    msg: Disk space has reached 85% threshold
-  vars:
-    mount: &quot;{{ ansible_mounts | selectattr('mount','equalto',item.mount) | list | first }}&quot;
-  with_items:
-    - &quot;{{ ansible_mounts }}&quot;
-</code></pre>
-
-<p>atau</p>
-
-<pre><code>name: 'Ensure that free space on {{ mountname }} is grater than 30%'
-assert:
-  that: item.size_available &gt; item.size_total|float * 0.3
-  msg: 'disk space has reached 70% threshold'
-when: item.mount == mountname
-with_items: '{{ ansible_mounts }}'
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://stackoverflow.com/questions/44077630/ansible-to-check-diskspace-for-mounts-mentioned-as-variable">https://stackoverflow.com/questions/44077630/ansible-to-check-diskspace-for-mounts-mentioned-as-variable</a></li>
-</ul>
-
-<h2 id="ansible-role-tutorial">Ansible role tutorial</h2>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://medium.com/@brad.simonin/learning-ansible-and-ansible-roles-with-centos-7-linux-817406f7b542">https://medium.com/@brad.simonin/learning-ansible-and-ansible-roles-with-centos-7-linux-817406f7b542</a></li>
-</ul>
-
-<h2 id="ansible-create-file-based-on-date">Ansible create file based on date</h2>
-
-<pre><code>- name: Backup and compress /etc/ to /data/backups based on date
-  archive:
-    path: /etc/
-    dest: /data/backups/etc-{{ date }}.tgz
-  vars:
-    date: &quot;{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}&quot;
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://serverfault.com/questions/728662/ansible-manipulate-file-with-a-date-format">https://serverfault.com/questions/728662/ansible-manipulate-file-with-a-date-format</a></li>
-</ul>
-
-<h2 id="ansible-check-file-if-exists-or-not">Ansible check file if exists or not</h2>
-
-<pre><code>- name: Check that the hosts.allow exists
-  stat:
-    path: /etc/hosts.allow
-  register: stat_allow
-- name: Create the file, if it doesnt exist already
-  file:
-    path: /etc/hosts.allow
-    state: touch
-  when: stat_allow.stat.exists == False
-</code></pre>
-
-<p>Ref:</p>
-
-<ul>
-<li><a href="https://stackoverflow.com/questions/35654286/how-check-a-file-exists-in-ansible">https://stackoverflow.com/questions/35654286/how-check-a-file-exists-in-ansible</a></li>
-</ul>
-
-<h2 id="ansible-explicit-data-type-casting-str-indicator">Ansible explicit data type casting !!str indicator</h2>
-
-<p>!!str indicator which simply forces the value to be a string.</p>
-
-<p>Ref:</p>
-
-<ul>
-<li><a href="https://github.com/ansible/ansible/issues/11905">https://github.com/ansible/ansible/issues/11905</a></li>
-<li><a href="https://github.com/ansible/ansible/issues/11151">https://github.com/ansible/ansible/issues/11151</a></li>
-</ul>
-
-<h2 id="ansible-lineinfile-module">Ansible lineinfile module</h2>
-
-<p>Ref:</p>
-
-<ul>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/lineinfile_module.html">https://docs.ansible.com/ansible/latest/modules/lineinfile_module.html</a></li>
-</ul>
-
-<h2 id="ansible-find-register-variable-and-output-to-terminal-echo">Ansible find, register variable, and output to terminal / echo</h2>
-
-<p>Ref:</p>
-
-<ul>
-<li><a href="https://www.mydailytutorials.com/ansible-register-variables/">https://www.mydailytutorials.com/ansible-register-variables/</a></li>
-<li><a href="https://serverfault.com/questions/537060/how-to-see-stdout-of-ansible-commands">https://serverfault.com/questions/537060/how-to-see-stdout-of-ansible-commands</a></li>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/debug_module.html">https://docs.ansible.com/ansible/latest/modules/debug_module.html</a></li>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/find_module.html">https://docs.ansible.com/ansible/latest/modules/find_module.html</a></li>
-<li><a href="https://serverfault.com/questions/945821/ansible-find-get-path-of-a-directory">https://serverfault.com/questions/945821/ansible-find-get-path-of-a-directory</a></li>
-</ul>
-
-<h2 id="ansible-show-detailed-output-using-callback-plugins">Ansible show detailed output using callback plugins</h2>
-
-<p>Ref:</p>
-
-<ul>
-<li><a href="https://docs.ansible.com/ansible/latest/plugins/callback.html">https://docs.ansible.com/ansible/latest/plugins/callback.html</a></li>
-<li><a href="https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html">https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html</a></li>
-</ul>
-
-<h2 id="ansible-copy-only-on-remote-host">ansible copy only on remote host</h2>
-
-<pre><code>name: copy files task
-  shell: cp source/path/file destination/path/file 
-</code></pre>
-
-<p>or using remote_src flag on copy module</p>
-
-<p>Ref:</p>
-
-<ul>
-<li><a href="https://stackoverflow.com/questions/41130757/ansible-copy-or-move-files-only-on-remote-host">https://stackoverflow.com/questions/41130757/ansible-copy-or-move-files-only-on-remote-host</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/reference/">reference</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   

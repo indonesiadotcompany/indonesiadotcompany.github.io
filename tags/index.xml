@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Blog Indonesiadot.Com</title>
@@ -6,15 +6,33 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Mar 2020 04:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2020 17:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>ansible</title>
+      <link>https://blog.indonesiadot.com/tags/ansible/</link>
+      <pubDate>Mon, 09 Mar 2020 17:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ansibletower</title>
+      <link>https://blog.indonesiadot.com/tags/ansibletower/</link>
+      <pubDate>Mon, 09 Mar 2020 17:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ansibletower/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>linux</title>
       <link>https://blog.indonesiadot.com/tags/linux/</link>
-      <pubDate>Fri, 06 Mar 2020 04:17:54 +0700</pubDate>
+      <pubDate>Mon, 09 Mar 2020 17:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/linux/</guid>
       <description></description>
@@ -255,15 +273,6 @@
     </item>
     
     <item>
-      <title>ansible</title>
-      <link>https://blog.indonesiadot.com/tags/ansible/</link>
-      <pubDate>Thu, 20 Feb 2020 18:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>hardening</title>
       <link>https://blog.indonesiadot.com/tags/hardening/</link>
       <pubDate>Thu, 20 Feb 2020 18:17:54 +0700</pubDate>
@@ -332,15 +341,6 @@
       <pubDate>Mon, 20 Jan 2020 09:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/selinux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ansibletower</title>
-      <link>https://blog.indonesiadot.com/tags/ansibletower/</link>
-      <pubDate>Sun, 19 Jan 2020 15:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/ansibletower/</guid>
       <description></description>
     </item>
     

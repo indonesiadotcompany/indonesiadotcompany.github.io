@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>yum on Blog Indonesiadot.Com</title>
@@ -17,7 +17,7 @@
       <pubDate>Fri, 28 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/28/yum-tips/</guid>
-      <description> Yum install specific version yum list docker-ce.x86_64 --showduplicates yum list docker-ce.x86_64 --showduplicates | sort -r yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09   https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos  </description>
+      <description>Yum install specific version yum list docker-ce.x86_64 --showduplicates yum list docker-ce.x86_64 --showduplicates | sort -r yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09  https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos  </description>
     </item>
     
   </channel>

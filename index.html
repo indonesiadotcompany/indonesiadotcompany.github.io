@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.57.2" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -626,6 +626,8 @@
       
     
       
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -658,29 +660,77 @@
 <div class="post">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution/">Ansible Test Implement for Security Hardening Solution</a></h1>
+        <span class="post-date">Mar 9, 2020</span>
+	<h2 id="background">Background</h2>
+<ul>
+<li>belum adanya standarisasi system security yang mengacu kepada baseline standarisasi internasional seperti CIS, NIST atau PCI-DSS</li>
+<li>pekerjaan manual yang sangat kompleks dan berat jika harus dilakukan secara manual untuk melakukan standarisasi security system</li>
+<li>masih banyaknya server yang non-comply dengan standarisasi sistem security yang telah dibuat oleh perusahaan</li>
+</ul>
+<h2 id="objective">Objective</h2>
+<ul>
+<li>mengurangi serangan</li>
+<li>konfigurasi yang robust</li>
+<li>secured protocols</li>
+<li>comply kepada standarisasi internasional dan standarisasi internal perusahaan</li>
+</ul>
+<p>Langkah 1:</p>
+<ul>
+<li>Membuat security baseline
+<ul>
+<li>custom baseline CIS / PCI-DSS yang digabung dengan baseline internal perusahaan</li>
+</ul>
+</li>
+<li>Implementasi dan enforce security baseline</li>
+</ul>
+<p>Overall Scope of Work and deliverable:</p>
+<ul>
+<li>Architecture and End-to-End Design (N)</li>
+<li>Hardware, Software and infrastructure components</li>
+<li>Hardware and software delivery and installation, incl. necessary testing</li>
+<li>Required supporting equipment and materials</li>
+<li>Services, including project management, implementation, integration and migration</li>
+<li>Technical support (3 years) including
+<ul>
+<li>Hardware and software updates</li>
+<li>Service request support and management (SRSM)</li>
+<li>spares management with instant replacement (SPMS)</li>
+<li>first line maintenance incl. preventative maintenances (O&amp;M Assistance)</li>
+</ul>
+</li>
+</ul>
+<p>Technical Requirements (Software and Services)</p>
+<ul>
+<li>Software components shall be grouped in two areas : 1. Development, 2. Operation</li>
+</ul>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/06/proxmox-add-zfs-disk/">Proxmox add zfs disk</a></h1>
         <span class="post-date">Mar 6, 2020</span>
-	
-
-<h2 id="add-disk-hardware">Add Disk Hardware</h2>
-
+	<h2 id="add-disk-hardware">Add Disk Hardware</h2>
 <p>Tambahkan harddisk di server secara berurutan port sata nya, dan catat ID disknya</p>
-
 <h2 id="setting-at-command-line">Setting at command line</h2>
-
 <pre><code>ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R
 ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4
 zpool create rpoolkube -o ashift=12 mirror /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4
 zpool status
-</code></pre>
-
-<h2 id="tambahkan-proxmox-storage-pool">Tambahkan proxmox storage pool</h2>
-
+</code></pre><h2 id="tambahkan-proxmox-storage-pool">Tambahkan proxmox storage pool</h2>
 <p>Dari proxmox pool, lalu klik storage, lalu add storage, pilih zfs.
 Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masukan block size 64k, lalu klik create.</p>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>
@@ -696,26 +746,15 @@ Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masuka
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/netcat-bandwidth-test/">Netcat Bandwidth Test</a></h1>
         <span class="post-date">Mar 5, 2020</span>
-	
-
-<h2 id="netcat-bandwidth-test">Netcat Bandwidth Test</h2>
-
+	<h2 id="netcat-bandwidth-test">Netcat Bandwidth Test</h2>
 <h3 id="netcat-server">netcat-server</h3>
-
 <pre><code>nc -l -p 12345 | wc -c
-</code></pre>
-
-<h3 id="netcat-client">netcat-client</h3>
-
+</code></pre><h3 id="netcat-client">netcat-client</h3>
 <pre><code>dd if=/dev/zero bs=$((2**20)) count=$((2**10)) | nc -q 0 netcat-server 12345
 #or
 dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345
-</code></pre>
-
-<p>on the server run nload to see the bandwidth used at eth0 for incoming and outgoing</p>
-
+</code></pre><p>on the server run nload to see the bandwidth used at eth0 for incoming and outgoing</p>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/">https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/</a></li>
 <li><a href="https://www.thegeekstuff.com/2012/04/nc-command-examples/">https://www.thegeekstuff.com/2012/04/nc-command-examples/</a></li>
@@ -732,14 +771,9 @@ dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/"></a></h1>
         <span class="post-date">Mar 5, 2020</span>
-	
-
-<h2 id="post">Post</h2>
-
+	<h2 id="post">Post</h2>
 <p>Ini adalah contoh post</p>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>
@@ -755,15 +789,10 @@ dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/python-tips/">Python Tips</a></h1>
         <span class="post-date">Mar 5, 2020</span>
-	
-
-<h2 id="module-python-web-server">module python web server</h2>
-
+	<h2 id="module-python-web-server">module python web server</h2>
 <pre><code>python -m SimpleHTTPServer 8001
 python -m SimpleHTTPServer 8002
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver">https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver</a></li>
 <li><a href="https://www.pcsuggest.com/best-lightweight-web-server-linux/">https://www.pcsuggest.com/best-lightweight-web-server-linux/</a></li>
 </ul>
@@ -779,16 +808,11 @@ python -m SimpleHTTPServer 8002
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/28/yum-tips/">Yum tips</a></h1>
         <span class="post-date">Feb 28, 2020</span>
-	
-
-<h2 id="yum-install-specific-version">Yum install specific version</h2>
-
+	<h2 id="yum-install-specific-version">Yum install specific version</h2>
 <pre><code>yum list docker-ce.x86_64 --showduplicates
 yum list docker-ce.x86_64 --showduplicates | sort -r
 yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos">https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos</a></li>
 </ul>
 
@@ -803,43 +827,20 @@ yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/28/docker-tips/">Docker Tips</a></h1>
         <span class="post-date">Feb 28, 2020</span>
-	
-
-<h2 id="docker-run-example">Docker run example</h2>
-
+	<h2 id="docker-run-example">Docker run example</h2>
 <pre><code>docker run -it alpine /bin/ash
-</code></pre>
-
-<p>Where -i = interactive, -t make tty for the running process, /bin/ash is the command to run.</p>
-
+</code></pre><p>Where -i = interactive, -t make tty for the running process, /bin/ash is the command to run.</p>
 <p>docker run &ndash;help</p>
-
 <h2 id="how-to-get-ip-of-running-docker">How to get ip of running docker</h2>
-
 <pre><code>docker ps
 docker inspect &lt;containernameorid&gt;
 docker inspect &lt;containernameorid&gt; | grep '&quot;IPAddress&quot;' | head -n 1
-</code></pre>
-
-<p>Where head is opossite from tail, man head, man tail</p>
-
+</code></pre><p>Where head is opossite from tail, man head, man tail</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17">https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17</a>.</li>
 </ul>
-
-<div dir="ltr"><b>Rancher</b></div><div dir="ltr">https://rancher.com/swarm/</div><div dir="ltr"><br /></div><div dir="ltr">https://github.com/MoimHossain/docker-viswarm<br /><br />https://stackoverflow.com/ques
-tions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host<br /><br /><pre style="background-color: #eff0f1; border: 0px; box-sizing: inherit; color: #242729; font-family: Consolas, Menlo, Monaco, &q
-uot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-size: 13px; font-stretch: inherit; 
-font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;"><code style="border: 0px; box-
-sizing: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monosp
-ace, sans-serif; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline; white-space: inherit;">docker 
-inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' containernameorid</code></pre><br /><br /><pre style="background-color: #eff0f1; border: 0px; box-sizing: inherit; color: #242729; font-famil
-y: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-size:
- 13px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;">
-<br /></pre></div>
-
+<!-- raw HTML omitted -->
 <p>Ref:</p>
-
 <ul>
 <li><a href="https://docs.docker.com/engine/security/certificates/">https://docs.docker.com/engine/security/certificates/</a></li>
 <li><a href="https://docs.docker.com/engine/security/https/">https://docs.docker.com/engine/security/https/</a></li>
@@ -856,28 +857,18 @@ y: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&qu
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/27/ubuntu-networking-using-netplan/">Ubuntu networking using netplan</a></h1>
         <span class="post-date">Feb 27, 2020</span>
-	
-
-<h1 id="ubuntu-networking-using-netplan">Ubuntu networking using netplan</h1>
-
+	<h1 id="ubuntu-networking-using-netplan">Ubuntu networking using netplan</h1>
 <h2 id="configuration">Configuration</h2>
-
 <p>To configure netplan, save configuration files under /etc/netplan/ with a .yaml extension (e.g. /etc/netplan/config.yaml), then run sudo netplan apply. This command parses and applies the configuration to the system. Configuration written to disk under /etc/netplan/ will persist between reboots.</p>
-
 <h2 id="using-dhcp-and-static-addressing">Using DHCP and static addressing</h2>
-
 <p>To let the interface named ‘enp3s0’ get an address via DHCP, create a YAML file with the following:</p>
-
 <pre><code>network:
   version: 2
   renderer: networkd
   ethernets:
     enp3s0:
       dhcp4: true
-</code></pre>
-
-<p>To instead set a static IP address, use the addresses key, which takes a list of (IPv4 or IPv6), addresses along with the subnet prefix length (e.g. /24). Gateway and DNS information can be provided as well:</p>
-
+</code></pre><p>To instead set a static IP address, use the addresses key, which takes a list of (IPv4 or IPv6), addresses along with the subnet prefix length (e.g. /24). Gateway and DNS information can be provided as well:</p>
 <pre><code>network:
   version: 2
   renderer: networkd
@@ -889,14 +880,9 @@ y: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&qu
       nameservers:
           search: [mydomain, otherdomain]
           addresses: [10.10.10.1, 1.1.1.1]
-</code></pre>
-
-<h2 id="connecting-multiple-interfaces-with-dhcp">Connecting multiple interfaces with DHCP</h2>
-
+</code></pre><h2 id="connecting-multiple-interfaces-with-dhcp">Connecting multiple interfaces with DHCP</h2>
 <p>Many systems now include more than one network interface. Servers will commonly need to connect to multiple networks, and may require that traffic to the Internet goes through a specific interface despite all of them providing a valid gateway.</p>
-
 <p>One can achieve the exact routing desired over DHCP by specifying a metric for the routes retrieved over DHCP, which will ensure some routes are preferred over others. In this example, ‘enred’ is preferred over ‘engreen’, as it has a lower route metric:</p>
-
 <pre><code>network:
   version: 2
   ethernets:
@@ -908,12 +894,8 @@ y: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&qu
       dhcp4: yes
       dhcp4-overrides:
         route-metric: 200
-</code></pre>
-
-<h2 id="connecting-to-an-open-wireless-network">Connecting to an open wireless network</h2>
-
+</code></pre><h2 id="connecting-to-an-open-wireless-network">Connecting to an open wireless network</h2>
 <p>Netplan easily supports connecting to an open wireless network (one that is not secured by a password), only requiring that the access point is defined:</p>
-
 <pre><code>network:
   version: 2
   wifis:
@@ -921,12 +903,8 @@ y: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&qu
       access-points:
         opennetwork: {}
       dhcp4: yes
-</code></pre>
-
-<h2 id="connecting-to-a-wpa-personal-wireless-network">Connecting to a WPA Personal wireless network</h2>
-
+</code></pre><h2 id="connecting-to-a-wpa-personal-wireless-network">Connecting to a WPA Personal wireless network</h2>
 <p>Wireless devices use the ‘wifis’ key and share the same configuration options with wired ethernet devices. The wireless access point name and password should also be specified:</p>
-
 <pre><code>network:
   version: 2
   renderer: networkd
@@ -941,12 +919,8 @@ y: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&qu
       access-points:
         &quot;network_ssid_name&quot;:
           password: &quot;**********&quot;
-</code></pre>
-
-<h2 id="using-multiple-addresses-on-a-single-interface">Using multiple addresses on a single interface</h2>
-
+</code></pre><h2 id="using-multiple-addresses-on-a-single-interface">Using multiple addresses on a single interface</h2>
 <p>The addresses key can take a list of addresses to assign to an interface:</p>
-
 <pre><code>network:
   version: 2
   renderer: networkd
@@ -956,12 +930,8 @@ y: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&qu
        - 10.100.1.38/24
        - 10.100.1.39/24
      gateway4: 10.100.1.1
-</code></pre>
-
-<p>Interface aliases (e.g. eth0:0) are not supported.</p>
-
+</code></pre><p>Interface aliases (e.g. eth0:0) are not supported.</p>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://netplan.io/examples">https://netplan.io/examples</a></li>
 </ul>
@@ -977,19 +947,12 @@ y: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&qu
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/25/ubiquiti-unifi-on-linux-ubuntu/">Ubiquiti Unifi on Linux Ubuntu</a></h1>
         <span class="post-date">Feb 25, 2020</span>
-	
-
-<h2 id="ubiquiti-unifi-on-linux-ubuntu">Ubiquiti Unifi on Linux Ubuntu</h2>
-
+	<h2 id="ubiquiti-unifi-on-linux-ubuntu">Ubiquiti Unifi on Linux Ubuntu</h2>
 <pre><code>apt-get update; apt-get install ca-certificates wget -y
 wget https://get.glennr.nl/unifi/install/unifi-5.12.35.sh
 bash unifi-5.12.35.sh
-</code></pre>
-
-<p>access your unifi controller at <a href="https://ip.of.your.server:8443">https://ip.of.your.server:8443</a></p>
-
+</code></pre><p>access your unifi controller at <a href="https://ip.of.your.server:8443">https://ip.of.your.server:8443</a></p>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://community.ui.com/questions/UniFi-Installation-Scripts-or-UniFi-Easy-Update-Script-or-UniFi-Lets-Encrypt-or-Ubuntu-16-04-18-04-/ccbc7530-dd61-40a7-82ec-22b17f027776">https://community.ui.com/questions/UniFi-Installation-Scripts-or-UniFi-Easy-Update-Script-or-UniFi-Lets-Encrypt-or-Ubuntu-16-04-18-04-/ccbc7530-dd61-40a7-82ec-22b17f027776</a></li>
 <li><a href="https://github.com/widcampur/ubiquiti-unifi-controller-install">https://github.com/widcampur/ubiquiti-unifi-controller-install</a></li>
@@ -1000,27 +963,6 @@ bash unifi-5.12.35.sh
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ubiquiti/">ubiquiti</a>, <a href="https://blog.indonesiadot.com/tags/unifi/">unifi</a>, <a href="https://blog.indonesiadot.com/tags/ubiquiti-unifi/">ubiquiti-unifi</a>, <a href="https://blog.indonesiadot.com/tags/wireless/">wireless</a>, <a href="https://blog.indonesiadot.com/tags/access-point/">access-point</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/24/analisa-virus-dengan-virustotal/">Analisa Virus dengan virustotal</a></h1>
-        <span class="post-date">Feb 24, 2020</span>
-	
-
-<h2 id="analisa-virus-dengan-virustotal">Analisa Virus dengan virustotal</h2>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.virustotal.com/gui/home/upload">https://www.virustotal.com/gui/home/upload</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/virus/">virus</a>, <a href="https://blog.indonesiadot.com/tags/virustotal/">virustotal</a>, <a href="https://blog.indonesiadot.com/tags/worm/">worm</a>, <a href="https://blog.indonesiadot.com/tags/trojan/">trojan</a>
 	 <hr/>
     </div>
   

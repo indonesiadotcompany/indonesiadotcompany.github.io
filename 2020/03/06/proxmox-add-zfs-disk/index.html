@@ -625,6 +625,8 @@
       
     
       
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -654,27 +656,17 @@
 <div class="post">
   <h1 class="post-title">Proxmox add zfs disk</h1>
   <span class="post-date">Mar 6, 2020</span>
-  
-
-<h2 id="add-disk-hardware">Add Disk Hardware</h2>
-
+  <h2 id="add-disk-hardware">Add Disk Hardware</h2>
 <p>Tambahkan harddisk di server secara berurutan port sata nya, dan catat ID disknya</p>
-
 <h2 id="setting-at-command-line">Setting at command line</h2>
-
 <pre><code>ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R
 ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4
 zpool create rpoolkube -o ashift=12 mirror /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4
 zpool status
-</code></pre>
-
-<h2 id="tambahkan-proxmox-storage-pool">Tambahkan proxmox storage pool</h2>
-
+</code></pre><h2 id="tambahkan-proxmox-storage-pool">Tambahkan proxmox storage pool</h2>
 <p>Dari proxmox pool, lalu klik storage, lalu add storage, pilih zfs.
 Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masukan block size 64k, lalu klik create.</p>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>

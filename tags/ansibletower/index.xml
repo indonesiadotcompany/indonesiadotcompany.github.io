@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ansibletower on Blog Indonesiadot.Com</title>
@@ -6,10 +6,19 @@
     <description>Recent content in ansibletower on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Jan 2020 15:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2020 17:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/ansibletower/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible Test Implement for Security Hardening Solution</title>
+      <link>https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution/</link>
+      <pubDate>Mon, 09 Mar 2020 17:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution/</guid>
+      <description>Background  belum adanya standarisasi system security yang mengacu kepada baseline standarisasi internasional seperti CIS, NIST atau PCI-DSS pekerjaan manual yang sangat kompleks dan berat jika harus dilakukan secara manual untuk melakukan standarisasi security system masih banyaknya server yang non-comply dengan standarisasi sistem security yang telah dibuat oleh perusahaan  Objective  mengurangi serangan konfigurasi yang robust secured protocols comply kepada standarisasi internasional dan standarisasi internal perusahaan  Langkah 1:</description>
+    </item>
     
     <item>
       <title>Ansible Tower first Implementation</title>
@@ -17,9 +26,7 @@
       <pubDate>Sun, 19 Jan 2020 15:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/</guid>
-      <description>Ansible Tower first Implementation  Install ansible tower masukan license tambahkan access - organization tambahkan access - users tambahkan access - teams tambahkan resources - inventory siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)
-chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/  tambahkan resources - projects
- buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine</description>
+      <description>Ansible Tower first Implementation  Install ansible tower masukan license tambahkan access - organization tambahkan access - users tambahkan access - teams tambahkan resources - inventory siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)  chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/  tambahkan resources - projects buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine buat host client / node yang mau di manage di /etc/hosts tambahkan resources - credentials tambahkan resources - templates test launch jobs based on template yg baru dibuat  Ansible tower + openscap  install scap-workbench  yum install scap-workbench xauth -y  buat direktori report  mkdir /report chgrp awx /report chmod g+s /report/ chcon -Rv --type=httpd_sys_rw_content_t /report/ ln -s /report /var/lib/awx/public/  tambahkan direktori report di nginx   location /report { alias /var/lib/awx/public/report; autoindex on; }  akses scap-workbench dari laptop  ssh -X -C tower1 scap-workbench  jalankan Scan Remote Machine (over SSH) ke ansible@client1 (jika muncul popup, pilih centos7) Save generate result html ke /report (tambahkan pembeda semisal datetime untuk membedakan tiap file report)  Referensi:</description>
     </item>
     
     <item>
@@ -31,8 +38,8 @@ chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/  tambahkan res
       <description>Install Ansible Tower Persyaratan:
 Hardware: RAM minimal 3,75 GB OS: Centos 7
 Langkah yang dilakukan
-yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz tar -xzvf ansible-tower-setup-latest.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh  Configure Ansible Tower after installation Akses Ansible tower Web UI dari
-https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
+yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz tar -xzvf ansible-tower-setup-latest.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh Configure Ansible Tower after installation Akses Ansible tower Web UI dari
+https://&amp;lt;Ansible Tower IP or Hostname&amp;gt; Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
     </item>
     
   </channel>

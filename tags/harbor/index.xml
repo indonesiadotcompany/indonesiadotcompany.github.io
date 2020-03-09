@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>harbor on Blog Indonesiadot.Com</title>
@@ -17,7 +17,7 @@
       <pubDate>Thu, 20 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</guid>
-      <description> Ansible Tower tips and trick Change admin password awx-manage changepassword admin  backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
+      <description>Ansible Tower tips and trick Change admin password awx-manage changepassword admin backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
  https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html  </description>
     </item>
     
@@ -27,7 +27,7 @@
       <pubDate>Mon, 20 Jan 2020 07:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</guid>
-      <description> Widya Harbor Container Registry  https://widharbor.birau.com/  Referensi:
+      <description>Widya Harbor Container Registry  https://widharbor.birau.com/  Referensi:
  https://indonesiadot.com  </description>
     </item>
     

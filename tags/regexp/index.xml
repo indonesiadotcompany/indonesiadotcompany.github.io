@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>regexp on Blog Indonesiadot.Com</title>
@@ -23,7 +23,8 @@ Referensi:
 . means any character, digit can come in place of .
  means zero or more occurrences of thing written just previous to it.  | means &amp;lsquo;or&amp;rsquo;.
 So,
-james.*jack  would search james , then any number of character until jack comes.</description>
+james.*jack would search james , then any number of character until jack comes.
+Since you want either jack.</description>
     </item>
     
   </channel>
