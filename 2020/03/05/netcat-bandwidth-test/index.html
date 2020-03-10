@@ -627,6 +627,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -656,15 +662,26 @@
 <div class="post">
   <h1 class="post-title">Netcat Bandwidth Test</h1>
   <span class="post-date">Mar 5, 2020</span>
-  <h2 id="netcat-bandwidth-test">Netcat Bandwidth Test</h2>
+  
+
+<h2 id="netcat-bandwidth-test">Netcat Bandwidth Test</h2>
+
 <h3 id="netcat-server">netcat-server</h3>
+
 <pre><code>nc -l -p 12345 | wc -c
-</code></pre><h3 id="netcat-client">netcat-client</h3>
+</code></pre>
+
+<h3 id="netcat-client">netcat-client</h3>
+
 <pre><code>dd if=/dev/zero bs=$((2**20)) count=$((2**10)) | nc -q 0 netcat-server 12345
 #or
 dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345
-</code></pre><p>on the server run nload to see the bandwidth used at eth0 for incoming and outgoing</p>
+</code></pre>
+
+<p>on the server run nload to see the bandwidth used at eth0 for incoming and outgoing</p>
+
 <p>Referensi:</p>
+
 <ul>
 <li><a href="https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/">https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/</a></li>
 <li><a href="https://www.thegeekstuff.com/2012/04/nc-command-examples/">https://www.thegeekstuff.com/2012/04/nc-command-examples/</a></li>

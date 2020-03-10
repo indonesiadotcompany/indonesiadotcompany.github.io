@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cloud on Blog Indonesiadot.Com</title>
@@ -19,7 +19,7 @@
       <guid>https://blog.indonesiadot.com/2019/10/25/create-gcp-vm-using-gcloud-from-command-line/</guid>
       <description>Pembuatan virtual machine di GCP / Google Cloud Platform menggunakan gcloud command line bermanfaat untuk mempermudah pembuatan VM tanpa harus mengakses web browser.
 Berikut langkah nya yang dilakukan di OS Centos 7:
-sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &amp;lt;&amp;lt; EOM [google-cloud-sdk] name=Google Cloud SDK baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64 enabled=1 gpgcheck=1 repo_gpgcheck=1 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg EOM sudo yum install google-cloud-sdk gcloud init Berikut langkah yang dilakukan di OS ubuntu / debian:
+sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &amp;lt;&amp;lt; EOM [google-cloud-sdk] name=Google Cloud SDK baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64 enabled=1 gpgcheck=1 repo_gpgcheck=1 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg EOM sudo yum install google-cloud-sdk gcloud init  Berikut langkah yang dilakukan di OS ubuntu / debian:
 echo &amp;quot;deb http://packages.cloud.google.com/apt cloud-sdk main&amp;quot; | sudo tee -a /etc/apt/sources.</description>
     </item>
     
@@ -49,7 +49,8 @@ Syaratnya cuma account google dan kartu debit Visa, tidak perlu kartu kredit, di
       <pubDate>Fri, 09 Feb 2018 03:55:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/09/aws-amazon-web-services-learning/</guid>
-      <description></description>
+      <description>https://blog.serverless.id/post/kursus-gratis-aws-di-udemy/
+https://www.udemy.com/aws-essentials</description>
     </item>
     
     <item>
@@ -58,7 +59,17 @@ Syaratnya cuma account google dan kartu debit Visa, tidak perlu kartu kredit, di
       <pubDate>Wed, 31 Jan 2018 21:30:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/31/xenserver-tips-and-trick/</guid>
-      <description>xenserver resize memory commandIncrease RAM for XenServer VM&#39;s through Command Line Interface.1.If the RAM editing option is graded out through XenCenter.Solution1.Take a putty/ssh connection to pool master2.Power off the VM.Execute the Below command to configure the new RAM:#xe vm-memory-limits-set uuid=static-min=GiB/MiB dynamic-min=GiB/MiB dynamic-max=GiB/MiB static-max=GiB/MiB Example :#xe vm-memory-limits-set uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f static-min=64GiB dynamic-min=64GiB dynamic-max=64GiB static-max=64GiB3.Start the VM.</description>
+      <description>xenserver resize memory command
+Increase RAM for XenServer VM&amp;rsquo;s through Command Line Interface.
+1.If the RAM editing option is graded out through XenCenter.
+Solution
+1.Take a putty/ssh connection to pool master
+2.Power off the VM.
+Execute the Below command to configure the new RAM:
+#xe vm-memory-limits-set &amp;nbsp; &amp;nbsp;uuid=&amp;nbsp; static-min=GiB/MiB &amp;nbsp;dynamic-min=GiB/MiB &amp;nbsp;dynamic-max=GiB/MiB &amp;nbsp; &amp;nbsp; static-max=GiB/MiB&amp;nbsp;
+Example :
+#xe vm-memory-limits-set &amp;nbsp; &amp;nbsp;uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f &amp;nbsp; &amp;nbsp; &amp;nbsp;static-min=64GiB &amp;nbsp; dynamic-min=64GiB &amp;nbsp; dynamic-max=64GiB &amp;nbsp; &amp;nbsp;static-max=64GiB
+3.Start the VM.</description>
     </item>
     
   </channel>

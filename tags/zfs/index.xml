@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>zfs on Blog Indonesiadot.Com</title>
@@ -18,7 +18,7 @@
       
       <guid>https://blog.indonesiadot.com/2020/03/06/proxmox-add-zfs-disk/</guid>
       <description>Add Disk Hardware Tambahkan harddisk di server secara berurutan port sata nya, dan catat ID disknya
-Setting at command line ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4 zpool create rpoolkube -o ashift=12 mirror /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4 zpool status Tambahkan proxmox storage pool Dari proxmox pool, lalu klik storage, lalu add storage, pilih zfs. Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masukan block size 64k, lalu klik create.</description>
+Setting at command line ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4 zpool create rpoolkube -o ashift=12 mirror /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4 zpool status  Tambahkan proxmox storage pool Dari proxmox pool, lalu klik storage, lalu add storage, pilih zfs. Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masukan block size 64k, lalu klik create.</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@ Setting at command line ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R l
       <pubDate>Tue, 03 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/12/03/proxmox-add-zfs/</guid>
-      <description>Proxmox Add ZFS Referensi:
+      <description> Proxmox Add ZFS Referensi:
  https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/ https://pve.proxmox.com/wiki/ZFS_on_Linux  Proxmox cloud-init Ref:
  https://cloud.centos.org/centos/7/images/ https://pve.proxmox.com/wiki/Cloud-Init_Support https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/  </description>
     </item>
@@ -40,7 +40,7 @@ Setting at command line ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R l
       <guid>https://blog.indonesiadot.com/2019/09/30/disk-serial-number/</guid>
       <description>Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.
 Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:
- lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb) smartctl -a /dev/sda #lihat bagian atas serial number nya udevadm info /dev/sda  smartctl to get disk smart status smartctl -H /dev/sda smartctl -i /dev/sda smartctl --test=short /dev/sda #smartctl --test=long /dev/sda smartctl -a /dev/sda smartctl -a /dev/sda | grep &amp;quot;Short&amp;quot; Ref: * https://www.</description>
+ lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb) smartctl -a /dev/sda #lihat bagian atas serial number nya udevadm info /dev/sda  smartctl to get disk smart status ``` smartctl -H /dev/sda smartctl -i /dev/sda smartctl &amp;ndash;test=short /dev/sda #smartctl &amp;ndash;test=long /dev/sda smartctl -a /dev/sda smartctl -a /dev/sda | grep &amp;ldquo;Short&amp;rdquo;</description>
     </item>
     
     <item>
@@ -49,7 +49,10 @@ Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddi
       <pubDate>Sun, 15 Jul 2018 16:55:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/07/15/zfs-cool-feature-snapshot-replicate-etc/</guid>
-      <description>https://www.google.co.id/search?q=zfs+remote+replication&amp;lt;br /&amp;gt;https://www.howtoforge.com/tutorial/how-to-use-snapshots-clones-and-replication-in-zfs-on-linux/https://zpool.org/zfs-snapshots-and-remote-replication/&amp;lt;br /&amp;gt;http://www.zfsnap.org/docs.html</description>
+      <description>https://www.google.co.id/search?q=zfs+remote+replication
+https://www.howtoforge.com/tutorial/how-to-use-snapshots-clones-and-replication-in-zfs-on-linux/
+https://zpool.org/zfs-snapshots-and-remote-replication/
+http://www.zfsnap.org/docs.html</description>
     </item>
     
   </channel>

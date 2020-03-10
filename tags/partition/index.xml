@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>partition on Blog Indonesiadot.Com</title>
@@ -17,11 +17,11 @@
       <pubDate>Wed, 08 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/</guid>
-      <description>Step to reproduce on VM Turn off the VM
-qemu-img resize image.qcow2 +SIZE where SIZE is the size to add (e.g. 10G for 10 gibibytes).
+      <description> Step to reproduce on VM Turn off the VM
+qemu-img resize image.qcow2 +SIZE  where SIZE is the size to add (e.g. 10G for 10 gibibytes).
 Turn on the VM, fdisk /dev/vda, delete and create /dev/vda2, restart
 Login after restart, then run this command
-pvresize /dev/vda2 lvextend -r -l +100%FREE /dev/mapper/centos-root df -hl Referensi:
+pvresize /dev/vda2 lvextend -r -l +100%FREE /dev/mapper/centos-root df -hl  Referensi:
  https://maunium.net/blog/resizing-qcow2-images/  </description>
     </item>
     

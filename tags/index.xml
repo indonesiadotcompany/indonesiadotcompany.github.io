@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Blog Indonesiadot.Com</title>
@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Mar 2020 17:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 10 Mar 2020 06:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>linux</title>
+      <link>https://blog.indonesiadot.com/tags/linux/</link>
+      <pubDate>Tue, 10 Mar 2020 06:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lxc</title>
+      <link>https://blog.indonesiadot.com/tags/lxc/</link>
+      <pubDate>Tue, 10 Mar 2020 06:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/lxc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lxd</title>
+      <link>https://blog.indonesiadot.com/tags/lxd/</link>
+      <pubDate>Tue, 10 Mar 2020 06:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/lxd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://blog.indonesiadot.com/tags/ubuntu/</link>
+      <pubDate>Tue, 10 Mar 2020 06:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ubuntu/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>ansible</title>
@@ -26,15 +62,6 @@
       <pubDate>Mon, 09 Mar 2020 17:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/ansibletower/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://blog.indonesiadot.com/tags/linux/</link>
-      <pubDate>Mon, 09 Mar 2020 17:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -152,15 +179,6 @@
       <pubDate>Thu, 27 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ubuntu</title>
-      <link>https://blog.indonesiadot.com/tags/ubuntu/</link>
-      <pubDate>Thu, 27 Feb 2020 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/ubuntu/</guid>
       <description></description>
     </item>
     

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gitlab on Blog Indonesiadot.Com</title>
@@ -17,7 +17,7 @@
       <pubDate>Tue, 14 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</guid>
-      <description>Instalasi Gitlab di Ubuntu 16.04 Widya Gitlab  https://widgitgog.birau.com/dashboard/projects  change / update hostname sed -i &#39;s/widgitgog/widgit/g&#39; /etc/gitlab/gitlab.rb gitlab-ctl reconfigure gitlab-ctl restart  https://docs.gitlab.com/omnibus/settings/configuration.html  Referensi:
+      <description> Instalasi Gitlab di Ubuntu 16.04 Widya Gitlab  https://widgitgog.birau.com/dashboard/projects  change / update hostname sed -i &#39;s/widgitgog/widgit/g&#39; /etc/gitlab/gitlab.rb gitlab-ctl reconfigure gitlab-ctl restart   https://docs.gitlab.com/omnibus/settings/configuration.html  Referensi:
  https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04  </description>
     </item>
     

@@ -1,9 +1,49 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://blog.indonesiadot.com/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/</loc>
+    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
+    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/lxc/</loc>
+    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/lxd/</loc>
+    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/10/lxd-lxc/</loc>
+    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ubuntu/</loc>
+    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
   </url>
   
   <url>
@@ -18,26 +58,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/ansibletower/</loc>
-    <lastmod>2020-03-09T17:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2020-03-09T17:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2020-03-09T17:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2020-03-09T17:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
     <lastmod>2020-03-09T17:17:54+07:00</lastmod>
   </url>
   
@@ -133,11 +153,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/server/</loc>
-    <lastmod>2020-02-27T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ubuntu/</loc>
     <lastmod>2020-02-27T08:17:54+07:00</lastmod>
   </url>
   

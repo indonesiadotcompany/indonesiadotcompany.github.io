@@ -627,6 +627,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -656,12 +662,19 @@
 <div class="post">
   <h1 class="post-title">Modsecurity WAF</h1>
   <span class="post-date">Dec 5, 2019</span>
-  <h2 id="modsecurity-waf">Modsecurity WAF</h2>
-<p><img src="https://blog.indonesiadot.com/images/2019/modsecurity-architecture.jpg" alt="routed-lans"></p>
+  
+
+<h2 id="modsecurity-waf">Modsecurity WAF</h2>
+
+<p><img src="https://blog.indonesiadot.com/images/2019/modsecurity-architecture.jpg" alt="routed-lans" /></p>
+
 <p>user yg mau sql injection di scan dulu sama modsecurity yg modsecurity baca ruleset (crs) kalau ada di rules nya di deny.
 kalau false positive, dinyatakan oleh client / developer bahwa itu sbnrnya aman, baru di exclude rule tersebut, kalau developer bisa nambel supaya bisa rubah supaya lebih sesuai ruleset nya lebih baik.</p>
+
 <p>intinya mudah sih yg opensource, cuma kelemahan nya nempel di host dan atau nempel di webserver, lalu kelemahan lain banyak false positive, sama ga ada ui nya, meski berjalan bagus bisa menahan serangan cuma agak sulit manage nya, terutama klo aplikasi yg ga standar, klo yg standar misal kaya wordpress mungkin lebih mudah.</p>
+
 <p>Referensi:</p>
+
 <ul>
 <li>Searching modsecurity architecture</li>
 </ul>

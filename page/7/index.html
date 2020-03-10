@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.62.2" />
+	<meta name="generator" content="Hugo 0.57.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -628,6 +628,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -660,9 +666,41 @@
 <div class="post">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/postfix-tips/">Postfix tips</a></h1>
+        <span class="post-date">Sep 2, 2019</span>
+	
+
+<h3 id="postfix-send-to-local-network">postfix send to local network</h3>
+
+<p>Ini adalah langkah untuk membuat postfix mengirim ke mail server dalam LAN</p>
+
+<pre><code>echo &quot;real.net smtp:[192.168.1.108]&quot; &gt;&gt; /etc/postfix/transport
+postmap /etc/postfix/transport
+systemctl restart postfix
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/">https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/</a></li>
+<li><a href="http://www.postfix.org/STANDARD_CONFIGURATION_README.html">http://www.postfix.org/STANDARD_CONFIGURATION_README.html</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/mail/">mail</a>, <a href="https://blog.indonesiadot.com/tags/postfix/">postfix</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/">All about kubernetes</a></h1>
         <span class="post-date">Sep 2, 2019</span>
-	<h2 id="kubernetes-container-runtime-with-docker">Kubernetes Container runtime with docker</h2>
+	
+
+<h2 id="kubernetes-container-runtime-with-docker">Kubernetes Container runtime with docker</h2>
+
 <pre><code># Install Docker CE
 ## Set up the repository
 ### Install required packages.
@@ -697,20 +735,25 @@ EOF
 mkdir -p /etc/systemd/system/docker.service.d
 
 # Restart Docker
-</code></pre><p>systemctl daemon-reload
+</code></pre>
+
+<p>systemctl daemon-reload
 systemctl restart docker</p>
+
 <pre><code>
 * https://kubernetes.io/docs/setup/production-environment/container-runtimes/
 
 ## kubernetes master
-</code></pre><p>hostnamectl set-hostname master-node
-cat &laquo;EOF&raquo; /etc/hosts
+</code></pre>
+
+<p>hostnamectl set-hostname master-node
+cat &lt;<EOF>&gt; /etc/hosts
 10.128.0.27 master-node
 10.128.0.29 node-1 worker-node-1
 10.128.0.30 node-2 worker-node-2
 EOF
 setenforce 0
-sed -i &ndash;follow-symlinks &lsquo;s/SELINUX=enforcing/SELINUX=disabled/g&rsquo; /etc/sysconfig/selinux
+sed -i &ndash;follow-symlinks &rsquo;s/SELINUX=enforcing/SELINUX=disabled/g&rsquo; /etc/sysconfig/selinux
 firewall-cmd &ndash;permanent &ndash;add-port=6443/tcp
 firewall-cmd &ndash;permanent &ndash;add-port=2379-2380/tcp
 firewall-cmd &ndash;permanent &ndash;add-port=10250/tcp
@@ -718,89 +761,120 @@ firewall-cmd &ndash;permanent &ndash;add-port=10251/tcp
 firewall-cmd &ndash;permanent &ndash;add-port=10252/tcp
 firewall-cmd &ndash;permanent &ndash;add-port=10255/tcp
 firewall-cmd –reload</p>
+
 <p>modprobe br_netfilter
-cat &laquo;EOF&raquo; /etc/sysctl.d/100-kube.conf
+cat &lt;<EOF>&gt; /etc/sysctl.d/100-kube.conf
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
 EOF
 sysctl &ndash;system</p>
-<p>cat &laquo;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+
+<p>cat &lt;<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
-baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+baseurl=<a href="https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64">https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64</a>
 enabled=1
 gpgcheck=1
 repo_gpgcheck=1
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg <a href="https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg">https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg</a>
+gpgkey=<a href="https://packages.cloud.google.com/yum/doc/yum-key.gpg">https://packages.cloud.google.com/yum/doc/yum-key.gpg</a> <a href="https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg">https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg</a>
 EOF
 yum install kubeadm
 systemctl enable kubelet
 systemctl start kubelet</p>
+
 <p>swapoff -a</p>
+
 <p>kubeadm init &ndash;apiserver-advertise-address=192.168.122.42 &ndash;pod-network-cidr=10.244.0.0/16
 mkdir -p $HOME/.kube</p>
-<h1 id="cp--i-etckubernetesadminconf-homekubeconfig">cp -i /etc/kubernetes/admin.conf $HOME/.kube/config</h1>
-<h1 id="chown-id--uid--g-homekubeconfig">chown $(id -u):$(id -g) $HOME/.kube/config</h1>
+
+<h1 id="cp-i-etc-kubernetes-admin-conf-home-kube-config">cp -i /etc/kubernetes/admin.conf $HOME/.kube/config</h1>
+
+<h1 id="chown-id-u-id-g-home-kube-config">chown $(id -u):$(id -g) $HOME/.kube/config</h1>
+
 <p>kubectl apply -f <a href="https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml">https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</a>
 kubectl get nodes</p>
+
 <pre><code>
 ## kubernetes node
 
-</code></pre><p>hostnamectl set-hostname &lsquo;node-1&rsquo;
-cat &laquo;EOF&raquo; /etc/hosts
+</code></pre>
+
+<p>hostnamectl set-hostname &lsquo;node-1&rsquo;
+cat &lt;<EOF>&gt; /etc/hosts
 10.128.0.27 master-node
 10.128.0.29 node-1 worker-node-1
 10.128.0.30 node-2 worker-node-2
 EOF</p>
+
 <p>setenforce 0
-sed -i &ndash;follow-symlinks &lsquo;s/SELINUX=enforcing/SELINUX=disabled/g&rsquo; /etc/sysconfig/selinux</p>
+sed -i &ndash;follow-symlinks &rsquo;s/SELINUX=enforcing/SELINUX=disabled/g&rsquo; /etc/sysconfig/selinux</p>
+
 <p>firewall-cmd &ndash;permanent &ndash;add-port=6783/tcp
 firewall-cmd &ndash;permanent &ndash;add-port=10250/tcp
 firewall-cmd &ndash;permanent &ndash;add-port=10255/tcp
 firewall-cmd &ndash;permanent &ndash;add-port=30000-32767/tcp
 firewall-cmd  &ndash;reload</p>
-<p>cat &laquo;EOF&raquo; /etc/sysctl.d/100-kube.conf
+
+<p>cat &lt;<EOF>&gt; /etc/sysctl.d/100-kube.conf
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
 EOF
 sysctl &ndash;system</p>
-<p>cat &laquo;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+
+<p>cat &lt;<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
-baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+baseurl=<a href="https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64">https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64</a>
 enabled=1
 gpgcheck=1
 repo_gpgcheck=1
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg <a href="https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg">https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg</a>
+gpgkey=<a href="https://packages.cloud.google.com/yum/doc/yum-key.gpg">https://packages.cloud.google.com/yum/doc/yum-key.gpg</a> <a href="https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg">https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg</a>
 EOF</p>
+
 <p>yum install kubeadm
 systemctl enable kubelet
 systemctl start kubelet</p>
+
 <pre><code>
 We now require the token that kubeadm init generated, to join the cluster. You can copy and paste it to your node-1 and node-2 if you had copied it somewhere.
-</code></pre><p>kubeadm join 10.128.0.27:6443 &ndash;token nu06lu.xrsux0ss0ixtnms5  &ndash;discovery-token-ca-cert-hash sha256:f996ea3564e6a07fdea2997a1cf8caeddafd6d4360d606dbc82314688425cd41</p>
+</code></pre>
+
+<p>kubeadm join 10.128.0.27:6443 &ndash;token nu06lu.xrsux0ss0ixtnms5  &ndash;discovery-token-ca-cert-hash sha256:f996ea3564e6a07fdea2997a1cf8caeddafd6d4360d606dbc82314688425cd41</p>
+
 <pre><code>
 ## kubernetes master
-</code></pre><p>kubectl get nodes</p>
+</code></pre>
+
+<p>kubectl get nodes</p>
+
 <pre><code>
 * https://www.tecmint.com/install-kubernetes-cluster-on-centos-7/
 * https://www.howtoforge.com/tutorial/centos-kubernetes-docker-cluster/
 
 ## kubernetes kubeadm show join command
 
-</code></pre><p>kubeadm token create &ndash;print-join-command</p>
+</code></pre>
+
+<p>kubeadm token create &ndash;print-join-command</p>
+
 <pre><code>
 ## kubernetes delete node
-</code></pre><p>kubectl get nodes
-kubectl drain <!-- raw HTML omitted -->
-kubectl delete node <!-- raw HTML omitted --></p>
-<pre><code>at the node, then type:
-</code></pre><p>kubeadm reset</p>
-<pre><code>
-* https://stackoverflow.com/questions/35757620/how-to-gracefully-remove-a-node-from-kubernetes
-
-
 </code></pre>
+
+<p>kubectl get nodes
+kubectl drain <namanode>
+kubectl delete node <namanode></p>
+
+<pre><code>at the node, then type:
+</code></pre>
+
+<p>kubeadm reset
+```</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/35757620/how-to-gracefully-remove-a-node-from-kubernetes">https://stackoverflow.com/questions/35757620/how-to-gracefully-remove-a-node-from-kubernetes</a></li>
+</ul>
+
 	<hr/>
 	
 	
@@ -813,10 +887,14 @@ kubectl delete node <!-- raw HTML omitted --></p>
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/">Ubuntu upgrade 14.04 to 16.04 to 18.04</a></h1>
         <span class="post-date">Sep 2, 2019</span>
 	<p>Berikut langkah yang dilakukan, tapi sebelumnya pastikan backup, backup dan backup</p>
+
 <pre><code>sudo apt-get update
 sudo apt-get upgrade
 sudo do-release-upgrade -f DistUpgradeViewNonInteractive
-</code></pre><p>Referensi:</p>
+</code></pre>
+
+<p>Referensi:</p>
+
 <ul>
 <li><a href="https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04">https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04</a></li>
 <li><a href="https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4">https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4</a></li>
@@ -833,51 +911,85 @@ sudo do-release-upgrade -f DistUpgradeViewNonInteractive
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/git-tips/">Git tips</a></h1>
         <span class="post-date">Sep 2, 2019</span>
-	<h2 id="git-without-gnome-askpass">git without gnome-askpass</h2>
+	
+
+<h2 id="git-without-gnome-askpass">git without gnome-askpass</h2>
+
 <pre><code>unset SSH_ASKPASS
-</code></pre><ul>
+</code></pre>
+
+<ul>
 <li><a href="https://gist.github.com/joseluisq/d0e66c5f718250c90075">https://gist.github.com/joseluisq/d0e66c5f718250c90075</a></li>
 </ul>
+
 <h2 id="git-merge">git merge</h2>
+
 <p>Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap
-<img src="https://blog.indonesiadot.com/images/2019/git-merge-1.png" alt="git-merge-1">
-lalu <em>git merge <!-- raw HTML omitted --></em> untuk menggabungkan isi dari branch hotfix ke master</p>
+<img src="https://blog.indonesiadot.com/images/2019/git-merge-1.png" alt="git-merge-1" />
+lalu <em>git merge <nama-branch></em> untuk menggabungkan isi dari branch hotfix ke master</p>
+
 <pre><code>git checkout master
 git merge hotfix
-</code></pre><p><img src="https://blog.indonesiadot.com/images/2019/git-merge-2.png" alt="git-merge-1"></p>
+</code></pre>
+
+<p><img src="https://blog.indonesiadot.com/images/2019/git-merge-2.png" alt="git-merge-1" /></p>
+
 <h2 id="git-undo-merge">git undo merge</h2>
+
 <p>Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan</p>
+
 <pre><code>git reflog
 git reset --hard &lt;id_repository_log&gt;
-</code></pre><p>Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</p>
+</code></pre>
+
+<p>Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</p>
+
 <h2 id="git-clear-repository">git clear repository</h2>
+
 <pre><code>rm -rf .git*
 git init
 git add .
 git commit -m 'initial commit'
 git remote add origin git@github.com:&lt;YOUR ACCOUNT&gt;/&lt;YOUR REPOS&gt;.git
 git push -u --force origin master
-</code></pre><h2 id="git-branch">git branch</h2>
+</code></pre>
+
+<h2 id="git-branch">git branch</h2>
+
 <h3 id="git-create-branch">git create branch</h3>
+
 <pre><code>git checkout -b branchbaru
 git push origin branchbaru
-</code></pre><p>jika branchbaru tersebut sudah ada di <em>remote repository</em> (repository di luar selain di lokal komputer, seperti github / gitlab / bitbucket) dan isinya ingin dihapus / diupdate sesuai dengan isi yang ada di local repository, maka harus menggunakan parameter &ndash;force
+</code></pre>
+
+<p>jika branchbaru tersebut sudah ada di <em>remote repository</em> (repository di luar selain di lokal komputer, seperti github / gitlab / bitbucket) dan isinya ingin dihapus / diupdate sesuai dengan isi yang ada di local repository, maka harus menggunakan parameter &ndash;force
 <code>git push --force origin branchbaru</code></p>
+
 <h3 id="default-branch">default branch</h3>
+
 <p>default branch pada git biasanya adalah branch pertama yang kita push, dan biasanya adalah branch master, kecuali jika pertama kali push nya adalah nama branch lain, maka default nya adalah nama branch lain, dan jika terlanjur di awal push dengan branch lain, maka untuk merubah default branch itu tidak bisa memakai command, tapi harus melalui menu settings - branches pada remote repository.</p>
+
 <h3 id="delete-branch">delete branch</h3>
+
 <p>pertama pastikan yang ingin dihapus bukan default branch.</p>
+
 <pre><code>git checkout master
 git push origin --delete namabranchyangakandihapus
 git branch -D namabranchyangakandihapus
-</code></pre><p>pindah dulu ke branch default, lalu hapus remote branch, kemudian hapus local branch</p>
+</code></pre>
+
+<p>pindah dulu ke branch default, lalu hapus remote branch, kemudian hapus local branch</p>
+
 <p>Referensi:</p>
+
 <ul>
 <li><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</a></li>
 <li><a href="https://stackoverflow.com/questions/11722533/rollback-a-git-merge/29110174">https://stackoverflow.com/questions/11722533/rollback-a-git-merge/29110174</a></li>
 <li><a href="https://help.github.com/en/articles/setting-the-default-branch">https://help.github.com/en/articles/setting-the-default-branch</a></li>
 </ul>
+
 <p>Referensi belajar git:</p>
+
 <ul>
 <li><a href="https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f">https://medium.com/@fahmiprasetiiio/belajar-git-untuk-pemula-7625c686c68f</a></li>
 <li><a href="https://rogerdudler.github.io/git-guide/index.id.html">https://rogerdudler.github.io/git-guide/index.id.html</a></li>
@@ -896,7 +1008,10 @@ git branch -D namabranchyangakandihapus
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/">Pembuatan web statis dengan hugo</a></h1>
         <span class="post-date">Sep 2, 2019</span>
-	<h2 id="manage-hugo-dari-pc--laptop-lain">manage hugo dari pc / laptop lain</h2>
+	
+
+<h2 id="manage-hugo-dari-pc-laptop-lain">manage hugo dari pc / laptop lain</h2>
+
 <pre><code>git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io
 git checkout hugo
 rm -rf public
@@ -904,14 +1019,19 @@ git add .
 git commit -m 'remove public'
 git push
 git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public
-</code></pre><p>Referensi hugo dasar:</p>
+</code></pre>
+
+<p>Referensi hugo dasar:</p>
+
 <ul>
 <li><a href="https://www.petanikode.com/topik/hugo">https://www.petanikode.com/topik/hugo</a></li>
 <li><a href="https://gohugo.io/getting-started/quick-start/">https://gohugo.io/getting-started/quick-start/</a></li>
 <li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></li>
 <li><a href="https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html">https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html</a></li>
 </ul>
+
 <p>Referensi hugo dan e-commerce:</p>
+
 <ul>
 <li><a href="https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf">https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf</a></li>
 <li><a href="https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce">https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce</a></li>
@@ -929,16 +1049,19 @@ git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiad
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/migrasi-antar-hugo/">Migrasi antar hugo</a></h1>
         <span class="post-date">Sep 2, 2019</span>
 	<p>To remove a submodule you need to:</p>
+
 <ul>
 <li>Delete the relevant section from the .gitmodules file.</li>
 <li>Stage the .gitmodules changes git add .gitmodules</li>
 <li>Delete the relevant section from .git/config.</li>
 <li>Run git rm &ndash;cached path_to_submodule (no trailing slash).</li>
 <li>Run rm -rf .git/modules/path_to_submodule (no trailing slash).</li>
-<li>Commit git commit -m &ldquo;Removed submodule &quot;</li>
+<li>Commit git commit -m &ldquo;Removed submodule &ldquo;</li>
 <li>Delete the now untracked submodule files rm -rf path_to_submodule</li>
 </ul>
+
 <p>Referensi:</p>
+
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 <li><a href="https://gist.github.com/myusuf3/7f645819ded92bda6677">https://gist.github.com/myusuf3/7f645819ded92bda6677</a></li>
@@ -967,11 +1090,17 @@ git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiad
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/01/google-cloud-platform-gcp-free/">Google Cloud Platform GCP Free</a></h1>
         <span class="post-date">Sep 1, 2019</span>
 	<p>Sangat disarankan untuk segera daftar dan mendapatkan gratis layanan cloud hosting dari Google Cloud Platform / GCP yang berguna untuk server development, trial, terutama untuk para startup.</p>
+
 <p>Syaratnya cuma account google dan kartu debit Visa, tidak perlu kartu kredit, disini digunakan kartu jenius, untuk jenius pun bisa mendaftar dengan syarat cuma KTP yang selanjutnya akan dikonfirmasikan untuk didatangi oleh pihak data dari jenius, jadi kita cukup tunggu dan terima beres, yang selanjutnya kartu pertama akan dikirim ke alamat kita.</p>
-<p><img src="https://blog.indonesiadot.com/images/2019/gcp-console.png" alt="git-merge-1"></p>
+
+<p><img src="https://blog.indonesiadot.com/images/2019/gcp-console.png" alt="git-merge-1" /></p>
+
 <p>Disini terlihat console dari GCP yang sudah dipakai sebulan untuk server monitoring dan juga server percobaan untuk compile dan pekerjaan berat lain, yang sudah dihapus karena hanya untuk percobaan sementara, disini masih tersisa credit 4 juta an :)</p>
+
 <p>So give it a try :)</p>
+
 <p>Ansible Reference:</p>
+
 <ul>
 <li><a href="https://cloud.google.com/compute/docs/images">https://cloud.google.com/compute/docs/images</a></li>
 </ul>
@@ -987,18 +1116,7 @@ git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiad
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/14/disable-/-ignore-user-process-at-csf-firewall/">disable / ignore user process at csf firewall</a></h1>
         <span class="post-date">Aug 14, 2019</span>
-	<p><!-- raw HTML omitted --><a href="https://www.google.com/search?q=csf+ignore+user%3Cbr">https://www.google.com/search?q=csf+ignore+user&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="http://g33kinfo.com/info/archives/3933%3Cbr">http://g33kinfo.com/info/archives/3933&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->From <!-- raw HTML omitted -->configserver.com<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Process Tracking<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->This option enables tracking of user and nobody processes and examines them for suspicious executables or open network ports. Its purpose is to identify potential exploit processes that are running on the server, even if they are obfuscated to appear as system services. If a suspicious process is found an alert email is sent with relevant information. It is then the responsibility of the recipient to investigate the process further as the script takes no further action. Processes (PIDs) are only reported once unless lfd is restarted.<!-- raw HTML omitted --><!-- raw HTML omitted -->There is an ignore file /etc/csf/csf.pignore which can be used to whitelist either usernames or full paths to binaries. Care should be taken with ignoring users or files so that you don’t force false-negatives.<!-- raw HTML omitted --><!-- raw HTML omitted -->You must use the following format:<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->exe:/full/path/to/file<!-- raw HTML omitted --><!-- raw HTML omitted -->user:username<!-- raw HTML omitted --><!-- raw HTML omitted -->cmd:command line<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->The command line as reported in /proc has the trailing null character removed and all other occurrences replaced with a space. So, the line you specify in the file should have space separators for the command line arguments, not null characters. It is strongly recommended that you use command line ignores very carefully as any process can change what is reported to the OS. Don’t list the paths to perl or php as this will prevent detection of suspicious web scripts.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Process Tracking and csf.pignore<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->1. If you’re seeing spamd being reported after the latest update and want to ignore it, the following can be added to /etc/csf/csf.pignore (ensure that you ONLY use linux linefeeds, not WIN or MAC ones when editing Linux files):<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->cmd:spamd child<!-- raw HTML omitted --><!-- raw HTML omitted -->Then restart lfd.<!-- raw HTML omitted --><!-- raw HTML omitted -->2. If you’re seeing awstats.pl being reported after the latest update and want to ignore it, the following can be added to /etc/csf/csf.pignore:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->pcmd:.*/usr/local/cpanel/3rdparty/bin/awstats.pl.<em><!-- raw HTML omitted -->pcmd:.</em>/usr/local/cpanel/base/awstats.pl.*<!-- raw HTML omitted --><!-- raw HTML omitted -->Then restart lfd.<!-- raw HTML omitted --></p>
-
-	<hr/>
-	
-	
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/12/simplemonitor-with-telegram-alert/">simplemonitor with telegram alert</a></h1>
-        <span class="post-date">Aug 12, 2019</span>
-	<p><a href="https://jamesoff.github.io/simplemonitor/alerting.html%3Cbr">https://jamesoff.github.io/simplemonitor/alerting.html&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->telegram alerters<!-- raw HTML omitted --><!-- raw HTML omitted -->Send alerts to a Telegram chat.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->setting<!-- raw HTML omitted --><!-- raw HTML omitted -->description<!-- raw HTML omitted --><!-- raw HTML omitted -->required<!-- raw HTML omitted --><!-- raw HTML omitted -->default<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->token<!-- raw HTML omitted --><!-- raw HTML omitted -->The token to access telegram<!-- raw HTML omitted --><!-- raw HTML omitted -->yes<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->chat_id<!-- raw HTML omitted --><!-- raw HTML omitted -->The chat to send to<!-- raw HTML omitted --><!-- raw HTML omitted -->yes<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://www.google.com/search?q=telegram+token%3Cbr">https://www.google.com/search?q=telegram+token&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="https://tutorials.botsfloor.com/creating-a-bot-using-the-telegram-bot-api-5d3caed3266d%3Cbr">https://tutorials.botsfloor.com/creating-a-bot-using-the-telegram-bot-api-5d3caed3266d&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="https://www.google.com/search?q=chat_id+telegram%3Cbr">https://www.google.com/search?q=chat_id+telegram&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id%3Cbr">https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->In order to get the group chat id, do as follows:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Add the Telegram BOT to the group.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Get the list of updates for your BOT:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://api.telegram.org/bot%3Cyourbottoken%3E/getUpdates%3Cbr">https://api.telegram.org/bot&lt;yourbottoken&gt;/getUpdates&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Ex:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://api.telegram.org/bot123456789:jbd78sadvbdy63d37gda37bd8/getUpdates%3Cbr">https://api.telegram.org/bot123456789:jbd78sadvbdy63d37gda37bd8/getUpdates&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Look for the &ldquo;chat&rdquo; object:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->{&ldquo;update_id&rdquo;:8393,&ldquo;message&rdquo;:{&ldquo;message_id&rdquo;:3,&ldquo;from&rdquo;:{&ldquo;id&rdquo;:7474,&ldquo;first_name&rdquo;:&ldquo;AAA&rdquo;},&ldquo;chat&rdquo;:{&ldquo;id&rdquo;:,&ldquo;title&rdquo;:&quot;&quot;},&ldquo;date&rdquo;:25497,&ldquo;new_chat_participant&rdquo;:{&ldquo;id&rdquo;:71,&ldquo;first_name&rdquo;:&ldquo;NAME&rdquo;,&ldquo;username&rdquo;:&ldquo;YOUR_BOT_NAME&rdquo;}}}<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->This is a sample of the response when you add your BOT into a group.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Use the &ldquo;id&rdquo; of the &ldquo;chat&rdquo; object to send your messages.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->note:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->setelah dapat token dan chat_id, masukan ke monitor.ini, contohnya:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->[reporting]<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->; be sure to leave the json logger on, otherwise Docker health check will fail!<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->loggers=json,html<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->;alerters=email,email_escalate<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->alerters=telegram<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->&hellip;<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->[telegram]<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->type=telegram<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->token=123fdfdf-fdaf:fadf<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->chat_id=-1234<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+	<p><br /><a href="https://www.google.com/search?q=csf+ignore+user">https://www.google.com/search?q=csf+ignore+user</a><br /><br /><a href="http://g33kinfo.com/info/archives/3933">http://g33kinfo.com/info/archives/3933</a><br /><br /><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">From&nbsp;<a href="http://forum.configserver.com/viewtopic.php?t=2059" style="background-color: transparent; box-sizing: inherit; color: #f5876e; text-decoration-line: none;" target="_blank">configserver.com</a></div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;"><strong style="box-sizing: inherit;">Process Tracking</strong></div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">This option enables tracking of user and nobody processes and examines them for suspicious executables or open network ports. Its purpose is to identify potential exploit processes that are running on the server, even if they are obfuscated to appear as system services. If a suspicious process is found an alert email is sent with relevant information. It is then the responsibility of the recipient to investigate the process further as the script takes no further action. Processes (PIDs) are only reported once unless lfd is restarted.</div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">There is an ignore file /etc/csf/csf.pignore which can be used to whitelist either usernames or full paths to binaries. Care should be taken with ignoring users or files so that you don’t force false-negatives.</div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">You must use the following format:</div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px;"> <li style="box-sizing: inherit;">exe:/full/path/to/file</li><li style="box-sizing: inherit;">user:username</li><li style="box-sizing: inherit;">cmd:command line</li></div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;"><span id="more-3933" style="box-sizing: inherit;"></span></div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">The command line as reported in /proc has the trailing null character removed and all other occurrences replaced with a space. So, the line you specify in the file should have space separators for the command line arguments, not null characters. It is strongly recommended that you use command line ignores very carefully as any process can change what is reported to the OS. Don’t list the paths to perl or php as this will prevent detection of suspicious web scripts.</div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;"><strong style="box-sizing: inherit;">Process Tracking and csf.pignore</strong></div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">1. If you’re seeing spamd being reported after the latest update and want to ignore it, the following can be added to /etc/csf/csf.pignore (ensure that you ONLY use linux linefeeds, not WIN or MAC ones when editing Linux files):<br style="box-sizing: inherit;" /><code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: inherit; color: #c7254e; font-family: Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 1em; padding: 2px 4px;"><br style="box-sizing: inherit;" />cmd:spamd child</code><br style="box-sizing: inherit;" />Then restart lfd.</div><div style="background-color: white; box-sizing: inherit; color: #6f6e6b; font-family: Merriweather, Georgia, serif; font-size: 16px; margin-bottom: 2em;">2. If you’re seeing awstats.pl being reported after the latest update and want to ignore it, the following can be added to /etc/csf/csf.pignore:<br style="box-sizing: inherit;" /><code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: inherit; color: #c7254e; font-family: Monaco, Consolas, &quot;Andale Mono&quot;, &quot;DejaVu Sans Mono&quot;, monospace; font-size: 1em; padding: 2px 4px;"><br style="box-sizing: inherit;" />pcmd:.<em>/usr/local/cpanel/3rdparty/bin/awstats.pl.</em><br style="box-sizing: inherit;" />pcmd:.<em>/usr/local/cpanel/base/awstats.pl.</em></code><br style="box-sizing: inherit;" />Then restart lfd.</div></p>
 
 	<hr/>
 	

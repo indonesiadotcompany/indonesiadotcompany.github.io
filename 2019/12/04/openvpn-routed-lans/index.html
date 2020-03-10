@@ -627,6 +627,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -656,38 +662,69 @@
 <div class="post">
   <h1 class="post-title">Openvpn Routed LANS</h1>
   <span class="post-date">Dec 4, 2019</span>
-  <h2 id="open-routed-multiple-lans">Open Routed Multiple LANS</h2>
+  
+
+<h2 id="open-routed-multiple-lans">Open Routed Multiple LANS</h2>
+
 <h3 id="lans-behind-openvpn">Lans behind OpenVPN</h3>
+
 <p>here is an example of how to have multiple lans behind OpenVPN from #OpenVPN on freenode.</p>
+
 <p>Our user had a openvpn server with a lan (10.10.2.0/24) behind it, and 2 client with lans behind them:</p>
+
 <p>client1 with lan 10.10.1.0/24
 client2 with lan 10.10.3.0/24</p>
+
 <p>He wanted machines on all 3 lans to be able to communicate using a tun (routed) setup.</p>
+
 <p>Every machine with a LAN behind it must have IP forwarding enabled. In this example that means the server, and client1/client2. The user needed the following in his server.conf:</p>
+
 <pre><code>route 10.10.1.0 255.255.255.0
 route 10.10.3.0 255.255.255.0
 push &quot;route 10.10.2.0 255.255.255.0&quot;
 push &quot;route 10.10.1.0 255.255.255.0&quot;
 push &quot;route 10.10.3.0 255.255.255.0&quot;
 client-to-client
-</code></pre><p>The route entries adjust the local routing table, telling it to route those networks over the vpn. The push routes are added on the clients connecting, telling them to route those networks over the vpn.</p>
+</code></pre>
+
+<p>The route entries adjust the local routing table, telling it to route those networks over the vpn. The push routes are added on the clients connecting, telling them to route those networks over the vpn.</p>
+
 <p>You may realize that client1 should not route 10.10.1.0 traffic over the vpn, and that client2 should not route 10.10.3.0 traffic over the vpn (because those networks are local to each client). Because of the iroute entries you will see below, openvpn knows this too and skips the push for the client.</p>
-<p>The route entries are telling his server to add a route for each of 10.10.1.0, and 10.10.3.0 to its kernel's routing table, and both will be routed to the tunnel interface and to openvpn. How will openvpn know what client to send each network to? The answer is iroute!</p>
-<p>Iroute does not bypass or alter the kernel's routing table, it allows openvpn to know it should handle the routing when the kernel points to it but the network is not one that openvpn knows about. The iroute entry tells the openvpn server which client is responsible for the network. Without the iroute entry you will find the following in your logfiles:</p>
+
+<p>The route entries are telling his server to add a route for each of 10.10.1.0, and 10.10.3.0 to its kernel&rsquo;s routing table, and both will be routed to the tunnel interface and to openvpn. How will openvpn know what client to send each network to? The answer is iroute!</p>
+
+<p>Iroute does not bypass or alter the kernel&rsquo;s routing table, it allows openvpn to know it should handle the routing when the kernel points to it but the network is not one that openvpn knows about. The iroute entry tells the openvpn server which client is responsible for the network. Without the iroute entry you will find the following in your logfiles:</p>
+
 <p>MULTI: bad source address from client [IP ADDRESS], packet dropped</p>
-<p>IP ADDRESS in that case would be the machine on client LAN which tried to talk through vpn, because openVPN has no clue what that address is. Once you give it the iroute statement, that changes. Iroute is a route internal to openVPN, and has nothing to do with the kernel's routing table. It tells the openvpn server which client owns which network. Note that even if you only have 1 lan behind 1 client, YOU STILL NEED IROUTE. You will need it any time a clients source IP address is different from the IP given to it by the vpn server.</p>
+
+<p>IP ADDRESS in that case would be the machine on client LAN which tried to talk through vpn, because openVPN has no clue what that address is. Once you give it the iroute statement, that changes. Iroute is a route internal to openVPN, and has nothing to do with the kernel&rsquo;s routing table. It tells the openvpn server which client owns which network. Note that even if you only have 1 lan behind 1 client, YOU STILL NEED IROUTE. You will need it any time a clients source IP address is different from the IP given to it by the vpn server.</p>
+
 <p>The thing is, we cant just drop the iroute into server.conf because it would then be used for every client, and iroute is only to tell the server at which client it should send traffic destined for a network that the kernel said should go to the openvpn interface. That is why we add the iroute commands to a ccd entry.</p>
-<p>You will need client-config-dir /path/to/ccd/ in your server config file to enable ccd entries. ccd entries are basically included into server.conf, but only for the specified client. You put commands in ccd/client-common-name, and they are only included when the client's common-name matches the name of the file in ccd/.</p>
+
+<p>You will need client-config-dir /path/to/ccd/ in your server config file to enable ccd entries. ccd entries are basically included into server.conf, but only for the specified client. You put commands in ccd/client-common-name, and they are only included when the client&rsquo;s common-name matches the name of the file in ccd/.</p>
+
 <p>In this example lets assume the client owning the network 10.10.1.0 has a common-name of client1. In ccd/client1 He should have the following:</p>
+
 <pre><code>iroute 10.10.1.0 255.255.255.0
-</code></pre><p>As you can see our user will make a ccd/ entry for each client with a lan behind it. The ccd entry will have an iroute command for the network behind the client.</p>
+</code></pre>
+
+<p>As you can see our user will make a ccd/ entry for each client with a lan behind it. The ccd entry will have an iroute command for the network behind the client.</p>
+
 <p>That means that client2 on the 10.10.3.0 LAN would have the following entry for its ccd/client2 file:</p>
+
 <pre><code>iroute 10.10.3.0 255.255.255.0
-</code></pre><p><img src="https://blog.indonesiadot.com/images/2019/routed_lans.jpg" alt="routed-lans"></p>
+</code></pre>
+
+<p><img src="https://blog.indonesiadot.com/images/2019/routed_lans.jpg" alt="routed-lans" /></p>
+
 <h3 id="routes-to-add-outside-of-openvpn">ROUTES TO ADD OUTSIDE OF OPENVPN</h3>
+
 <p>If you are not running openvpn on the router for each lan, you have some more routes to add. This ​diagram explains it pretty well.</p>
+
 <p>Lets say our server is 10.10.2.10 on its lan, and uses 10.10.2.1 as its default route, and you want the 2.x lan to be accessible or able to access over the vpn. 2.1 would need a route for every network that 2.x will access or be accessed by. That means in our example: 10.10.2.1 must know that for 10.10.1.x 10.10.3.x and the vpn internal network (for example, 10.8.0.x), it sends the traffic to 10.10.2.10 This is true for any number of lans you want to connect, whether server or client.</p>
+
 <p>If you fail to add this route, here is what would happen if a VPN client (for example, 10.8.0.6) wanted to send traffic to 10.10.2.20:</p>
+
 <ol>
 <li>The vpn client sends traffic to 10.10.2.20, with a source address of 10.8.0.6</li>
 <li>The vpn server (10.8.0.1 and 10.10.2.10) receives the traffic, has IP forwarding enabled, and passes the traffic to 10.10.2.20</li>
@@ -696,19 +733,32 @@ client-to-client
 <li>10.10.2.1 checks its routing table, has no route for 10.8.0.6, and sends the traffic to its default gateway which is likely its ISP</li>
 <li>The ISP ignores it, because it is a RFC 1918 ip (aka lan only)</li>
 </ol>
+
 <p>the annoying work-around would be to add the route to every box on the LAN, in which case step 3 above would work.</p>
+
 <p>If this needs clarification ask me about it and I will update this page after discovering how to make it clearer.</p>
-<p>On Jan26, 2010 I changed this article to no longer use 192.168.1.0 192.168.2.0 and 192.168.3.0 for my subnets. I did this because it is important for people to not use common subnets such as 192.168.1/0.x when pushing routes to clients. It does not matter if you know where every client connects from, but once you add a single road warrior to the VPN you will run in to a problem. If the road warrior is connecting from a LAN where he has 192.168.0.X and he gets pushed a route to 192.168.0.0/24 to flow over the vpn, he will lose all connectivity to the internet until he kills the vpn. This is because the client loses his route to his gateway&hellip; he tries to contact the gateway over the VPN, but he has no route to the VPN because he needs to access his gateway to reach it. In short, if your lan that you want to access using openvpn uses a common subnet such as 192.168.0.x or 192.168.1.x, CHANGE IT.</p>
+
+<p>On Jan26, 2010 I changed this article to no longer use 192.168.1.0 192.168.2.0 and 192.168.3.0 for my subnets. I did this because it is important for people to not use common subnets such as 192.168.<sup>1</sup>&frasl;<sub>0</sub>.x when pushing routes to clients. It does not matter if you know where every client connects from, but once you add a single road warrior to the VPN you will run in to a problem. If the road warrior is connecting from a LAN where he has 192.168.0.X and he gets pushed a route to 192.168.0.0/24 to flow over the vpn, he will lose all connectivity to the internet until he kills the vpn. This is because the client loses his route to his gateway&hellip; he tries to contact the gateway over the VPN, but he has no route to the VPN because he needs to access his gateway to reach it. In short, if your lan that you want to access using openvpn uses a common subnet such as 192.168.0.x or 192.168.1.x, CHANGE IT.</p>
+
 <h3 id="caveats">Caveats</h3>
+
 <p>If you have a problem adding routes in Windows, check the following. If you are using OpenVPN-GUI, do not run it as administrator but make sure the service OpenVPNServiceInteractive is running. If you are not using the OpenVPN-GUI make sure you have openvpn starting as administrator.</p>
+
 <p>In some rare cases you may also need to use one of these options:</p>
+
 <pre><code>route-method exe
 route-delay
-</code></pre><p>The first option changes how windows adds a route The second option waits to add the route (helpful for making sure you get a DHCP lease before messing with routes).
-If those don't help, try turning off routing and remote access in administrative tools - routing and remote access</p>
-<p>Written by krzee @ #OpenVPN @ freenode IRC, mirrored from ​http://www.secure-computing.net/wiki/index.php/OpenVPN/Routing</p>
-<p>Feel free to discuss this document on the unofficial OpenVPN forum at: ​https://forums.openvpn.net/topic98.html</p>
+</code></pre>
+
+<p>The first option changes how windows adds a route The second option waits to add the route (helpful for making sure you get a DHCP lease before messing with routes).
+If those don&rsquo;t help, try turning off routing and remote access in administrative tools - routing and remote access</p>
+
+<p>Written by krzee @ #OpenVPN @ freenode IRC, mirrored from ​<a href="http://www.secure-computing.net/wiki/index.php/OpenVPN/Routing">http://www.secure-computing.net/wiki/index.php/OpenVPN/Routing</a></p>
+
+<p>Feel free to discuss this document on the unofficial OpenVPN forum at: ​<a href="https://forums.openvpn.net/topic98.html">https://forums.openvpn.net/topic98.html</a></p>
+
 <p>Referensi:</p>
+
 <ul>
 <li><a href="https://community.openvpn.net/openvpn/wiki/RoutedLans">https://community.openvpn.net/openvpn/wiki/RoutedLans</a></li>
 </ul>
