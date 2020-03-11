@@ -21,12 +21,12 @@
     </item>
     
     <item>
-      <title>Ansible Test Implement for Security Hardening Solution</title>
-      <link>https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution/</link>
+      <title>Ansible Test Implement for Security Hardening Solution 1 - Briefing Session</title>
+      <link>https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution-1-briefing-session/</link>
       <pubDate>Mon, 09 Mar 2020 17:17:54 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution/</guid>
-      <description>Background  belum adanya standarisasi system security yang mengacu kepada baseline standarisasi internasional seperti CIS, NIST atau PCI-DSS pekerjaan manual yang sangat kompleks dan berat jika harus dilakukan secara manual untuk melakukan standarisasi security system masih banyaknya server yang non-comply dengan standarisasi sistem security yang telah dibuat oleh perusahaan  Objective  mengurangi serangan konfigurasi yang robust secured protocols comply kepada standarisasi internasional dan standarisasi internal perusahaan  Langkah 1:</description>
+      <guid>https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution-1-briefing-session/</guid>
+      <description>Background  belum adanya standarisasi system security perusahaan yang mengacu kepada baseline standarisasi internasional seperti CIS, NIST atau PCI-DSS pekerjaan manual yang sangat kompleks, lama dan berat jika harus dilakukan secara manual untuk melakukan standarisasi security system masih banyaknya server perusahaan yang non-comply dengan standarisasi sistem security yang telah dibuat oleh perusahaan  Objective  mengurangi serangan konfigurasi yang robust secured protocols comply kepada standarisasi internasional dan standarisasi internal perusahaan  Technical Requirements Langkah 1:</description>
     </item>
     
     <item>

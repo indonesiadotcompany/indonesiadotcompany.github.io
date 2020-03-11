@@ -36,19 +36,19 @@ lxc start c1
     
       
         <item>
-          <title>Ansible Test Implement for Security Hardening Solution</title>
-          <link>https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution/</link>
+          <title>Ansible Test Implement for Security Hardening Solution 1 - Briefing Session</title>
+          <link>https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution-1-briefing-session/</link>
           <pubDate>Mon, 09 Mar 2020 17:17:54 WIB</pubDate>
           <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution/</guid>
+          <guid>https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution-1-briefing-session/</guid>
           <description>
 
 &lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;belum adanya standarisasi system security yang mengacu kepada baseline standarisasi internasional seperti CIS, NIST atau PCI-DSS&lt;/li&gt;
-&lt;li&gt;pekerjaan manual yang sangat kompleks dan berat jika harus dilakukan secara manual untuk melakukan standarisasi security system&lt;/li&gt;
-&lt;li&gt;masih banyaknya server yang non-comply dengan standarisasi sistem security yang telah dibuat oleh perusahaan&lt;/li&gt;
+&lt;li&gt;belum adanya standarisasi system security perusahaan yang mengacu kepada baseline standarisasi internasional seperti CIS, NIST atau PCI-DSS&lt;/li&gt;
+&lt;li&gt;pekerjaan manual yang sangat kompleks, lama dan berat jika harus dilakukan secara manual untuk melakukan standarisasi security system&lt;/li&gt;
+&lt;li&gt;masih banyaknya server perusahaan yang non-comply dengan standarisasi sistem security yang telah dibuat oleh perusahaan&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;
@@ -59,6 +59,8 @@ lxc start c1
 &lt;li&gt;secured protocols&lt;/li&gt;
 &lt;li&gt;comply kepada standarisasi internasional dan standarisasi internal perusahaan&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&#34;technical-requirements&#34;&gt;Technical Requirements&lt;/h2&gt;
 
 &lt;p&gt;Langkah 1:&lt;/p&gt;
 
@@ -71,14 +73,35 @@ lxc start c1
 &lt;li&gt;Implementasi dan enforce security baseline&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Overall Scope of Work and deliverable:&lt;/p&gt;
+&lt;h3 id=&#34;technical-requirements-overall-scope-of-work-and-deliverable&#34;&gt;Technical Requirements - Overall Scope of Work and deliverable:&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Architecture and End-to-End Design (N)&lt;/li&gt;
-&lt;li&gt;Hardware, Software and infrastructure components&lt;/li&gt;
-&lt;li&gt;Hardware and software delivery and installation, incl. necessary testing&lt;/li&gt;
+&lt;li&gt;Hardware, Software and infrastructure components
+
+&lt;ul&gt;
+&lt;li&gt;Hardware&lt;/li&gt;
+&lt;li&gt;2 server postgresql / ansible tower database server&lt;/li&gt;
+&lt;li&gt;3 server ansible tower (cluster)&lt;/li&gt;
+&lt;li&gt;1 server ansible tower for development / testing&lt;/li&gt;
+&lt;li&gt;Software&lt;/li&gt;
+&lt;li&gt;redhat / centos OS&lt;/li&gt;
+&lt;li&gt;ansible&lt;/li&gt;
+&lt;li&gt;ansible tower&lt;/li&gt;
+&lt;li&gt;postgresql&lt;/li&gt;
+&lt;li&gt;openscap&lt;/li&gt;
+&lt;li&gt;ansible playbook / roles based on CIS / PCI-DSS / NIST baseline that combined with internal company baseline&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Hardware and software delivery and installation, incl. necessary testing (N)
+
+&lt;ul&gt;
+&lt;li&gt;install dua postgresql active - passive&lt;/li&gt;
+&lt;li&gt;install ansible tower for production&lt;/li&gt;
+&lt;li&gt;install ansible tower for development&lt;/li&gt;
+&lt;li&gt;test implementasi / deployment manage server dari ansible tower development, lalu setelah ok, copy / replikasi semua template, playbook dan yg berkaitan ke ansible tower production&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Required supporting equipment and materials&lt;/li&gt;
-&lt;li&gt;Services, including project management, implementation, integration and migration&lt;/li&gt;
+&lt;li&gt;Services, including project management, implementation, integration and migration (N)&lt;/li&gt;
 &lt;li&gt;Technical support (3 years) including
 
 &lt;ul&gt;
@@ -89,10 +112,29 @@ lxc start c1
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Technical Requirements (Software and Services)&lt;/p&gt;
+&lt;h3 id=&#34;technical-requirements-software-scope&#34;&gt;Technical Requirements Software Scope&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Software components shall be grouped in two areas : 1. Development, 2. Operation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;technical-requirements-services-scope&#34;&gt;Technical Requirements Services Scope&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Detailed micro-design and security implementation plan (N)&lt;/li&gt;
+&lt;li&gt;Project management &amp;amp; project technical documentation according to Telkomsel standards. (N)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;technical-requirements-compliance-to-requirement&#34;&gt;Technical Requirements - Compliance to requirement&lt;/h3&gt;
+
+&lt;p&gt;Statements of Compliances&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Full Comply = The proposed solution can fulfill the specified requirement at the start of the project (Day 1)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Comply with Customization = The proposed solution can fulfill the specified requirements with some customizations, and it must be ready when it is required by specific phase within the implementation timeline&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Not Comply = The proposed solution cannot fulfill the specified requirements&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Referensi:&lt;/p&gt;
@@ -4181,6 +4223,22 @@ docker rmi `docker images | grep widharbor.birau.com | awk &#39;{ print $1 &amp;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.linuxtechi.com/awk-command-tutorial-with-examples/&#34;&gt;https://www.linuxtechi.com/awk-command-tutorial-with-examples/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;create-sparse-thin-loop-file&#34;&gt;create sparse / thin loop file&lt;/h2&gt;
+
+&lt;p&gt;You can use the seek parameter of dd to create a sparse file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dd if=/dev/zero of=filesystem.img  bs=1k seek=1024M count=1
+losetup /dev/loop11 filesystem.img
+#or use below to automatically find and set to first unused device
+#losetup -f filesystem.img
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;would create a file which can get up to 1G in size but will only occupy the necessary space.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://serverfault.com/questions/344518/in-linux-how-can-i-create-thin-provisioned-file-so-it-can-be-mounted-and-a-file&#34;&gt;https://serverfault.com/questions/344518/in-linux-how-can-i-create-thin-provisioned-file-so-it-can-be-mounted-and-a-file&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
