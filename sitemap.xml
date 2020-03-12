@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -8,12 +8,57 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
+    <lastmod>2020-03-12T20:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/disk/</loc>
+    <lastmod>2020-03-12T20:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
+    <lastmod>2020-03-12T20:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/lvm/</loc>
+    <lastmod>2020-03-12T20:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/12/lvm-tips/</loc>
+    <lastmod>2020-03-12T20:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2020-03-12T20:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2020-03-12T20:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
+    <lastmod>2020-03-12T20:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ceph/</loc>
+    <lastmod>2020-03-12T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/12/ceph-tips/</loc>
+    <lastmod>2020-03-12T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/storage/</loc>
+    <lastmod>2020-03-12T18:17:54+07:00</lastmod>
   </url>
   
   <url>
@@ -28,16 +73,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2020/03/10/lxd-lxc/</loc>
-    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
     <lastmod>2020-03-10T06:17:54+07:00</lastmod>
   </url>
   
@@ -88,11 +123,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2020/03/05/netcat-bandwidth-test/</loc>
-    <lastmod>2020-03-05T18:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
     <lastmod>2020-03-05T18:17:54+07:00</lastmod>
   </url>
   
@@ -759,11 +789,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/tags/rabbitmq/</loc>
     <lastmod>2019-10-10T07:09:53+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/disk/</loc>
-    <lastmod>2019-09-30T13:09:15+07:00</lastmod>
   </url>
   
   <url>

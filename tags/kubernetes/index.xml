@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kubernetes on Blog Indonesiadot.Com</title>
@@ -17,7 +17,7 @@
       <pubDate>Mon, 02 Sep 2019 08:17:33 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/</guid>
-      <description>Kubernetes Container runtime with docker # Install Docker CE ## Set up the repository ### Install required packages. yum install yum-utils device-mapper-persistent-data lvm2 ### Add Docker repository. yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo ## Install Docker CE. yum update &amp;amp;&amp;amp; yum install docker-ce-18.06.2.ce ## Create /etc/docker directory. mkdir /etc/docker # Setup daemon. cat &amp;gt; /etc/docker/daemon.json &amp;lt;&amp;lt;EOF { &amp;quot;exec-opts&amp;quot;: [&amp;quot;native.cgroupdriver=systemd&amp;quot;], &amp;quot;log-driver&amp;quot;: &amp;quot;json-file&amp;quot;, &amp;quot;log-opts&amp;quot;: { &amp;quot;max-size&amp;quot;: &amp;quot;100m&amp;quot; }, &amp;quot;storage-driver&amp;quot;: &amp;quot;overlay2&amp;quot;, &amp;quot;storage-opts&amp;quot;: [ &amp;quot;overlay2.</description>
+      <description>Kubernetes Container runtime with docker # Install Docker CE ## Set up the repository ### Install required packages. yum install yum-utils device-mapper-persistent-data lvm2 ### Add Docker repository. yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo ## Install Docker CE. yum update &amp;amp;&amp;amp; yum install docker-ce-18.06.2.ce ## Create /etc/docker directory. mkdir /etc/docker # Setup daemon. cat &amp;gt; /etc/docker/daemon.json &amp;lt;&amp;lt;EOF { &amp;quot;exec-opts&amp;quot;: [&amp;quot;native.cgroupdriver=systemd&amp;quot;], &amp;quot;log-driver&amp;quot;: &amp;quot;json-file&amp;quot;, &amp;quot;log-opts&amp;quot;: { &amp;quot;max-size&amp;quot;: &amp;quot;100m&amp;quot; }, &amp;quot;storage-driver&amp;quot;: &amp;quot;overlay2&amp;quot;, &amp;quot;storage-opts&amp;quot;: [ &amp;quot;overlay2.override_kernel_check=true&amp;quot; ] } EOF mkdir -p /etc/systemd/system/docker.</description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>server on Blog Indonesiadot.Com</title>
@@ -19,7 +19,7 @@
       <guid>https://blog.indonesiadot.com/2020/02/27/ubuntu-networking-using-netplan/</guid>
       <description>Ubuntu networking using netplan Configuration To configure netplan, save configuration files under /etc/netplan/ with a .yaml extension (e.g. /etc/netplan/config.yaml), then run sudo netplan apply. This command parses and applies the configuration to the system. Configuration written to disk under /etc/netplan/ will persist between reboots.
 Using DHCP and static addressing To let the interface named ‘enp3s0’ get an address via DHCP, create a YAML file with the following:
-network: version: 2 renderer: networkd ethernets: enp3s0: dhcp4: true  To instead set a static IP address, use the addresses key, which takes a list of (IPv4 or IPv6), addresses along with the subnet prefix length (e.</description>
+network: version: 2 renderer: networkd ethernets: enp3s0: dhcp4: true To instead set a static IP address, use the addresses key, which takes a list of (IPv4 or IPv6), addresses along with the subnet prefix length (e.</description>
     </item>
     
     <item>
@@ -28,8 +28,8 @@ network: version: 2 renderer: networkd ethernets: enp3s0: dhcp4: true  To instea
       <pubDate>Sun, 19 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/</guid>
-      <description> Letsencrypt with certbot unatteded way This is for ubuntu linux
-add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonly --standalone --preferred-challenges http --non-interactive --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com  Note:  before running certbot command, you must already pointing domain / subdomain address to destination ip  Referensi:  https://indonesiadot.com  </description>
+      <description>Letsencrypt with certbot unatteded way This is for ubuntu linux
+add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonly --standalone --preferred-challenges http --non-interactive --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com Note:  before running certbot command, you must already pointing domain / subdomain address to destination ip  Referensi:  https://indonesiadot.com  </description>
     </item>
     
     <item>
@@ -39,9 +39,10 @@ add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonl
       
       <guid>https://blog.indonesiadot.com/2019/12/23/selinux-semanage/</guid>
       <description>content of selinux config /etc/selinux/config
-SELINUX=enforcing SELINUXTYPE=targeted  semanage packages yum provides semanage yum install -y policycoreutils-python  semanage list port semanage port -l | grep ssh  semanage open ssh on different port add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port
-semanage port -a -t ssh_port_t -p tcp 1022  then restart sshd service
-systemctl restart sshd  Referensi:</description>
+SELINUX=enforcing SELINUXTYPE=targeted semanage packages yum provides semanage yum install -y policycoreutils-python semanage list port semanage port -l | grep ssh semanage open ssh on different port add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port
+semanage port -a -t ssh_port_t -p tcp 1022 then restart sshd service
+systemctl restart sshd Referensi:
+ https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/  </description>
     </item>
     
     <item>
@@ -50,7 +51,7 @@ systemctl restart sshd  Referensi:</description>
       <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</guid>
-      <description>List kvm using virsh virsh list virsh list --all virsh --help  Create vm on kvm / qemu via libvirt with command line Pembuatan vm centos 7 script bash virtcen.sh
+      <description>List kvm using virsh virsh list virsh list --all virsh --help Create vm on kvm / qemu via libvirt with command line Pembuatan vm centos 7 script bash virtcen.sh
 #!/bin/bash NAMA=$1 if [ -z &amp;quot;$1&amp;quot; ]; then while [ -z &amp;quot;$NAMA&amp;quot; ]; do echo -n &amp;quot;masukan nama vm: &amp;quot; read NAMA done fi virt-install \ --name $NAMA \ --ram 900 \ --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&#39;unmap&#39;,format=&#39;qcow2&#39; \ --controller type=scsi,model=virtio-scsi \ --vcpus 1 \ --cpu host \ --console pty,target_type=serial \ --location /iso/CentOS-7.</description>
     </item>
     
@@ -83,7 +84,7 @@ Every machine with a LAN behind it must have IP forwarding enabled.</description
       <pubDate>Wed, 04 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/12/04/ansible-cycle-evolution-diagram-security/</guid>
-      <description> Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
+      <description>Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
 Referensi:
  https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/ https://swimlane.com/blog/siem-soar/ https://www.ansible.com/blog/the-journey-to-security-automation  </description>
     </item>
@@ -94,7 +95,7 @@ Referensi:
       <pubDate>Tue, 03 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/12/03/proxmox-add-zfs/</guid>
-      <description> Proxmox Add ZFS Referensi:
+      <description>Proxmox Add ZFS Referensi:
  https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/ https://pve.proxmox.com/wiki/ZFS_on_Linux  Proxmox cloud-init Ref:
  https://cloud.centos.org/centos/7/images/ https://pve.proxmox.com/wiki/Cloud-Init_Support https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/  </description>
     </item>
@@ -105,7 +106,7 @@ Referensi:
       <pubDate>Fri, 15 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/</guid>
-      <description> Download deb rpm tgz
+      <description>Download [deb](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;amp;wget=true&#39;) [rpm](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;amp;wget=true&#39;) [tgz](wget -O splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;amp;wget=true&#39;)
 Referensi:
  https://docs.splunk.com/Documentation  </description>
     </item>
@@ -116,7 +117,7 @@ Referensi:
       <pubDate>Mon, 04 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/</guid>
-      <description> Ansible and Openscap for scanning and remediation server for security compliance operating system Referensi:
+      <description>Ansible and Openscap for scanning and remediation server for security compliance operating system Referensi:
  https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663  </description>
     </item>
     
@@ -126,7 +127,7 @@ Referensi:
       <pubDate>Sun, 03 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/03/openscap-reference/</guid>
-      <description> Openscap Custom Profile Referensi:
+      <description>Openscap Custom Profile Referensi:
  https://martin.preisler.me/2013/11/xccdf-tailoring/ https://static.open-scap.org/openscap-1.2/oscap_user_manual.html  </description>
     </item>
     
@@ -136,7 +137,7 @@ Referensi:
       <pubDate>Thu, 31 Oct 2019 16:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/31/centos-syslog-server/</guid>
-      <description> Setup Syslog Server and setup syslog client to it on Centos 7 Referensi:
+      <description>Setup Syslog Server and setup syslog client to it on Centos 7 Referensi:
  https://www.svennd.be/setup-central-syslog-server-on-centos-7/ https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/ https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html  </description>
     </item>
     
@@ -146,7 +147,7 @@ Referensi:
       <pubDate>Tue, 29 Oct 2019 14:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/29/linux-os-hardening/</guid>
-      <description> Password Policies Centos 7 Referensi:
+      <description>Password Policies Centos 7 Referensi:
  https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/ https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/  Centos 7 Hardening Guide Referensi:
  https://www.lisenet.com/2017/centos-7-server-hardening-guide/  Linux ASLR and kernel.randomize_va_space Ref:
  https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/  </description>
@@ -158,7 +159,7 @@ Referensi:
       <pubDate>Tue, 29 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/</guid>
-      <description> TCP Wrapper Referensi:
+      <description>TCP Wrapper Referensi:
  https://www.server-world.info/en/note?os=CentOS_7&amp;amp;p=tcp_wrapper https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/  </description>
     </item>
     
@@ -168,7 +169,7 @@ Referensi:
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/</guid>
-      <description> Firewalld masquerade firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public  Referensi:
+      <description>Firewalld masquerade firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public Referensi:
  https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/  </description>
     </item>
     
@@ -178,7 +179,7 @@ Referensi:
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</guid>
-      <description> Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt  comment out a line that contain string sed -i &#39;/ 2001 /s/^/#/&#39; file  Referensi:
+      <description>Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt comment out a line that contain string sed -i &#39;/ 2001 /s/^/#/&#39; file Referensi:
  https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521 https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file  </description>
     </item>
     
@@ -189,12 +190,21 @@ Referensi:
       
       <guid>https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
- Firewall
- iptables ipset shorewall csf  Anti Malware
- maldet (malware detection for web directory)  IDS
- tripwire  Identity Server
- FreeIPA (IPA = Identity, Policy, Authentication)  Security Checking / Scanning Solution
- OpenSCAP Rapid7  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</description>
+  Firewall
+  iptables
+  ipset
+  shorewall
+  csf
+  Anti Malware
+  maldet (malware detection for web directory)
+  IDS
+  tripwire
+  Identity Server
+  FreeIPA (IPA = Identity, Policy, Authentication)
+  Security Checking / Scanning Solution
+  OpenSCAP
+  Rapid7
+  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</description>
     </item>
     
     <item>
@@ -204,15 +214,24 @@ Referensi:
       
       <guid>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
- Virtualization (Desktop)
- Virtualbox  Graphic
- Gimp  Mail
- Thunderbird Mail (client)  Multimedia
- Avidemux  Video Conference
- jitsi More and more  Customer support live chat
- rocket.chat tawk.to simple chat  Networking
- nload   Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut
- https://blog.indonesiadot.com/2019/09/04/linux-security-tools/  </description>
+  Virtualization (Desktop)
+  Virtualbox
+  Graphic
+  Gimp
+  Mail
+  Thunderbird Mail (client)
+  Multimedia
+  Avidemux
+  Video Conference
+  jitsi
+  More and more
+  Customer support live chat
+  rocket.chat
+  tawk.to
+  simple chat
+  Networking
+  nload
+  Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut</description>
     </item>
     
     <item>
@@ -232,26 +251,7 @@ Persyaratan adalah:
       <pubDate>Sun, 11 Aug 2019 08:42:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/08/11/simple-alert-monitoring-using-simplemonitor/</guid>
-      <description>googling:&amp;nbsp;https://www.google.com/search?q=simple+alert+monitoring
-https://jamesoff.github.io/simplemonitor/
-googling:&amp;nbsp;https://www.google.com/search?q=simplemonitor+docker
-https://hub.docker.com/r/braindoctor/simplemonitor-docker/
-mkdir -p /docker/simplemonitor &amp;amp;&amp;amp; cd /docker/simplemonitor
-cat &amp;gt; docker-compose.yml &amp;lt;version: &amp;lsquo;3.2&amp;rsquo;
-services:
-&amp;nbsp; simplemonitor:
-&amp;nbsp; &amp;nbsp; restart: always
-&amp;nbsp; &amp;nbsp; image: braindoctor/simplemonitor-docker:latest
-&amp;nbsp; &amp;nbsp; container_name: simplemonitor
-&amp;nbsp; &amp;nbsp; hostname: mail-124.indonesiadot.com
-&amp;nbsp; &amp;nbsp; volumes:
-&amp;nbsp; &amp;nbsp; &amp;nbsp; - ${PWD}/config:/etc/simplemonitor
-&amp;nbsp; &amp;nbsp; ports:
-&amp;nbsp; &amp;nbsp; &amp;nbsp; - &amp;ldquo;8080:8080&amp;rdquo;
-
-EOFdocker-compose up -d
-ref:
-https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files</description>
+      <description>googling: https://www.google.com/search?q=simple+alert+monitoringhttps://jamesoff.github.io/simplemonitor/&amp;lt;br /&amp;gt;googling: https://www.google.com/search?q=simplemonitor+dockerhttps://hub.docker.com/r/braindoctor/simplemonitor-docker/&amp;lt;br /&amp;gt;mkdir -p /docker/simplemonitor &amp;amp;&amp;amp; cd /docker/simplemonitorcat &amp;gt; docker-compose.yml &amp;lt;version: &amp;lsquo;3.2&#39;services:simplemonitor:restart: alwaysimage: braindoctor/simplemonitor-docker:latestcontainer_name: simplemonitorhostname: mail-124.indonesiadot.comvolumes:- ${PWD}/config:/etc/simplemonitorports:- &amp;ldquo;8080:8080&amp;quot;EOFdocker-compose up -dref:https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files&amp;lt;/div&amp;gt;</description>
     </item>
     
     <item>
@@ -260,11 +260,7 @@ https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writin
       <pubDate>Sat, 26 May 2018 07:10:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/05/26/belajar-ispconfig-webhosting-control-panel/</guid>
-      <description>Berikut adalah alamat / url tutorial untuk belajar instalasi / setup ispconfig webhosting control panel :
-https://www.howtoforge.com/tutorial/perfect-server-ubuntu-with-nginx-and-ispconfig-3/3/
-https://www.howtoforge.com/tutorial/securing-ispconfig-3-with-a-free-lets-encrypt-ssl-certificate/
-https://github.com/SpeedWP/ispconfig-nginx-pagespeed/wiki/ISP-Config
-https://www.howtoforge.com/community/threads/install-monit.64712/</description>
+      <description>Berikut adalah alamat / url tutorial untuk belajar instalasi / setup ispconfig webhosting control panel :https://www.howtoforge.com/tutorial/perfect-server-ubuntu-with-nginx-and-ispconfig-3/3/&amp;lt;br /&amp;gt;https://www.howtoforge.com/tutorial/securing-ispconfig-3-with-a-free-lets-encrypt-ssl-certificate/&amp;lt;br /&amp;gt;https://github.com/SpeedWP/ispconfig-nginx-pagespeed/wiki/ISP-Config&amp;lt;br /&amp;gt;https://www.howtoforge.com/community/threads/install-monit.64712/&amp;lt;br /&amp;gt;</description>
     </item>
     
     <item>
@@ -273,9 +269,9 @@ https://www.howtoforge.com/community/threads/install-monit.64712/</description>
       <pubDate>Mon, 29 Jan 2018 00:59:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</guid>
-      <description>cron without sending mail tambahkan MAILTO=&amp;ldquo;&amp;rdquo; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
-linux rm file list too long cd direktoriyangfilenyabanyak ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete find . -type f -print -delete  incron Ref:
- http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en  rsync only existing file rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/  Umask follow parent / setgid chmod g+s /namafolder  Ref:</description>
+      <description>cron without sending mail tambahkan MAILTO=&amp;rdquo;&amp;rdquo; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
+linux rm file list too long cd direktoriyangfilenyabanyak ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete find . -type f -print -delete incron Ref:
+ http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en  rsync only existing file rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/ Umask follow parent / setgid chmod g+s /namafolder Ref:</description>
     </item>
     
     <item>
@@ -284,8 +280,7 @@ linux rm file list too long cd direktoriyangfilenyabanyak ls -1 | wc -l &amp;amp
       <pubDate>Fri, 25 Aug 2017 04:55:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2017/08/25/learning-magento-e-commerce/</guid>
-      <description>This month i learn about E-commerce with Magento, it&amp;rsquo;s awesome, full of feature of e-commerce.
-But it also have several steps to tweak it, to make it faster, secure and more convenient.I can&amp;rsquo;t detail all of it now, but here are the diagram that i make for easy learning flow.</description>
+      <description>This month i learn about E-commerce with Magento, it&#39;s awesome, full of feature of e-commerce.But it also have several steps to tweak it, to make it faster, secure and more convenient.I can&#39;t detail all of it now, but here are the diagram that i make for easy learning flow.</description>
     </item>
     
   </channel>

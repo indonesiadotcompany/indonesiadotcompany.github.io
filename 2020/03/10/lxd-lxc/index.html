@@ -633,6 +633,16 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -662,17 +672,12 @@
 <div class="post">
   <h1 class="post-title">LXD-LXC</h1>
   <span class="post-date">Mar 10, 2020</span>
-  
-
-<h2 id="lxc-set-static-ip">lxc set static ip</h2>
-
+  <h2 id="lxc-set-static-ip">lxc set static ip</h2>
 <pre><code>lxc stop c1
 lxc network attach lxdbr0 c1 eth0 eth0
 lxc config device set c1 eth0 ipv4.address 10.99.10.42
 lxc start c1
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4">https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4</a></li>
 </ul>
 

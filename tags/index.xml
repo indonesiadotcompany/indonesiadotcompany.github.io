@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Blog Indonesiadot.Com</title>
@@ -6,17 +6,62 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Mar 2020 06:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 12 Mar 2020 20:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>disk</title>
+      <link>https://blog.indonesiadot.com/tags/disk/</link>
+      <pubDate>Thu, 12 Mar 2020 20:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/disk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>linux</title>
       <link>https://blog.indonesiadot.com/tags/linux/</link>
-      <pubDate>Tue, 10 Mar 2020 06:17:54 +0700</pubDate>
+      <pubDate>Thu, 12 Mar 2020 20:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lvm</title>
+      <link>https://blog.indonesiadot.com/tags/lvm/</link>
+      <pubDate>Thu, 12 Mar 2020 20:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/lvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tips</title>
+      <link>https://blog.indonesiadot.com/tags/tips/</link>
+      <pubDate>Thu, 12 Mar 2020 20:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ceph</title>
+      <link>https://blog.indonesiadot.com/tags/ceph/</link>
+      <pubDate>Thu, 12 Mar 2020 18:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ceph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>storage</title>
+      <link>https://blog.indonesiadot.com/tags/storage/</link>
+      <pubDate>Thu, 12 Mar 2020 18:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/storage/</guid>
       <description></description>
     </item>
     
@@ -98,15 +143,6 @@
       <pubDate>Thu, 05 Mar 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/netcat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tips</title>
-      <link>https://blog.indonesiadot.com/tags/tips/</link>
-      <pubDate>Thu, 05 Mar 2020 18:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
       <description></description>
     </item>
     
@@ -917,15 +953,6 @@
       <pubDate>Thu, 10 Oct 2019 07:09:53 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/rabbitmq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>disk</title>
-      <link>https://blog.indonesiadot.com/tags/disk/</link>
-      <pubDate>Mon, 30 Sep 2019 13:09:15 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/disk/</guid>
       <description></description>
     </item>
     

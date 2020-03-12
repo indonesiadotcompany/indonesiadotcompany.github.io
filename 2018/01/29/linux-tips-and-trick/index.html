@@ -633,6 +633,16 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -662,71 +672,49 @@
 <div class="post">
   <h1 class="post-title">Linux Tips and Trick</h1>
   <span class="post-date">Jan 29, 2018</span>
-  
-
-<h2 id="cron-without-sending-mail">cron without sending mail</h2>
-
-<p>tambahkan MAILTO=&ldquo;&rdquo; di awal cron nya tambahkan &gt;/dev/null 2&gt;&amp;&amp;1 atau &gt; /dev/null atau &gt; /dev/null 2&gt;&amp;1 || true di belakang command cron nya</p>
-
+  <h2 id="cron-without-sending-mail">cron without sending mail</h2>
+<p>tambahkan MAILTO=&rdquo;&rdquo; di awal cron nya tambahkan &gt;/dev/null 2&gt;&amp;&amp;1 atau &gt; /dev/null atau &gt; /dev/null 2&gt;&amp;1 || true di belakang command cron nya</p>
 <h2 id="linux-rm-file-list-too-long">linux rm file list too long</h2>
-
 <pre><code>cd direktoriyangfilenyabanyak
 ls -1 | wc -l &amp;&amp; time find . -type f -delete
 find . -type f -print -delete
-</code></pre>
-
-<h2 id="incron">incron</h2>
-
+</code></pre><h2 id="incron">incron</h2>
 <p>Ref:</p>
-
 <ul>
 <li><a href="http://inotify.aiken.cz/?section=incron&amp;page=faq&amp;lang=en">http://inotify.aiken.cz/?section=incron&amp;page=faq&amp;lang=en</a></li>
 </ul>
-
 <h2 id="rsync-only-existing-file">rsync only existing file</h2>
-
 <pre><code>rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/
-</code></pre>
-
-<h2 id="umask-follow-parent-setgid">Umask follow parent / setgid</h2>
-
+</code></pre><h2 id="umask-follow-parent--setgid">Umask follow parent / setgid</h2>
 <pre><code>chmod g+s /namafolder
-</code></pre>
-
-<p>Ref:</p>
-
+</code></pre><p>Ref:</p>
 <ul>
 <li><a href="https://unix.stackexchange.com/questions/117190/best-way-to-sync-files-copy-only-existing-files-and-only-if-newer-than-target">https://unix.stackexchange.com/questions/117190/best-way-to-sync-files-copy-only-existing-files-and-only-if-newer-than-target</a></li>
 <li><a href="https://superuser.com/questions/151911/how-to-make-new-file-permission-inherit-from-the-parent-directory">https://superuser.com/questions/151911/how-to-make-new-file-permission-inherit-from-the-parent-directory</a></li>
 </ul>
-
 <h2 id="awk-example">awk example</h2>
-
 <pre><code>docker images
 docker images | grep widharbor.birau.com
 docker images | grep widharbor.birau.com | wc -l
 docker images | grep widharbor.birau.com | awk '{ print $1 &quot;:&quot; $2 }'
 docker rmi `docker images | grep widharbor.birau.com | awk '{ print $1 &quot;:&quot; $2 }'`
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="https://www.linuxtechi.com/awk-command-tutorial-with-examples/">https://www.linuxtechi.com/awk-command-tutorial-with-examples/</a></li>
 </ul>
-
-<h2 id="create-sparse-thin-loop-file">create sparse / thin loop file</h2>
-
+<h2 id="create-sparse--thin-loop-file">create sparse / thin loop file</h2>
 <p>You can use the seek parameter of dd to create a sparse file:</p>
-
 <pre><code>dd if=/dev/zero of=filesystem.img  bs=1k seek=1024M count=1
 losetup /dev/loop11 filesystem.img
 #or use below to automatically find and set to first unused device
 #losetup -f filesystem.img
-</code></pre>
-
-<p>would create a file which can get up to 1G in size but will only occupy the necessary space.</p>
-
+</code></pre><p>would create a file which can get up to 1G in size but will only occupy the necessary space.</p>
 <ul>
 <li><a href="https://serverfault.com/questions/344518/in-linux-how-can-i-create-thin-provisioned-file-so-it-can-be-mounted-and-a-file">https://serverfault.com/questions/344518/in-linux-how-can-i-create-thin-provisioned-file-so-it-can-be-mounted-and-a-file</a></li>
+</ul>
+<h2 id="mount-exfat-usb--external-disk">mount exfat usb / external disk</h2>
+<pre><code>apt install exfat-fuse exfat-utils
+</code></pre><ul>
+<li><a href="https://itsfoss.com/mount-exfat/">https://itsfoss.com/mount-exfat/</a></li>
 </ul>
 
 </div>

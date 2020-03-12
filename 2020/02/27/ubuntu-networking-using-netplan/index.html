@@ -633,6 +633,16 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -662,28 +672,18 @@
 <div class="post">
   <h1 class="post-title">Ubuntu networking using netplan</h1>
   <span class="post-date">Feb 27, 2020</span>
-  
-
-<h1 id="ubuntu-networking-using-netplan">Ubuntu networking using netplan</h1>
-
+  <h1 id="ubuntu-networking-using-netplan">Ubuntu networking using netplan</h1>
 <h2 id="configuration">Configuration</h2>
-
 <p>To configure netplan, save configuration files under /etc/netplan/ with a .yaml extension (e.g. /etc/netplan/config.yaml), then run sudo netplan apply. This command parses and applies the configuration to the system. Configuration written to disk under /etc/netplan/ will persist between reboots.</p>
-
 <h2 id="using-dhcp-and-static-addressing">Using DHCP and static addressing</h2>
-
 <p>To let the interface named ‘enp3s0’ get an address via DHCP, create a YAML file with the following:</p>
-
 <pre><code>network:
   version: 2
   renderer: networkd
   ethernets:
     enp3s0:
       dhcp4: true
-</code></pre>
-
-<p>To instead set a static IP address, use the addresses key, which takes a list of (IPv4 or IPv6), addresses along with the subnet prefix length (e.g. /24). Gateway and DNS information can be provided as well:</p>
-
+</code></pre><p>To instead set a static IP address, use the addresses key, which takes a list of (IPv4 or IPv6), addresses along with the subnet prefix length (e.g. /24). Gateway and DNS information can be provided as well:</p>
 <pre><code>network:
   version: 2
   renderer: networkd
@@ -695,14 +695,9 @@
       nameservers:
           search: [mydomain, otherdomain]
           addresses: [10.10.10.1, 1.1.1.1]
-</code></pre>
-
-<h2 id="connecting-multiple-interfaces-with-dhcp">Connecting multiple interfaces with DHCP</h2>
-
+</code></pre><h2 id="connecting-multiple-interfaces-with-dhcp">Connecting multiple interfaces with DHCP</h2>
 <p>Many systems now include more than one network interface. Servers will commonly need to connect to multiple networks, and may require that traffic to the Internet goes through a specific interface despite all of them providing a valid gateway.</p>
-
 <p>One can achieve the exact routing desired over DHCP by specifying a metric for the routes retrieved over DHCP, which will ensure some routes are preferred over others. In this example, ‘enred’ is preferred over ‘engreen’, as it has a lower route metric:</p>
-
 <pre><code>network:
   version: 2
   ethernets:
@@ -714,12 +709,8 @@
       dhcp4: yes
       dhcp4-overrides:
         route-metric: 200
-</code></pre>
-
-<h2 id="connecting-to-an-open-wireless-network">Connecting to an open wireless network</h2>
-
+</code></pre><h2 id="connecting-to-an-open-wireless-network">Connecting to an open wireless network</h2>
 <p>Netplan easily supports connecting to an open wireless network (one that is not secured by a password), only requiring that the access point is defined:</p>
-
 <pre><code>network:
   version: 2
   wifis:
@@ -727,12 +718,8 @@
       access-points:
         opennetwork: {}
       dhcp4: yes
-</code></pre>
-
-<h2 id="connecting-to-a-wpa-personal-wireless-network">Connecting to a WPA Personal wireless network</h2>
-
+</code></pre><h2 id="connecting-to-a-wpa-personal-wireless-network">Connecting to a WPA Personal wireless network</h2>
 <p>Wireless devices use the ‘wifis’ key and share the same configuration options with wired ethernet devices. The wireless access point name and password should also be specified:</p>
-
 <pre><code>network:
   version: 2
   renderer: networkd
@@ -747,12 +734,8 @@
       access-points:
         &quot;network_ssid_name&quot;:
           password: &quot;**********&quot;
-</code></pre>
-
-<h2 id="using-multiple-addresses-on-a-single-interface">Using multiple addresses on a single interface</h2>
-
+</code></pre><h2 id="using-multiple-addresses-on-a-single-interface">Using multiple addresses on a single interface</h2>
 <p>The addresses key can take a list of addresses to assign to an interface:</p>
-
 <pre><code>network:
   version: 2
   renderer: networkd
@@ -762,12 +745,8 @@
        - 10.100.1.38/24
        - 10.100.1.39/24
      gateway4: 10.100.1.1
-</code></pre>
-
-<p>Interface aliases (e.g. eth0:0) are not supported.</p>
-
+</code></pre><p>Interface aliases (e.g. eth0:0) are not supported.</p>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://netplan.io/examples">https://netplan.io/examples</a></li>
 </ul>

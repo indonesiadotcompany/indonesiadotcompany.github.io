@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Blog Indonesiadot.Com</title>
@@ -6,10 +6,28 @@
     <description>Recent content in Posts on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Mar 2020 06:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 12 Mar 2020 20:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LVM tips</title>
+      <link>https://blog.indonesiadot.com/2020/03/12/lvm-tips/</link>
+      <pubDate>Thu, 12 Mar 2020 20:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/12/lvm-tips/</guid>
+      <description>resize / increase lvm lvextend --size +10G /dev/vg0/foo lvextend --size 20G /dev/vg0/foo lvdisplay /dev/vg0/foo  http://www.microhowto.info/howto/increase_the_size_of_an_lvm_logical_volume.html https://linoxide.com/linux-how-to/lvm-configuration-linux/  pvresize pvresize /dev/sda3  https://www.thegeekdiary.com/centos-rhel-how-to-resize-extend-existing-physical-volume-pv/  </description>
+    </item>
+    
+    <item>
+      <title>Ceph tips</title>
+      <link>https://blog.indonesiadot.com/2020/03/12/ceph-tips/</link>
+      <pubDate>Thu, 12 Mar 2020 18:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/12/ceph-tips/</guid>
+      <description>remove osd systemctl stop ceph-osd.target systemctl stop ceph-osd@0 ceph osd out 0 ceph osd down 0 ceph osd destroy 0 ceph osd destroy 0 --yes-i-really-mean-it ceph osd rm 0 ceph osd crush rm osd.0 ceph auth del osd.0 ceph-volume lvm zap /dev/sdX --destroy  https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87 https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/  all about pg_num  https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox  ceph one / single node ceph osd getcrushmap -o crush_map_compressed crushtool -d crush_map_compressed -o crush_map_decompressed vi crush_map_decompressed lalu cari bagian:</description>
+    </item>
     
     <item>
       <title>LXD-LXC</title>
@@ -17,7 +35,7 @@
       <pubDate>Tue, 10 Mar 2020 06:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/10/lxd-lxc/</guid>
-      <description> lxc set static ip lxc stop c1 lxc network attach lxdbr0 c1 eth0 eth0 lxc config device set c1 eth0 ipv4.address 10.99.10.42 lxc start c1   https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4  </description>
+      <description>lxc set static ip lxc stop c1 lxc network attach lxdbr0 c1 eth0 eth0 lxc config device set c1 eth0 ipv4.address 10.99.10.42 lxc start c1  https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4  </description>
     </item>
     
     <item>
@@ -36,7 +54,7 @@
       
       <guid>https://blog.indonesiadot.com/2020/03/06/proxmox-add-zfs-disk/</guid>
       <description>Add Disk Hardware Tambahkan harddisk di server secara berurutan port sata nya, dan catat ID disknya
-Setting at command line ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4 zpool create rpoolkube -o ashift=12 mirror /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4 zpool status  Tambahkan proxmox storage pool Dari proxmox pool, lalu klik storage, lalu add storage, pilih zfs. Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masukan block size 64k, lalu klik create.</description>
+Setting at command line ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4 zpool create rpoolkube -o ashift=12 mirror /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4 zpool status Tambahkan proxmox storage pool Dari proxmox pool, lalu klik storage, lalu add storage, pilih zfs. Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masukan block size 64k, lalu klik create.</description>
     </item>
     
     <item>
@@ -45,7 +63,7 @@ Setting at command line ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R l
       <pubDate>Thu, 05 Mar 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/05/netcat-bandwidth-test/</guid>
-      <description> Netcat Bandwidth Test netcat-server nc -l -p 12345 | wc -c  netcat-client dd if=/dev/zero bs=$((2**20)) count=$((2**10)) | nc -q 0 netcat-server 12345 #or dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345  on the server run nload to see the bandwidth used at eth0 for incoming and outgoing
+      <description>Netcat Bandwidth Test netcat-server nc -l -p 12345 | wc -c netcat-client dd if=/dev/zero bs=$((2**20)) count=$((2**10)) | nc -q 0 netcat-server 12345 #or dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345 on the server run nload to see the bandwidth used at eth0 for incoming and outgoing
 Referensi:
  https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/ https://www.thegeekstuff.com/2012/04/nc-command-examples/  </description>
     </item>
@@ -56,7 +74,7 @@ Referensi:
       <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/05/</guid>
-      <description> Post Ini adalah contoh post
+      <description>Post Ini adalah contoh post
 Referensi:
  https://indonesiadot.com  </description>
     </item>
@@ -67,7 +85,7 @@ Referensi:
       <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/05/python-tips/</guid>
-      <description> module python web server python -m SimpleHTTPServer 8001 python -m SimpleHTTPServer 8002   https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver https://www.pcsuggest.com/best-lightweight-web-server-linux/  </description>
+      <description>module python web server python -m SimpleHTTPServer 8001 python -m SimpleHTTPServer 8002  https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver https://www.pcsuggest.com/best-lightweight-web-server-linux/  </description>
     </item>
     
     <item>
@@ -76,7 +94,7 @@ Referensi:
       <pubDate>Fri, 28 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/28/yum-tips/</guid>
-      <description> Yum install specific version yum list docker-ce.x86_64 --showduplicates yum list docker-ce.x86_64 --showduplicates | sort -r yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09   https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos  </description>
+      <description>Yum install specific version yum list docker-ce.x86_64 --showduplicates yum list docker-ce.x86_64 --showduplicates | sort -r yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09  https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos  </description>
     </item>
     
     <item>
@@ -85,12 +103,11 @@ Referensi:
       <pubDate>Fri, 28 Feb 2020 08:07:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/28/docker-tips/</guid>
-      <description>Docker run example docker run -it alpine /bin/ash  Where -i = interactive, -t make tty for the running process, /bin/ash is the command to run.
+      <description>Docker run example docker run -it alpine /bin/ash Where -i = interactive, -t make tty for the running process, /bin/ash is the command to run.
 docker run &amp;ndash;help
-How to get ip of running docker docker ps docker inspect &amp;lt;containernameorid&amp;gt; docker inspect &amp;lt;containernameorid&amp;gt; | grep &#39;&amp;quot;IPAddress&amp;quot;&#39; | head -n 1  Where head is opossite from tail, man head, man tail
- https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17.  Rancherhttps://rancher.com/swarm/https://github.com/MoimHossain/docker-viswarm
-https://stackoverflow.com/ques tions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host
-docker inspect -f &#39;{{range .</description>
+How to get ip of running docker docker ps docker inspect &amp;lt;containernameorid&amp;gt; docker inspect &amp;lt;containernameorid&amp;gt; | grep &#39;&amp;quot;IPAddress&amp;quot;&#39; | head -n 1 Where head is opossite from tail, man head, man tail
+ https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17.  Ref:
+ https://docs.docker.com/engine/security/certificates/ https://docs.docker.com/engine/security/https/  </description>
     </item>
     
     <item>
@@ -101,7 +118,7 @@ docker inspect -f &#39;{{range .</description>
       <guid>https://blog.indonesiadot.com/2020/02/27/ubuntu-networking-using-netplan/</guid>
       <description>Ubuntu networking using netplan Configuration To configure netplan, save configuration files under /etc/netplan/ with a .yaml extension (e.g. /etc/netplan/config.yaml), then run sudo netplan apply. This command parses and applies the configuration to the system. Configuration written to disk under /etc/netplan/ will persist between reboots.
 Using DHCP and static addressing To let the interface named ‘enp3s0’ get an address via DHCP, create a YAML file with the following:
-network: version: 2 renderer: networkd ethernets: enp3s0: dhcp4: true  To instead set a static IP address, use the addresses key, which takes a list of (IPv4 or IPv6), addresses along with the subnet prefix length (e.</description>
+network: version: 2 renderer: networkd ethernets: enp3s0: dhcp4: true To instead set a static IP address, use the addresses key, which takes a list of (IPv4 or IPv6), addresses along with the subnet prefix length (e.</description>
     </item>
     
     <item>
@@ -110,7 +127,7 @@ network: version: 2 renderer: networkd ethernets: enp3s0: dhcp4: true  To instea
       <pubDate>Tue, 25 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/25/ubiquiti-unifi-on-linux-ubuntu/</guid>
-      <description> Ubiquiti Unifi on Linux Ubuntu apt-get update; apt-get install ca-certificates wget -y wget https://get.glennr.nl/unifi/install/unifi-5.12.35.sh bash unifi-5.12.35.sh  access your unifi controller at https://ip.of.your.server:8443
+      <description>Ubiquiti Unifi on Linux Ubuntu apt-get update; apt-get install ca-certificates wget -y wget https://get.glennr.nl/unifi/install/unifi-5.12.35.sh bash unifi-5.12.35.sh access your unifi controller at https://ip.of.your.server:8443
 Referensi:
  https://community.ui.com/questions/UniFi-Installation-Scripts-or-UniFi-Easy-Update-Script-or-UniFi-Lets-Encrypt-or-Ubuntu-16-04-18-04-/ccbc7530-dd61-40a7-82ec-22b17f027776 https://github.com/widcampur/ubiquiti-unifi-controller-install  </description>
     </item>
@@ -121,7 +138,7 @@ Referensi:
       <pubDate>Mon, 24 Feb 2020 22:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/24/analisa-virus-dengan-virustotal/</guid>
-      <description> Analisa Virus dengan virustotal Referensi:
+      <description>Analisa Virus dengan virustotal Referensi:
  https://www.virustotal.com/gui/home/upload  </description>
     </item>
     
@@ -132,7 +149,7 @@ Referensi:
       
       <guid>https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/</guid>
       <description>Cut and Combine Video Avidemux
-Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &amp;gt; Youtube Studio 2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks 3. Untuk video baru, klik set languages, lalu confirm 4. Klik tombol ADD / Tambahkan subtitel atau CC baru.  Add watermark ffmpeg -i input.mp4 -i watermark.</description>
+Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &amp;gt; Youtube Studio 2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks 3. Untuk video baru, klik set languages, lalu confirm 4. Klik tombol ADD / Tambahkan subtitel atau CC baru. Add watermark ffmpeg -i input.mp4 -i watermark.png -filter_complex &amp;quot;overlay=1500:1000&amp;quot; output.</description>
     </item>
     
     <item>
@@ -141,7 +158,7 @@ Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio 
       <pubDate>Thu, 20 Feb 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</guid>
-      <description> Ansible OS Hardening mkdir -p /data/backups  Referensi:
+      <description>Ansible OS Hardening mkdir -p /data/backups Referensi:
  https://indonesiadot.com  </description>
     </item>
     
@@ -151,7 +168,7 @@ Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio 
       <pubDate>Thu, 20 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</guid>
-      <description> Ansible Tower tips and trick Change admin password awx-manage changepassword admin  backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
+      <description>Ansible Tower tips and trick Change admin password awx-manage changepassword admin backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
  https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html  </description>
     </item>
     
@@ -161,9 +178,9 @@ Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio 
       <pubDate>Mon, 20 Jan 2020 09:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</guid>
-      <description> Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
+      <description>Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
 adapun command nya sebelum bisa diakses yaitu:
-chcon -Rv --type=httpd_sys_rw_content_t /webserver  Referensi:
+chcon -Rv --type=httpd_sys_rw_content_t /webserver Referensi:
  https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/  </description>
     </item>
     
@@ -173,7 +190,7 @@ chcon -Rv --type=httpd_sys_rw_content_t /webserver  Referensi:
       <pubDate>Mon, 20 Jan 2020 07:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</guid>
-      <description> Widya Harbor Container Registry  https://widharbor.birau.com/  Referensi:
+      <description>Widya Harbor Container Registry  https://widharbor.birau.com/  Referensi:
  https://indonesiadot.com  </description>
     </item>
     
@@ -183,9 +200,7 @@ chcon -Rv --type=httpd_sys_rw_content_t /webserver  Referensi:
       <pubDate>Sun, 19 Jan 2020 15:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/</guid>
-      <description>Ansible Tower first Implementation  Install ansible tower masukan license tambahkan access - organization tambahkan access - users tambahkan access - teams tambahkan resources - inventory siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)
-chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/  tambahkan resources - projects
- buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine</description>
+      <description>Ansible Tower first Implementation  Install ansible tower masukan license tambahkan access - organization tambahkan access - users tambahkan access - teams tambahkan resources - inventory siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)  chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/  tambahkan resources - projects buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine buat host client / node yang mau di manage di /etc/hosts tambahkan resources - credentials tambahkan resources - templates test launch jobs based on template yg baru dibuat  Ansible tower + openscap  install scap-workbench  yum install scap-workbench xauth -y  buat direktori report  mkdir /report chgrp awx /report chmod g+s /report/ chcon -Rv --type=httpd_sys_rw_content_t /report/ ln -s /report /var/lib/awx/public/  tambahkan direktori report di nginx   location /report { alias /var/lib/awx/public/report; autoindex on; }  akses scap-workbench dari laptop  ssh -X -C tower1 scap-workbench  jalankan Scan Remote Machine (over SSH) ke ansible@client1 (jika muncul popup, pilih centos7) Save generate result html ke /report (tambahkan pembeda semisal datetime untuk membedakan tiap file report)  Referensi:</description>
     </item>
     
     <item>
@@ -194,8 +209,8 @@ chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/  tambahkan res
       <pubDate>Sun, 19 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/</guid>
-      <description> Letsencrypt with certbot unatteded way This is for ubuntu linux
-add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonly --standalone --preferred-challenges http --non-interactive --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com  Note:  before running certbot command, you must already pointing domain / subdomain address to destination ip  Referensi:  https://indonesiadot.com  </description>
+      <description>Letsencrypt with certbot unatteded way This is for ubuntu linux
+add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonly --standalone --preferred-challenges http --non-interactive --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com Note:  before running certbot command, you must already pointing domain / subdomain address to destination ip  Referensi:  https://indonesiadot.com  </description>
     </item>
     
     <item>
@@ -204,7 +219,7 @@ add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonl
       <pubDate>Wed, 15 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</guid>
-      <description> Setup sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose  Referensi:
+      <description>Setup sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
  https://docs.docker.com/compose/install/  </description>
     </item>
     
@@ -214,7 +229,7 @@ add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonl
       <pubDate>Tue, 14 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</guid>
-      <description> Instalasi Gitlab di Ubuntu 16.04 Widya Gitlab  https://widgitgog.birau.com/dashboard/projects  change / update hostname sed -i &#39;s/widgitgog/widgit/g&#39; /etc/gitlab/gitlab.rb gitlab-ctl reconfigure gitlab-ctl restart   https://docs.gitlab.com/omnibus/settings/configuration.html  Referensi:
+      <description>Instalasi Gitlab di Ubuntu 16.04 Widya Gitlab  https://widgitgog.birau.com/dashboard/projects  change / update hostname sed -i &#39;s/widgitgog/widgit/g&#39; /etc/gitlab/gitlab.rb gitlab-ctl reconfigure gitlab-ctl restart  https://docs.gitlab.com/omnibus/settings/configuration.html  Referensi:
  https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04  </description>
     </item>
     
@@ -224,11 +239,11 @@ add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonl
       <pubDate>Wed, 08 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/</guid>
-      <description> Step to reproduce on VM Turn off the VM
-qemu-img resize image.qcow2 +SIZE  where SIZE is the size to add (e.g. 10G for 10 gibibytes).
+      <description>Step to reproduce on VM Turn off the VM
+qemu-img resize image.qcow2 +SIZE where SIZE is the size to add (e.g. 10G for 10 gibibytes).
 Turn on the VM, fdisk /dev/vda, delete and create /dev/vda2, restart
 Login after restart, then run this command
-pvresize /dev/vda2 lvextend -r -l +100%FREE /dev/mapper/centos-root df -hl  Referensi:
+pvresize /dev/vda2 lvextend -r -l +100%FREE /dev/mapper/centos-root df -hl Referensi:
  https://maunium.net/blog/resizing-qcow2-images/  </description>
     </item>
     
@@ -239,9 +254,10 @@ pvresize /dev/vda2 lvextend -r -l +100%FREE /dev/mapper/centos-root df -hl  Refe
       
       <guid>https://blog.indonesiadot.com/2019/12/23/selinux-semanage/</guid>
       <description>content of selinux config /etc/selinux/config
-SELINUX=enforcing SELINUXTYPE=targeted  semanage packages yum provides semanage yum install -y policycoreutils-python  semanage list port semanage port -l | grep ssh  semanage open ssh on different port add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port
-semanage port -a -t ssh_port_t -p tcp 1022  then restart sshd service
-systemctl restart sshd  Referensi:</description>
+SELINUX=enforcing SELINUXTYPE=targeted semanage packages yum provides semanage yum install -y policycoreutils-python semanage list port semanage port -l | grep ssh semanage open ssh on different port add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port
+semanage port -a -t ssh_port_t -p tcp 1022 then restart sshd service
+systemctl restart sshd Referensi:
+ https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/  </description>
     </item>
     
     <item>
@@ -250,7 +266,7 @@ systemctl restart sshd  Referensi:</description>
       <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</guid>
-      <description>List kvm using virsh virsh list virsh list --all virsh --help  Create vm on kvm / qemu via libvirt with command line Pembuatan vm centos 7 script bash virtcen.sh
+      <description>List kvm using virsh virsh list virsh list --all virsh --help Create vm on kvm / qemu via libvirt with command line Pembuatan vm centos 7 script bash virtcen.sh
 #!/bin/bash NAMA=$1 if [ -z &amp;quot;$1&amp;quot; ]; then while [ -z &amp;quot;$NAMA&amp;quot; ]; do echo -n &amp;quot;masukan nama vm: &amp;quot; read NAMA done fi virt-install \ --name $NAMA \ --ram 900 \ --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&#39;unmap&#39;,format=&#39;qcow2&#39; \ --controller type=scsi,model=virtio-scsi \ --vcpus 1 \ --cpu host \ --console pty,target_type=serial \ --location /iso/CentOS-7.</description>
     </item>
     
@@ -293,7 +309,7 @@ Every machine with a LAN behind it must have IP forwarding enabled.</description
       <pubDate>Wed, 04 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/12/04/ansible-cycle-evolution-diagram-security/</guid>
-      <description> Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
+      <description>Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
 Referensi:
  https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/ https://swimlane.com/blog/siem-soar/ https://www.ansible.com/blog/the-journey-to-security-automation  </description>
     </item>
@@ -304,7 +320,7 @@ Referensi:
       <pubDate>Tue, 03 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/12/03/proxmox-add-zfs/</guid>
-      <description> Proxmox Add ZFS Referensi:
+      <description>Proxmox Add ZFS Referensi:
  https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/ https://pve.proxmox.com/wiki/ZFS_on_Linux  Proxmox cloud-init Ref:
  https://cloud.centos.org/centos/7/images/ https://pve.proxmox.com/wiki/Cloud-Init_Support https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/  </description>
     </item>
@@ -315,7 +331,7 @@ Referensi:
       <pubDate>Tue, 26 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/26/ansible-awx-2019/</guid>
-      <description> Ansible AWX install docker-compose tanpa pip, tanpa compile curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose  Referensi:
+      <description>Ansible AWX install docker-compose tanpa pip, tanpa compile curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
  https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/ https://medium.com/swlh/ansible-awx-installation-5861b115455a https://devzero.co.za/2019/02/28/high-availability-awx-ansible/ https://github.com/sujiar37/AWX-HA-InstanceGroup  Not yet tested:
  https://github.com/MrMEEE/awx-build https://awx.wiki/installation https://github.com/powertim/deploy_awx-rpm https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/  </description>
     </item>
@@ -326,7 +342,7 @@ Referensi:
       <pubDate>Fri, 15 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/</guid>
-      <description> Download deb rpm tgz
+      <description>Download [deb](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;amp;wget=true&#39;) [rpm](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;amp;wget=true&#39;) [tgz](wget -O splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;amp;wget=true&#39;)
 Referensi:
  https://docs.splunk.com/Documentation  </description>
     </item>
@@ -339,7 +355,7 @@ Referensi:
       <guid>https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/</guid>
       <description>Frequently Used Module blockinfile Module ini saya gunakan ketika muncul error pada saat menggunakan module lineinfile untuk memasukan beberapa baris sekaligus dalam beberapa tasks, dan ternyata dengan menggunakan module ini dengan hanya satu task bisa memasukan langsung beberapa baris.
 Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepada parameter minimalnya adalah path dan block saja.
-- name: Insert correct line to /etc/ntp.conf blockinfile: path: /etc/ntp.conf insertafter: ^#?</description>
+- name: Insert correct line to /etc/ntp.conf blockinfile: path: /etc/ntp.conf insertafter: ^#?server state: present block: | server &amp;quot;{{ ntp1 }}&amp;quot; server &amp;quot;{{ ntp2 }}&amp;quot; notify: restart ntp Referensi:</description>
     </item>
     
     <item>
@@ -348,7 +364,7 @@ Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepa
       <pubDate>Mon, 04 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/</guid>
-      <description> Ansible and Openscap for scanning and remediation server for security compliance operating system Referensi:
+      <description>Ansible and Openscap for scanning and remediation server for security compliance operating system Referensi:
  https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663  </description>
     </item>
     
@@ -358,7 +374,7 @@ Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepa
       <pubDate>Sun, 03 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/03/openscap-reference/</guid>
-      <description> Openscap Custom Profile Referensi:
+      <description>Openscap Custom Profile Referensi:
  https://martin.preisler.me/2013/11/xccdf-tailoring/ https://static.open-scap.org/openscap-1.2/oscap_user_manual.html  </description>
     </item>
     
@@ -368,7 +384,7 @@ Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepa
       <pubDate>Thu, 31 Oct 2019 16:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/31/centos-syslog-server/</guid>
-      <description> Setup Syslog Server and setup syslog client to it on Centos 7 Referensi:
+      <description>Setup Syslog Server and setup syslog client to it on Centos 7 Referensi:
  https://www.svennd.be/setup-central-syslog-server-on-centos-7/ https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/ https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html  </description>
     </item>
     
@@ -384,7 +400,8 @@ Referensi:
 . means any character, digit can come in place of .
  means zero or more occurrences of thing written just previous to it.  | means &amp;lsquo;or&amp;rsquo;.
 So,
-james.*jack  would search james , then any number of character until jack comes.</description>
+james.*jack would search james , then any number of character until jack comes.
+Since you want either jack.</description>
     </item>
     
     <item>
@@ -393,7 +410,7 @@ james.*jack  would search james , then any number of character until jack comes.
       <pubDate>Tue, 29 Oct 2019 14:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/29/linux-os-hardening/</guid>
-      <description> Password Policies Centos 7 Referensi:
+      <description>Password Policies Centos 7 Referensi:
  https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/ https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/  Centos 7 Hardening Guide Referensi:
  https://www.lisenet.com/2017/centos-7-server-hardening-guide/  Linux ASLR and kernel.randomize_va_space Ref:
  https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/  </description>
@@ -405,7 +422,7 @@ james.*jack  would search james , then any number of character until jack comes.
       <pubDate>Tue, 29 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/</guid>
-      <description> TCP Wrapper Referensi:
+      <description>TCP Wrapper Referensi:
  https://www.server-world.info/en/note?os=CentOS_7&amp;amp;p=tcp_wrapper https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/  </description>
     </item>
     
@@ -416,8 +433,8 @@ james.*jack  would search james , then any number of character until jack comes.
       
       <guid>https://blog.indonesiadot.com/2019/10/28/ansible-reference/</guid>
       <description>Postingan ini adalah referensi untuk belajar ansible dan bisa juga sebagai tips, meski sudah ada postingan sebelumnya yang berisi ansible tips :)
-Jenkins-ci Ref: * https://galaxy.ansible.com/geerlingguy/jenkins/ * http://rundeck.org * Goci / gocd
-Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &#39;/&#39; mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot;  atau</description>
+Jenkins-ci Ref:
+ https://galaxy.ansible.com/geerlingguy/jenkins/ http://rundeck.org Goci / gocd  Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &#39;/&#39; mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot; atau</description>
     </item>
     
     <item>
@@ -444,7 +461,7 @@ tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#3
       <guid>https://blog.indonesiadot.com/2019/10/25/create-gcp-vm-using-gcloud-from-command-line/</guid>
       <description>Pembuatan virtual machine di GCP / Google Cloud Platform menggunakan gcloud command line bermanfaat untuk mempermudah pembuatan VM tanpa harus mengakses web browser.
 Berikut langkah nya yang dilakukan di OS Centos 7:
-sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &amp;lt;&amp;lt; EOM [google-cloud-sdk] name=Google Cloud SDK baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64 enabled=1 gpgcheck=1 repo_gpgcheck=1 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg EOM sudo yum install google-cloud-sdk gcloud init  Berikut langkah yang dilakukan di OS ubuntu / debian:
+sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &amp;lt;&amp;lt; EOM [google-cloud-sdk] name=Google Cloud SDK baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64 enabled=1 gpgcheck=1 repo_gpgcheck=1 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg EOM sudo yum install google-cloud-sdk gcloud init Berikut langkah yang dilakukan di OS ubuntu / debian:
 echo &amp;quot;deb http://packages.cloud.google.com/apt cloud-sdk main&amp;quot; | sudo tee -a /etc/apt/sources.</description>
     </item>
     
@@ -464,8 +481,8 @@ echo &amp;quot;deb http://packages.cloud.google.com/apt cloud-sdk main&amp;quot;
       <pubDate>Tue, 15 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/</guid>
-      <description> Disable and blacklist Linux modules Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya
-blacklist firewire_core install firewire_core /bin/true  Referensi:
+      <description>Disable and blacklist Linux modules Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya
+blacklist firewire_core install firewire_core /bin/true Referensi:
  CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/  </description>
     </item>
     
@@ -475,7 +492,7 @@ blacklist firewire_core install firewire_core /bin/true  Referensi:
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/</guid>
-      <description> Android USB File Transfer add-apt-repository ppa:webupd8team/unstable apt update apt-get install go-mtpfs mkdir /media/MyAndroid  mount go-mtpfs /media/MyAndroid  unmount fusermount -u /media/MyAndroid  or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open ftp://ip.of.android:8888, so you can access from pc via ftp client like filezilla.
+      <description>Android USB File Transfer add-apt-repository ppa:webupd8team/unstable apt update apt-get install go-mtpfs mkdir /media/MyAndroid mount go-mtpfs /media/MyAndroid unmount fusermount -u /media/MyAndroid or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open ftp://ip.of.android:8888, so you can access from pc via ftp client like filezilla.
 Referensi:
  http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu  </description>
     </item>
@@ -486,7 +503,7 @@ Referensi:
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/</guid>
-      <description> Firewalld masquerade firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public  Referensi:
+      <description>Firewalld masquerade firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public Referensi:
  https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/  </description>
     </item>
     
@@ -496,7 +513,7 @@ Referensi:
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</guid>
-      <description> Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt  comment out a line that contain string sed -i &#39;/ 2001 /s/^/#/&#39; file  Referensi:
+      <description>Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt comment out a line that contain string sed -i &#39;/ 2001 /s/^/#/&#39; file Referensi:
  https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521 https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file  </description>
     </item>
     
@@ -506,10 +523,10 @@ Referensi:
       <pubDate>Sun, 13 Oct 2019 07:09:53 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/</guid>
-      <description>Security DNS di sisi client Install dnscrypt-proxy add-apt-repository ppa:shevchuk/dnscrypt-proxy apt update apt install dnscrypt-proxy  Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel server_name menjadi seperti contoh berikut:
-server_names = [&#39;cloudflare&#39;, &#39;google&#39;]  lalu restart service dnscrypt-proxy
-systemctl restart dnscrypt-proxy  edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy
-nameserver 127.0.2.1  Install DNS over HTTPS server Install dengan cara paket instalasi deb wget &amp;quot;https://www.aaflalo.me/?smd_process_download=1&amp;amp;download_id=1326&amp;quot; mv index* doh-server.deb dpkg -i doh-server_*_amd64.deb  Install dengan cara compile wget https://dl.</description>
+      <description>Security DNS di sisi client Install dnscrypt-proxy add-apt-repository ppa:shevchuk/dnscrypt-proxy apt update apt install dnscrypt-proxy Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel server_name menjadi seperti contoh berikut:
+server_names = [&#39;cloudflare&#39;, &#39;google&#39;] lalu restart service dnscrypt-proxy
+systemctl restart dnscrypt-proxy edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy
+nameserver 127.0.2.1 Install DNS over HTTPS server Install dengan cara paket instalasi deb wget &amp;quot;https://www.aaflalo.me/?smd_process_download=1&amp;amp;download_id=1326&amp;quot; mv index* doh-server.deb dpkg -i doh-server_*_amd64.deb Install dengan cara compile wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz sudo tar -C /usr/local -xzf go1.</description>
     </item>
     
     <item>
@@ -521,8 +538,8 @@ nameserver 127.0.2.1  Install DNS over HTTPS server Install dengan cara paket in
       <description>Install Ansible Tower Persyaratan:
 Hardware: RAM minimal 3,75 GB OS: Centos 7
 Langkah yang dilakukan
-yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz tar -xzvf ansible-tower-setup-latest.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh  Configure Ansible Tower after installation Akses Ansible tower Web UI dari
-https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
+yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz tar -xzvf ansible-tower-setup-latest.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh Configure Ansible Tower after installation Akses Ansible tower Web UI dari
+https://&amp;lt;Ansible Tower IP or Hostname&amp;gt; Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
     </item>
     
     <item>
@@ -533,7 +550,7 @@ https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari http
       <guid>https://blog.indonesiadot.com/2019/09/30/disk-serial-number/</guid>
       <description>Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.
 Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:
- lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb) smartctl -a /dev/sda #lihat bagian atas serial number nya udevadm info /dev/sda  smartctl to get disk smart status ``` smartctl -H /dev/sda smartctl -i /dev/sda smartctl &amp;ndash;test=short /dev/sda #smartctl &amp;ndash;test=long /dev/sda smartctl -a /dev/sda smartctl -a /dev/sda | grep &amp;ldquo;Short&amp;rdquo;</description>
+ lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb) smartctl -a /dev/sda #lihat bagian atas serial number nya udevadm info /dev/sda  smartctl to get disk smart status smartctl -H /dev/sda smartctl -i /dev/sda smartctl --test=short /dev/sda #smartctl --test=long /dev/sda smartctl -a /dev/sda smartctl -a /dev/sda | grep &amp;quot;Short&amp;quot; Ref: * https://www.</description>
     </item>
     
     <item>
@@ -563,10 +580,10 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
       <pubDate>Tue, 24 Sep 2019 08:17:16 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/24/markdown-tips/</guid>
-      <description> markdown insert image Ini adalah markdown untuk menampilkan gambar yang terletak di dalam folder / direktori pada postingan di hugo
-![nama-image](path/to/image)  markdown insert link Ini adalah markdown untuk menampilkan link url pada kata atau kalimat di halaman web
-[kata atau kalimat](http://link.url/yang-dituju)  seperti contoh diatas
-[markdown](https://www.petanikode.com/markdown-pemula/)  Referensi markdown images:
+      <description>markdown insert image Ini adalah markdown untuk menampilkan gambar yang terletak di dalam folder / direktori pada postingan di hugo
+![nama-image](path/to/image) markdown insert link Ini adalah markdown untuk menampilkan link url pada kata atau kalimat di halaman web
+[kata atau kalimat](http://link.url/yang-dituju) seperti contoh diatas
+[markdown](https://www.petanikode.com/markdown-pemula/) Referensi markdown images:
  https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images  </description>
     </item>
     
@@ -577,12 +594,21 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
       
       <guid>https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
- Firewall
- iptables ipset shorewall csf  Anti Malware
- maldet (malware detection for web directory)  IDS
- tripwire  Identity Server
- FreeIPA (IPA = Identity, Policy, Authentication)  Security Checking / Scanning Solution
- OpenSCAP Rapid7  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</description>
+  Firewall
+  iptables
+  ipset
+  shorewall
+  csf
+  Anti Malware
+  maldet (malware detection for web directory)
+  IDS
+  tripwire
+  Identity Server
+  FreeIPA (IPA = Identity, Policy, Authentication)
+  Security Checking / Scanning Solution
+  OpenSCAP
+  Rapid7
+  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</description>
     </item>
     
     <item>
@@ -592,15 +618,24 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
       
       <guid>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
- Virtualization (Desktop)
- Virtualbox  Graphic
- Gimp  Mail
- Thunderbird Mail (client)  Multimedia
- Avidemux  Video Conference
- jitsi More and more  Customer support live chat
- rocket.chat tawk.to simple chat  Networking
- nload   Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut
- https://blog.indonesiadot.com/2019/09/04/linux-security-tools/  </description>
+  Virtualization (Desktop)
+  Virtualbox
+  Graphic
+  Gimp
+  Mail
+  Thunderbird Mail (client)
+  Multimedia
+  Avidemux
+  Video Conference
+  jitsi
+  More and more
+  Customer support live chat
+  rocket.chat
+  tawk.to
+  simple chat
+  Networking
+  nload
+  Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut</description>
     </item>
     
     <item>
@@ -620,8 +655,8 @@ Persyaratan adalah:
       <pubDate>Mon, 02 Sep 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/postfix-tips/</guid>
-      <description> postfix send to local network Ini adalah langkah untuk membuat postfix mengirim ke mail server dalam LAN
-echo &amp;quot;real.net smtp:[192.168.1.108]&amp;quot; &amp;gt;&amp;gt; /etc/postfix/transport postmap /etc/postfix/transport systemctl restart postfix  Referensi:
+      <description>postfix send to local network Ini adalah langkah untuk membuat postfix mengirim ke mail server dalam LAN
+echo &amp;quot;real.net smtp:[192.168.1.108]&amp;quot; &amp;gt;&amp;gt; /etc/postfix/transport postmap /etc/postfix/transport systemctl restart postfix Referensi:
  https://www.linuxquestions.org/questions/linux-server-73/how-to-make-postfix-send-email-to-another-postfix-in-local-network-lan-694423/ http://www.postfix.org/STANDARD_CONFIGURATION_README.html  </description>
     </item>
     
@@ -631,7 +666,7 @@ echo &amp;quot;real.net smtp:[192.168.1.108]&amp;quot; &amp;gt;&amp;gt; /etc/pos
       <pubDate>Mon, 02 Sep 2019 08:17:33 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/</guid>
-      <description>Kubernetes Container runtime with docker # Install Docker CE ## Set up the repository ### Install required packages. yum install yum-utils device-mapper-persistent-data lvm2 ### Add Docker repository. yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo ## Install Docker CE. yum update &amp;amp;&amp;amp; yum install docker-ce-18.06.2.ce ## Create /etc/docker directory. mkdir /etc/docker # Setup daemon. cat &amp;gt; /etc/docker/daemon.json &amp;lt;&amp;lt;EOF { &amp;quot;exec-opts&amp;quot;: [&amp;quot;native.cgroupdriver=systemd&amp;quot;], &amp;quot;log-driver&amp;quot;: &amp;quot;json-file&amp;quot;, &amp;quot;log-opts&amp;quot;: { &amp;quot;max-size&amp;quot;: &amp;quot;100m&amp;quot; }, &amp;quot;storage-driver&amp;quot;: &amp;quot;overlay2&amp;quot;, &amp;quot;storage-opts&amp;quot;: [ &amp;quot;overlay2.</description>
+      <description>Kubernetes Container runtime with docker # Install Docker CE ## Set up the repository ### Install required packages. yum install yum-utils device-mapper-persistent-data lvm2 ### Add Docker repository. yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo ## Install Docker CE. yum update &amp;amp;&amp;amp; yum install docker-ce-18.06.2.ce ## Create /etc/docker directory. mkdir /etc/docker # Setup daemon. cat &amp;gt; /etc/docker/daemon.json &amp;lt;&amp;lt;EOF { &amp;quot;exec-opts&amp;quot;: [&amp;quot;native.cgroupdriver=systemd&amp;quot;], &amp;quot;log-driver&amp;quot;: &amp;quot;json-file&amp;quot;, &amp;quot;log-opts&amp;quot;: { &amp;quot;max-size&amp;quot;: &amp;quot;100m&amp;quot; }, &amp;quot;storage-driver&amp;quot;: &amp;quot;overlay2&amp;quot;, &amp;quot;storage-opts&amp;quot;: [ &amp;quot;overlay2.override_kernel_check=true&amp;quot; ] } EOF mkdir -p /etc/systemd/system/docker.</description>
     </item>
     
     <item>
@@ -641,7 +676,7 @@ echo &amp;quot;real.net smtp:[192.168.1.108]&amp;quot; &amp;gt;&amp;gt; /etc/pos
       
       <guid>https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/</guid>
       <description>Berikut langkah yang dilakukan, tapi sebelumnya pastikan backup, backup dan backup
-sudo apt-get update sudo apt-get upgrade sudo do-release-upgrade -f DistUpgradeViewNonInteractive  Referensi:
+sudo apt-get update sudo apt-get upgrade sudo do-release-upgrade -f DistUpgradeViewNonInteractive Referensi:
  https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04 https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4  </description>
     </item>
     
@@ -651,9 +686,9 @@ sudo apt-get update sudo apt-get upgrade sudo do-release-upgrade -f DistUpgradeV
       <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/git-tips/</guid>
-      <description>git without gnome-askpass unset SSH_ASKPASS   https://gist.github.com/joseluisq/d0e66c5f718250c90075  git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge  untuk menggabungkan isi dari branch hotfix ke master
-git checkout master git merge hotfix  git undo merge Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan
-git reflog git reset --hard &amp;lt;id_repository_log&amp;gt;  Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</description>
+      <description>git without gnome-askpass unset SSH_ASKPASS  https://gist.github.com/joseluisq/d0e66c5f718250c90075  git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge  untuk menggabungkan isi dari branch hotfix ke master
+git checkout master git merge hotfix git undo merge Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan
+git reflog git reset --hard &amp;lt;id_repository_log&amp;gt; Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</description>
     </item>
     
     <item>
@@ -662,7 +697,7 @@ git reflog git reset --hard &amp;lt;id_repository_log&amp;gt;  Langkahnya, lihat
       <pubDate>Mon, 02 Sep 2019 08:17:16 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/</guid>
-      <description> manage hugo dari pc / laptop lain git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io git checkout hugo rm -rf public git add . git commit -m &#39;remove public&#39; git push git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public  Referensi hugo dasar:
+      <description>manage hugo dari pc / laptop lain git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io git checkout hugo rm -rf public git add . git commit -m &#39;remove public&#39; git push git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public Referensi hugo dasar:
  https://www.petanikode.com/topik/hugo https://gohugo.io/getting-started/quick-start/ https://gohugo.io/hosting-and-deployment/hosting-on-github/ https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html  Referensi hugo dan e-commerce:
  https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce  </description>
     </item>
@@ -674,7 +709,7 @@ git reflog git reset --hard &amp;lt;id_repository_log&amp;gt;  Langkahnya, lihat
       
       <guid>https://blog.indonesiadot.com/2019/09/02/migrasi-antar-hugo/</guid>
       <description>To remove a submodule you need to:
- Delete the relevant section from the .gitmodules file. Stage the .gitmodules changes git add .gitmodules Delete the relevant section from .git/config. Run git rm &amp;ndash;cached path_to_submodule (no trailing slash). Run rm -rf .git/modules/path_to_submodule (no trailing slash). Commit git commit -m &amp;ldquo;Removed submodule &amp;ldquo; Delete the now untracked submodule files rm -rf path_to_submodule  Referensi:
+ Delete the relevant section from the .gitmodules file. Stage the .gitmodules changes git add .gitmodules Delete the relevant section from .git/config. Run git rm &amp;ndash;cached path_to_submodule (no trailing slash). Run rm -rf .git/modules/path_to_submodule (no trailing slash). Commit git commit -m &amp;ldquo;Removed submodule &amp;quot; Delete the now untracked submodule files rm -rf path_to_submodule  Referensi:
  https://indonesiadot.com https://gist.github.com/myusuf3/7f645819ded92bda6677  </description>
     </item>
     
@@ -703,9 +738,7 @@ Syaratnya cuma account google dan kartu debit Visa, tidak perlu kartu kredit, di
       <pubDate>Wed, 14 Aug 2019 16:20:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/08/14/disable-/-ignore-user-process-at-csf-firewall/</guid>
-      <description>https://www.google.com/search?q=csf+ignore+user
-http://g33kinfo.com/info/archives/3933
-From&amp;nbsp;configserver.comProcess TrackingThis option enables tracking of user and nobody processes and examines them for suspicious executables or open network ports. Its purpose is to identify potential exploit processes that are running on the server, even if they are obfuscated to appear as system services. If a suspicious process is found an alert email is sent with relevant information. It is then the responsibility of the recipient to investigate the process further as the script takes no further action.</description>
+      <description>https://www.google.com/search?q=csf+ignore+user&amp;lt;br /&amp;gt;http://g33kinfo.com/info/archives/3933&amp;lt;br /&amp;gt;From configserver.comProcess TrackingThis option enables tracking of user and nobody processes and examines them for suspicious executables or open network ports. Its purpose is to identify potential exploit processes that are running on the server, even if they are obfuscated to appear as system services. If a suspicious process is found an alert email is sent with relevant information. It is then the responsibility of the recipient to investigate the process further as the script takes no further action.</description>
     </item>
     
     <item>
@@ -714,14 +747,7 @@ From&amp;nbsp;configserver.comProcess TrackingThis option enables tracking of us
       <pubDate>Mon, 12 Aug 2019 07:24:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/08/12/simplemonitor-with-telegram-alert/</guid>
-      <description>https://jamesoff.github.io/simplemonitor/alerting.html
-telegram alertersSend alerts to a Telegram chat.settingdescriptionrequireddefaulttokenThe token to access telegramyes&amp;nbsp;chat_idThe chat to send toyeshttps://www.google.com/search?q=telegram+token
-https://tutorials.botsfloor.com/creating-a-bot-using-the-telegram-bot-api-5d3caed3266d
-https://www.google.com/search?q=chat_id+telegram
-https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id
-In order to get the group chat id, do as follows:Add the Telegram BOT to the group.Get the list of updates for your BOT:https://api.telegram.org/bot/getUpdates
-Ex:https://api.telegram.org/bot123456789:jbd78sadvbdy63d37gda37bd8/getUpdates
-Look for the &amp;ldquo;chat&amp;rdquo; object:{&amp;ldquo;update_id&amp;rdquo;:8393,&amp;ldquo;message&amp;rdquo;:{&amp;ldquo;message_id&amp;rdquo;:3,&amp;ldquo;from&amp;rdquo;:{&amp;ldquo;id&amp;rdquo;:7474,&amp;ldquo;first_name&amp;rdquo;:&amp;ldquo;AAA&amp;rdquo;},&amp;ldquo;chat&amp;rdquo;:{&amp;ldquo;id&amp;rdquo;:,&amp;ldquo;title&amp;rdquo;:&amp;ldquo;&amp;rdquo;},&amp;ldquo;date&amp;rdquo;:25497,&amp;ldquo;new_chat_participant&amp;rdquo;:{&amp;ldquo;id&amp;rdquo;:71,&amp;ldquo;first_name&amp;rdquo;:&amp;ldquo;NAME&amp;rdquo;,&amp;ldquo;username&amp;rdquo;:&amp;ldquo;YOUR_BOT_NAME&amp;rdquo;}}}This is a sample of the response when you add your BOT into a group.Use the &amp;ldquo;id&amp;rdquo; of the &amp;ldquo;chat&amp;rdquo; object to send your messages.</description>
+      <description>https://jamesoff.github.io/simplemonitor/alerting.html&amp;lt;br /&amp;gt;telegram alertersSend alerts to a Telegram chat.settingdescriptionrequireddefaulttokenThe token to access telegramyeschat_idThe chat to send toyeshttps://www.google.com/search?q=telegram+token&amp;lt;br /&amp;gt;https://tutorials.botsfloor.com/creating-a-bot-using-the-telegram-bot-api-5d3caed3266d&amp;lt;br /&amp;gt;https://www.google.com/search?q=chat_id+telegram&amp;lt;br /&amp;gt;https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id&amp;lt;br /&amp;gt;In order to get the group chat id, do as follows:Add the Telegram BOT to the group.Get the list of updates for your BOT:https://api.telegram.org/bot&amp;lt;yourbottoken&amp;gt;/getUpdates&amp;lt;br /&amp;gt;Ex:https://api.telegram.org/bot123456789:jbd78sadvbdy63d37gda37bd8/getUpdates&amp;lt;br /&amp;gt;Look for the &amp;ldquo;chat&amp;rdquo; object:{&amp;ldquo;update_id&amp;rdquo;:8393,&amp;ldquo;message&amp;rdquo;:{&amp;ldquo;message_id&amp;rdquo;:3,&amp;ldquo;from&amp;rdquo;:{&amp;ldquo;id&amp;rdquo;:7474,&amp;ldquo;first_name&amp;rdquo;:&amp;ldquo;AAA&amp;rdquo;},&amp;ldquo;chat&amp;rdquo;:{&amp;ldquo;id&amp;rdquo;:,&amp;ldquo;title&amp;rdquo;:&amp;quot;&amp;quot;},&amp;ldquo;date&amp;rdquo;:25497,&amp;ldquo;new_chat_participant&amp;rdquo;:{&amp;ldquo;id&amp;rdquo;:71,&amp;ldquo;first_name&amp;rdquo;:&amp;ldquo;NAME&amp;rdquo;,&amp;ldquo;username&amp;rdquo;:&amp;ldquo;YOUR_BOT_NAME&amp;rdquo;}}}This is a sample of the response when you add your BOT into a group.Use the &amp;ldquo;id&amp;rdquo; of the &amp;ldquo;chat&amp;rdquo; object to send your messages.</description>
     </item>
     
     <item>
@@ -730,9 +756,7 @@ Look for the &amp;ldquo;chat&amp;rdquo; object:{&amp;ldquo;update_id&amp;rdquo;:
       <pubDate>Sun, 11 Aug 2019 08:57:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/08/11/ubuntu-dns-local-cache-for-faster-dns-resolver/</guid>
-      <description>googling:&amp;nbsp;https://www.google.com/search?q=ubuntu+dns+local+cache
-https://superuser.com/questions/1291450/how-can-i-run-a-local-caching-dns-resolver-on-ubuntu-14-04
-The easiest way is probably nscd.Install nscd, using the default config.Update /etc/nsswitch.conf and add&amp;nbsp;cache&amp;nbsp;before&amp;nbsp;dns&amp;nbsp;to the hosts line.&amp;nbsp;(Edit: this part is not applicable to glibc as used in most linux distributions but is needed on fbsd)hosts: files cache dnsthen update /etc/resolv.conf at the beginning of the nameserver use 127.0.0.1nameserver 127.0.0.1</description>
+      <description>googling: https://www.google.com/search?q=ubuntu+dns+local+cachehttps://superuser.com/questions/1291450/how-can-i-run-a-local-caching-dns-resolver-on-ubuntu-14-04&amp;lt;br /&amp;gt;The easiest way is probably nscd.Install nscd, using the default config.Update /etc/nsswitch.conf and add cachebefore dnsto the hosts line. (Edit: this part is not applicable to glibc as used in most linux distributions but is needed on fbsd)hosts: files cache dnsthen update /etc/resolv.conf at the beginning of the nameserver use 127.0.0.1nameserver 127.</description>
     </item>
     
     <item>
@@ -741,11 +765,7 @@ The easiest way is probably nscd.Install nscd, using the default config.Update /
       <pubDate>Sun, 11 Aug 2019 08:55:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/08/11/nginx-tips-n-trick-499-code-on-nginx-access-logs/</guid>
-      <description>googling: https://www.google.com/search?q=499+http+code
-https://stackoverflow.com/questions/12973304/nginx-499-error-codes
-In my case I got 499 when the client&amp;rsquo;s API closed the connection before it gets any response. Literally sent a POST and immediately close the connection. This is resolved by option:
-proxy_ignore_client_abort on
-I dont understand how does this help&amp;nbsp;–&amp;nbsp;Vladimir Starkov&amp;nbsp;Jul 2 at 7:45Maybe it&amp;rsquo;s not your case? The client sends the data and is not interested in what will happen to them and what will be the answer.</description>
+      <description>googling: https://www.google.com/search?q=499+http+code&amp;lt;br /&amp;gt;https://stackoverflow.com/questions/12973304/nginx-499-error-codes&amp;lt;br /&amp;gt;In my case I got 499 when the client&#39;s API closed the connection before it gets any response. Literally sent a POST and immediately close the connection. This is resolved by option:proxy_ignore_client_abort onI dont understand how does this help– Vladimir StarkovJul 2 at 7:45Maybe it&#39;s not your case? The client sends the data and is not interested in what will happen to them and what will be the answer.</description>
     </item>
     
     <item>
@@ -754,9 +774,7 @@ I dont understand how does this help&amp;nbsp;–&amp;nbsp;Vladimir Starkov&amp;
       <pubDate>Sun, 11 Aug 2019 08:45:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/08/11/how-to-stop-docker-that-always-restart/</guid>
-      <description>googling: https://www.google.com/search?q=docker+restart+always+stop
-https://stackoverflow.com/questions/39072357/how-to-stop-a-docker-container-which-started-with-restart-always/39072476
-You can&amp;nbsp;update&amp;nbsp;docker container.use&amp;nbsp;sudo docker update &amp;ndash;restart=no &amp;nbsp;to update&amp;nbsp;&amp;ndash;restart&amp;nbsp;flag of the container.Now you can&amp;nbsp;stop&amp;nbsp;the container.</description>
+      <description>googling: https://www.google.com/search?q=docker+restart+always+stop&amp;lt;br /&amp;gt;https://stackoverflow.com/questions/39072357/how-to-stop-a-docker-container-which-started-with-restart-always/39072476&amp;lt;br /&amp;gt;You can updatedocker container.use sudo docker update &amp;ndash;restart=no &amp;lt;container_id&amp;gt;&amp;lt;/container_id&amp;gt;to update &amp;ndash;restartflag of the container.Now you can stopthe container.</description>
     </item>
     
     <item>
@@ -765,26 +783,7 @@ You can&amp;nbsp;update&amp;nbsp;docker container.use&amp;nbsp;sudo docker updat
       <pubDate>Sun, 11 Aug 2019 08:42:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/08/11/simple-alert-monitoring-using-simplemonitor/</guid>
-      <description>googling:&amp;nbsp;https://www.google.com/search?q=simple+alert+monitoring
-https://jamesoff.github.io/simplemonitor/
-googling:&amp;nbsp;https://www.google.com/search?q=simplemonitor+docker
-https://hub.docker.com/r/braindoctor/simplemonitor-docker/
-mkdir -p /docker/simplemonitor &amp;amp;&amp;amp; cd /docker/simplemonitor
-cat &amp;gt; docker-compose.yml &amp;lt;version: &amp;lsquo;3.2&amp;rsquo;
-services:
-&amp;nbsp; simplemonitor:
-&amp;nbsp; &amp;nbsp; restart: always
-&amp;nbsp; &amp;nbsp; image: braindoctor/simplemonitor-docker:latest
-&amp;nbsp; &amp;nbsp; container_name: simplemonitor
-&amp;nbsp; &amp;nbsp; hostname: mail-124.indonesiadot.com
-&amp;nbsp; &amp;nbsp; volumes:
-&amp;nbsp; &amp;nbsp; &amp;nbsp; - ${PWD}/config:/etc/simplemonitor
-&amp;nbsp; &amp;nbsp; ports:
-&amp;nbsp; &amp;nbsp; &amp;nbsp; - &amp;ldquo;8080:8080&amp;rdquo;
-
-EOFdocker-compose up -d
-ref:
-https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files</description>
+      <description>googling: https://www.google.com/search?q=simple+alert+monitoringhttps://jamesoff.github.io/simplemonitor/&amp;lt;br /&amp;gt;googling: https://www.google.com/search?q=simplemonitor+dockerhttps://hub.docker.com/r/braindoctor/simplemonitor-docker/&amp;lt;br /&amp;gt;mkdir -p /docker/simplemonitor &amp;amp;&amp;amp; cd /docker/simplemonitorcat &amp;gt; docker-compose.yml &amp;lt;version: &amp;lsquo;3.2&#39;services:simplemonitor:restart: alwaysimage: braindoctor/simplemonitor-docker:latestcontainer_name: simplemonitorhostname: mail-124.indonesiadot.comvolumes:- ${PWD}/config:/etc/simplemonitorports:- &amp;ldquo;8080:8080&amp;quot;EOFdocker-compose up -dref:https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files&amp;lt;/div&amp;gt;</description>
     </item>
     
     <item>
@@ -803,9 +802,7 @@ https://monicagranbois.com/blog/python/cron-and-python-virtualenv/ https://www.p
       <pubDate>Thu, 09 Aug 2018 04:03:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/08/09/petunjuk-hidup-widya-nugraha-based-on-al-quran-dan-hadits-nabi/</guid>
-      <description>Petunjuk hidup widya nugraha based on al-quran dan hadits nabi
-* Sebelum lahir di rahim ibu dengan kasih sayang, sesuai dengan nama Allah Ar Rohiim, Yang Maha Penyayang, hakikat (sebenar/sesungguh) nya Allah Yang Menyayangi dan kita sebagai orang tua harus saling menyayangi, bapak, ibu, anak.
-* Setelah lahir dari bayi proses keajaiban yang menunjukan kekuasaan Allah, hakikatnya itu semua karena Allah Yang Maha Pencipta, Yang Maha menjadikan yang baru, Yang Maha membentuk dan atas rahmat Allah Yang Maha Pengasih dan Maha Penyayang, maka sebagai orang yang menyaksikan harus meyakini itu, berdoa, berpasrah, berusaha untuk menjaga ciptaan Allah yang sudah dititipkan / diamanatkan kepada orang tua, dan anak harus tahu cerita ini dan hakikatnya agar menjadi anak yang sadar sedari awal dan dapat hidup lebih baik di dunia dan akhirat, perjalanan dari awal sampai akhir semoga lebih baik.</description>
+      <description></description>
     </item>
     
     <item>
@@ -814,13 +811,7 @@ https://monicagranbois.com/blog/python/cron-and-python-virtualenv/ https://www.p
       <pubDate>Mon, 06 Aug 2018 17:45:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/08/06/recovery-procedure/</guid>
-      <description>boot dari live cd (latest centos based is preferable)
-rsync semua file yang bisa ke harddisk backup
-ddrescue harddisk lama ke harddisk baru yang sama size nya
-fsck harddisk baru
-ref:
-https://www.cyberciti.biz/tips/how-do-i-save-recover-data-from-crashed-disks-with-dd-and-ddrescue-command.html
-https://tthtlc.wordpress.com/2014/09/16/how-to-install-reiserfs-in-centos/</description>
+      <description>boot dari live cd (latest centos based is preferable)rsync semua file yang bisa ke harddisk backupddrescue harddisk lama ke harddisk baru yang sama size nyafsck harddisk baruref:https://www.cyberciti.biz/tips/how-do-i-save-recover-data-from-crashed-disks-with-dd-and-ddrescue-command.html&amp;lt;br /&amp;gt;https://tthtlc.</description>
     </item>
     
     <item>
@@ -829,7 +820,7 @@ https://tthtlc.wordpress.com/2014/09/16/how-to-install-reiserfs-in-centos/</desc
       <pubDate>Sat, 28 Jul 2018 08:41:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</guid>
-      <description>yum -y install wget wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-1.el7.rf.x86_64.rpm yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm stress -c 8 -i 4 -t 10s stress -c 8 -i 9 -m 9 --vm-bytes 1024M  On ubuntu server, use apt to install stress
+      <description>yum -y install wget wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-1.el7.rf.x86_64.rpm yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm stress -c 8 -i 4 -t 10s stress -c 8 -i 9 -m 9 --vm-bytes 1024M On ubuntu server, use apt to install stress
 Ref:
  https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2 https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/  </description>
     </item>
@@ -840,10 +831,7 @@ Ref:
       <pubDate>Sun, 15 Jul 2018 16:55:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/07/15/zfs-cool-feature-snapshot-replicate-etc/</guid>
-      <description>https://www.google.co.id/search?q=zfs+remote+replication
-https://www.howtoforge.com/tutorial/how-to-use-snapshots-clones-and-replication-in-zfs-on-linux/
-https://zpool.org/zfs-snapshots-and-remote-replication/
-http://www.zfsnap.org/docs.html</description>
+      <description>https://www.google.co.id/search?q=zfs+remote+replication&amp;lt;br /&amp;gt;https://www.howtoforge.com/tutorial/how-to-use-snapshots-clones-and-replication-in-zfs-on-linux/https://zpool.org/zfs-snapshots-and-remote-replication/&amp;lt;br /&amp;gt;http://www.zfsnap.org/docs.html</description>
     </item>
     
     <item>
@@ -852,8 +840,7 @@ http://www.zfsnap.org/docs.html</description>
       <pubDate>Fri, 13 Jul 2018 16:57:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/07/13/belajar-usaha/</guid>
-      <description>http://www.belajareksporimpor.com/author/samian-pacing
-http://www.dimasrio.com/2017/01/peluang-usaha-untuk-mencari-pasif-income.html</description>
+      <description>http://www.belajareksporimpor.com/author/samian-pacing&amp;lt;br /&amp;gt;http://www.dimasrio.com/2017/01/peluang-usaha-untuk-mencari-pasif-income.html</description>
     </item>
     
     <item>
@@ -862,9 +849,7 @@ http://www.dimasrio.com/2017/01/peluang-usaha-untuk-mencari-pasif-income.html</d
       <pubDate>Fri, 13 Jul 2018 03:25:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/07/13/prometheus-grafana/</guid>
-      <description>http://www.dimasrio.com/search?q=prometheus
-https://www.youtube.com/watch?v=GZWbTch7AbM
-http://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html</description>
+      <description>http://www.dimasrio.com/search?q=prometheus&amp;lt;br /&amp;gt;https://www.youtube.com/watch?v=GZWbTch7AbMhttp://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html&amp;lt;br /&amp;gt;</description>
     </item>
     
     <item>
@@ -883,10 +868,7 @@ http://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html</descript
       <pubDate>Wed, 04 Jul 2018 12:07:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/07/04/wid-think-about-health-in-global-perspective-kesehatan/</guid>
-      <description>Health is main / important thing that must be in top priority in this world.
-Actually if we go around to many place, we can see the real situation that many of the elderly is have some same disease pattern, like diabetes, high cholesterol, stroke, cancer, etc.
-And unfortunately it happen not to only poor people that suffer from this disease pattern, but to rich people too.
-And one of the major cause of it is because the food that we eat, the drinks that we drink, even there are another cause like stress level, bad environtment that make people have a bad stamina, like polution and so on.</description>
+      <description></description>
     </item>
     
     <item>
@@ -895,9 +877,7 @@ And one of the major cause of it is because the food that we eat, the drinks tha
       <pubDate>Wed, 04 Jul 2018 11:44:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/07/04/wid-think-about-education-pendidikan/</guid>
-      <description>Formal education in indonesia (maybe mostly on this world) should be restructurized to get better result oriented based on unique student / unique human characteristic.
-every human is have own unique characteristic that can be group to several pattern, like there are some student that good / interest in linguistic, there are good in math, there are good in physical things, there are good in business, etx.
-Unfortunately the education in indonesia or maybe mostly in this world is designed to make a &#39;worker style&#39; people, worker in mean of people who work at office / building / industry, and that is not suit to some people who have talent in business, people who have talent in inventing something that will change the world better and or other people who hate job as a worker.</description>
+      <description></description>
     </item>
     
     <item>
@@ -906,25 +886,7 @@ Unfortunately the education in indonesia or maybe mostly in this world is design
       <pubDate>Wed, 30 May 2018 01:14:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/05/30/wordpress-tips-and-trick/</guid>
-      <description>themes
-
-native themes&amp;nbsp;nativewptheme.net
-https://www.cr*ckthemes.com/2018/03/27/native-v1-3-4-powerful-startup-development-tool/
-http://www91.zippyshare.com/v/y7mJuKcb/file.html
-https://www.google.co.id/search?q=aprimo+null
-https://www.null5.top/aprimo-v1-3-mobile-app-landing-wordpress-theme/
-https://www.google.co.id/search?q=upload+max+size+wordpress+.htaccess
-http://www.wpbeginner.com/wp-tutorials/how-to-increase-the-maximum-file-upload-size-in-wordpress/
-cat &amp;gt;&amp;gt; .htaccess
-php_value upload_max_filesize 64Mphp_value post_max_size 64Mphp_value max_execution_time 300php_value max_input_time 300
-https://www.google.co.id/search?q=display+error+htaccess
-https://stackoverflow.com/questions/6127980/enabling-error-display-in-php-via-htaccess-only
-cat &amp;gt;&amp;gt; .htaccess
-php_flag display_startup_errors off
-php_flag display_errors off
-php_flag html_errors off
-php_flag log_errors off
-Thanks</description>
+      <description>themesnative themes nativewptheme.nethttps://www.cr*ckthemes.com/2018/03/27/native-v1-3-4-powerful-startup-development-tool/http://www91.zippyshare.com/v/y7mJuKcb/file.html&amp;lt;/span&amp;gt;&amp;lt;br /&amp;gt;https://www.google.co.id/search?q=aprimo+null&amp;lt;/b&amp;gt;&amp;lt;br /&amp;gt;https://www.null5.top/aprimo-v1-3-mobile-app-landing-wordpress-theme/https://www.google.co.id/search?q=upload+max+size+wordpress+.htaccess&amp;lt;/b&amp;gt;&amp;lt;br /&amp;gt;http://www.wpbeginner.com/wp-tutorials/how-to-increase-the-maximum-file-upload-size-in-wordpress/&amp;lt;br /&amp;gt;cat &amp;gt;&amp;gt; .htaccessphp_value upload_max_filesize 64Mphp_value post_max_size 64Mphp_value max_execution_time 300php_value max_input_time 300https://www.google.co.id/search?q=display+error+htaccess&amp;lt;/b&amp;gt;&amp;lt;br /&amp;gt;https://stackoverflow.com/questions/6127980/enabling-error-display-in-php-via-htaccess-only&amp;lt;br /&amp;gt;cat &amp;gt;&amp;gt; .htaccessphp_flag display_startup_errors offphp_flag display_errors offphp_flag html_errors offphp_flag log_errors offThanks</description>
     </item>
     
     <item>
@@ -933,14 +895,7 @@ Thanks</description>
       <pubDate>Sat, 26 May 2018 08:04:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/05/26/freebsd-mailserver/</guid>
-      <description>https://www.sophimail.com/configure-freebsd-email-server-using-postfix-dovecot-mysql-spamassassin/
-https://github.com/sophimail/webadmin
-https://github.com/sophimail/webadmin/blob/master/INSTALLATION.md
-https://www.cryptomonkeys.com/2016/08/building-a-mailserver/
-https://docs.iredmail.org/install.iredmail.on.freebsd.html
-note:
-iredadmin is easiest installation with all mail server package, but for administration using iredadmin free has limited function, best for personal / one domain use
-ispconfig nice to try :)</description>
+      <description>https://www.sophimail.com/configure-freebsd-email-server-using-postfix-dovecot-mysql-spamassassin/&amp;lt;br /&amp;gt;https://github.com/sophimail/webadmin&amp;lt;br /&amp;gt;https://github.com/sophimail/webadmin/blob/master/INSTALLATION.md&amp;lt;br /&amp;gt;https://www.cryptomonkeys.com/2016/08/building-a-mailserver/&amp;lt;br /&amp;gt;https://docs.iredmail.org/install.iredmail.on.freebsd.html&amp;lt;br /&amp;gt;note:iredadmin is easiest installation with all mail server package, but for administration using iredadmin free has limited function, best for personal / one domain useispconfig nice to try :)</description>
     </item>
     
     <item>
@@ -949,13 +904,7 @@ ispconfig nice to try :)</description>
       <pubDate>Sat, 26 May 2018 07:34:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/05/26/belajar-privacy-basic-security-on-the-internet/</guid>
-      <description>Alamat / url untuk belajar privacy di internet
-https://www.privacytools.io/
-dapat dari:
-https://www.cryptomonkeys.com/
-alamat lain yang menarik:
-https://www.infosecindustry.com/
-http://www.freebsd.org/</description>
+      <description>Alamat / url untuk belajar privacy di internethttps://www.privacytools.io/&amp;lt;br /&amp;gt;dapat dari:https://www.cryptomonkeys.com/&amp;lt;br /&amp;gt;alamat lain yang menarik:https://www.infosecindustry.com/&amp;lt;br /&amp;gt;http://www.freebsd.org/&amp;lt;br /&amp;gt;</description>
     </item>
     
     <item>
@@ -964,11 +913,7 @@ http://www.freebsd.org/</description>
       <pubDate>Sat, 26 May 2018 07:10:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/05/26/belajar-ispconfig-webhosting-control-panel/</guid>
-      <description>Berikut adalah alamat / url tutorial untuk belajar instalasi / setup ispconfig webhosting control panel :
-https://www.howtoforge.com/tutorial/perfect-server-ubuntu-with-nginx-and-ispconfig-3/3/
-https://www.howtoforge.com/tutorial/securing-ispconfig-3-with-a-free-lets-encrypt-ssl-certificate/
-https://github.com/SpeedWP/ispconfig-nginx-pagespeed/wiki/ISP-Config
-https://www.howtoforge.com/community/threads/install-monit.64712/</description>
+      <description>Berikut adalah alamat / url tutorial untuk belajar instalasi / setup ispconfig webhosting control panel :https://www.howtoforge.com/tutorial/perfect-server-ubuntu-with-nginx-and-ispconfig-3/3/&amp;lt;br /&amp;gt;https://www.howtoforge.com/tutorial/securing-ispconfig-3-with-a-free-lets-encrypt-ssl-certificate/&amp;lt;br /&amp;gt;https://github.com/SpeedWP/ispconfig-nginx-pagespeed/wiki/ISP-Config&amp;lt;br /&amp;gt;https://www.howtoforge.com/community/threads/install-monit.64712/&amp;lt;br /&amp;gt;</description>
     </item>
     
     <item>
@@ -977,9 +922,7 @@ https://www.howtoforge.com/community/threads/install-monit.64712/</description>
       <pubDate>Sat, 26 May 2018 06:54:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/05/26/perubahan-era-webhosting/</guid>
-      <description>Sebelum tahun 2000 website merupakan barang berharga di indonesia, meski sudah marak di luar negeri, dengan berbagai konten dinamis seperti portal berita dan konten statik menggunakan html dan animasi css, js dan flash yang baru muncul pada tahun 1996.
-Tahun 2000 era webhosting bermunculan di indonesia, baru beberapa pemain besar webhosting yang bermain, website sudah makin marak.
-Tahun 2005 era webhosting dengan pemain baru bermunculan, di awali dengan hadirnya CMS seperti joomla dan CMS lain yang memudahkan pembuatan website instant, era website dinamis.</description>
+      <description>Sebelum tahun 2000 website merupakan barang berharga di indonesia, meski sudah marak di luar negeri, dengan berbagai konten dinamis seperti portal berita dan konten statik menggunakan html dan animasi css, js dan flash yang baru muncul pada tahun 1996.Tahun 2000 era webhosting bermunculan di indonesia, baru beberapa pemain besar webhosting yang bermain, website sudah makin marak.Tahun 2005 era webhosting dengan pemain baru bermunculan, di awali dengan hadirnya CMS seperti joomla dan CMS lain yang memudahkan pembuatan website instant, era website dinamis.</description>
     </item>
     
     <item>
@@ -988,15 +931,7 @@ Tahun 2005 era webhosting dengan pemain baru bermunculan, di awali dengan hadirn
       <pubDate>Wed, 04 Apr 2018 18:45:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/04/04/all-about-icinga-monitoring/</guid>
-      <description>icinga2 installation on ubuntu 16
-https://www.icinga.com/docs/icinga2/latest/doc/02-getting-started/
-https://www.icinga.com/docs/icingaweb2/latest/doc/02-Installation/
-https://www.rosehosting.com/blog/install-icinga-2-on-ubuntu-16-04/
-https://blog.x-toolz.com/installing-icinga2-icingaweb2-on-ubuntu-16-04-3-lts/
-https://github.com/jpfluger/examples/blob/master/ubuntu-14.04/icinga2-server.md
-https://www.google.co.id/search?q=icinga2+change+ssh+port
-https://monitoring-portal.org/woltlab/index.php?thread/32752-ssh-monitoring-different-port/
-added a line into the servicedefinition:Codeapply Service &amp;ldquo;ssh&amp;rdquo; {import &amp;ldquo;generic-service&amp;rdquo;check_command = &amp;ldquo;ssh&amp;rdquo;vars.port = host.vars.ssh_portassign where host.address &amp;amp;&amp;amp; host.vars.os == &amp;ldquo;Linux&amp;rdquo;ignore where host.name == &amp;ldquo;localhost&amp;rdquo; /* for upgrade safety */}and in the hostdef:Codeobject Host &amp;ldquo;webarchiv&amp;rdquo; {&amp;hellip;vars.ssh_port = 1023&amp;hellip;</description>
+      <description>icinga2 installation on ubuntu 16https://www.icinga.com/docs/icinga2/latest/doc/02-getting-started/&amp;lt;br&amp;gt;https://www.icinga.com/docs/icingaweb2/latest/doc/02-Installation/&amp;lt;br&amp;gt;https://www.rosehosting.com/blog/install-icinga-2-on-ubuntu-16-04/&amp;lt;br&amp;gt;https://blog.x-toolz.com/installing-icinga2-icingaweb2-on-ubuntu-16-04-3-lts/&amp;lt;br&amp;gt;https://github.com/jpfluger/examples/blob/master/ubuntu-14.04/icinga2-server.md&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&amp;lt;b&amp;gt;https://www.google.co.id/search?q=icinga2+change+ssh+port&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;https://monitoring-portal.org/woltlab/index.php?thread/32752-ssh-monitoring-different-port/&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div style=&amp;quot;background-color: #fafafa; border: 0px; box-sizing: inherit; color: #2c3e50; font-family: &amp;quot;Open Sans&amp;quot;, Arial, Helvetica, sans-serif; font-size: 14px; min-width: 0px; padding: 0px;&amp;ldquo;&amp;gt;added a line into the servicedefinition:Codeapply Service &amp;ldquo;ssh&amp;rdquo; {import &amp;ldquo;generic-service&amp;quot;check_command = &amp;ldquo;ssh&amp;quot;vars.port = host.vars.ssh_portassign where host.address &amp;amp;&amp;amp; host.vars.os == &amp;ldquo;Linux&amp;quot;ignore where host.name == &amp;ldquo;localhost&amp;rdquo; /* for upgrade safety */}and in the hostdef:Codeobject Host &amp;ldquo;webarchiv&amp;rdquo; {&amp;hellip;vars.ssh_port = 1023&amp;hellip;</description>
     </item>
     
     <item>
@@ -1005,15 +940,7 @@ added a line into the servicedefinition:Codeapply Service &amp;ldquo;ssh&amp;rdq
       <pubDate>Tue, 27 Mar 2018 04:18:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/03/27/air-alkali/</guid>
-      <description>Listrik AC 220 volt (atau lebih)
-Colokan listrik
-Kabel listrik
-Dioda bridge 4 kaki (minimal 4 ampere)
-Plat / batang stainless steel 316 (food grade, lebih bagus lagi titanium dan platinum)
-Container / tempat air
-Referensi:
-https://youtu.be/hbWPVjkL2_4
-http://oyee-ihiiir.blogspot.co.id/2016/06/cara-membuat-air-alkali-dari-air-hujan.html?m=1</description>
+      <description></description>
     </item>
     
     <item>
@@ -1022,8 +949,7 @@ http://oyee-ihiiir.blogspot.co.id/2016/06/cara-membuat-air-alkali-dari-air-hujan
       <pubDate>Mon, 19 Mar 2018 21:56:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/03/19/xenserver-provisioning-with-ansible/</guid>
-      <description>https://medium.com/@jrisch/using-ansible-to-automate-vm-creation-on-xenserver-d092aa484a06
-Using Ansible to automate VM creation on XenServerI’ve been using Xenserver at Fab:IT for the last 8 or 9 years, and during that time, I’ve automated the installation of, mostly Debian and Ubuntu, VM’s in several ways. The most successful way, was a shell script with certain sane defaults built in, combined with preseed files for the various Debian and Ubuntu versions, and small shell scripts for handling the installation of Xentools in the VM, after the initial reboot.</description>
+      <description>https://medium.com/@jrisch/using-ansible-to-automate-vm-creation-on-xenserver-d092aa484a06&amp;lt;br /&amp;gt;Using Ansible to automate VM creation on XenServerI’ve been using Xenserver at Fab:ITfor the last 8 or 9 years, and during that time, I’ve automated the installation of, mostly Debian and Ubuntu, VM’s in several ways. The most successful way, was a shell script with certain sane defaults built in, combined with preseed files for the various Debian and Ubuntu versions, and small shell scripts for handling the installation of Xentools in the VM, after the initial reboot.</description>
     </item>
     
     <item>
@@ -1042,10 +968,7 @@ Using Ansible to automate VM creation on XenServerI’ve been using Xenserver at
       <pubDate>Sun, 04 Mar 2018 21:22:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/03/04/ssl-expiry-check/</guid>
-      <description>https://www.google.co.id/search?q=ssl+expiry+check
-https://github.com/Matty9191/ssl-cert-check
-https://prefetch.net/articles/checkcertificate.html
-ssl-cert-check -s mail.prefetch.net -p 443</description>
+      <description>https://www.google.co.id/search?q=ssl+expiry+check&amp;lt;br /&amp;gt;https://github.com/Matty9191/ssl-cert-checkhttps://prefetch.net/articles/checkcertificate.html&amp;lt;br /&amp;gt;ssl-cert-check -s mail.prefetch.net -p 443</description>
     </item>
     
     <item>
@@ -1054,11 +977,7 @@ ssl-cert-check -s mail.prefetch.net -p 443</description>
       <pubDate>Sun, 04 Mar 2018 20:58:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/03/04/digitalocean-do-cli/</guid>
-      <description>digitalocean snapshot and recreate based on that snapshot (clone like)
-doctl compute droplet-action snapshot DropletID &amp;ndash;snapshot-name SnapshotName
-doctl compute droplet-action snapshot 83360000 &amp;ndash;snapshot-name 20180303-birau-snap
-doctl compute droplet create NewDropletName &amp;ndash;size 512mb &amp;ndash;image SnapshotID &amp;ndash;region sgp1 &amp;ndash;ssh-keys Ssh:key:hexadecimal
-doctl compute droplet create birau-server-2 &amp;ndash;size 512mb &amp;ndash;image 32187000 &amp;ndash;region sgp1 &amp;ndash;ssh-keys b0:10:00:d6:8b:00:4f:96:39:1b:89:00:00:00:00:00</description>
+      <description>digitalocean snapshot and recreate based on that snapshot (clone like)doctl compute droplet-action snapshot DropletID&amp;ndash;snapshot-name SnapshotNamedoctl compute droplet-action snapshot 83360000 &amp;ndash;snapshot-name 20180303-birau-snapdoctl compute droplet create NewDropletName&amp;ndash;size 512mb &amp;ndash;image SnapshotID&amp;ndash;region sgp1 &amp;ndash;ssh-keys Ssh:key:hexadecimaldoctl compute droplet create birau-server-2 &amp;ndash;size 512mb &amp;ndash;image 32187000 &amp;ndash;region sgp1 &amp;ndash;ssh-keys b0:10:00:d6:8b:00:4f:96:39:1b:89:00:00:00:00:00</description>
     </item>
     
     <item>
@@ -1067,8 +986,7 @@ doctl compute droplet create birau-server-2 &amp;ndash;size 512mb &amp;ndash;ima
       <pubDate>Sun, 04 Mar 2018 20:40:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/03/04/aws-tips-and-tricks/</guid>
-      <description>aws clone
-The easier way is through the web management console:go to the instanceselect the instance and click on instance actioncreate imageOnce you have an image you can launch another cloned instance, data and all. :)</description>
+      <description>aws cloneThe easier way is through the web management console:go to the instanceselect the instance and click on instance actioncreate imageOnce you have an image you can launch another cloned instance, data and all. :)</description>
     </item>
     
     <item>
@@ -1077,27 +995,7 @@ The easier way is through the web management console:go to the instanceselect th
       <pubDate>Sun, 04 Mar 2018 20:36:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/03/04/elasticsearch-tips-and-tricks/</guid>
-      <description>elasticsearch list indexes
-https://www.google.co.id/search?q=elasticsearch+list+indexes
-https://www.elastic.co/guide/en/elasticsearch/reference/1.4/_list_all_indexes.html
-curl &amp;lsquo;localhost:9200/_cat/indices?v&amp;rsquo;
-elasticsearch installation
-https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig-2.x
-https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04
-elasticsearch config
-cluster.name: namacluster
-bootstrap.memory_lock: true
-# http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html#es-install-es
-index.query.bool.max_clause_count: 102400
-# this must be set on non public ip
-network.host: 127.0.0.1
-http.port: 9200
-# https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-threadpool.html
-processor: 2
-threadpool.bulk.queue_size: 4000
-# https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig#configure-elasticsearch
-script.inline: on
-script.indexed: on</description>
+      <description>elasticsearch list indexeshttps://www.google.co.id/search?q=elasticsearch+list+indexes&amp;lt;br /&amp;gt;https://www.elastic.co/guide/en/elasticsearch/reference/1.4/_list_all_indexes.htmlcurl &amp;lsquo;localhost:9200/_cat/indices?v&#39;elasticsearch installationhttps://github.com/Smile-SA/elasticsuite/wiki/ServerConfig-2.x&amp;lt;br /&amp;gt;https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04elasticsearch configcluster.name: namaclusterbootstrap.memory_lock: true# http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html#es-install-es&amp;lt;br /&amp;gt;index.query.bool.max_clause_count: 102400# this must be set on non public ipnetwork.host: 127.0.0.1http.port: 9200# https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-threadpool.html&amp;lt;br /&amp;gt;processor: 2threadpool.bulk.queue_size: 4000# https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig#configure-elasticsearch&amp;lt;br /&amp;gt;script.inline: onscript.indexed: on</description>
     </item>
     
     <item>
@@ -1116,8 +1014,7 @@ script.indexed: on</description>
       <pubDate>Sun, 25 Feb 2018 10:51:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/25/elastic-beats/</guid>
-      <description>https://www.elastic.co/products/beats
-https://www.elastic.co/guide/en/beats/libbeat/current/community-beats.html</description>
+      <description></description>
     </item>
     
     <item>
@@ -1126,8 +1023,7 @@ https://www.elastic.co/guide/en/beats/libbeat/current/community-beats.html</desc
       <pubDate>Thu, 22 Feb 2018 11:12:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/22/invoice-ninja-free-open-source-invoicing-system/</guid>
-      <description>https://www.invoiceninja.org/
-https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/</description>
+      <description>https://www.invoiceninja.org/&amp;lt;br /&amp;gt;https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/</description>
     </item>
     
     <item>
@@ -1136,14 +1032,7 @@ https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/</description
       <pubDate>Thu, 22 Feb 2018 11:08:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/22/graphite-grafana-things/</guid>
-      <description>https://statusengine.org/tutorials/Graphite-Grafana/
-https://www.unixmen.com/full-monitoring-system-graphite-collectd-statsd-part-1/
-Grafana vs kibana
-https://logz.io/blog/grafana-vs-kibana/
-https://logz.io/blog/monitor-elasticsearch-graphite-grafana/
-https://logz.io/blog/monitoring-dockerized-elk-stack/
-old tutorial:
-http://www.linux-admins.net/2012/02/how-to-install-and-use-graphite.html</description>
+      <description></description>
     </item>
     
     <item>
@@ -1152,18 +1041,7 @@ http://www.linux-admins.net/2012/02/how-to-install-and-use-graphite.html</descri
       <pubDate>Wed, 21 Feb 2018 23:18:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/21/all-about-amazon-aws-s3/</guid>
-      <description>https://github.com/aws/aws-cli
-https://github.com/s3tools/s3cmd
-https://serverfault.com/questions/84815/how-can-i-get-the-size-of-an-amazon-s3-bucket
-apt install aws-cli
-aws &amp;ndash;configure
-#enter access key, secret key and region
-list files/folder di bucket s3 (ls s3)
-aws s3 ls s3://namabuckets3nya
-disk usage s3 (du -sh s3)
-s3cmd du s3://namabuckets3nya
-aws s3 rsync
-https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html</description>
+      <description>https://github.com/aws/aws-cli&amp;lt;br /&amp;gt;https://github.com/s3tools/s3cmdhttps://serverfault.com/questions/84815/how-can-i-get-the-size-of-an-amazon-s3-bucket&amp;lt;br /&amp;gt;apt install aws-cliaws &amp;ndash;configure#enter access key, secret key and regionlist files/folder di bucket s3 (ls s3)aws s3 ls s3://namabuckets3nyadisk usage s3 (du -sh s3)s3cmd du s3://namabuckets3nyaaws s3 rsynchttps://docs.aws.amazon.com/cli/latest/reference/s3/sync.html</description>
     </item>
     
     <item>
@@ -1172,7 +1050,7 @@ https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html</description>
       <pubDate>Mon, 19 Feb 2018 10:18:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/19/nginx-tips-and-trick/</guid>
-      <description> Nginx location directory  location /static/ { alias /web/test.example.com/static/; autoindex on; }   https://stackoverflow.com/questions/11570321/configure-nginx-with-multiple-locations-with-different-root-folders-on-subdomain  Referensi:
+      <description>Nginx location directory  location /static/ { alias /web/test.example.com/static/; autoindex on; }  https://stackoverflow.com/questions/11570321/configure-nginx-with-multiple-locations-with-different-root-folders-on-subdomain  Referensi:
  https://www.sitepoint.com/brotli-compression-wordpress/  </description>
     </item>
     
@@ -1182,14 +1060,7 @@ https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html</description>
       <pubDate>Sat, 17 Feb 2018 10:41:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/17/munin-nginx/</guid>
-      <description>http://guide.munin-monitoring.org/en/stable-2.0/example/webserver/nginx.html
-http://guide.munin-monitoring.org/en/latest/example/webserver/nginx.html
-http://iinclude.in/2017/12/03/how-to-install-the-munin-monitoring-tool-on-ubuntu-16-04-with-nginx/
-https://www.stephenrlang.com/2016/03/how-to-setup-munin-on-ubuntu/
-https://github.com/tjstein/php5-fpm-munin-plugins
-https://serverfault.com/questions/315460/munin-email-notification
-https://blog-en.openalfa.com/how-to-configure-alerts-in-munin
-https://prefetch.net/blog/index.php/2011/07/13/gathering-statistics-from-your-postfix-mail-logs/</description>
+      <description></description>
     </item>
     
     <item>
@@ -1198,9 +1069,7 @@ https://prefetch.net/blog/index.php/2011/07/13/gathering-statistics-from-your-po
       <pubDate>Fri, 16 Feb 2018 05:28:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/16/linux-server-monitoring/</guid>
-      <description>https://blog.serverdensity.com/80-linux-monitoring-tools-know/
-https://logz.io/blog/grafana-vs-kibana/
-http://docs.grafana.org/features/datasources/</description>
+      <description></description>
     </item>
     
     <item>
@@ -1209,7 +1078,7 @@ http://docs.grafana.org/features/datasources/</description>
       <pubDate>Tue, 13 Feb 2018 01:05:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/13/jenkins-magento-2/</guid>
-      <description>https://cloudkul.com/blog/magento2-continuous-integration-continuous-deployment-using-jenkins/</description>
+      <description></description>
     </item>
     
     <item>
@@ -1218,8 +1087,7 @@ http://docs.grafana.org/features/datasources/</description>
       <pubDate>Sat, 10 Feb 2018 16:41:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/10/al-qur-aan/</guid>
-      <description>http://kalamullah.com/quran.html
-http://www.quranic-healing.com/2012/01/download-audio-ruqyah-mp3.html?m=1</description>
+      <description></description>
     </item>
     
     <item>
@@ -1228,8 +1096,7 @@ http://www.quranic-healing.com/2012/01/download-audio-ruqyah-mp3.html?m=1</descr
       <pubDate>Fri, 09 Feb 2018 03:55:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/09/aws-amazon-web-services-learning/</guid>
-      <description>https://blog.serverless.id/post/kursus-gratis-aws-di-udemy/
-https://www.udemy.com/aws-essentials</description>
+      <description></description>
     </item>
     
     <item>
@@ -1238,9 +1105,7 @@ https://www.udemy.com/aws-essentials</description>
       <pubDate>Fri, 09 Feb 2018 01:26:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/09/nginx-php-fpm-tuning-for-best-performance/</guid>
-      <description>&amp;lt;!&amp;ndash;td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}
-&amp;ndash;&amp;gt;
-/etc/nginx/nginx.confworker_processes 8;note: dont make auto, try to raise the worker process to get the good result, from 8, 16 or 20, and keep the good oneworker_connections 19000;worker_rlimit_nofile 20000;note: try to raise the worker connection and workekr_rlimit_nofile to get the good result, and keep the good oneworker_processes 16;events {worker_connections 30000;worker_rlimit_nofile 31000;}http {open_file_cache max=100000 inactive=10s;open_file_cache_valid 120s;/etc/nginx/sites-enable/sophieparis.confupstream backend {server unix:/run/php/pool1-fpm.sock weight=100 max_fails=5 fail_timeout=5;server unix:/run/php/pool2-fpm.sock weight=100 max_fails=5 fail_timeout=5;server unix:/run/php/pool3-fpm.</description>
+      <description></description>
     </item>
     
     <item>
@@ -1260,7 +1125,7 @@ https://www.udemy.com/aws-essentials</description>
       <pubDate>Wed, 31 Jan 2018 23:30:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/31/ansible-tips/</guid>
-      <description> Ansible gather facts Using facter too
+      <description>Ansible gather facts Using facter too
 Ref:
  http://docs.ansible.com/ansible/latest/setup_module.html#examples  ansible php composer Ref:
  https://knpuniversity.com/screencast/ansible/ansible-composer  ansible playbook interactive / ansible prompt Ref:
@@ -1274,17 +1139,7 @@ Ref:
       <pubDate>Wed, 31 Jan 2018 21:30:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/31/xenserver-tips-and-trick/</guid>
-      <description>xenserver resize memory command
-Increase RAM for XenServer VM&amp;rsquo;s through Command Line Interface.
-1.If the RAM editing option is graded out through XenCenter.
-Solution
-1.Take a putty/ssh connection to pool master
-2.Power off the VM.
-Execute the Below command to configure the new RAM:
-#xe vm-memory-limits-set &amp;nbsp; &amp;nbsp;uuid=&amp;nbsp; static-min=GiB/MiB &amp;nbsp;dynamic-min=GiB/MiB &amp;nbsp;dynamic-max=GiB/MiB &amp;nbsp; &amp;nbsp; static-max=GiB/MiB&amp;nbsp;
-Example :
-#xe vm-memory-limits-set &amp;nbsp; &amp;nbsp;uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f &amp;nbsp; &amp;nbsp; &amp;nbsp;static-min=64GiB &amp;nbsp; dynamic-min=64GiB &amp;nbsp; dynamic-max=64GiB &amp;nbsp; &amp;nbsp;static-max=64GiB
-3.Start the VM.</description>
+      <description>xenserver resize memory commandIncrease RAM for XenServer VM&#39;s through Command Line Interface.1.If the RAM editing option is graded out through XenCenter.Solution1.Take a putty/ssh connection to pool master2.Power off the VM.Execute the Below command to configure the new RAM:#xe vm-memory-limits-set uuid=static-min=GiB/MiB dynamic-min=GiB/MiB dynamic-max=GiB/MiB static-max=GiB/MiB Example :#xe vm-memory-limits-set uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f static-min=64GiB dynamic-min=64GiB dynamic-max=64GiB static-max=64GiB3.Start the VM.</description>
     </item>
     
     <item>
@@ -1293,7 +1148,7 @@ Example :
       <pubDate>Wed, 31 Jan 2018 20:54:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/31/ansible-awx/</guid>
-      <description>DEPRECATED install latest ansible apt-add-repository ppa:ansible/ansible [ENTER] apt update apt-get install ansible  install latest docker apt-add-repository ppa:ansible/ansible [ENTER] apt update apt-get install ansible curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - add-apt-repository \ &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable&amp;quot; apt update apt-get install docker-ce apt install make apt install python-pip pip install docker pip install --upgrade pip apt install git curl -O https://raw.githubusercontent.com/geerlingguy/awx-container/master/docker-compose.yml docker-compose up -d  tunggu beberapa saat lalu akses via http, misal http://localhost dengan user admin/password</description>
+      <description>DEPRECATED install latest ansible apt-add-repository ppa:ansible/ansible [ENTER] apt update apt-get install ansible install latest docker apt-add-repository ppa:ansible/ansible [ENTER] apt update apt-get install ansible curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - add-apt-repository \ &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable&amp;quot; apt update apt-get install docker-ce apt install make apt install python-pip pip install docker pip install --upgrade pip apt install git curl -O https://raw.githubusercontent.com/geerlingguy/awx-container/master/docker-compose.yml docker-compose up -d tunggu beberapa saat lalu akses via http, misal http://localhost dengan user admin/password</description>
     </item>
     
     <item>
@@ -1302,13 +1157,7 @@ Example :
       <pubDate>Wed, 31 Jan 2018 20:50:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/31/todo-web-page-monitoring-and-alert-when-change/</guid>
-      <description>Finally it using ariya phantomjs , combine with bash script and run in cron every 9 minuteshttp://phantomjs.org/screen-capture.html
-http://phantomjs.org/related-projects.html
-https://github.com/superbrothers/capturejs
-https://github.com/hggh/phantomjs-screenshots
-https://github.com/astefanutti/decktape
-https://github.com/sindresorhus/pageres
-http://bhfsteve.blogspot.co.id/2013/03/monitoring-web-page-for-changes-using.html?m=1http://changedetection.com/https://visualping.iohttps://visualping.io/chrome-app (free forever)https://www.npmjs.com/package/page-monitorhttp://cabotapp.com/https://blog.newrelic.com/2013/06/04/simpler-ui-testing-with-casperjs-2/https://ghostinspector.comhttps://dzone.com/articles/automated-regression-testing-made-easy-with-casper </description>
+      <description></description>
     </item>
     
     <item>
@@ -1317,9 +1166,7 @@ http://bhfsteve.blogspot.co.id/2013/03/monitoring-web-page-for-changes-using.htm
       <pubDate>Wed, 31 Jan 2018 20:35:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/31/change-image-resolution-from-linux-command-line/</guid>
-      <description>change image resolution command line
-https://imagemagick.org/discourse-server/viewtopic.php?t=24890
-https://www.howtogeek.com/109369/how-to-quickly-resize-convert-modify-images-from-the-linux-terminal/amp/</description>
+      <description></description>
     </item>
     
     <item>
@@ -1328,7 +1175,7 @@ https://www.howtogeek.com/109369/how-to-quickly-resize-convert-modify-images-fro
       <pubDate>Mon, 29 Jan 2018 22:41:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/29/recommended-magento-modules/</guid>
-      <description>Ves Megamenu http://guide.landofcoder.com/mega-menu/ http://guide.landofcoder.com/mega-menu-pro/</description>
+      <description>Ves Megamenuhttp://guide.landofcoder.com/mega-menu/ http://guide.landofcoder.com/mega-menu-pro/</description>
     </item>
     
     <item>
@@ -1346,9 +1193,9 @@ https://www.howtogeek.com/109369/how-to-quickly-resize-convert-modify-images-fro
       <pubDate>Mon, 29 Jan 2018 00:59:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</guid>
-      <description>cron without sending mail tambahkan MAILTO=&amp;ldquo;&amp;rdquo; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
-linux rm file list too long cd direktoriyangfilenyabanyak ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete find . -type f -print -delete  incron Ref:
- http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en  rsync only existing file rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/  Umask follow parent / setgid chmod g+s /namafolder  Ref:</description>
+      <description>cron without sending mail tambahkan MAILTO=&amp;rdquo;&amp;rdquo; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
+linux rm file list too long cd direktoriyangfilenyabanyak ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete find . -type f -print -delete incron Ref:
+ http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en  rsync only existing file rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/ Umask follow parent / setgid chmod g+s /namafolder Ref:</description>
     </item>
     
     <item>
@@ -1357,14 +1204,7 @@ linux rm file list too long cd direktoriyangfilenyabanyak ls -1 | wc -l &amp;amp
       <pubDate>Sun, 28 Jan 2018 21:09:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/28/mysql-tips-and-trick/</guid>
-      <description>Mysql performance
-https://www.infoworld.com/article/0/database-administration/10-essential-performance-tips-for-mysql.html
-MySQL insert row with highest id
-
-Lock tables customers write; $max = SELECT MAX( customer_id ) FROM customers; INSERT INTO customers( customer_id, firstname, surname ) VALUES ($max+1 , &amp;lsquo;jim&amp;rsquo;, &amp;lsquo;sock&amp;rsquo;) unlock tables; ref: https://stackoverflow.com/questions/5360117/insert-and-set-value-with-max1-problems
-
-mysqldump routines triggers view
-karena default nya mysql akan dump trigger, maka hanya store procedure / function atau yg dikenal dengan routines saja yang dimasukan parameter nya mysqldump &amp;ndash;routines &amp;ndash;no-create-info &amp;ndash;no-data &amp;ndash;no-create-db &amp;ndash;skip-opt  &amp;gt; outputfile.</description>
+      <description></description>
     </item>
     
     <item>
@@ -1373,7 +1213,7 @@ karena default nya mysql akan dump trigger, maka hanya store procedure / functio
       <pubDate>Sun, 28 Jan 2018 20:54:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/28/magento-admin-tips-and-trick/</guid>
-      <description>How to create admin user in Magento 2 via Command Line bin/magento admin:user:create &amp;ndash;admin-user=&amp;ldquo;admin&amp;rdquo; &amp;ndash;admin-password=&amp;ldquo;123123q&amp;rdquo; &amp;ndash;admin-email=&amp;ldquo;admin@example.com&amp;rdquo; &amp;ndash;admin-firstname=&amp;ldquo;Admin&amp;rdquo; &amp;ndash;admin-lastname=&amp;ldquo;Admin&amp;rdquo;</description>
+      <description>How to create admin user in Magento 2 via Command Line bin/magento admin:user:create &amp;ndash;admin-user=&amp;quot;admin&amp;rdquo; &amp;ndash;admin-password=&amp;quot;123123q&amp;rdquo; &amp;ndash;admin-email=&amp;quot;admin@example.com&amp;rdquo; &amp;ndash;admin-firstname=&amp;quot;Admin&amp;rdquo; &amp;ndash;admin-lastname=&amp;quot;Admin&amp;rdquo;</description>
     </item>
     
     <item>
@@ -1382,17 +1222,7 @@ karena default nya mysql akan dump trigger, maka hanya store procedure / functio
       <pubDate>Wed, 27 Sep 2017 20:02:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2017/09/27/install-solr-server/</guid>
-      <description>Here are the steps for Install solr server - base of search engine for magento these steps run on ubuntu 16.04, because we follow this http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html, we must install jdk 7 from ppa, but ubuntu 16.04 default with jdk 8 add-apt-repository ppa:openjdk-r/ppa
-apt update
-apt-get install openjdk-7-jdk
-apt install supervisor
-su - user
-mkdir apps &amp;amp;&amp;amp; cd apps
-wget https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz
-tar xzf ../apache-solr-3.4.0.tgz
-mv apache-solr-3.4.0 solr34
-cp /var/www/magento/lib/Apache/Solr/conf/* solr34/example/solr/conf/
-cat &amp;gt;&amp;gt; apps/solr34/example/logging.</description>
+      <description>Here are the steps for Install solr server - base of search engine for magento these steps run on ubuntu 16.04, because we follow this http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html, we must install jdk 7 from ppa, but ubuntu 16.04 default with jdk 8 add-apt-repository ppa:openjdk-r/ppaapt updateapt-get install openjdk-7-jdkapt install supervisorsu - usermkdir apps &amp;amp;&amp;amp; cd appswget https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz&amp;lt;br /&amp;gt;tar xzf ../apache-solr-3.4.0.tgzmv apache-solr-3.4.0 solr34cp /var/www/magento/lib/Apache/Solr/conf/* solr34/example/solr/conf/cat &amp;gt;&amp;gt; apps/solr34/example/logging.properties # Default global logging level:.level = INFO# Write to a file:handlers = java.</description>
     </item>
     
     <item>
@@ -1401,14 +1231,7 @@ cat &amp;gt;&amp;gt; apps/solr34/example/logging.</description>
       <pubDate>Wed, 20 Sep 2017 23:45:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2017/09/20/magento-maintenance-mode/</guid>
-      <description>To set magento 2 in maintenance mode and to make nice maintenance page.
-1. make / get maintenance image for our maintenance page, ie: maintenance.png
-2. put at pub/errors/default/images directory under magento root directory, ie: /var/www/magento/pub/errors/default/images/maintenance.png
-3. edit and save /var/www/magento/pub/errors/default/503.phtml
-
-4. run bin/magento maintenance:enable from magento root directory
-that&amp;rsquo;s it, and you can see nicer maintenance mode in magento 2
-To set magento 1 in maintenance mode and to make nice maintenance page.</description>
+      <description>To set magento 2 in maintenance mode and to make nice maintenance page.1. make / get maintenance image for our maintenance page, ie: maintenance.png2. put at pub/errors/default/images directory under magento root directory, ie: /var/www/magento/pub/errors/default/images/maintenance.png3. edit and save /var/www/magento/pub/errors/default/503.phtml4. run bin/magento maintenance:enable from magento root directorythat&#39;s it, and you can see nicer maintenance mode in magento 2To set magento 1 in maintenance mode and to make nice maintenance page.1. make / get maintenance image for our maintenance page, ie: maintenance.</description>
     </item>
     
     <item>
@@ -1417,10 +1240,7 @@ To set magento 1 in maintenance mode and to make nice maintenance page.</descrip
       <pubDate>Wed, 20 Sep 2017 17:29:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2017/09/20/belajar-kultur-spirulina/</guid>
-      <description>Long story short&amp;hellip;
-
-
-other references:https://drive.google.com/drive/folders/0B_EPO1EgzBbGc2RTczYxTXJoUE0?usp=sharing</description>
+      <description>Long story short&amp;hellip;other references:https://drive.google.com/drive/folders/0B_EPO1EgzBbGc2RTczYxTXJoUE0?usp=sharing&amp;lt;/div&amp;gt;</description>
     </item>
     
     <item>
@@ -1429,10 +1249,7 @@ other references:https://drive.google.com/drive/folders/0B_EPO1EgzBbGc2RTczYxTXJ
       <pubDate>Fri, 15 Sep 2017 05:37:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2017/09/15/unlimited-minuman-probiotik-air-kelapa-hijau/</guid>
-      <description>Buat yang suka dengan minuman probiotik, ada tips dan trik untuk membuat persedian minuman kita menjadi unlimited :)
-Selalu siap sedia di kulkas kapan pun kita mau tanpa harus membeli lagi *muka gretongan
-1. Beli air kelapa muda (lebih baik lagi air kelapa hijau, tapi yang muda dan segar lebih baik, syukur kalau ngambil sendiri dan tanpa dijatuhkan, karena kualitas kelapa jika sudah terkena guncangan agak menurun sedikit)
-2. Taruh air kelapa di botol kaca yang tertutup, ukuran 1 liter (kalau ga muat buat menjadi 2 atau 3 botol) dan simpan di kulkas tapi jangan di freezer</description>
+      <description>Buat yang suka dengan minuman probiotik, ada tips dan trik untuk membuat persedian minuman kita menjadi unlimited :)Selalu siap sedia di kulkas kapan pun kita mau tanpa harus membeli lagi *muka gretongan1. Beli air kelapa muda (lebih baik lagi air kelapa hijau, tapi yang muda dan segar lebih baik, syukur kalau ngambil sendiri dan tanpa dijatuhkan, karena kualitas kelapa jika sudah terkena guncangan agak menurun sedikit)2. Taruh air kelapa di botol kaca yang tertutup, ukuran 1 liter (kalau ga muat buat menjadi 2 atau 3 botol) dan simpan di kulkas tapi jangan di freezer3.</description>
     </item>
     
     <item>
@@ -1441,8 +1258,7 @@ Selalu siap sedia di kulkas kapan pun kita mau tanpa harus membeli lagi *muka gr
       <pubDate>Fri, 25 Aug 2017 04:55:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2017/08/25/learning-magento-e-commerce/</guid>
-      <description>This month i learn about E-commerce with Magento, it&amp;rsquo;s awesome, full of feature of e-commerce.
-But it also have several steps to tweak it, to make it faster, secure and more convenient.I can&amp;rsquo;t detail all of it now, but here are the diagram that i make for easy learning flow.</description>
+      <description>This month i learn about E-commerce with Magento, it&#39;s awesome, full of feature of e-commerce.But it also have several steps to tweak it, to make it faster, secure and more convenient.I can&#39;t detail all of it now, but here are the diagram that i make for easy learning flow.</description>
     </item>
     
     <item>
@@ -1451,10 +1267,7 @@ But it also have several steps to tweak it, to make it faster, secure and more c
       <pubDate>Fri, 25 Aug 2017 03:48:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2017/08/25/redirect-to-widyamedia.indonesiadot.com/</guid>
-      <description>Actually this should be done long time ago, i thought it would be better if i wrote some of my experiences / experiments in public space like blogspot or wordpress, but with custom domain to be readable by all of people around the world :)
-And here are the steps for redirecting to widyamedia.indonesiadot.com
-* login to blogger.com or register if you don&amp;rsquo;t have one
-* select the account you wanna manage and choose Settings - Basic from left menu</description>
+      <description></description>
     </item>
     
     <item>
@@ -1472,7 +1285,7 @@ And here are the steps for redirecting to widyamedia.indonesiadot.com
       <pubDate>Thu, 02 Jan 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2014/01/02/intro-lanyon/</guid>
-      <description>Lanyon is an unassuming Jekyll theme that places content first by tucking away navigation in a hidden drawer. It&amp;rsquo;s based on Poole, the Jekyll butler.
+      <description>Lanyon is an unassuming Jekyll theme that places content first by tucking away navigation in a hidden drawer. It&#39;s based on Poole, the Jekyll butler.
 Built on Poole Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by @mdo. Poole, and every theme built on it (like Lanyon here) includes the following:
  Complete Jekyll setup included (layouts, config, 404, RSS feed, posts, and example page) Mobile friendly design and development Easily scalable text and component sizing with rem units in the CSS Support for a wide gamut of HTML elements Related posts (time-based, because Jekyll) below each post Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)  Lanyon features In addition to the features of Poole, Lanyon adds the following:</description>
     </item>
@@ -1483,7 +1296,7 @@ Built on Poole Poole is the Jekyll Butler, serving as an upstanding and effectiv
       <pubDate>Thu, 02 Jan 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2014/01/02/intro-lanyon-again/</guid>
-      <description>Lanyon is an unassuming Jekyll theme that places content first by tucking away navigation in a hidden drawer. It&amp;rsquo;s based on Poole, the Jekyll butler.
+      <description>Lanyon is an unassuming Jekyll theme that places content first by tucking away navigation in a hidden drawer. It&#39;s based on Poole, the Jekyll butler.
 Built on Poole Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by @mdo. Poole, and every theme built on it (like Lanyon here) includes the following:
  Complete Jekyll setup included (layouts, config, 404, RSS feed, posts, and example page) Mobile friendly design and development Easily scalable text and component sizing with rem units in the CSS Support for a wide gamut of HTML elements Related posts (time-based, because Jekyll) below each post Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)  Lanyon features In addition to the features of Poole, Lanyon adds the following:</description>
     </item>
@@ -1494,7 +1307,7 @@ Built on Poole Poole is the Jekyll Butler, serving as an upstanding and effectiv
       <pubDate>Thu, 02 Jan 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2014/01/02/introducing-lanyon/</guid>
-      <description>Lanyon is an unassuming Jekyll theme that places content first by tucking away navigation in a hidden drawer. It&amp;rsquo;s based on Poole, the Jekyll butler.
+      <description>Lanyon is an unassuming Jekyll theme that places content first by tucking away navigation in a hidden drawer. It&#39;s based on Poole, the Jekyll butler.
 Built on Poole Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by @mdo. Poole, and every theme built on it (like Lanyon here) includes the following:
  Complete Jekyll setup included (layouts, config, 404, RSS feed, posts, and example page) Mobile friendly design and development Easily scalable text and component sizing with rem units in the CSS Support for a wide gamut of HTML elements Related posts (time-based, because Jekyll) below each post Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)  Lanyon features In addition to the features of Poole, Lanyon adds the following:</description>
     </item>
@@ -1505,8 +1318,9 @@ Built on Poole Poole is the Jekyll Butler, serving as an upstanding and effectiv
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2014/01/01/example-content/</guid>
-      <description>Howdy! This is an example blog post that shows several types of HTML content supported in this theme.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
- Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo.</description>
+      <description>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
+ Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
+ Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum.</description>
     </item>
     
     <item>
@@ -1515,7 +1329,7 @@ Built on Poole Poole is the Jekyll Butler, serving as an upstanding and effectiv
       <pubDate>Tue, 31 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2013/12/31/whats-jekyll/</guid>
-      <description>Jekyll is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From the project&amp;rsquo;s readme:
+      <description>Jekyll is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From the project&#39;s readme:
  Jekyll is a simple, blog aware, static site generator. It takes a template directory [&amp;hellip;] and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.</description>
     </item>
     
@@ -1525,9 +1339,7 @@ Built on Poole Poole is the Jekyll Butler, serving as an upstanding and effectiv
       <pubDate>Fri, 19 Jul 2013 01:50:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2013/07/19/widyamedia-blog/</guid>
-      <description>ini adalah percobaan blog widyamedia :)
-blogger slideshow
-https://www.tutesinside.net/2016/04/make-slideshow-in-blogger.html</description>
+      <description>ini adalah percobaan blog widyamedia :)blogger slideshowhttps://www.tutesinside.net/2016/04/make-slideshow-in-blogger.html</description>
     </item>
     
     <item>
@@ -1536,7 +1348,7 @@ https://www.tutesinside.net/2016/04/make-slideshow-in-blogger.html</description>
       <pubDate>Mon, 28 Aug 2006 03:14:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2006/08/28/portfolio/</guid>
-      <description>http://indonesiadot.com</description>
+      <description>http://indonesiadot.com&amp;lt;/a&amp;gt;</description>
     </item>
     
   </channel>

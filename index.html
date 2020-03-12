@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.57.2" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -634,6 +634,16 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -666,19 +676,86 @@
 <div class="post">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/12/lvm-tips/">LVM tips</a></h1>
+        <span class="post-date">Mar 12, 2020</span>
+	<h2 id="resize--increase-lvm">resize / increase lvm</h2>
+<pre><code>lvextend --size +10G /dev/vg0/foo
+lvextend --size 20G /dev/vg0/foo
+lvdisplay /dev/vg0/foo
+</code></pre><ul>
+<li><a href="http://www.microhowto.info/howto/increase_the_size_of_an_lvm_logical_volume.html">http://www.microhowto.info/howto/increase_the_size_of_an_lvm_logical_volume.html</a></li>
+<li><a href="https://linoxide.com/linux-how-to/lvm-configuration-linux/">https://linoxide.com/linux-how-to/lvm-configuration-linux/</a></li>
+</ul>
+<h2 id="pvresize">pvresize</h2>
+<pre><code>pvresize /dev/sda3
+</code></pre><ul>
+<li><a href="https://www.thegeekdiary.com/centos-rhel-how-to-resize-extend-existing-physical-volume-pv/">https://www.thegeekdiary.com/centos-rhel-how-to-resize-extend-existing-physical-volume-pv/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/disk/">disk</a>, <a href="https://blog.indonesiadot.com/tags/lvm/">lvm</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/12/ceph-tips/">Ceph tips</a></h1>
+        <span class="post-date">Mar 12, 2020</span>
+	<h2 id="remove-osd">remove osd</h2>
+<pre><code>systemctl stop ceph-osd.target
+systemctl stop ceph-osd@0
+ceph osd out 0
+ceph osd down 0
+ceph osd destroy 0
+ceph osd destroy 0 --yes-i-really-mean-it
+ceph osd rm 0
+ceph osd crush rm osd.0
+ceph auth del osd.0
+
+ceph-volume lvm zap /dev/sdX --destroy
+</code></pre><ul>
+<li><a href="https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87">https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87</a></li>
+<li><a href="https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/">https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/</a></li>
+</ul>
+<h2 id="all-about-pg_num">all about pg_num</h2>
+<ul>
+<li><a href="https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox">https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox</a></li>
+</ul>
+<h2 id="ceph-one--single-node">ceph one / single node</h2>
+<pre><code>ceph osd getcrushmap -o crush_map_compressed
+crushtool -d crush_map_compressed -o crush_map_decompressed
+vi crush_map_decompressed
+</code></pre><p>lalu cari bagian:</p>
+<pre><code>step chooseleaf firstn 0 type host
+</code></pre><p>rubah menjadi:</p>
+<pre><code>step chooseleaf firstn 0 type osd
+</code></pre><p>lalu insert hasilnya</p>
+<pre><code>crushtool -c crush_map_decompressed -o new_crush_map_compressed
+ceph osd setcrushmap -i new_crush_map_compressed
+ceph -s
+</code></pre><ul>
+<li><a href="https://linoxide.com/linux-how-to/hwto-configure-single-node-ceph-cluster/">https://linoxide.com/linux-how-to/hwto-configure-single-node-ceph-cluster/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ceph/">ceph</a>, <a href="https://blog.indonesiadot.com/tags/storage/">storage</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/10/lxd-lxc/">LXD-LXC</a></h1>
         <span class="post-date">Mar 10, 2020</span>
-	
-
-<h2 id="lxc-set-static-ip">lxc set static ip</h2>
-
+	<h2 id="lxc-set-static-ip">lxc set static ip</h2>
 <pre><code>lxc stop c1
 lxc network attach lxdbr0 c1 eth0 eth0
 lxc config device set c1 eth0 ipv4.address 10.99.10.42
 lxc start c1
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4">https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4</a></li>
 </ul>
 
@@ -693,104 +770,99 @@ lxc start c1
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution-1-briefing-session/">Ansible Test Implement for Security Hardening Solution 1 - Briefing Session</a></h1>
         <span class="post-date">Mar 9, 2020</span>
-	
-
-<h2 id="background">Background</h2>
-
+	<h2 id="background">Background</h2>
 <ul>
 <li>belum adanya standarisasi system security perusahaan yang mengacu kepada baseline standarisasi internasional seperti CIS, NIST atau PCI-DSS</li>
 <li>pekerjaan manual yang sangat kompleks, lama dan berat jika harus dilakukan secara manual untuk melakukan standarisasi security system</li>
 <li>masih banyaknya server perusahaan yang non-comply dengan standarisasi sistem security yang telah dibuat oleh perusahaan</li>
 </ul>
-
 <h2 id="objective">Objective</h2>
-
 <ul>
 <li>mengurangi serangan</li>
 <li>konfigurasi yang robust</li>
 <li>secured protocols</li>
 <li>comply kepada standarisasi internasional dan standarisasi internal perusahaan</li>
 </ul>
-
 <h2 id="technical-requirements">Technical Requirements</h2>
-
 <p>Langkah 1:</p>
-
 <ul>
 <li>Membuat security baseline
-
 <ul>
 <li>custom baseline CIS / PCI-DSS yang digabung dengan baseline internal perusahaan</li>
-</ul></li>
+</ul>
+</li>
 <li>Implementasi dan enforce security baseline</li>
 </ul>
-
-<h3 id="technical-requirements-overall-scope-of-work-and-deliverable">Technical Requirements - Overall Scope of Work and deliverable:</h3>
-
+<h3 id="technical-requirements---overall-scope-of-work-and-deliverable">Technical Requirements - Overall Scope of Work and deliverable:</h3>
 <ul>
 <li>Architecture and End-to-End Design (N)</li>
 <li>Hardware, Software and infrastructure components
-
 <ul>
-<li>Hardware</li>
+<li>Hardware
+<ul>
 <li>2 server postgresql / ansible tower database server</li>
 <li>3 server ansible tower (cluster)</li>
 <li>1 server ansible tower for development / testing</li>
-<li>Software</li>
+</ul>
+</li>
+<li>Software
+<ul>
 <li>redhat / centos OS</li>
 <li>ansible</li>
 <li>ansible tower</li>
 <li>postgresql</li>
 <li>openscap</li>
 <li>ansible playbook / roles based on CIS / PCI-DSS / NIST baseline that combined with internal company baseline</li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Hardware and software delivery and installation, incl. necessary testing (N)
-
 <ul>
 <li>install dua postgresql active - passive</li>
+</ul>
+<ul>
 <li>install ansible tower for production</li>
+</ul>
+<ul>
 <li>install ansible tower for development</li>
 <li>test implementasi / deployment manage server dari ansible tower development, lalu setelah ok, copy / replikasi semua template, playbook dan yg berkaitan ke ansible tower production</li>
-</ul></li>
+</ul>
+</li>
 <li>Required supporting equipment and materials</li>
 <li>Services, including project management, implementation, integration and migration (N)</li>
 <li>Technical support (3 years) including
-
 <ul>
 <li>Hardware and software updates</li>
 <li>Service request support and management (SRSM)</li>
 <li>spares management with instant replacement (SPMS)</li>
 <li>first line maintenance incl. preventative maintenances (O&amp;M Assistance)</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="technical-requirements-software-scope">Technical Requirements Software Scope</h3>
-
 <ul>
 <li>Software components shall be grouped in two areas : 1. Development, 2. Operation</li>
 </ul>
-
 <h3 id="technical-requirements-services-scope">Technical Requirements Services Scope</h3>
-
 <ul>
 <li>Detailed micro-design and security implementation plan (N)</li>
 <li>Project management &amp; project technical documentation according to Telkomsel standards. (N)</li>
 </ul>
-
-<h3 id="technical-requirements-compliance-to-requirement">Technical Requirements - Compliance to requirement</h3>
-
+<h3 id="technical-requirements---compliance-to-requirement">Technical Requirements - Compliance to requirement</h3>
 <p>Statements of Compliances</p>
-
 <ul>
-<li><p>Full Comply = The proposed solution can fulfill the specified requirement at the start of the project (Day 1)</p></li>
-
-<li><p>Comply with Customization = The proposed solution can fulfill the specified requirements with some customizations, and it must be ready when it is required by specific phase within the implementation timeline</p></li>
-
-<li><p>Not Comply = The proposed solution cannot fulfill the specified requirements</p></li>
+<li>
+<p>Full Comply = The proposed solution can fulfill the specified requirement at the start of the project (Day 1)</p>
+</li>
+<li>
+<p>Comply with Customization = The proposed solution can fulfill the specified requirements with some customizations, and it must be ready when it is required by specific phase within the implementation timeline</p>
+</li>
+<li>
+<p>Not Comply = The proposed solution cannot fulfill the specified requirements</p>
+</li>
 </ul>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>
@@ -806,27 +878,17 @@ lxc start c1
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/06/proxmox-add-zfs-disk/">Proxmox add zfs disk</a></h1>
         <span class="post-date">Mar 6, 2020</span>
-	
-
-<h2 id="add-disk-hardware">Add Disk Hardware</h2>
-
+	<h2 id="add-disk-hardware">Add Disk Hardware</h2>
 <p>Tambahkan harddisk di server secara berurutan port sata nya, dan catat ID disknya</p>
-
 <h2 id="setting-at-command-line">Setting at command line</h2>
-
 <pre><code>ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R
 ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4
 zpool create rpoolkube -o ashift=12 mirror /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4
 zpool status
-</code></pre>
-
-<h2 id="tambahkan-proxmox-storage-pool">Tambahkan proxmox storage pool</h2>
-
+</code></pre><h2 id="tambahkan-proxmox-storage-pool">Tambahkan proxmox storage pool</h2>
 <p>Dari proxmox pool, lalu klik storage, lalu add storage, pilih zfs.
 Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masukan block size 64k, lalu klik create.</p>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>
@@ -842,26 +904,15 @@ Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masuka
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/netcat-bandwidth-test/">Netcat Bandwidth Test</a></h1>
         <span class="post-date">Mar 5, 2020</span>
-	
-
-<h2 id="netcat-bandwidth-test">Netcat Bandwidth Test</h2>
-
+	<h2 id="netcat-bandwidth-test">Netcat Bandwidth Test</h2>
 <h3 id="netcat-server">netcat-server</h3>
-
 <pre><code>nc -l -p 12345 | wc -c
-</code></pre>
-
-<h3 id="netcat-client">netcat-client</h3>
-
+</code></pre><h3 id="netcat-client">netcat-client</h3>
 <pre><code>dd if=/dev/zero bs=$((2**20)) count=$((2**10)) | nc -q 0 netcat-server 12345
 #or
 dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345
-</code></pre>
-
-<p>on the server run nload to see the bandwidth used at eth0 for incoming and outgoing</p>
-
+</code></pre><p>on the server run nload to see the bandwidth used at eth0 for incoming and outgoing</p>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/">https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/</a></li>
 <li><a href="https://www.thegeekstuff.com/2012/04/nc-command-examples/">https://www.thegeekstuff.com/2012/04/nc-command-examples/</a></li>
@@ -878,14 +929,9 @@ dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/"></a></h1>
         <span class="post-date">Mar 5, 2020</span>
-	
-
-<h2 id="post">Post</h2>
-
+	<h2 id="post">Post</h2>
 <p>Ini adalah contoh post</p>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>
@@ -901,15 +947,10 @@ dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/python-tips/">Python Tips</a></h1>
         <span class="post-date">Mar 5, 2020</span>
-	
-
-<h2 id="module-python-web-server">module python web server</h2>
-
+	<h2 id="module-python-web-server">module python web server</h2>
 <pre><code>python -m SimpleHTTPServer 8001
 python -m SimpleHTTPServer 8002
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver">https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver</a></li>
 <li><a href="https://www.pcsuggest.com/best-lightweight-web-server-linux/">https://www.pcsuggest.com/best-lightweight-web-server-linux/</a></li>
 </ul>
@@ -925,16 +966,11 @@ python -m SimpleHTTPServer 8002
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/28/yum-tips/">Yum tips</a></h1>
         <span class="post-date">Feb 28, 2020</span>
-	
-
-<h2 id="yum-install-specific-version">Yum install specific version</h2>
-
+	<h2 id="yum-install-specific-version">Yum install specific version</h2>
 <pre><code>yum list docker-ce.x86_64 --showduplicates
 yum list docker-ce.x86_64 --showduplicates | sort -r
 yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos">https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos</a></li>
 </ul>
 
@@ -943,180 +979,6 @@ yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/yum/">yum</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/28/docker-tips/">Docker Tips</a></h1>
-        <span class="post-date">Feb 28, 2020</span>
-	
-
-<h2 id="docker-run-example">Docker run example</h2>
-
-<pre><code>docker run -it alpine /bin/ash
-</code></pre>
-
-<p>Where -i = interactive, -t make tty for the running process, /bin/ash is the command to run.</p>
-
-<p>docker run &ndash;help</p>
-
-<h2 id="how-to-get-ip-of-running-docker">How to get ip of running docker</h2>
-
-<pre><code>docker ps
-docker inspect &lt;containernameorid&gt;
-docker inspect &lt;containernameorid&gt; | grep '&quot;IPAddress&quot;' | head -n 1
-</code></pre>
-
-<p>Where head is opossite from tail, man head, man tail</p>
-
-<ul>
-<li><a href="https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17">https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17</a>.</li>
-</ul>
-
-<div dir="ltr"><b>Rancher</b></div><div dir="ltr">https://rancher.com/swarm/</div><div dir="ltr"><br /></div><div dir="ltr">https://github.com/MoimHossain/docker-viswarm<br /><br />https://stackoverflow.com/ques
-tions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host<br /><br /><pre style="background-color: #eff0f1; border: 0px; box-sizing: inherit; color: #242729; font-family: Consolas, Menlo, Monaco, &q
-uot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-size: 13px; font-stretch: inherit; 
-font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;"><code style="border: 0px; box-
-sizing: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monosp
-ace, sans-serif; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline; white-space: inherit;">docker 
-inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' containernameorid</code></pre><br /><br /><pre style="background-color: #eff0f1; border: 0px; box-sizing: inherit; color: #242729; font-famil
-y: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-size:
- 13px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;">
-<br /></pre></div>
-
-<p>Ref:</p>
-
-<ul>
-<li><a href="https://docs.docker.com/engine/security/certificates/">https://docs.docker.com/engine/security/certificates/</a></li>
-<li><a href="https://docs.docker.com/engine/security/https/">https://docs.docker.com/engine/security/https/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/27/ubuntu-networking-using-netplan/">Ubuntu networking using netplan</a></h1>
-        <span class="post-date">Feb 27, 2020</span>
-	
-
-<h1 id="ubuntu-networking-using-netplan">Ubuntu networking using netplan</h1>
-
-<h2 id="configuration">Configuration</h2>
-
-<p>To configure netplan, save configuration files under /etc/netplan/ with a .yaml extension (e.g. /etc/netplan/config.yaml), then run sudo netplan apply. This command parses and applies the configuration to the system. Configuration written to disk under /etc/netplan/ will persist between reboots.</p>
-
-<h2 id="using-dhcp-and-static-addressing">Using DHCP and static addressing</h2>
-
-<p>To let the interface named ‘enp3s0’ get an address via DHCP, create a YAML file with the following:</p>
-
-<pre><code>network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    enp3s0:
-      dhcp4: true
-</code></pre>
-
-<p>To instead set a static IP address, use the addresses key, which takes a list of (IPv4 or IPv6), addresses along with the subnet prefix length (e.g. /24). Gateway and DNS information can be provided as well:</p>
-
-<pre><code>network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    enp3s0:
-      addresses:
-        - 10.10.10.2/24
-      gateway4: 10.10.10.1
-      nameservers:
-          search: [mydomain, otherdomain]
-          addresses: [10.10.10.1, 1.1.1.1]
-</code></pre>
-
-<h2 id="connecting-multiple-interfaces-with-dhcp">Connecting multiple interfaces with DHCP</h2>
-
-<p>Many systems now include more than one network interface. Servers will commonly need to connect to multiple networks, and may require that traffic to the Internet goes through a specific interface despite all of them providing a valid gateway.</p>
-
-<p>One can achieve the exact routing desired over DHCP by specifying a metric for the routes retrieved over DHCP, which will ensure some routes are preferred over others. In this example, ‘enred’ is preferred over ‘engreen’, as it has a lower route metric:</p>
-
-<pre><code>network:
-  version: 2
-  ethernets:
-    enred:
-      dhcp4: yes
-      dhcp4-overrides:
-        route-metric: 100
-    engreen:
-      dhcp4: yes
-      dhcp4-overrides:
-        route-metric: 200
-</code></pre>
-
-<h2 id="connecting-to-an-open-wireless-network">Connecting to an open wireless network</h2>
-
-<p>Netplan easily supports connecting to an open wireless network (one that is not secured by a password), only requiring that the access point is defined:</p>
-
-<pre><code>network:
-  version: 2
-  wifis:
-    wl0:
-      access-points:
-        opennetwork: {}
-      dhcp4: yes
-</code></pre>
-
-<h2 id="connecting-to-a-wpa-personal-wireless-network">Connecting to a WPA Personal wireless network</h2>
-
-<p>Wireless devices use the ‘wifis’ key and share the same configuration options with wired ethernet devices. The wireless access point name and password should also be specified:</p>
-
-<pre><code>network:
-  version: 2
-  renderer: networkd
-  wifis:
-    wlp2s0b1:
-      dhcp4: no
-      dhcp6: no
-      addresses: [192.168.0.21/24]
-      gateway4: 192.168.0.1
-      nameservers:
-        addresses: [192.168.0.1, 8.8.8.8]
-      access-points:
-        &quot;network_ssid_name&quot;:
-          password: &quot;**********&quot;
-</code></pre>
-
-<h2 id="using-multiple-addresses-on-a-single-interface">Using multiple addresses on a single interface</h2>
-
-<p>The addresses key can take a list of addresses to assign to an interface:</p>
-
-<pre><code>network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    enp3s0:
-     addresses:
-       - 10.100.1.38/24
-       - 10.100.1.39/24
-     gateway4: 10.100.1.1
-</code></pre>
-
-<p>Interface aliases (e.g. eth0:0) are not supported.</p>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://netplan.io/examples">https://netplan.io/examples</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/ubuntu/">ubuntu</a>, <a href="https://blog.indonesiadot.com/tags/netplan/">netplan</a>, <a href="https://blog.indonesiadot.com/tags/networking/">networking</a>
 	 <hr/>
     </div>
   
