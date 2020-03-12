@@ -64,3 +64,11 @@ losetup /dev/loop11 filesystem.img
 would create a file which can get up to 1G in size but will only occupy the necessary space.
 
 * https://serverfault.com/questions/344518/in-linux-how-can-i-create-thin-provisioned-file-so-it-can-be-mounted-and-a-file
+
+## mount exfat usb / external disk
+```
+apt install exfat-fuse exfat-utils
+```
+
+* https://itsfoss.com/mount-exfat/
+
