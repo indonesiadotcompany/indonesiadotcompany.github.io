@@ -42,9 +42,6 @@ cat > /etc/docker/daemon.json <<EOF
 EOF
 
 mkdir -p /etc/systemd/system/docker.service.d
-
-# Restart Docker
-```
 systemctl daemon-reload
 systemctl restart docker
 ```
