@@ -6,10 +6,22 @@
     <description>Recent content in tips on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Mar 2020 20:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 13 Mar 2020 06:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/tips/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sentinelone EPP EDR</title>
+      <link>https://blog.indonesiadot.com/2020/03/13/sentinelone-epp-edr/</link>
+      <pubDate>Fri, 13 Mar 2020 06:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/13/sentinelone-epp-edr/</guid>
+      <description>cloud connectivity became offline  make sure all of the docker container is run with docker ps
+  the date of the on-prem server must be UTC
+  date Wed Mar 11 09:18:42 UTC 2020
+test cloudgateway api info with curl  curl -v https://cloudgateway-prod-ap.sentinelone.net/api/v2/info  Trying 13.112.219.166&amp;hellip; TCP_NODELAY set Connected to cloudgateway-prod-ap.sentinelone.net (13.112.219.166) port 443 (#0) ALPN, offering h2 ALPN, offering http/1.1 successfully set certificate verify locations: CAfile: /etc/ssl/certs/ca-certificates.</description>
+    </item>
     
     <item>
       <title>LVM tips</title>

@@ -644,6 +644,8 @@
       
     
       
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -674,6 +676,30 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/19/nginx-tips-and-trick/">Nginx tips and trick</a></h1>
+        <span class="post-date">Feb 19, 2018</span>
+	<h2 id="nginx-location-directory">Nginx location directory</h2>
+<pre><code>  location /static/ {
+    alias /web/test.example.com/static/;
+    autoindex on;
+  }
+</code></pre><ul>
+<li><a href="https://stackoverflow.com/questions/11570321/configure-nginx-with-multiple-locations-with-different-root-folders-on-subdomain">https://stackoverflow.com/questions/11570321/configure-nginx-with-multiple-locations-with-different-root-folders-on-subdomain</a></li>
+</ul>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://www.sitepoint.com/brotli-compression-wordpress/">https://www.sitepoint.com/brotli-compression-wordpress/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/tuning/">tuning</a>, <a href="https://blog.indonesiadot.com/tags/web/">web</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/17/munin-nginx/">Munin nginx</a></h1>
@@ -873,19 +899,6 @@ fi
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/31/xenserver-tips-and-trick/">Xenserver tips and trick</a></h1>
-        <span class="post-date">Jan 31, 2018</span>
-	<p><!-- raw HTML omitted -->xenserver resize memory command<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Increase RAM for XenServer VM's through Command Line Interface.<!-- raw HTML omitted --><!-- raw HTML omitted -->1.If the RAM editing option is graded out through XenCenter.<!-- raw HTML omitted -->Solution<!-- raw HTML omitted -->1.Take a putty/ssh connection to pool master<!-- raw HTML omitted --><!-- raw HTML omitted -->2.Power off the VM.<!-- raw HTML omitted --><!-- raw HTML omitted -->Execute the Below command to configure the new RAM:<!-- raw HTML omitted --><!-- raw HTML omitted -->#xe vm-memory-limits-set    uuid=<!-- raw HTML omitted -->   static-min=<!-- raw HTML omitted -->GiB/MiB  dynamic-min=<!-- raw HTML omitted -->GiB/MiB  dynamic-max=<!-- raw HTML omitted -->GiB/MiB     static-max=<!-- raw HTML omitted -->GiB/MiB <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Example :<!-- raw HTML omitted -->#xe vm-memory-limits-set    uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f      static-min=64GiB   dynamic-min=64GiB   dynamic-max=64GiB    static-max=64GiB<!-- raw HTML omitted --><!-- raw HTML omitted -->3.Start the VM.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/xenserver/">xenserver</a>, <a href="https://blog.indonesiadot.com/tags/vps/">vps</a>, <a href="https://blog.indonesiadot.com/tags/cloud/">cloud</a>, <a href="https://blog.indonesiadot.com/tags/vm/">vm</a>
 	 <hr/>
     </div>
   

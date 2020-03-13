@@ -643,6 +643,8 @@
       
     
       
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -705,112 +707,112 @@ cat &gt; /etc/docker/daemon.json &lt;&lt;EOF
 EOF
 
 mkdir -p /etc/systemd/system/docker.service.d
-
-# Restart Docker
-</code></pre><p>systemctl daemon-reload
-systemctl restart docker</p>
-<pre><code>
-* https://kubernetes.io/docs/setup/production-environment/container-runtimes/
-
-## kubernetes master
-</code></pre><p>hostnamectl set-hostname master-node
-cat &laquo;EOF&raquo; /etc/hosts
+systemctl daemon-reload
+systemctl restart docker
+</code></pre><ul>
+<li><a href="https://kubernetes.io/docs/setup/production-environment/container-runtimes/">https://kubernetes.io/docs/setup/production-environment/container-runtimes/</a></li>
+</ul>
+<h2 id="kubernetes-master">kubernetes master</h2>
+<pre><code>hostnamectl set-hostname master-node
+cat &lt;&lt;EOF&gt;&gt; /etc/hosts
 10.128.0.27 master-node
 10.128.0.29 node-1 worker-node-1
 10.128.0.30 node-2 worker-node-2
 EOF
 setenforce 0
-sed -i &ndash;follow-symlinks &lsquo;s/SELINUX=enforcing/SELINUX=disabled/g&rsquo; /etc/sysconfig/selinux
-firewall-cmd &ndash;permanent &ndash;add-port=6443/tcp
-firewall-cmd &ndash;permanent &ndash;add-port=2379-2380/tcp
-firewall-cmd &ndash;permanent &ndash;add-port=10250/tcp
-firewall-cmd &ndash;permanent &ndash;add-port=10251/tcp
-firewall-cmd &ndash;permanent &ndash;add-port=10252/tcp
-firewall-cmd &ndash;permanent &ndash;add-port=10255/tcp
-firewall-cmd –reload</p>
-<p>modprobe br_netfilter
-cat &laquo;EOF&raquo; /etc/sysctl.d/100-kube.conf
+sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+firewall-cmd --permanent --add-port=6443/tcp
+firewall-cmd --permanent --add-port=2379-2380/tcp
+firewall-cmd --permanent --add-port=10250/tcp
+firewall-cmd --permanent --add-port=10251/tcp
+firewall-cmd --permanent --add-port=10252/tcp
+firewall-cmd --permanent --add-port=10255/tcp
+firewall-cmd –reload
+
+modprobe br_netfilter
+cat &lt;&lt;EOF&gt;&gt; /etc/sysctl.d/100-kube.conf
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
 EOF
-sysctl &ndash;system</p>
-<p>cat &laquo;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+sysctl --system
+
+cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
 baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
 enabled=1
 gpgcheck=1
 repo_gpgcheck=1
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg <a href="https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg">https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg</a>
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
 yum install kubeadm
 systemctl enable kubelet
-systemctl start kubelet</p>
-<p>swapoff -a</p>
-<p>kubeadm init &ndash;apiserver-advertise-address=192.168.122.42 &ndash;pod-network-cidr=10.244.0.0/16
-mkdir -p $HOME/.kube</p>
-<h1 id="cp--i-etckubernetesadminconf-homekubeconfig">cp -i /etc/kubernetes/admin.conf $HOME/.kube/config</h1>
-<h1 id="chown-id--uid--g-homekubeconfig">chown $(id -u):$(id -g) $HOME/.kube/config</h1>
-<p>kubectl apply -f <a href="https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml">https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</a>
-kubectl get nodes</p>
-<pre><code>
-## kubernetes node
+systemctl start kubelet
 
-</code></pre><p>hostnamectl set-hostname &lsquo;node-1&rsquo;
-cat &laquo;EOF&raquo; /etc/hosts
+swapoff -a
+
+kubeadm init --apiserver-advertise-address=192.168.122.42 --pod-network-cidr=10.244.0.0/16
+mkdir -p $HOME/.kube
+# cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+# chown $(id -u):$(id -g) $HOME/.kube/config
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+kubectl get nodes
+</code></pre><h2 id="kubernetes-node">kubernetes node</h2>
+<pre><code>hostnamectl set-hostname 'node-1'
+cat &lt;&lt;EOF&gt;&gt; /etc/hosts
 10.128.0.27 master-node
 10.128.0.29 node-1 worker-node-1
 10.128.0.30 node-2 worker-node-2
-EOF</p>
-<p>setenforce 0
-sed -i &ndash;follow-symlinks &lsquo;s/SELINUX=enforcing/SELINUX=disabled/g&rsquo; /etc/sysconfig/selinux</p>
-<p>firewall-cmd &ndash;permanent &ndash;add-port=6783/tcp
-firewall-cmd &ndash;permanent &ndash;add-port=10250/tcp
-firewall-cmd &ndash;permanent &ndash;add-port=10255/tcp
-firewall-cmd &ndash;permanent &ndash;add-port=30000-32767/tcp
-firewall-cmd  &ndash;reload</p>
-<p>cat &laquo;EOF&raquo; /etc/sysctl.d/100-kube.conf
+EOF
+
+setenforce 0
+sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+
+firewall-cmd --permanent --add-port=6783/tcp
+firewall-cmd --permanent --add-port=10250/tcp
+firewall-cmd --permanent --add-port=10255/tcp
+firewall-cmd --permanent --add-port=30000-32767/tcp
+firewall-cmd  --reload
+
+cat &lt;&lt;EOF&gt;&gt; /etc/sysctl.d/100-kube.conf
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
 EOF
-sysctl &ndash;system</p>
-<p>cat &laquo;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+sysctl --system
+
+cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
 baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
 enabled=1
 gpgcheck=1
 repo_gpgcheck=1
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg <a href="https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg">https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg</a>
-EOF</p>
-<p>yum install kubeadm
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
+
+yum install kubeadm
 systemctl enable kubelet
-systemctl start kubelet</p>
-<pre><code>
-We now require the token that kubeadm init generated, to join the cluster. You can copy and paste it to your node-1 and node-2 if you had copied it somewhere.
-</code></pre><p>kubeadm join 10.128.0.27:6443 &ndash;token nu06lu.xrsux0ss0ixtnms5  &ndash;discovery-token-ca-cert-hash sha256:f996ea3564e6a07fdea2997a1cf8caeddafd6d4360d606dbc82314688425cd41</p>
-<pre><code>
-## kubernetes master
-</code></pre><p>kubectl get nodes</p>
-<pre><code>
-* https://www.tecmint.com/install-kubernetes-cluster-on-centos-7/
-* https://www.howtoforge.com/tutorial/centos-kubernetes-docker-cluster/
+systemctl start kubelet
+</code></pre><p>We now require the token that kubeadm init generated, to join the cluster. You can copy and paste it to your node-1 and node-2 if you had copied it somewhere.</p>
+<pre><code>kubeadm join 10.128.0.27:6443 --token nu06lu.xrsux0ss0ixtnms5  --discovery-token-ca-cert-hash sha256:f996ea3564e6a07fdea2997a1cf8caeddafd6d4360d606dbc82314688425cd41 
+</code></pre><h2 id="kubernetes-master-1">kubernetes master</h2>
+<pre><code>kubectl get nodes
+</code></pre><ul>
+<li><a href="https://www.tecmint.com/install-kubernetes-cluster-on-centos-7/">https://www.tecmint.com/install-kubernetes-cluster-on-centos-7/</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/centos-kubernetes-docker-cluster/">https://www.howtoforge.com/tutorial/centos-kubernetes-docker-cluster/</a></li>
+</ul>
+<h2 id="kubernetes-kubeadm-show-join-command">kubernetes kubeadm show join command</h2>
+<pre><code>kubeadm token create --print-join-command
+</code></pre><h2 id="kubernetes-delete-node">kubernetes delete node</h2>
+<pre><code>kubectl get nodes
+kubectl drain &lt;namanode&gt;
+kubectl delete node &lt;namanode&gt;
+</code></pre><p>at the node, then type:</p>
+<pre><code>kubeadm reset
+</code></pre><ul>
+<li><a href="https://stackoverflow.com/questions/35757620/how-to-gracefully-remove-a-node-from-kubernetes">https://stackoverflow.com/questions/35757620/how-to-gracefully-remove-a-node-from-kubernetes</a></li>
+</ul>
 
-## kubernetes kubeadm show join command
-
-</code></pre><p>kubeadm token create &ndash;print-join-command</p>
-<pre><code>
-## kubernetes delete node
-</code></pre><p>kubectl get nodes
-kubectl drain <!-- raw HTML omitted -->
-kubectl delete node <!-- raw HTML omitted --></p>
-<pre><code>at the node, then type:
-</code></pre><p>kubeadm reset</p>
-<pre><code>
-* https://stackoverflow.com/questions/35757620/how-to-gracefully-remove-a-node-from-kubernetes
-
-
-</code></pre>
 </div>
 
 <hr/>
