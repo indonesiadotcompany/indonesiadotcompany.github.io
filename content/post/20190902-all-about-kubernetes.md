@@ -148,6 +148,7 @@ kubectl get nodes
 
 * https://www.tecmint.com/install-kubernetes-cluster-on-centos-7/
 * https://www.howtoforge.com/tutorial/centos-kubernetes-docker-cluster/
+* https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 
 ## kubernetes kubeadm show join command
 
@@ -168,4 +169,9 @@ kubeadm reset
 
 * https://stackoverflow.com/questions/35757620/how-to-gracefully-remove-a-node-from-kubernetes
 
+## Kubernetes external storage PV PVC
+
+* https://kubernetes.io/docs/concepts/storage/volumes/#rbd
+* https://github.com/kubernetes-incubator/external-storage/tree/master/ceph/rbd
+* https://github.com/kubernetes/examples/tree/master/volumes/rbd
 
