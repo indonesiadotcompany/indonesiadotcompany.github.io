@@ -646,6 +646,40 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -678,492 +712,314 @@
 <div class="post">
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/31/centos-syslog-server/">Centos Syslog Server</a></h1>
-        <span class="post-date">Oct 31, 2019</span>
-	<h2 id="setup-syslog-server-and-setup-syslog-client-to-it-on-centos-7">Setup Syslog Server and setup syslog client to it on Centos 7</h2>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/05/modsecurity-waf/">Modsecurity WAF</a></h1>
+        <span class="post-date">Dec 5, 2019</span>
+	<h2 id="modsecurity-waf">Modsecurity WAF</h2>
+<p><img src="https://blog.indonesiadot.com/images/2019/modsecurity-architecture.jpg" alt="routed-lans"></p>
+<p>user yg mau sql injection di scan dulu sama modsecurity yg modsecurity baca ruleset (crs) kalau ada di rules nya di deny.
+kalau false positive, dinyatakan oleh client / developer bahwa itu sbnrnya aman, baru di exclude rule tersebut, kalau developer bisa nambel supaya bisa rubah supaya lebih sesuai ruleset nya lebih baik.</p>
+<p>intinya mudah sih yg opensource, cuma kelemahan nya nempel di host dan atau nempel di webserver, lalu kelemahan lain banyak false positive, sama ga ada ui nya, meski berjalan bagus bisa menahan serangan cuma agak sulit manage nya, terutama klo aplikasi yg ga standar, klo yg standar misal kaya wordpress mungkin lebih mudah.</p>
 <p>Referensi:</p>
 <ul>
-<li><a href="https://www.svennd.be/setup-central-syslog-server-on-centos-7/">https://www.svennd.be/setup-central-syslog-server-on-centos-7/</a></li>
-<li><a href="https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/">https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/</a></li>
-<li><a href="https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html">https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html</a></li>
+<li>Searching modsecurity architecture</li>
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/syslog/">syslog</a>, <a href="https://blog.indonesiadot.com/tags/client/">client</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/modsecurity/">modsecurity</a>, <a href="https://blog.indonesiadot.com/tags/webserver/">webserver</a>, <a href="https://blog.indonesiadot.com/tags/waf/">waf</a>
 	 <hr/>
     </div>
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/31/regex-/-regexp-reference/">Regex / Regexp Reference</a></h1>
-        <span class="post-date">Oct 31, 2019</span>
-	<h2 id="regex-case-insensitive">Regex Case insensitive</h2>
-<p>(?i)</p>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/04/openvpn-routed-lans/">Openvpn Routed LANS</a></h1>
+        <span class="post-date">Dec 4, 2019</span>
+	<h2 id="open-routed-multiple-lans">Open Routed Multiple LANS</h2>
+<h3 id="lans-behind-openvpn">Lans behind OpenVPN</h3>
+<p>here is an example of how to have multiple lans behind OpenVPN from #OpenVPN on freenode.</p>
+<p>Our user had a openvpn server with a lan (10.10.2.0/24) behind it, and 2 client with lans behind them:</p>
+<p>client1 with lan 10.10.1.0/24
+client2 with lan 10.10.3.0/24</p>
+<p>He wanted machines on all 3 lans to be able to communicate using a tun (routed) setup.</p>
+<p>Every machine with a LAN behind it must have IP forwarding enabled. In this example that means the server, and client1/client2. The user needed the following in his server.conf:</p>
+<pre><code>route 10.10.1.0 255.255.255.0
+route 10.10.3.0 255.255.255.0
+push &quot;route 10.10.2.0 255.255.255.0&quot;
+push &quot;route 10.10.1.0 255.255.255.0&quot;
+push &quot;route 10.10.3.0 255.255.255.0&quot;
+client-to-client
+</code></pre><p>The route entries adjust the local routing table, telling it to route those networks over the vpn. The push routes are added on the clients connecting, telling them to route those networks over the vpn.</p>
+<p>You may realize that client1 should not route 10.10.1.0 traffic over the vpn, and that client2 should not route 10.10.3.0 traffic over the vpn (because those networks are local to each client). Because of the iroute entries you will see below, openvpn knows this too and skips the push for the client.</p>
+<p>The route entries are telling his server to add a route for each of 10.10.1.0, and 10.10.3.0 to its kernel's routing table, and both will be routed to the tunnel interface and to openvpn. How will openvpn know what client to send each network to? The answer is iroute!</p>
+<p>Iroute does not bypass or alter the kernel's routing table, it allows openvpn to know it should handle the routing when the kernel points to it but the network is not one that openvpn knows about. The iroute entry tells the openvpn server which client is responsible for the network. Without the iroute entry you will find the following in your logfiles:</p>
+<p>MULTI: bad source address from client [IP ADDRESS], packet dropped</p>
+<p>IP ADDRESS in that case would be the machine on client LAN which tried to talk through vpn, because openVPN has no clue what that address is. Once you give it the iroute statement, that changes. Iroute is a route internal to openVPN, and has nothing to do with the kernel's routing table. It tells the openvpn server which client owns which network. Note that even if you only have 1 lan behind 1 client, YOU STILL NEED IROUTE. You will need it any time a clients source IP address is different from the IP given to it by the vpn server.</p>
+<p>The thing is, we cant just drop the iroute into server.conf because it would then be used for every client, and iroute is only to tell the server at which client it should send traffic destined for a network that the kernel said should go to the openvpn interface. That is why we add the iroute commands to a ccd entry.</p>
+<p>You will need client-config-dir /path/to/ccd/ in your server config file to enable ccd entries. ccd entries are basically included into server.conf, but only for the specified client. You put commands in ccd/client-common-name, and they are only included when the client's common-name matches the name of the file in ccd/.</p>
+<p>In this example lets assume the client owning the network 10.10.1.0 has a common-name of client1. In ccd/client1 He should have the following:</p>
+<pre><code>iroute 10.10.1.0 255.255.255.0
+</code></pre><p>As you can see our user will make a ccd/ entry for each client with a lan behind it. The ccd entry will have an iroute command for the network behind the client.</p>
+<p>That means that client2 on the 10.10.3.0 LAN would have the following entry for its ccd/client2 file:</p>
+<pre><code>iroute 10.10.3.0 255.255.255.0
+</code></pre><p><img src="https://blog.indonesiadot.com/images/2019/routed_lans.jpg" alt="routed-lans"></p>
+<h3 id="routes-to-add-outside-of-openvpn">ROUTES TO ADD OUTSIDE OF OPENVPN</h3>
+<p>If you are not running openvpn on the router for each lan, you have some more routes to add. This ​diagram explains it pretty well.</p>
+<p>Lets say our server is 10.10.2.10 on its lan, and uses 10.10.2.1 as its default route, and you want the 2.x lan to be accessible or able to access over the vpn. 2.1 would need a route for every network that 2.x will access or be accessed by. That means in our example: 10.10.2.1 must know that for 10.10.1.x 10.10.3.x and the vpn internal network (for example, 10.8.0.x), it sends the traffic to 10.10.2.10 This is true for any number of lans you want to connect, whether server or client.</p>
+<p>If you fail to add this route, here is what would happen if a VPN client (for example, 10.8.0.6) wanted to send traffic to 10.10.2.20:</p>
+<ol>
+<li>The vpn client sends traffic to 10.10.2.20, with a source address of 10.8.0.6</li>
+<li>The vpn server (10.8.0.1 and 10.10.2.10) receives the traffic, has IP forwarding enabled, and passes the traffic to 10.10.2.20</li>
+<li>10.10.2.20 gets it and tries to respond to 10.8.0.6 but has no entry in its routing table</li>
+<li>Because 10.10.2.20 has no route for 10.8.0.6, it sends the traffic to its default gateway which is 10.10.2.1</li>
+<li>10.10.2.1 checks its routing table, has no route for 10.8.0.6, and sends the traffic to its default gateway which is likely its ISP</li>
+<li>The ISP ignores it, because it is a RFC 1918 ip (aka lan only)</li>
+</ol>
+<p>the annoying work-around would be to add the route to every box on the LAN, in which case step 3 above would work.</p>
+<p>If this needs clarification ask me about it and I will update this page after discovering how to make it clearer.</p>
+<p>On Jan26, 2010 I changed this article to no longer use 192.168.1.0 192.168.2.0 and 192.168.3.0 for my subnets. I did this because it is important for people to not use common subnets such as 192.168.1/0.x when pushing routes to clients. It does not matter if you know where every client connects from, but once you add a single road warrior to the VPN you will run in to a problem. If the road warrior is connecting from a LAN where he has 192.168.0.X and he gets pushed a route to 192.168.0.0/24 to flow over the vpn, he will lose all connectivity to the internet until he kills the vpn. This is because the client loses his route to his gateway&hellip; he tries to contact the gateway over the VPN, but he has no route to the VPN because he needs to access his gateway to reach it. In short, if your lan that you want to access using openvpn uses a common subnet such as 192.168.0.x or 192.168.1.x, CHANGE IT.</p>
+<h3 id="caveats">Caveats</h3>
+<p>If you have a problem adding routes in Windows, check the following. If you are using OpenVPN-GUI, do not run it as administrator but make sure the service OpenVPNServiceInteractive is running. If you are not using the OpenVPN-GUI make sure you have openvpn starting as administrator.</p>
+<p>In some rare cases you may also need to use one of these options:</p>
+<pre><code>route-method exe
+route-delay
+</code></pre><p>The first option changes how windows adds a route The second option waits to add the route (helpful for making sure you get a DHCP lease before messing with routes).
+If those don't help, try turning off routing and remote access in administrative tools - routing and remote access</p>
+<p>Written by krzee @ #OpenVPN @ freenode IRC, mirrored from ​http://www.secure-computing.net/wiki/index.php/OpenVPN/Routing</p>
+<p>Feel free to discuss this document on the unofficial OpenVPN forum at: ​https://forums.openvpn.net/topic98.html</p>
 <p>Referensi:</p>
 <ul>
-<li><a href="https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean">https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean</a></li>
-<li><a href="https://regex101.com/r/hE9gB4/1">https://regex101.com/r/hE9gB4/1</a></li>
-<li><a href="https://regexr.com/3f4vo">https://regexr.com/3f4vo</a></li>
-</ul>
-<h2 id="regex-to-match-string-containing-two-names">Regex to match string containing two names</h2>
-<p>###Explanation of command that i am going to write:-</p>
-<p>. means any character, digit can come in place of .</p>
-<ul>
-<li>means zero or more occurrences of thing written just previous to it.</li>
-</ul>
-<p>| means &lsquo;or&rsquo;.</p>
-<p>So,</p>
-<pre><code>james.*jack
-</code></pre><p>would search james , then any number of character until jack comes.</p>
-<p>Since you want either jack.*james or james.*jack</p>
-<p>Hence Command:</p>
-<p>jack.*james|james.*jack</p>
-<p>Ref:</p>
-<ul>
-<li><a href="https://stackoverflow.com/questions/4389644/regex-to-match-string-containing-two-names-in-any-order">https://stackoverflow.com/questions/4389644/regex-to-match-string-containing-two-names-in-any-order</a></li>
-</ul>
-<h2 id="regex-not-contain-substring--a-word">Regex not contain substring / a word</h2>
-<p>Ref:</p>
-<p><a href="https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word">https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word</a></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/regex/">regex</a>, <a href="https://blog.indonesiadot.com/tags/regexp/">regexp</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/29/linux-os-hardening/">Linux OS Hardening</a></h1>
-        <span class="post-date">Oct 29, 2019</span>
-	<h2 id="password-policies-centos-7">Password Policies Centos 7</h2>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/">https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/</a></li>
-<li><a href="https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/">https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/</a></li>
-</ul>
-<h2 id="centos-7-hardening-guide">Centos 7 Hardening Guide</h2>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://www.lisenet.com/2017/centos-7-server-hardening-guide/">https://www.lisenet.com/2017/centos-7-server-hardening-guide/</a></li>
-</ul>
-<h2 id="linux-aslr-and-kernelrandomize_va_space">Linux ASLR and kernel.randomize_va_space</h2>
-<p>Ref:</p>
-<ul>
-<li><a href="https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/">https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/">TCP Wrapper</a></h1>
-        <span class="post-date">Oct 29, 2019</span>
-	<h2 id="tcp-wrapper">TCP Wrapper</h2>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=tcp_wrapper">https://www.server-world.info/en/note?os=CentOS_7&amp;p=tcp_wrapper</a></li>
-<li><a href="https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/">https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/</a></li>
+<li><a href="https://community.openvpn.net/openvpn/wiki/RoutedLans">https://community.openvpn.net/openvpn/wiki/RoutedLans</a></li>
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/tcpwrapper/">tcpwrapper</a>, <a href="https://blog.indonesiadot.com/tags/tcp-wrapper/">tcp-wrapper</a>
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/openvpn/">openvpn</a>, <a href="https://blog.indonesiadot.com/tags/lan/">lan</a>
 	 <hr/>
     </div>
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/28/ansible-reference/">Ansible Reference</a></h1>
-        <span class="post-date">Oct 28, 2019</span>
-	<p>Postingan ini adalah referensi untuk belajar ansible dan bisa juga sebagai tips, meski sudah ada postingan sebelumnya yang berisi ansible tips :)</p>
-<h2 id="jenkins-ci">Jenkins-ci</h2>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/04/ansible-cycle-evolution-diagram-security/">Ansible cycle evolution diagram security</a></h1>
+        <span class="post-date">Dec 4, 2019</span>
+	<h2 id="ansible-cycle-evolution-diagram-for-security">Ansible cycle evolution diagram for security</h2>
+<p>searching dengan keyword: ansible security diagram</p>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/">https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/</a></li>
+<li><a href="https://swimlane.com/blog/siem-soar/">https://swimlane.com/blog/siem-soar/</a></li>
+<li><a href="https://www.ansible.com/blog/the-journey-to-security-automation">https://www.ansible.com/blog/the-journey-to-security-automation</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/siem/">siem</a>, <a href="https://blog.indonesiadot.com/tags/soar/">soar</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/03/proxmox-add-zfs/">Proxmox Add ZFS</a></h1>
+        <span class="post-date">Dec 3, 2019</span>
+	<h2 id="proxmox-add-zfs">Proxmox Add ZFS</h2>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/">https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/</a></li>
+<li><a href="https://pve.proxmox.com/wiki/ZFS_on_Linux">https://pve.proxmox.com/wiki/ZFS_on_Linux</a></li>
+</ul>
+<h2 id="proxmox-cloud-init">Proxmox cloud-init</h2>
 <p>Ref:</p>
 <ul>
-<li><a href="https://galaxy.ansible.com/geerlingguy/jenkins/">https://galaxy.ansible.com/geerlingguy/jenkins/</a></li>
-<li><a href="http://rundeck.org">http://rundeck.org</a></li>
-<li>Goci / gocd</li>
+<li><a href="https://cloud.centos.org/centos/7/images/">https://cloud.centos.org/centos/7/images/</a></li>
+<li><a href="https://pve.proxmox.com/wiki/Cloud-Init_Support">https://pve.proxmox.com/wiki/Cloud-Init_Support</a></li>
+<li><a href="https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/">https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/</a></li>
 </ul>
-<h2 id="ansible-check-disk">Ansible check disk</h2>
-<pre><code>- name: Ensure that free space on {{ mountname }} is grater than 40%
-  assert:
-    that: mount.size_available &gt; mount.size_total|float * 0.4
-    msg: disk space has reached 60% threshold
-  vars:
-    mountname: '/'
-    mount: &quot;{{ ansible_mounts | selectattr('mount','equalto',mountname) | list | first }}&quot;
-</code></pre><p>atau</p>
-<pre><code>- name: Ensure that free space on the tested volume is greater than 15%
-  assert:
-    that:
-      - mount.size_available &gt; mount.size_total|float * 0.15
-    msg: Disk space has reached 85% threshold
-  vars:
-    mount: &quot;{{ ansible_mounts | selectattr('mount','equalto',item.mount) | list | first }}&quot;
-  with_items:
-    - &quot;{{ ansible_mounts }}&quot;
-</code></pre><p>atau</p>
-<pre><code>name: 'Ensure that free space on {{ mountname }} is grater than 30%'
-assert:
-  that: item.size_available &gt; item.size_total|float * 0.3
-  msg: 'disk space has reached 70% threshold'
-when: item.mount == mountname
-with_items: '{{ ansible_mounts }}'
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/26/ansible-awx-2019/">Ansible AWX 2019</a></h1>
+        <span class="post-date">Nov 26, 2019</span>
+	<h2 id="ansible-awx">Ansible AWX</h2>
+<h3 id="install-docker-compose-tanpa-pip-tanpa-compile">install docker-compose tanpa pip, tanpa compile</h3>
+<pre><code>curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 </code></pre><p>Referensi:</p>
 <ul>
-<li><a href="https://stackoverflow.com/questions/44077630/ansible-to-check-diskspace-for-mounts-mentioned-as-variable">https://stackoverflow.com/questions/44077630/ansible-to-check-diskspace-for-mounts-mentioned-as-variable</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/">https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/</a></li>
+<li><a href="https://medium.com/swlh/ansible-awx-installation-5861b115455a">https://medium.com/swlh/ansible-awx-installation-5861b115455a</a></li>
+<li><a href="https://devzero.co.za/2019/02/28/high-availability-awx-ansible/">https://devzero.co.za/2019/02/28/high-availability-awx-ansible/</a></li>
+<li><a href="https://github.com/sujiar37/AWX-HA-InstanceGroup">https://github.com/sujiar37/AWX-HA-InstanceGroup</a></li>
 </ul>
-<h2 id="ansible-role-tutorial">Ansible role tutorial</h2>
+<p>Not yet tested:</p>
+<ul>
+<li><a href="https://github.com/MrMEEE/awx-build">https://github.com/MrMEEE/awx-build</a></li>
+<li><a href="https://awx.wiki/installation">https://awx.wiki/installation</a></li>
+<li><a href="https://github.com/powertim/deploy_awx-rpm">https://github.com/powertim/deploy_awx-rpm</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/">https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/awx/">awx</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/">Splunk Log Monitoring</a></h1>
+        <span class="post-date">Nov 15, 2019</span>
+	<h2 id="download">Download</h2>
+<p>[deb](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb &lsquo;<a href="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;wget=true'">https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;wget=true'</a>)
+[rpm](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm &lsquo;<a href="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;wget=true'">https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;wget=true'</a>)
+[tgz](wget -O splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz &lsquo;<a href="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;wget=true'">https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;wget=true'</a>)</p>
 <p>Referensi:</p>
 <ul>
-<li><a href="https://medium.com/@brad.simonin/learning-ansible-and-ansible-roles-with-centos-7-linux-817406f7b542">https://medium.com/@brad.simonin/learning-ansible-and-ansible-roles-with-centos-7-linux-817406f7b542</a></li>
+<li><a href="https://docs.splunk.com/Documentation">https://docs.splunk.com/Documentation</a></li>
 </ul>
-<h2 id="ansible-create-file-based-on-date">Ansible create file based on date</h2>
-<pre><code>- name: Backup and compress /etc/ to /data/backups based on date
-  archive:
-    path: /etc/
-    dest: /data/backups/etc-{{ date }}.tgz
-  vars:
-    date: &quot;{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}&quot;
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/splunk/">splunk</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/">Recommended Ansible Modules</a></h1>
+        <span class="post-date">Nov 5, 2019</span>
+	<h1 id="frequently-used-module">Frequently Used Module</h1>
+<h2 id="blockinfile">blockinfile</h2>
+<p>Module ini saya gunakan ketika muncul error pada saat menggunakan module lineinfile untuk memasukan beberapa baris sekaligus dalam beberapa tasks, dan ternyata dengan menggunakan module ini dengan hanya satu task bisa memasukan langsung beberapa baris.</p>
+<p>Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepada parameter minimalnya adalah path dan block saja.</p>
+<pre><code>- name: Insert correct line to /etc/ntp.conf
+  blockinfile:
+    path: /etc/ntp.conf
+    insertafter: ^#?server
+    state: present
+    block: |
+      server &quot;{{ ntp1 }}&quot;
+      server &quot;{{ ntp2 }}&quot;
+  notify: restart ntp
 </code></pre><p>Referensi:</p>
 <ul>
-<li><a href="https://serverfault.com/questions/728662/ansible-manipulate-file-with-a-date-format">https://serverfault.com/questions/728662/ansible-manipulate-file-with-a-date-format</a></li>
+<li><a href="https://www.google.com/search?q=lineinfile+multiple+lines">https://www.google.com/search?q=lineinfile+multiple+lines</a></li>
+<li><a href="https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines">https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html">https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html</a></li>
+<li><a href="https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py">https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py</a></li>
 </ul>
-<h2 id="ansible-check-file-if-exists-or-not">Ansible check file if exists or not</h2>
-<pre><code>- name: Check that the hosts.allow exists
-  stat:
-    path: /etc/hosts.allow
-  register: stat_allow
-- name: Create the file, if it doesnt exist already
-  file:
-    path: /etc/hosts.allow
-    state: touch
-  when: stat_allow.stat.exists == False
+<h2 id="find">find</h2>
+<p>Berikut contoh module find yang dicombine dengan module set_fact, when untuk menggunakan result matched (when seperti if dalam scripting / programming)</p>
+<pre><code>    - name: Search /etc/audit/rules.d for other DAC audit rules
+      find:
+        paths: /etc/audit/rules.d
+        recurse: false
+        contains: -F key=perm_mod$
+        patterns: '*.rules'
+      register: find_fchown
+      when: ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
+    - name: If existing DAC ruleset not found, use /etc/audit/rules.d/privileged.rules as the recipient for the rule
+      set_fact:
+        all_files:
+          - /etc/audit/rules.d/privileged.rules
+      when:
+        - find_fchown.matched is defined and find_fchown.matched == 0
+        - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
+    - name: Use matched file as the recipient for the rule
+      set_fact:
+        all_files:
+          - '{{ find_fchown.files | map(attribute=''path'') | list | first }}'
+      when:
+        - find_fchown.matched is defined and find_fchown.matched &gt; 0
+        - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
+</code></pre><p>Referensi:</p>
+<ul>
+<li>file remediation.yml dari oscap</li>
+<li><a href="https://docs.ansible.com/ansible/latest/modules/find_module.html">https://docs.ansible.com/ansible/latest/modules/find_module.html</a></li>
+</ul>
+<h2 id="pamd">pamd</h2>
+<p>module ini berguna untuk edit pam service tanpa harus mengedit file nya langsung, tanpa harus menggunakan module lineinfile, blockinfile, replace, etc. Dan berikut contohnya:</p>
+<pre><code>    - name: Add unlock_time argument to pam_faillock preauth
+      pamd:
+        name: '{{ item }}'
+        type: auth
+        control: required
+        module_path: pam_faillock.so
+        module_arguments: preauth silent unlock_time={{ var_accounts_passwords_pam_faillock_unlock_time
+          }}
+        state: args_present
+      loop:
+        - system-auth
+        - password-auth
+</code></pre><p>Referensi:</p>
+<ul>
+<li>file remediation.yml oscap</li>
+<li><a href="https://docs.ansible.com/ansible/latest/modules/pamd_module.html">https://docs.ansible.com/ansible/latest/modules/pamd_module.html</a></li>
+</ul>
+<h2 id="debug">debug</h2>
+<pre><code>    - name: download report
+      fetch:
+        src: /tmp/oscap-report.html
+        dest: /home/ansible/public_html/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
+        flat: yes
+    - debug:
+        msg: http://34.87.94.24/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
 </code></pre><p>Ref:</p>
 <ul>
-<li><a href="https://stackoverflow.com/questions/35654286/how-check-a-file-exists-in-ansible">https://stackoverflow.com/questions/35654286/how-check-a-file-exists-in-ansible</a></li>
-</ul>
-<h2 id="ansible-explicit-data-type-casting-str-indicator">Ansible explicit data type casting !!str indicator</h2>
-<p>!!str indicator which simply forces the value to be a string.</p>
-<p>Ref:</p>
-<ul>
-<li><a href="https://github.com/ansible/ansible/issues/11905">https://github.com/ansible/ansible/issues/11905</a></li>
-<li><a href="https://github.com/ansible/ansible/issues/11151">https://github.com/ansible/ansible/issues/11151</a></li>
-</ul>
-<h2 id="ansible-lineinfile-module">Ansible lineinfile module</h2>
-<p>Ref:</p>
-<ul>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/lineinfile_module.html">https://docs.ansible.com/ansible/latest/modules/lineinfile_module.html</a></li>
-</ul>
-<h2 id="ansible-find-register-variable-and-output-to-terminal--echo">Ansible find, register variable, and output to terminal / echo</h2>
-<p>Ref:</p>
-<ul>
-<li><a href="https://www.mydailytutorials.com/ansible-register-variables/">https://www.mydailytutorials.com/ansible-register-variables/</a></li>
-<li><a href="https://serverfault.com/questions/537060/how-to-see-stdout-of-ansible-commands">https://serverfault.com/questions/537060/how-to-see-stdout-of-ansible-commands</a></li>
 <li><a href="https://docs.ansible.com/ansible/latest/modules/debug_module.html">https://docs.ansible.com/ansible/latest/modules/debug_module.html</a></li>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/find_module.html">https://docs.ansible.com/ansible/latest/modules/find_module.html</a></li>
-<li><a href="https://serverfault.com/questions/945821/ansible-find-get-path-of-a-directory">https://serverfault.com/questions/945821/ansible-find-get-path-of-a-directory</a></li>
-</ul>
-<h2 id="ansible-show-detailed-output-using-callback-plugins">Ansible show detailed output using callback plugins</h2>
-<p>Ref:</p>
-<ul>
-<li><a href="https://docs.ansible.com/ansible/latest/plugins/callback.html">https://docs.ansible.com/ansible/latest/plugins/callback.html</a></li>
-<li><a href="https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html">https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html</a></li>
-</ul>
-<h2 id="ansible-copy-only-on-remote-host">ansible copy only on remote host</h2>
-<pre><code>name: copy files task
-  shell: cp source/path/file destination/path/file 
-</code></pre><p>or using remote_src flag on copy module</p>
-<p>Ref:</p>
-<ul>
-<li><a href="https://stackoverflow.com/questions/41130757/ansible-copy-or-move-files-only-on-remote-host">https://stackoverflow.com/questions/41130757/ansible-copy-or-move-files-only-on-remote-host</a></li>
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/reference/">reference</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>
 	 <hr/>
     </div>
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/26/tmux-screen-tips/">Tmux screen tips</a></h1>
-        <span class="post-date">Oct 26, 2019</span>
-	<h1 id="tmux-cheatsheet">Tmux cheatsheet</h1>
-<h1 id="tmux-shortcuts--cheatsheet">tmux shortcuts &amp; cheatsheet</h1>
-<p>start new:</p>
-<pre><code>tmux
-</code></pre>
-<p>start new with session name:</p>
-<pre><code>tmux new -s myname
-</code></pre>
-<p>attach:</p>
-<pre><code>tmux a  #  (or at, or attach)
-</code></pre>
-<p>attach to named:</p>
-<pre><code>tmux a -t myname
-</code></pre>
-<p>list sessions:</p>
-<pre><code>tmux ls
-</code></pre>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted -->kill session:</p>
-<pre><code>tmux kill-session -t myname
-</code></pre>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted -->Kill all the tmux sessions:</p>
-<pre><code>tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
-</code></pre>
-<p>In tmux, hit the prefix <code>ctrl+b</code> (my modified prefix is ctrl+a) and then:</p>
-<h2 id="sessions">Sessions</h2>
-<pre><code>:new&lt;CR&gt;  new session
-s  list sessions
-$  name session
-</code></pre>
-<h2 id="a-namewindowstabsawindows-tabs"><!-- raw HTML omitted --><!-- raw HTML omitted -->Windows (tabs)</h2>
-<pre><code>c  create window
-w  list windows
-n  next window
-p  previous window
-f  find window
-,  name window
-&amp;  kill window
-</code></pre>
-<h2 id="a-namepanessplitsapanes-splits"><!-- raw HTML omitted --><!-- raw HTML omitted -->Panes (splits)</h2>
-<pre><code>%  vertical split
-&quot;  horizontal split
-
-o  swap panes
-q  show pane numbers
-x  kill pane
-+  break pane into window (e.g. to select text by mouse to copy)
--  restore pane from window
-⍽  space - toggle between layouts
-&lt;prefix&gt; q (Show pane numbers, when the numbers show up type the key to goto that pane)
-&lt;prefix&gt; { (Move the current pane left)
-&lt;prefix&gt; } (Move the current pane right)
-&lt;prefix&gt; z toggle pane zoom
-</code></pre>
-<h2 id="a-namesyncpanesasync-panes"><!-- raw HTML omitted --><!-- raw HTML omitted -->Sync Panes</h2>
-<p>You can do this by switching to the appropriate window, typing your Tmux prefix (commonly Ctrl-B or Ctrl-A) and then a colon to bring up a Tmux command line, and typing:</p>
-<pre><code>:setw synchronize-panes
-</code></pre><p>You can optionally add on or off to specify which state you want; otherwise the option is simply toggled. This option is specific to one window, so it won’t change the way your other sessions or windows operate. When you’re done, toggle it off again by repeating the command. <a href="http://blog.sanctum.geek.nz/sync-tmux-panes/">tip source</a></p>
-<h2 id="resizing-panes">Resizing Panes</h2>
-<p>You can also resize panes if you don’t like the layout defaults. I personally rarely need to do this, though it’s handy to know how. Here is the basic syntax to resize panes:</p>
-<pre><code>PREFIX : resize-pane -D (Resizes the current pane down)
-PREFIX : resize-pane -U (Resizes the current pane upward)
-PREFIX : resize-pane -L (Resizes the current pane left)
-PREFIX : resize-pane -R (Resizes the current pane right)
-PREFIX : resize-pane -D 20 (Resizes the current pane down by 20 cells)
-PREFIX : resize-pane -U 20 (Resizes the current pane upward by 20 cells)
-PREFIX : resize-pane -L 20 (Resizes the current pane left by 20 cells)
-PREFIX : resize-pane -R 20 (Resizes the current pane right by 20 cells)
-PREFIX : resize-pane -t 2 20 (Resizes the pane with the id of 2 down by 20 cells)
-PREFIX : resize-pane -t -L 20 (Resizes the pane with the id of 2 left by 20 cells)
-</code></pre>
-<h2 id="copy-mode">Copy mode:</h2>
-<p>Pressing PREFIX [ places us in Copy mode. We can then use our movement keys to move our cursor around the screen. By default, the arrow keys work. we set our configuration file to use Vim keys for moving between windows and resizing panes so we wouldn’t have to take our hands off the home row. tmux has a vi mode for working with the buffer as well. To enable it, add this line to .tmux.conf:</p>
-<pre><code>setw -g mode-keys vi
-</code></pre>
-<p>With this option set, we can use h, j, k, and l to move around our buffer.</p>
-<p>To get out of Copy mode, we just press the ENTER key. Moving around one character at a time isn’t very efficient. Since we enabled vi mode, we can also use some other visible shortcuts to move around the buffer.</p>
-<p>For example, we can use &ldquo;w&rdquo; to jump to the next word and &ldquo;b&rdquo; to jump back one word. And we can use &ldquo;f&rdquo;, followed by any character, to jump to that character on the same line, and &ldquo;F&rdquo; to jump backwards on the line.</p>
-<pre><code>   Function                vi             emacs
-   Back to indentation     ^              M-m
-   Clear selection         Escape         C-g
-   Copy selection          Enter          M-w
-   Cursor down             j              Down
-   Cursor left             h              Left
-   Cursor right            l              Right
-   Cursor to bottom line   L
-   Cursor to middle line   M              M-r
-   Cursor to top line      H              M-R
-   Cursor up               k              Up
-   Delete entire line      d              C-u
-   Delete to end of line   D              C-k
-   End of line             $              C-e
-   Goto line               :              g
-   Half page down          C-d            M-Down
-   Half page up            C-u            M-Up
-   Next page               C-f            Page down
-   Next word               w              M-f
-   Paste buffer            p              C-y
-   Previous page           C-b            Page up
-   Previous word           b              M-b
-   Quit mode               q              Escape
-   Scroll down             C-Down or J    C-Down
-   Scroll up               C-Up or K      C-Up
-   Search again            n              n
-   Search backward         ?              C-r
-   Search forward          /              C-s
-   Start of line           0              C-a
-   Start selection         Space          C-Space
-   Transpose chars                        C-t
-</code></pre>
-<h2 id="misc">Misc</h2>
-<pre><code>d  detach
-t  big clock
-?  list shortcuts
-:  prompt
-</code></pre>
-<h2 id="configurations-options">Configurations Options:</h2>
-<pre><code># Mouse support - set to on if you want to use the mouse
-* setw -g mode-mouse off
-* set -g mouse-select-pane off
-* set -g mouse-resize-pane off
-* set -g mouse-select-window off
-
-# Set the default terminal mode to 256color mode
-set -g default-terminal &quot;screen-256color&quot;
-
-# enable activity alerts
-setw -g monitor-activity on
-set -g visual-activity on
-
-# Center the window list
-set -g status-justify centre
-
-# Maximize and restore a pane
-unbind Up bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t tmp
-unbind Down
-bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
-</code></pre>
-<h2 id="resources">Resources:</h2>
-<ul>
-<li><a href="http://pragprog.com/book/bhtmux/tmux">tmux: Productive Mouse-Free Development</a></li>
-<li><a href="http://superuser.com/questions/343572/tmux-how-do-i-reorder-my-windows">How to reorder windows</a></li>
-</ul>
-<h2 id="notes">Notes:</h2>
-<ul>
-<li></li>
-</ul>
-<h2 id="changelog">Changelog:</h2>
-<ul>
-<li>1411143833002 - Added <a href="#PanesSplits">toggle zoom</a> under Panes (splits) section.</li>
-<li>1411143833002 - <a href="#syncPanes">Added Sync Panes</a></li>
-<li>1414276652677 - <a href="#killAllSessions">Added Kill all tmux sessions </a></li>
-<li>1438585211173 - <a href="#WindowsTabs">corrected create and add next and previus thanks to @justinjhendrick</a></li>
-</ul>
-<h2 id="request-an-update">Request an Update:</h2>
-<p>We Noticed that our Cheatsheet is growing and people are coloberating to add new tips and tricks, so please tweet to me what would you like to add and let's make it better!</p>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/">Ansible and Openscap</a></h1>
+        <span class="post-date">Nov 4, 2019</span>
+	<h2 id="ansible-and-openscap-for-scanning-and-remediation-server-for-security-compliance-operating-system">Ansible and Openscap for scanning and remediation server for security compliance operating system</h2>
 <p>Referensi:</p>
 <ul>
-<li><a href="https://tmuxcheatsheet.com/">https://tmuxcheatsheet.com/</a></li>
-<li><a href="https://gist.github.com/MohamedAlaa/2961058">https://gist.github.com/MohamedAlaa/2961058</a></li>
+<li><a href="https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663">https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663</a></li>
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tmux/">tmux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>, <a href="https://blog.indonesiadot.com/tags/openscap/">openscap</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/cis/">cis</a>, <a href="https://blog.indonesiadot.com/tags/stig/">stig</a>, <a href="https://blog.indonesiadot.com/tags/scan/">scan</a>, <a href="https://blog.indonesiadot.com/tags/remediation/">remediation</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/25/create-gcp-vm-using-gcloud-from-command-line/">Create GCP VM using gcloud from command line</a></h1>
-        <span class="post-date">Oct 25, 2019</span>
-	<p>Pembuatan virtual machine di GCP / Google Cloud Platform menggunakan gcloud command line bermanfaat untuk mempermudah pembuatan VM tanpa harus mengakses web browser.</p>
-<p>Berikut langkah nya yang dilakukan di OS Centos 7:</p>
-<pre><code>sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &lt;&lt; EOM
-[google-cloud-sdk]
-name=Google Cloud SDK
-baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
-enabled=1
-gpgcheck=1
-repo_gpgcheck=1
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
-       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-EOM
-sudo yum install google-cloud-sdk
-gcloud init
-</code></pre><p>Berikut langkah yang dilakukan di OS ubuntu / debian:</p>
-<pre><code>echo &quot;deb http://packages.cloud.google.com/apt cloud-sdk main&quot; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk
-gcloud init
-</code></pre><p>Pada saat initialize ini akan diminta untuk memasukan user google yang akan digunakan, diikuti saja semua langkah nya sampai dengan memasukan verifikasi.</p>
-<p>Setelah itu bisa menjalankan script 1-gcp-centos.sh berikut:</p>
-<pre><code>bash 1-gcp-centos.sh namavm
-</code></pre><p>Berikut script 1-gcp-centos.sh</p>
-<pre><code>#!/bin/bash
-
-if [ -z &quot;$1&quot; ]; then
- NAMA=$1
- while [ -z &quot;$NAMA&quot; ]; do
-  echo &quot;masukan nama vm:&quot;
-  read NAMA
- done
- # Create GCE VM with disk storage
- gcloud compute instances create $NAMA \
-  --machine-type f1-micro \
-  --network default \
-  --subnet default \
-  --network-tier PREMIUM \
-  --maintenance-policy MIGRATE \
-  --scopes https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append \
-  --image centos-7-v20191014 \
-  --image-project centos-cloud \
-  --boot-disk-size 10GB \
-  --boot-disk-type pd-standard \
-  --boot-disk-device-name compute-disk
-fi
-</code></pre><p>Referensi:</p>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/03/openscap-reference/">Openscap Reference</a></h1>
+        <span class="post-date">Nov 3, 2019</span>
+	<h2 id="openscap-custom-profile">Openscap Custom Profile</h2>
+<p>Referensi:</p>
 <ul>
-<li><a href="https://cloud.google.com/sdk/docs/quickstart-redhat-centos">https://cloud.google.com/sdk/docs/quickstart-redhat-centos</a></li>
-<li><a href="https://github.com/garystafford/ansible-gcp-demo">https://github.com/garystafford/ansible-gcp-demo</a></li>
+<li><a href="https://martin.preisler.me/2013/11/xccdf-tailoring/">https://martin.preisler.me/2013/11/xccdf-tailoring/</a></li>
+<li><a href="https://static.open-scap.org/openscap-1.2/oscap_user_manual.html">https://static.open-scap.org/openscap-1.2/oscap_user_manual.html</a></li>
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/cloud/">cloud</a>, <a href="https://blog.indonesiadot.com/tags/gcp/">gcp</a>, <a href="https://blog.indonesiadot.com/tags/google-cloud-platform/">google-cloud-platform</a>, <a href="https://blog.indonesiadot.com/tags/google/">google</a>, <a href="https://blog.indonesiadot.com/tags/gcloud/">gcloud</a>, <a href="https://blog.indonesiadot.com/tags/command/">command</a>, <a href="https://blog.indonesiadot.com/tags/bash/">bash</a>, <a href="https://blog.indonesiadot.com/tags/script/">script</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/25/gcp-and-ansible/">GCP and Ansible</a></h1>
-        <span class="post-date">Oct 25, 2019</span>
-	<p>Referensi:</p>
-<ul>
-<li><a href="https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/">https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/cloud/">cloud</a>, <a href="https://blog.indonesiadot.com/tags/gcp/">gcp</a>, <a href="https://blog.indonesiadot.com/tags/google-cloud-platform/">google-cloud-platform</a>, <a href="https://blog.indonesiadot.com/tags/google/">google</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/">Kernel Hardening Tips</a></h1>
-        <span class="post-date">Oct 15, 2019</span>
-	<h2 id="disable-and-blacklist-linux-modules">Disable and blacklist Linux modules</h2>
-<p>Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya</p>
-<pre><code>blacklist firewire_core
-install firewire_core /bin/true
-</code></pre><p>Referensi:</p>
-<ul>
-<li>CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf</li>
-<li><a href="https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/">https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/kernel/">kernel</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/hardening/">hardening</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/openscap/">openscap</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   

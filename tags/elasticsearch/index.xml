@@ -6,10 +6,20 @@
     <description>Recent content in elasticsearch on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Mar 2018 20:36:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2020 12:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ELK for beginner</title>
+      <link>https://blog.indonesiadot.com/2020/03/18/elk-for-beginner/</link>
+      <pubDate>Wed, 18 Mar 2020 12:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/18/elk-for-beginner/</guid>
+      <description>Why we use ELK? The Elastic Stack (aka ELK) is a robust solution for search, log management, and data analysis. ELK consists of a combination of three open source project: Elasticsearch, Logstash, and Kibana. These projects have specific roles in ELK:
+Elasticsearch handles storage and provides a RESTful search and analytics endpoint. Logstash is a server-side data processing pipeline that ingests, transforms and loads data. Kibana lets you visualize your Elasticsearch data and navigate the Elastic Stack.</description>
+    </item>
     
     <item>
       <title>elasticsearch tips and tricks</title>

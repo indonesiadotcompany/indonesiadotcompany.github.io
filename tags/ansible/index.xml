@@ -6,10 +6,31 @@
     <description>Recent content in ansible on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Mar 2020 17:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2020 13:47:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible Tower for beginner</title>
+      <link>https://blog.indonesiadot.com/2020/03/18/ansible-tower-for-beginner/</link>
+      <pubDate>Wed, 18 Mar 2020 13:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/18/ansible-tower-for-beginner/</guid>
+      <description>Before going to start the installation steps, we need to know some benefits of Ansible Tower.
+Why we need Ansible Tower and it’s benefits?   Ansible Tower helps you scale IT automation, manage complex deployments and speed productivity.
+  Centralize and control your IT infrastructure with a visual dashboard, role-based access control, job scheduling, integrated notifications and graphical inventory management.
+  Ansible Tower’s REST API and CLI make it easy to embed Ansible Tower into existing tools and processes.</description>
+    </item>
+    
+    <item>
+      <title>Ansible Tower Log Logstash ELK</title>
+      <link>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</link>
+      <pubDate>Mon, 16 Mar 2020 19:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</guid>
+      <description>ansible logstash example  https://github.com/widansible/elk-ansible  </description>
+    </item>
     
     <item>
       <title>Ansible Test Implement for Security Hardening Solution 1 - Briefing Session</title>

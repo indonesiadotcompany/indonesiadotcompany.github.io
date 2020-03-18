@@ -646,6 +646,40 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -678,314 +712,372 @@
 <div class="post">
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/05/modsecurity-waf/">Modsecurity WAF</a></h1>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/">Harbor Container Registry</a></h1>
+        <span class="post-date">Jan 20, 2020</span>
+	<h2 id="widya-harbor-container-registry">Widya Harbor Container Registry</h2>
+<ul>
+<li><a href="https://widharbor.birau.com/">https://widharbor.birau.com/</a></li>
+</ul>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/harbor/">harbor</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/registry/">registry</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/">Ansible Tower first Implementation</a></h1>
+        <span class="post-date">Jan 19, 2020</span>
+	<h2 id="ansible-tower-first-implementation">Ansible Tower first Implementation</h2>
+<ul>
+<li>Install ansible tower</li>
+<li>masukan license</li>
+<li>tambahkan <strong>access - organization</strong></li>
+<li>tambahkan <strong>access - users</strong></li>
+<li>tambahkan <strong>access - teams</strong></li>
+<li>tambahkan <strong>resources - inventory</strong></li>
+<li>siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)</li>
+</ul>
+<pre><code>chmod g+s /var/lib/awx/projects
+cp -r test /var/lib/awx/projects/
+</code></pre><ul>
+<li>tambahkan <strong>resources - projects</strong></li>
+<li>buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine</li>
+<li>buat host client / node yang mau di manage di /etc/hosts</li>
+<li>tambahkan <strong>resources - credentials</strong></li>
+<li>tambahkan <strong>resources - templates</strong></li>
+<li>test launch jobs based on template yg baru dibuat</li>
+</ul>
+<h2 id="ansible-tower--openscap">Ansible tower + openscap</h2>
+<ul>
+<li>install scap-workbench</li>
+</ul>
+<pre><code>yum install scap-workbench xauth -y
+</code></pre><ul>
+<li>buat direktori report</li>
+</ul>
+<pre><code>mkdir /report                                                                                                                                                                                               
+chgrp awx /report                                                                                                                                                                                           
+chmod g+s /report/
+chcon -Rv --type=httpd_sys_rw_content_t /report/
+ln -s /report /var/lib/awx/public/
+</code></pre><ul>
+<li>tambahkan direktori report di nginx</li>
+</ul>
+<pre><code>        location /report {
+                alias /var/lib/awx/public/report;
+                autoindex on;
+        }
+</code></pre><ul>
+<li>akses scap-workbench dari laptop</li>
+</ul>
+<pre><code>ssh -X -C tower1
+scap-workbench
+</code></pre><ul>
+<li>jalankan <strong>Scan</strong> Remote Machine (over SSH) ke ansible@client1 (jika muncul popup, pilih centos7)</li>
+<li>Save generate result html ke /report (tambahkan pembeda semisal datetime untuk membedakan tiap file report)</li>
+</ul>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/tower/">tower</a>, <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/">Letsencrypt certbot unatteded</a></h1>
+        <span class="post-date">Jan 19, 2020</span>
+	<h2 id="letsencrypt-with-certbot-unatteded-way">Letsencrypt with certbot unatteded way</h2>
+<p>This is for ubuntu linux</p>
+<pre><code>add-apt-repository ppa:certbot/certbot -y
+apt install certbot -y
+certbot certonly --standalone --preferred-challenges http --non-interactive  --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com
+</code></pre><h2 id="note">Note:</h2>
+<ul>
+<li>before running certbot command, you must already pointing domain / subdomain address to destination ip</li>
+</ul>
+<h2 id="referensi">Referensi:</h2>
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/letsencrypt/">letsencrypt</a>, <a href="https://blog.indonesiadot.com/tags/https/">https</a>, <a href="https://blog.indonesiadot.com/tags/ssl/">ssl</a>, <a href="https://blog.indonesiadot.com/tags/certbot/">certbot</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/">Docker Compose on Linux</a></h1>
+        <span class="post-date">Jan 15, 2020</span>
+	<h2 id="setup">Setup</h2>
+<pre><code>sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+</code></pre><p>Referensi:</p>
+<ul>
+<li><a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>, <a href="https://blog.indonesiadot.com/tags/docker-compose/">docker-compose</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/">Gitlab on Ubuntu 16.04</a></h1>
+        <span class="post-date">Jan 14, 2020</span>
+	<h2 id="instalasi-gitlab-di-ubuntu-1604">Instalasi Gitlab di Ubuntu 16.04</h2>
+<h2 id="widya-gitlab">Widya Gitlab</h2>
+<ul>
+<li><a href="https://widgitgog.birau.com/dashboard/projects">https://widgitgog.birau.com/dashboard/projects</a></li>
+</ul>
+<h3 id="change--update-hostname">change / update hostname</h3>
+<pre><code>sed -i 's/widgitgog/widgit/g' /etc/gitlab/gitlab.rb
+gitlab-ctl reconfigure
+gitlab-ctl restart
+</code></pre><ul>
+<li><a href="https://docs.gitlab.com/omnibus/settings/configuration.html">https://docs.gitlab.com/omnibus/settings/configuration.html</a></li>
+</ul>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/">https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04">https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>, <a href="https://blog.indonesiadot.com/tags/gitlab/">gitlab</a>, <a href="https://blog.indonesiadot.com/tags/repository/">repository</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/">Centos 7 Resize Partition</a></h1>
+        <span class="post-date">Jan 8, 2020</span>
+	<h2 id="step-to-reproduce-on-vm">Step to reproduce on VM</h2>
+<p>Turn off the VM</p>
+<pre><code>qemu-img resize image.qcow2 +SIZE
+</code></pre><p>where SIZE is the size to add (e.g. 10G for 10 gibibytes).</p>
+<p>Turn on the VM, fdisk /dev/vda, delete and create /dev/vda2, restart</p>
+<p>Login after restart, then run this command</p>
+<pre><code>pvresize /dev/vda2
+lvextend -r -l +100%FREE /dev/mapper/centos-root
+df -hl
+</code></pre><p>Referensi:</p>
+<ul>
+<li><a href="https://maunium.net/blog/resizing-qcow2-images/">https://maunium.net/blog/resizing-qcow2-images/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/centos7/">centos7</a>, <a href="https://blog.indonesiadot.com/tags/partition/">partition</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/23/selinux-semanage/">Selinux semanage</a></h1>
+        <span class="post-date">Dec 23, 2019</span>
+	<p>content of selinux config /etc/selinux/config</p>
+<pre><code>SELINUX=enforcing
+SELINUXTYPE=targeted 
+</code></pre><h2 id="semanage-packages">semanage packages</h2>
+<pre><code>yum provides semanage
+yum install -y policycoreutils-python
+</code></pre><h2 id="semanage-list-port">semanage list port</h2>
+<pre><code>semanage port -l | grep ssh
+</code></pre><h2 id="semanage-open-ssh-on-different-port">semanage open ssh on different port</h2>
+<p>add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port</p>
+<pre><code>semanage port -a -t ssh_port_t -p tcp 1022
+</code></pre><p>then restart sshd service</p>
+<pre><code>systemctl restart sshd
+</code></pre><p>Referensi:</p>
+<ul>
+<li><a href="https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/">https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/rhel/">rhel</a>, <a href="https://blog.indonesiadot.com/tags/selinux/">selinux</a>, <a href="https://blog.indonesiadot.com/tags/semanage/">semanage</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/">Simple Virtualization Linux</a></h1>
+        <span class="post-date">Dec 22, 2019</span>
+	<h2 id="list-kvm-using-virsh">List kvm using virsh</h2>
+<pre><code>virsh list
+virsh list --all
+virsh --help
+</code></pre><h2 id="create-vm-on-kvm--qemu-via-libvirt-with-command-line">Create vm on kvm / qemu via libvirt with command line</h2>
+<h3 id="pembuatan-vm-centos-7">Pembuatan vm centos 7</h3>
+<p>script bash virtcen.sh</p>
+<pre><code>#!/bin/bash
+
+NAMA=$1
+
+if [ -z &quot;$1&quot; ]; then
+ while [ -z &quot;$NAMA&quot; ]; do
+  echo -n &quot;masukan nama vm: &quot;
+  read NAMA
+ done
+fi
+
+virt-install \
+ --name $NAMA \
+ --ram 900 \
+ --disk path=$NAMA.qcow,size=6,bus=scsi,discard='unmap',format='qcow2' \
+ --controller type=scsi,model=virtio-scsi \
+ --vcpus 1 \
+ --cpu host \
+ --console pty,target_type=serial \
+ --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso \
+ --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot; \
+ --noautoconsole
+</code></pre><p>file kickstart cenks.cfg</p>
+<pre><code>text
+install
+
+ignoredisk --only-use=sda
+clearpart --all
+autopart
+bootloader --location=mbr --driveorder=sda
+
+rootpw --iscrypted $1$R69aiGHP$BmqNaQ1ckncOT0I3t6DlN1
+user widysible --name widysible --iscrypted --password $1$u08OmYWr$s3v/lOnNMVyb5SCEwFFLG1
+
+timezone Asia/Jakarta
+network --bootproto=dhcp
+
+firewall --disabled
+#reboot --eject
+shutdown
+
+%packages
+@Core
+%end
+%post --interpreter=/bin/bash
+#exec &lt; /dev/tty6 &gt; /dev/tty6
+#chvt 6
+echo ### Add public ssh key for Ansible
+mkdir -m0700 -p /home/widysible/.ssh
+cat &lt;&lt;EOF &gt;/home/widysible/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTIv6ziCUfRwMfGGVwZoKtWLf51+OLzDwwQYXyrf8vmnY7tZB7GLWAWCmto2nsNfwBQiXBXWZ7rUfTM2og/xfTerrDexyBg1Polm0FAK9zNwDE77WqSeirCQFAQ0Q+GaJaERitrF5h+SfDBHIgoMEuWJMzCQvzaI/3WU2YB//LzcM3NckfxolxQbjMzPNweVZ6BpEOGB7a9BQh370+EFj8h9suOVPYmqV5L5M0gMrYiQ7qA2Zzf442g5AElJqU7p8EFUI4ttLnP8AlkxQvRQOWRcf11iQDAbJNF7UDh0iqYOe0cynnMUZQp1nmQD5t65L8tHp0k94P3bdN7FHvbjBL root@wid
+EOF
+chown -R widysible:widysible /home/ansible
+chmod 0600 /home/widysible/.ssh/authorized_keys
+# Allow Ansible to sudo w/o a password
+echo &quot;widysible ALL=(ALL) NOPASSWD:ALL&quot; &gt; /etc/sudoers.d/widysible
+# trim
+sed -i 's/issue_discards = 0/issue_discards = 1/' /etc/lvm/lvm.conf
+echo &quot;0 0 1 0 0 fstrim /&quot; | tee /etc/cron.d/fstrim
+sed -i '/ swap /s/^/#/' /etc/fstab
+sed -i 's/defaults/defaults,discard/' /etc/fstab
+echo ### Change back to terminal 1
+#chvt 1
+%end
+
+</code></pre><p>Create VM using ansible playbook</p>
+<pre><code>---
+- name: create VMs
+  hosts: localhost
+  gather_facts: no
+  connection: local
+  become: true
+  vars_prompt:
+    - name: NAMA
+      prompt: &quot;Enter VM name&quot;
+      default: &quot;c7&quot;
+      private: no
+#  vars_files:
+#    - vms.yml
+
+  tasks:
+    - name: get VM disks
+      command: &quot;ls /var/lib/libvirt/images&quot;
+      register: disks
+      changed_when: &quot;disks.rc != 0&quot;
+
+    - name: get list of VMs
+      virt:
+        command: &quot;list_vms&quot;
+      register: vms
+
+    - name: create vm
+      command: &gt;
+                virt-install --name {{ NAMA }}
+                --cpu host --vcpus 1 --ram 900
+                --disk path=$NAMA.qcow,size=6,bus=scsi,discard='unmap',format='qcow2'
+                --controller type=scsi,model=virtio-scsi
+                --console pty,target_type=serial
+                --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso
+                --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot;
+                --noautoconsole
+</code></pre><h2 id="get-vms-ip">Get VMs IP</h2>
+<pre><code>virsh domifaddr c7
+</code></pre><p>Referensi:</p>
+<ul>
+<li><a href="https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/">https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/</a></li>
+<li><a href="https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/">https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/</a></li>
+<li><a href="http://blog.leifmadsen.com/blog/2016/12/16/creating-virtual-machines-in-libvirt-with-virt-install/">http://blog.leifmadsen.com/blog/2016/12/16/creating-virtual-machines-in-libvirt-with-virt-install/</a></li>
+<li><a href="http://kvmonz.blogspot.com/p/knowledge-use-virt-install-for-kvm.html">http://kvmonz.blogspot.com/p/knowledge-use-virt-install-for-kvm.html</a></li>
+<li><a href="https://earlruby.org/2018/12/use-iso-and-kickstart-files-to-automatically-create-vms/">https://earlruby.org/2018/12/use-iso-and-kickstart-files-to-automatically-create-vms/</a></li>
+<li><a href="https://graspingtech.com/creating-virtual-machine-virt-install/">https://graspingtech.com/creating-virtual-machine-virt-install/</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Ubuntu_18.04&amp;p=kvm&amp;f=2">https://www.server-world.info/en/note?os=Ubuntu_18.04&amp;p=kvm&amp;f=2</a></li>
+<li><a href="http://blog.zencoffee.org/2016/06/easy-headless-kvm-deployment-virt-install/">http://blog.zencoffee.org/2016/06/easy-headless-kvm-deployment-virt-install/</a></li>
+<li><a href="https://gist.github.com/aladuca/854b78585c2bba961386">https://gist.github.com/aladuca/854b78585c2bba961386</a></li>
+<li><a href="https://www.cyberciti.biz/faq/find-ip-address-of-linux-kvm-guest-virtual-machine/">https://www.cyberciti.biz/faq/find-ip-address-of-linux-kvm-guest-virtual-machine/</a></li>
+<li><a href="https://www.cyberciti.biz/faq/linux-list-a-kvm-vm-guest-using-virsh-command/">https://www.cyberciti.biz/faq/linux-list-a-kvm-vm-guest-using-virsh-command/</a></li>
+<li>https://hooks.technology/2017/10/create-vms-on-kvm-with-ansible/ (virt-builder and virt-install)</li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/virtualization/">virtualization</a>, <a href="https://blog.indonesiadot.com/tags/kvm/">kvm</a>, <a href="https://blog.indonesiadot.com/tags/qemu/">qemu</a>, <a href="https://blog.indonesiadot.com/tags/virt-install/">virt-install</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/05/jenkins-for-beginner/">jenkins for beginner</a></h1>
         <span class="post-date">Dec 5, 2019</span>
-	<h2 id="modsecurity-waf">Modsecurity WAF</h2>
-<p><img src="https://blog.indonesiadot.com/images/2019/modsecurity-architecture.jpg" alt="routed-lans"></p>
-<p>user yg mau sql injection di scan dulu sama modsecurity yg modsecurity baca ruleset (crs) kalau ada di rules nya di deny.
-kalau false positive, dinyatakan oleh client / developer bahwa itu sbnrnya aman, baru di exclude rule tersebut, kalau developer bisa nambel supaya bisa rubah supaya lebih sesuai ruleset nya lebih baik.</p>
-<p>intinya mudah sih yg opensource, cuma kelemahan nya nempel di host dan atau nempel di webserver, lalu kelemahan lain banyak false positive, sama ga ada ui nya, meski berjalan bagus bisa menahan serangan cuma agak sulit manage nya, terutama klo aplikasi yg ga standar, klo yg standar misal kaya wordpress mungkin lebih mudah.</p>
-<p>Referensi:</p>
+	<p>Ref:</p>
 <ul>
-<li>Searching modsecurity architecture</li>
+<li><a href="https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded">https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04">https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04</a></li>
+<li><a href="https://hub.docker.com/r/bitnami/jenkins/">https://hub.docker.com/r/bitnami/jenkins/</a></li>
+<li><a href="https://github.com/jenkinsci/docker/blob/master/README.md">https://github.com/jenkinsci/docker/blob/master/README.md</a></li>
+<li><a href="https://linuxize.com/post/how-to-install-jenkins-on-centos-7/">https://linuxize.com/post/how-to-install-jenkins-on-centos-7/</a></li>
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/modsecurity/">modsecurity</a>, <a href="https://blog.indonesiadot.com/tags/webserver/">webserver</a>, <a href="https://blog.indonesiadot.com/tags/waf/">waf</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/04/openvpn-routed-lans/">Openvpn Routed LANS</a></h1>
-        <span class="post-date">Dec 4, 2019</span>
-	<h2 id="open-routed-multiple-lans">Open Routed Multiple LANS</h2>
-<h3 id="lans-behind-openvpn">Lans behind OpenVPN</h3>
-<p>here is an example of how to have multiple lans behind OpenVPN from #OpenVPN on freenode.</p>
-<p>Our user had a openvpn server with a lan (10.10.2.0/24) behind it, and 2 client with lans behind them:</p>
-<p>client1 with lan 10.10.1.0/24
-client2 with lan 10.10.3.0/24</p>
-<p>He wanted machines on all 3 lans to be able to communicate using a tun (routed) setup.</p>
-<p>Every machine with a LAN behind it must have IP forwarding enabled. In this example that means the server, and client1/client2. The user needed the following in his server.conf:</p>
-<pre><code>route 10.10.1.0 255.255.255.0
-route 10.10.3.0 255.255.255.0
-push &quot;route 10.10.2.0 255.255.255.0&quot;
-push &quot;route 10.10.1.0 255.255.255.0&quot;
-push &quot;route 10.10.3.0 255.255.255.0&quot;
-client-to-client
-</code></pre><p>The route entries adjust the local routing table, telling it to route those networks over the vpn. The push routes are added on the clients connecting, telling them to route those networks over the vpn.</p>
-<p>You may realize that client1 should not route 10.10.1.0 traffic over the vpn, and that client2 should not route 10.10.3.0 traffic over the vpn (because those networks are local to each client). Because of the iroute entries you will see below, openvpn knows this too and skips the push for the client.</p>
-<p>The route entries are telling his server to add a route for each of 10.10.1.0, and 10.10.3.0 to its kernel's routing table, and both will be routed to the tunnel interface and to openvpn. How will openvpn know what client to send each network to? The answer is iroute!</p>
-<p>Iroute does not bypass or alter the kernel's routing table, it allows openvpn to know it should handle the routing when the kernel points to it but the network is not one that openvpn knows about. The iroute entry tells the openvpn server which client is responsible for the network. Without the iroute entry you will find the following in your logfiles:</p>
-<p>MULTI: bad source address from client [IP ADDRESS], packet dropped</p>
-<p>IP ADDRESS in that case would be the machine on client LAN which tried to talk through vpn, because openVPN has no clue what that address is. Once you give it the iroute statement, that changes. Iroute is a route internal to openVPN, and has nothing to do with the kernel's routing table. It tells the openvpn server which client owns which network. Note that even if you only have 1 lan behind 1 client, YOU STILL NEED IROUTE. You will need it any time a clients source IP address is different from the IP given to it by the vpn server.</p>
-<p>The thing is, we cant just drop the iroute into server.conf because it would then be used for every client, and iroute is only to tell the server at which client it should send traffic destined for a network that the kernel said should go to the openvpn interface. That is why we add the iroute commands to a ccd entry.</p>
-<p>You will need client-config-dir /path/to/ccd/ in your server config file to enable ccd entries. ccd entries are basically included into server.conf, but only for the specified client. You put commands in ccd/client-common-name, and they are only included when the client's common-name matches the name of the file in ccd/.</p>
-<p>In this example lets assume the client owning the network 10.10.1.0 has a common-name of client1. In ccd/client1 He should have the following:</p>
-<pre><code>iroute 10.10.1.0 255.255.255.0
-</code></pre><p>As you can see our user will make a ccd/ entry for each client with a lan behind it. The ccd entry will have an iroute command for the network behind the client.</p>
-<p>That means that client2 on the 10.10.3.0 LAN would have the following entry for its ccd/client2 file:</p>
-<pre><code>iroute 10.10.3.0 255.255.255.0
-</code></pre><p><img src="https://blog.indonesiadot.com/images/2019/routed_lans.jpg" alt="routed-lans"></p>
-<h3 id="routes-to-add-outside-of-openvpn">ROUTES TO ADD OUTSIDE OF OPENVPN</h3>
-<p>If you are not running openvpn on the router for each lan, you have some more routes to add. This ​diagram explains it pretty well.</p>
-<p>Lets say our server is 10.10.2.10 on its lan, and uses 10.10.2.1 as its default route, and you want the 2.x lan to be accessible or able to access over the vpn. 2.1 would need a route for every network that 2.x will access or be accessed by. That means in our example: 10.10.2.1 must know that for 10.10.1.x 10.10.3.x and the vpn internal network (for example, 10.8.0.x), it sends the traffic to 10.10.2.10 This is true for any number of lans you want to connect, whether server or client.</p>
-<p>If you fail to add this route, here is what would happen if a VPN client (for example, 10.8.0.6) wanted to send traffic to 10.10.2.20:</p>
-<ol>
-<li>The vpn client sends traffic to 10.10.2.20, with a source address of 10.8.0.6</li>
-<li>The vpn server (10.8.0.1 and 10.10.2.10) receives the traffic, has IP forwarding enabled, and passes the traffic to 10.10.2.20</li>
-<li>10.10.2.20 gets it and tries to respond to 10.8.0.6 but has no entry in its routing table</li>
-<li>Because 10.10.2.20 has no route for 10.8.0.6, it sends the traffic to its default gateway which is 10.10.2.1</li>
-<li>10.10.2.1 checks its routing table, has no route for 10.8.0.6, and sends the traffic to its default gateway which is likely its ISP</li>
-<li>The ISP ignores it, because it is a RFC 1918 ip (aka lan only)</li>
-</ol>
-<p>the annoying work-around would be to add the route to every box on the LAN, in which case step 3 above would work.</p>
-<p>If this needs clarification ask me about it and I will update this page after discovering how to make it clearer.</p>
-<p>On Jan26, 2010 I changed this article to no longer use 192.168.1.0 192.168.2.0 and 192.168.3.0 for my subnets. I did this because it is important for people to not use common subnets such as 192.168.1/0.x when pushing routes to clients. It does not matter if you know where every client connects from, but once you add a single road warrior to the VPN you will run in to a problem. If the road warrior is connecting from a LAN where he has 192.168.0.X and he gets pushed a route to 192.168.0.0/24 to flow over the vpn, he will lose all connectivity to the internet until he kills the vpn. This is because the client loses his route to his gateway&hellip; he tries to contact the gateway over the VPN, but he has no route to the VPN because he needs to access his gateway to reach it. In short, if your lan that you want to access using openvpn uses a common subnet such as 192.168.0.x or 192.168.1.x, CHANGE IT.</p>
-<h3 id="caveats">Caveats</h3>
-<p>If you have a problem adding routes in Windows, check the following. If you are using OpenVPN-GUI, do not run it as administrator but make sure the service OpenVPNServiceInteractive is running. If you are not using the OpenVPN-GUI make sure you have openvpn starting as administrator.</p>
-<p>In some rare cases you may also need to use one of these options:</p>
-<pre><code>route-method exe
-route-delay
-</code></pre><p>The first option changes how windows adds a route The second option waits to add the route (helpful for making sure you get a DHCP lease before messing with routes).
-If those don't help, try turning off routing and remote access in administrative tools - routing and remote access</p>
-<p>Written by krzee @ #OpenVPN @ freenode IRC, mirrored from ​http://www.secure-computing.net/wiki/index.php/OpenVPN/Routing</p>
-<p>Feel free to discuss this document on the unofficial OpenVPN forum at: ​https://forums.openvpn.net/topic98.html</p>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://community.openvpn.net/openvpn/wiki/RoutedLans">https://community.openvpn.net/openvpn/wiki/RoutedLans</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/openvpn/">openvpn</a>, <a href="https://blog.indonesiadot.com/tags/lan/">lan</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/04/ansible-cycle-evolution-diagram-security/">Ansible cycle evolution diagram security</a></h1>
-        <span class="post-date">Dec 4, 2019</span>
-	<h2 id="ansible-cycle-evolution-diagram-for-security">Ansible cycle evolution diagram for security</h2>
-<p>searching dengan keyword: ansible security diagram</p>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/">https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/</a></li>
-<li><a href="https://swimlane.com/blog/siem-soar/">https://swimlane.com/blog/siem-soar/</a></li>
-<li><a href="https://www.ansible.com/blog/the-journey-to-security-automation">https://www.ansible.com/blog/the-journey-to-security-automation</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/siem/">siem</a>, <a href="https://blog.indonesiadot.com/tags/soar/">soar</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/03/proxmox-add-zfs/">Proxmox Add ZFS</a></h1>
-        <span class="post-date">Dec 3, 2019</span>
-	<h2 id="proxmox-add-zfs">Proxmox Add ZFS</h2>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/">https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/</a></li>
-<li><a href="https://pve.proxmox.com/wiki/ZFS_on_Linux">https://pve.proxmox.com/wiki/ZFS_on_Linux</a></li>
-</ul>
-<h2 id="proxmox-cloud-init">Proxmox cloud-init</h2>
-<p>Ref:</p>
-<ul>
-<li><a href="https://cloud.centos.org/centos/7/images/">https://cloud.centos.org/centos/7/images/</a></li>
-<li><a href="https://pve.proxmox.com/wiki/Cloud-Init_Support">https://pve.proxmox.com/wiki/Cloud-Init_Support</a></li>
-<li><a href="https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/">https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/26/ansible-awx-2019/">Ansible AWX 2019</a></h1>
-        <span class="post-date">Nov 26, 2019</span>
-	<h2 id="ansible-awx">Ansible AWX</h2>
-<h3 id="install-docker-compose-tanpa-pip-tanpa-compile">install docker-compose tanpa pip, tanpa compile</h3>
-<pre><code>curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
-ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-</code></pre><p>Referensi:</p>
-<ul>
-<li><a href="https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/">https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/</a></li>
-<li><a href="https://medium.com/swlh/ansible-awx-installation-5861b115455a">https://medium.com/swlh/ansible-awx-installation-5861b115455a</a></li>
-<li><a href="https://devzero.co.za/2019/02/28/high-availability-awx-ansible/">https://devzero.co.za/2019/02/28/high-availability-awx-ansible/</a></li>
-<li><a href="https://github.com/sujiar37/AWX-HA-InstanceGroup">https://github.com/sujiar37/AWX-HA-InstanceGroup</a></li>
-</ul>
-<p>Not yet tested:</p>
-<ul>
-<li><a href="https://github.com/MrMEEE/awx-build">https://github.com/MrMEEE/awx-build</a></li>
-<li><a href="https://awx.wiki/installation">https://awx.wiki/installation</a></li>
-<li><a href="https://github.com/powertim/deploy_awx-rpm">https://github.com/powertim/deploy_awx-rpm</a></li>
-<li><a href="https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/">https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/awx/">awx</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/">Splunk Log Monitoring</a></h1>
-        <span class="post-date">Nov 15, 2019</span>
-	<h2 id="download">Download</h2>
-<p>[deb](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb &lsquo;<a href="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;wget=true'">https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;wget=true'</a>)
-[rpm](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm &lsquo;<a href="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;wget=true'">https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;wget=true'</a>)
-[tgz](wget -O splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz &lsquo;<a href="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;wget=true'">https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;wget=true'</a>)</p>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://docs.splunk.com/Documentation">https://docs.splunk.com/Documentation</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/splunk/">splunk</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/">Recommended Ansible Modules</a></h1>
-        <span class="post-date">Nov 5, 2019</span>
-	<h1 id="frequently-used-module">Frequently Used Module</h1>
-<h2 id="blockinfile">blockinfile</h2>
-<p>Module ini saya gunakan ketika muncul error pada saat menggunakan module lineinfile untuk memasukan beberapa baris sekaligus dalam beberapa tasks, dan ternyata dengan menggunakan module ini dengan hanya satu task bisa memasukan langsung beberapa baris.</p>
-<p>Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepada parameter minimalnya adalah path dan block saja.</p>
-<pre><code>- name: Insert correct line to /etc/ntp.conf
-  blockinfile:
-    path: /etc/ntp.conf
-    insertafter: ^#?server
-    state: present
-    block: |
-      server &quot;{{ ntp1 }}&quot;
-      server &quot;{{ ntp2 }}&quot;
-  notify: restart ntp
-</code></pre><p>Referensi:</p>
-<ul>
-<li><a href="https://www.google.com/search?q=lineinfile+multiple+lines">https://www.google.com/search?q=lineinfile+multiple+lines</a></li>
-<li><a href="https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines">https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines</a></li>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html">https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html</a></li>
-<li><a href="https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py">https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py</a></li>
-</ul>
-<h2 id="find">find</h2>
-<p>Berikut contoh module find yang dicombine dengan module set_fact, when untuk menggunakan result matched (when seperti if dalam scripting / programming)</p>
-<pre><code>    - name: Search /etc/audit/rules.d for other DAC audit rules
-      find:
-        paths: /etc/audit/rules.d
-        recurse: false
-        contains: -F key=perm_mod$
-        patterns: '*.rules'
-      register: find_fchown
-      when: ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
-    - name: If existing DAC ruleset not found, use /etc/audit/rules.d/privileged.rules as the recipient for the rule
-      set_fact:
-        all_files:
-          - /etc/audit/rules.d/privileged.rules
-      when:
-        - find_fchown.matched is defined and find_fchown.matched == 0
-        - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
-    - name: Use matched file as the recipient for the rule
-      set_fact:
-        all_files:
-          - '{{ find_fchown.files | map(attribute=''path'') | list | first }}'
-      when:
-        - find_fchown.matched is defined and find_fchown.matched &gt; 0
-        - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
-</code></pre><p>Referensi:</p>
-<ul>
-<li>file remediation.yml dari oscap</li>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/find_module.html">https://docs.ansible.com/ansible/latest/modules/find_module.html</a></li>
-</ul>
-<h2 id="pamd">pamd</h2>
-<p>module ini berguna untuk edit pam service tanpa harus mengedit file nya langsung, tanpa harus menggunakan module lineinfile, blockinfile, replace, etc. Dan berikut contohnya:</p>
-<pre><code>    - name: Add unlock_time argument to pam_faillock preauth
-      pamd:
-        name: '{{ item }}'
-        type: auth
-        control: required
-        module_path: pam_faillock.so
-        module_arguments: preauth silent unlock_time={{ var_accounts_passwords_pam_faillock_unlock_time
-          }}
-        state: args_present
-      loop:
-        - system-auth
-        - password-auth
-</code></pre><p>Referensi:</p>
-<ul>
-<li>file remediation.yml oscap</li>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/pamd_module.html">https://docs.ansible.com/ansible/latest/modules/pamd_module.html</a></li>
-</ul>
-<h2 id="debug">debug</h2>
-<pre><code>    - name: download report
-      fetch:
-        src: /tmp/oscap-report.html
-        dest: /home/ansible/public_html/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
-        flat: yes
-    - debug:
-        msg: http://34.87.94.24/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
-</code></pre><p>Ref:</p>
-<ul>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/debug_module.html">https://docs.ansible.com/ansible/latest/modules/debug_module.html</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/">Ansible and Openscap</a></h1>
-        <span class="post-date">Nov 4, 2019</span>
-	<h2 id="ansible-and-openscap-for-scanning-and-remediation-server-for-security-compliance-operating-system">Ansible and Openscap for scanning and remediation server for security compliance operating system</h2>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663">https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>, <a href="https://blog.indonesiadot.com/tags/openscap/">openscap</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/cis/">cis</a>, <a href="https://blog.indonesiadot.com/tags/stig/">stig</a>, <a href="https://blog.indonesiadot.com/tags/scan/">scan</a>, <a href="https://blog.indonesiadot.com/tags/remediation/">remediation</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/03/openscap-reference/">Openscap Reference</a></h1>
-        <span class="post-date">Nov 3, 2019</span>
-	<h2 id="openscap-custom-profile">Openscap Custom Profile</h2>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://martin.preisler.me/2013/11/xccdf-tailoring/">https://martin.preisler.me/2013/11/xccdf-tailoring/</a></li>
-<li><a href="https://static.open-scap.org/openscap-1.2/oscap_user_manual.html">https://static.open-scap.org/openscap-1.2/oscap_user_manual.html</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/openscap/">openscap</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/jenkins/">jenkins</a>
 	 <hr/>
     </div>
   

@@ -6,10 +6,86 @@
     <description>Recent content in tips on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Mar 2020 06:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2020 13:47:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/tips/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible Tower for beginner</title>
+      <link>https://blog.indonesiadot.com/2020/03/18/ansible-tower-for-beginner/</link>
+      <pubDate>Wed, 18 Mar 2020 13:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/18/ansible-tower-for-beginner/</guid>
+      <description>Before going to start the installation steps, we need to know some benefits of Ansible Tower.
+Why we need Ansible Tower and it’s benefits?   Ansible Tower helps you scale IT automation, manage complex deployments and speed productivity.
+  Centralize and control your IT infrastructure with a visual dashboard, role-based access control, job scheduling, integrated notifications and graphical inventory management.
+  Ansible Tower’s REST API and CLI make it easy to embed Ansible Tower into existing tools and processes.</description>
+    </item>
+    
+    <item>
+      <title>ELK for beginner</title>
+      <link>https://blog.indonesiadot.com/2020/03/18/elk-for-beginner/</link>
+      <pubDate>Wed, 18 Mar 2020 12:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/18/elk-for-beginner/</guid>
+      <description>Why we use ELK? The Elastic Stack (aka ELK) is a robust solution for search, log management, and data analysis. ELK consists of a combination of three open source project: Elasticsearch, Logstash, and Kibana. These projects have specific roles in ELK:
+Elasticsearch handles storage and provides a RESTful search and analytics endpoint. Logstash is a server-side data processing pipeline that ingests, transforms and loads data. Kibana lets you visualize your Elasticsearch data and navigate the Elastic Stack.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu tips</title>
+      <link>https://blog.indonesiadot.com/2020/03/18/ubuntu-tips/</link>
+      <pubDate>Wed, 18 Mar 2020 07:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/18/ubuntu-tips/</guid>
+      <description>Install specific version apt-cache policy gparted apt install gparted=0.16.1-1  https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package  </description>
+    </item>
+    
+    <item>
+      <title>Ansible Tower Log Logstash ELK</title>
+      <link>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</link>
+      <pubDate>Mon, 16 Mar 2020 19:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</guid>
+      <description>ansible logstash example  https://github.com/widansible/elk-ansible  </description>
+    </item>
+    
+    <item>
+      <title>Kubernetes references</title>
+      <link>https://blog.indonesiadot.com/2020/03/16/kubernetes-references/</link>
+      <pubDate>Mon, 16 Mar 2020 10:57:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/16/kubernetes-references/</guid>
+      <description> https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076 https://medium.com/@kvaps/creating-baremethal-kubernetes-ha-cluster-with-kubeadm-and-keepalived-simple-guide https://medium.com/@kvaps/creating-high-available-baremetal-kubernetes-cluster-with-kubeadm-and-keepalived-simplest-guide-71766d5e25ae?source=---------6------------------  kubernetes monitoring  https://medium.com/@kvaps/zabbix-solve-memory-monitoring-issue-inside-lxc-containers-98ddf191051c  </description>
+    </item>
+    
+    <item>
+      <title>Kubernetes inside lxc</title>
+      <link>https://blog.indonesiadot.com/2020/03/16/kubernetes-inside-lxc/</link>
+      <pubDate>Mon, 16 Mar 2020 10:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/16/kubernetes-inside-lxc/</guid>
+      <description> https://medium.com/@kvaps/run-kubernetes-in-lxc-container-f04aa94b6c9c https://github.com/corneliusweig/kubernetes-lxd https://www.sayem.org/k8s-on-lxd/ https://discuss.linuxcontainers.org/t/working-install-of-docker-ce-in-lxc-unprivileged-container-in-proxmox/3828/4 https://forum.proxmox.com/threads/lxc-docker-containerd-cannot-find-lib-modules-4-15-18-9-pve.49406/ https://forum.proxmox.com/threads/docker-in-lxc-container.45204/ https://discuss.linuxcontainers.org/t/how-to-add-kernel-modules-into-an-lxc-container/5033/3  kubernetes haproxy  https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076  </description>
+    </item>
+    
+    <item>
+      <title>Mxtoolbox mail blacklist</title>
+      <link>https://blog.indonesiadot.com/2020/03/16/mxtoolbox-mail-blacklist/</link>
+      <pubDate>Mon, 16 Mar 2020 10:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/16/mxtoolbox-mail-blacklist/</guid>
+      <description>Free alert (register with gmail)  https://mxtoolbox.com/public/registration.aspx?so=PB_FREE&amp;amp;page=free_registration https://mxtoolbox.com/blacklists.aspx  </description>
+    </item>
+    
+    <item>
+      <title>Qemu Tips</title>
+      <link>https://blog.indonesiadot.com/2020/03/16/qemu-tips/</link>
+      <pubDate>Mon, 16 Mar 2020 10:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/16/qemu-tips/</guid>
+      <description>Qemu resize qemu-img resize image.qcow2 +SIZE  https://indonesiadot.com  </description>
+    </item>
     
     <item>
       <title>Sentinelone EPP EDR</title>

@@ -646,6 +646,40 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -678,227 +712,124 @@
 <div class="post">
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/19/nginx-tips-and-trick/">Nginx tips and trick</a></h1>
-        <span class="post-date">Feb 19, 2018</span>
-	<h2 id="nginx-location-directory">Nginx location directory</h2>
-<pre><code>  location /static/ {
-    alias /web/test.example.com/static/;
-    autoindex on;
-  }
-</code></pre><ul>
-<li><a href="https://stackoverflow.com/questions/11570321/configure-nginx-with-multiple-locations-with-different-root-folders-on-subdomain">https://stackoverflow.com/questions/11570321/configure-nginx-with-multiple-locations-with-different-root-folders-on-subdomain</a></li>
-</ul>
-<p>Referensi:</p>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/03/04/ssl-expiry-check/">ssl expiry check</a></h1>
+        <span class="post-date">Mar 4, 2018</span>
+	<p><a href="https://www.google.co.id/search?q=ssl+expiry+check%3Cbr">https://www.google.co.id/search?q=ssl+expiry+check&lt;br</a> /&gt;https://github.com/Matty9191/ssl-cert-check<!-- raw HTML omitted --><a href="https://prefetch.net/articles/checkcertificate.html%3Cbr">https://prefetch.net/articles/checkcertificate.html&lt;br</a> /&gt;<!-- raw HTML omitted -->ssl-cert-check -s mail.prefetch.net -p 443<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/ssl/">ssl</a>, <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>, <a href="https://blog.indonesiadot.com/tags/scripts/">scripts</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/03/04/digitalocean-do-cli/">digitalocean DO cli</a></h1>
+        <span class="post-date">Mar 4, 2018</span>
+	<p><!-- raw HTML omitted -->digitalocean snapshot and recreate based on that snapshot (clone like)<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->doctl compute droplet-action snapshot <!-- raw HTML omitted -->DropletID<!-- raw HTML omitted --> &ndash;snapshot-name <!-- raw HTML omitted -->SnapshotName<!-- raw HTML omitted --><!-- raw HTML omitted -->doctl compute droplet-action snapshot 83360000 &ndash;snapshot-name 20180303-birau-snap<!-- raw HTML omitted --><!-- raw HTML omitted -->doctl compute droplet create <!-- raw HTML omitted -->NewDropletName<!-- raw HTML omitted --> &ndash;size 512mb &ndash;image <!-- raw HTML omitted -->SnapshotID<!-- raw HTML omitted --> &ndash;region sgp1 &ndash;ssh-keys <!-- raw HTML omitted -->Ssh:key:hexadecimal<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->doctl compute droplet create birau-server-2 &ndash;size 512mb &ndash;image 32187000 &ndash;region sgp1 &ndash;ssh-keys b0:10:00:d6:8b:00:4f:96:39:1b:89:00:00:00:00:00<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/digitalocean/">digitalocean</a>, <a href="https://blog.indonesiadot.com/tags/cli/">cli</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/03/04/aws-tips-and-tricks/">aws tips and tricks</a></h1>
+        <span class="post-date">Mar 4, 2018</span>
+	<p><!-- raw HTML omitted -->aws clone<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->The easier way is through the web management console:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->go to the instance<!-- raw HTML omitted --><!-- raw HTML omitted -->select the instance and click on instance action<!-- raw HTML omitted --><!-- raw HTML omitted -->create image<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Once you have an image you can launch another cloned instance, data and all. :)<!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/aws/">aws</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/03/04/elasticsearch-tips-and-tricks/">elasticsearch tips and tricks</a></h1>
+        <span class="post-date">Mar 4, 2018</span>
+	<p><!-- raw HTML omitted -->elasticsearch list indexes<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://www.google.co.id/search?q=elasticsearch+list+indexes%3Cbr">https://www.google.co.id/search?q=elasticsearch+list+indexes&lt;br</a> /&gt;https://www.elastic.co/guide/en/elasticsearch/reference/1.4/_list_all_indexes.html<!-- raw HTML omitted --><!-- raw HTML omitted -->curl &lsquo;localhost:9200/_cat/indices?v'<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->elasticsearch installation<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig-2.x%3Cbr">https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig-2.x&lt;br</a> /&gt;https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->elasticsearch config<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->cluster.name: namacluster<!-- raw HTML omitted -->bootstrap.memory_lock: true<!-- raw HTML omitted --><!-- raw HTML omitted --># <a href="http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html#es-install-es%3Cbr">http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html#es-install-es&lt;br</a> /&gt;index.query.bool.max_clause_count: 102400<!-- raw HTML omitted --><!-- raw HTML omitted --># this must be set on non public ip<!-- raw HTML omitted -->network.host: 127.0.0.1<!-- raw HTML omitted -->http.port: 9200<!-- raw HTML omitted --># <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-threadpool.html%3Cbr">https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-threadpool.html&lt;br</a> /&gt;processor: 2<!-- raw HTML omitted -->threadpool.bulk.queue_size: 4000<!-- raw HTML omitted --><!-- raw HTML omitted --># <a href="https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig#configure-elasticsearch%3Cbr">https://github.com/Smile-SA/elasticsuite/wiki/ServerConfig#configure-elasticsearch&lt;br</a> /&gt;script.inline: on<!-- raw HTML omitted -->script.indexed: on<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/elasticsearch/">elasticsearch</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/03/01/docker-monitoring/">Docker monitoring</a></h1>
+        <span class="post-date">Mar 1, 2018</span>
+	<p>Ref:</p>
 <ul>
-<li><a href="https://www.sitepoint.com/brotli-compression-wordpress/">https://www.sitepoint.com/brotli-compression-wordpress/</a></li>
+<li><a href="http://rancher.com/comparing-monitoring-options-for-docker-deployments/">http://rancher.com/comparing-monitoring-options-for-docker-deployments/</a></li>
+<li><a href="https://logz.io/blog/monitoring-dockerized-elk-stack/">https://logz.io/blog/monitoring-dockerized-elk-stack/</a></li>
+<li><a href="https://youtu.be/iRlWqoUVdac">https://youtu.be/iRlWqoUVdac</a></li>
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/tuning/">tuning</a>, <a href="https://blog.indonesiadot.com/tags/web/">web</a>
+	  <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>, <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
 	 <hr/>
     </div>
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/17/munin-nginx/">Munin nginx</a></h1>
-        <span class="post-date">Feb 17, 2018</span>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/25/elastic-beats/">Elastic beats</a></h1>
+        <span class="post-date">Feb 25, 2018</span>
 	<!-- raw HTML omitted -->
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
+	  <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
 	 <hr/>
     </div>
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/16/linux-server-monitoring/">Linux server monitoring</a></h1>
-        <span class="post-date">Feb 16, 2018</span>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/22/invoice-ninja-free-open-source-invoicing-system/">invoice ninja free open source invoicing system</a></h1>
+        <span class="post-date">Feb 22, 2018</span>
+	<p><a href="https://www.invoiceninja.org/%3Cbr">https://www.invoiceninja.org/&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/">https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/</a></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/office/">office</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/22/graphite-grafana-things/">graphite grafana things</a></h1>
+        <span class="post-date">Feb 22, 2018</span>
 	<!-- raw HTML omitted -->
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
+	  <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
 	 <hr/>
     </div>
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/13/jenkins-magento-2/">Jenkins magento 2</a></h1>
-        <span class="post-date">Feb 13, 2018</span>
-	<!-- raw HTML omitted -->
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/21/all-about-amazon-aws-s3/">All about amazon aws s3</a></h1>
+        <span class="post-date">Feb 21, 2018</span>
+	<p><a href="https://github.com/aws/aws-cli%3Cbr">https://github.com/aws/aws-cli&lt;br</a> /&gt;https://github.com/s3tools/s3cmd<!-- raw HTML omitted --><a href="https://serverfault.com/questions/84815/how-can-i-get-the-size-of-an-amazon-s3-bucket%3Cbr">https://serverfault.com/questions/84815/how-can-i-get-the-size-of-an-amazon-s3-bucket&lt;br</a> /&gt;<!-- raw HTML omitted -->apt install aws-cli<!-- raw HTML omitted -->aws &ndash;configure<!-- raw HTML omitted -->#enter access key, secret key and region<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->list files/folder di bucket s3 (ls s3)<!-- raw HTML omitted --><!-- raw HTML omitted -->aws s3 ls s3://namabuckets3nya<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->disk usage s3 (du -sh s3)<!-- raw HTML omitted --><!-- raw HTML omitted -->s3cmd du s3://namabuckets3nya<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->aws s3 rsync<!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html">https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html</a></p>
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/magento/">magento</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/10/al-qur-aan/">Al Qur-aan</a></h1>
-        <span class="post-date">Feb 10, 2018</span>
-	<!-- raw HTML omitted -->
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/spiritual/">spiritual</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/09/aws-amazon-web-services-learning/">AWS (amazon web services) learning</a></h1>
-        <span class="post-date">Feb 9, 2018</span>
-	<!-- raw HTML omitted -->
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/cloud/">cloud</a>, <a href="https://blog.indonesiadot.com/tags/aws/">aws</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/09/nginx-php-fpm-tuning-for-best-performance/">nginx php-fpm tuning for best performance</a></h1>
-        <span class="post-date">Feb 9, 2018</span>
-	<!-- raw HTML omitted -->
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/tuning/">tuning</a>, <a href="https://blog.indonesiadot.com/tags/web/">web</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/04/bash-script-tips/">Bash script tips</a></h1>
-        <span class="post-date">Feb 4, 2018</span>
-	<h2 id="bash-scripting-cheatsheet">Bash scripting cheatsheet</h2>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://devhints.io/bash">https://devhints.io/bash</a></li>
-</ul>
-<h2 id="bash-or-and">bash or and</h2>
-<h3 id="how-to-use-logical-or-amp-and-in-shell-script-with-examples">How to Use Logical OR &amp; AND in Shell Script with Examples</h3>
-<p>Logical <strong>OR</strong> &amp; <strong>AND</strong> operations are very useful where multiple conditions are used in our programs (scripts).</p>
-<ul>
-<li>OR is used between two or multiple conditions. It returns true if any one of conditions returns as true.</li>
-<li>AND is used between two or multiple conditions. It returns true only if all the conditions returns as true.</li>
-</ul>
-<h3 id="using-logical-or">Using Logical OR</h3>
-<p>Logical OR in bash script is used with operator -o. Below small shell script will show you to how to use logical OR ( -o ) between two conditions.</p>
-<pre><code>#!/bin/bash
-read -p &quot;Enter First Numeric Value: &quot;   first
-read -p &quot;Enter Second Numeric Value: &quot;  second
-
-if [ $first -le 10 -o $second -gt 20 ]
-then
- echo &quot;OK&quot;
-else
- echo &quot;Not OK&quot;
-fi
-</code></pre><h3 id="using-logical-and">Using Logical AND</h3>
-<p>Logical AND in bash script is used with operator -a. Below shell script will show you to how to use logical AND ( -a ) between two conditions.</p>
-<pre><code>#!/bin/bash
-read -p &quot;Enter First Numeric Value: &quot;   first
-read -p &quot;Enter Second Numeric Value: &quot;  second
-if [ $first -le 10 -a $second -gt 20 ]
-then
- echo &quot;OK&quot;
-else
- echo &quot;Not OK&quot;
-fi
-</code></pre><h3 id="using-multiple-logical-or-amp-and">Using Multiple Logical OR &amp; AND</h3>
-<p>Below example will help you to understand to how to use multiple logical operators in single statement.</p>
-<pre><code>#!/bin/bash
-read -p &quot;Enter Your Number:&quot;  i
-if [ ( $i -ge 10  -a  $i -le 20 ) -o ( $i -ge 100  -a  $i -le 200 ) ]
-then
- echo &quot;OK&quot;
-else
- echo &quot;Not OK&quot;
-fi
-
-</code></pre><h2 id="color-output-on-echo">Color output on echo</h2>
-<p>Ref:</p>
-<ul>
-<li><a href="https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux">https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux</a></li>
-</ul>
-<h2 id="search-exact-string-using-grep">Search exact string using grep</h2>
-<p>Ref:</p>
-<ul>
-<li><a href="https://unix.stackexchange.com/questions/206903/match-exact-string-using-grep">https://unix.stackexchange.com/questions/206903/match-exact-string-using-grep</a></li>
-<li><a href="https://stackoverflow.com/questions/11287861/how-to-check-if-a-file-contains-a-specific-string-using-bash">https://stackoverflow.com/questions/11287861/how-to-check-if-a-file-contains-a-specific-string-using-bash</a></li>
-</ul>
-<p>Ref:</p>
-<ul>
-<li><a href="https://tecadmin.net/use-logical-or-and-in-shell-script/#">https://tecadmin.net/use-logical-or-and-in-shell-script/#</a></li>
-</ul>
-<h2 id="insert-variable-to-bash-script-using-source">insert variable to bash script using <strong>source</strong></h2>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://bash.cyberciti.biz/guide/Source_command">https://bash.cyberciti.biz/guide/Source_command</a></li>
-</ul>
-<h2 id="pass-arguments--parameters-to-a-bash-script">Pass Arguments / Parameters to a bash script</h2>
-<p>Referensi:</p>
-<ul>
-<li><a href="http://linuxcommand.org/lc3_wss0120.php">http://linuxcommand.org/lc3_wss0120.php</a></li>
-<li><a href="https://www.adminschoice.com/bash-positional-parameters">https://www.adminschoice.com/bash-positional-parameters</a></li>
-<li><a href="https://www.lifewire.com/pass-arguments-to-bash-script-2200571">https://www.lifewire.com/pass-arguments-to-bash-script-2200571</a></li>
-</ul>
-<h2 id="bash-interactive-menu-and-prompt-user-to-input-something">Bash interactive, menu and prompt user to input something</h2>
-<p>Ref:</p>
-<ul>
-<li><a href="http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_08_02.html#sect_08_02_02">http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_08_02.html#sect_08_02_02</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/scripts/">scripts</a>, <a href="https://blog.indonesiadot.com/tags/bash/">bash</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/31/ansible-tips/">Ansible tips</a></h1>
-        <span class="post-date">Jan 31, 2018</span>
-	<h2 id="ansible-gather-facts">Ansible gather facts</h2>
-<p>Using facter too</p>
-<p>Ref:</p>
-<ul>
-<li><a href="http://docs.ansible.com/ansible/latest/setup_module.html#examples">http://docs.ansible.com/ansible/latest/setup_module.html#examples</a></li>
-</ul>
-<h2 id="ansible-php-composer">ansible php composer</h2>
-<p>Ref:</p>
-<ul>
-<li><a href="https://knpuniversity.com/screencast/ansible/ansible-composer">https://knpuniversity.com/screencast/ansible/ansible-composer</a></li>
-</ul>
-<h2 id="ansible-playbook-interactive--ansible-prompt">ansible playbook interactive / ansible prompt</h2>
-<p>Ref:</p>
-<ul>
-<li><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html">https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html</a></li>
-</ul>
-<h2 id="ansible-playbook-command">ansible-playbook command</h2>
-<p>Ref:</p>
-<ul>
-<li><a href="https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/">https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	  <a href="https://blog.indonesiadot.com/tags/aws/">aws</a>
 	 <hr/>
     </div>
   
