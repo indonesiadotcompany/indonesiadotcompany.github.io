@@ -7,6 +7,56 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/</loc>
+    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/certificate/</loc>
+    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/20/certificate-ssl-key-csr-crt/</loc>
+    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/crt/</loc>
+    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/csr/</loc>
+    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
+    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ssl/</loc>
+    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
+    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
     <lastmod>2020-03-18T13:47:54+07:00</lastmod>
   </url>
@@ -18,31 +68,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/ansibletower/</loc>
-    <lastmod>2020-03-18T13:47:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2020-03-18T13:47:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2020-03-18T13:47:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2020-03-18T13:47:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
-    <lastmod>2020-03-18T13:47:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
     <lastmod>2020-03-18T13:47:54+07:00</lastmod>
   </url>
   
@@ -463,11 +488,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/</loc>
-    <lastmod>2020-01-19T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ssl/</loc>
     <lastmod>2020-01-19T08:17:54+07:00</lastmod>
   </url>
   

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>crt on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/crt/</link>
+    <description>Recent content in crt on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Mar 2020 08:17:54 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/crt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Certificate ssl key csr crt</title>
+      <link>https://blog.indonesiadot.com/2020/03/20/certificate-ssl-key-csr-crt/</link>
+      <pubDate>Fri, 20 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/20/certificate-ssl-key-csr-crt/</guid>
+      <description>random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/root/.rnd If you have RANDFILE=&amp;hellip; configuration lines in your openssl.cnf than you can safely remove them
+ https://github.com/openssl/openssl/issues/7754  </description>
+    </item>
+    
+  </channel>
+</rss>

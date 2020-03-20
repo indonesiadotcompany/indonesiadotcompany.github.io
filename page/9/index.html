@@ -680,6 +680,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -710,6 +718,33 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/migrasi-antar-hugo/">Migrasi antar hugo</a></h1>
+        <span class="post-date">Sep 2, 2019</span>
+	<p>To remove a submodule you need to:</p>
+<ul>
+<li>Delete the relevant section from the .gitmodules file.</li>
+<li>Stage the .gitmodules changes git add .gitmodules</li>
+<li>Delete the relevant section from .git/config.</li>
+<li>Run git rm &ndash;cached path_to_submodule (no trailing slash).</li>
+<li>Run rm -rf .git/modules/path_to_submodule (no trailing slash).</li>
+<li>Commit git commit -m &ldquo;Removed submodule &quot;</li>
+<li>Delete the now untracked submodule files rm -rf path_to_submodule</li>
+</ul>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+<li><a href="https://gist.github.com/myusuf3/7f645819ded92bda6677">https://gist.github.com/myusuf3/7f645819ded92bda6677</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/static-site-generator/">static-site-generator</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/01/welcome/">Welcome</a></h1>
@@ -810,24 +845,6 @@
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/python/">python</a>, <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/02/belajar-python-dengan-mysql/">Belajar Python dengan MySQL</a></h1>
-        <span class="post-date">Aug 2, 2019</span>
-	<p>Referensi:</p>
-<p><a href="https://monicagranbois.com/blog/python/cron-and-python-virtualenv/">https://monicagranbois.com/blog/python/cron-and-python-virtualenv/</a>
-<a href="https://www.petanikode.com/python-virtualenv/">https://www.petanikode.com/python-virtualenv/</a>
-<a href="https://www.petanikode.com/python-mysql/">https://www.petanikode.com/python-mysql/</a>
-<a href="https://www.datacamp.com/community/tutorials/mysql-python">https://www.datacamp.com/community/tutorials/mysql-python</a>
-<a href="https://github.com">https://github.com</a></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/python/">python</a>, <a href="https://blog.indonesiadot.com/tags/programming/">programming</a>, <a href="https://blog.indonesiadot.com/tags/scripting/">scripting</a>, <a href="https://blog.indonesiadot.com/tags/mysql/">mysql</a>
 	 <hr/>
     </div>
   
