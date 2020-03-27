@@ -722,10 +722,60 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/20/certificate-ssl-key-csr-crt/">Certificate ssl key csr crt</a></h1>
         <span class="post-date">Mar 20, 2020</span>
-	<h2 id="random-number-generatorrand_load_filecannot-open-filecryptorandrandfilec88filenamerootrnd">random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/root/.rnd</h2>
+	<h2 id="create-csr-ubuntu-18">create csr ubuntu 18</h2>
+<pre><code>openssl genrsa –out domain.key 2048
+openssl req –new –key domain.key –out domain.csr
+</code></pre><ul>
+<li><a href="https://vitux.com/how-to-generate-a-certificate-signing-request-csr-on-ubuntu/">https://vitux.com/how-to-generate-a-certificate-signing-request-csr-on-ubuntu/</a></li>
+</ul>
+<h2 id="random-number-generatorrand_load_filecannot-open-filecryptorandrandfilec88filenamerootrnd">random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/root/.rnd</h2>
 <p>If you have RANDFILE=&hellip; configuration lines in your openssl.cnf than you can safely remove them</p>
 <ul>
 <li><a href="https://github.com/openssl/openssl/issues/7754">https://github.com/openssl/openssl/issues/7754</a></li>
+</ul>
+<h2 id="convert-p7b--p7c--pkcs7-to-crt">convert p7b / p7c / pkcs7 to crt</h2>
+<h3 id="description">Description</h3>
+<p>What are the differences between .p7b, .pfx, .p12, .pem, .der, .crt &amp; .cer Certificates?</p>
+<p>With so many servers, some require different formats.</p>
+<h2 id="pem-format">PEM Format</h2>
+<ul>
+<li>It is the most common format used for certificates</li>
+<li>Most servers (Ex: Apache) expects the certificates and private key to be in a separate files
+<ul>
+<li>Usually they are Base64 encoded ASCII files</li>
+<li>Extensions used for PEM certificates are .cer, .crt, .pem, .key files</li>
+<li>Apache and similar server uses PEM format certificates</li>
+</ul>
+</li>
+</ul>
+<h2 id="der-format">DER Format</h2>
+<ul>
+<li>The DER format is the binary form of the certificate</li>
+<li>All types of certificates &amp; private keys can be encoded in DER format</li>
+<li>DER formatted certificates do not contain the &ldquo;BEGIN CERTIFICATE/END CERTIFICATE&rdquo; statements</li>
+<li>DER formatted certificates most often use the ‘.cer’ and &lsquo;.der&rsquo; extensions</li>
+<li>DER is typically used in Java Platforms</li>
+</ul>
+<h2 id="p7bpkcs7-format">P7B/PKCS#7 Format</h2>
+<ul>
+<li>The PKCS#7 or P7B format is stored in Base64 ASCII format and has a file extension of .p7b or .p7c</li>
+<li>A P7B file only contains certificates and chain certificates (Intermediate CAs), not the private key</li>
+<li>The most common platforms that support P7B files are Microsoft Windows and Java Tomcat</li>
+</ul>
+<h2 id="pfxp12pkcs12-format">PFX/P12/PKCS#12 Format</h2>
+<ul>
+<li>The PKCS#12 or PFX/P12 format is a binary format for storing the server certificate, intermediate certificates, and the private key in one encryptable file</li>
+<li>These files usually have extensions such as .pfx and .p12</li>
+<li>They are typically used on Windows machines to import and export certificates and private keys</li>
+</ul>
+<p>If your server/device requires a different certificate format other than Base64 encoded X.509, a third party tool such as OpenSSL can be used to convert the certificate into the appropriate format.</p>
+<pre><code>openssl pkcs7 -print_certs -in old.p7b -out new.crt
+#or
+openssl pkcs7 -print_certs -inform der -in a.p7c -out out.cer
+</code></pre><ul>
+<li><a href="https://knowledge.digicert.com/generalinformation/INFO4448.html">https://knowledge.digicert.com/generalinformation/INFO4448.html</a></li>
+<li><a href="https://www.google.com/search?q=p7b+to+crt+linux">https://www.google.com/search?q=p7b+to+crt+linux</a></li>
+<li><a href="https://gist.github.com/jmervine/e4c9af3adb14b78856cc">https://gist.github.com/jmervine/e4c9af3adb14b78856cc</a></li>
 </ul>
 
 	<hr/>
