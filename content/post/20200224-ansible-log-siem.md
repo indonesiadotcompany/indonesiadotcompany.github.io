@@ -6,11 +6,7 @@ author: "Widya"
 draft: true
 ---
 
-## Post
+## Ansible Log
 
-Ini adalah contoh post
-
-Referensi:
-
-* https://indonesiadot.com
+* https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html
 

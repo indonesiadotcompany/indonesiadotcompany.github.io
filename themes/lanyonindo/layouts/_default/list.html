@@ -3,7 +3,7 @@
 <div class="post">
   <h1 class="post-title">{{ .Title }}</h1>
   <ul id="list">
-  {{ range (.Paginator 30).Pages }}
+  {{ range (.Paginator 300).Pages }}
     <li>{{ .Site.Params.DateForm | default "Jan 2, 2006" | .Date.Format }} -
       <a href="{{ .Permalink }}">{{ .Title }}</a>
     </li>

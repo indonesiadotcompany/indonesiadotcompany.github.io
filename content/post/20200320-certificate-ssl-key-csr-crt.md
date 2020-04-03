@@ -10,9 +10,12 @@ draft: false
 ```
 openssl genrsa –out domain.key 2048
 openssl req –new –key domain.key –out domain.csr
+#or
+#openssl req -new -newkey rsa:2048 -nodes -keyout domain.key -out domain.csr
 ```
 
 * https://vitux.com/how-to-generate-a-certificate-signing-request-csr-on-ubuntu/
+* https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-18-04
 
 ## random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/root/.rnd
 

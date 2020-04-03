@@ -12,24 +12,20 @@ blogimport = true
 ## Ansible gather facts
 Using facter too
 
-Ref:
-
 * http://docs.ansible.com/ansible/latest/setup_module.html#examples
 
 ## ansible php composer
-
-Ref:
 
 * https://knpuniversity.com/screencast/ansible/ansible-composer
 
 ## ansible playbook interactive / ansible prompt
 
-Ref:
-
 * https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html
 
 ## ansible-playbook command
 
-Ref:
-
 * https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/
+
+## Ansible integrations
+
+* https://www.ansible.com/integrations/devops-tools
