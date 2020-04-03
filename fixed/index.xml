@@ -22,6 +22,15 @@ There are currently two web sites of our brand (need to make once again to make 
     </item>
     
     <item>
+      <title>Tags</title>
+      <link>https://blog.indonesiadot.com/tags/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/</guid>
+      <description>{{ $taxo := &amp;ldquo;directors&amp;rdquo; }} {{ with .Param $taxo }} Director{{ if gt (len .) 1 }}s{{ end }}:{{ range $index, $director := . }} {{- if gt $index 0 }}, {{ end -}} {{ with $.Site.GetPage (printf &amp;ldquo;/%s/%s&amp;rdquo; $taxo $director) -}} {{ $director }}{{- end -}} {{- end -}} {{ end }}</description>
+    </item>
+    
+    <item>
       <title>Thanks</title>
       <link>https://blog.indonesiadot.com/thanks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

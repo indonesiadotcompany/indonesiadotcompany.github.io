@@ -688,6 +688,32 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/tags/">Tags</a>
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -718,6 +744,256 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/26/tmux-screen-tips/">Tmux screen tips</a></h1>
+        <span class="post-date">Oct 26, 2019</span>
+	<h1 id="tmux-cheatsheet">Tmux cheatsheet</h1>
+<h1 id="tmux-shortcuts--cheatsheet">tmux shortcuts &amp; cheatsheet</h1>
+<p>start new:</p>
+<pre><code>tmux
+</code></pre>
+<p>start new with session name:</p>
+<pre><code>tmux new -s myname
+</code></pre>
+<p>attach:</p>
+<pre><code>tmux a  #  (or at, or attach)
+</code></pre>
+<p>attach to named:</p>
+<pre><code>tmux a -t myname
+</code></pre>
+<p>list sessions:</p>
+<pre><code>tmux ls
+</code></pre>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->kill session:</p>
+<pre><code>tmux kill-session -t myname
+</code></pre>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->Kill all the tmux sessions:</p>
+<pre><code>tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
+</code></pre>
+<p>In tmux, hit the prefix <code>ctrl+b</code> (my modified prefix is ctrl+a) and then:</p>
+<h2 id="sessions">Sessions</h2>
+<pre><code>:new&lt;CR&gt;  new session
+s  list sessions
+$  name session
+</code></pre>
+<h2 id="a-namewindowstabsawindows-tabs"><!-- raw HTML omitted --><!-- raw HTML omitted -->Windows (tabs)</h2>
+<pre><code>c  create window
+w  list windows
+n  next window
+p  previous window
+f  find window
+,  name window
+&amp;  kill window
+</code></pre>
+<h2 id="a-namepanessplitsapanes-splits"><!-- raw HTML omitted --><!-- raw HTML omitted -->Panes (splits)</h2>
+<pre><code>%  vertical split
+&quot;  horizontal split
+
+o  swap panes
+q  show pane numbers
+x  kill pane
++  break pane into window (e.g. to select text by mouse to copy)
+-  restore pane from window
+⍽  space - toggle between layouts
+&lt;prefix&gt; q (Show pane numbers, when the numbers show up type the key to goto that pane)
+&lt;prefix&gt; { (Move the current pane left)
+&lt;prefix&gt; } (Move the current pane right)
+&lt;prefix&gt; z toggle pane zoom
+</code></pre>
+<h2 id="a-namesyncpanesasync-panes"><!-- raw HTML omitted --><!-- raw HTML omitted -->Sync Panes</h2>
+<p>You can do this by switching to the appropriate window, typing your Tmux prefix (commonly Ctrl-B or Ctrl-A) and then a colon to bring up a Tmux command line, and typing:</p>
+<pre><code>:setw synchronize-panes
+</code></pre><p>You can optionally add on or off to specify which state you want; otherwise the option is simply toggled. This option is specific to one window, so it won’t change the way your other sessions or windows operate. When you’re done, toggle it off again by repeating the command. <a href="http://blog.sanctum.geek.nz/sync-tmux-panes/">tip source</a></p>
+<h2 id="resizing-panes">Resizing Panes</h2>
+<p>You can also resize panes if you don’t like the layout defaults. I personally rarely need to do this, though it’s handy to know how. Here is the basic syntax to resize panes:</p>
+<pre><code>PREFIX : resize-pane -D (Resizes the current pane down)
+PREFIX : resize-pane -U (Resizes the current pane upward)
+PREFIX : resize-pane -L (Resizes the current pane left)
+PREFIX : resize-pane -R (Resizes the current pane right)
+PREFIX : resize-pane -D 20 (Resizes the current pane down by 20 cells)
+PREFIX : resize-pane -U 20 (Resizes the current pane upward by 20 cells)
+PREFIX : resize-pane -L 20 (Resizes the current pane left by 20 cells)
+PREFIX : resize-pane -R 20 (Resizes the current pane right by 20 cells)
+PREFIX : resize-pane -t 2 20 (Resizes the pane with the id of 2 down by 20 cells)
+PREFIX : resize-pane -t -L 20 (Resizes the pane with the id of 2 left by 20 cells)
+</code></pre>
+<h2 id="copy-mode">Copy mode:</h2>
+<p>Pressing PREFIX [ places us in Copy mode. We can then use our movement keys to move our cursor around the screen. By default, the arrow keys work. we set our configuration file to use Vim keys for moving between windows and resizing panes so we wouldn’t have to take our hands off the home row. tmux has a vi mode for working with the buffer as well. To enable it, add this line to .tmux.conf:</p>
+<pre><code>setw -g mode-keys vi
+</code></pre>
+<p>With this option set, we can use h, j, k, and l to move around our buffer.</p>
+<p>To get out of Copy mode, we just press the ENTER key. Moving around one character at a time isn’t very efficient. Since we enabled vi mode, we can also use some other visible shortcuts to move around the buffer.</p>
+<p>For example, we can use &ldquo;w&rdquo; to jump to the next word and &ldquo;b&rdquo; to jump back one word. And we can use &ldquo;f&rdquo;, followed by any character, to jump to that character on the same line, and &ldquo;F&rdquo; to jump backwards on the line.</p>
+<pre><code>   Function                vi             emacs
+   Back to indentation     ^              M-m
+   Clear selection         Escape         C-g
+   Copy selection          Enter          M-w
+   Cursor down             j              Down
+   Cursor left             h              Left
+   Cursor right            l              Right
+   Cursor to bottom line   L
+   Cursor to middle line   M              M-r
+   Cursor to top line      H              M-R
+   Cursor up               k              Up
+   Delete entire line      d              C-u
+   Delete to end of line   D              C-k
+   End of line             $              C-e
+   Goto line               :              g
+   Half page down          C-d            M-Down
+   Half page up            C-u            M-Up
+   Next page               C-f            Page down
+   Next word               w              M-f
+   Paste buffer            p              C-y
+   Previous page           C-b            Page up
+   Previous word           b              M-b
+   Quit mode               q              Escape
+   Scroll down             C-Down or J    C-Down
+   Scroll up               C-Up or K      C-Up
+   Search again            n              n
+   Search backward         ?              C-r
+   Search forward          /              C-s
+   Start of line           0              C-a
+   Start selection         Space          C-Space
+   Transpose chars                        C-t
+</code></pre>
+<h2 id="misc">Misc</h2>
+<pre><code>d  detach
+t  big clock
+?  list shortcuts
+:  prompt
+</code></pre>
+<h2 id="configurations-options">Configurations Options:</h2>
+<pre><code># Mouse support - set to on if you want to use the mouse
+* setw -g mode-mouse off
+* set -g mouse-select-pane off
+* set -g mouse-resize-pane off
+* set -g mouse-select-window off
+
+# Set the default terminal mode to 256color mode
+set -g default-terminal &quot;screen-256color&quot;
+
+# enable activity alerts
+setw -g monitor-activity on
+set -g visual-activity on
+
+# Center the window list
+set -g status-justify centre
+
+# Maximize and restore a pane
+unbind Up bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t tmp
+unbind Down
+bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
+</code></pre>
+<h2 id="resources">Resources:</h2>
+<ul>
+<li><a href="http://pragprog.com/book/bhtmux/tmux">tmux: Productive Mouse-Free Development</a></li>
+<li><a href="http://superuser.com/questions/343572/tmux-how-do-i-reorder-my-windows">How to reorder windows</a></li>
+</ul>
+<h2 id="notes">Notes:</h2>
+<ul>
+<li></li>
+</ul>
+<h2 id="changelog">Changelog:</h2>
+<ul>
+<li>1411143833002 - Added <a href="#PanesSplits">toggle zoom</a> under Panes (splits) section.</li>
+<li>1411143833002 - <a href="#syncPanes">Added Sync Panes</a></li>
+<li>1414276652677 - <a href="#killAllSessions">Added Kill all tmux sessions </a></li>
+<li>1438585211173 - <a href="#WindowsTabs">corrected create and add next and previus thanks to @justinjhendrick</a></li>
+</ul>
+<h2 id="request-an-update">Request an Update:</h2>
+<p>We Noticed that our Cheatsheet is growing and people are coloberating to add new tips and tricks, so please tweet to me what would you like to add and let's make it better!</p>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://tmuxcheatsheet.com/">https://tmuxcheatsheet.com/</a></li>
+<li><a href="https://gist.github.com/MohamedAlaa/2961058">https://gist.github.com/MohamedAlaa/2961058</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tmux/">tmux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/25/create-gcp-vm-using-gcloud-from-command-line/">Create GCP VM using gcloud from command line</a></h1>
+        <span class="post-date">Oct 25, 2019</span>
+	<p>Pembuatan virtual machine di GCP / Google Cloud Platform menggunakan gcloud command line bermanfaat untuk mempermudah pembuatan VM tanpa harus mengakses web browser.</p>
+<p>Berikut langkah nya yang dilakukan di OS Centos 7:</p>
+<pre><code>sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &lt;&lt; EOM
+[google-cloud-sdk]
+name=Google Cloud SDK
+baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
+       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOM
+sudo yum install google-cloud-sdk
+gcloud init
+</code></pre><p>Berikut langkah yang dilakukan di OS ubuntu / debian:</p>
+<pre><code>echo &quot;deb http://packages.cloud.google.com/apt cloud-sdk main&quot; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk
+gcloud init
+</code></pre><p>Pada saat initialize ini akan diminta untuk memasukan user google yang akan digunakan, diikuti saja semua langkah nya sampai dengan memasukan verifikasi.</p>
+<p>Setelah itu bisa menjalankan script 1-gcp-centos.sh berikut:</p>
+<pre><code>bash 1-gcp-centos.sh namavm
+</code></pre><p>Berikut script 1-gcp-centos.sh</p>
+<pre><code>#!/bin/bash
+
+if [ -z &quot;$1&quot; ]; then
+ NAMA=$1
+ while [ -z &quot;$NAMA&quot; ]; do
+  echo &quot;masukan nama vm:&quot;
+  read NAMA
+ done
+ # Create GCE VM with disk storage
+ gcloud compute instances create $NAMA \
+  --machine-type f1-micro \
+  --network default \
+  --subnet default \
+  --network-tier PREMIUM \
+  --maintenance-policy MIGRATE \
+  --scopes https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append \
+  --image centos-7-v20191014 \
+  --image-project centos-cloud \
+  --boot-disk-size 10GB \
+  --boot-disk-type pd-standard \
+  --boot-disk-device-name compute-disk
+fi
+</code></pre><p>Referensi:</p>
+<ul>
+<li><a href="https://cloud.google.com/sdk/docs/quickstart-redhat-centos">https://cloud.google.com/sdk/docs/quickstart-redhat-centos</a></li>
+<li><a href="https://github.com/garystafford/ansible-gcp-demo">https://github.com/garystafford/ansible-gcp-demo</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/cloud/">cloud</a>, <a href="https://blog.indonesiadot.com/tags/gcp/">gcp</a>, <a href="https://blog.indonesiadot.com/tags/google-cloud-platform/">google-cloud-platform</a>, <a href="https://blog.indonesiadot.com/tags/google/">google</a>, <a href="https://blog.indonesiadot.com/tags/gcloud/">gcloud</a>, <a href="https://blog.indonesiadot.com/tags/command/">command</a>, <a href="https://blog.indonesiadot.com/tags/bash/">bash</a>, <a href="https://blog.indonesiadot.com/tags/script/">script</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/25/gcp-and-ansible/">GCP and Ansible</a></h1>
+        <span class="post-date">Oct 25, 2019</span>
+	<p>Referensi:</p>
+<ul>
+<li><a href="https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/">https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/cloud/">cloud</a>, <a href="https://blog.indonesiadot.com/tags/gcp/">gcp</a>, <a href="https://blog.indonesiadot.com/tags/google-cloud-platform/">google-cloud-platform</a>, <a href="https://blog.indonesiadot.com/tags/google/">google</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/">Kernel Hardening Tips</a></h1>
@@ -974,133 +1250,6 @@ systemctl restart firewalld
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>, <a href="https://blog.indonesiadot.com/tags/postgresql/">postgresql</a>, <a href="https://blog.indonesiadot.com/tags/rabbitmq/">rabbitmq</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/30/disk-serial-number/">Disk Serial Number</a></h1>
-        <span class="post-date">Sep 30, 2019</span>
-	<p>Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.</p>
-<p>Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:</p>
-<ul>
-<li>lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb)</li>
-<li>smartctl -a /dev/sda #lihat bagian atas serial number nya</li>
-<li>udevadm info /dev/sda</li>
-</ul>
-<h2 id="smartctl-to-get-disk-smart-status">smartctl to get disk smart status</h2>
-<pre><code>smartctl -H /dev/sda
-smartctl -i /dev/sda
-smartctl --test=short /dev/sda
-#smartctl --test=long /dev/sda
-smartctl -a /dev/sda
-smartctl -a /dev/sda | grep &quot;Short&quot;
-
-Ref:
-
-* https://www.techrepublic.com/blog/linux-and-open-source/using-smartctl-to-get-smart-status-information-on-your-hard-drives/
-</code></pre>
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/disk/">disk</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/smartctl/">smartctl</a>, <a href="https://blog.indonesiadot.com/tags/raid/">raid</a>, <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/28/ids-tripwire/">IDS Tripwire</a></h1>
-        <span class="post-date">Sep 28, 2019</span>
-	<p>Referensi:</p>
-<ul>
-<li><a href="https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/">https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/</a></li>
-<li><a href="https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html">https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html</a></li>
-<li><a href="https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/">https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/</a></li>
-<li><a href="https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d">https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/tripwire/">tripwire</a>, <a href="https://blog.indonesiadot.com/tags/splunk/">splunk</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/hugo-hosting-dengan-github/">Hugo hosting dengan github</a></h1>
-        <span class="post-date">Sep 24, 2019</span>
-	<p>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:</p>
-<ul>
-<li>Nama user: tpinews</li>
-<li>Nama repositori yang harus dibuat: tpinews.github.io</li>
-</ul>
-<p>Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:</p>
-<pre><code>mkdir tpinews
-cd tpinews
-touch .gitignore
-git init
-git add .
-git commit -m 'komat kamit awal'
-git remote add origin https://tpinews.github.io.git
-git push origin master
-
-git checkout -b hugo
-hugo new site . --force
-cp -r /path/kumpulanthemeshugo/travelify themes/
-cp -r themes/travelify/exampleSite/* .
-cp /path/scripts/push-deploy.sh .
-git add .
-git commit -m 'komit hugo'
-git push origin hugo
-
-git submodule add -b master https://tpinews.github.io.git public
-./push-deploy.sh
-git branch -d master
-</code></pre><p>Pastikan juga config.toml sudah sesuai, seperti nama theme dan lainnya, dan bisa di test di localhost dengan menjalankan <code>hugo server</code> dan mengakses http://localhost:1313 di browser untuk melihat hasilnya.</p>
-<p>Command di atas hanya dilakukan pertama kali saja, untuk selanjutnya yang dilakukan setelah melakukan perubahan dan ingin mengupdate di github, cukup menjalankan script push-deploy.sh</p>
-<p>Disini theme yang digunakan misalnya travelify yang sudah disiapkan, dan juga script untuk push-deploy.sh untuk memudahkan deploy sebagai berikut:</p>
-<pre><code>#!/bin/sh
-# If a command fails then the deploy stops
-set -e
-printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
-git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
- msg=&quot;$*&quot;
-fi
-git commit -m &quot;$msg&quot;
-git push origin hugo
-
-printf &quot;\033[0;32mDeploy public hugo to branch master...\033[0m\n&quot;
-HUGO_ENV=production hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
-cd public
-git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
-        msg=&quot;$*&quot;
-fi
-git commit -m &quot;$msg&quot;
-git push origin master
-
-printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
-cd ..
-git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
-        msg=&quot;$*&quot;
-fi
-git commit -m &quot;$msg&quot;
-git push origin hugo
-</code></pre><p>Note:</p>
-<p>Untuk lebih mudah tidak perlu memasukan password, bisa di buat dari menu settings account github, lalu pilih menu sebelah kiri bawah bagian Developer settings, lalu Personal access tokens dan generate new token.</p>
-<p>Lalu copy token tersebut dan tambahkan pada file .git/config dan .git/modules/public/config ,bagian url nya, sehingga menjadi seperti contoh berikut:</p>
-<pre><code>   url = https://namauser:tokenhasidaricopygeneratenewtoken@namarepository.github.io.git
-</code></pre>
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>, <a href="https://blog.indonesiadot.com/tags/github/">github</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>
 	 <hr/>
     </div>
   

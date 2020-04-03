@@ -687,6 +687,32 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/tags/">Tags</a>
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -722,7 +748,12 @@ apt install gparted=0.16.1-1
 </code></pre><ul>
 <li><a href="https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package">https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package</a></li>
 </ul>
-
+<h2 id="apport-high-cpu">apport high cpu</h2>
+<pre><code>killall -9 apport
+service apport stop &amp;&amp; systemctl stop apport
+rm -f /var/crash/*
+apt-get remove apport -y
+</code></pre>
 </div>
 
 <hr/>

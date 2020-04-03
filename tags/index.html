@@ -687,6 +687,32 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="sidebar-nav-item  active " href="https://blog.indonesiadot.com/tags/">Tags</a>
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -715,141 +741,18 @@
 
 <div class="post">
   <h1 class="post-title">Tags</h1>
-  <ul id="list">
-  
-    <li>Mar 20, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/certificate/">certificate</a>
-    </li>
-  
-    <li>Mar 20, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/crt/">crt</a>
-    </li>
-  
-    <li>Mar 20, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/csr/">csr</a>
-    </li>
-  
-    <li>Mar 20, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>
-    </li>
-  
-    <li>Mar 20, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/ssl/">ssl</a>
-    </li>
-  
-    <li>Mar 20, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-    </li>
-  
-    <li>Mar 18, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>
-    </li>
-  
-    <li>Mar 18, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>
-    </li>
-  
-    <li>Mar 18, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/elasticsearch/">elasticsearch</a>
-    </li>
-  
-    <li>Mar 18, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/elk/">elk</a>
-    </li>
-  
-    <li>Mar 18, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/kibana/">kibana</a>
-    </li>
-  
-    <li>Mar 18, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/logs/">logs</a>
-    </li>
-  
-    <li>Mar 18, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/logstash/">logstash</a>
-    </li>
-  
-    <li>Mar 18, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/ubuntu/">ubuntu</a>
-    </li>
-  
-    <li>Mar 16, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/log/">log</a>
-    </li>
-  
-    <li>Mar 16, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/kubernetes/">kubernetes</a>
-    </li>
-  
-    <li>Mar 16, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/lxc/">lxc</a>
-    </li>
-  
-    <li>Mar 16, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/qemu/">qemu</a>
-    </li>
-  
-    <li>Mar 16, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/mail/">mail</a>
-    </li>
-  
-    <li>Mar 16, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/mailserver/">mailserver</a>
-    </li>
-  
-    <li>Mar 16, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/qmail/">qmail</a>
-    </li>
-  
-    <li>Mar 16, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/qmailtoaster/">qmailtoaster</a>
-    </li>
-  
-    <li>Mar 12, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/disk/">disk</a>
-    </li>
-  
-    <li>Mar 12, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/lvm/">lvm</a>
-    </li>
-  
-    <li>Mar 12, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/ceph/">ceph</a>
-    </li>
-  
-    <li>Mar 12, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/storage/">storage</a>
-    </li>
-  
-    <li>Mar 10, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/lxd/">lxd</a>
-    </li>
-  
-    <li>Mar 6, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>
-    </li>
-  
-    <li>Mar 6, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
-    </li>
-  
-    <li>Mar 5, 2020 -
-      <a href="https://blog.indonesiadot.com/tags/bandwidth/">bandwidth</a>
-    </li>
-  
-  </ul>
-</div>
+  <span class="post-date">Jan 1, 0001</span>
+  <p>{{ $taxo := &ldquo;directors&rdquo; }} <!-- raw HTML omitted -->
+{{ with .Param $taxo }}
+<!-- raw HTML omitted -->Director{{ if gt (len .) 1 }}s{{ end }}:<!-- raw HTML omitted -->
+{{ range $index, $director := . }}
+{{- if gt $index 0 }}, {{ end -}}
+{{ with $.Site.GetPage (printf &ldquo;/%s/%s&rdquo; $taxo $director) -}}
+<!-- raw HTML omitted -->{{ $director }}<!-- raw HTML omitted -->
+{{- end -}}
+{{- end -}}
+{{ end }}</p>
 
-
-
-<div class="pagination">
-  
-  <a class="pagination-item older" href="https://blog.indonesiadot.com/tags/page/2/">Older</a>
-  
-
-  
-  <span class="pagination-item newer">Newer</span>
-  
 </div>
 
 <hr/>

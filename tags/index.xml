@@ -6,10 +6,127 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Mar 2020 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 03 Apr 2020 15:47:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ansible</title>
+      <link>https://blog.indonesiadot.com/tags/ansible/</link>
+      <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cicd</title>
+      <link>https://blog.indonesiadot.com/tags/cicd/</link>
+      <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/cicd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jenkins</title>
+      <link>https://blog.indonesiadot.com/tags/jenkins/</link>
+      <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://blog.indonesiadot.com/tags/linux/</link>
+      <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tips</title>
+      <link>https://blog.indonesiadot.com/tags/tips/</link>
+      <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>baseline</title>
+      <link>https://blog.indonesiadot.com/tags/baseline/</link>
+      <pubDate>Fri, 03 Apr 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/baseline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>benchmark</title>
+      <link>https://blog.indonesiadot.com/tags/benchmark/</link>
+      <pubDate>Fri, 03 Apr 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/benchmark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pci-dss</title>
+      <link>https://blog.indonesiadot.com/tags/pci-dss/</link>
+      <pubDate>Fri, 03 Apr 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/pci-dss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://blog.indonesiadot.com/tags/security/</link>
+      <pubDate>Fri, 03 Apr 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>edr</title>
+      <link>https://blog.indonesiadot.com/tags/edr/</link>
+      <pubDate>Fri, 27 Mar 2020 12:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/edr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>epp</title>
+      <link>https://blog.indonesiadot.com/tags/epp/</link>
+      <pubDate>Fri, 27 Mar 2020 12:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/epp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>on-premise</title>
+      <link>https://blog.indonesiadot.com/tags/on-premise/</link>
+      <pubDate>Fri, 27 Mar 2020 12:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/on-premise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sentinelone</title>
+      <link>https://blog.indonesiadot.com/tags/sentinelone/</link>
+      <pubDate>Fri, 27 Mar 2020 12:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/sentinelone/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>certificate</title>
@@ -39,38 +156,11 @@
     </item>
     
     <item>
-      <title>linux</title>
-      <link>https://blog.indonesiadot.com/tags/linux/</link>
-      <pubDate>Fri, 20 Mar 2020 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>ssl</title>
       <link>https://blog.indonesiadot.com/tags/ssl/</link>
       <pubDate>Fri, 20 Mar 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/ssl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tips</title>
-      <link>https://blog.indonesiadot.com/tags/tips/</link>
-      <pubDate>Fri, 20 Mar 2020 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ansible</title>
-      <link>https://blog.indonesiadot.com/tags/ansible/</link>
-      <pubDate>Wed, 18 Mar 2020 13:47:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
       <description></description>
     </item>
     
@@ -489,15 +579,6 @@
     </item>
     
     <item>
-      <title>security</title>
-      <link>https://blog.indonesiadot.com/tags/security/</link>
-      <pubDate>Thu, 20 Feb 2020 18:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>harbor</title>
       <link>https://blog.indonesiadot.com/tags/harbor/</link>
       <pubDate>Thu, 20 Feb 2020 08:17:54 +0700</pubDate>
@@ -674,15 +755,6 @@
       <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/virtualization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jenkins</title>
-      <link>https://blog.indonesiadot.com/tags/jenkins/</link>
-      <pubDate>Thu, 05 Dec 2019 18:47:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/jenkins/</guid>
       <description></description>
     </item>
     

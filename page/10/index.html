@@ -688,6 +688,32 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/tags/">Tags</a>
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -718,6 +744,43 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/11/nginx-tips-n-trick-499-code-on-nginx-access-logs/">nginx tips n trick - 499 code on nginx access logs</a></h1>
+        <span class="post-date">Aug 11, 2019</span>
+	<p>googling: <a href="https://www.google.com/search?q=499+http+code%3Cbr">https://www.google.com/search?q=499+http+code&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="https://stackoverflow.com/questions/12973304/nginx-499-error-codes%3Cbr">https://stackoverflow.com/questions/12973304/nginx-499-error-codes&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->In my case I got 499 when the client's API closed the connection before it gets any response. Literally sent a POST and immediately close the connection. This is resolved by option:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->proxy_ignore_client_abort on<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->I dont understand how does this help<!-- raw HTML omitted --> – <!-- raw HTML omitted -->Vladimir Starkov<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->Jul 2 at 7:45<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Maybe it's not your case? The client sends the data and is not interested in what will happen to them and what will be the answer. But my application should process the data. Without this option, the data simply does not have time to reach my application.<!-- raw HTML omitted --> – <!-- raw HTML omitted -->DerSkythe<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->Jul 2 at 11:34<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Thank you. Exact symptoms and perfect fix.<!-- raw HTML omitted --> – <!-- raw HTML omitted -->TTimo<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->Jul 23 at 16:29<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/11/how-to-stop-docker-that-always-restart/">how to stop docker that always restart</a></h1>
+        <span class="post-date">Aug 11, 2019</span>
+	<p>googling: <a href="https://www.google.com/search?q=docker+restart+always+stop%3Cbr">https://www.google.com/search?q=docker+restart+always+stop&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="https://stackoverflow.com/questions/39072357/how-to-stop-a-docker-container-which-started-with-restart-always/39072476%3Cbr">https://stackoverflow.com/questions/39072357/how-to-stop-a-docker-container-which-started-with-restart-always/39072476&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->You can <!-- raw HTML omitted --><!-- raw HTML omitted -->update<!-- raw HTML omitted --><!-- raw HTML omitted --> docker container.<!-- raw HTML omitted --><!-- raw HTML omitted -->use <!-- raw HTML omitted --><!-- raw HTML omitted -->sudo docker update &ndash;restart=no &lt;container_id&gt;&lt;/container_id&gt;<!-- raw HTML omitted --><!-- raw HTML omitted --> to update <!-- raw HTML omitted -->&ndash;restart<!-- raw HTML omitted --> flag of the container.<!-- raw HTML omitted --><!-- raw HTML omitted -->Now you can <!-- raw HTML omitted --><!-- raw HTML omitted -->stop<!-- raw HTML omitted --><!-- raw HTML omitted --> the container.<!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/11/simple-alert-monitoring-using-simplemonitor/">simple alert monitoring using simplemonitor</a></h1>
+        <span class="post-date">Aug 11, 2019</span>
+	<p>googling: https://www.google.com/search?q=simple+alert+monitoring<!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://jamesoff.github.io/simplemonitor/%3Cbr">https://jamesoff.github.io/simplemonitor/&lt;br</a> /&gt;<!-- raw HTML omitted -->googling: https://www.google.com/search?q=simplemonitor+docker<!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://hub.docker.com/r/braindoctor/simplemonitor-docker/%3Cbr">https://hub.docker.com/r/braindoctor/simplemonitor-docker/&lt;br</a> /&gt;<!-- raw HTML omitted -->mkdir -p /docker/simplemonitor &amp;&amp; cd /docker/simplemonitor<!-- raw HTML omitted -->cat &gt; docker-compose.yml &lt;<!-- raw HTML omitted -->version: &lsquo;3.2'<!-- raw HTML omitted -->services:<!-- raw HTML omitted -->  simplemonitor:<!-- raw HTML omitted -->    restart: always<!-- raw HTML omitted -->    image: braindoctor/simplemonitor-docker:latest<!-- raw HTML omitted -->    container_name: simplemonitor<!-- raw HTML omitted -->    hostname: mail-124.indonesiadot.com<!-- raw HTML omitted -->    volumes:<!-- raw HTML omitted -->      - ${PWD}/config:/etc/simplemonitor<!-- raw HTML omitted -->    ports:<!-- raw HTML omitted -->      - &ldquo;8080:8080&quot;<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->EOF<!-- raw HTML omitted --><!-- raw HTML omitted -->docker-compose up -d<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->ref:<!-- raw HTML omitted --><a href="https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files%3C/div%3E">https://simplemonitor.readthedocs.io/en/feature-docs/getting-started.html#writing-configuration-files&lt;/div&gt;</a></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/python/">python</a>, <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/02/belajar-python-dengan-mysql/">Belajar Python dengan MySQL</a></h1>
@@ -805,52 +868,6 @@ stress -c 8 -i 9 -m 9 --vm-bytes 1024M
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/usaha/">usaha</a>, <a href="https://blog.indonesiadot.com/tags/dagang/">dagang</a>, <a href="https://blog.indonesiadot.com/tags/niaga/">niaga</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/07/13/prometheus-grafana/">prometheus grafana</a></h1>
-        <span class="post-date">Jul 13, 2018</span>
-	<p><a href="http://www.dimasrio.com/search?q=prometheus%3Cbr">http://www.dimasrio.com/search?q=prometheus&lt;br</a> /&gt;https://www.youtube.com/watch?v=GZWbTch7AbM<!-- raw HTML omitted --><a href="http://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html%3Cbr">http://www.dimasrio.com/2017/06/monitoring-prometheus-dan-grafana.html&lt;br</a> /&gt;<!-- raw HTML omitted --></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>, <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/07/08/docker-registry-docker-private-repository/">docker registry, docker private repository</a></h1>
-        <span class="post-date">Jul 8, 2018</span>
-	<p>Ref:</p>
-<ul>
-<li><a href="https://docs.docker.com/registry/deploying/">https://docs.docker.com/registry/deploying/</a></li>
-<li><a href="https://github.com/sky-uk/cleanup-docker-registry">https://github.com/sky-uk/cleanup-docker-registry</a></li>
-<li><a href="https://github.com/burnettk/delete-docker-registry-image">https://github.com/burnettk/delete-docker-registry-image</a></li>
-<li><a href="https://stackoverflow.com/questions/29802202/docker-registry-2-0-how-to-delete-unused-images">https://stackoverflow.com/questions/29802202/docker-registry-2-0-how-to-delete-unused-images</a></li>
-<li><a href="https://gist.github.com/PieterScheffers/63e4c2fd5553af8a35101b5e868a811e">https://gist.github.com/PieterScheffers/63e4c2fd5553af8a35101b5e868a811e</a> (Start docker registry with letsencrypt certificates (Linux Ubuntu))</li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/07/04/wid-think-about-health-in-global-perspective-kesehatan/">Wid think about health in global perspective - kesehatan</a></h1>
-        <span class="post-date">Jul 4, 2018</span>
-	<!-- raw HTML omitted -->
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/widya/">widya</a>
 	 <hr/>
     </div>
   

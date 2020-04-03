@@ -17,7 +17,7 @@
       <pubDate>Wed, 18 Mar 2020 07:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/18/ubuntu-tips/</guid>
-      <description>Install specific version apt-cache policy gparted apt install gparted=0.16.1-1  https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package  </description>
+      <description>Install specific version apt-cache policy gparted apt install gparted=0.16.1-1  https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package  apport high cpu killall -9 apport service apport stop &amp;amp;&amp;amp; systemctl stop apport rm -f /var/crash/* apt-get remove apport -y </description>
     </item>
     
     <item>

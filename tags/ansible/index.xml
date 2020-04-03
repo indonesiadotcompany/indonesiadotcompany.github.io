@@ -6,10 +6,19 @@
     <description>Recent content in ansible on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Mar 2020 13:47:54 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 03 Apr 2020 15:47:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible CI-CD CICD</title>
+      <link>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</link>
+      <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</guid>
+      <description>Jenkins Ansible Tower  https://plugins.jenkins.io/ansible-tower/ https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process  </description>
+    </item>
     
     <item>
       <title>Ansible Tower for beginner</title>
@@ -153,11 +162,7 @@ https://&amp;lt;Ansible Tower IP or Hostname&amp;gt; Dapatkan lisensi dari https
       
       <guid>https://blog.indonesiadot.com/2018/01/31/ansible-tips/</guid>
       <description>Ansible gather facts Using facter too
-Ref:
- http://docs.ansible.com/ansible/latest/setup_module.html#examples  ansible php composer Ref:
- https://knpuniversity.com/screencast/ansible/ansible-composer  ansible playbook interactive / ansible prompt Ref:
- https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html  ansible-playbook command Ref:
- https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/  </description>
+ http://docs.ansible.com/ansible/latest/setup_module.html#examples  ansible php composer  https://knpuniversity.com/screencast/ansible/ansible-composer  ansible playbook interactive / ansible prompt  https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html  ansible-playbook command  https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/  Ansible integrations  https://www.ansible.com/integrations/devops-tools  </description>
     </item>
     
   </channel>

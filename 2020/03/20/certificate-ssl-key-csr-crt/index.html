@@ -687,6 +687,32 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/tags/">Tags</a>
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -719,8 +745,11 @@
   <h2 id="create-csr-ubuntu-18">create csr ubuntu 18</h2>
 <pre><code>openssl genrsa –out domain.key 2048
 openssl req –new –key domain.key –out domain.csr
+#or
+#openssl req -new -newkey rsa:2048 -nodes -keyout domain.key -out domain.csr
 </code></pre><ul>
 <li><a href="https://vitux.com/how-to-generate-a-certificate-signing-request-csr-on-ubuntu/">https://vitux.com/how-to-generate-a-certificate-signing-request-csr-on-ubuntu/</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-18-04">https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-18-04</a></li>
 </ul>
 <h2 id="random-number-generatorrand_load_filecannot-open-filecryptorandrandfilec88filenamerootrnd">random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/root/.rnd</h2>
 <p>If you have RANDFILE=&hellip; configuration lines in your openssl.cnf than you can safely remove them</p>

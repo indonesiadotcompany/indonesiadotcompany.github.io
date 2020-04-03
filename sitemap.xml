@@ -7,8 +7,98 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
+    <lastmod>2020-04-03T15:47:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</loc>
+    <lastmod>2020-04-03T15:47:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
+    <lastmod>2020-04-03T15:47:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/cicd/</loc>
+    <lastmod>2020-04-03T15:47:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/jenkins/</loc>
+    <lastmod>2020-04-03T15:47:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
+    <lastmod>2020-04-03T15:47:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2020-04-03T15:47:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2020-04-03T15:47:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
+    <lastmod>2020-04-03T15:47:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/baseline/</loc>
+    <lastmod>2020-04-03T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/benchmark/</loc>
+    <lastmod>2020-04-03T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/pci-dss/</loc>
+    <lastmod>2020-04-03T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/security/</loc>
+    <lastmod>2020-04-03T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/04/03/security-compliance-baseline-benchmark/</loc>
+    <lastmod>2020-04-03T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/edr/</loc>
+    <lastmod>2020-03-27T12:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/epp/</loc>
+    <lastmod>2020-03-27T12:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/on-premise/</loc>
+    <lastmod>2020-03-27T12:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/sentinelone/</loc>
+    <lastmod>2020-03-27T12:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/27/sentinelone-epp-edr-on-premise/</loc>
+    <lastmod>2020-03-27T12:17:54+07:00</lastmod>
   </url>
   
   <url>
@@ -32,33 +122,8 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/ssl/</loc>
     <lastmod>2020-03-20T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
-    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
-    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
-    <lastmod>2020-03-18T13:47:54+07:00</lastmod>
   </url>
   
   <url>
@@ -417,11 +482,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/security/</loc>
-    <lastmod>2020-02-20T18:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</loc>
     <lastmod>2020-02-20T08:17:54+07:00</lastmod>
   </url>
@@ -569,11 +629,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/tags/virtualization/</loc>
     <lastmod>2019-12-22T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/jenkins/</loc>
-    <lastmod>2019-12-05T18:47:00+00:00</lastmod>
   </url>
   
   <url>
@@ -1593,6 +1648,10 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/fixed/</loc>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
   </url>
   
   <url>

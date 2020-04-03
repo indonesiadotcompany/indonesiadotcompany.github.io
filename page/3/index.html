@@ -688,6 +688,32 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/tags/">Tags</a>
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -718,6 +744,75 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/06/proxmox-add-zfs-disk/">Proxmox add zfs disk</a></h1>
+        <span class="post-date">Mar 6, 2020</span>
+	<h2 id="add-disk-hardware">Add Disk Hardware</h2>
+<p>Tambahkan harddisk di server secara berurutan port sata nya, dan catat ID disknya</p>
+<h2 id="setting-at-command-line">Setting at command line</h2>
+<pre><code>ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R
+ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4
+zpool create rpoolkube -o ashift=12 mirror /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4
+zpool status
+</code></pre><h2 id="tambahkan-proxmox-storage-pool">Tambahkan proxmox storage pool</h2>
+<p>Dari proxmox pool, lalu klik storage, lalu add storage, pilih zfs.
+Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masukan block size 64k, lalu klik create.</p>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/netcat-bandwidth-test/">Netcat Bandwidth Test</a></h1>
+        <span class="post-date">Mar 5, 2020</span>
+	<h2 id="netcat-bandwidth-test">Netcat Bandwidth Test</h2>
+<h3 id="netcat-server">netcat-server</h3>
+<pre><code>nc -l -p 12345 | wc -c
+</code></pre><h3 id="netcat-client">netcat-client</h3>
+<pre><code>dd if=/dev/zero bs=$((2**20)) count=$((2**10)) | nc -q 0 netcat-server 12345
+#or
+dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345
+</code></pre><p>on the server run nload to see the bandwidth used at eth0 for incoming and outgoing</p>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/">https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/</a></li>
+<li><a href="https://www.thegeekstuff.com/2012/04/nc-command-examples/">https://www.thegeekstuff.com/2012/04/nc-command-examples/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/netcat/">netcat</a>, <a href="https://blog.indonesiadot.com/tags/bandwidth/">bandwidth</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/"></a></h1>
+        <span class="post-date">Mar 5, 2020</span>
+	<h2 id="post">Post</h2>
+<p>Ini adalah contoh post</p>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/python-tips/">Python Tips</a></h1>
@@ -913,77 +1008,6 @@ bash unifi-5.12.35.sh
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/virus/">virus</a>, <a href="https://blog.indonesiadot.com/tags/virustotal/">virustotal</a>, <a href="https://blog.indonesiadot.com/tags/worm/">worm</a>, <a href="https://blog.indonesiadot.com/tags/trojan/">trojan</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/">Video Editing On Linux</a></h1>
-        <span class="post-date">Feb 24, 2020</span>
-	<h2 id="cut-and-combine-video">Cut and Combine Video</h2>
-<p>Avidemux</p>
-<h2 id="youtube">Youtube</h2>
-<h3 id="add-text--caption--subtitle--anotasi-on-video">Add text / caption / subtitle / Anotasi on video</h3>
-<pre><code>1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &gt; Youtube Studio
-2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks
-3. Untuk video baru, klik set languages, lalu confirm
-4. Klik tombol ADD / Tambahkan subtitel atau CC baru.
-</code></pre><h3 id="add-watermark">Add watermark</h3>
-<pre><code>ffmpeg -i input.mp4 -i watermark.png -filter_complex &quot;overlay=1500:1000&quot; output.mp4
-</code></pre><p>Referensi:</p>
-<ul>
-<li><a href="https://www.nesabamedia.com/cara-membuat-subtitle-video-youtube/">https://www.nesabamedia.com/cara-membuat-subtitle-video-youtube/</a></li>
-<li><a href="https://readmoremyblog.wordpress.com/2012/03/11/cara-membuat-teks-atau-anotasi-pada-video-youtube/">https://readmoremyblog.wordpress.com/2012/03/11/cara-membuat-teks-atau-anotasi-pada-video-youtube/</a></li>
-<li><a href="https://shkspr.mobi/blog/2016/08/easy-ways-to-add-watermarks-to-images-and-videos-in-linux/">https://shkspr.mobi/blog/2016/08/easy-ways-to-add-watermarks-to-images-and-videos-in-linux/</a></li>
-<li><a href="https://www.vlchelp.com/how-to-change-subtitle-position-in-vlc/">https://www.vlchelp.com/how-to-change-subtitle-position-in-vlc/</a></li>
-<li><a href="https://downsub.com/">https://downsub.com/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/video/">video</a>, <a href="https://blog.indonesiadot.com/tags/editing/">editing</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/youtube/">youtube</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/">Ansible OS Hardening</a></h1>
-        <span class="post-date">Feb 20, 2020</span>
-	<h2 id="ansible-os-hardening">Ansible OS Hardening</h2>
-<pre><code>mkdir -p /data/backups
-</code></pre><p>Referensi:</p>
-<ul>
-<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/os-hardening/">os-hardening</a>, <a href="https://blog.indonesiadot.com/tags/hardening/">hardening</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/">Ansible Tower tips and trick</a></h1>
-        <span class="post-date">Feb 20, 2020</span>
-	<h2 id="ansible-tower-tips-and-trick">Ansible Tower tips and trick</h2>
-<h3 id="change-admin-password">Change admin password</h3>
-<pre><code>awx-manage changepassword admin
-</code></pre><h3 id="backup-and-restore">backup and restore</h3>
-<ul>
-<li><a href="https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html">https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html</a></li>
-</ul>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html">https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/harbor/">harbor</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/registry/">registry</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
 	 <hr/>
     </div>
   

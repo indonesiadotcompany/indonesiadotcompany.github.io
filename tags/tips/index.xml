@@ -6,10 +6,28 @@
     <description>Recent content in tips on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Mar 2020 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 03 Apr 2020 15:47:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/tips/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible CI-CD CICD</title>
+      <link>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</link>
+      <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</guid>
+      <description>Jenkins Ansible Tower  https://plugins.jenkins.io/ansible-tower/ https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process  </description>
+    </item>
+    
+    <item>
+      <title>Security Compliance Baseline Benchmark</title>
+      <link>https://blog.indonesiadot.com/2020/04/03/security-compliance-baseline-benchmark/</link>
+      <pubDate>Fri, 03 Apr 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/04/03/security-compliance-baseline-benchmark/</guid>
+      <description>ssg baseline  https://static.open-scap.org/ https://static.open-scap.org/ssg-guides/ssg-rhel7-guide-index.html  cis baseline  https://www.cisecurity.org/cis-benchmarks/  </description>
+    </item>
     
     <item>
       <title>Certificate ssl key csr crt</title>
@@ -17,9 +35,8 @@
       <pubDate>Fri, 20 Mar 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/20/certificate-ssl-key-csr-crt/</guid>
-      <description>create csr ubuntu 18 openssl genrsa –out domain.key 2048 openssl req –new –key domain.key –out domain.csr  https://vitux.com/how-to-generate-a-certificate-signing-request-csr-on-ubuntu/  random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/root/.rnd If you have RANDFILE=&amp;hellip; configuration lines in your openssl.cnf than you can safely remove them
- https://github.com/openssl/openssl/issues/7754  convert p7b / p7c / pkcs7 to crt Description What are the differences between .p7b, .pfx, .p12, .pem, .der, .crt &amp;amp; .cer Certificates?
-With so many servers, some require different formats.</description>
+      <description>create csr ubuntu 18 openssl genrsa –out domain.key 2048 openssl req –new –key domain.key –out domain.csr #or #openssl req -new -newkey rsa:2048 -nodes -keyout domain.key -out domain.csr  https://vitux.com/how-to-generate-a-certificate-signing-request-csr-on-ubuntu/ https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-18-04  random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/root/.rnd If you have RANDFILE=&amp;hellip; configuration lines in your openssl.cnf than you can safely remove them
+ https://github.com/openssl/openssl/issues/7754  convert p7b / p7c / pkcs7 to crt Description What are the differences between .p7b, .pfx, .</description>
     </item>
     
     <item>
@@ -50,7 +67,7 @@ Elasticsearch handles storage and provides a RESTful search and analytics endpoi
       <pubDate>Wed, 18 Mar 2020 07:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/18/ubuntu-tips/</guid>
-      <description>Install specific version apt-cache policy gparted apt install gparted=0.16.1-1  https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package  </description>
+      <description>Install specific version apt-cache policy gparted apt install gparted=0.16.1-1  https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package  apport high cpu killall -9 apport service apport stop &amp;amp;&amp;amp; systemctl stop apport rm -f /var/crash/* apt-get remove apport -y </description>
     </item>
     
     <item>
@@ -433,11 +450,7 @@ Ref:
       
       <guid>https://blog.indonesiadot.com/2018/01/31/ansible-tips/</guid>
       <description>Ansible gather facts Using facter too
-Ref:
- http://docs.ansible.com/ansible/latest/setup_module.html#examples  ansible php composer Ref:
- https://knpuniversity.com/screencast/ansible/ansible-composer  ansible playbook interactive / ansible prompt Ref:
- https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html  ansible-playbook command Ref:
- https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/  </description>
+ http://docs.ansible.com/ansible/latest/setup_module.html#examples  ansible php composer  https://knpuniversity.com/screencast/ansible/ansible-composer  ansible playbook interactive / ansible prompt  https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html  ansible-playbook command  https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/  Ansible integrations  https://www.ansible.com/integrations/devops-tools  </description>
     </item>
     
     <item>
