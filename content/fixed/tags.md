@@ -10,12 +10,8 @@ menu:
 
 ---
 
-{{ $taxo := "tags" }} <!-- Use the plural form here -->
-<ul id="{{ $taxo }}">
-    {{ range .Param $taxo }}
-        {{ $name := . }}
-        {{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name | urlize)) }}
-            <li><a href="{{ .Permalink }}">{{ $name }}</a></li>
-        {{ end }}
-    {{ end }}
+<ul>
+    {{ range (.GetTerms "tags") }}
+        <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+   {{ end }}
 </ul>
