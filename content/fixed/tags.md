@@ -10,10 +10,4 @@ menu:
 
 ---
 
-<ul id="all-tags">
-    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-        {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
-            <li><a href="{{ .Permalink }}">{{ $name }}</a></li>
-        {{ end }}
-    {{ end }}
-</ul>
+

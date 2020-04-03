@@ -16,3 +16,7 @@ canonifyurls = true
   Title = "Blog Indonesiadot.Com"
   Tagline = "Web log of Indonesiadot.Com, Linux and updated technology"
   Author = "Widya"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
