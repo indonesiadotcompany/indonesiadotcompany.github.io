@@ -742,16 +742,8 @@
 <div class="post">
   <h1 class="post-title">Tags</h1>
   <span class="post-date">Jan 1, 0001</span>
-  <p>{{ $taxo := &ldquo;directors&rdquo; }} <!-- raw HTML omitted -->
-{{ with .Param $taxo }}
-<!-- raw HTML omitted -->Director{{ if gt (len .) 1 }}s{{ end }}:<!-- raw HTML omitted -->
-{{ range $index, $director := . }}
-{{- if gt $index 0 }}, {{ end -}}
-{{ with $.Site.GetPage (printf &ldquo;/%s/%s&rdquo; $taxo $director) -}}
-<!-- raw HTML omitted -->{{ $director }}<!-- raw HTML omitted -->
-{{- end -}}
-{{- end -}}
-{{ end }}</p>
+  <p>{{ $taxo := &ldquo;tags&rdquo; }} <!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
 
 </div>
 
