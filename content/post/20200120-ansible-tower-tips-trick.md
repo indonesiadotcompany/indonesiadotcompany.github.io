@@ -20,4 +20,5 @@ awx-manage changepassword admin
 Referensi:
 
 * https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html
+* https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/
 

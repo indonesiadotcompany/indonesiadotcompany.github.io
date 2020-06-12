@@ -6,7 +6,15 @@ author: "Widya"
 draft: false
 ---
 
-## Setup
+## Setup docker
+```
+curl -fsSL https://get.docker.com/ | sh
+usermod -aG docker namauser
+systemctl enable docker
+systemctl start docker
+```
+
+## Setup docker-compose
 ```
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose

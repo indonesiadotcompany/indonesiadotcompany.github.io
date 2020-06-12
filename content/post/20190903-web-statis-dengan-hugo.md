@@ -28,3 +28,14 @@ Referensi hugo dan e-commerce:
 
 * https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf
 * https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce
+
+## hugo lanyon tags
+
+edit themes/lanyonindo/layouts/partials/sidebar.html 
+```
+    <a class="sidebar-nav-item {{ if .IsHome }} active {{ end }}" href="/">Home</a>
+    <!--    <a class="sidebar-nav-item {{ if eq .RelPermalink "/post/" }} active {{ end }}" href="/post">Posts</a> -->
+    <a class="sidebar-nav-item" href="/post">Posts</a>
+    <a class="sidebar-nav-item" href="/tags">Tags</a>
+```
+
