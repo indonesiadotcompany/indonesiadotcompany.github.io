@@ -6,10 +6,19 @@
     <description>Recent content in elasticsearch on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Mar 2020 12:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Elk Elasticsearch Logstash Kibana References</title>
+      <link>https://blog.indonesiadot.com/2020/04/04/elk-elasticsearch-logstash-kibana-references/</link>
+      <pubDate>Sat, 04 Apr 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/04/04/elk-elasticsearch-logstash-kibana-references/</guid>
+      <description> https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7   </description>
+    </item>
     
     <item>
       <title>ELK for beginner</title>

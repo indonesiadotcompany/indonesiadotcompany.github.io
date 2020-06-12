@@ -18,7 +18,7 @@
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</guid>
       <description>Ansible Tower tips and trick Change admin password awx-manage changepassword admin backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
- https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html  </description>
+ https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/  </description>
     </item>
     
     <item>

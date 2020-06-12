@@ -712,6 +712,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -742,6 +750,28 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/12/simplemonitor-with-telegram-alert/">simplemonitor with telegram alert</a></h1>
+        <span class="post-date">Aug 12, 2019</span>
+	<p><a href="https://jamesoff.github.io/simplemonitor/alerting.html%3Cbr">https://jamesoff.github.io/simplemonitor/alerting.html&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->telegram alerters<!-- raw HTML omitted --><!-- raw HTML omitted -->Send alerts to a Telegram chat.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->setting<!-- raw HTML omitted --><!-- raw HTML omitted -->description<!-- raw HTML omitted --><!-- raw HTML omitted -->required<!-- raw HTML omitted --><!-- raw HTML omitted -->default<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->token<!-- raw HTML omitted --><!-- raw HTML omitted -->The token to access telegram<!-- raw HTML omitted --><!-- raw HTML omitted -->yes<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->chat_id<!-- raw HTML omitted --><!-- raw HTML omitted -->The chat to send to<!-- raw HTML omitted --><!-- raw HTML omitted -->yes<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://www.google.com/search?q=telegram+token%3Cbr">https://www.google.com/search?q=telegram+token&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="https://tutorials.botsfloor.com/creating-a-bot-using-the-telegram-bot-api-5d3caed3266d%3Cbr">https://tutorials.botsfloor.com/creating-a-bot-using-the-telegram-bot-api-5d3caed3266d&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="https://www.google.com/search?q=chat_id+telegram%3Cbr">https://www.google.com/search?q=chat_id+telegram&lt;br</a> /&gt;<!-- raw HTML omitted --><a href="https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id%3Cbr">https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->In order to get the group chat id, do as follows:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Add the Telegram BOT to the group.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Get the list of updates for your BOT:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://api.telegram.org/bot%3Cyourbottoken%3E/getUpdates%3Cbr">https://api.telegram.org/bot&lt;yourbottoken&gt;/getUpdates&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Ex:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://api.telegram.org/bot123456789:jbd78sadvbdy63d37gda37bd8/getUpdates%3Cbr">https://api.telegram.org/bot123456789:jbd78sadvbdy63d37gda37bd8/getUpdates&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Look for the &ldquo;chat&rdquo; object:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->{&ldquo;update_id&rdquo;:8393,&ldquo;message&rdquo;:{&ldquo;message_id&rdquo;:3,&ldquo;from&rdquo;:{&ldquo;id&rdquo;:7474,&ldquo;first_name&rdquo;:&ldquo;AAA&rdquo;},&ldquo;chat&rdquo;:{&ldquo;id&rdquo;:,&ldquo;title&rdquo;:&quot;&quot;},&ldquo;date&rdquo;:25497,&ldquo;new_chat_participant&rdquo;:{&ldquo;id&rdquo;:71,&ldquo;first_name&rdquo;:&ldquo;NAME&rdquo;,&ldquo;username&rdquo;:&ldquo;YOUR_BOT_NAME&rdquo;}}}<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->This is a sample of the response when you add your BOT into a group.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Use the &ldquo;id&rdquo; of the &ldquo;chat&rdquo; object to send your messages.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->note:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->setelah dapat token dan chat_id, masukan ke monitor.ini, contohnya:<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->[reporting]<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->; be sure to leave the json logger on, otherwise Docker health check will fail!<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->loggers=json,html<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->;alerters=email,email_escalate<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->alerters=telegram<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->&hellip;<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->[telegram]<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->type=telegram<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->token=123fdfdf-fdaf:fadf<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->chat_id=-1234<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/11/ubuntu-dns-local-cache-for-faster-dns-resolver/">Ubuntu dns local cache for faster dns resolver</a></h1>
+        <span class="post-date">Aug 11, 2019</span>
+	<p>googling: https://www.google.com/search?q=ubuntu+dns+local+cache<!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://superuser.com/questions/1291450/how-can-i-run-a-local-caching-dns-resolver-on-ubuntu-14-04%3Cbr">https://superuser.com/questions/1291450/how-can-i-run-a-local-caching-dns-resolver-on-ubuntu-14-04&lt;br</a> /&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->The easiest way is probably nscd.<!-- raw HTML omitted --><!-- raw HTML omitted -->Install nscd, using the default config.<!-- raw HTML omitted --><!-- raw HTML omitted -->Update /etc/nsswitch.conf and add <!-- raw HTML omitted -->cache<!-- raw HTML omitted --> before <!-- raw HTML omitted -->dns<!-- raw HTML omitted --> to the hosts line. <!-- raw HTML omitted -->(Edit: this part is not applicable to glibc as used in most linux distributions but is needed on fbsd)<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->hosts: files cache dns<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->then update /etc/resolv.conf at the beginning of the nameserver use 127.0.0.1<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->nameserver 127.0.0.1<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/08/11/nginx-tips-n-trick-499-code-on-nginx-access-logs/">nginx tips n trick - 499 code on nginx access logs</a></h1>
@@ -840,32 +870,6 @@ stress -c 8 -i 9 -m 9 --vm-bytes 1024M
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/disk/">disk</a>, <a href="https://blog.indonesiadot.com/tags/cpu/">cpu</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/stresstest/">stresstest</a>, <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/load/">load</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/07/15/zfs-cool-feature-snapshot-replicate-etc/">zfs cool feature, snapshot, replicate, etc</a></h1>
-        <span class="post-date">Jul 15, 2018</span>
-	<p><a href="https://www.google.co.id/search?q=zfs+remote+replication%3Cbr">https://www.google.co.id/search?q=zfs+remote+replication&lt;br</a> /&gt;https://www.howtoforge.com/tutorial/how-to-use-snapshots-clones-and-replication-in-zfs-on-linux/<!-- raw HTML omitted --><a href="https://zpool.org/zfs-snapshots-and-remote-replication/%3Cbr">https://zpool.org/zfs-snapshots-and-remote-replication/&lt;br</a> /&gt;http://www.zfsnap.org/docs.html</p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/07/13/belajar-usaha/">belajar usaha</a></h1>
-        <span class="post-date">Jul 13, 2018</span>
-	<p><a href="http://www.belajareksporimpor.com/author/samian-pacing%3Cbr">http://www.belajareksporimpor.com/author/samian-pacing&lt;br</a> /&gt;http://www.dimasrio.com/2017/01/peluang-usaha-untuk-mencari-pasif-income.html</p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/usaha/">usaha</a>, <a href="https://blog.indonesiadot.com/tags/dagang/">dagang</a>, <a href="https://blog.indonesiadot.com/tags/niaga/">niaga</a>
 	 <hr/>
     </div>
   

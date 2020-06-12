@@ -6,10 +6,28 @@
     <description>Recent content in Posts on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Apr 2020 15:47:54 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Postgresql</title>
+      <link>https://blog.indonesiadot.com/2020/06/12/postgresql/</link>
+      <pubDate>Fri, 12 Jun 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/06/12/postgresql/</guid>
+      <description>Install pgadmin4 di ubuntu 18 apt-get install curl ca-certificates gnupg curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - sh -c &#39;echo &amp;quot;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&amp;quot; &amp;gt; /etc/apt/sources.list.d/pgdg.list&#39; apt update apt install pgadmin4 create db su - postgres psql create database dvdrental; \q wget https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip unzip dvdrental.zip pg_restore -d dvdrental dvdrental.tar psql -d dvdrental GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO pgtower; \q psql -U pgtower -d dvdrental select first_name from customer; \q pg_hba.</description>
+    </item>
+    
+    <item>
+      <title>Elk Elasticsearch Logstash Kibana References</title>
+      <link>https://blog.indonesiadot.com/2020/04/04/elk-elasticsearch-logstash-kibana-references/</link>
+      <pubDate>Sat, 04 Apr 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/04/04/elk-elasticsearch-logstash-kibana-references/</guid>
+      <description> https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7   </description>
+    </item>
     
     <item>
       <title>Ansible CI-CD CICD</title>
@@ -17,7 +35,7 @@
       <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</guid>
-      <description>Jenkins Ansible Tower  https://plugins.jenkins.io/ansible-tower/ https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process  </description>
+      <description>Jenkins Ansible Tower  https://plugins.jenkins.io/ansible-tower/ https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process https://dzone.com/articles/how-to-setup-continuous-delivery-environment  </description>
     </item>
     
     <item>
@@ -90,7 +108,7 @@ Elasticsearch handles storage and provides a RESTful search and analytics endpoi
       <pubDate>Mon, 16 Mar 2020 19:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</guid>
-      <description>ansible logstash example  https://github.com/widansible/elk-ansible  </description>
+      <description>ansible logstash example  https://github.com/widansible/elk-ansible https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html  </description>
     </item>
     
     <item>
@@ -313,7 +331,7 @@ Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio 
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</guid>
       <description>Ansible Tower tips and trick Change admin password awx-manage changepassword admin backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
- https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html  </description>
+ https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/  </description>
     </item>
     
     <item>
@@ -363,7 +381,7 @@ add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonl
       <pubDate>Wed, 15 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</guid>
-      <description>Setup sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
+      <description>Setup docker curl -fsSL https://get.docker.com/ | sh usermod -aG docker namauser systemctl enable docker systemctl start docker Setup docker-compose sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
  https://docs.docker.com/compose/install/  </description>
     </item>
     
@@ -843,7 +861,8 @@ git reflog git reset --hard &amp;lt;id_repository_log&amp;gt; Langkahnya, lihat 
       <guid>https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/</guid>
       <description>manage hugo dari pc / laptop lain git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io git checkout hugo rm -rf public git add . git commit -m &#39;remove public&#39; git push git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public Referensi hugo dasar:
  https://www.petanikode.com/topik/hugo https://gohugo.io/getting-started/quick-start/ https://gohugo.io/hosting-and-deployment/hosting-on-github/ https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html  Referensi hugo dan e-commerce:
- https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce  </description>
+ https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce  hugo lanyon tags edit themes/lanyonindo/layouts/partials/sidebar.html
+ &amp;lt;a class=&amp;quot;sidebar-nav-item {{ if .IsHome }} active {{ end }}&amp;quot; href=&amp;quot;/&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt; &amp;lt;!-- &amp;lt;a class=&amp;quot;sidebar-nav-item {{ if eq .</description>
     </item>
     
     <item>

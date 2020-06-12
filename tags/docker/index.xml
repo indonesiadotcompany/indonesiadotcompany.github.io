@@ -31,7 +31,7 @@ How to get ip of running docker docker ps docker inspect &amp;lt;containernameor
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</guid>
       <description>Ansible Tower tips and trick Change admin password awx-manage changepassword admin backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
- https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html  </description>
+ https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/  </description>
     </item>
     
     <item>
@@ -50,7 +50,7 @@ How to get ip of running docker docker ps docker inspect &amp;lt;containernameor
       <pubDate>Wed, 15 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</guid>
-      <description>Setup sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
+      <description>Setup docker curl -fsSL https://get.docker.com/ | sh usermod -aG docker namauser systemctl enable docker systemctl start docker Setup docker-compose sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
  https://docs.docker.com/compose/install/  </description>
     </item>
     

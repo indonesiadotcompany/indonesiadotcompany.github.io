@@ -17,7 +17,7 @@
       <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</guid>
-      <description>Jenkins Ansible Tower  https://plugins.jenkins.io/ansible-tower/ https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process  </description>
+      <description>Jenkins Ansible Tower  https://plugins.jenkins.io/ansible-tower/ https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process https://dzone.com/articles/how-to-setup-continuous-delivery-environment  </description>
     </item>
     
     <item>
@@ -38,7 +38,7 @@ Why we need Ansible Tower and it’s benefits?   Ansible Tower helps you scale I
       <pubDate>Mon, 16 Mar 2020 19:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</guid>
-      <description>ansible logstash example  https://github.com/widansible/elk-ansible  </description>
+      <description>ansible logstash example  https://github.com/widansible/elk-ansible https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html  </description>
     </item>
     
     <item>

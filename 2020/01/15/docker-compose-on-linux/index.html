@@ -711,6 +711,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -740,7 +748,12 @@
 <div class="post">
   <h1 class="post-title">Docker Compose on Linux</h1>
   <span class="post-date">Jan 15, 2020</span>
-  <h2 id="setup">Setup</h2>
+  <h2 id="setup-docker">Setup docker</h2>
+<pre><code>curl -fsSL https://get.docker.com/ | sh
+usermod -aG docker namauser
+systemctl enable docker
+systemctl start docker
+</code></pre><h2 id="setup-docker-compose">Setup docker-compose</h2>
 <pre><code>sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose

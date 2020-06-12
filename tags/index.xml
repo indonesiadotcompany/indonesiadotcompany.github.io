@@ -6,10 +6,91 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Apr 2020 15:47:54 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>beginner</title>
+      <link>https://blog.indonesiadot.com/tags/beginner/</link>
+      <pubDate>Fri, 12 Jun 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/beginner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://blog.indonesiadot.com/tags/linux/</link>
+      <pubDate>Fri, 12 Jun 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>postgresql</title>
+      <link>https://blog.indonesiadot.com/tags/postgresql/</link>
+      <pubDate>Fri, 12 Jun 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>psql</title>
+      <link>https://blog.indonesiadot.com/tags/psql/</link>
+      <pubDate>Fri, 12 Jun 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/psql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elasticsearch</title>
+      <link>https://blog.indonesiadot.com/tags/elasticsearch/</link>
+      <pubDate>Sat, 04 Apr 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/elasticsearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elk</title>
+      <link>https://blog.indonesiadot.com/tags/elk/</link>
+      <pubDate>Sat, 04 Apr 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/elk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kibana</title>
+      <link>https://blog.indonesiadot.com/tags/kibana/</link>
+      <pubDate>Sat, 04 Apr 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/kibana/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>logstash</title>
+      <link>https://blog.indonesiadot.com/tags/logstash/</link>
+      <pubDate>Sat, 04 Apr 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/logstash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tips</title>
+      <link>https://blog.indonesiadot.com/tags/tips/</link>
+      <pubDate>Sat, 04 Apr 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>ansible</title>
@@ -35,24 +116,6 @@
       <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/jenkins/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://blog.indonesiadot.com/tags/linux/</link>
-      <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tips</title>
-      <link>https://blog.indonesiadot.com/tags/tips/</link>
-      <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
       <description></description>
     </item>
     
@@ -174,47 +237,11 @@
     </item>
     
     <item>
-      <title>elasticsearch</title>
-      <link>https://blog.indonesiadot.com/tags/elasticsearch/</link>
-      <pubDate>Wed, 18 Mar 2020 12:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/elasticsearch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>elk</title>
-      <link>https://blog.indonesiadot.com/tags/elk/</link>
-      <pubDate>Wed, 18 Mar 2020 12:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/elk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kibana</title>
-      <link>https://blog.indonesiadot.com/tags/kibana/</link>
-      <pubDate>Wed, 18 Mar 2020 12:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/kibana/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>logs</title>
       <link>https://blog.indonesiadot.com/tags/logs/</link>
       <pubDate>Wed, 18 Mar 2020 12:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/logs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>logstash</title>
-      <link>https://blog.indonesiadot.com/tags/logstash/</link>
-      <pubDate>Wed, 18 Mar 2020 12:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/logstash/</guid>
       <description></description>
     </item>
     
@@ -1133,15 +1160,6 @@
       <pubDate>Sun, 13 Oct 2019 07:09:53 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/doh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>postgresql</title>
-      <link>https://blog.indonesiadot.com/tags/postgresql/</link>
-      <pubDate>Thu, 10 Oct 2019 07:09:53 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/postgresql/</guid>
       <description></description>
     </item>
     
