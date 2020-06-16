@@ -6,10 +6,159 @@
     <description>Recent content in tips on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Mar 2020 18:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/tips/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Elk Elasticsearch Logstash Kibana References</title>
+      <link>https://blog.indonesiadot.com/2020/04/04/elk-elasticsearch-logstash-kibana-references/</link>
+      <pubDate>Sat, 04 Apr 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/04/04/elk-elasticsearch-logstash-kibana-references/</guid>
+      <description> https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7   </description>
+    </item>
+    
+    <item>
+      <title>Ansible CI-CD CICD</title>
+      <link>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</link>
+      <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</guid>
+      <description> Jenkins Ansible Tower  https://plugins.jenkins.io/ansible-tower/ https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process https://dzone.com/articles/how-to-setup-continuous-delivery-environment  </description>
+    </item>
+    
+    <item>
+      <title>Security Compliance Baseline Benchmark</title>
+      <link>https://blog.indonesiadot.com/2020/04/03/security-compliance-baseline-benchmark/</link>
+      <pubDate>Fri, 03 Apr 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/04/03/security-compliance-baseline-benchmark/</guid>
+      <description> ssg baseline  https://static.open-scap.org/ https://static.open-scap.org/ssg-guides/ssg-rhel7-guide-index.html  cis baseline  https://www.cisecurity.org/cis-benchmarks/ https://indonesiadot.com https://birau.com  </description>
+    </item>
+    
+    <item>
+      <title>Certificate ssl key csr crt</title>
+      <link>https://blog.indonesiadot.com/2020/03/20/certificate-ssl-key-csr-crt/</link>
+      <pubDate>Fri, 20 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/20/certificate-ssl-key-csr-crt/</guid>
+      <description>create csr ubuntu 18 openssl genrsa –out domain.key 2048 openssl req –new –key domain.key –out domain.csr #or #openssl req -new -newkey rsa:2048 -nodes -keyout domain.key -out domain.csr   https://vitux.com/how-to-generate-a-certificate-signing-request-csr-on-ubuntu/ https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-18-04  random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/root/.rnd If you have RANDFILE=&amp;hellip; configuration lines in your openssl.cnf than you can safely remove them
+ https://github.com/openssl/openssl/issues/7754  convert p7b / p7c / pkcs7 to crt Description What are the differences between .</description>
+    </item>
+    
+    <item>
+      <title>Ansible Tower for beginner</title>
+      <link>https://blog.indonesiadot.com/2020/03/18/ansible-tower-for-beginner/</link>
+      <pubDate>Wed, 18 Mar 2020 13:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/18/ansible-tower-for-beginner/</guid>
+      <description>Before going to start the installation steps, we need to know some benefits of Ansible Tower.
+Why we need Ansible Tower and it’s benefits?  Ansible Tower helps you scale IT automation, manage complex deployments and speed productivity.
+ Centralize and control your IT infrastructure with a visual dashboard, role-based access control, job scheduling, integrated notifications and graphical inventory management.
+ Ansible Tower’s REST API and CLI make it easy to embed Ansible Tower into existing tools and processes.</description>
+    </item>
+    
+    <item>
+      <title>ELK for beginner</title>
+      <link>https://blog.indonesiadot.com/2020/03/18/elk-for-beginner/</link>
+      <pubDate>Wed, 18 Mar 2020 12:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/18/elk-for-beginner/</guid>
+      <description>Why we use ELK? The Elastic Stack (aka ELK) is a robust solution for search, log management, and data analysis. ELK consists of a combination of three open source project: Elasticsearch, Logstash, and Kibana. These projects have specific roles in ELK:
+Elasticsearch handles storage and provides a RESTful search and analytics endpoint. Logstash is a server-side data processing pipeline that ingests, transforms and loads data. Kibana lets you visualize your Elasticsearch data and navigate the Elastic Stack.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu tips</title>
+      <link>https://blog.indonesiadot.com/2020/03/18/ubuntu-tips/</link>
+      <pubDate>Wed, 18 Mar 2020 07:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/18/ubuntu-tips/</guid>
+      <description> Install specific version apt-cache policy gparted apt install gparted=0.16.1-1   https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package  apport high cpu killall -9 apport service apport stop &amp;amp;&amp;amp; systemctl stop apport rm -f /var/crash/* apt-get remove apport -y  </description>
+    </item>
+    
+    <item>
+      <title>Ansible Tower Log Logstash ELK</title>
+      <link>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</link>
+      <pubDate>Mon, 16 Mar 2020 19:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</guid>
+      <description> ansible logstash example  https://github.com/widansible/elk-ansible https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html  </description>
+    </item>
+    
+    <item>
+      <title>Kubernetes references</title>
+      <link>https://blog.indonesiadot.com/2020/03/16/kubernetes-references/</link>
+      <pubDate>Mon, 16 Mar 2020 10:57:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/16/kubernetes-references/</guid>
+      <description>  https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076 https://medium.com/@kvaps/creating-baremethal-kubernetes-ha-cluster-with-kubeadm-and-keepalived-simple-guide https://medium.com/@kvaps/creating-high-available-baremetal-kubernetes-cluster-with-kubeadm-and-keepalived-simplest-guide-71766d5e25ae?source=---------6------------------  kubernetes monitoring  https://medium.com/@kvaps/zabbix-solve-memory-monitoring-issue-inside-lxc-containers-98ddf191051c  </description>
+    </item>
+    
+    <item>
+      <title>Kubernetes inside lxc</title>
+      <link>https://blog.indonesiadot.com/2020/03/16/kubernetes-inside-lxc/</link>
+      <pubDate>Mon, 16 Mar 2020 10:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/16/kubernetes-inside-lxc/</guid>
+      <description>  https://medium.com/@kvaps/run-kubernetes-in-lxc-container-f04aa94b6c9c https://github.com/corneliusweig/kubernetes-lxd https://www.sayem.org/k8s-on-lxd/ https://discuss.linuxcontainers.org/t/working-install-of-docker-ce-in-lxc-unprivileged-container-in-proxmox/3828/4 https://forum.proxmox.com/threads/lxc-docker-containerd-cannot-find-lib-modules-4-15-18-9-pve.49406/ https://forum.proxmox.com/threads/docker-in-lxc-container.45204/ https://discuss.linuxcontainers.org/t/how-to-add-kernel-modules-into-an-lxc-container/5033/3  kubernetes haproxy  https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076  </description>
+    </item>
+    
+    <item>
+      <title>Mxtoolbox mail blacklist</title>
+      <link>https://blog.indonesiadot.com/2020/03/16/mxtoolbox-mail-blacklist/</link>
+      <pubDate>Mon, 16 Mar 2020 10:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/16/mxtoolbox-mail-blacklist/</guid>
+      <description> Free alert (register with gmail)  https://mxtoolbox.com/public/registration.aspx?so=PB_FREE&amp;amp;page=free_registration https://mxtoolbox.com/blacklists.aspx  </description>
+    </item>
+    
+    <item>
+      <title>Qemu Tips</title>
+      <link>https://blog.indonesiadot.com/2020/03/16/qemu-tips/</link>
+      <pubDate>Mon, 16 Mar 2020 10:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/16/qemu-tips/</guid>
+      <description> Qemu resize qemu-img resize image.qcow2 +SIZE   https://indonesiadot.com  </description>
+    </item>
+    
+    <item>
+      <title>Sentinelone EPP EDR</title>
+      <link>https://blog.indonesiadot.com/2020/03/13/sentinelone-epp-edr/</link>
+      <pubDate>Fri, 13 Mar 2020 06:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/13/sentinelone-epp-edr/</guid>
+      <description>cloud connectivity became offline  make sure all of the docker container is run with docker ps
+ the date of the on-prem server must be UTC
+date  Wed Mar 11 09:18:42 UTC 2020
+ test cloudgateway api info with curl
+curl -v https://cloudgateway-prod-ap.sentinelone.net/api/v2/info  Trying 13.112.219.166&amp;hellip;
+ TCP_NODELAY set
+ Connected to cloudgateway-prod-ap.sentinelone.net (13.112.219.166) port 443 (#0)
+ ALPN, offering h2
+ ALPN, offering http/1.1
+ successfully set certificate verify locations:</description>
+    </item>
+    
+    <item>
+      <title>LVM tips</title>
+      <link>https://blog.indonesiadot.com/2020/03/12/lvm-tips/</link>
+      <pubDate>Thu, 12 Mar 2020 20:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/12/lvm-tips/</guid>
+      <description> resize / increase lvm lvextend --size +10G /dev/vg0/foo lvextend --size 20G /dev/vg0/foo lvdisplay /dev/vg0/foo   http://www.microhowto.info/howto/increase_the_size_of_an_lvm_logical_volume.html https://linoxide.com/linux-how-to/lvm-configuration-linux/  pvresize pvresize /dev/sda3   https://www.thegeekdiary.com/centos-rhel-how-to-resize-extend-existing-physical-volume-pv/  </description>
+    </item>
+    
+    <item>
+      <title>Ceph tips</title>
+      <link>https://blog.indonesiadot.com/2020/03/12/ceph-tips/</link>
+      <pubDate>Thu, 12 Mar 2020 18:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/12/ceph-tips/</guid>
+      <description>remove osd systemctl stop ceph-osd.target systemctl stop ceph-osd@0 ceph osd out 0 ceph osd down 0 ceph osd destroy 0 ceph osd destroy 0 --yes-i-really-mean-it ceph osd rm 0 ceph osd crush rm osd.0 ceph auth del osd.0 ceph-volume lvm zap /dev/sdX --destroy   https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87 https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/  all about pg_num  https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox  ceph one / single node ceph osd getcrushmap -o crush_map_compressed crushtool -d crush_map_compressed -o crush_map_decompressed vi crush_map_decompressed  lalu cari bagian:</description>
+    </item>
     
     <item>
       <title>Netcat Bandwidth Test</title>
@@ -315,11 +464,7 @@ Ref:
       
       <guid>https://blog.indonesiadot.com/2018/01/31/ansible-tips/</guid>
       <description> Ansible gather facts Using facter too
-Ref:
- http://docs.ansible.com/ansible/latest/setup_module.html#examples  ansible php composer Ref:
- https://knpuniversity.com/screencast/ansible/ansible-composer  ansible playbook interactive / ansible prompt Ref:
- https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html  ansible-playbook command Ref:
- https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/  </description>
+ http://docs.ansible.com/ansible/latest/setup_module.html#examples  ansible php composer  https://knpuniversity.com/screencast/ansible/ansible-composer  ansible playbook interactive / ansible prompt  https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html  ansible-playbook command  https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/  Ansible integrations  https://www.ansible.com/integrations/devops-tools  </description>
     </item>
     
     <item>

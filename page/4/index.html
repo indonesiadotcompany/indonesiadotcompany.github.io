@@ -43,12 +43,98 @@
 
   <nav class="sidebar-nav">
     <a class="sidebar-nav-item  active " href="https://blog.indonesiadot.com/">Home</a>
-    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/post">Posts</a>
+    
+    <a class="sidebar-nav-item" href="https://blog.indonesiadot.com/post">Posts</a>
+    <a class="sidebar-nav-item" href="https://blog.indonesiadot.com/tags">Tags</a>
 
     
     
       
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/about/">About</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
       
     
       
@@ -666,380 +752,322 @@
 <div class="post">
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/03/proxmox-add-zfs/">Proxmox Add ZFS</a></h1>
-        <span class="post-date">Dec 3, 2019</span>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/25/ubiquiti-unifi-on-linux-ubuntu/">Ubiquiti Unifi on Linux Ubuntu</a></h1>
+        <span class="post-date">Feb 25, 2020</span>
 	
 
-<h2 id="proxmox-add-zfs">Proxmox Add ZFS</h2>
+<h2 id="ubiquiti-unifi-on-linux-ubuntu">Ubiquiti Unifi on Linux Ubuntu</h2>
+
+<pre><code>apt-get update; apt-get install ca-certificates wget -y
+wget https://get.glennr.nl/unifi/install/unifi-5.12.35.sh
+bash unifi-5.12.35.sh
+</code></pre>
+
+<p>access your unifi controller at <a href="https://ip.of.your.server:8443">https://ip.of.your.server:8443</a></p>
 
 <p>Referensi:</p>
 
 <ul>
-<li><a href="https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/">https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/</a></li>
-<li><a href="https://pve.proxmox.com/wiki/ZFS_on_Linux">https://pve.proxmox.com/wiki/ZFS_on_Linux</a></li>
-</ul>
-
-<h2 id="proxmox-cloud-init">Proxmox cloud-init</h2>
-
-<p>Ref:</p>
-
-<ul>
-<li><a href="https://cloud.centos.org/centos/7/images/">https://cloud.centos.org/centos/7/images/</a></li>
-<li><a href="https://pve.proxmox.com/wiki/Cloud-Init_Support">https://pve.proxmox.com/wiki/Cloud-Init_Support</a></li>
-<li><a href="https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/">https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/</a></li>
+<li><a href="https://community.ui.com/questions/UniFi-Installation-Scripts-or-UniFi-Easy-Update-Script-or-UniFi-Lets-Encrypt-or-Ubuntu-16-04-18-04-/ccbc7530-dd61-40a7-82ec-22b17f027776">https://community.ui.com/questions/UniFi-Installation-Scripts-or-UniFi-Easy-Update-Script-or-UniFi-Lets-Encrypt-or-Ubuntu-16-04-18-04-/ccbc7530-dd61-40a7-82ec-22b17f027776</a></li>
+<li><a href="https://github.com/widcampur/ubiquiti-unifi-controller-install">https://github.com/widcampur/ubiquiti-unifi-controller-install</a></li>
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ubiquiti/">ubiquiti</a>, <a href="https://blog.indonesiadot.com/tags/unifi/">unifi</a>, <a href="https://blog.indonesiadot.com/tags/ubiquiti-unifi/">ubiquiti-unifi</a>, <a href="https://blog.indonesiadot.com/tags/wireless/">wireless</a>, <a href="https://blog.indonesiadot.com/tags/access-point/">access-point</a>
 	 <hr/>
     </div>
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/26/ansible-awx-2019/">Ansible AWX 2019</a></h1>
-        <span class="post-date">Nov 26, 2019</span>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/24/analisa-virus-dengan-virustotal/">Analisa Virus dengan virustotal</a></h1>
+        <span class="post-date">Feb 24, 2020</span>
 	
 
-<h2 id="ansible-awx">Ansible AWX</h2>
+<h2 id="analisa-virus-dengan-virustotal">Analisa Virus dengan virustotal</h2>
 
-<h3 id="install-docker-compose-tanpa-pip-tanpa-compile">install docker-compose tanpa pip, tanpa compile</h3>
+<p>Referensi:</p>
 
-<pre><code>curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
-ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+<ul>
+<li><a href="https://www.virustotal.com/gui/home/upload">https://www.virustotal.com/gui/home/upload</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/virus/">virus</a>, <a href="https://blog.indonesiadot.com/tags/virustotal/">virustotal</a>, <a href="https://blog.indonesiadot.com/tags/worm/">worm</a>, <a href="https://blog.indonesiadot.com/tags/trojan/">trojan</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/">Video Editing On Linux</a></h1>
+        <span class="post-date">Feb 24, 2020</span>
+	
+
+<h2 id="cut-and-combine-video">Cut and Combine Video</h2>
+
+<p>Avidemux</p>
+
+<h2 id="youtube">Youtube</h2>
+
+<h3 id="add-text-caption-subtitle-anotasi-on-video">Add text / caption / subtitle / Anotasi on video</h3>
+
+<pre><code>1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &gt; Youtube Studio
+2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks
+3. Untuk video baru, klik set languages, lalu confirm
+4. Klik tombol ADD / Tambahkan subtitel atau CC baru.
+</code></pre>
+
+<h3 id="add-watermark">Add watermark</h3>
+
+<pre><code>ffmpeg -i input.mp4 -i watermark.png -filter_complex &quot;overlay=1500:1000&quot; output.mp4
 </code></pre>
 
 <p>Referensi:</p>
 
 <ul>
-<li><a href="https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/">https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/</a></li>
-<li><a href="https://medium.com/swlh/ansible-awx-installation-5861b115455a">https://medium.com/swlh/ansible-awx-installation-5861b115455a</a></li>
-<li><a href="https://devzero.co.za/2019/02/28/high-availability-awx-ansible/">https://devzero.co.za/2019/02/28/high-availability-awx-ansible/</a></li>
-<li><a href="https://github.com/sujiar37/AWX-HA-InstanceGroup">https://github.com/sujiar37/AWX-HA-InstanceGroup</a></li>
-</ul>
-
-<p>Not yet tested:</p>
-
-<ul>
-<li><a href="https://github.com/MrMEEE/awx-build">https://github.com/MrMEEE/awx-build</a></li>
-<li><a href="https://awx.wiki/installation">https://awx.wiki/installation</a></li>
-<li><a href="https://github.com/powertim/deploy_awx-rpm">https://github.com/powertim/deploy_awx-rpm</a></li>
-<li><a href="https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/">https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/</a></li>
+<li><a href="https://www.nesabamedia.com/cara-membuat-subtitle-video-youtube/">https://www.nesabamedia.com/cara-membuat-subtitle-video-youtube/</a></li>
+<li><a href="https://readmoremyblog.wordpress.com/2012/03/11/cara-membuat-teks-atau-anotasi-pada-video-youtube/">https://readmoremyblog.wordpress.com/2012/03/11/cara-membuat-teks-atau-anotasi-pada-video-youtube/</a></li>
+<li><a href="https://shkspr.mobi/blog/2016/08/easy-ways-to-add-watermarks-to-images-and-videos-in-linux/">https://shkspr.mobi/blog/2016/08/easy-ways-to-add-watermarks-to-images-and-videos-in-linux/</a></li>
+<li><a href="https://www.vlchelp.com/how-to-change-subtitle-position-in-vlc/">https://www.vlchelp.com/how-to-change-subtitle-position-in-vlc/</a></li>
+<li><a href="https://downsub.com/">https://downsub.com/</a></li>
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/awx/">awx</a>
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/video/">video</a>, <a href="https://blog.indonesiadot.com/tags/editing/">editing</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/youtube/">youtube</a>
 	 <hr/>
     </div>
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/">Splunk Log Monitoring</a></h1>
-        <span class="post-date">Nov 15, 2019</span>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/">Ansible OS Hardening</a></h1>
+        <span class="post-date">Feb 20, 2020</span>
 	
 
-<h2 id="download">Download</h2>
+<h2 id="ansible-os-hardening">Ansible OS Hardening</h2>
 
-<p><a href="wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb" title="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;wget=true">deb</a>
-<a href="wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm" title="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;wget=true">rpm</a>
-<a href="wget -O splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz" title="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;wget=true">tgz</a></p>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://docs.splunk.com/Documentation">https://docs.splunk.com/Documentation</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/splunk/">splunk</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/">Recommended Ansible Modules</a></h1>
-        <span class="post-date">Nov 5, 2019</span>
-	
-
-<h1 id="frequently-used-module">Frequently Used Module</h1>
-
-<h2 id="blockinfile">blockinfile</h2>
-
-<p>Module ini saya gunakan ketika muncul error pada saat menggunakan module lineinfile untuk memasukan beberapa baris sekaligus dalam beberapa tasks, dan ternyata dengan menggunakan module ini dengan hanya satu task bisa memasukan langsung beberapa baris.</p>
-
-<p>Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepada parameter minimalnya adalah path dan block saja.</p>
-
-<pre><code>- name: Insert correct line to /etc/ntp.conf
-  blockinfile:
-    path: /etc/ntp.conf
-    insertafter: ^#?server
-    state: present
-    block: |
-      server &quot;{{ ntp1 }}&quot;
-      server &quot;{{ ntp2 }}&quot;
-  notify: restart ntp
+<pre><code>mkdir -p /data/backups
 </code></pre>
 
 <p>Referensi:</p>
 
 <ul>
-<li><a href="https://www.google.com/search?q=lineinfile+multiple+lines">https://www.google.com/search?q=lineinfile+multiple+lines</a></li>
-<li><a href="https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines">https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines</a></li>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html">https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html</a></li>
-<li><a href="https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py">https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py</a></li>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>
 
-<h2 id="find">find</h2>
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/os-hardening/">os-hardening</a>, <a href="https://blog.indonesiadot.com/tags/hardening/">hardening</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/">Ansible Tower tips and trick</a></h1>
+        <span class="post-date">Feb 20, 2020</span>
+	
 
-<p>Berikut contoh module find yang dicombine dengan module set_fact, when untuk menggunakan result matched (when seperti if dalam scripting / programming)</p>
+<h2 id="ansible-tower-tips-and-trick">Ansible Tower tips and trick</h2>
 
-<pre><code>    - name: Search /etc/audit/rules.d for other DAC audit rules
-      find:
-        paths: /etc/audit/rules.d
-        recurse: false
-        contains: -F key=perm_mod$
-        patterns: '*.rules'
-      register: find_fchown
-      when: ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
-    - name: If existing DAC ruleset not found, use /etc/audit/rules.d/privileged.rules as the recipient for the rule
-      set_fact:
-        all_files:
-          - /etc/audit/rules.d/privileged.rules
-      when:
-        - find_fchown.matched is defined and find_fchown.matched == 0
-        - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
-    - name: Use matched file as the recipient for the rule
-      set_fact:
-        all_files:
-          - '{{ find_fchown.files | map(attribute=''path'') | list | first }}'
-      when:
-        - find_fchown.matched is defined and find_fchown.matched &gt; 0
-        - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
+<h3 id="change-admin-password">Change admin password</h3>
+
+<pre><code>awx-manage changepassword admin
 </code></pre>
 
-<p>Referensi:
-* file remediation.yml dari oscap
-* <a href="https://docs.ansible.com/ansible/latest/modules/find_module.html">https://docs.ansible.com/ansible/latest/modules/find_module.html</a></p>
+<h3 id="backup-and-restore">backup and restore</h3>
 
-<h2 id="pamd">pamd</h2>
+<ul>
+<li><a href="https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html">https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html</a></li>
+</ul>
 
-<p>module ini berguna untuk edit pam service tanpa harus mengedit file nya langsung, tanpa harus menggunakan module lineinfile, blockinfile, replace, etc. Dan berikut contohnya:</p>
+<p>Referensi:</p>
 
-<pre><code>    - name: Add unlock_time argument to pam_faillock preauth
-      pamd:
-        name: '{{ item }}'
-        type: auth
-        control: required
-        module_path: pam_faillock.so
-        module_arguments: preauth silent unlock_time={{ var_accounts_passwords_pam_faillock_unlock_time
-          }}
-        state: args_present
-      loop:
-        - system-auth
-        - password-auth
+<ul>
+<li><a href="https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html">https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html</a></li>
+<li><a href="https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/">https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/harbor/">harbor</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/registry/">registry</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/">Selinux Web Directory Permission</a></h1>
+        <span class="post-date">Jan 20, 2020</span>
+	
+
+<h2 id="selinux-web-directory-permission">Selinux Web Directory Permission</h2>
+
+<p>Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.</p>
+
+<p>adapun command nya sebelum bisa diakses yaitu:</p>
+
+<pre><code>chcon -Rv --type=httpd_sys_rw_content_t /webserver
 </code></pre>
 
 <p>Referensi:</p>
 
 <ul>
-<li>file remediation.yml oscap</li>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/pamd_module.html">https://docs.ansible.com/ansible/latest/modules/pamd_module.html</a></li>
+<li><a href="https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/">https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/</a></li>
 </ul>
 
-<h2 id="debug">debug</h2>
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/selinux/">selinux</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/permission/">permission</a>, <a href="https://blog.indonesiadot.com/tags/redhat/">redhat</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/">Harbor Container Registry</a></h1>
+        <span class="post-date">Jan 20, 2020</span>
+	
 
-<pre><code>    - name: download report
-      fetch:
-        src: /tmp/oscap-report.html
-        dest: /home/ansible/public_html/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
-        flat: yes
-    - debug:
-        msg: http://34.87.94.24/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
+<h2 id="widya-harbor-container-registry">Widya Harbor Container Registry</h2>
+
+<ul>
+<li><a href="https://widharbor.birau.com/">https://widharbor.birau.com/</a></li>
+</ul>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/harbor/">harbor</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/registry/">registry</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/">Ansible Tower first Implementation</a></h1>
+        <span class="post-date">Jan 19, 2020</span>
+	
+
+<h2 id="ansible-tower-first-implementation">Ansible Tower first Implementation</h2>
+
+<ul>
+<li>Install ansible tower</li>
+<li>masukan license</li>
+<li>tambahkan <strong>access - organization</strong></li>
+<li>tambahkan <strong>access - users</strong></li>
+<li>tambahkan <strong>access - teams</strong></li>
+<li>tambahkan <strong>resources - inventory</strong></li>
+
+<li><p>siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)</p>
+
+<pre><code>chmod g+s /var/lib/awx/projects
+cp -r test /var/lib/awx/projects/
+</code></pre></li>
+
+<li><p>tambahkan <strong>resources - projects</strong></p></li>
+
+<li><p>buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine</p></li>
+
+<li><p>buat host client / node yang mau di manage di /etc/hosts</p></li>
+
+<li><p>tambahkan <strong>resources - credentials</strong></p></li>
+
+<li><p>tambahkan <strong>resources - templates</strong></p></li>
+
+<li><p>test launch jobs based on template yg baru dibuat</p></li>
+</ul>
+
+<h2 id="ansible-tower-openscap">Ansible tower + openscap</h2>
+
+<ul>
+<li><p>install scap-workbench</p>
+
+<pre><code>yum install scap-workbench xauth -y
+</code></pre></li>
+
+<li><p>buat direktori report</p>
+
+<pre><code>mkdir /report                                                                                                                                                                                               
+chgrp awx /report                                                                                                                                                                                           
+chmod g+s /report/
+chcon -Rv --type=httpd_sys_rw_content_t /report/
+ln -s /report /var/lib/awx/public/
+</code></pre></li>
+
+<li><p>tambahkan direktori report di nginx</p>
+
+<pre><code>    location /report {
+            alias /var/lib/awx/public/report;
+            autoindex on;
+    }
+</code></pre></li>
+
+<li><p>akses scap-workbench dari laptop</p>
+
+<pre><code>ssh -X -C tower1
+scap-workbench
+</code></pre></li>
+
+<li><p>jalankan <strong>Scan</strong> Remote Machine (over SSH) ke ansible@client1 (jika muncul popup, pilih centos7)</p></li>
+
+<li><p>Save generate result html ke /report (tambahkan pembeda semisal datetime untuk membedakan tiap file report)</p></li>
+</ul>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/tower/">tower</a>, <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/">Letsencrypt certbot unatteded</a></h1>
+        <span class="post-date">Jan 19, 2020</span>
+	
+
+<h2 id="letsencrypt-with-certbot-unatteded-way">Letsencrypt with certbot unatteded way</h2>
+
+<p>This is for ubuntu linux</p>
+
+<pre><code>add-apt-repository ppa:certbot/certbot -y
+apt install certbot -y
+certbot certonly --standalone --preferred-challenges http --non-interactive  --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com
 </code></pre>
 
-<p>Ref:</p>
+<h2 id="note">Note:</h2>
 
 <ul>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/debug_module.html">https://docs.ansible.com/ansible/latest/modules/debug_module.html</a></li>
+<li>before running certbot command, you must already pointing domain / subdomain address to destination ip</li>
+</ul>
+
+<h2 id="referensi">Referensi:</h2>
+
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>
 
 	<hr/>
 	
 	
 	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/">Ansible and Openscap</a></h1>
-        <span class="post-date">Nov 4, 2019</span>
-	
-
-<h2 id="ansible-and-openscap-for-scanning-and-remediation-server-for-security-compliance-operating-system">Ansible and Openscap for scanning and remediation server for security compliance operating system</h2>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663">https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>, <a href="https://blog.indonesiadot.com/tags/openscap/">openscap</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/cis/">cis</a>, <a href="https://blog.indonesiadot.com/tags/stig/">stig</a>, <a href="https://blog.indonesiadot.com/tags/scan/">scan</a>, <a href="https://blog.indonesiadot.com/tags/remediation/">remediation</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/03/openscap-reference/">Openscap Reference</a></h1>
-        <span class="post-date">Nov 3, 2019</span>
-	
-
-<h2 id="openscap-custom-profile">Openscap Custom Profile</h2>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://martin.preisler.me/2013/11/xccdf-tailoring/">https://martin.preisler.me/2013/11/xccdf-tailoring/</a></li>
-<li><a href="https://static.open-scap.org/openscap-1.2/oscap_user_manual.html">https://static.open-scap.org/openscap-1.2/oscap_user_manual.html</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/openscap/">openscap</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/31/centos-syslog-server/">Centos Syslog Server</a></h1>
-        <span class="post-date">Oct 31, 2019</span>
-	
-
-<h2 id="setup-syslog-server-and-setup-syslog-client-to-it-on-centos-7">Setup Syslog Server and setup syslog client to it on Centos 7</h2>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.svennd.be/setup-central-syslog-server-on-centos-7/">https://www.svennd.be/setup-central-syslog-server-on-centos-7/</a></li>
-<li><a href="https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/">https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/</a></li>
-<li><a href="https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html">https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/syslog/">syslog</a>, <a href="https://blog.indonesiadot.com/tags/client/">client</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/31/regex-/-regexp-reference/">Regex / Regexp Reference</a></h1>
-        <span class="post-date">Oct 31, 2019</span>
-	
-
-<h2 id="regex-case-insensitive">Regex Case insensitive</h2>
-
-<p>(?i)</p>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean">https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean</a></li>
-<li><a href="https://regex101.com/r/hE9gB4/1">https://regex101.com/r/hE9gB4/1</a></li>
-<li><a href="https://regexr.com/3f4vo">https://regexr.com/3f4vo</a></li>
-</ul>
-
-<h2 id="regex-to-match-string-containing-two-names">Regex to match string containing two names</h2>
-
-<p>###Explanation of command that i am going to write:-</p>
-
-<p>. means any character, digit can come in place of .</p>
-
-<ul>
-<li>means zero or more occurrences of thing written just previous to it.</li>
-</ul>
-
-<p>| means &lsquo;or&rsquo;.</p>
-
-<p>So,</p>
-
-<pre><code>james.*jack
-</code></pre>
-
-<p>would search james , then any number of character until jack comes.</p>
-
-<p>Since you want either jack.*james or james.*jack</p>
-
-<p>Hence Command:</p>
-
-<p>jack.*james|james.*jack</p>
-
-<p>Ref:</p>
-
-<ul>
-<li><a href="https://stackoverflow.com/questions/4389644/regex-to-match-string-containing-two-names-in-any-order">https://stackoverflow.com/questions/4389644/regex-to-match-string-containing-two-names-in-any-order</a></li>
-</ul>
-
-<h2 id="regex-not-contain-substring-a-word">Regex not contain substring / a word</h2>
-
-<p>Ref:</p>
-
-<p><a href="https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word">https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word</a></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/regex/">regex</a>, <a href="https://blog.indonesiadot.com/tags/regexp/">regexp</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/29/linux-os-hardening/">Linux OS Hardening</a></h1>
-        <span class="post-date">Oct 29, 2019</span>
-	
-
-<h2 id="password-policies-centos-7">Password Policies Centos 7</h2>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/">https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/</a></li>
-<li><a href="https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/">https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/</a></li>
-</ul>
-
-<h2 id="centos-7-hardening-guide">Centos 7 Hardening Guide</h2>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.lisenet.com/2017/centos-7-server-hardening-guide/">https://www.lisenet.com/2017/centos-7-server-hardening-guide/</a></li>
-</ul>
-
-<h2 id="linux-aslr-and-kernel-randomize-va-space">Linux ASLR and kernel.randomize_va_space</h2>
-
-<p>Ref:</p>
-
-<ul>
-<li><a href="https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/">https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/letsencrypt/">letsencrypt</a>, <a href="https://blog.indonesiadot.com/tags/https/">https</a>, <a href="https://blog.indonesiadot.com/tags/ssl/">ssl</a>, <a href="https://blog.indonesiadot.com/tags/certbot/">certbot</a>
 	 <hr/>
     </div>
   

@@ -42,12 +42,98 @@
 
   <nav class="sidebar-nav">
     <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/">Home</a>
-    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/post">Posts</a>
+    
+    <a class="sidebar-nav-item" href="https://blog.indonesiadot.com/post">Posts</a>
+    <a class="sidebar-nav-item" href="https://blog.indonesiadot.com/tags">Tags</a>
 
     
     
       
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/about/">About</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
       
     
       
@@ -675,6 +761,26 @@ lxc start c1
 <ul>
 <li><a href="https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4">https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4</a></li>
 </ul>
+
+<h2 id="lxc-privileged-to-unprivileged">lxc privileged to unprivileged</h2>
+
+<p>Pada saat container (CT) lxc dalam unprivileged mode memiliki hak terbatas seperti akses ke device dan beberapa lainnya.</p>
+
+<p>Contoh pada saat menjalankan docker itu ada pesan error <em>Failed to reset devices.list on /system.slice</em></p>
+
+<p>Workaround nya adalah dengan membuat CT menjadi privileged mode, caranya yaitu:
+- backup CT
+- restore CT dengan uncheck unprivileged mode</p>
+
+<ul>
+<li><a href="https://github.com/lxc/lxd/issues/2004">https://github.com/lxc/lxd/issues/2004</a></li>
+<li><a href="https://forum.proxmox.com/threads/convert-privileged-to-unprivileged-container.31066/">https://forum.proxmox.com/threads/convert-privileged-to-unprivileged-container.31066/</a></li>
+</ul>
+
+<h2 id="rename-lxc-container">rename lxc container</h2>
+
+<pre><code>lxc move [ct-lama] [ct-baru]
+</code></pre>
 
 </div>
 

@@ -6,10 +6,19 @@
     <description>Recent content in disk on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Sep 2019 13:09:15 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 12 Mar 2020 20:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/disk/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LVM tips</title>
+      <link>https://blog.indonesiadot.com/2020/03/12/lvm-tips/</link>
+      <pubDate>Thu, 12 Mar 2020 20:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/12/lvm-tips/</guid>
+      <description> resize / increase lvm lvextend --size +10G /dev/vg0/foo lvextend --size 20G /dev/vg0/foo lvdisplay /dev/vg0/foo   http://www.microhowto.info/howto/increase_the_size_of_an_lvm_logical_volume.html https://linoxide.com/linux-how-to/lvm-configuration-linux/  pvresize pvresize /dev/sda3   https://www.thegeekdiary.com/centos-rhel-how-to-resize-extend-existing-physical-volume-pv/  </description>
+    </item>
     
     <item>
       <title>Disk Serial Number</title>

@@ -6,26 +6,359 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Mar 2020 06:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>beginner</title>
+      <link>https://blog.indonesiadot.com/tags/beginner/</link>
+      <pubDate>Fri, 12 Jun 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/beginner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>linux</title>
       <link>https://blog.indonesiadot.com/tags/linux/</link>
-      <pubDate>Tue, 10 Mar 2020 06:17:54 +0700</pubDate>
+      <pubDate>Fri, 12 Jun 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>postgresql</title>
+      <link>https://blog.indonesiadot.com/tags/postgresql/</link>
+      <pubDate>Fri, 12 Jun 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>psql</title>
+      <link>https://blog.indonesiadot.com/tags/psql/</link>
+      <pubDate>Fri, 12 Jun 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/psql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elasticsearch</title>
+      <link>https://blog.indonesiadot.com/tags/elasticsearch/</link>
+      <pubDate>Sat, 04 Apr 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/elasticsearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elk</title>
+      <link>https://blog.indonesiadot.com/tags/elk/</link>
+      <pubDate>Sat, 04 Apr 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/elk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kibana</title>
+      <link>https://blog.indonesiadot.com/tags/kibana/</link>
+      <pubDate>Sat, 04 Apr 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/kibana/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>logstash</title>
+      <link>https://blog.indonesiadot.com/tags/logstash/</link>
+      <pubDate>Sat, 04 Apr 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/logstash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tips</title>
+      <link>https://blog.indonesiadot.com/tags/tips/</link>
+      <pubDate>Sat, 04 Apr 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ansible</title>
+      <link>https://blog.indonesiadot.com/tags/ansible/</link>
+      <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cicd</title>
+      <link>https://blog.indonesiadot.com/tags/cicd/</link>
+      <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/cicd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jenkins</title>
+      <link>https://blog.indonesiadot.com/tags/jenkins/</link>
+      <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>baseline</title>
+      <link>https://blog.indonesiadot.com/tags/baseline/</link>
+      <pubDate>Fri, 03 Apr 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/baseline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>benchmark</title>
+      <link>https://blog.indonesiadot.com/tags/benchmark/</link>
+      <pubDate>Fri, 03 Apr 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/benchmark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pci-dss</title>
+      <link>https://blog.indonesiadot.com/tags/pci-dss/</link>
+      <pubDate>Fri, 03 Apr 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/pci-dss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://blog.indonesiadot.com/tags/security/</link>
+      <pubDate>Fri, 03 Apr 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>edr</title>
+      <link>https://blog.indonesiadot.com/tags/edr/</link>
+      <pubDate>Fri, 27 Mar 2020 12:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/edr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>epp</title>
+      <link>https://blog.indonesiadot.com/tags/epp/</link>
+      <pubDate>Fri, 27 Mar 2020 12:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/epp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>on-premise</title>
+      <link>https://blog.indonesiadot.com/tags/on-premise/</link>
+      <pubDate>Fri, 27 Mar 2020 12:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/on-premise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sentinelone</title>
+      <link>https://blog.indonesiadot.com/tags/sentinelone/</link>
+      <pubDate>Fri, 27 Mar 2020 12:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/sentinelone/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>certificate</title>
+      <link>https://blog.indonesiadot.com/tags/certificate/</link>
+      <pubDate>Fri, 20 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/certificate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>crt</title>
+      <link>https://blog.indonesiadot.com/tags/crt/</link>
+      <pubDate>Fri, 20 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/crt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>csr</title>
+      <link>https://blog.indonesiadot.com/tags/csr/</link>
+      <pubDate>Fri, 20 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/csr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssl</title>
+      <link>https://blog.indonesiadot.com/tags/ssl/</link>
+      <pubDate>Fri, 20 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ssl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ansibletower</title>
+      <link>https://blog.indonesiadot.com/tags/ansibletower/</link>
+      <pubDate>Wed, 18 Mar 2020 13:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ansibletower/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>logs</title>
+      <link>https://blog.indonesiadot.com/tags/logs/</link>
+      <pubDate>Wed, 18 Mar 2020 12:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/logs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://blog.indonesiadot.com/tags/ubuntu/</link>
+      <pubDate>Wed, 18 Mar 2020 07:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>log</title>
+      <link>https://blog.indonesiadot.com/tags/log/</link>
+      <pubDate>Mon, 16 Mar 2020 19:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/log/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://blog.indonesiadot.com/tags/kubernetes/</link>
+      <pubDate>Mon, 16 Mar 2020 10:57:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>lxc</title>
       <link>https://blog.indonesiadot.com/tags/lxc/</link>
-      <pubDate>Tue, 10 Mar 2020 06:17:54 +0700</pubDate>
+      <pubDate>Mon, 16 Mar 2020 10:47:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/lxc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>qemu</title>
+      <link>https://blog.indonesiadot.com/tags/qemu/</link>
+      <pubDate>Mon, 16 Mar 2020 10:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/qemu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mail</title>
+      <link>https://blog.indonesiadot.com/tags/mail/</link>
+      <pubDate>Mon, 16 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/mail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mailserver</title>
+      <link>https://blog.indonesiadot.com/tags/mailserver/</link>
+      <pubDate>Mon, 16 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/mailserver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>qmail</title>
+      <link>https://blog.indonesiadot.com/tags/qmail/</link>
+      <pubDate>Mon, 16 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/qmail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>qmailtoaster</title>
+      <link>https://blog.indonesiadot.com/tags/qmailtoaster/</link>
+      <pubDate>Mon, 16 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/qmailtoaster/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>disk</title>
+      <link>https://blog.indonesiadot.com/tags/disk/</link>
+      <pubDate>Thu, 12 Mar 2020 20:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/disk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lvm</title>
+      <link>https://blog.indonesiadot.com/tags/lvm/</link>
+      <pubDate>Thu, 12 Mar 2020 20:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/lvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ceph</title>
+      <link>https://blog.indonesiadot.com/tags/ceph/</link>
+      <pubDate>Thu, 12 Mar 2020 18:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ceph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>storage</title>
+      <link>https://blog.indonesiadot.com/tags/storage/</link>
+      <pubDate>Thu, 12 Mar 2020 18:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/storage/</guid>
       <description></description>
     </item>
     
@@ -35,33 +368,6 @@
       <pubDate>Tue, 10 Mar 2020 06:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/lxd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ubuntu</title>
-      <link>https://blog.indonesiadot.com/tags/ubuntu/</link>
-      <pubDate>Tue, 10 Mar 2020 06:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/ubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ansible</title>
-      <link>https://blog.indonesiadot.com/tags/ansible/</link>
-      <pubDate>Mon, 09 Mar 2020 17:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ansibletower</title>
-      <link>https://blog.indonesiadot.com/tags/ansibletower/</link>
-      <pubDate>Mon, 09 Mar 2020 17:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/ansibletower/</guid>
       <description></description>
     </item>
     
@@ -98,15 +404,6 @@
       <pubDate>Thu, 05 Mar 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/netcat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tips</title>
-      <link>https://blog.indonesiadot.com/tags/tips/</link>
-      <pubDate>Thu, 05 Mar 2020 18:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
       <description></description>
     </item>
     
@@ -309,15 +606,6 @@
     </item>
     
     <item>
-      <title>security</title>
-      <link>https://blog.indonesiadot.com/tags/security/</link>
-      <pubDate>Thu, 20 Feb 2020 18:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>harbor</title>
       <link>https://blog.indonesiadot.com/tags/harbor/</link>
       <pubDate>Thu, 20 Feb 2020 08:17:54 +0700</pubDate>
@@ -395,15 +683,6 @@
       <pubDate>Sun, 19 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/letsencrypt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ssl</title>
-      <link>https://blog.indonesiadot.com/tags/ssl/</link>
-      <pubDate>Sun, 19 Jan 2020 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/ssl/</guid>
       <description></description>
     </item>
     
@@ -489,15 +768,6 @@
     </item>
     
     <item>
-      <title>qemu</title>
-      <link>https://blog.indonesiadot.com/tags/qemu/</link>
-      <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/qemu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>virt-install</title>
       <link>https://blog.indonesiadot.com/tags/virt-install/</link>
       <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
@@ -512,15 +782,6 @@
       <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/virtualization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jenkins</title>
-      <link>https://blog.indonesiadot.com/tags/jenkins/</link>
-      <pubDate>Thu, 05 Dec 2019 18:47:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/jenkins/</guid>
       <description></description>
     </item>
     
@@ -903,29 +1164,11 @@
     </item>
     
     <item>
-      <title>postgresql</title>
-      <link>https://blog.indonesiadot.com/tags/postgresql/</link>
-      <pubDate>Thu, 10 Oct 2019 07:09:53 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/postgresql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>rabbitmq</title>
       <link>https://blog.indonesiadot.com/tags/rabbitmq/</link>
       <pubDate>Thu, 10 Oct 2019 07:09:53 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/rabbitmq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>disk</title>
-      <link>https://blog.indonesiadot.com/tags/disk/</link>
-      <pubDate>Mon, 30 Sep 2019 13:09:15 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/disk/</guid>
       <description></description>
     </item>
     
@@ -1038,29 +1281,11 @@
     </item>
     
     <item>
-      <title>mail</title>
-      <link>https://blog.indonesiadot.com/tags/mail/</link>
-      <pubDate>Mon, 02 Sep 2019 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/mail/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>postfix</title>
       <link>https://blog.indonesiadot.com/tags/postfix/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/postfix/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://blog.indonesiadot.com/tags/kubernetes/</link>
-      <pubDate>Mon, 02 Sep 2019 08:17:33 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/kubernetes/</guid>
       <description></description>
     </item>
     
@@ -1295,15 +1520,6 @@
       <pubDate>Sun, 04 Mar 2018 20:40:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>elasticsearch</title>
-      <link>https://blog.indonesiadot.com/tags/elasticsearch/</link>
-      <pubDate>Sun, 04 Mar 2018 20:36:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/elasticsearch/</guid>
       <description></description>
     </item>
     

@@ -7,18 +7,303 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/tags/beginner/</loc>
+    <lastmod>2020-06-12T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
+    <lastmod>2020-06-12T08:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
+    <lastmod>2020-06-12T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/06/12/postgresql/</loc>
+    <lastmod>2020-06-12T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/postgresql/</loc>
+    <lastmod>2020-06-12T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2020-06-12T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/psql/</loc>
+    <lastmod>2020-06-12T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2020-06-12T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/elasticsearch/</loc>
+    <lastmod>2020-04-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/elk/</loc>
+    <lastmod>2020-04-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/04/04/elk-elasticsearch-logstash-kibana-references/</loc>
+    <lastmod>2020-04-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/kibana/</loc>
+    <lastmod>2020-04-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/logstash/</loc>
+    <lastmod>2020-04-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
+    <lastmod>2020-04-04T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
+    <lastmod>2020-04-03T15:47:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</loc>
+    <lastmod>2020-04-03T15:47:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/cicd/</loc>
+    <lastmod>2020-04-03T15:47:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/jenkins/</loc>
+    <lastmod>2020-04-03T15:47:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/baseline/</loc>
+    <lastmod>2020-04-03T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/benchmark/</loc>
+    <lastmod>2020-04-03T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/pci-dss/</loc>
+    <lastmod>2020-04-03T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/security/</loc>
+    <lastmod>2020-04-03T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/04/03/security-compliance-baseline-benchmark/</loc>
+    <lastmod>2020-04-03T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/edr/</loc>
+    <lastmod>2020-03-27T12:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/epp/</loc>
+    <lastmod>2020-03-27T12:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/on-premise/</loc>
+    <lastmod>2020-03-27T12:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/sentinelone/</loc>
+    <lastmod>2020-03-27T12:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/27/sentinelone-epp-edr-on-premise/</loc>
+    <lastmod>2020-03-27T12:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/certificate/</loc>
+    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/20/certificate-ssl-key-csr-crt/</loc>
+    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/crt/</loc>
+    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/csr/</loc>
+    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ssl/</loc>
+    <lastmod>2020-03-20T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/18/ansible-tower-for-beginner/</loc>
+    <lastmod>2020-03-18T13:47:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ansibletower/</loc>
+    <lastmod>2020-03-18T13:47:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/18/elk-for-beginner/</loc>
+    <lastmod>2020-03-18T12:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/logs/</loc>
+    <lastmod>2020-03-18T12:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ubuntu/</loc>
+    <lastmod>2020-03-18T07:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/18/ubuntu-tips/</loc>
+    <lastmod>2020-03-18T07:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</loc>
+    <lastmod>2020-03-16T19:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/log/</loc>
+    <lastmod>2020-03-16T19:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/kubernetes/</loc>
+    <lastmod>2020-03-16T10:57:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/16/kubernetes-references/</loc>
+    <lastmod>2020-03-16T10:57:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/16/kubernetes-inside-lxc/</loc>
+    <lastmod>2020-03-16T10:47:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/lxc/</loc>
-    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
+    <lastmod>2020-03-16T10:47:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/16/mxtoolbox-mail-blacklist/</loc>
+    <lastmod>2020-03-16T10:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/qemu/</loc>
+    <lastmod>2020-03-16T10:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/16/qemu-tips/</loc>
+    <lastmod>2020-03-16T10:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/mail/</loc>
+    <lastmod>2020-03-16T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/mailserver/</loc>
+    <lastmod>2020-03-16T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/qmail/</loc>
+    <lastmod>2020-03-16T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/16/qmail-toaster/</loc>
+    <lastmod>2020-03-16T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/qmailtoaster/</loc>
+    <lastmod>2020-03-16T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/13/sentinelone-epp-edr/</loc>
+    <lastmod>2020-03-13T06:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/disk/</loc>
+    <lastmod>2020-03-12T20:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/lvm/</loc>
+    <lastmod>2020-03-12T20:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/12/lvm-tips/</loc>
+    <lastmod>2020-03-12T20:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ceph/</loc>
+    <lastmod>2020-03-12T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/03/12/ceph-tips/</loc>
+    <lastmod>2020-03-12T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/storage/</loc>
+    <lastmod>2020-03-12T18:17:54+07:00</lastmod>
   </url>
   
   <url>
@@ -32,32 +317,7 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
-    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ubuntu/</loc>
-    <lastmod>2020-03-10T06:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
-    <lastmod>2020-03-09T17:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution-1-briefing-session/</loc>
-    <lastmod>2020-03-09T17:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ansibletower/</loc>
     <lastmod>2020-03-09T17:17:54+07:00</lastmod>
   </url>
   
@@ -88,11 +348,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2020/03/05/netcat-bandwidth-test/</loc>
-    <lastmod>2020-03-05T18:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
     <lastmod>2020-03-05T18:17:54+07:00</lastmod>
   </url>
   
@@ -252,11 +507,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/security/</loc>
-    <lastmod>2020-02-20T18:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</loc>
     <lastmod>2020-02-20T08:17:54+07:00</lastmod>
   </url>
@@ -327,11 +577,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/ssl/</loc>
-    <lastmod>2020-01-19T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</loc>
     <lastmod>2020-01-15T08:17:54+07:00</lastmod>
   </url>
@@ -397,11 +642,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/qemu/</loc>
-    <lastmod>2019-12-22T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</loc>
     <lastmod>2019-12-22T08:17:54+07:00</lastmod>
   </url>
@@ -414,11 +654,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/tags/virtualization/</loc>
     <lastmod>2019-12-22T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/jenkins/</loc>
-    <lastmod>2019-12-05T18:47:00+00:00</lastmod>
   </url>
   
   <url>
@@ -752,18 +987,8 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/postgresql/</loc>
-    <lastmod>2019-10-10T07:09:53+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/rabbitmq/</loc>
     <lastmod>2019-10-10T07:09:53+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/disk/</loc>
-    <lastmod>2019-09-30T13:09:15+07:00</lastmod>
   </url>
   
   <url>
@@ -872,11 +1097,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/mail/</loc>
-    <lastmod>2019-09-02T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/postfix/</loc>
     <lastmod>2019-09-02T08:17:54+07:00</lastmod>
   </url>
@@ -888,11 +1108,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/</loc>
-    <lastmod>2019-09-02T08:17:33+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/kubernetes/</loc>
     <lastmod>2019-09-02T08:17:33+07:00</lastmod>
   </url>
   
@@ -1194,11 +1409,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/2018/03/04/aws-tips-and-tricks/</loc>
     <lastmod>2018-03-04T20:40:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/elasticsearch/</loc>
-    <lastmod>2018-03-04T20:36:00+00:00</lastmod>
   </url>
   
   <url>

@@ -6,10 +6,28 @@
     <description>Recent content in kubernetes on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Sep 2019 08:17:33 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2020 10:57:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kubernetes references</title>
+      <link>https://blog.indonesiadot.com/2020/03/16/kubernetes-references/</link>
+      <pubDate>Mon, 16 Mar 2020 10:57:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/16/kubernetes-references/</guid>
+      <description>  https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076 https://medium.com/@kvaps/creating-baremethal-kubernetes-ha-cluster-with-kubeadm-and-keepalived-simple-guide https://medium.com/@kvaps/creating-high-available-baremetal-kubernetes-cluster-with-kubeadm-and-keepalived-simplest-guide-71766d5e25ae?source=---------6------------------  kubernetes monitoring  https://medium.com/@kvaps/zabbix-solve-memory-monitoring-issue-inside-lxc-containers-98ddf191051c  </description>
+    </item>
+    
+    <item>
+      <title>Kubernetes inside lxc</title>
+      <link>https://blog.indonesiadot.com/2020/03/16/kubernetes-inside-lxc/</link>
+      <pubDate>Mon, 16 Mar 2020 10:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/16/kubernetes-inside-lxc/</guid>
+      <description>  https://medium.com/@kvaps/run-kubernetes-in-lxc-container-f04aa94b6c9c https://github.com/corneliusweig/kubernetes-lxd https://www.sayem.org/k8s-on-lxd/ https://discuss.linuxcontainers.org/t/working-install-of-docker-ce-in-lxc-unprivileged-container-in-proxmox/3828/4 https://forum.proxmox.com/threads/lxc-docker-containerd-cannot-find-lib-modules-4-15-18-9-pve.49406/ https://forum.proxmox.com/threads/docker-in-lxc-container.45204/ https://discuss.linuxcontainers.org/t/how-to-add-kernel-modules-into-an-lxc-container/5033/3  kubernetes haproxy  https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076  </description>
+    </item>
     
     <item>
       <title>All about kubernetes</title>

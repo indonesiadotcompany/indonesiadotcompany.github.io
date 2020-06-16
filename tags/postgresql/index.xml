@@ -6,10 +6,19 @@
     <description>Recent content in postgresql on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Oct 2019 07:09:53 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Postgresql</title>
+      <link>https://blog.indonesiadot.com/2020/06/12/postgresql/</link>
+      <pubDate>Fri, 12 Jun 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/06/12/postgresql/</guid>
+      <description>Install pgadmin4 di ubuntu 18 apt-get install curl ca-certificates gnupg curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - sh -c &#39;echo &amp;quot;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&amp;quot; &amp;gt; /etc/apt/sources.list.d/pgdg.list&#39; apt update apt install pgadmin4  create db su - postgres psql create database dvdrental; \q wget https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip unzip dvdrental.zip pg_restore -d dvdrental dvdrental.tar psql -d dvdrental GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO pgtower; \q psql -U pgtower -d dvdrental select first_name from customer; \q  pg_hba.</description>
+    </item>
     
     <item>
       <title>Belajar Ansible Tower</title>

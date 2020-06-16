@@ -6,10 +6,19 @@
     <description>Recent content in ubuntu on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Mar 2020 06:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2020 07:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ubuntu tips</title>
+      <link>https://blog.indonesiadot.com/2020/03/18/ubuntu-tips/</link>
+      <pubDate>Wed, 18 Mar 2020 07:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/18/ubuntu-tips/</guid>
+      <description> Install specific version apt-cache policy gparted apt install gparted=0.16.1-1   https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package  apport high cpu killall -9 apport service apport stop &amp;amp;&amp;amp; systemctl stop apport rm -f /var/crash/* apt-get remove apport -y  </description>
+    </item>
     
     <item>
       <title>LXD-LXC</title>
@@ -17,7 +26,9 @@
       <pubDate>Tue, 10 Mar 2020 06:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/10/lxd-lxc/</guid>
-      <description> lxc set static ip lxc stop c1 lxc network attach lxdbr0 c1 eth0 eth0 lxc config device set c1 eth0 ipv4.address 10.99.10.42 lxc start c1   https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4  </description>
+      <description>lxc set static ip lxc stop c1 lxc network attach lxdbr0 c1 eth0 eth0 lxc config device set c1 eth0 ipv4.address 10.99.10.42 lxc start c1   https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4  lxc privileged to unprivileged Pada saat container (CT) lxc dalam unprivileged mode memiliki hak terbatas seperti akses ke device dan beberapa lainnya.
+Contoh pada saat menjalankan docker itu ada pesan error Failed to reset devices.list on /system.slice
+Workaround nya adalah dengan membuat CT menjadi privileged mode, caranya yaitu: - backup CT - restore CT dengan uncheck unprivileged mode</description>
     </item>
     
     <item>

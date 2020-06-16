@@ -42,12 +42,98 @@
 
   <nav class="sidebar-nav">
     <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/">Home</a>
-    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/post">Posts</a>
+    
+    <a class="sidebar-nav-item" href="https://blog.indonesiadot.com/post">Posts</a>
+    <a class="sidebar-nav-item" href="https://blog.indonesiadot.com/tags">Tags</a>
 
     
     
       
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/about/">About</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
       
     
       
@@ -690,6 +776,16 @@ git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiad
 <li><a href="https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf">https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf</a></li>
 <li><a href="https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce">https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce</a></li>
 </ul>
+
+<h2 id="hugo-lanyon-tags">hugo lanyon tags</h2>
+
+<p>edit themes/lanyonindo/layouts/partials/sidebar.html</p>
+
+<pre><code>    &lt;a class=&quot;sidebar-nav-item {{ if .IsHome }} active {{ end }}&quot; href=&quot;/&quot;&gt;Home&lt;/a&gt;
+    &lt;!--    &lt;a class=&quot;sidebar-nav-item {{ if eq .RelPermalink &quot;/post/&quot; }} active {{ end }}&quot; href=&quot;/post&quot;&gt;Posts&lt;/a&gt; --&gt;
+    &lt;a class=&quot;sidebar-nav-item&quot; href=&quot;/post&quot;&gt;Posts&lt;/a&gt;
+    &lt;a class=&quot;sidebar-nav-item&quot; href=&quot;/tags&quot;&gt;Tags&lt;/a&gt;
+</code></pre>
 
 </div>
 

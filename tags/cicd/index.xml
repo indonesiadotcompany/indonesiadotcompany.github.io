@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cicd on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/cicd/</link>
+    <description>Recent content in cicd on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 Apr 2020 15:47:54 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ansible CI-CD CICD</title>
+      <link>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</link>
+      <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</guid>
+      <description> Jenkins Ansible Tower  https://plugins.jenkins.io/ansible-tower/ https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process https://dzone.com/articles/how-to-setup-continuous-delivery-environment  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,9 +5,1838 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2020</rights>
-    <updated>2020-03-10 06:17:54 &#43;0700 WIB</updated>
+    <updated>2020-06-12 08:17:54 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>Postgresql</title>
+          <link>https://blog.indonesiadot.com/2020/06/12/postgresql/</link>
+          <pubDate>Fri, 12 Jun 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/06/12/postgresql/</guid>
+          <description>
+
+&lt;h2 id=&#34;install-pgadmin4-di-ubuntu-18&#34;&gt;Install pgadmin4 di ubuntu 18&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-get install curl ca-certificates gnupg
+curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sh -c &#39;echo &amp;quot;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&amp;quot; &amp;gt; /etc/apt/sources.list.d/pgdg.list&#39;
+apt update
+apt install pgadmin4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;create-db&#34;&gt;create db&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;su - postgres
+psql
+create database dvdrental;
+\q
+wget https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
+unzip dvdrental.zip
+pg_restore -d dvdrental dvdrental.tar
+psql -d dvdrental
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO pgtower;
+\q
+psql -U pgtower -d dvdrental
+select first_name from customer;
+\q
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;pg-hba-conf&#34;&gt;pg_hba.conf&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;cat /var/opt/rh/rh-postgresql10/lib/pgsql/data/pg_hba.conf
+
+# Database administrative login by UNIX sockets
+# note: you may wish to restrict this further later
+local   all         postgres                                peer
+
+# TYPE  DATABASE    USER        CIDR-ADDRESS          METHOD
+local   all         all                               scram-sha-256
+host    all         all         127.0.0.1/32 scram-sha-256
+host    all         all         ::1/128 scram-sha-256
+host    all         all         10.11.8.0/24    md5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.postgresqltutorial.com/postgresql-sample-database/&#34;&gt;https://www.postgresqltutorial.com/postgresql-sample-database/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://bobcares.com/blog/permission-denied-for-database-postgres/&#34;&gt;https://bobcares.com/blog/permission-denied-for-database-postgres/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Elk Elasticsearch Logstash Kibana References</title>
+          <link>https://blog.indonesiadot.com/2020/04/04/elk-elasticsearch-logstash-kibana-references/</link>
+          <pubDate>Sat, 04 Apr 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/04/04/elk-elasticsearch-logstash-kibana-references/</guid>
+          <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7&#34;&gt;https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Ansible CI-CD CICD</title>
+          <link>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</link>
+          <pubDate>Fri, 03 Apr 2020 15:47:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</guid>
+          <description>
+
+&lt;h2 id=&#34;jenkins-ansible-tower&#34;&gt;Jenkins Ansible Tower&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.indonesiadot.com/images/2020/continuous-delivery1.png&#34; alt=&#34;ansible-cicd&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://plugins.jenkins.io/ansible-tower/&#34;&gt;https://plugins.jenkins.io/ansible-tower/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower&#34;&gt;https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process&#34;&gt;https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dzone.com/articles/how-to-setup-continuous-delivery-environment&#34;&gt;https://dzone.com/articles/how-to-setup-continuous-delivery-environment&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Security Compliance Baseline Benchmark</title>
+          <link>https://blog.indonesiadot.com/2020/04/03/security-compliance-baseline-benchmark/</link>
+          <pubDate>Fri, 03 Apr 2020 15:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/04/03/security-compliance-baseline-benchmark/</guid>
+          <description>
+
+&lt;h2 id=&#34;ssg-baseline&#34;&gt;ssg baseline&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://static.open-scap.org/&#34;&gt;https://static.open-scap.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://static.open-scap.org/ssg-guides/ssg-rhel7-guide-index.html&#34;&gt;https://static.open-scap.org/ssg-guides/ssg-rhel7-guide-index.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;cis-baseline&#34;&gt;cis baseline&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cisecurity.org/cis-benchmarks/&#34;&gt;https://www.cisecurity.org/cis-benchmarks/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://indonesiadot.com&#34;&gt;https://indonesiadot.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://birau.com&#34;&gt;https://birau.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Sentinelone EPP EDR On-Premise</title>
+          <link>https://blog.indonesiadot.com/2020/03/27/sentinelone-epp-edr-on-premise/</link>
+          <pubDate>Fri, 27 Mar 2020 12:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/03/27/sentinelone-epp-edr-on-premise/</guid>
+          <description>
+
+&lt;h2 id=&#34;prerequisites-and-preparation&#34;&gt;Prerequisites and preparation&lt;/h2&gt;
+
+&lt;h3 id=&#34;hardware-requirements-management-versions-grand-canyon-and-later&#34;&gt;Hardware Requirements: Management Versions Grand Canyon and later&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Agents 10,000 to 20,000&lt;/li&gt;
+&lt;li&gt;CPU 16 Cores&lt;/li&gt;
+&lt;li&gt;RAM 32 GB&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Disk Root: 16 GB, Disk 500 GB XFS&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://support.sentinelone.com/hc/en-us/articles/360010427613-On-Prem-OVA-Prerequisites-and-Preparation&#34;&gt;https://support.sentinelone.com/hc/en-us/articles/360010427613-On-Prem-OVA-Prerequisites-and-Preparation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Certificate ssl key csr crt</title>
+          <link>https://blog.indonesiadot.com/2020/03/20/certificate-ssl-key-csr-crt/</link>
+          <pubDate>Fri, 20 Mar 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/03/20/certificate-ssl-key-csr-crt/</guid>
+          <description>
+
+&lt;h2 id=&#34;create-csr-ubuntu-18&#34;&gt;create csr ubuntu 18&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;openssl genrsa –out domain.key 2048
+openssl req –new –key domain.key –out domain.csr
+#or
+#openssl req -new -newkey rsa:2048 -nodes -keyout domain.key -out domain.csr
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://vitux.com/how-to-generate-a-certificate-signing-request-csr-on-ubuntu/&#34;&gt;https://vitux.com/how-to-generate-a-certificate-signing-request-csr-on-ubuntu/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-18-04&#34;&gt;https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-18-04&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;random-number-generator-rand-load-file-cannot-open-file-crypto-rand-randfile-c-88-filename-root-rnd&#34;&gt;random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/root/.rnd&lt;/h2&gt;
+
+&lt;p&gt;If you have RANDFILE=&amp;hellip; configuration lines in your openssl.cnf than you can safely remove them&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/openssl/openssl/issues/7754&#34;&gt;https://github.com/openssl/openssl/issues/7754&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;convert-p7b-p7c-pkcs7-to-crt&#34;&gt;convert p7b / p7c / pkcs7 to crt&lt;/h2&gt;
+
+&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
+
+&lt;p&gt;What are the differences between .p7b, .pfx, .p12, .pem, .der, .crt &amp;amp; .cer Certificates?&lt;/p&gt;
+
+&lt;p&gt;With so many servers, some require different formats.&lt;/p&gt;
+
+&lt;h2 id=&#34;pem-format&#34;&gt;PEM Format&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It is the most common format used for certificates&lt;/li&gt;
+&lt;li&gt;Most servers (Ex: Apache) expects the certificates and private key to be in a separate files
+
+&lt;ul&gt;
+&lt;li&gt;Usually they are Base64 encoded ASCII files&lt;/li&gt;
+&lt;li&gt;Extensions used for PEM certificates are .cer, .crt, .pem, .key files&lt;/li&gt;
+&lt;li&gt;Apache and similar server uses PEM format certificates&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;der-format&#34;&gt;DER Format&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The DER format is the binary form of the certificate&lt;/li&gt;
+&lt;li&gt;All types of certificates &amp;amp; private keys can be encoded in DER format&lt;/li&gt;
+&lt;li&gt;DER formatted certificates do not contain the &amp;ldquo;BEGIN CERTIFICATE/END CERTIFICATE&amp;rdquo; statements&lt;/li&gt;
+&lt;li&gt;DER formatted certificates most often use the ‘.cer’ and &amp;lsquo;.der&amp;rsquo; extensions&lt;/li&gt;
+&lt;li&gt;DER is typically used in Java Platforms&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;p7b-pkcs-7-format&#34;&gt;P7B/PKCS#7 Format&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The PKCS#7 or P7B format is stored in Base64 ASCII format and has a file extension of .p7b or .p7c&lt;/li&gt;
+&lt;li&gt;A P7B file only contains certificates and chain certificates (Intermediate CAs), not the private key&lt;/li&gt;
+&lt;li&gt;The most common platforms that support P7B files are Microsoft Windows and Java Tomcat&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;pfx-p12-pkcs-12-format&#34;&gt;PFX/P12/PKCS#12 Format&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The PKCS#12 or PFX/P12 format is a binary format for storing the server certificate, intermediate certificates, and the private key in one encryptable file&lt;/li&gt;
+&lt;li&gt;These files usually have extensions such as .pfx and .p12&lt;/li&gt;
+&lt;li&gt;They are typically used on Windows machines to import and export certificates and private keys&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If your server/device requires a different certificate format other than Base64 encoded X.509, a third party tool such as OpenSSL can be used to convert the certificate into the appropriate format.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;openssl pkcs7 -print_certs -in old.p7b -out new.crt
+#or
+openssl pkcs7 -print_certs -inform der -in a.p7c -out out.cer
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://knowledge.digicert.com/generalinformation/INFO4448.html&#34;&gt;https://knowledge.digicert.com/generalinformation/INFO4448.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.google.com/search?q=p7b+to+crt+linux&#34;&gt;https://www.google.com/search?q=p7b+to+crt+linux&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gist.github.com/jmervine/e4c9af3adb14b78856cc&#34;&gt;https://gist.github.com/jmervine/e4c9af3adb14b78856cc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Ansible Tower for beginner</title>
+          <link>https://blog.indonesiadot.com/2020/03/18/ansible-tower-for-beginner/</link>
+          <pubDate>Wed, 18 Mar 2020 13:47:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/03/18/ansible-tower-for-beginner/</guid>
+          <description>
+
+&lt;p&gt;Before going to start the installation steps, we need to know some benefits of Ansible Tower.&lt;/p&gt;
+
+&lt;h1 id=&#34;why-we-need-ansible-tower-and-it-s-benefits&#34;&gt;Why we need Ansible Tower and it’s benefits?&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Ansible Tower helps you scale IT automation, manage complex deployments and speed productivity.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Centralize and control your IT infrastructure with a visual dashboard, role-based access control, job scheduling, integrated notifications and graphical inventory management.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Ansible Tower’s REST API and CLI make it easy to embed Ansible Tower into existing  tools and processes.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The Ansible Tower dashboard provides a heads-up NOC-style display for everything  going on in your Ansible environment.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;As soon as you log in, you’ll see your host and inventory status, all the recent job activity and a snapshot of recent job runs. Adjust your job status settings to graph data from specific job and time ranges.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We can get Real-Time Job Status update:&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Within Ansible Tower, playbook runs stream by in real time. As Ansible automates across your infrastructure, you’ll see plays and tasks complete, broken down by each machine, and each success or failure, complete with output. Easily see the status of your automation, and what’s next in the queue.&lt;/p&gt;
+
+&lt;p&gt;Other types of jobs, such as source control updates or cloud inventory refreshes, appear in the common job view. Know what Ansible Tower is up to at any time.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Multi-Playbook Workflows:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Ansible Tower Workflows allow you to easily model complex processes with Ansible Tower’s intuitive workflow editor. Ansible Tower workflows chain any number of playbooks, updates, and other workflows, regardless of whether they use different inventories, run as different users, run at once or utilize different credentials.&lt;/p&gt;
+
+&lt;p&gt;You can build a provisioning workflow that provisions machines, applies a base system configuration, and deploys an application, all with different playbooks maintained by different teams. You can build a CI/CD testing workflow that builds an application, deploys it to a test environment, runs tests, and automatically promotes the application based on test results. Set up different playbooks to run in case of success or failure of a prior workflow playbook.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Who Ran What Job When:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;With Ansible Tower, all automation activity is securely logged. Who ran it, how they customized it, what it did, where it happened – all securely stored and viewable later, or exported through Ansible Tower’s API.&lt;/p&gt;
+
+&lt;p&gt;Activity streams extend this by showing a complete audit trail of all changes made to Ansible Tower itself – job creation, inventory changes, credential storage, all securely tracked.&lt;/p&gt;
+
+&lt;p&gt;All audit and log information can be sent to your external logging and analytics provider to perform analysis of automation and event correlation   across your entire environment.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Ansible Tower allows us to easily streamline the delivery of applications and services to both OpenStack and Amazon Clouds in a cost effective, simple, and secure manner.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Scale Capacity With Tower Clusters:&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Connect multiple Ansible Tower nodes into a Ansible Tower cluster. Ansible Tower clusters add redundancy and capacity, allowing you to scale Ansible automation across your enterprise, including with reserved capacity for certain teams and jobs, and remote execution for access across network zones.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Integrated Notifications:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Stay informed of your automation status via integrated notifications.&lt;/p&gt;
+
+&lt;p&gt;Notify a person or team when your job succeeds, or escalate when jobs fail. Send notifications across your entire organization at once, or customize on a per- job basis.&lt;/p&gt;
+
+&lt;p&gt;Connect your notifications to Slack, Hipchat, PagerDuty, SMS, email, and more – or post notifications to a custom webhook to trigger other tools in your infrastructure.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Schedule Ansible Jobs:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Playbook runs, cloud inventory updates, and source control updates can be scheduled inside Ansible Tower – run now, run later, or run forever.&lt;/p&gt;
+
+&lt;p&gt;Set up occasional tasks like nightly backups, periodic configuration remediation for compliance, or a full continuous delivery pipeline with just a few clicks.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Manage And Track Your Entire Inventory:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Ansible Tower helps you manage your entire infrastructure. Easily pull your  inventory from public cloud providers such as Amazon Web Services, Microsoft Azure, and more, or synchronize from your local OpenStack cloud or VMware environment. Connect your inventory directly to your Red Hat Satellite or Red Hat CloudForms environment, or your custom CMDB.&lt;/p&gt;
+
+&lt;p&gt;Ansible Tower can keep your cloud inventory in sync, and Ansible Tower’s powerful provisioning callbacks allow nodes to request configuration on demand, enabling autoscaling. You can also see alerts from Red Hat Insights directly from Ansible Tower, and use Insights-provided Playbook Remediation to fix issues in your infrastructure.&lt;/p&gt;
+
+&lt;p&gt;Plus, Ansible Tower Smart Inventories allow you to organize and automate hosts across all your providers based on a powerful host fact query engine.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Remote Command Execution:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Run simple tasks on any host or group of hosts in your inventory with Ansible Tower’s remote command execution. Add users or groups, reset passwords, restart a malfunctioning service or patch a critical security issue, quickly. As always, remote command execution uses Ansible Tower’s role-based access control engine and logs every action.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Comprehensive Rest API And Tower CLI Tool:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Far from being limited to just the user interface, every feature of Ansible Tower is available via Ansible Tower’s REST API, providing the ideal API for a systems management infrastructure to build against. Call Ansible Tower jobs from your build tools, show Ansible Tower information in your custom dashboards and more. Get API usage information and best practices with built-in documentation.&lt;/p&gt;
+
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites:&lt;/h2&gt;
+
+&lt;p&gt;Ansible Tower server (I’m using a VMware environment, so both my servers are VMs)&lt;/p&gt;
+
+&lt;p&gt;1 Core, 1GB RAM Ubuntu 12.04 LTS Server, 64-bit&lt;/p&gt;
+
+&lt;p&gt;Active Directory Server (I’m using Windows Server 2012 R2)&lt;/p&gt;
+
+&lt;p&gt;2 Cores, 4GB RAM&lt;/p&gt;
+
+&lt;p&gt;Officially, Tower supports CentOS 6, RedHat Enterprise Linux 6, Ubuntu Server 12.04 LTS, and Ubuntu Server 14.04 LTS.&lt;/p&gt;
+
+&lt;p&gt;Installing Tower requires Internet connectivity, because it downloads from their repo servers.&lt;/p&gt;
+
+&lt;p&gt;I have managed to perform an offline installation, but you have to set up some kind of system to mirror their repositories, and change some settings in the Ansible Installer file.&lt;/p&gt;
+
+&lt;p&gt;I &lt;em&gt;highly&lt;/em&gt; recommend you dedicate a server (vm or otherwise) to Ansible Tower, because the installer will rewrite pg_hba.conf and supervisord.conf to suit its needs.  Everything is easier if you give it it’s own environment to run in.&lt;/p&gt;
+
+&lt;p&gt;You &lt;em&gt;might&lt;/em&gt; be able to do it in Docker, although I haven’t tried, and I’m willing to bet you’re asking for trouble.&lt;/p&gt;
+
+&lt;p&gt;I’m going to assume you already know about installing Windows Server 2012 and building a domain controller. (If there’s significant call for it, I might write a separate blog post about this…)&lt;/p&gt;
+
+&lt;h1 id=&#34;installation-steps&#34;&gt;Installation Steps:&lt;/h1&gt;
+
+&lt;h2 id=&#34;step-1&#34;&gt;Step – 1:&lt;/h2&gt;
+
+&lt;p&gt;Download the latest .tar file from ‘&lt;a href=&#34;https://releases.ansible.com/ansible-tower/setup/&amp;amp;#8217&#34;&gt;https://releases.ansible.com/ansible-tower/setup/&amp;amp;#8217&lt;/a&gt;;&lt;/p&gt;
+
+&lt;h2 id=&#34;step-2&#34;&gt;Step – 2:&lt;/h2&gt;
+
+&lt;p&gt;Now untar the downloaded .tar file using below command:&lt;/p&gt;
+
+&lt;p&gt;[devops@localhost ~]$ tar xvzf ansible-tower-setup-latest.tar.gz&lt;/p&gt;
+
+&lt;h2 id=&#34;step-3&#34;&gt;Step – 3:&lt;/h2&gt;
+
+&lt;p&gt;goto “ansible-tower-setup-&lt;VERSION&gt;” directory&lt;/p&gt;
+
+&lt;p&gt;[devops@localhost ~]$ cd ansible-tower-setup-3.4.0-2&lt;/p&gt;
+
+&lt;h2 id=&#34;step-4&#34;&gt;Step – 4:&lt;/h2&gt;
+
+&lt;p&gt;edit inventory file which is present inside “ansible-tower-setup-3.4.0-2″ directory.&lt;/p&gt;
+
+&lt;p&gt;Put the below content to inventory file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# /home/ubuntu/ansible-tower-setup-3.2.5/inventory file content
+
+[tower]
+localhost ansible_connection=local
+
+[database]
+
+[all:vars]
+admin_password=’admin’
+
+pg_host=”
+pg_port=”
+
+pg_database=’awx’
+pg_username=’awx’
+pg_password=’admin’
+
+rabbitmq_port=5672
+rabbitmq_vhost=tower
+rabbitmq_username=tower
+rabbitmq_password=’admin’
+rabbitmq_cookie=cookiemonster
+
+# Needs to be true for fqdns and ip addresses
+rabbitmq_use_long_name=false
+
+# Isolated Tower nodes automatically generate an RSA key for authentication;
+# To disable this behavior, set this value to false
+# isolated_key_generation=true
+################################# Up to here ########################
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;step-5&#34;&gt;Step – 5:&lt;/h2&gt;
+
+&lt;p&gt;Now Run the ansible-tower setup by using below command:&lt;/p&gt;
+
+&lt;p&gt;[devops@localhost ansible-tower-setup-3.4.0-2]$ sudo ansible-playbook -i inventory install.yml
+[INFO]  To Run Above command we should have ansible installed on this server&lt;/p&gt;
+
+&lt;p&gt;[INFO]  If ansible is not present then please open the below link and install the ansible:&lt;/p&gt;
+
+&lt;p&gt;[INFO]  &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-centos-7&#34;&gt;https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-centos-7&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;[INFO] SetUp will take approx 45 mins or more.&lt;/p&gt;
+
+&lt;p&gt;Sample Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[sudo] password for devops:
+[WARNING]: Could not match supplied host pattern, ignoring: instance_group_*
+PLAY [tower:database:instance_group_*] ******************************************************************************************************************************
+
+TASK [check_config_static : Ensure expected variables are defined] **************************************************************************************************
+skipping: [localhost] =&amp;gt; (item=tower_package_name)
+skipping: [localhost] =&amp;gt; (item=tower_package_version)
+skipping: [localhost] =&amp;gt; (item=tower_package_release)
+
+TASK [check_config_static : Detect unsupported HA inventory file] ***************************************************************************************************
+skipping: [localhost]
+
+TASK [check_config_static : Ensure at least one tower host is defined] **********************************************************************************************
+skipping: [localhost]
+
+TASK [check_config_static : Ensure only one database host exists] ***************************************************************************************************
+skipping: [localhost]
+
+TASK [check_config_static : Ensure when postgres host is defined that the port is defined] **************************************************************************
+skipping: [localhost]
+
+TASK [check_config_static : Ensure that when a database host is specified, that pg_host is defined] *****************************************************************
+skipping: [localhost]
+
+TASK [check_config_static : Ensure that when a database host is specified, that pg_port is defined] *****************************************************************
+skipping: [localhost]
+
+TASK [check_config_static : HA mode requires an external postgres database with pg_host defined] ********************************************************************
+skipping: [localhost]
+
+TASK [check_config_static : HA mode requires an external postgres database with pg_port defined] ********************************************************************
+skipping: [localhost]
+
+TASK [config_dynamic : Set database to internal or external] ********************************************************************************************************
+ok: [localhost]
+
+TASK [config_dynamic : Database decision] ***************************************************************************************************************************
+ok: [localhost] =&amp;gt; {
+“config_dynamic_database”: “internal”
+}
+
+TASK [config_dynamic : Set postgres host and port to local if not set] **********************************************************************************************
+ok: [localhost]
+
+TASK [config_dynamic : Ensure connectivity to hosts and gather facts] ***********************************************************************************************
+ok: [localhost]
+
+TASK [config_dynamic : Get effective uid] ***************************************************************************************************************************
+changed: [localhost]
+
+TASK [config_dynamic : Ensure user is root] *************************************************************************************************************************
+skipping: [localhost]
+
+PLAY [Group nodes by OS distribution] *******************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************
+ok: [localhost]
+
+TASK [group hosts by distribution] **********************************************************************************************************************************
+ok: [localhost]
+[WARNING]: Could not match supplied host pattern, ignoring: RedHat-7*
+
+[WARNING]: Could not match supplied host pattern, ignoring: Ubuntu-16.04
+
+[WARNING]: Could not match supplied host pattern, ignoring: OracleLinux-7*
+PLAY [Group supported distributions] ********************************************************************************************************************************
+
+TASK [group hosts for supported distributions] **********************************************************************************************************************
+ok: [localhost]
+[WARNING]: Could not match supplied host pattern, ignoring: none
+
+.
+
+.
+
+.
+
+.
+
+TASK [misc : Create the default organization if it is needed.] ******************************************************************************************************
+changed: [localhost]
+
+RUNNING HANDLER [supervisor : restart supervisor] *******************************************************************************************************************
+changed: [localhost] =&amp;gt; {
+“msg”: “Restarting supervisor.”
+}
+
+RUNNING HANDLER [supervisor : Stop supervisor.] *********************************************************************************************************************
+changed: [localhost]
+
+RUNNING HANDLER [supervisor : Wait for supervisor to stop.] *********************************************************************************************************
+ok: [localhost]
+
+RUNNING HANDLER [supervisor : Start supervisor.] ********************************************************************************************************************
+changed: [localhost]
+
+RUNNING HANDLER [nginx : restart nginx] *****************************************************************************************************************************
+changed: [localhost]
+
+PLAY [Install Tower isolated node(s)] *******************************************************************************************************************************
+skipping: no hosts matched
+
+PLAY RECAP **********************************************************************************************************************************************************
+localhost : ok=139 changed=65 unreachable=0 failed=0
+
+########### Sample Output Ends Here ############
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;step-6-now-open-browser-and-type-below&#34;&gt;Step – 6: Now, open browser and type below:&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://Your-Server-IP-Address&#34;&gt;https://Your-Server-IP-Address&lt;/a&gt;  and hit enter.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://192.168.56.102&#34;&gt;https://192.168.56.102&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;1.Browser_Proceed_unsafe.png&lt;/p&gt;
+
+&lt;p&gt;Now, Click on –&amp;gt; Advance–&amp;gt;click on–&amp;gt;proceed to &lt;192.168.56.102&gt; –&amp;gt;It will show as below&lt;/p&gt;
+
+&lt;p&gt;It will automatically redirect to Ansible Tower page(as shown below)&lt;/p&gt;
+
+&lt;p&gt;2.Login_Page_on_browser.png&lt;/p&gt;
+
+&lt;p&gt;Now, Put your username and password(which you have provided in “/home/ubuntu/ansible-tower-setup-3.2.5/inventory” file)&lt;/p&gt;
+
+&lt;p&gt;And click on “SIGN IN” button.&lt;/p&gt;
+
+&lt;p&gt;After logged-in successfully, It will ask for license.Please click on “REQUEST LICENSE”3.Request_license.png&lt;/p&gt;
+
+&lt;p&gt;It will take to you on ansible tower license request page.Please select the appropriate options and fill the all mandatory fields and click on “Submit” button as shown below:&lt;/p&gt;
+
+&lt;p&gt;4.Redirect_to_get_license_after_filling_proper_details_main.png&lt;/p&gt;
+
+&lt;p&gt;After Click on “Submit” button, it will send the license file to your mail within 1 business day. Please check the mail.&lt;/p&gt;
+
+&lt;p&gt;After getting the license file, Please open the Ansible tower and do below things which are marked as Orange Square:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.indonesiadot.com/images/2020/3.1browse_license_file.png&#34; alt=&#34;license&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And click on “Submit” button.&lt;/p&gt;
+
+&lt;p&gt;After successful submission, It will show you the Ansible Tower Dashboard as shown below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.indonesiadot.com/images/2020/5.After_successful_login_first_page_view.png&#34; alt=&#34;login&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Finally, You have successful Ansible Tower installation on Centos 7 Machine.&lt;/p&gt;
+
+&lt;p&gt;In the next blog we will see how to run the first playbook from Ansible Tower.&lt;/p&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/&#34;&gt;https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-centos-7&#34;&gt;https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-centos-7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://releases.ansible.com/ansible-tower/docs/tower_user_guide-2.1.6.pdf&#34;&gt;https://releases.ansible.com/ansible-tower/docs/tower_user_guide-2.1.6.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>ELK for beginner</title>
+          <link>https://blog.indonesiadot.com/2020/03/18/elk-for-beginner/</link>
+          <pubDate>Wed, 18 Mar 2020 12:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/03/18/elk-for-beginner/</guid>
+          <description>
+
+&lt;h1 id=&#34;why-we-use-elk&#34;&gt;Why we use ELK?&lt;/h1&gt;
+
+&lt;p&gt;The Elastic Stack (aka ELK) is a robust solution for search, log management, and data analysis. ELK consists of a combination of three open source project: Elasticsearch, Logstash, and Kibana. These projects have specific roles in ELK:&lt;/p&gt;
+
+&lt;p&gt;Elasticsearch handles storage and provides a RESTful search and analytics endpoint.
+Logstash is a server-side data processing pipeline that ingests, transforms and loads data.
+Kibana lets you visualize your Elasticsearch data and navigate the Elastic Stack.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Elasticsearch -The Amazing Log Search Tool:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Real-time data extraction, and real-time data analytics. Elasticsearch is the engine that gives you both the power and the speed.
+2.Logstash — Routing Your Log Data:&lt;/p&gt;
+
+&lt;p&gt;Logstash is a tool for log data intake, processing, and output. This includes virtually any type of log that you manage: system logs, webserver logs, error logs, and app logs.
+As administrators, we know how much time can be spent normalizing data from disparate data sources.
+We know, for example, how widely Apache logs differ from NGINX logs.
+3.Kibana — Visualizing Your Log Data:&lt;/p&gt;
+
+&lt;p&gt;Kibana is your log-data dashboard.
+Get a better grip on your large data stores with point-and-click pie charts, bar graphs, trendlines, maps and scatter plots.
+You can visualize trends and patterns for data that would otherwise be extremely tedious to read and interpret.&lt;/p&gt;
+
+&lt;h1 id=&#34;benefits&#34;&gt;Benefits:&lt;/h1&gt;
+
+&lt;p&gt;Real-time data and real-time analytics::
+The ELK stack gives you the power of real-time data insights, with the ability to perform super-fast data extractions from virtually all structured or unstructured data sources.
+Real-time extraction, and real-time analytics. Elasticsearch is the engine that gives you both the power and the speed.
+2. Scalable, high-availability, multi-tenant:&lt;/p&gt;
+
+&lt;p&gt;With Elasticsearch, you can start small and expand it along with your business growth-when you are ready.
+It is built to scale horizontally out of the box. As you need more capacity, simply add another node and let the cluster reorganize itself to accommodate and exploit the extra hardware.
+Elasticsearch clusters are resilient, since they automatically detect and remove node failures.
+You can set up multiple indices and query each of them independently or in combination.&lt;/p&gt;
+
+&lt;p&gt;Some Important Concepts In ELK as follows:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Documents:
+Documents are JSON objects that are stored within an Elasticsearch index and are    considered the base unit of storage.
+In the world of relational databases, documents can be compared to a row in table    Data in documents is defined with fields comprised of keys and values.
+A key is the name of the field, and a value can be an item of many different types such as a string, a number, a boolean expression, another object, or an array of values.
+Documents also contain reserved fields that constitute the document metadata such as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1.  _index – the index where the document resides
+2. _type – the type that the document represents
+3.  _id – the unique identifier for the document
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;2-index&#34;&gt;2.Index:&lt;/h2&gt;
+
+&lt;p&gt;Indices are the largest unit of data in Elasticsearch, are logical partitions of documents and can be compared to a database in the world of relational databases.
+You can have as many indices defined in Elasticsearch as you want.
+These in turn will hold documents that are unique to each index.
+Indices are identified by lowercase names that refer to actions that are performed actions (such as searching and deleting)against the documents that are inside each index.
+3.Shards:
+Elasticsearch provides the ability to subdivide your index into multiple pieces called shards.
+When you create an index, you can simply define the number of shards that you want.
+Each shard is in itself a fully-functional and independent “index” that can be hosted on any node in the cluster.
+When you create an index, you can define how many shards you want. Each shard is an independent Lucene index that can be hosted anywhere in your cluster.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Sharding is important for two primary reasons:&lt;/p&gt;
+
+&lt;p&gt;It allows you to horizontally split/scale your content volume.
+It allows you to distribute and parallelize operations across shards (potentially on multiple nodes) thus increasing performance/throughput.
+example :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl -XPUT localhost:9200/example -d ‘{
+“settings” : {
+“index” : {
+“number_of_shards” : 2,
+“number_of_replicas” : 1
+}
+}
+}’
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;4-replicas&#34;&gt;4.Replicas:&lt;/h2&gt;
+
+&lt;p&gt;Replicas, as the name implies, are Elasticsearch fail-safe mechanisms and are basically copies of your index’s shards.
+This is a useful backup system for a rainy day — or, in other words, when a node crashes.
+Replicas also serve read requests, so adding replicas can help to increase search performance.
+To ensure high availability, replicas are not placed on the same node as the original shards (called the “primary” shard) from which they were replicated.&lt;/p&gt;
+
+&lt;p&gt;To ensure high availability, replicas are not placed on the same node as the original shards (called the “primary” shard)from which they were replicated.&lt;/p&gt;
+
+&lt;p&gt;Replication is important for two primary reasons:&lt;/p&gt;
+
+&lt;p&gt;It provides high availability in case a shard/node fails. For this reason,
+it is important to note that a replica shard is never allocated on the same node as the original/primary shard that it was copied from.
+It allows you to scale out your search volume/throughput since searches can be executed on all replicas in parallel.&lt;/p&gt;
+
+&lt;h2 id=&#34;5-analyzers&#34;&gt;5.Analyzers:&lt;/h2&gt;
+
+&lt;p&gt;Analyzers are used during indexing to break down phrases or expressions into terms.
+Defined within an index, an analyzer consists of a single tokenizer and any number of token filters.
+For example, a tokenizer could split a string into specifically defined terms when encountering a specific expression.&lt;/p&gt;
+
+&lt;p&gt;A token filter is used to filter or modify some tokens. For example, a ASCII folding filter will convert characters like ê, é, è to e.
+example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl -XPUT localhost:9200/example -d ‘{
+“mappings”: {
+“mytype”: {
+“properties”: {
+“name”: {
+“type”: “string”,
+“analyzer”: “whitespace”
+}
+}
+}
+}
+}’
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;6-nodes&#34;&gt;6.Nodes:&lt;/h2&gt;
+
+&lt;p&gt;The heart of any ELK setup is the Elasticsearch instance, which has the crucial task of storing and indexing data.&lt;/p&gt;
+
+&lt;p&gt;In a cluster, different responsibilities are assigned to the various node types:
+1.Data nodes — stores data and executes data-related operations such as search and aggregation.
+2.Master nodes — in charge of cluster-wide management and configuration actions such as adding and removing nodes
+3.Client nodes — forwards cluster requests to the master node and data-related requests to data nodes
+4.Tribe nodes — act as a client node, performing read and write operations against all of the nodes in the cluster
+5.Ingestion nodes (this is new in Elasticsearch 5.0) — for pre-processing documents before indexing&lt;/p&gt;
+
+&lt;p&gt;By default, each node is automatically assigned a unique identifier, or name, that is used for management purposes and becomes even more important in a multi-node, or clustered, environment.&lt;/p&gt;
+
+&lt;p&gt;When installed, a single node will form a new single-node cluster entitled elasticsearch,” but it can also be configured to join an existing cluster (see below) using the cluster name.&lt;/p&gt;
+
+&lt;p&gt;In a development or testing environment, you can set up multiple nodes on a single server.
+In production, however, due to the number of resources that an Elasticsearch node consumes,
+it is recommended to have each Elasticsearch instance run on a separate server.&lt;/p&gt;
+
+&lt;h2 id=&#34;7-cluster&#34;&gt;7.Cluster:&lt;/h2&gt;
+
+&lt;p&gt;An Elasticsearch cluster is comprised of one or more Elasticsearch nodes.
+As with nodes, each cluster has a unique identifier that must be used by any node attempting to join the cluster.
+By default, the cluster name is “elasticsearch,” but this name can be changed, of course.&lt;/p&gt;
+
+&lt;p&gt;One node in the cluster is the “master” node, which is in charge of cluster-wide management and configurations actions (such as adding and removing nodes).&lt;/p&gt;
+
+&lt;p&gt;This node is chosen automatically by the cluster, but it can be changed if it fails. (See above on the other types of nodes in a cluster.)&lt;/p&gt;
+
+&lt;p&gt;For example, the cluster health API returns health status reports of either “green” (all shards are allocated), “yellow” (the primary shard is allocated but replicas are not), or “red” (the shard is not allocated in the cluster).&lt;/p&gt;
+
+&lt;h2 id=&#34;output-example&#34;&gt;Output Example&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+“cluster_name” : “elasticsearch”,
+“status” : “yellow”,
+“timed_out” : false,
+“number_of_nodes” : 1,
+“number_of_data_nodes” : 1,
+“active_primary_shards” : 5,
+“active_shards” : 5,
+“relocating_shards” : 0,
+“initializing_shards” : 0,
+“unassigned_shards” : 5,
+“delayed_unassigned_shards” : 0,
+“number_of_pending_tasks” : 0,
+“number_of_in_flight_fetch” : 0,
+“task_max_waiting_in_queue_millis” : 0,
+“active_shards_percent_as_number” : 50.0
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;elk-installation&#34;&gt;ELK Installation:&lt;/h1&gt;
+
+&lt;p&gt;Our Goal:&lt;/p&gt;
+
+&lt;p&gt;The goal of the tutorial is to set up Logstash to gather syslogs of multiple servers, and set up Kibana to visualize the gathered logs.&lt;/p&gt;
+
+&lt;p&gt;Our ELK stack setup has four main components:&lt;/p&gt;
+
+&lt;p&gt;Logstash: The server component of Logstash that processes incoming logs
+Elasticsearch: Stores all of the logs
+Kibana: Web interface for searching and visualizing logs, which will be proxied through Nginx
+Filebeat: Installed on client servers that will send their logs to Logstash, Filebeat serves as a log shipping agent that utilizes the lumberjack networking protocol to communicate with Logstash
+&lt;img src=&#34;https://blog.indonesiadot.com/images/2020/ELK_Architecture.png&#34; alt=&#34;elkarch&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;NOTE:&lt;/p&gt;
+
+&lt;p&gt;We will install the first three components on a single server, which we will refer to as our ELK Server. Filebeat will be installed on all of the client servers that we want to gather logs for, which we will refer to collectively as our Client Servers.&lt;/p&gt;
+
+&lt;h2 id=&#34;pre-requisites&#34;&gt;Pre-requisites:&lt;/h2&gt;
+
+&lt;p&gt;The amount of CPU, RAM, and storage that your ELK Server will require depends on the volume of logs that you intend to gather. For this tutorial, we will be using a VPS with the following specs for our ELK Server:&lt;/p&gt;
+
+&lt;p&gt;OS: Ubuntu 14.04
+RAM: 4GB
+CPU: 2
+In addition to your ELK Server, you will want to have a few other servers that you will gather logs from.&lt;/p&gt;
+
+&lt;p&gt;Let’s get started on setting up our ELK Server!&lt;/p&gt;
+
+&lt;h1 id=&#34;step-1-install-java8&#34;&gt;Step-1 : Install Java8&lt;/h1&gt;
+
+&lt;p&gt;Elasticsearch and Logstash require Java, so we will install that now. We will install a recent version of Oracle Java 8 because that is what Elasticsearch recommends. It should, however, work fine with OpenJDK, if you decide to go that route.&lt;/p&gt;
+
+&lt;p&gt;Add the Oracle Java PPA to apt:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo add-apt-repository -y ppa:webupd8team/java
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Update your apt package database:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get update -y
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install the latest stable version of Oracle Java 8 with this command (and accept the license agreement that pops up):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get -y install oracle-java8-installer
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now that Java 8 is installed.&lt;/p&gt;
+
+&lt;p&gt;let’s install ElasticSearch.&lt;/p&gt;
+
+&lt;h1 id=&#34;step-2-install-elasticsearch&#34;&gt;Step-2: Install ElasticSearch&lt;/h1&gt;
+
+&lt;p&gt;Elasticsearch can be installed with a package manager by adding Elastic’s package source list.&lt;/p&gt;
+
+&lt;p&gt;Run the following command to import the Elasticsearch public GPG key into apt:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wget -qO – https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add –
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If your prompt is just hanging there, it is probably waiting for your user’s password (to authorize the sudocommand). If this is the case, enter your password.&lt;/p&gt;
+
+&lt;p&gt;Create the Elasticsearch source list:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ echo “deb http://packages.elastic.co/elasticsearch/2.x/debian stable main” | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Update your apt package database:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get update -y
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install Elasticsearch with this command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get -y install elasticsearch
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Elasticsearch is now installed. Let’s edit the configuration:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo vi /etc/elasticsearch/elasticsearch.yml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You will want to restrict outside access to your Elasticsearch instance (port 9200), so outsiders can’t read your data or shutdown your Elasticsearch cluster through the HTTP API. Find the line that specifies network.host, uncomment it, and replace its value with “localhost” so it looks like this:&lt;/p&gt;
+
+&lt;p&gt;elasticsearch.yml excerpt (updated)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;network.host: localhost
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Save and exit elasticsearch.yml.&lt;/p&gt;
+
+&lt;p&gt;Now start Elasticsearch:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo service elasticsearch restart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then run the following command to start Elasticsearch on boot up:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo update-rc.d elasticsearch defaults 95 10
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now that Elasticsearch is up and running, let’s install Kibana.&lt;/p&gt;
+
+&lt;h1 id=&#34;step-3-install-kibana&#34;&gt;Step-3:Install Kibana&lt;/h1&gt;
+
+&lt;p&gt;Kibana can be installed with a package manager by adding Elastic’s package source list.&lt;/p&gt;
+
+&lt;p&gt;Create the Kibana source list:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ echo “deb http://packages.elastic.co/kibana/4.5/debian stable main” | sudo tee -a /etc/apt/sources.list.d/kibana-4.5.x.list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Update your apt package database:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update -y
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install Kibana with this command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get -y install kibana
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Kibana is now installed.&lt;/p&gt;
+
+&lt;p&gt;Open the Kibana configuration file for editing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo vi /opt/kibana/config/kibana.yml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the Kibana configuration file, find the line that specifies server.host, and replace the IP address (“0.0.0.0” by default) with “localhost”:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;server.host: &amp;quot;localhost&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Save and exit. This setting makes it so Kibana will only be accessible to the localhost. This is fine because we will use an Nginx reverse proxy to allow external access.&lt;/p&gt;
+
+&lt;p&gt;Now enable the Kibana service, and start it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo update-rc.d kibana defaults 96 9
+sudo service kibana start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Before we can use the Kibana web interface, we have to set up a reverse proxy. Let’s do that now, with Nginx.&lt;/p&gt;
+
+&lt;h1 id=&#34;step-4-install-nginx&#34;&gt;Step-4:Install Nginx&lt;/h1&gt;
+
+&lt;p&gt;Because we configured Kibana to listen on localhost, we must set up a reverse proxy to allow external access to it. We will use Nginx for this purpose.&lt;/p&gt;
+
+&lt;p&gt;Note: If you already have an Nginx instance that you want to use, feel free to use that instead. Just make sure to configure Kibana so it is reachable by your Nginx server (you probably want to change the hostvalue, in /opt/kibana/config/kibana.yml, to your Kibana server’s private IP address or hostname). Also, it is recommended that you enable SSL/TLS.&lt;/p&gt;
+
+&lt;p&gt;Use apt to install Nginx and Apache2-utils:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install nginx apache2-utils -y
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Use htpasswd to create an admin user, called “kibanaadmin” (you should use another name), that can access the Kibana web interface:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo htpasswd -c /etc/nginx/htpasswd.users kibanaadmin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Enter a password at the prompt. Remember this login, as you will need it to access the Kibana web interface.&lt;/p&gt;
+
+&lt;p&gt;Now open the Nginx default server block in your favorite editor. We will use vi:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo vim /etc/nginx/sites-available/default
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Delete the file’s contents, and paste the following code block into the file. Be sure to update the server_name to match your server’s name:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;server {
+
+listen 80;
+
+server_name example.com;
+
+auth_basic “Restricted Access”;
+
+auth_basic_user_file /etc/nginx/htpasswd.users;
+
+location / {
+
+proxy_pass http://localhost:5601;
+
+proxy_http_version 1.1;
+
+proxy_set_header Upgrade $http_upgrade;
+
+proxy_set_header Connection ‘upgrade’;
+
+proxy_set_header Host $host;
+
+proxy_cache_bypass $http_upgrade;
+
+}
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nginx configuration look like :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.indonesiadot.com/images/2020/nginx.png&#34; alt=&#34;nginx&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Save and exit. This configures Nginx to direct your server’s HTTP traffic to the Kibana application, which is listening on localhost:5601. Also, Nginx will use the htpasswd.users file, that we created earlier, and require basic authentication.&lt;/p&gt;
+
+&lt;p&gt;Now restart Nginx to put our changes into effect:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo service nginx restart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Kibana is now accessible via your FQDN or the public IP address of your ELK Server i.e. &lt;a href=&#34;http://elk-server-public-ip/&#34;&gt;http://elk-server-public-ip/&lt;/a&gt;. If you go there in a web browser, after entering the “kibanaadmin” credentials, you should see a Kibana welcome page which will ask you to configure an index pattern. Let’s get back to that later, after we install all of the other components.&lt;/p&gt;
+
+&lt;h1 id=&#34;step-5-install-logstash&#34;&gt;Step-5 Install Logstash&lt;/h1&gt;
+
+&lt;p&gt;The Logstash package is available from the same repository as Elasticsearch, and we already installed that public key, so let’s create the Logstash source list:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ echo ‘deb http://packages.elastic.co/logstash/2.2/debian stable main’ | sudo tee /etc/apt/sources.list.d/logstash-2.2.x.list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Update your apt package database:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get update -y
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install Logstash with this command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install logstash -y
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Logstash is installed but it is not configured yet.
+Since we are going to use Filebeat to ship logs from our Client Servers to our ELK Server, we need to create an SSL certificate and key pair. The certificate is used by Filebeat to verify the identity of ELK Server. Create the directories that will store the certificate and private key with the following commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo mkdir -p /etc/pki/tls/certs
+sudo mkdir /etc/pki/tls/private
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now you have two options for generating your SSL certificates. If you have a DNS setup that will allow your client servers to resolve the IP address of the ELK Server, use Option 2. Otherwise, Option 1 will allow you to use IP addresses.&lt;/p&gt;
+
+&lt;h2 id=&#34;option-1-ip-address&#34;&gt;Option 1:IP Address&lt;/h2&gt;
+
+&lt;p&gt;If you don’t have a DNS setup—that would allow your servers, that you will gather logs from, to resolve the IP address of your ELK Server—you will have to add your ELK Server’s private IP address to the subjectAltName (SAN) field of the SSL certificate that we are about to generate. To do so, open the OpenSSL configuration file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo vim /etc/ssl/openssl.cnf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Find the [ v3_ca ] section in the file, and add this line under it (substituting in the ELK Server’s private IP address):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;subjectAltName = IP: ELK_server_private_IP
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Save and exit.&lt;/p&gt;
+
+&lt;p&gt;Now generate the SSL certificate and private key in the appropriate locations (/etc/pki/tls/), with the following commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd /etc/pki/tls
+sudo openssl req -config /etc/ssl/openssl.cnf -x509 -days 3650 -batch -nodes -newkey rsa:2048 -keyout private/logstash-forwarder.key -out certs/logstash-forwarder.crt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The logstash-forwarder.crt file will be copied to all of the servers that will send logs to Logstash but we will do that a little later. Let’s complete our Logstash configuration. If you went with this option, skip option 2 and move on to Configure Logstash.&lt;/p&gt;
+
+&lt;h2 id=&#34;option-2-fqdn-dns&#34;&gt;Option 2: FQDN(DNS)&lt;/h2&gt;
+
+&lt;p&gt;If you have a DNS setup with your private networking, you should create an A record that contains the ELK Server’s private IP address—this domain name will be used in the next command, to generate the SSL certificate. Alternatively, you can use a record that points to the server’s public IP address. Just be sure that your servers (the ones that you will be gathering logs from) will be able to resolve the domain name to your ELK Server.&lt;/p&gt;
+
+&lt;p&gt;Now generate the SSL certificate and private key, in the appropriate locations (/etc/pki/tls/…), with the following command (substitute in the FQDN of the ELK Server):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd /etc/pki/tls; sudo openssl req -subj ‘/CN=ELK_server_fqdn/’ -x509 -days 3650 -batch -nodes -newkey rsa:2048 -keyout private/logstash-forwarder.key -out certs/logstash-forwarder.crt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The logstash-forwarder.crt file will be copied to all of the servers that will send logs to Logstash but we will do that a little later. Let’s complete our Logstash configuration.&lt;/p&gt;
+
+&lt;h2 id=&#34;configure-logstash&#34;&gt;Configure Logstash&lt;/h2&gt;
+
+&lt;p&gt;Logstash configuration files are in the JSON-format, and reside in /etc/logstash/conf.d. The configuration consists of three sections: inputs, filters, and outputs.&lt;/p&gt;
+
+&lt;p&gt;Let’s create a configuration file called 02-beats-input.conf and set up our “filebeat” input:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo vi /etc/logstash/conf.d/02-beats-input.conf
+Insert the following input configuration:
+
+input {
+
+beats {
+
+port =&amp;gt; 5044
+
+ssl =&amp;gt; true
+
+ssl_certificate =&amp;gt; “/etc/pki/tls/certs/logstash-forwarder.crt”
+
+ssl_key =&amp;gt; “/etc/pki/tls/private/logstash-forwarder.key”
+
+}
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Or&lt;/p&gt;
+
+&lt;p&gt;02-beats-input.conf file content looks like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.indonesiadot.com/images/2020/logstash1.png&#34; alt=&#34;logstash1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Save and quit. This specifies a beats input that will listen on tcp port 5044, and it will use the SSL certificate and private key that we created earlier.&lt;/p&gt;
+
+&lt;p&gt;Now let’s create a configuration file called 10-syslog-filter.conf, where we will add a filter for syslog messages:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo vi /etc/logstash/conf.d/10-syslog-filter.conf
+filter {
+
+if [type] == “syslog” {
+
+grok {
+
+match =&amp;gt; { “message” =&amp;gt; “%{SYSLOGTIMESTAMP:syslog_timestamp} %{SYSLOGHOST:syslog_hostname} %{DATA:syslog_program}(?:\[%{POSINT:syslog_pid}\])?: %{GREEDYDATA:syslog_message}” }
+
+add_field =&amp;gt; [ “received_at”, “%{@timestamp}” ]
+
+add_field =&amp;gt; [ “received_from”, “%{host}” ]
+
+}
+
+syslog_pri { }
+
+date {
+
+match =&amp;gt; [ “syslog_timestamp”, “MMM d HH:mm:ss”, “MMM dd HH:mm:ss” ]
+
+}
+
+}
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Or 10-syslog-filter.conf file content looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;logstash2&#34; alt=&#34;logstash2&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Save and quit. This filter looks for logs that are labeled as “syslog” type (by Filebeat), and it will try to use grok to parse incoming syslog logs to make it structured and query-able.&lt;/p&gt;
+
+&lt;p&gt;Lastly, we will create a configuration file called 30-elasticsearch-output.conf:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo vim /etc/logstash/conf.d/30-elasticsearch-output.conf
+output {
+elasticsearch {
+
+hosts =&amp;gt; [“localhost:9200”]
+sniffing =&amp;gt; true
+manage_template =&amp;gt; false
+index =&amp;gt; “%{[@metadata][beat]}-%{+YYYY.MM.dd}”
+document_type =&amp;gt; “%{[@metadata][type]}”
+
+}
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Or 30-elasticsearch-output.conf file content looks like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.indonesiadot.com/images/2020/logstash3.png&#34; alt=&#34;logstash3&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Save and exit. This output basically configures Logstash to store the beats data in Elasticsearch which is running at localhost:9200, in an index named after the beat used (filebeat, in our case).&lt;/p&gt;
+
+&lt;p&gt;If you want to add filters for other applications that use the Filebeat input, be sure to name the files so they sort between the input and the output configuration (i.e. between 02- and 30-).&lt;/p&gt;
+
+&lt;p&gt;Test your Logstash configuration with this command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo service logstash configtest
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It should display Configuration OK if there are no syntax errors. Otherwise, try and read the error output to see what’s wrong with your Logstash configuration.&lt;/p&gt;
+
+&lt;p&gt;Restart Logstash, and enable it, to put our configuration changes into effect:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service logstash restart
+sudo update-rc.d logstash defaults 96 9
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next, we’ll load the sample Kibana dashboards.&lt;/p&gt;
+
+&lt;p&gt;##Loading Sample Kibana Dashboards:&lt;/p&gt;
+
+&lt;p&gt;Elastic provides several sample Kibana dashboards and Beats index patterns that can help you get started with Kibana. Although we won’t use the dashboards in this tutorial, we’ll load them anyway so we can use the Filebeat index pattern that it includes.&lt;/p&gt;
+
+&lt;p&gt;First, download the sample dashboards archive to your home directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd ~
+curl -L -O https://download.elastic.co/beats/dashboards/beats-dashboards-1.1.0.zip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install the unzip package with this command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get -y install unzip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next, extract the contents of the archive:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;unzip beats-dashboards-*.zip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And load the sample dashboards, visualizations and Beats index patterns into Elasticsearch with these commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd beats-dashboards-*
+./load.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;These are the index patterns that we just loaded:&lt;/p&gt;
+
+&lt;p&gt;[packetbeat-]YYYY.MM.DD
+[topbeat-]YYYY.MM.DD
+[filebeat-]YYYY.MM.DD
+[winlogbeat-]YYYY.MM.DD
+When we start using Kibana, we will select the Filebeat index pattern as our default.&lt;/p&gt;
+
+&lt;p&gt;Load Filebeat index templates in Elasticsearch
+Because we are planning on using Filebeat to ship logs to Elasticsearch, we should load a Filebeat index template. The index template will configure Elasticsearch to analyze incoming Filebeat fields in an intelligent way.&lt;/p&gt;
+
+&lt;p&gt;First, download the Filebeat index template to your home directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd ~
+curl -O https://gist.githubusercontent.com/thisismitch/3429023e8438cc25b86c/raw/d8c479e2a1adcea8b1fe86570e42abab0f10f364/filebeat-index-template.json
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then load the template with this command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ curl -XPUT ‘http://localhost:9200/_template/filebeat?pretty&amp;amp;#8217; -d@filebeat-index-template.json
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If the template loaded properly, you should see a message like this:&lt;/p&gt;
+
+&lt;p&gt;Output:
+{
+  &amp;ldquo;acknowledged&amp;rdquo; : true
+}
+Now that our ELK Server is ready to receive Filebeat data, let’s move onto setting up Filebeat on each client server.&lt;/p&gt;
+
+&lt;p&gt;Step-6: SetUp filebeat(add clients servers)
+Do these steps for each Ubuntu or Debian server that you want to send logs to Logstash on your ELK Server. For instructions on installing Filebeat on Red Hat-based Linux distributions (e.g. RHEL, CentOS, etc.), refer to the Set Up Filebeat (Add Client Servers) section of the CentOS variation of this tutorial.&lt;/p&gt;
+
+&lt;p&gt;Copy SSL Certificate
+On your ELK Server, copy the SSL certificate—created in the prerequisite tutorial—to your Client Server(substitute the client server’s address, and your own login):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;scp /etc/pki/tls/certs/logstash-forwarder.crt user@client_server_private_address:/tmp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After providing your login’s credentials, ensure that the certificate copy was successful. It is required for communication between the client servers and the ELK Server.&lt;/p&gt;
+
+&lt;p&gt;Now, on your Client Server, copy the ELK Server’s SSL certificate into the appropriate location (/etc/pki/tls/certs):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Client $ sudo mkdir -p /etc/pki/tls/certs
+CLient$ sudo cp /tmp/logstash-forwarder.crt /etc/pki/tls/certs/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now we will install the Topbeat package.&lt;/p&gt;
+
+&lt;p&gt;Install Filebeat packages:
+On Client Server, create the Beats source list,using following command :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Client$ echo “deb https://packages.elastic.co/beats/apt stable main” | sudo tee -a /etc/apt/sources.list.d/beats.list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It also uses the same GPG key as Elasticsearch, which can be installed with this command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Client$ wget -qO – https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add –
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then install the Filebeat package:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get install filebeat
+Filebeat is installed but it is not configured yet.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Configure filebeat
+Now we will configure Filebeat to connect to Logstash on our ELK Server. This section will step you through modifying the example configuration file that comes with Filebeat. When you complete the steps, you should have a file that looks something like this.&lt;/p&gt;
+
+&lt;p&gt;On Client Server, create and edit Filebeat configuration file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo vi /etc/filebeat/filebeat.yml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note: Filebeat’s configuration file is in YAML format, which means that indentation is very important! Be sure to use the same number of spaces that are indicated in these instructions.&lt;/p&gt;
+
+&lt;p&gt;Near the top of the file, you will see the prospectors section, which is where you can define prospectorsthat specify which log files should be shipped and how they should be handled. Each prospector is indicated by the - character.&lt;/p&gt;
+
+&lt;p&gt;We’ll modify the existing prospector to send syslog and auth.log to Logstash. Under paths, comment out the - &lt;code&gt;/var/log/*.log&lt;/code&gt; file. This will prevent Filebeat from sending every .log in that directory to Logstash. Then add new entries for syslog and auth.log. It should look something like this when you’re done:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;...
+      paths:
+        - /var/log/auth.log
+        - /var/log/syslog
+#        - /var/log/*.log
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then find the line that specifies document_type:, uncomment it and change its value to “syslog”. It should look like this after the modification:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;...
+      document_type: syslog
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This specifies that the logs in this prospector are of type syslog (which is the type that our Logstash filter is looking for).&lt;/p&gt;
+
+&lt;p&gt;If you want to send other files to your ELK server, or make any changes to how Filebeat handles your logs, feel free to modify or add prospector entries.&lt;/p&gt;
+
+&lt;p&gt;Next, under the output section, find the line that says elasticsearch:, which indicates the Elasticsearch output section (which we are not going to use). Delete or comment out the entire Elasticsearch output section (up to the line that says #logstash:).&lt;/p&gt;
+
+&lt;p&gt;Find the commented out Logstash output section, indicated by the line that says #logstash:, and uncomment it by deleting the preceding #. In this section, uncomment the hosts: [&amp;ldquo;localhost:5044&amp;rdquo;]line. Change localhost to the private IP address (or hostname, if you went with that option) of your ELK server:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; ### Logstash as output
+  logstash:
+    # The Logstash hosts
+    hosts: [&amp;quot;ELK_server_private_IP:5044&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This configures Filebeat to connect to Logstash on your ELK Server at port 5044 (the port that we specified a Logstash input for earlier).&lt;/p&gt;
+
+&lt;p&gt;Directly under the hosts entry, and with the same indentation, add this line in filebeat.yml file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;bulk_max_size: 1024
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next, find the tls section, and uncomment it. Then uncomment the line that specifies certificate_authorities, and change its value to [&amp;ldquo;/etc/pki/tls/certs/logstash-forwarder.crt&amp;rdquo;]. It should look something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;...
+    tls:
+      # List of root certificates for HTTPS server verifications
+      certificate_authorities: [&amp;quot;/etc/pki/tls/certs/logstash-forwarder.crt&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This configures Filebeat to use the SSL certificate that we created on the ELK Server.&lt;/p&gt;
+
+&lt;p&gt;Save and quit.&lt;/p&gt;
+
+&lt;p&gt;Now restart Filebeat to put our changes into place:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service filebeat restart
+sudo update-rc.d filebeat defaults 95 10
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Again, if you’re not sure if your Filebeat configuration is correct, compare it against this &lt;a href=&#34;https://gist.githubusercontent.com/thisismitch/3429023e8438cc25b86c/raw/de660ffdd3decacdcaf88109e5683e1eef75c01f/filebeat.yml-ubuntu&#34;&gt;example Filebeat configuration&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now Filebeat is sending syslog and auth.log to Logstash on your ELK server! Repeat this section for all of the other servers that you wish to gather logs for.&lt;/p&gt;
+
+&lt;h2 id=&#34;test-the-filebeat-installation&#34;&gt;Test the filebeat installation:&lt;/h2&gt;
+
+&lt;p&gt;If your ELK stack is setup properly, Filebeat (on your client server) should be shipping your logs to Logstash on your ELK server. Logstash should be loading the Filebeat data into Elasticsearch in a date-stamped index, filebeat-YYYY.MM.DD.&lt;/p&gt;
+
+&lt;p&gt;On your ELK Server, verify that Elasticsearch is indeed receiving the data by querying for the Filebeat index with this command:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;curl -XGET ‘http://localhost:9200/filebeat-*/_search?pretty&amp;amp;#8217;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You should see a bunch of output that looks like this:&lt;/p&gt;
+
+&lt;p&gt;Sample Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;...
+{
+      &amp;quot;_index&amp;quot; : &amp;quot;filebeat-2016.01.29&amp;quot;,
+      &amp;quot;_type&amp;quot; : &amp;quot;log&amp;quot;,
+      &amp;quot;_id&amp;quot; : &amp;quot;AVKO98yuaHvsHQLa53HE&amp;quot;,
+      &amp;quot;_score&amp;quot; : 1.0,
+      &amp;quot;_source&amp;quot;:{&amp;quot;message&amp;quot;:&amp;quot;Feb  3 14:34:00 rails sshd[963]: Server listening on :: port 22.&amp;quot;,&amp;quot;@version&amp;quot;:&amp;quot;1&amp;quot;,&amp;quot;@timestamp&amp;quot;:&amp;quot;2016-01-29T19:59:09.145Z&amp;quot;,&amp;quot;beat&amp;quot;:{&amp;quot;hostname&amp;quot;:&amp;quot;topbeat-u-03&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;topbeat-u-03&amp;quot;},&amp;quot;count&amp;quot;:1,&amp;quot;fields&amp;quot;:null,&amp;quot;input_type&amp;quot;:&amp;quot;log&amp;quot;,&amp;quot;offset&amp;quot;:70,&amp;quot;source&amp;quot;:&amp;quot;/var/log/auth.log&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;log&amp;quot;,&amp;quot;host&amp;quot;:&amp;quot;topbeat-u-03&amp;quot;}
+    }
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If your output shows 0 total hits, Elasticsearch is not loading any logs under the index you searched for, and you should review your setup for errors. If you received the expected output, continue to the next step.&lt;/p&gt;
+
+&lt;h2 id=&#34;connect-to-kibana&#34;&gt;Connect to Kibana&lt;/h2&gt;
+
+&lt;p&gt;When you are finished setting up Filebeat on all of the servers that you want to gather logs for, let’s look at Kibana, the web interface that we installed earlier.&lt;/p&gt;
+
+&lt;p&gt;example:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://localhost:5601/&#34;&gt;http://localhost:5601/&lt;/a&gt;         and hit enter&lt;/p&gt;
+
+&lt;p&gt;In a web browser, go to the FQDN or public IP address of your ELK Server. After entering the “kibanaadmin” credentials, you should see a page prompting you to configure a default index pattern:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.indonesiadot.com/images/2020/kibana1.png&#34; alt=&#34;kibana1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Go ahead and select [filebeat]-YYY.MM.DD from the Index Patterns menu (left side), then click the Star (Set as default index) button to set the Filebeat index as the default.&lt;/p&gt;
+
+&lt;p&gt;Now click the Discover link in the top navigation bar. By default, this will show you all of the log data over the last 15 minutes. You should see a histogram with log events, with log messages below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;iimages/2020/kibana2.png&#34; alt=&#34;kibana2&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Right now, there won’t be much in there because you are only gathering syslogs from your client servers. Here, you can search and browse through your logs. You can also customize your dashboard.&lt;/p&gt;
+
+&lt;p&gt;Try the following things:&lt;/p&gt;
+
+&lt;p&gt;Search for “root” to see if anyone is trying to log into your servers as root
+Search for a particular hostname (search for host: &amp;ldquo;hostname&amp;rdquo;)
+Change the time frame by selecting an area on the histogram or from the menu above
+Click on messages below the histogram to see how the data is being filtered
+Kibana has many other features, such as graphing and filtering, so feel free to poke around!&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Now that your syslogs are centralized via Elasticsearch and Logstash, and you are able to visualize them with Kibana, you should be off to a good start with centralizing all of your important logs. Remember that you can send pretty much any type of log or indexed data to Logstash, but the data becomes even more useful if it is parsed and structured with grok.&lt;/p&gt;
+
+&lt;p&gt;To improve your new ELK stack, you should look into gathering and filtering your other logs with Logstash, and &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-use-kibana-dashboards-and-visualizations&#34;&gt;creating Kibana dashboards&lt;/a&gt;. You may also want to &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-gather-infrastructure-metrics-with-topbeat-and-elk-on-ubuntu-14-04&#34;&gt;gather system metrics by using Topbeat&lt;/a&gt; with your ELK stack. All of these topics are covered in the other tutorials in this series.&lt;/p&gt;
+
+&lt;p&gt;Good luck!&lt;/p&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mohitepramod.wordpress.com/2018/06/&#34;&gt;https://mohitepramod.wordpress.com/2018/06/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://logz.io/blog/10-elasticsearch-concepts/&#34;&gt;https://logz.io/blog/10-elasticsearch-concepts/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html#_near_realtime_nrt&#34;&gt;https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html#_near_realtime_nrt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qbox.io/blog/welcome-to-the-elk-stack-elasticsearch-logstash-kibana&#34;&gt;https://qbox.io/blog/welcome-to-the-elk-stack-elasticsearch-logstash-kibana&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7&#34;&gt;https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-ubuntu-14-04&#34;&gt;https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-ubuntu-14-04&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Ubuntu tips</title>
+          <link>https://blog.indonesiadot.com/2020/03/18/ubuntu-tips/</link>
+          <pubDate>Wed, 18 Mar 2020 07:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/03/18/ubuntu-tips/</guid>
+          <description>
+
+&lt;h2 id=&#34;install-specific-version&#34;&gt;Install specific version&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-cache policy gparted
+apt install gparted=0.16.1-1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package&#34;&gt;https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;apport-high-cpu&#34;&gt;apport high cpu&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;killall -9 apport
+service apport stop &amp;amp;&amp;amp; systemctl stop apport
+rm -f /var/crash/*
+apt-get remove apport -y
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Ansible Tower Log Logstash ELK</title>
+          <link>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</link>
+          <pubDate>Mon, 16 Mar 2020 19:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</guid>
+          <description>
+
+&lt;h2 id=&#34;ansible-logstash-example&#34;&gt;ansible logstash example&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/widansible/elk-ansible&#34;&gt;https://github.com/widansible/elk-ansible&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack&#34;&gt;https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html&#34;&gt;https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html&#34;&gt;https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Kubernetes references</title>
+          <link>https://blog.indonesiadot.com/2020/03/16/kubernetes-references/</link>
+          <pubDate>Mon, 16 Mar 2020 10:57:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/03/16/kubernetes-references/</guid>
+          <description>
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076&#34;&gt;https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@kvaps/creating-baremethal-kubernetes-ha-cluster-with-kubeadm-and-keepalived-simple-guide&#34;&gt;https://medium.com/@kvaps/creating-baremethal-kubernetes-ha-cluster-with-kubeadm-and-keepalived-simple-guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@kvaps/creating-high-available-baremetal-kubernetes-cluster-with-kubeadm-and-keepalived-simplest-guide-71766d5e25ae?source=---------6------------------&#34;&gt;https://medium.com/@kvaps/creating-high-available-baremetal-kubernetes-cluster-with-kubeadm-and-keepalived-simplest-guide-71766d5e25ae?source=---------6------------------&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;kubernetes-monitoring&#34;&gt;kubernetes monitoring&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@kvaps/zabbix-solve-memory-monitoring-issue-inside-lxc-containers-98ddf191051c&#34;&gt;https://medium.com/@kvaps/zabbix-solve-memory-monitoring-issue-inside-lxc-containers-98ddf191051c&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Kubernetes inside lxc</title>
+          <link>https://blog.indonesiadot.com/2020/03/16/kubernetes-inside-lxc/</link>
+          <pubDate>Mon, 16 Mar 2020 10:47:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/03/16/kubernetes-inside-lxc/</guid>
+          <description>
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@kvaps/run-kubernetes-in-lxc-container-f04aa94b6c9c&#34;&gt;https://medium.com/@kvaps/run-kubernetes-in-lxc-container-f04aa94b6c9c&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/corneliusweig/kubernetes-lxd&#34;&gt;https://github.com/corneliusweig/kubernetes-lxd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sayem.org/k8s-on-lxd/&#34;&gt;https://www.sayem.org/k8s-on-lxd/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://discuss.linuxcontainers.org/t/working-install-of-docker-ce-in-lxc-unprivileged-container-in-proxmox/3828/4&#34;&gt;https://discuss.linuxcontainers.org/t/working-install-of-docker-ce-in-lxc-unprivileged-container-in-proxmox/3828/4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://forum.proxmox.com/threads/lxc-docker-containerd-cannot-find-lib-modules-4-15-18-9-pve.49406/&#34;&gt;https://forum.proxmox.com/threads/lxc-docker-containerd-cannot-find-lib-modules-4-15-18-9-pve.49406/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://forum.proxmox.com/threads/docker-in-lxc-container.45204/&#34;&gt;https://forum.proxmox.com/threads/docker-in-lxc-container.45204/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://discuss.linuxcontainers.org/t/how-to-add-kernel-modules-into-an-lxc-container/5033/3&#34;&gt;https://discuss.linuxcontainers.org/t/how-to-add-kernel-modules-into-an-lxc-container/5033/3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;kubernetes-haproxy&#34;&gt;kubernetes haproxy&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076&#34;&gt;https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Mxtoolbox mail blacklist</title>
+          <link>https://blog.indonesiadot.com/2020/03/16/mxtoolbox-mail-blacklist/</link>
+          <pubDate>Mon, 16 Mar 2020 10:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/03/16/mxtoolbox-mail-blacklist/</guid>
+          <description>
+
+&lt;h2 id=&#34;free-alert-register-with-gmail&#34;&gt;Free alert (register with gmail)&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mxtoolbox.com/public/registration.aspx?so=PB_FREE&amp;amp;page=free_registration&#34;&gt;https://mxtoolbox.com/public/registration.aspx?so=PB_FREE&amp;amp;page=free_registration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mxtoolbox.com/blacklists.aspx&#34;&gt;https://mxtoolbox.com/blacklists.aspx&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Qemu Tips</title>
+          <link>https://blog.indonesiadot.com/2020/03/16/qemu-tips/</link>
+          <pubDate>Mon, 16 Mar 2020 10:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/03/16/qemu-tips/</guid>
+          <description>
+
+&lt;h2 id=&#34;qemu-resize&#34;&gt;Qemu resize&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;qemu-img resize image.qcow2 +SIZE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://indonesiadot.com&#34;&gt;https://indonesiadot.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Qmail Toaster</title>
+          <link>https://blog.indonesiadot.com/2020/03/16/qmail-toaster/</link>
+          <pubDate>Mon, 16 Mar 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/03/16/qmail-toaster/</guid>
+          <description>
+
+&lt;h2 id=&#34;qmail-ssl-letsencrypt&#34;&gt;Qmail ssl letsencrypt&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;yum install certbot python2-certbot python2-certbot-apache python2-certbot-dns-cloudflare
+cat &amp;lt;EOF&amp;gt; cloudflare.ini
+dns_cloudflare_email = user@example.com
+dns_cloudflare_api_key = j2c2166gd6688921b1497e7cfd6cf69f7f936
+EOF
+certbot certonly --dns-cloudflare --dns-cloudflare-credentials cloudflare.ini dns-cloudflare-propagation-seconds 60 -d *.example.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add to apache vhost centos&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SSLCertificateFile /etc/letsencrypt/live/example.com/cert.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/example.com/privkey.pem
+Include /etc/letsencrypt/options-ssl-apache.conf
+SSLCertificateChainFile /etc/letsencrypt/live/example.com/fullchain.pem
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add to Dovecot CentOS 6 &amp;amp; 7 (/etc/dovecot/toaster.conf)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; ssl_cert = &amp;lt;/etc/letsencrypt/live/example.com/fullchain.pem
+ ssl_key = &amp;lt;/etc/letsencrypt/live/example.com/privkey.pem
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add to Qmail CentOS 6 &amp;amp; 7&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; cp -p /var/qmail/control/servercert.pem /var/qmail/control/servercert.pem.bak
+ cat /etc/letsencrypt/live/example.com/privkey.pem /etc/letsencrypt/live/example.com/fullchain.pem &amp;gt; /var/qmail/control/servercert.pem
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let&amp;rsquo;s Encrypt auto renewal&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  0 0 * * * /opt/certbot/certbot renew       #CentOS 7
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Restart Qmail and Dovecot&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qmailctl stop
+qmailctl start
+systemctl restart dovecot
+systemctl restart httpd
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.qmailtoaster.net/ssl.html&#34;&gt;http://www.qmailtoaster.net/ssl.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Sentinelone EPP EDR</title>
+          <link>https://blog.indonesiadot.com/2020/03/13/sentinelone-epp-edr/</link>
+          <pubDate>Fri, 13 Mar 2020 06:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/03/13/sentinelone-epp-edr/</guid>
+          <description>
+
+&lt;h2 id=&#34;cloud-connectivity-became-offline&#34;&gt;cloud connectivity became offline&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;make sure all of the docker container is run with docker ps&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;the date of the on-prem server must be UTC&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;date
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Wed Mar 11 09:18:42 UTC 2020&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;test cloudgateway api info with curl&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl -v https://cloudgateway-prod-ap.sentinelone.net/api/v2/info
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Trying 13.112.219.166&amp;hellip;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;TCP_NODELAY set&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Connected to cloudgateway-prod-ap.sentinelone.net (13.112.219.166) port 443 (#0)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ALPN, offering h2&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ALPN, offering http/1.1&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;successfully set certificate verify locations:&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;CAfile: /etc/ssl/certs/ca-certificates.crt
+CApath: /etc/ssl/certs&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;TLSv1.3 (OUT), TLS handshake, Client hello (1):&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;TLSv1.3 (IN), TLS handshake, Server hello (2):&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;TLSv1.2 (IN), TLS handshake, Certificate (11):&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;TLSv1.2 (IN), TLS handshake, Server key exchange (12):&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;TLSv1.2 (IN), TLS handshake, Request CERT (13):&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;TLSv1.2 (IN), TLS handshake, Server finished (14):&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;TLSv1.2 (OUT), TLS handshake, Certificate (11):&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;TLSv1.2 (OUT), TLS handshake, Client key exchange (16):&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;TLSv1.2 (OUT), TLS change cipher, Client hello (1):&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;TLSv1.2 (OUT), TLS handshake, Finished (20):&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;TLSv1.2 (IN), TLS handshake, Finished (20):&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;SSL connection using TLSv1.2 / ECDHE-RSA-AES256-GCM-SHA384&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ALPN, server accepted to use http/1.1&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Server certificate:&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;subject: C=US; ST=California; L=Palo Alto; O=Sentinel Labs, Inc.; CN=*.sentinelone.net&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;start date: Sep 11 00:00:00 2019 GMT&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;expire date: Dec 1 12:00:00 2021 GMT&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;subjectAltName: host &amp;ldquo;cloudgateway-prod-ap.sentinelone.net&amp;rdquo; matched cert&amp;rsquo;s &amp;ldquo;*.sentinelone.net&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;issuer: C=US; O=DigiCert Inc; CN=DigiCert SHA2 Secure Server CA&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;SSL certificate verify ok.
+&amp;gt; GET /api/v2/info HTTP/1.1
+&amp;gt; Host: cloudgateway-prod-ap.sentinelone.net
+&amp;gt; User-Agent: curl/7.58.0
+&amp;gt; Accept: &lt;em&gt;/&lt;/em&gt;
+&amp;gt;
+&amp;lt; HTTP/1.1 200 OK
+&amp;lt; Server: nginx/1.14.0 (Ubuntu)
+&amp;lt; Date: Wed, 11 Mar 2020 09:19:32 GMT
+&amp;lt; Content-Type: application/json
+&amp;lt; Content-Length: 20
+&amp;lt; Connection: keep-alive
+&amp;lt; Access-Control-Allow-Origin: *
+&amp;lt; Access-Control-Allow-Headers: Authentication-Token
+&amp;lt;
+{&amp;ldquo;version&amp;rdquo;:&amp;ldquo;4.1.4&amp;rdquo;}&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Connection #0 to host cloudgateway-prod-ap.sentinelone.net left intact&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;give settings.ini to support&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;From the outputs you sent - &amp;gt; Everything seems to be Ok,&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;4.1. Add the following lines to the /etc/hosts file -&amp;gt; Save -&amp;gt; Exit:&lt;/p&gt;
+
+&lt;p&gt;54.64.165.125 cloudgateway-prod-ap.sentinelone.net
+13.112.219.166 cloudgateway-prod-ap.sentinelone.net&lt;/p&gt;
+
+&lt;p&gt;4.2. Run -&amp;gt; sudo docker exec -u 0 -it scheduler /bin/bash
+The vi /etc/hosts -&amp;gt;Add the 2 lines&amp;gt; Save-&amp;gt;Exit
+54.64.165.125 cloudgateway-prod-ap.sentinelone.net
+13.112.219.166 cloudgateway-prod-ap.sentinelone.net&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Restart the server after all the changes&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>LVM tips</title>
+          <link>https://blog.indonesiadot.com/2020/03/12/lvm-tips/</link>
+          <pubDate>Thu, 12 Mar 2020 20:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/03/12/lvm-tips/</guid>
+          <description>
+
+&lt;h2 id=&#34;resize-increase-lvm&#34;&gt;resize / increase lvm&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;lvextend --size +10G /dev/vg0/foo
+lvextend --size 20G /dev/vg0/foo
+lvdisplay /dev/vg0/foo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.microhowto.info/howto/increase_the_size_of_an_lvm_logical_volume.html&#34;&gt;http://www.microhowto.info/howto/increase_the_size_of_an_lvm_logical_volume.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://linoxide.com/linux-how-to/lvm-configuration-linux/&#34;&gt;https://linoxide.com/linux-how-to/lvm-configuration-linux/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;pvresize&#34;&gt;pvresize&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;pvresize /dev/sda3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.thegeekdiary.com/centos-rhel-how-to-resize-extend-existing-physical-volume-pv/&#34;&gt;https://www.thegeekdiary.com/centos-rhel-how-to-resize-extend-existing-physical-volume-pv/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Ceph tips</title>
+          <link>https://blog.indonesiadot.com/2020/03/12/ceph-tips/</link>
+          <pubDate>Thu, 12 Mar 2020 18:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/03/12/ceph-tips/</guid>
+          <description>
+
+&lt;h2 id=&#34;remove-osd&#34;&gt;remove osd&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;systemctl stop ceph-osd.target
+systemctl stop ceph-osd@0
+ceph osd out 0
+ceph osd down 0
+ceph osd destroy 0
+ceph osd destroy 0 --yes-i-really-mean-it
+ceph osd rm 0
+ceph osd crush rm osd.0
+ceph auth del osd.0
+
+ceph-volume lvm zap /dev/sdX --destroy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87&#34;&gt;https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/&#34;&gt;https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;all-about-pg-num&#34;&gt;all about pg_num&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox&#34;&gt;https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ceph-one-single-node&#34;&gt;ceph one / single node&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;ceph osd getcrushmap -o crush_map_compressed
+crushtool -d crush_map_compressed -o crush_map_decompressed
+vi crush_map_decompressed
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;lalu cari bagian:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;step chooseleaf firstn 0 type host
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;rubah menjadi:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;step chooseleaf firstn 0 type osd
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;lalu insert hasilnya&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;crushtool -c crush_map_decompressed -o new_crush_map_compressed
+ceph osd setcrushmap -i new_crush_map_compressed
+ceph -s
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://linoxide.com/linux-how-to/hwto-configure-single-node-ceph-cluster/&#34;&gt;https://linoxide.com/linux-how-to/hwto-configure-single-node-ceph-cluster/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tutorial ceph bahasa indonesia&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://denstorial.blogspot.com/2019/01/tutorial.setup.ceph.storage.cluster.part.1.html&#34;&gt;https://denstorial.blogspot.com/2019/01/tutorial.setup.ceph.storage.cluster.part.1.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://denstorial.blogspot.com/2019/02/troubleshooting.ceph.html&#34;&gt;https://denstorial.blogspot.com/2019/02/troubleshooting.ceph.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;pg-placement-group-pg-num&#34;&gt;PG (Placement Group) / pg_num&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ceph.com/docs/mimic/rados/operations/placement-groups/&#34;&gt;https://docs.ceph.com/docs/mimic/rados/operations/placement-groups/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sebastien-han.fr/blog/2013/03/12/ceph-change-pg-number-on-the-fly/&#34;&gt;https://www.sebastien-han.fr/blog/2013/03/12/ceph-change-pg-number-on-the-fly/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
       
     
       
@@ -30,6 +1859,26 @@ lxc start c1
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4&#34;&gt;https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&#34;lxc-privileged-to-unprivileged&#34;&gt;lxc privileged to unprivileged&lt;/h2&gt;
+
+&lt;p&gt;Pada saat container (CT) lxc dalam unprivileged mode memiliki hak terbatas seperti akses ke device dan beberapa lainnya.&lt;/p&gt;
+
+&lt;p&gt;Contoh pada saat menjalankan docker itu ada pesan error &lt;em&gt;Failed to reset devices.list on /system.slice&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Workaround nya adalah dengan membuat CT menjadi privileged mode, caranya yaitu:
+- backup CT
+- restore CT dengan uncheck unprivileged mode&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/lxc/lxd/issues/2004&#34;&gt;https://github.com/lxc/lxd/issues/2004&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://forum.proxmox.com/threads/convert-privileged-to-unprivileged-container.31066/&#34;&gt;https://forum.proxmox.com/threads/convert-privileged-to-unprivileged-container.31066/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;rename-lxc-container&#34;&gt;rename lxc container&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;lxc move [ct-lama] [ct-baru]
+&lt;/code&gt;&lt;/pre&gt;
 </description>
         </item>
       
@@ -594,6 +2443,7 @@ bash unifi-5.12.35.sh
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html&#34;&gt;https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/&#34;&gt;https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -775,7 +2625,15 @@ certbot certonly --standalone --preferred-challenges http --non-interactive  --s
           <guid>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</guid>
           <description>
 
-&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
+&lt;h2 id=&#34;setup-docker&#34;&gt;Setup docker&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;curl -fsSL https://get.docker.com/ | sh
+usermod -aG docker namauser
+systemctl enable docker
+systemctl start docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;setup-docker-compose&#34;&gt;Setup docker-compose&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
@@ -824,6 +2682,20 @@ gitlab-ctl restart
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/&#34;&gt;https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04&#34;&gt;https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;gitlab-reset-password-from-database&#34;&gt;gitlab reset password from database&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;gitlab-rails console -e production
+user = User.where(id: 1).first
+user = User.find_by(email: &#39;admin@example.com&#39;)
+user.password = &#39;secret_pass&#39;
+user.password_confirmation = &#39;secret_pass&#39;
+user.save!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.gitlab.com/ee/security/reset_root_password.html&#34;&gt;https://docs.gitlab.com/ee/security/reset_root_password.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -2930,146 +4802,144 @@ cat &amp;gt; /etc/docker/daemon.json &amp;lt;&amp;lt;EOF
 EOF
 
 mkdir -p /etc/systemd/system/docker.service.d
-
-# Restart Docker
+systemctl daemon-reload
+systemctl restart docker
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;systemctl daemon-reload
-systemctl restart docker&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/setup/production-environment/container-runtimes/&#34;&gt;https://kubernetes.io/docs/setup/production-environment/container-runtimes/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;pre&gt;&lt;code&gt;
-* https://kubernetes.io/docs/setup/production-environment/container-runtimes/
+&lt;h2 id=&#34;kubernetes-master&#34;&gt;kubernetes master&lt;/h2&gt;
 
-## kubernetes master
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;hostnamectl set-hostname master-node
-cat &amp;lt;&lt;EOF&gt;&amp;gt; /etc/hosts
+&lt;pre&gt;&lt;code&gt;hostnamectl set-hostname master-node
+cat &amp;lt;&amp;lt;EOF&amp;gt;&amp;gt; /etc/hosts
 10.128.0.27 master-node
 10.128.0.29 node-1 worker-node-1
 10.128.0.30 node-2 worker-node-2
 EOF
 setenforce 0
-sed -i &amp;ndash;follow-symlinks &amp;rsquo;s/SELINUX=enforcing/SELINUX=disabled/g&amp;rsquo; /etc/sysconfig/selinux
-firewall-cmd &amp;ndash;permanent &amp;ndash;add-port=6443/tcp
-firewall-cmd &amp;ndash;permanent &amp;ndash;add-port=2379-2380/tcp
-firewall-cmd &amp;ndash;permanent &amp;ndash;add-port=10250/tcp
-firewall-cmd &amp;ndash;permanent &amp;ndash;add-port=10251/tcp
-firewall-cmd &amp;ndash;permanent &amp;ndash;add-port=10252/tcp
-firewall-cmd &amp;ndash;permanent &amp;ndash;add-port=10255/tcp
-firewall-cmd –reload&lt;/p&gt;
+sed -i --follow-symlinks &#39;s/SELINUX=enforcing/SELINUX=disabled/g&#39; /etc/sysconfig/selinux
+firewall-cmd --permanent --add-port=6443/tcp
+firewall-cmd --permanent --add-port=2379-2380/tcp
+firewall-cmd --permanent --add-port=10250/tcp
+firewall-cmd --permanent --add-port=10251/tcp
+firewall-cmd --permanent --add-port=10252/tcp
+firewall-cmd --permanent --add-port=10255/tcp
+firewall-cmd –reload
 
-&lt;p&gt;modprobe br_netfilter
-cat &amp;lt;&lt;EOF&gt;&amp;gt; /etc/sysctl.d/100-kube.conf
+modprobe br_netfilter
+cat &amp;lt;&amp;lt;EOF&amp;gt;&amp;gt; /etc/sysctl.d/100-kube.conf
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
 EOF
-sysctl &amp;ndash;system&lt;/p&gt;
+sysctl --system
 
-&lt;p&gt;cat &amp;lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
-baseurl=&lt;a href=&#34;https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64&#34;&gt;https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64&lt;/a&gt;
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
 enabled=1
 gpgcheck=1
 repo_gpgcheck=1
-gpgkey=&lt;a href=&#34;https://packages.cloud.google.com/yum/doc/yum-key.gpg&#34;&gt;https://packages.cloud.google.com/yum/doc/yum-key.gpg&lt;/a&gt; &lt;a href=&#34;https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg&#34;&gt;https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg&lt;/a&gt;
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
 yum install kubeadm
 systemctl enable kubelet
-systemctl start kubelet&lt;/p&gt;
+systemctl start kubelet
 
-&lt;p&gt;swapoff -a&lt;/p&gt;
+swapoff -a
 
-&lt;p&gt;kubeadm init &amp;ndash;apiserver-advertise-address=192.168.122.42 &amp;ndash;pod-network-cidr=10.244.0.0/16
-mkdir -p $HOME/.kube&lt;/p&gt;
-
-&lt;h1 id=&#34;cp-i-etc-kubernetes-admin-conf-home-kube-config&#34;&gt;cp -i /etc/kubernetes/admin.conf $HOME/.kube/config&lt;/h1&gt;
-
-&lt;h1 id=&#34;chown-id-u-id-g-home-kube-config&#34;&gt;chown $(id -u):$(id -g) $HOME/.kube/config&lt;/h1&gt;
-
-&lt;p&gt;kubectl apply -f &lt;a href=&#34;https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml&#34;&gt;https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml&lt;/a&gt;
-kubectl get nodes&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-## kubernetes node
-
+kubeadm init --apiserver-advertise-address=192.168.122.42 --pod-network-cidr=10.244.0.0/16
+mkdir -p $HOME/.kube
+# cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+# chown $(id -u):$(id -g) $HOME/.kube/config
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+kubectl get nodes
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;hostnamectl set-hostname &amp;lsquo;node-1&amp;rsquo;
-cat &amp;lt;&lt;EOF&gt;&amp;gt; /etc/hosts
+&lt;h2 id=&#34;kubernetes-node&#34;&gt;kubernetes node&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;hostnamectl set-hostname &#39;node-1&#39;
+cat &amp;lt;&amp;lt;EOF&amp;gt;&amp;gt; /etc/hosts
 10.128.0.27 master-node
 10.128.0.29 node-1 worker-node-1
 10.128.0.30 node-2 worker-node-2
-EOF&lt;/p&gt;
+EOF
 
-&lt;p&gt;setenforce 0
-sed -i &amp;ndash;follow-symlinks &amp;rsquo;s/SELINUX=enforcing/SELINUX=disabled/g&amp;rsquo; /etc/sysconfig/selinux&lt;/p&gt;
+setenforce 0
+sed -i --follow-symlinks &#39;s/SELINUX=enforcing/SELINUX=disabled/g&#39; /etc/sysconfig/selinux
 
-&lt;p&gt;firewall-cmd &amp;ndash;permanent &amp;ndash;add-port=6783/tcp
-firewall-cmd &amp;ndash;permanent &amp;ndash;add-port=10250/tcp
-firewall-cmd &amp;ndash;permanent &amp;ndash;add-port=10255/tcp
-firewall-cmd &amp;ndash;permanent &amp;ndash;add-port=30000-32767/tcp
-firewall-cmd  &amp;ndash;reload&lt;/p&gt;
+firewall-cmd --permanent --add-port=6783/tcp
+firewall-cmd --permanent --add-port=10250/tcp
+firewall-cmd --permanent --add-port=10255/tcp
+firewall-cmd --permanent --add-port=30000-32767/tcp
+firewall-cmd  --reload
 
-&lt;p&gt;cat &amp;lt;&lt;EOF&gt;&amp;gt; /etc/sysctl.d/100-kube.conf
+cat &amp;lt;&amp;lt;EOF&amp;gt;&amp;gt; /etc/sysctl.d/100-kube.conf
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
 EOF
-sysctl &amp;ndash;system&lt;/p&gt;
+sysctl --system
 
-&lt;p&gt;cat &amp;lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
-baseurl=&lt;a href=&#34;https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64&#34;&gt;https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64&lt;/a&gt;
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
 enabled=1
 gpgcheck=1
 repo_gpgcheck=1
-gpgkey=&lt;a href=&#34;https://packages.cloud.google.com/yum/doc/yum-key.gpg&#34;&gt;https://packages.cloud.google.com/yum/doc/yum-key.gpg&lt;/a&gt; &lt;a href=&#34;https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg&#34;&gt;https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg&lt;/a&gt;
-EOF&lt;/p&gt;
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
 
-&lt;p&gt;yum install kubeadm
+yum install kubeadm
 systemctl enable kubelet
-systemctl start kubelet&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-We now require the token that kubeadm init generated, to join the cluster. You can copy and paste it to your node-1 and node-2 if you had copied it somewhere.
+systemctl start kubelet
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;kubeadm join 10.128.0.27:6443 &amp;ndash;token nu06lu.xrsux0ss0ixtnms5  &amp;ndash;discovery-token-ca-cert-hash sha256:f996ea3564e6a07fdea2997a1cf8caeddafd6d4360d606dbc82314688425cd41&lt;/p&gt;
+&lt;p&gt;We now require the token that kubeadm init generated, to join the cluster. You can copy and paste it to your node-1 and node-2 if you had copied it somewhere.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;
-## kubernetes master
+&lt;pre&gt;&lt;code&gt;kubeadm join 10.128.0.27:6443 --token nu06lu.xrsux0ss0ixtnms5  --discovery-token-ca-cert-hash sha256:f996ea3564e6a07fdea2997a1cf8caeddafd6d4360d606dbc82314688425cd41 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;kubectl get nodes&lt;/p&gt;
+&lt;h2 id=&#34;kubernetes-master-1&#34;&gt;kubernetes master&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;
-* https://www.tecmint.com/install-kubernetes-cluster-on-centos-7/
-* https://www.howtoforge.com/tutorial/centos-kubernetes-docker-cluster/
-
-## kubernetes kubeadm show join command
-
+&lt;pre&gt;&lt;code&gt;kubectl get nodes
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;kubeadm token create &amp;ndash;print-join-command&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tecmint.com/install-kubernetes-cluster-on-centos-7/&#34;&gt;https://www.tecmint.com/install-kubernetes-cluster-on-centos-7/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.howtoforge.com/tutorial/centos-kubernetes-docker-cluster/&#34;&gt;https://www.howtoforge.com/tutorial/centos-kubernetes-docker-cluster/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/&#34;&gt;https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;pre&gt;&lt;code&gt;
-## kubernetes delete node
+&lt;h2 id=&#34;kubernetes-kubeadm-show-join-command&#34;&gt;kubernetes kubeadm show join command&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;kubeadm token create --print-join-command
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;kubectl get nodes
-kubectl drain &lt;namanode&gt;
-kubectl delete node &lt;namanode&gt;&lt;/p&gt;
+&lt;h2 id=&#34;kubernetes-delete-node&#34;&gt;kubernetes delete node&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;at the node, then type:
+&lt;pre&gt;&lt;code&gt;kubectl get nodes
+kubectl drain &amp;lt;namanode&amp;gt;
+kubectl delete node &amp;lt;namanode&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;kubeadm reset
-```&lt;/p&gt;
+&lt;p&gt;at the node, then type:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;kubeadm reset
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/35757620/how-to-gracefully-remove-a-node-from-kubernetes&#34;&gt;https://stackoverflow.com/questions/35757620/how-to-gracefully-remove-a-node-from-kubernetes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;kubernetes-external-storage-pv-pvc&#34;&gt;Kubernetes external storage PV PVC&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/storage/volumes/#rbd&#34;&gt;https://kubernetes.io/docs/concepts/storage/volumes/#rbd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/kubernetes-incubator/external-storage/tree/master/ceph/rbd&#34;&gt;https://github.com/kubernetes-incubator/external-storage/tree/master/ceph/rbd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/kubernetes/examples/tree/master/volumes/rbd&#34;&gt;https://github.com/kubernetes/examples/tree/master/volumes/rbd&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -3230,6 +5100,16 @@ git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiad
 &lt;li&gt;&lt;a href=&#34;https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf&#34;&gt;https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce&#34;&gt;https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&#34;hugo-lanyon-tags&#34;&gt;hugo lanyon tags&lt;/h2&gt;
+
+&lt;p&gt;edit themes/lanyonindo/layouts/partials/sidebar.html&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    &amp;lt;a class=&amp;quot;sidebar-nav-item {{ if .IsHome }} active {{ end }}&amp;quot; href=&amp;quot;/&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;
+    &amp;lt;!--    &amp;lt;a class=&amp;quot;sidebar-nav-item {{ if eq .RelPermalink &amp;quot;/post/&amp;quot; }} active {{ end }}&amp;quot; href=&amp;quot;/post&amp;quot;&amp;gt;Posts&amp;lt;/a&amp;gt; --&amp;gt;
+    &amp;lt;a class=&amp;quot;sidebar-nav-item&amp;quot; href=&amp;quot;/post&amp;quot;&amp;gt;Posts&amp;lt;/a&amp;gt;
+    &amp;lt;a class=&amp;quot;sidebar-nav-item&amp;quot; href=&amp;quot;/tags&amp;quot;&amp;gt;Tags&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
         </item>
       
@@ -3990,15 +5870,11 @@ fi
 
 &lt;p&gt;Using facter too&lt;/p&gt;
 
-&lt;p&gt;Ref:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://docs.ansible.com/ansible/latest/setup_module.html#examples&#34;&gt;http://docs.ansible.com/ansible/latest/setup_module.html#examples&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;ansible-php-composer&#34;&gt;ansible php composer&lt;/h2&gt;
-
-&lt;p&gt;Ref:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://knpuniversity.com/screencast/ansible/ansible-composer&#34;&gt;https://knpuniversity.com/screencast/ansible/ansible-composer&lt;/a&gt;&lt;/li&gt;
@@ -4006,18 +5882,20 @@ fi
 
 &lt;h2 id=&#34;ansible-playbook-interactive-ansible-prompt&#34;&gt;ansible playbook interactive / ansible prompt&lt;/h2&gt;
 
-&lt;p&gt;Ref:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html&#34;&gt;https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;ansible-playbook-command&#34;&gt;ansible-playbook command&lt;/h2&gt;
 
-&lt;p&gt;Ref:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/&#34;&gt;https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ansible-integrations&#34;&gt;Ansible integrations&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.ansible.com/integrations/devops-tools&#34;&gt;https://www.ansible.com/integrations/devops-tools&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -4239,6 +6117,15 @@ losetup /dev/loop11 filesystem.img
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://serverfault.com/questions/344518/in-linux-how-can-i-create-thin-provisioned-file-so-it-can-be-mounted-and-a-file&#34;&gt;https://serverfault.com/questions/344518/in-linux-how-can-i-create-thin-provisioned-file-so-it-can-be-mounted-and-a-file&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;mount-exfat-usb-external-disk&#34;&gt;mount exfat usb / external disk&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;apt install exfat-fuse exfat-utils
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://itsfoss.com/mount-exfat/&#34;&gt;https://itsfoss.com/mount-exfat/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>

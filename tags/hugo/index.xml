@@ -41,9 +41,10 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
       <pubDate>Mon, 02 Sep 2019 08:17:16 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/</guid>
-      <description> manage hugo dari pc / laptop lain git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io git checkout hugo rm -rf public git add . git commit -m &#39;remove public&#39; git push git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public  Referensi hugo dasar:
+      <description>manage hugo dari pc / laptop lain git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io git checkout hugo rm -rf public git add . git commit -m &#39;remove public&#39; git push git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public  Referensi hugo dasar:
  https://www.petanikode.com/topik/hugo https://gohugo.io/getting-started/quick-start/ https://gohugo.io/hosting-and-deployment/hosting-on-github/ https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html  Referensi hugo dan e-commerce:
- https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce  </description>
+ https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce  hugo lanyon tags edit themes/lanyonindo/layouts/partials/sidebar.html
+ &amp;lt;a class=&amp;quot;sidebar-nav-item {{ if .IsHome }} active {{ end }}&amp;quot; href=&amp;quot;/&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt; &amp;lt;!</description>
     </item>
     
     <item>

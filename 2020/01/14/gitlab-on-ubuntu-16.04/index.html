@@ -42,12 +42,98 @@
 
   <nav class="sidebar-nav">
     <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/">Home</a>
-    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/post">Posts</a>
+    
+    <a class="sidebar-nav-item" href="https://blog.indonesiadot.com/post">Posts</a>
+    <a class="sidebar-nav-item" href="https://blog.indonesiadot.com/tags">Tags</a>
 
     
     
       
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/about/">About</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
       
     
       
@@ -688,6 +774,20 @@ gitlab-ctl restart
 <ul>
 <li><a href="https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/">https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/</a></li>
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04">https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04</a></li>
+</ul>
+
+<h2 id="gitlab-reset-password-from-database">gitlab reset password from database</h2>
+
+<pre><code>gitlab-rails console -e production
+user = User.where(id: 1).first
+user = User.find_by(email: 'admin@example.com')
+user.password = 'secret_pass'
+user.password_confirmation = 'secret_pass'
+user.save!
+</code></pre>
+
+<ul>
+<li><a href="https://docs.gitlab.com/ee/security/reset_root_password.html">https://docs.gitlab.com/ee/security/reset_root_password.html</a></li>
 </ul>
 
 </div>

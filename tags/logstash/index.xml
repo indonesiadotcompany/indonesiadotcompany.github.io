@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>logstash on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/logstash/</link>
+    <description>Recent content in logstash on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Apr 2020 08:17:54 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/logstash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Elk Elasticsearch Logstash Kibana References</title>
+      <link>https://blog.indonesiadot.com/2020/04/04/elk-elasticsearch-logstash-kibana-references/</link>
+      <pubDate>Sat, 04 Apr 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/04/04/elk-elasticsearch-logstash-kibana-references/</guid>
+      <description> https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7   </description>
+    </item>
+    
+    <item>
+      <title>ELK for beginner</title>
+      <link>https://blog.indonesiadot.com/2020/03/18/elk-for-beginner/</link>
+      <pubDate>Wed, 18 Mar 2020 12:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/18/elk-for-beginner/</guid>
+      <description>Why we use ELK? The Elastic Stack (aka ELK) is a robust solution for search, log management, and data analysis. ELK consists of a combination of three open source project: Elasticsearch, Logstash, and Kibana. These projects have specific roles in ELK:
+Elasticsearch handles storage and provides a RESTful search and analytics endpoint. Logstash is a server-side data processing pipeline that ingests, transforms and loads data. Kibana lets you visualize your Elasticsearch data and navigate the Elastic Stack.</description>
+    </item>
+    
+    <item>
+      <title>Ansible Tower Log Logstash ELK</title>
+      <link>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</link>
+      <pubDate>Mon, 16 Mar 2020 19:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</guid>
+      <description> ansible logstash example  https://github.com/widansible/elk-ansible https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html  </description>
+    </item>
+    
+  </channel>
+</rss>

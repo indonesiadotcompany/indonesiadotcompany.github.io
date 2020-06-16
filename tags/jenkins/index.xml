@@ -6,10 +6,19 @@
     <description>Recent content in jenkins on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Dec 2019 18:47:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Apr 2020 15:47:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible CI-CD CICD</title>
+      <link>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</link>
+      <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</guid>
+      <description> Jenkins Ansible Tower  https://plugins.jenkins.io/ansible-tower/ https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process https://dzone.com/articles/how-to-setup-continuous-delivery-environment  </description>
+    </item>
     
     <item>
       <title>jenkins for beginner</title>
