@@ -25,3 +25,16 @@ Referensi:
 
 * https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/
 * https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04
+
+## gitlab reset password from database
+
+```
+gitlab-rails console -e production
+user = User.where(id: 1).first
+user = User.find_by(email: 'admin@example.com')
+user.password = 'secret_pass'
+user.password_confirmation = 'secret_pass'
+user.save!
+```
+
+* https://docs.gitlab.com/ee/security/reset_root_password.html
