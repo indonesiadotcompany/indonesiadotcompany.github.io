@@ -720,6 +720,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -750,6 +756,45 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/06/23/2fa-with-google-authenticator/">2FA with Google Authenticator</a></h1>
+        <span class="post-date">Jun 23, 2020</span>
+	
+
+<h2 id="ubuntu">Ubuntu</h2>
+
+<h3 id="pastikan-terdapat-baris-berikut-di-etc-ssh-sshd-config">Pastikan terdapat baris berikut di /etc/ssh/sshd_config</h3>
+
+<pre><code>ChallengeResponseAuthentication yes
+UsePAM yes
+</code></pre>
+
+<p>lalu restart service sshd</p>
+
+<h3 id="tambahkan-baris-berikut-di-akhir-etc-pam-d-common-auth">Tambahkan baris berikut di akhir /etc/pam.d/common-auth</h3>
+
+<pre><code>auth required pam_google_authenticator.so nullok
+</code></pre>
+
+<h3 id="go-go-gadget">Go go gadget</h3>
+
+<p>install google-authenticator app from android playstore, then add the server to show the code</p>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator">https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator</a></li>
+<li><a href="https://wiki.alpinelinux.org/wiki/Setting_up_a_ssh-server">https://wiki.alpinelinux.org/wiki/Setting_up_a_ssh-server</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/2fa/">2fa</a>, <a href="https://blog.indonesiadot.com/tags/google-authenticator/">google-authenticator</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/06/12/postgresql/">Postgresql</a></h1>
@@ -2150,37 +2195,6 @@ Kibana has many other features, such as graphing and filtering, so feel free to 
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/elk/">elk</a>, <a href="https://blog.indonesiadot.com/tags/logs/">logs</a>, <a href="https://blog.indonesiadot.com/tags/elasticsearch/">elasticsearch</a>, <a href="https://blog.indonesiadot.com/tags/logstash/">logstash</a>, <a href="https://blog.indonesiadot.com/tags/kibana/">kibana</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/18/ubuntu-tips/">Ubuntu tips</a></h1>
-        <span class="post-date">Mar 18, 2020</span>
-	
-
-<h2 id="install-specific-version">Install specific version</h2>
-
-<pre><code>apt-cache policy gparted
-apt install gparted=0.16.1-1
-</code></pre>
-
-<ul>
-<li><a href="https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package">https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package</a></li>
-</ul>
-
-<h2 id="apport-high-cpu">apport high cpu</h2>
-
-<pre><code>killall -9 apport
-service apport stop &amp;&amp; systemctl stop apport
-rm -f /var/crash/*
-apt-get remove apport -y
-</code></pre>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ubuntu/">ubuntu</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   

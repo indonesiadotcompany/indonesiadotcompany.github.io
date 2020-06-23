@@ -720,6 +720,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -750,6 +756,40 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/">Letsencrypt certbot unatteded</a></h1>
+        <span class="post-date">Jan 19, 2020</span>
+	
+
+<h2 id="letsencrypt-with-certbot-unatteded-way">Letsencrypt with certbot unatteded way</h2>
+
+<p>This is for ubuntu linux</p>
+
+<pre><code>add-apt-repository ppa:certbot/certbot -y
+apt install certbot -y
+certbot certonly --standalone --preferred-challenges http --non-interactive  --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com
+</code></pre>
+
+<h2 id="note">Note:</h2>
+
+<ul>
+<li>before running certbot command, you must already pointing domain / subdomain address to destination ip</li>
+</ul>
+
+<h2 id="referensi">Referensi:</h2>
+
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/letsencrypt/">letsencrypt</a>, <a href="https://blog.indonesiadot.com/tags/https/">https</a>, <a href="https://blog.indonesiadot.com/tags/ssl/">ssl</a>, <a href="https://blog.indonesiadot.com/tags/certbot/">certbot</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/">Docker Compose on Linux</a></h1>
@@ -1238,31 +1278,6 @@ If those don&rsquo;t help, try turning off routing and remote access in administ
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/openvpn/">openvpn</a>, <a href="https://blog.indonesiadot.com/tags/lan/">lan</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/04/ansible-cycle-evolution-diagram-security/">Ansible cycle evolution diagram security</a></h1>
-        <span class="post-date">Dec 4, 2019</span>
-	
-
-<h2 id="ansible-cycle-evolution-diagram-for-security">Ansible cycle evolution diagram for security</h2>
-
-<p>searching dengan keyword: ansible security diagram</p>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/">https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/</a></li>
-<li><a href="https://swimlane.com/blog/siem-soar/">https://swimlane.com/blog/siem-soar/</a></li>
-<li><a href="https://www.ansible.com/blog/the-journey-to-security-automation">https://www.ansible.com/blog/the-journey-to-security-automation</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/siem/">siem</a>, <a href="https://blog.indonesiadot.com/tags/soar/">soar</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   

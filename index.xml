@@ -5,9 +5,47 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2020</rights>
-    <updated>2020-06-12 08:17:54 &#43;0700 WIB</updated>
+    <updated>2020-06-23 08:17:54 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>2FA with Google Authenticator</title>
+          <link>https://blog.indonesiadot.com/2020/06/23/2fa-with-google-authenticator/</link>
+          <pubDate>Tue, 23 Jun 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/06/23/2fa-with-google-authenticator/</guid>
+          <description>
+
+&lt;h2 id=&#34;ubuntu&#34;&gt;Ubuntu&lt;/h2&gt;
+
+&lt;h3 id=&#34;pastikan-terdapat-baris-berikut-di-etc-ssh-sshd-config&#34;&gt;Pastikan terdapat baris berikut di /etc/ssh/sshd_config&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;ChallengeResponseAuthentication yes
+UsePAM yes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;lalu restart service sshd&lt;/p&gt;
+
+&lt;h3 id=&#34;tambahkan-baris-berikut-di-akhir-etc-pam-d-common-auth&#34;&gt;Tambahkan baris berikut di akhir /etc/pam.d/common-auth&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;auth required pam_google_authenticator.so nullok
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;go-go-gadget&#34;&gt;Go go gadget&lt;/h3&gt;
+
+&lt;p&gt;install google-authenticator app from android playstore, then add the server to show the code&lt;/p&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator&#34;&gt;https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wiki.alpinelinux.org/wiki/Setting_up_a_ssh-server&#34;&gt;https://wiki.alpinelinux.org/wiki/Setting_up_a_ssh-server&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
       
     
       
