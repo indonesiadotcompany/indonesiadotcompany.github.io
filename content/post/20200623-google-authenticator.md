@@ -25,5 +25,5 @@ install google-authenticator app from android playstore, then add the server to 
 Referensi:
 
 * https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator
-* https://wiki.alpinelinux.org/wiki/Setting_up_a_ssh-server
+* https://wiki.alpinelinux.org/wiki/Two_Factors_Authentication_With_OpenSSH
 
