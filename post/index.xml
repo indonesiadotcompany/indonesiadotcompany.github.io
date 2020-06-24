@@ -20,7 +20,7 @@
       <description> Ubuntu Pastikan terdapat baris berikut di /etc/ssh/sshd_config ChallengeResponseAuthentication yes UsePAM yes  lalu restart service sshd
 Tambahkan baris berikut di akhir /etc/pam.d/common-auth auth required pam_google_authenticator.so nullok  Go go gadget install google-authenticator app from android playstore, then add the server to show the code
 Referensi:
- https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator https://wiki.alpinelinux.org/wiki/Setting_up_a_ssh-server  </description>
+ https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator https://wiki.alpinelinux.org/wiki/Two_Factors_Authentication_With_OpenSSH  </description>
     </item>
     
     <item>
@@ -254,6 +254,17 @@ Referensi:
       <description> Post Ini adalah contoh post
 Referensi:
  https://indonesiadot.com  </description>
+    </item>
+    
+    <item>
+      <title>Ansible to Windows via winrm</title>
+      <link>https://blog.indonesiadot.com/2020/03/05/ansible-to-windows-via-winrm/</link>
+      <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/05/ansible-to-windows-via-winrm/</guid>
+      <description>Prerequisites on windows Upgrading PowerShell and .NET Framework https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html
+Buka powershell sebagai administrator, lalu copy paste bagian berikut:
+$url = &amp;quot;https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1&amp;quot; $file = &amp;quot;$env:temp\Upgrade-PowerShell.ps1&amp;quot; $username = &amp;quot;Administrator&amp;quot; $password = &amp;quot;Password&amp;quot; (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file) Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force # Version can be 3.0, 4.0 or 5.1 &amp;amp;$file -Version 5.1 -Username $username -Password $password -Verbose  Once completed, you will need to remove auto logon and set the execution policy back to the default of Restricted.</description>
     </item>
     
     <item>

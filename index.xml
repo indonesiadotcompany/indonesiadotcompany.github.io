@@ -42,7 +42,7 @@ UsePAM yes
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator&#34;&gt;https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://wiki.alpinelinux.org/wiki/Setting_up_a_ssh-server&#34;&gt;https://wiki.alpinelinux.org/wiki/Setting_up_a_ssh-server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wiki.alpinelinux.org/wiki/Two_Factors_Authentication_With_OpenSSH&#34;&gt;https://wiki.alpinelinux.org/wiki/Two_Factors_Authentication_With_OpenSSH&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -2120,6 +2120,91 @@ dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://indonesiadot.com&#34;&gt;https://indonesiadot.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Ansible to Windows via winrm</title>
+          <link>https://blog.indonesiadot.com/2020/03/05/ansible-to-windows-via-winrm/</link>
+          <pubDate>Thu, 05 Mar 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/03/05/ansible-to-windows-via-winrm/</guid>
+          <description>
+
+&lt;h2 id=&#34;prerequisites-on-windows&#34;&gt;Prerequisites on windows&lt;/h2&gt;
+
+&lt;h3 id=&#34;upgrading-powershell-and-net-framework&#34;&gt;Upgrading PowerShell and .NET Framework&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html&#34;&gt;https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Buka powershell sebagai administrator, lalu copy paste bagian berikut:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$url = &amp;quot;https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1&amp;quot;
+$file = &amp;quot;$env:temp\Upgrade-PowerShell.ps1&amp;quot;
+$username = &amp;quot;Administrator&amp;quot;
+$password = &amp;quot;Password&amp;quot;
+
+(New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
+
+# Version can be 3.0, 4.0 or 5.1
+&amp;amp;$file -Version 5.1 -Username $username -Password $password -Verbose
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once completed, you will need to remove auto logon and set the execution policy back to the default of Restricted. You can do this with the following PowerShell commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# This isn&#39;t needed but is a good security practice to complete
+Set-ExecutionPolicy -ExecutionPolicy Restricted -Force
+
+$reg_winlogon_path = &amp;quot;HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon&amp;quot;
+Set-ItemProperty -Path $reg_winlogon_path -Name AutoAdminLogon -Value 0
+Remove-ItemProperty -Path $reg_winlogon_path -Name DefaultUserName -ErrorAction SilentlyContinue
+Remove-ItemProperty -Path $reg_winlogon_path -Name DefaultPassword -ErrorAction SilentlyContinue
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;windows-preparation&#34;&gt;Windows preparation&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://medium.com/the-sysadmin/managing-windows-machines-with-ansible-60395445069f&#34;&gt;https://medium.com/the-sysadmin/managing-windows-machines-with-ansible-60395445069f&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Buka cmd (command prompt) sebagai administrator, lalu copy paste bagian berikut:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@powershell -NoProfile -ExecutionPolicy Bypass -Command &amp;quot;iex ((new-object net.webclient).DownloadString(&#39;https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1&#39;))&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;prerequisites-di-sisi-ansible-engine&#34;&gt;Prerequisites di sisi ansible engine&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/51633907/msg-winrm-or-requests-is-not-installed-no-module-named-xmltodict&#34;&gt;https://stackoverflow.com/questions/51633907/msg-winrm-or-requests-is-not-installed-no-module-named-xmltodict&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pip install --ignore-installed pywinrm
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;inventory-ansible&#34;&gt;inventory ansible&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://geekflare.com/connecting-windows-ansible-from-ubuntu/&#34;&gt;https://geekflare.com/connecting-windows-ansible-from-ubuntu/&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[windows]
+10.11.8.102 ansible_user=ansible ansible_password=pwdansibl3 ansible_winrm_port=5986 ansible_connection=winrm ansible_winrm_server_cert_validation=ignore
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;test-it&#34;&gt;test it&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;ansible windows -m win_ping
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;note&#34;&gt;note&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;ansible.cfg
+[defaults]
+inventory = ./inventory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jborean93/ansible-windows/tree/master/scripts&#34;&gt;https://github.com/jborean93/ansible-windows/tree/master/scripts&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>

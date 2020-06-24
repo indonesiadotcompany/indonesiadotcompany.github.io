@@ -726,6 +726,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -1092,6 +1098,92 @@ dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345
     </div>
   
     <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/ansible-to-windows-via-winrm/">Ansible to Windows via winrm</a></h1>
+        <span class="post-date">Mar 5, 2020</span>
+	
+
+<h2 id="prerequisites-on-windows">Prerequisites on windows</h2>
+
+<h3 id="upgrading-powershell-and-net-framework">Upgrading PowerShell and .NET Framework</h3>
+
+<p><a href="https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html">https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html</a></p>
+
+<p>Buka powershell sebagai administrator, lalu copy paste bagian berikut:</p>
+
+<pre><code>$url = &quot;https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1&quot;
+$file = &quot;$env:temp\Upgrade-PowerShell.ps1&quot;
+$username = &quot;Administrator&quot;
+$password = &quot;Password&quot;
+
+(New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
+
+# Version can be 3.0, 4.0 or 5.1
+&amp;$file -Version 5.1 -Username $username -Password $password -Verbose
+</code></pre>
+
+<p>Once completed, you will need to remove auto logon and set the execution policy back to the default of Restricted. You can do this with the following PowerShell commands:</p>
+
+<pre><code># This isn't needed but is a good security practice to complete
+Set-ExecutionPolicy -ExecutionPolicy Restricted -Force
+
+$reg_winlogon_path = &quot;HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon&quot;
+Set-ItemProperty -Path $reg_winlogon_path -Name AutoAdminLogon -Value 0
+Remove-ItemProperty -Path $reg_winlogon_path -Name DefaultUserName -ErrorAction SilentlyContinue
+Remove-ItemProperty -Path $reg_winlogon_path -Name DefaultPassword -ErrorAction SilentlyContinue
+</code></pre>
+
+<h3 id="windows-preparation">Windows preparation</h3>
+
+<p><a href="https://medium.com/the-sysadmin/managing-windows-machines-with-ansible-60395445069f">https://medium.com/the-sysadmin/managing-windows-machines-with-ansible-60395445069f</a></p>
+
+<p>Buka cmd (command prompt) sebagai administrator, lalu copy paste bagian berikut:</p>
+
+<pre><code>@powershell -NoProfile -ExecutionPolicy Bypass -Command &quot;iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1'))&quot;
+</code></pre>
+
+<h3 id="prerequisites-di-sisi-ansible-engine">Prerequisites di sisi ansible engine</h3>
+
+<p><a href="https://stackoverflow.com/questions/51633907/msg-winrm-or-requests-is-not-installed-no-module-named-xmltodict">https://stackoverflow.com/questions/51633907/msg-winrm-or-requests-is-not-installed-no-module-named-xmltodict</a></p>
+
+<pre><code>pip install --ignore-installed pywinrm
+</code></pre>
+
+<h3 id="inventory-ansible">inventory ansible</h3>
+
+<p><a href="https://geekflare.com/connecting-windows-ansible-from-ubuntu/">https://geekflare.com/connecting-windows-ansible-from-ubuntu/</a></p>
+
+<pre><code>[windows]
+10.11.8.102 ansible_user=ansible ansible_password=pwdansibl3 ansible_winrm_port=5986 ansible_connection=winrm ansible_winrm_server_cert_validation=ignore
+</code></pre>
+
+<h3 id="test-it">test it</h3>
+
+<pre><code>ansible windows -m win_ping
+</code></pre>
+
+<h3 id="note">note</h3>
+
+<pre><code>ansible.cfg
+[defaults]
+inventory = ./inventory
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://github.com/jborean93/ansible-windows/tree/master/scripts">https://github.com/jborean93/ansible-windows/tree/master/scripts</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/windows/">windows</a>, <a href="https://blog.indonesiadot.com/tags/winrm/">winrm</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/python-tips/">Python Tips</a></h1>
         <span class="post-date">Mar 5, 2020</span>
 	
@@ -1136,59 +1228,6 @@ yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/yum/">yum</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/28/docker-tips/">Docker Tips</a></h1>
-        <span class="post-date">Feb 28, 2020</span>
-	
-
-<h2 id="docker-run-example">Docker run example</h2>
-
-<pre><code>docker run -it alpine /bin/ash
-</code></pre>
-
-<p>Where -i = interactive, -t make tty for the running process, /bin/ash is the command to run.</p>
-
-<p>docker run &ndash;help</p>
-
-<h2 id="how-to-get-ip-of-running-docker">How to get ip of running docker</h2>
-
-<pre><code>docker ps
-docker inspect &lt;containernameorid&gt;
-docker inspect &lt;containernameorid&gt; | grep '&quot;IPAddress&quot;' | head -n 1
-</code></pre>
-
-<p>Where head is opossite from tail, man head, man tail</p>
-
-<ul>
-<li><a href="https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17">https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17</a>.</li>
-</ul>
-
-<div dir="ltr"><b>Rancher</b></div><div dir="ltr">https://rancher.com/swarm/</div><div dir="ltr"><br /></div><div dir="ltr">https://github.com/MoimHossain/docker-viswarm<br /><br />https://stackoverflow.com/ques
-tions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host<br /><br /><pre style="background-color: #eff0f1; border: 0px; box-sizing: inherit; color: #242729; font-family: Consolas, Menlo, Monaco, &q
-uot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-size: 13px; font-stretch: inherit; 
-font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;"><code style="border: 0px; box-
-sizing: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monosp
-ace, sans-serif; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline; white-space: inherit;">docker 
-inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' containernameorid</code></pre><br /><br /><pre style="background-color: #eff0f1; border: 0px; box-sizing: inherit; color: #242729; font-famil
-y: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-size:
- 13px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;">
-<br /></pre></div>
-
-<p>Ref:</p>
-
-<ul>
-<li><a href="https://docs.docker.com/engine/security/certificates/">https://docs.docker.com/engine/security/certificates/</a></li>
-<li><a href="https://docs.docker.com/engine/security/https/">https://docs.docker.com/engine/security/https/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   

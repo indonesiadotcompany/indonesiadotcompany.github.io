@@ -726,6 +726,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -756,6 +762,34 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/">Centos 7 Firewalld masquerade</a></h1>
+        <span class="post-date">Oct 14, 2019</span>
+	
+
+<h2 id="firewalld-masquerade">Firewalld masquerade</h2>
+
+<pre><code>firewall-cmd --get-active-zones
+firewall-cmd --list-all --zone=public
+firewall-cmd --add-masquerade --zone=public --permanent
+firewall-cmd --reload
+firewall-cmd --list-all --zone=public
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/">https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/firewalld/">firewalld</a>, <a href="https://blog.indonesiadot.com/tags/masquerade/">masquerade</a>, <a href="https://blog.indonesiadot.com/tags/nat/">nat</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/magic-of-sed/">Magic of Sed</a></h1>
@@ -1301,72 +1335,6 @@ git push origin hugo
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>, <a href="https://blog.indonesiadot.com/tags/firewall/">firewall</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/linux-server-tools/">linux Server Tools</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<p>Tools yang biasa digunakan pada server linux:</p>
-
-<ul>
-<li><p>Virtualization (Desktop)</p>
-
-<ul>
-<li>Virtualbox</li>
-</ul></li>
-
-<li><p>Graphic</p>
-
-<ul>
-<li>Gimp</li>
-</ul></li>
-
-<li><p>Mail</p>
-
-<ul>
-<li>Thunderbird Mail (client)</li>
-</ul></li>
-
-<li><p>Multimedia</p>
-
-<ul>
-<li>Avidemux</li>
-</ul></li>
-
-<li><p>Video Conference</p>
-
-<ul>
-<li>jitsi</li>
-<li><a href="https://medevel.com/10-os-video-conferencing/">More and more</a></li>
-</ul></li>
-
-<li><p>Customer support live chat</p>
-
-<ul>
-<li>rocket.chat</li>
-<li>tawk.to</li>
-<li><a href="https://github.com/juliancwirko/s-chat-app">simple chat</a></li>
-</ul></li>
-
-<li><p>Networking</p>
-
-<ul>
-<li><a href="https://www.linux.com/tutorials/monitoring-network-load-nload-part-2/">nload</a></li>
-</ul></li>
-</ul>
-
-<p>Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut</p>
-
-<ul>
-<li><a href="https://blog.indonesiadot.com/2019/09/04/linux-security-tools/">https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>
 	 <hr/>
     </div>
   
