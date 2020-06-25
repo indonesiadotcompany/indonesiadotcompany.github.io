@@ -5,9 +5,112 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2020</rights>
-    <updated>2020-06-23 08:17:54 &#43;0700 WIB</updated>
+    <updated>2020-06-24 08:17:54 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>Ansible to Windows via winrm</title>
+          <link>https://blog.indonesiadot.com/2020/06/24/ansible-to-windows-via-winrm/</link>
+          <pubDate>Wed, 24 Jun 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/06/24/ansible-to-windows-via-winrm/</guid>
+          <description>
+
+&lt;h2 id=&#34;prerequisites-on-windows&#34;&gt;Prerequisites on windows&lt;/h2&gt;
+
+&lt;h3 id=&#34;upgrading-powershell-and-net-framework&#34;&gt;Upgrading PowerShell and .NET Framework&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html&#34;&gt;https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Buka powershell sebagai administrator, lalu copy paste bagian berikut:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$url = &amp;quot;https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1&amp;quot;
+$file = &amp;quot;$env:temp\Upgrade-PowerShell.ps1&amp;quot;
+$username = &amp;quot;Administrator&amp;quot;
+$password = &amp;quot;Password&amp;quot;
+
+(New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
+
+# Version can be 3.0, 4.0 or 5.1
+&amp;amp;$file -Version 5.1 -Username $username -Password $password -Verbose
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once completed, you will need to remove auto logon and set the execution policy back to the default of Restricted. You can do this with the following PowerShell commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# This isn&#39;t needed but is a good security practice to complete
+Set-ExecutionPolicy -ExecutionPolicy Restricted -Force
+
+$reg_winlogon_path = &amp;quot;HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon&amp;quot;
+Set-ItemProperty -Path $reg_winlogon_path -Name AutoAdminLogon -Value 0
+Remove-ItemProperty -Path $reg_winlogon_path -Name DefaultUserName -ErrorAction SilentlyContinue
+Remove-ItemProperty -Path $reg_winlogon_path -Name DefaultPassword -ErrorAction SilentlyContinue
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;windows-preparation&#34;&gt;Windows preparation&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://medium.com/the-sysadmin/managing-windows-machines-with-ansible-60395445069f&#34;&gt;https://medium.com/the-sysadmin/managing-windows-machines-with-ansible-60395445069f&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Buka cmd (command prompt) sebagai administrator, lalu copy paste bagian berikut:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@powershell -NoProfile -ExecutionPolicy Bypass -Command &amp;quot;iex ((new-object net.webclient).DownloadString(&#39;https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1&#39;))&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;prerequisites-di-sisi-ansible-engine&#34;&gt;Prerequisites di sisi ansible engine&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/51633907/msg-winrm-or-requests-is-not-installed-no-module-named-xmltodict&#34;&gt;https://stackoverflow.com/questions/51633907/msg-winrm-or-requests-is-not-installed-no-module-named-xmltodict&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pip install --ignore-installed pywinrm
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;inventory-ansible&#34;&gt;inventory ansible&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://geekflare.com/connecting-windows-ansible-from-ubuntu/&#34;&gt;https://geekflare.com/connecting-windows-ansible-from-ubuntu/&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[windows]
+10.11.8.102 ansible_user=ansible ansible_password=pwdansibl3 ansible_winrm_port=5986 ansible_connection=winrm ansible_winrm_server_cert_validation=ignore
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;test-it&#34;&gt;test it&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;ansible windows -m win_ping
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;note&#34;&gt;note&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;ansible.cfg
+[defaults]
+inventory = ./inventory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;win-chocolatey-untuk-install-aplikasi&#34;&gt;win chocolatey untuk install aplikasi&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://chocolatey.org/docs/installation&#34;&gt;https://chocolatey.org/docs/installation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;install terlebih dahulu chocolatey di windows dengan command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@&amp;quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&amp;quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &amp;quot; [System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))&amp;quot; &amp;amp;&amp;amp; SET &amp;quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;lalu test install beberapa aplikasi dengan ansible ad-hoc command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ansible windows -m win_chocolatey -a &amp;quot;name=putty state=present&amp;quot;
+ansible windows -m win_chocolatey -a &amp;quot;name=git state=present&amp;quot;
+ansible windows -m win_chocolatey -a &amp;quot;name=7zip state=present&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jborean93/ansible-windows/tree/master/scripts&#34;&gt;https://github.com/jborean93/ansible-windows/tree/master/scripts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/modules/list_of_windows_modules.html&#34;&gt;https://docs.ansible.com/ansible/latest/modules/list_of_windows_modules.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/modules/win_chocolatey_module.html#win-chocolatey-module&#34;&gt;https://docs.ansible.com/ansible/latest/modules/win_chocolatey_module.html#win-chocolatey-module&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
       
     
       
@@ -2127,91 +2230,6 @@ dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345
     
       
         <item>
-          <title>Ansible to Windows via winrm</title>
-          <link>https://blog.indonesiadot.com/2020/03/05/ansible-to-windows-via-winrm/</link>
-          <pubDate>Thu, 05 Mar 2020 08:17:54 WIB</pubDate>
-          <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2020/03/05/ansible-to-windows-via-winrm/</guid>
-          <description>
-
-&lt;h2 id=&#34;prerequisites-on-windows&#34;&gt;Prerequisites on windows&lt;/h2&gt;
-
-&lt;h3 id=&#34;upgrading-powershell-and-net-framework&#34;&gt;Upgrading PowerShell and .NET Framework&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html&#34;&gt;https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Buka powershell sebagai administrator, lalu copy paste bagian berikut:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$url = &amp;quot;https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1&amp;quot;
-$file = &amp;quot;$env:temp\Upgrade-PowerShell.ps1&amp;quot;
-$username = &amp;quot;Administrator&amp;quot;
-$password = &amp;quot;Password&amp;quot;
-
-(New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
-
-# Version can be 3.0, 4.0 or 5.1
-&amp;amp;$file -Version 5.1 -Username $username -Password $password -Verbose
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Once completed, you will need to remove auto logon and set the execution policy back to the default of Restricted. You can do this with the following PowerShell commands:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# This isn&#39;t needed but is a good security practice to complete
-Set-ExecutionPolicy -ExecutionPolicy Restricted -Force
-
-$reg_winlogon_path = &amp;quot;HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon&amp;quot;
-Set-ItemProperty -Path $reg_winlogon_path -Name AutoAdminLogon -Value 0
-Remove-ItemProperty -Path $reg_winlogon_path -Name DefaultUserName -ErrorAction SilentlyContinue
-Remove-ItemProperty -Path $reg_winlogon_path -Name DefaultPassword -ErrorAction SilentlyContinue
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;windows-preparation&#34;&gt;Windows preparation&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://medium.com/the-sysadmin/managing-windows-machines-with-ansible-60395445069f&#34;&gt;https://medium.com/the-sysadmin/managing-windows-machines-with-ansible-60395445069f&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Buka cmd (command prompt) sebagai administrator, lalu copy paste bagian berikut:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;@powershell -NoProfile -ExecutionPolicy Bypass -Command &amp;quot;iex ((new-object net.webclient).DownloadString(&#39;https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1&#39;))&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;prerequisites-di-sisi-ansible-engine&#34;&gt;Prerequisites di sisi ansible engine&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/51633907/msg-winrm-or-requests-is-not-installed-no-module-named-xmltodict&#34;&gt;https://stackoverflow.com/questions/51633907/msg-winrm-or-requests-is-not-installed-no-module-named-xmltodict&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pip install --ignore-installed pywinrm
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;inventory-ansible&#34;&gt;inventory ansible&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://geekflare.com/connecting-windows-ansible-from-ubuntu/&#34;&gt;https://geekflare.com/connecting-windows-ansible-from-ubuntu/&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[windows]
-10.11.8.102 ansible_user=ansible ansible_password=pwdansibl3 ansible_winrm_port=5986 ansible_connection=winrm ansible_winrm_server_cert_validation=ignore
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;test-it&#34;&gt;test it&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;ansible windows -m win_ping
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;note&#34;&gt;note&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;ansible.cfg
-[defaults]
-inventory = ./inventory
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Referensi:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/jborean93/ansible-windows/tree/master/scripts&#34;&gt;https://github.com/jborean93/ansible-windows/tree/master/scripts&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
           <title>Python Tips</title>
           <link>https://blog.indonesiadot.com/2020/03/05/python-tips/</link>
           <pubDate>Thu, 05 Mar 2020 08:17:54 WIB</pubDate>
@@ -2283,27 +2301,47 @@ docker inspect &amp;lt;containernameorid&amp;gt; | grep &#39;&amp;quot;IPAddress
 
 &lt;p&gt;Where head is opossite from tail, man head, man tail&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17&#34;&gt;https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div dir=&#34;ltr&#34;&gt;&lt;b&gt;Rancher&lt;/b&gt;&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;https://rancher.com/swarm/&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div dir=&#34;ltr&#34;&gt;https://github.com/MoimHossain/docker-viswarm&lt;br /&gt;&lt;br /&gt;https://stackoverflow.com/ques
-tions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host&lt;br /&gt;&lt;br /&gt;&lt;pre style=&#34;background-color: #eff0f1; border: 0px; box-sizing: inherit; color: #242729; font-family: Consolas, Menlo, Monaco, &amp;q
-uot;Lucida Console&amp;quot;, &amp;quot;Liberation Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;Courier New&amp;quot;, monospace, sans-serif; font-size: 13px; font-stretch: inherit; 
-font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;&#34;&gt;&lt;code style=&#34;border: 0px; box-
-sizing: inherit; font-family: Consolas, Menlo, Monaco, &amp;quot;Lucida Console&amp;quot;, &amp;quot;Liberation Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;Courier New&amp;quot;, monosp
-ace, sans-serif; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline; white-space: inherit;&#34;&gt;docker 
-inspect -f &#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39; containernameorid&lt;/code&gt;&lt;/pre&gt;&lt;br /&gt;&lt;br /&gt;&lt;pre style=&#34;background-color: #eff0f1; border: 0px; box-sizing: inherit; color: #242729; font-famil
-y: Consolas, Menlo, Monaco, &amp;quot;Lucida Console&amp;quot;, &amp;quot;Liberation Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;Courier New&amp;quot;, monospace, sans-serif; font-size:
- 13px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;&#34;&gt;
-&lt;br /&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;p&gt;Ref:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.docker.com/engine/security/certificates/&#34;&gt;https://docs.docker.com/engine/security/certificates/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.docker.com/engine/security/https/&#34;&gt;https://docs.docker.com/engine/security/https/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container&#34;&gt;https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancher.com/swarm/&#34;&gt;https://rancher.com/swarm/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/MoimHossain/docker-viswarm&#34;&gt;https://github.com/MoimHossain/docker-viswarm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host&#34;&gt;https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&#34;docker-with-sshd&#34;&gt;docker with sshd&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/widyaunix/580dd6bbed4754631659317d4b1e8344&#34;&gt;https://gist.github.com/widyaunix/580dd6bbed4754631659317d4b1e8344&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Create Dockerfile&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;FROM centos
+
+RUN yum -y install openssh-server
+RUN ssh-keygen -q -N &amp;quot;&amp;quot; -t dsa -f /etc/ssh/ssh_host_ecdsa_key &amp;amp;&amp;amp; ssh-keygen -q -N &amp;quot;&amp;quot; -t rsa -f /etc/ssh/ssh_host_rsa_key
+RUN ssh-keygen -A
+RUN echo &#39;root:r4hasia&#39; | chpasswd
+RUN sed -i &#39;s/PermitRootLogin prohibit-password/PermitRootLogin yes/&#39; /etc/ssh/sshd_config
+ADD id_rsa.pub /root/.ssh/authorized_keys
+
+EXPOSE 22
+CMD [&amp;quot;/usr/sbin/sshd&amp;quot;, &amp;quot;-D&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then build to image using this command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker build -t centossh ./
+docker images
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;docker-with-static-ip&#34;&gt;docker with static ip&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;docker network create --subnet=172.1.0.0/24 docnet
+docker run --name centos810 --net docnet --ip 172.1.0.10 --rm -d centossh
+&lt;/code&gt;&lt;/pre&gt;
 </description>
         </item>
       

@@ -7,6 +7,46 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
+    <lastmod>2020-06-24T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/06/24/ansible-to-windows-via-winrm/</loc>
+    <lastmod>2020-06-24T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/</loc>
+    <lastmod>2020-06-24T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
+    <lastmod>2020-06-24T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2020-06-24T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2020-06-24T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/windows/</loc>
+    <lastmod>2020-06-24T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/winrm/</loc>
+    <lastmod>2020-06-24T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/tags/2fa/</loc>
     <lastmod>2020-06-23T08:17:54+07:00</lastmod>
   </url>
@@ -17,27 +57,7 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2020-06-23T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/google-authenticator/</loc>
-    <lastmod>2020-06-23T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2020-06-23T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2020-06-23T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
     <lastmod>2020-06-23T08:17:54+07:00</lastmod>
   </url>
   
@@ -89,11 +109,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/tags/logstash/</loc>
     <lastmod>2020-04-04T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
-    <lastmod>2020-04-03T15:47:54+07:00</lastmod>
   </url>
   
   <url>
@@ -372,27 +387,12 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/2020/03/05/ansible-to-windows-via-winrm/</loc>
-    <lastmod>2020-03-05T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/python/</loc>
     <lastmod>2020-03-05T08:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/2020/03/05/python-tips/</loc>
-    <lastmod>2020-03-05T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/windows/</loc>
-    <lastmod>2020-03-05T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/winrm/</loc>
     <lastmod>2020-03-05T08:17:54+07:00</lastmod>
   </url>
   

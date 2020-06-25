@@ -6,17 +6,17 @@
     <description>Recent content in winrm on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Mar 2020 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/winrm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ansible to Windows via winrm</title>
-      <link>https://blog.indonesiadot.com/2020/03/05/ansible-to-windows-via-winrm/</link>
-      <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
+      <link>https://blog.indonesiadot.com/2020/06/24/ansible-to-windows-via-winrm/</link>
+      <pubDate>Wed, 24 Jun 2020 08:17:54 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2020/03/05/ansible-to-windows-via-winrm/</guid>
+      <guid>https://blog.indonesiadot.com/2020/06/24/ansible-to-windows-via-winrm/</guid>
       <description>Prerequisites on windows Upgrading PowerShell and .NET Framework https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html
 Buka powershell sebagai administrator, lalu copy paste bagian berikut:
 $url = &amp;quot;https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1&amp;quot; $file = &amp;quot;$env:temp\Upgrade-PowerShell.ps1&amp;quot; $username = &amp;quot;Administrator&amp;quot; $password = &amp;quot;Password&amp;quot; (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file) Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force # Version can be 3.0, 4.0 or 5.1 &amp;amp;$file -Version 5.1 -Username $username -Password $password -Verbose  Once completed, you will need to remove auto logon and set the execution policy back to the default of Restricted.</description>
