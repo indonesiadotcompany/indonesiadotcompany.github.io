@@ -22,21 +22,42 @@ docker inspect <containernameorid> | grep '"IPAddress"' | head -n 1
 ```
 Where head is opossite from tail, man head, man tail
 
-* https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container/47226863#:~:text=Usually%2C%20the%20default%20docker%20ip,first%20container%20should%20be%20172.17.
-
-<div dir="ltr"><b>Rancher</b></div><div dir="ltr">https://rancher.com/swarm/</div><div dir="ltr"><br /></div><div dir="ltr">https://github.com/MoimHossain/docker-viswarm<br /><br />https://stackoverflow.com/ques
-tions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host<br /><br /><pre style="background-color: #eff0f1; border: 0px; box-sizing: inherit; color: #242729; font-family: Consolas, Menlo, Monaco, &q
-uot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-size: 13px; font-stretch: inherit; 
-font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;"><code style="border: 0px; box-
-sizing: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monosp
-ace, sans-serif; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline; white-space: inherit;">docker 
-inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' containernameorid</code></pre><br /><br /><pre style="background-color: #eff0f1; border: 0px; box-sizing: inherit; color: #242729; font-famil
-y: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-size:
- 13px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;">
-<br /></pre></div>
 
 Ref:
 
 * https://docs.docker.com/engine/security/certificates/
 * https://docs.docker.com/engine/security/https/
+* https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container
+* https://rancher.com/swarm/
+* https://github.com/MoimHossain/docker-viswarm
+* https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host
 
+## docker with sshd
+https://gist.github.com/widyaunix/580dd6bbed4754631659317d4b1e8344
+
+Create Dockerfile
+```
+FROM centos
+
+RUN yum -y install openssh-server
+RUN ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_ecdsa_key && ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key
+RUN ssh-keygen -A
+RUN echo 'root:r4hasia' | chpasswd
+RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+ADD id_rsa.pub /root/.ssh/authorized_keys
+
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"]
+```
+
+Then build to image using this command:
+```
+docker build -t centossh ./
+docker images
+```
+
+## docker with static ip
+```
+docker network create --subnet=172.1.0.0/24 docnet
+docker run --name centos810 --net docnet --ip 172.1.0.10 --rm -d centossh
+```

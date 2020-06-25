@@ -1,6 +1,6 @@
 ---
 title: "Ansible to Windows via winrm"
-date: 2020-03-05T08:17:54+07:00
+date: 2020-06-24T08:17:54+07:00
 tags: ["linux", "ansible", "windows", "winrm"]
 author: "Widya"
 draft: false
@@ -72,7 +72,25 @@ ansible.cfg
 inventory = ./inventory
 ```
 
+### win chocolatey untuk install aplikasi
+https://chocolatey.org/docs/installation
+
+install terlebih dahulu chocolatey di windows dengan command:
+```
+@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command " [System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+```
+
+lalu test install beberapa aplikasi dengan ansible ad-hoc command:
+```
+ansible windows -m win_chocolatey -a "name=putty state=present"
+ansible windows -m win_chocolatey -a "name=git state=present"
+ansible windows -m win_chocolatey -a "name=7zip state=present"
+```
+
+### 
 Referensi:
 
 * https://github.com/jborean93/ansible-windows/tree/master/scripts
+* https://docs.ansible.com/ansible/latest/modules/list_of_windows_modules.html
+* https://docs.ansible.com/ansible/latest/modules/win_chocolatey_module.html#win-chocolatey-module
 
