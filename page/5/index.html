@@ -732,6 +732,10 @@
       
     
       
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -762,6 +766,98 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/">Selinux Web Directory Permission</a></h1>
+        <span class="post-date">Jan 20, 2020</span>
+	
+
+<h2 id="selinux-web-directory-permission">Selinux Web Directory Permission</h2>
+
+<p>Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.</p>
+
+<p>adapun command nya sebelum bisa diakses yaitu:</p>
+
+<pre><code>chcon -Rv --type=httpd_sys_rw_content_t /webserver
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/">https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/selinux/">selinux</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/permission/">permission</a>, <a href="https://blog.indonesiadot.com/tags/redhat/">redhat</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/">Harbor Container Registry</a></h1>
+        <span class="post-date">Jan 20, 2020</span>
+	
+
+<h2 id="harbor-install-step-by-step">harbor install step by step</h2>
+
+<p><a href="https://goharbor.io/docs/1.10/install-config/">https://goharbor.io/docs/1.10/install-config/</a></p>
+
+<ul>
+<li>install docker, docker-compose</li>
+<li>download <a href="https://github.com/goharbor/harbor/releases">https://github.com/goharbor/harbor/releases</a></li>
+
+<li><p>edit harbor.yml</p>
+
+<pre><code>hostname: 10.11.8.111
+</code></pre></li>
+
+<li><p>install</p>
+
+<pre><code>./prepare
+./install.sh --with-clair --with-chartmuseum
+</code></pre></li>
+
+<li><p>create projects dengan nama os (misalnya untuk menampung operating system)</p></li>
+</ul>
+
+<h2 id="harbor-client-push">harbor client push</h2>
+
+<ul>
+<li><p>edit /etc/docker/daemon.json</p>
+
+<pre><code>{ &quot;insecure-registries&quot;:[&quot;10.11.8.111&quot;] }
+</code></pre></li>
+
+<li><p>systemctl restart docker (hati2 jika ada container yg berjalan akan di stop)</p></li>
+
+<li><p>docker login 10.11.8.111</p></li>
+
+<li><p>docker tag centos:7 10.11.8.111/os/centos:7</p></li>
+
+<li><p>docker push 10.11.8.111/os/centos:7</p></li>
+</ul>
+
+<h2 id="widya-harbor-container-registry">Widya Harbor Container Registry</h2>
+
+<ul>
+<li><a href="https://widharbor.birau.com/">https://widharbor.birau.com/</a></li>
+</ul>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/harbor/">harbor</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/registry/">registry</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/">Ansible Tower first Implementation</a></h1>
@@ -1207,55 +1303,6 @@ echo ### Change back to terminal 1
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/virtualization/">virtualization</a>, <a href="https://blog.indonesiadot.com/tags/kvm/">kvm</a>, <a href="https://blog.indonesiadot.com/tags/qemu/">qemu</a>, <a href="https://blog.indonesiadot.com/tags/virt-install/">virt-install</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/05/jenkins-for-beginner/">jenkins for beginner</a></h1>
-        <span class="post-date">Dec 5, 2019</span>
-	<p>Ref:</p>
-
-<ul>
-<li><a href="https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded">https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded</a></li>
-<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04">https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04</a></li>
-<li><a href="https://hub.docker.com/r/bitnami/jenkins/">https://hub.docker.com/r/bitnami/jenkins/</a></li>
-<li><a href="https://github.com/jenkinsci/docker/blob/master/README.md">https://github.com/jenkinsci/docker/blob/master/README.md</a></li>
-<li><a href="https://linuxize.com/post/how-to-install-jenkins-on-centos-7/">https://linuxize.com/post/how-to-install-jenkins-on-centos-7/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/jenkins/">jenkins</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/05/modsecurity-waf/">Modsecurity WAF</a></h1>
-        <span class="post-date">Dec 5, 2019</span>
-	
-
-<h2 id="modsecurity-waf">Modsecurity WAF</h2>
-
-<p><img src="https://blog.indonesiadot.com/images/2019/modsecurity-architecture.jpg" alt="routed-lans" /></p>
-
-<p>user yg mau sql injection di scan dulu sama modsecurity yg modsecurity baca ruleset (crs) kalau ada di rules nya di deny.
-kalau false positive, dinyatakan oleh client / developer bahwa itu sbnrnya aman, baru di exclude rule tersebut, kalau developer bisa nambel supaya bisa rubah supaya lebih sesuai ruleset nya lebih baik.</p>
-
-<p>intinya mudah sih yg opensource, cuma kelemahan nya nempel di host dan atau nempel di webserver, lalu kelemahan lain banyak false positive, sama ga ada ui nya, meski berjalan bagus bisa menahan serangan cuma agak sulit manage nya, terutama klo aplikasi yg ga standar, klo yg standar misal kaya wordpress mungkin lebih mudah.</p>
-
-<p>Referensi:</p>
-
-<ul>
-<li>Searching modsecurity architecture</li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/modsecurity/">modsecurity</a>, <a href="https://blog.indonesiadot.com/tags/webserver/">webserver</a>, <a href="https://blog.indonesiadot.com/tags/waf/">waf</a>
 	 <hr/>
     </div>
   

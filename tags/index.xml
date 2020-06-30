@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Jun 2020 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2020 12:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>ansible</title>
       <link>https://blog.indonesiadot.com/tags/ansible/</link>
-      <pubDate>Wed, 24 Jun 2020 08:17:54 +0700</pubDate>
+      <pubDate>Tue, 30 Jun 2020 12:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
       <description></description>
@@ -23,9 +23,36 @@
     <item>
       <title>linux</title>
       <link>https://blog.indonesiadot.com/tags/linux/</link>
-      <pubDate>Wed, 24 Jun 2020 08:17:54 +0700</pubDate>
+      <pubDate>Tue, 30 Jun 2020 12:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>postgresql</title>
+      <link>https://blog.indonesiadot.com/tags/postgresql/</link>
+      <pubDate>Tue, 30 Jun 2020 12:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tips</title>
+      <link>https://blog.indonesiadot.com/tags/tips/</link>
+      <pubDate>Tue, 30 Jun 2020 12:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sql</title>
+      <link>https://blog.indonesiadot.com/tags/sql/</link>
+      <pubDate>Tue, 30 Jun 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/sql/</guid>
       <description></description>
     </item>
     
@@ -66,29 +93,11 @@
     </item>
     
     <item>
-      <title>tips</title>
-      <link>https://blog.indonesiadot.com/tags/tips/</link>
-      <pubDate>Tue, 23 Jun 2020 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>beginner</title>
       <link>https://blog.indonesiadot.com/tags/beginner/</link>
       <pubDate>Fri, 12 Jun 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/beginner/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>postgresql</title>
-      <link>https://blog.indonesiadot.com/tags/postgresql/</link>
-      <pubDate>Fri, 12 Jun 2020 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/postgresql/</guid>
       <description></description>
     </item>
     
@@ -1637,15 +1646,6 @@
       <pubDate>Mon, 29 Jan 2018 00:59:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/trick/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sql</title>
-      <link>https://blog.indonesiadot.com/tags/sql/</link>
-      <pubDate>Sun, 28 Jan 2018 21:09:00 +0000</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/sql/</guid>
       <description></description>
     </item>
     

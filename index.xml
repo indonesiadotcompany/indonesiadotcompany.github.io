@@ -5,9 +5,122 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2020</rights>
-    <updated>2020-06-24 08:17:54 &#43;0700 WIB</updated>
+    <updated>2020-06-30 12:17:54 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>Ansible postgresql</title>
+          <link>https://blog.indonesiadot.com/2020/06/30/ansible-postgresql/</link>
+          <pubDate>Tue, 30 Jun 2020 12:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/06/30/ansible-postgresql/</guid>
+          <description>
+
+&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;pip install psycopg2-binary
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;playbooks&#34;&gt;playbooks&lt;/h2&gt;
+
+&lt;p&gt;cat psql.yml&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- hosts: localhost
+  become: yes
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: Simple select query to acme db
+    postgresql_query:
+     db: pgtower
+     login_user: pgtower
+     login_password: pgtower
+     query: SELECT version()
+    register: result
+
+  - debug:
+      var: result
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;cat psqlgraf.yml&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- hosts: localhost
+  become: yes
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: Simple select query to acme db
+    postgresql_query:
+     db: montower
+     login_host: 10.11.8.13
+     login_user: ansible
+     login_password: r4hasia
+     query: SELECT * from hosts
+    register: result
+
+  - debug:
+      var: result
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;run with command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ansible-playbook psql.yml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible/latest/modules/postgresql_query_module.html&#34;&gt;https://docs.ansible.com/ansible/latest/modules/postgresql_query_module.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/elmarx/ansible-mysql-query&#34;&gt;https://github.com/elmarx/ansible-mysql-query&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Postgresql tips</title>
+          <link>https://blog.indonesiadot.com/2020/06/30/postgresql-tips/</link>
+          <pubDate>Tue, 30 Jun 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/06/30/postgresql-tips/</guid>
+          <description>
+
+&lt;h2 id=&#34;postgresql-export-and-import-to-mysql&#34;&gt;Postgresql export and import to mysql&lt;/h2&gt;
+
+&lt;p&gt;di server postgresql jalankan command berikut untuk export:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#pg_dump --verbose --schema-only --table=xx_user --db=test --file=/tmp/montower.sql
+pg_dump --verbose --schema-only --db=montower --file=/tmp/montower.sql
+
+psql -U namauserpsql montower
+copy xx_user to &#39;/tmp/hosts.txt&#39; with (delimiter &#39;,&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;di server mysql jalankan command berikut untuk import:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql --local-infile
+create database montower;
+use montower;
+#load data local infile &#39;/home/postgres/user.txt&#39; into table xx_user fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;;
+load data local infile &#39;/tmp/montower.sql&#39; fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;;
+load data local infile &#39;/tmp/hosts.txt&#39; into table hosts fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.postgresql.org/docs/9.1/backup-dump.html&#34;&gt;https://www.postgresql.org/docs/9.1/backup-dump.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.programmersought.com/article/23102305281/&#34;&gt;https://www.programmersought.com/article/23102305281/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/10762239/mysql-enable-load-data-local-infile&#34;&gt;https://stackoverflow.com/questions/10762239/mysql-enable-load-data-local-infile&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
       
     
       
@@ -2337,6 +2450,10 @@ CMD [&amp;quot;/usr/sbin/sshd&amp;quot;, &amp;quot;-D&amp;quot;]
 docker images
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;WARNING: docker ssh considered evil&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://jpetazzo.github.io/2014/06/23/docker-ssh-considered-evil/&#34;&gt;https://jpetazzo.github.io/2014/06/23/docker-ssh-considered-evil/&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;docker-with-static-ip&#34;&gt;docker with static ip&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;docker network create --subnet=172.1.0.0/24 docnet
@@ -2645,6 +2762,45 @@ bash unifi-5.12.35.sh
           <author>Widya</author>
           <guid>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</guid>
           <description>
+
+&lt;h2 id=&#34;harbor-install-step-by-step&#34;&gt;harbor install step by step&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://goharbor.io/docs/1.10/install-config/&#34;&gt;https://goharbor.io/docs/1.10/install-config/&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;install docker, docker-compose&lt;/li&gt;
+&lt;li&gt;download &lt;a href=&#34;https://github.com/goharbor/harbor/releases&#34;&gt;https://github.com/goharbor/harbor/releases&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;edit harbor.yml&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hostname: 10.11.8.111
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;install&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./prepare
+./install.sh --with-clair --with-chartmuseum
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;create projects dengan nama os (misalnya untuk menampung operating system)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;harbor-client-push&#34;&gt;harbor client push&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;edit /etc/docker/daemon.json&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{ &amp;quot;insecure-registries&amp;quot;:[&amp;quot;10.11.8.111&amp;quot;] }
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;systemctl restart docker (hati2 jika ada container yg berjalan akan di stop)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;docker login 10.11.8.111&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;docker tag centos:7 10.11.8.111/os/centos:7&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;docker push 10.11.8.111/os/centos:7&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&#34;widya-harbor-container-registry&#34;&gt;Widya Harbor Container Registry&lt;/h2&gt;
 

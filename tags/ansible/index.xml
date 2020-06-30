@@ -6,10 +6,21 @@
     <description>Recent content in ansible on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Jun 2020 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2020 12:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible postgresql</title>
+      <link>https://blog.indonesiadot.com/2020/06/30/ansible-postgresql/</link>
+      <pubDate>Tue, 30 Jun 2020 12:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/06/30/ansible-postgresql/</guid>
+      <description>Requirements pip install psycopg2-binary  playbooks cat psql.yml
+- hosts: localhost become: yes gather_facts: no connection: local tasks: - name: Simple select query to acme db postgresql_query: db: pgtower login_user: pgtower login_password: pgtower query: SELECT version() register: result - debug: var: result  cat psqlgraf.yml
+- hosts: localhost become: yes gather_facts: no connection: local tasks: - name: Simple select query to acme db postgresql_query: db: montower login_host: 10.11.8.13 login_user: ansible login_password: r4hasia query: SELECT * from hosts register: result - debug: var: result  run with command:</description>
+    </item>
     
     <item>
       <title>Ansible to Windows via winrm</title>

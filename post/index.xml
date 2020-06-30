@@ -6,10 +6,32 @@
     <description>Recent content in Posts on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Jun 2020 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2020 12:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible postgresql</title>
+      <link>https://blog.indonesiadot.com/2020/06/30/ansible-postgresql/</link>
+      <pubDate>Tue, 30 Jun 2020 12:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/06/30/ansible-postgresql/</guid>
+      <description>Requirements pip install psycopg2-binary  playbooks cat psql.yml
+- hosts: localhost become: yes gather_facts: no connection: local tasks: - name: Simple select query to acme db postgresql_query: db: pgtower login_user: pgtower login_password: pgtower query: SELECT version() register: result - debug: var: result  cat psqlgraf.yml
+- hosts: localhost become: yes gather_facts: no connection: local tasks: - name: Simple select query to acme db postgresql_query: db: montower login_host: 10.11.8.13 login_user: ansible login_password: r4hasia query: SELECT * from hosts register: result - debug: var: result  run with command:</description>
+    </item>
+    
+    <item>
+      <title>Postgresql tips</title>
+      <link>https://blog.indonesiadot.com/2020/06/30/postgresql-tips/</link>
+      <pubDate>Tue, 30 Jun 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/06/30/postgresql-tips/</guid>
+      <description>Postgresql export and import to mysql di server postgresql jalankan command berikut untuk export:
+#pg_dump --verbose --schema-only --table=xx_user --db=test --file=/tmp/montower.sql pg_dump --verbose --schema-only --db=montower --file=/tmp/montower.sql psql -U namauserpsql montower copy xx_user to &#39;/tmp/hosts.txt&#39; with (delimiter &#39;,&#39;);  di server mysql jalankan command berikut untuk import:
+mysql --local-infile create database montower; use montower; #load data local infile &#39;/home/postgres/user.txt&#39; into table xx_user fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;; load data local infile &#39;/tmp/montower.</description>
+    </item>
     
     <item>
       <title>Ansible to Windows via winrm</title>
@@ -378,8 +400,15 @@ chcon -Rv --type=httpd_sys_rw_content_t /webserver  Referensi:
       <pubDate>Mon, 20 Jan 2020 07:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</guid>
-      <description> Widya Harbor Container Registry  https://widharbor.birau.com/  Referensi:
- https://indonesiadot.com  </description>
+      <description>harbor install step by step https://goharbor.io/docs/1.10/install-config/
+ install docker, docker-compose download https://github.com/goharbor/harbor/releases edit harbor.yml
+hostname: 10.11.8.111  install
+./prepare ./install.sh --with-clair --with-chartmuseum  create projects dengan nama os (misalnya untuk menampung operating system)
+  harbor client push  edit /etc/docker/daemon.json
+{ &amp;quot;insecure-registries&amp;quot;:[&amp;quot;10.11.8.111&amp;quot;] }  systemctl restart docker (hati2 jika ada container yg berjalan akan di stop)
+ docker login 10.11.8.111
+ docker tag centos:7 10.11.8.111/os/centos:7
+ docker push 10.</description>
     </item>
     
     <item>

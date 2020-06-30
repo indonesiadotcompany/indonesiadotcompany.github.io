@@ -6,10 +6,21 @@
     <description>Recent content in sql on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Jan 2018 21:09:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Postgresql tips</title>
+      <link>https://blog.indonesiadot.com/2020/06/30/postgresql-tips/</link>
+      <pubDate>Tue, 30 Jun 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/06/30/postgresql-tips/</guid>
+      <description>Postgresql export and import to mysql di server postgresql jalankan command berikut untuk export:
+#pg_dump --verbose --schema-only --table=xx_user --db=test --file=/tmp/montower.sql pg_dump --verbose --schema-only --db=montower --file=/tmp/montower.sql psql -U namauserpsql montower copy xx_user to &#39;/tmp/hosts.txt&#39; with (delimiter &#39;,&#39;);  di server mysql jalankan command berikut untuk import:
+mysql --local-infile create database montower; use montower; #load data local infile &#39;/home/postgres/user.txt&#39; into table xx_user fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;; load data local infile &#39;/tmp/montower.</description>
+    </item>
     
     <item>
       <title>MySQL tips and trick</title>

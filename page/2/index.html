@@ -732,6 +732,10 @@
       
     
       
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -762,6 +766,452 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/20/certificate-ssl-key-csr-crt/">Certificate ssl key csr crt</a></h1>
+        <span class="post-date">Mar 20, 2020</span>
+	
+
+<h2 id="create-csr-ubuntu-18">create csr ubuntu 18</h2>
+
+<pre><code>openssl genrsa –out domain.key 2048
+openssl req –new –key domain.key –out domain.csr
+#or
+#openssl req -new -newkey rsa:2048 -nodes -keyout domain.key -out domain.csr
+</code></pre>
+
+<ul>
+<li><a href="https://vitux.com/how-to-generate-a-certificate-signing-request-csr-on-ubuntu/">https://vitux.com/how-to-generate-a-certificate-signing-request-csr-on-ubuntu/</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-18-04">https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-18-04</a></li>
+</ul>
+
+<h2 id="random-number-generator-rand-load-file-cannot-open-file-crypto-rand-randfile-c-88-filename-root-rnd">random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/root/.rnd</h2>
+
+<p>If you have RANDFILE=&hellip; configuration lines in your openssl.cnf than you can safely remove them</p>
+
+<ul>
+<li><a href="https://github.com/openssl/openssl/issues/7754">https://github.com/openssl/openssl/issues/7754</a></li>
+</ul>
+
+<h2 id="convert-p7b-p7c-pkcs7-to-crt">convert p7b / p7c / pkcs7 to crt</h2>
+
+<h3 id="description">Description</h3>
+
+<p>What are the differences between .p7b, .pfx, .p12, .pem, .der, .crt &amp; .cer Certificates?</p>
+
+<p>With so many servers, some require different formats.</p>
+
+<h2 id="pem-format">PEM Format</h2>
+
+<ul>
+<li>It is the most common format used for certificates</li>
+<li>Most servers (Ex: Apache) expects the certificates and private key to be in a separate files
+
+<ul>
+<li>Usually they are Base64 encoded ASCII files</li>
+<li>Extensions used for PEM certificates are .cer, .crt, .pem, .key files</li>
+<li>Apache and similar server uses PEM format certificates</li>
+</ul></li>
+</ul>
+
+<h2 id="der-format">DER Format</h2>
+
+<ul>
+<li>The DER format is the binary form of the certificate</li>
+<li>All types of certificates &amp; private keys can be encoded in DER format</li>
+<li>DER formatted certificates do not contain the &ldquo;BEGIN CERTIFICATE/END CERTIFICATE&rdquo; statements</li>
+<li>DER formatted certificates most often use the ‘.cer’ and &lsquo;.der&rsquo; extensions</li>
+<li>DER is typically used in Java Platforms</li>
+</ul>
+
+<h2 id="p7b-pkcs-7-format">P7B/PKCS#7 Format</h2>
+
+<ul>
+<li>The PKCS#7 or P7B format is stored in Base64 ASCII format and has a file extension of .p7b or .p7c</li>
+<li>A P7B file only contains certificates and chain certificates (Intermediate CAs), not the private key</li>
+<li>The most common platforms that support P7B files are Microsoft Windows and Java Tomcat</li>
+</ul>
+
+<h2 id="pfx-p12-pkcs-12-format">PFX/P12/PKCS#12 Format</h2>
+
+<ul>
+<li>The PKCS#12 or PFX/P12 format is a binary format for storing the server certificate, intermediate certificates, and the private key in one encryptable file</li>
+<li>These files usually have extensions such as .pfx and .p12</li>
+<li>They are typically used on Windows machines to import and export certificates and private keys</li>
+</ul>
+
+<p>If your server/device requires a different certificate format other than Base64 encoded X.509, a third party tool such as OpenSSL can be used to convert the certificate into the appropriate format.</p>
+
+<pre><code>openssl pkcs7 -print_certs -in old.p7b -out new.crt
+#or
+openssl pkcs7 -print_certs -inform der -in a.p7c -out out.cer
+</code></pre>
+
+<ul>
+<li><a href="https://knowledge.digicert.com/generalinformation/INFO4448.html">https://knowledge.digicert.com/generalinformation/INFO4448.html</a></li>
+<li><a href="https://www.google.com/search?q=p7b+to+crt+linux">https://www.google.com/search?q=p7b+to+crt+linux</a></li>
+<li><a href="https://gist.github.com/jmervine/e4c9af3adb14b78856cc">https://gist.github.com/jmervine/e4c9af3adb14b78856cc</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/certificate/">certificate</a>, <a href="https://blog.indonesiadot.com/tags/ssl/">ssl</a>, <a href="https://blog.indonesiadot.com/tags/csr/">csr</a>, <a href="https://blog.indonesiadot.com/tags/crt/">crt</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/18/ansible-tower-for-beginner/">Ansible Tower for beginner</a></h1>
+        <span class="post-date">Mar 18, 2020</span>
+	
+
+<p>Before going to start the installation steps, we need to know some benefits of Ansible Tower.</p>
+
+<h1 id="why-we-need-ansible-tower-and-it-s-benefits">Why we need Ansible Tower and it’s benefits?</h1>
+
+<ol>
+<li><p>Ansible Tower helps you scale IT automation, manage complex deployments and speed productivity.</p></li>
+
+<li><p>Centralize and control your IT infrastructure with a visual dashboard, role-based access control, job scheduling, integrated notifications and graphical inventory management.</p></li>
+
+<li><p>Ansible Tower’s REST API and CLI make it easy to embed Ansible Tower into existing  tools and processes.</p></li>
+
+<li><p>The Ansible Tower dashboard provides a heads-up NOC-style display for everything  going on in your Ansible environment.</p></li>
+
+<li><p>As soon as you log in, you’ll see your host and inventory status, all the recent job activity and a snapshot of recent job runs. Adjust your job status settings to graph data from specific job and time ranges.</p></li>
+
+<li><p>We can get Real-Time Job Status update:</p></li>
+</ol>
+
+<p>Within Ansible Tower, playbook runs stream by in real time. As Ansible automates across your infrastructure, you’ll see plays and tasks complete, broken down by each machine, and each success or failure, complete with output. Easily see the status of your automation, and what’s next in the queue.</p>
+
+<p>Other types of jobs, such as source control updates or cloud inventory refreshes, appear in the common job view. Know what Ansible Tower is up to at any time.</p>
+
+<ol>
+<li>Multi-Playbook Workflows:</li>
+</ol>
+
+<p>Ansible Tower Workflows allow you to easily model complex processes with Ansible Tower’s intuitive workflow editor. Ansible Tower workflows chain any number of playbooks, updates, and other workflows, regardless of whether they use different inventories, run as different users, run at once or utilize different credentials.</p>
+
+<p>You can build a provisioning workflow that provisions machines, applies a base system configuration, and deploys an application, all with different playbooks maintained by different teams. You can build a CI/CD testing workflow that builds an application, deploys it to a test environment, runs tests, and automatically promotes the application based on test results. Set up different playbooks to run in case of success or failure of a prior workflow playbook.</p>
+
+<ol>
+<li>Who Ran What Job When:</li>
+</ol>
+
+<p>With Ansible Tower, all automation activity is securely logged. Who ran it, how they customized it, what it did, where it happened – all securely stored and viewable later, or exported through Ansible Tower’s API.</p>
+
+<p>Activity streams extend this by showing a complete audit trail of all changes made to Ansible Tower itself – job creation, inventory changes, credential storage, all securely tracked.</p>
+
+<p>All audit and log information can be sent to your external logging and analytics provider to perform analysis of automation and event correlation   across your entire environment.</p>
+
+<ol>
+<li><p>Ansible Tower allows us to easily streamline the delivery of applications and services to both OpenStack and Amazon Clouds in a cost effective, simple, and secure manner.</p></li>
+
+<li><p>Scale Capacity With Tower Clusters:</p></li>
+</ol>
+
+<p>Connect multiple Ansible Tower nodes into a Ansible Tower cluster. Ansible Tower clusters add redundancy and capacity, allowing you to scale Ansible automation across your enterprise, including with reserved capacity for certain teams and jobs, and remote execution for access across network zones.</p>
+
+<ol>
+<li>Integrated Notifications:</li>
+</ol>
+
+<p>Stay informed of your automation status via integrated notifications.</p>
+
+<p>Notify a person or team when your job succeeds, or escalate when jobs fail. Send notifications across your entire organization at once, or customize on a per- job basis.</p>
+
+<p>Connect your notifications to Slack, Hipchat, PagerDuty, SMS, email, and more – or post notifications to a custom webhook to trigger other tools in your infrastructure.</p>
+
+<ol>
+<li>Schedule Ansible Jobs:</li>
+</ol>
+
+<p>Playbook runs, cloud inventory updates, and source control updates can be scheduled inside Ansible Tower – run now, run later, or run forever.</p>
+
+<p>Set up occasional tasks like nightly backups, periodic configuration remediation for compliance, or a full continuous delivery pipeline with just a few clicks.</p>
+
+<ol>
+<li>Manage And Track Your Entire Inventory:</li>
+</ol>
+
+<p>Ansible Tower helps you manage your entire infrastructure. Easily pull your  inventory from public cloud providers such as Amazon Web Services, Microsoft Azure, and more, or synchronize from your local OpenStack cloud or VMware environment. Connect your inventory directly to your Red Hat Satellite or Red Hat CloudForms environment, or your custom CMDB.</p>
+
+<p>Ansible Tower can keep your cloud inventory in sync, and Ansible Tower’s powerful provisioning callbacks allow nodes to request configuration on demand, enabling autoscaling. You can also see alerts from Red Hat Insights directly from Ansible Tower, and use Insights-provided Playbook Remediation to fix issues in your infrastructure.</p>
+
+<p>Plus, Ansible Tower Smart Inventories allow you to organize and automate hosts across all your providers based on a powerful host fact query engine.</p>
+
+<ol>
+<li>Remote Command Execution:</li>
+</ol>
+
+<p>Run simple tasks on any host or group of hosts in your inventory with Ansible Tower’s remote command execution. Add users or groups, reset passwords, restart a malfunctioning service or patch a critical security issue, quickly. As always, remote command execution uses Ansible Tower’s role-based access control engine and logs every action.</p>
+
+<ol>
+<li>Comprehensive Rest API And Tower CLI Tool:</li>
+</ol>
+
+<p>Far from being limited to just the user interface, every feature of Ansible Tower is available via Ansible Tower’s REST API, providing the ideal API for a systems management infrastructure to build against. Call Ansible Tower jobs from your build tools, show Ansible Tower information in your custom dashboards and more. Get API usage information and best practices with built-in documentation.</p>
+
+<h2 id="prerequisites">Prerequisites:</h2>
+
+<p>Ansible Tower server (I’m using a VMware environment, so both my servers are VMs)</p>
+
+<p>1 Core, 1GB RAM Ubuntu 12.04 LTS Server, 64-bit</p>
+
+<p>Active Directory Server (I’m using Windows Server 2012 R2)</p>
+
+<p>2 Cores, 4GB RAM</p>
+
+<p>Officially, Tower supports CentOS 6, RedHat Enterprise Linux 6, Ubuntu Server 12.04 LTS, and Ubuntu Server 14.04 LTS.</p>
+
+<p>Installing Tower requires Internet connectivity, because it downloads from their repo servers.</p>
+
+<p>I have managed to perform an offline installation, but you have to set up some kind of system to mirror their repositories, and change some settings in the Ansible Installer file.</p>
+
+<p>I <em>highly</em> recommend you dedicate a server (vm or otherwise) to Ansible Tower, because the installer will rewrite pg_hba.conf and supervisord.conf to suit its needs.  Everything is easier if you give it it’s own environment to run in.</p>
+
+<p>You <em>might</em> be able to do it in Docker, although I haven’t tried, and I’m willing to bet you’re asking for trouble.</p>
+
+<p>I’m going to assume you already know about installing Windows Server 2012 and building a domain controller. (If there’s significant call for it, I might write a separate blog post about this…)</p>
+
+<h1 id="installation-steps">Installation Steps:</h1>
+
+<h2 id="step-1">Step – 1:</h2>
+
+<p>Download the latest .tar file from ‘<a href="https://releases.ansible.com/ansible-tower/setup/&amp;#8217">https://releases.ansible.com/ansible-tower/setup/&amp;#8217</a>;</p>
+
+<h2 id="step-2">Step – 2:</h2>
+
+<p>Now untar the downloaded .tar file using below command:</p>
+
+<p>[devops@localhost ~]$ tar xvzf ansible-tower-setup-latest.tar.gz</p>
+
+<h2 id="step-3">Step – 3:</h2>
+
+<p>goto “ansible-tower-setup-<VERSION>” directory</p>
+
+<p>[devops@localhost ~]$ cd ansible-tower-setup-3.4.0-2</p>
+
+<h2 id="step-4">Step – 4:</h2>
+
+<p>edit inventory file which is present inside “ansible-tower-setup-3.4.0-2″ directory.</p>
+
+<p>Put the below content to inventory file:</p>
+
+<pre><code># /home/ubuntu/ansible-tower-setup-3.2.5/inventory file content
+
+[tower]
+localhost ansible_connection=local
+
+[database]
+
+[all:vars]
+admin_password=’admin’
+
+pg_host=”
+pg_port=”
+
+pg_database=’awx’
+pg_username=’awx’
+pg_password=’admin’
+
+rabbitmq_port=5672
+rabbitmq_vhost=tower
+rabbitmq_username=tower
+rabbitmq_password=’admin’
+rabbitmq_cookie=cookiemonster
+
+# Needs to be true for fqdns and ip addresses
+rabbitmq_use_long_name=false
+
+# Isolated Tower nodes automatically generate an RSA key for authentication;
+# To disable this behavior, set this value to false
+# isolated_key_generation=true
+################################# Up to here ########################
+</code></pre>
+
+<h2 id="step-5">Step – 5:</h2>
+
+<p>Now Run the ansible-tower setup by using below command:</p>
+
+<p>[devops@localhost ansible-tower-setup-3.4.0-2]$ sudo ansible-playbook -i inventory install.yml
+[INFO]  To Run Above command we should have ansible installed on this server</p>
+
+<p>[INFO]  If ansible is not present then please open the below link and install the ansible:</p>
+
+<p>[INFO]  <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-centos-7">https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-centos-7</a></p>
+
+<p>[INFO] SetUp will take approx 45 mins or more.</p>
+
+<p>Sample Output:</p>
+
+<pre><code>[sudo] password for devops:
+[WARNING]: Could not match supplied host pattern, ignoring: instance_group_*
+PLAY [tower:database:instance_group_*] ******************************************************************************************************************************
+
+TASK [check_config_static : Ensure expected variables are defined] **************************************************************************************************
+skipping: [localhost] =&gt; (item=tower_package_name)
+skipping: [localhost] =&gt; (item=tower_package_version)
+skipping: [localhost] =&gt; (item=tower_package_release)
+
+TASK [check_config_static : Detect unsupported HA inventory file] ***************************************************************************************************
+skipping: [localhost]
+
+TASK [check_config_static : Ensure at least one tower host is defined] **********************************************************************************************
+skipping: [localhost]
+
+TASK [check_config_static : Ensure only one database host exists] ***************************************************************************************************
+skipping: [localhost]
+
+TASK [check_config_static : Ensure when postgres host is defined that the port is defined] **************************************************************************
+skipping: [localhost]
+
+TASK [check_config_static : Ensure that when a database host is specified, that pg_host is defined] *****************************************************************
+skipping: [localhost]
+
+TASK [check_config_static : Ensure that when a database host is specified, that pg_port is defined] *****************************************************************
+skipping: [localhost]
+
+TASK [check_config_static : HA mode requires an external postgres database with pg_host defined] ********************************************************************
+skipping: [localhost]
+
+TASK [check_config_static : HA mode requires an external postgres database with pg_port defined] ********************************************************************
+skipping: [localhost]
+
+TASK [config_dynamic : Set database to internal or external] ********************************************************************************************************
+ok: [localhost]
+
+TASK [config_dynamic : Database decision] ***************************************************************************************************************************
+ok: [localhost] =&gt; {
+“config_dynamic_database”: “internal”
+}
+
+TASK [config_dynamic : Set postgres host and port to local if not set] **********************************************************************************************
+ok: [localhost]
+
+TASK [config_dynamic : Ensure connectivity to hosts and gather facts] ***********************************************************************************************
+ok: [localhost]
+
+TASK [config_dynamic : Get effective uid] ***************************************************************************************************************************
+changed: [localhost]
+
+TASK [config_dynamic : Ensure user is root] *************************************************************************************************************************
+skipping: [localhost]
+
+PLAY [Group nodes by OS distribution] *******************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************
+ok: [localhost]
+
+TASK [group hosts by distribution] **********************************************************************************************************************************
+ok: [localhost]
+[WARNING]: Could not match supplied host pattern, ignoring: RedHat-7*
+
+[WARNING]: Could not match supplied host pattern, ignoring: Ubuntu-16.04
+
+[WARNING]: Could not match supplied host pattern, ignoring: OracleLinux-7*
+PLAY [Group supported distributions] ********************************************************************************************************************************
+
+TASK [group hosts for supported distributions] **********************************************************************************************************************
+ok: [localhost]
+[WARNING]: Could not match supplied host pattern, ignoring: none
+
+.
+
+.
+
+.
+
+.
+
+TASK [misc : Create the default organization if it is needed.] ******************************************************************************************************
+changed: [localhost]
+
+RUNNING HANDLER [supervisor : restart supervisor] *******************************************************************************************************************
+changed: [localhost] =&gt; {
+“msg”: “Restarting supervisor.”
+}
+
+RUNNING HANDLER [supervisor : Stop supervisor.] *********************************************************************************************************************
+changed: [localhost]
+
+RUNNING HANDLER [supervisor : Wait for supervisor to stop.] *********************************************************************************************************
+ok: [localhost]
+
+RUNNING HANDLER [supervisor : Start supervisor.] ********************************************************************************************************************
+changed: [localhost]
+
+RUNNING HANDLER [nginx : restart nginx] *****************************************************************************************************************************
+changed: [localhost]
+
+PLAY [Install Tower isolated node(s)] *******************************************************************************************************************************
+skipping: no hosts matched
+
+PLAY RECAP **********************************************************************************************************************************************************
+localhost : ok=139 changed=65 unreachable=0 failed=0
+
+########### Sample Output Ends Here ############
+</code></pre>
+
+<h2 id="step-6-now-open-browser-and-type-below">Step – 6: Now, open browser and type below:</h2>
+
+<p><a href="https://Your-Server-IP-Address">https://Your-Server-IP-Address</a>  and hit enter.</p>
+
+<p>Example:</p>
+
+<p><a href="https://192.168.56.102">https://192.168.56.102</a></p>
+
+<p>1.Browser_Proceed_unsafe.png</p>
+
+<p>Now, Click on –&gt; Advance–&gt;click on–&gt;proceed to <192.168.56.102> –&gt;It will show as below</p>
+
+<p>It will automatically redirect to Ansible Tower page(as shown below)</p>
+
+<p>2.Login_Page_on_browser.png</p>
+
+<p>Now, Put your username and password(which you have provided in “/home/ubuntu/ansible-tower-setup-3.2.5/inventory” file)</p>
+
+<p>And click on “SIGN IN” button.</p>
+
+<p>After logged-in successfully, It will ask for license.Please click on “REQUEST LICENSE”3.Request_license.png</p>
+
+<p>It will take to you on ansible tower license request page.Please select the appropriate options and fill the all mandatory fields and click on “Submit” button as shown below:</p>
+
+<p>4.Redirect_to_get_license_after_filling_proper_details_main.png</p>
+
+<p>After Click on “Submit” button, it will send the license file to your mail within 1 business day. Please check the mail.</p>
+
+<p>After getting the license file, Please open the Ansible tower and do below things which are marked as Orange Square:</p>
+
+<p><img src="https://blog.indonesiadot.com/images/2020/3.1browse_license_file.png" alt="license" /></p>
+
+<p>And click on “Submit” button.</p>
+
+<p>After successful submission, It will show you the Ansible Tower Dashboard as shown below:</p>
+
+<p><img src="https://blog.indonesiadot.com/images/2020/5.After_successful_login_first_page_view.png" alt="login" /></p>
+
+<p>Finally, You have successful Ansible Tower installation on Centos 7 Machine.</p>
+
+<p>In the next blog we will see how to run the first playbook from Ansible Tower.</p>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/">https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-centos-7">https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-centos-7</a></li>
+<li><a href="https://releases.ansible.com/ansible-tower/docs/tower_user_guide-2.1.6.pdf">https://releases.ansible.com/ansible-tower/docs/tower_user_guide-2.1.6.pdf</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/18/elk-for-beginner/">ELK for beginner</a></h1>
@@ -1709,187 +2159,6 @@ apt-get remove apport -y
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/qemu/">qemu</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/16/qmail-toaster/">Qmail Toaster</a></h1>
-        <span class="post-date">Mar 16, 2020</span>
-	
-
-<h2 id="qmail-ssl-letsencrypt">Qmail ssl letsencrypt</h2>
-
-<pre><code>yum install certbot python2-certbot python2-certbot-apache python2-certbot-dns-cloudflare
-cat &lt;EOF&gt; cloudflare.ini
-dns_cloudflare_email = user@example.com
-dns_cloudflare_api_key = j2c2166gd6688921b1497e7cfd6cf69f7f936
-EOF
-certbot certonly --dns-cloudflare --dns-cloudflare-credentials cloudflare.ini dns-cloudflare-propagation-seconds 60 -d *.example.com
-</code></pre>
-
-<p>Add to apache vhost centos</p>
-
-<pre><code>SSLCertificateFile /etc/letsencrypt/live/example.com/cert.pem
-SSLCertificateKeyFile /etc/letsencrypt/live/example.com/privkey.pem
-Include /etc/letsencrypt/options-ssl-apache.conf
-SSLCertificateChainFile /etc/letsencrypt/live/example.com/fullchain.pem
-</code></pre>
-
-<p>Add to Dovecot CentOS 6 &amp; 7 (/etc/dovecot/toaster.conf)</p>
-
-<pre><code> ssl_cert = &lt;/etc/letsencrypt/live/example.com/fullchain.pem
- ssl_key = &lt;/etc/letsencrypt/live/example.com/privkey.pem
-</code></pre>
-
-<p>Add to Qmail CentOS 6 &amp; 7</p>
-
-<pre><code> cp -p /var/qmail/control/servercert.pem /var/qmail/control/servercert.pem.bak
- cat /etc/letsencrypt/live/example.com/privkey.pem /etc/letsencrypt/live/example.com/fullchain.pem &gt; /var/qmail/control/servercert.pem
-</code></pre>
-
-<p>Let&rsquo;s Encrypt auto renewal</p>
-
-<pre><code>  0 0 * * * /opt/certbot/certbot renew       #CentOS 7
-</code></pre>
-
-<p>Restart Qmail and Dovecot</p>
-
-<pre><code>qmailctl stop
-qmailctl start
-systemctl restart dovecot
-systemctl restart httpd
-</code></pre>
-
-<ul>
-<li><a href="http://www.qmailtoaster.net/ssl.html">http://www.qmailtoaster.net/ssl.html</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/qmail/">qmail</a>, <a href="https://blog.indonesiadot.com/tags/qmailtoaster/">qmailtoaster</a>, <a href="https://blog.indonesiadot.com/tags/mail/">mail</a>, <a href="https://blog.indonesiadot.com/tags/mailserver/">mailserver</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/13/sentinelone-epp-edr/">Sentinelone EPP EDR</a></h1>
-        <span class="post-date">Mar 13, 2020</span>
-	
-
-<h2 id="cloud-connectivity-became-offline">cloud connectivity became offline</h2>
-
-<ol>
-<li><p>make sure all of the docker container is run with docker ps</p></li>
-
-<li><p>the date of the on-prem server must be UTC</p>
-
-<pre><code>date
-</code></pre>
-
-<p>Wed Mar 11 09:18:42 UTC 2020</p></li>
-
-<li><p>test cloudgateway api info with curl</p>
-
-<pre><code>curl -v https://cloudgateway-prod-ap.sentinelone.net/api/v2/info
-</code></pre></li>
-
-<li><p>Trying 13.112.219.166&hellip;</p></li>
-
-<li><p>TCP_NODELAY set</p></li>
-
-<li><p>Connected to cloudgateway-prod-ap.sentinelone.net (13.112.219.166) port 443 (#0)</p></li>
-
-<li><p>ALPN, offering h2</p></li>
-
-<li><p>ALPN, offering http/1.1</p></li>
-
-<li><p>successfully set certificate verify locations:</p></li>
-
-<li><p>CAfile: /etc/ssl/certs/ca-certificates.crt
-CApath: /etc/ssl/certs</p></li>
-
-<li><p>TLSv1.3 (OUT), TLS handshake, Client hello (1):</p></li>
-
-<li><p>TLSv1.3 (IN), TLS handshake, Server hello (2):</p></li>
-
-<li><p>TLSv1.2 (IN), TLS handshake, Certificate (11):</p></li>
-
-<li><p>TLSv1.2 (IN), TLS handshake, Server key exchange (12):</p></li>
-
-<li><p>TLSv1.2 (IN), TLS handshake, Request CERT (13):</p></li>
-
-<li><p>TLSv1.2 (IN), TLS handshake, Server finished (14):</p></li>
-
-<li><p>TLSv1.2 (OUT), TLS handshake, Certificate (11):</p></li>
-
-<li><p>TLSv1.2 (OUT), TLS handshake, Client key exchange (16):</p></li>
-
-<li><p>TLSv1.2 (OUT), TLS change cipher, Client hello (1):</p></li>
-
-<li><p>TLSv1.2 (OUT), TLS handshake, Finished (20):</p></li>
-
-<li><p>TLSv1.2 (IN), TLS handshake, Finished (20):</p></li>
-
-<li><p>SSL connection using TLSv1.2 / ECDHE-RSA-AES256-GCM-SHA384</p></li>
-
-<li><p>ALPN, server accepted to use http/1.1</p></li>
-
-<li><p>Server certificate:</p></li>
-
-<li><p>subject: C=US; ST=California; L=Palo Alto; O=Sentinel Labs, Inc.; CN=*.sentinelone.net</p></li>
-
-<li><p>start date: Sep 11 00:00:00 2019 GMT</p></li>
-
-<li><p>expire date: Dec 1 12:00:00 2021 GMT</p></li>
-
-<li><p>subjectAltName: host &ldquo;cloudgateway-prod-ap.sentinelone.net&rdquo; matched cert&rsquo;s &ldquo;*.sentinelone.net&rdquo;</p></li>
-
-<li><p>issuer: C=US; O=DigiCert Inc; CN=DigiCert SHA2 Secure Server CA</p></li>
-
-<li><p>SSL certificate verify ok.
-&gt; GET /api/v2/info HTTP/1.1
-&gt; Host: cloudgateway-prod-ap.sentinelone.net
-&gt; User-Agent: curl/7.58.0
-&gt; Accept: <em>/</em>
-&gt;
-&lt; HTTP/1.1 200 OK
-&lt; Server: nginx/1.14.0 (Ubuntu)
-&lt; Date: Wed, 11 Mar 2020 09:19:32 GMT
-&lt; Content-Type: application/json
-&lt; Content-Length: 20
-&lt; Connection: keep-alive
-&lt; Access-Control-Allow-Origin: *
-&lt; Access-Control-Allow-Headers: Authentication-Token
-&lt;
-{&ldquo;version&rdquo;:&ldquo;4.1.4&rdquo;}</p></li>
-
-<li><p>Connection #0 to host cloudgateway-prod-ap.sentinelone.net left intact</p></li>
-
-<li><p>give settings.ini to support</p></li>
-
-<li><p>From the outputs you sent - &gt; Everything seems to be Ok,</p></li>
-</ol>
-
-<p>4.1. Add the following lines to the /etc/hosts file -&gt; Save -&gt; Exit:</p>
-
-<p>54.64.165.125 cloudgateway-prod-ap.sentinelone.net
-13.112.219.166 cloudgateway-prod-ap.sentinelone.net</p>
-
-<p>4.2. Run -&gt; sudo docker exec -u 0 -it scheduler /bin/bash
-The vi /etc/hosts -&gt;Add the 2 lines&gt; Save-&gt;Exit
-54.64.165.125 cloudgateway-prod-ap.sentinelone.net
-13.112.219.166 cloudgateway-prod-ap.sentinelone.net</p>
-
-<ul>
-<li>Restart the server after all the changes</li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   
