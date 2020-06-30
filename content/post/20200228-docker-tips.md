@@ -55,6 +55,9 @@ Then build to image using this command:
 docker build -t centossh ./
 docker images
 ```
+WARNING: docker ssh considered evil
+
+https://jpetazzo.github.io/2014/06/23/docker-ssh-considered-evil/
 
 ## docker with static ip
 ```
