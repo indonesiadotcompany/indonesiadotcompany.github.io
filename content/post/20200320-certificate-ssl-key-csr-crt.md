@@ -63,7 +63,75 @@ openssl pkcs7 -print_certs -in old.p7b -out new.crt
 #or
 openssl pkcs7 -print_certs -inform der -in a.p7c -out out.cer
 ```
+## create cert with ca certificate
+https://www.centlinux.com/2019/01/configure-certificate-authority-ca-centos-7.html
+```
+cd /etc/pki/CA/private
+openssl genrsa -aes128 -out tower1CA.key 2048
+openssl req -new -x509 -days 1825 -key tower1CA.key -out ../certs/tower1CA.crt
+cd /etc/pki/tls/private
+openssl genrsa -out tower1.key 1024
+openssl req -new -key tower1.key -out tower1.csr
+openssl x509 -req -in tower1.csr -CA ../../CA/certs/tower1CA.crt -CAkey ../../CA/private/tower1CA.key -CAcreateserial -out ../certs/tower1.crt -days 3650
+```
+
+## import certificate
+https://thomas-leister.de/en/how-to-import-ca-root-certificate/
+### Linux (Debian / Ubuntu) - system
+```
+sudo mkdir /usr/local/share/ca-certificates/extra
+sudo cp root.cert.pem /usr/local/share/ca-certificates/extra/root.cert.crt
+sudo update-ca-certificates
+```
+### Browser (Firefox, Chromium, …)
+```
+sudo apt install libnss3-tools
+```
+This little helper script finds trust store databases and imports the new root certificate into them.
+```
+#!/bin/bash
+
+### Script installs root.cert.pem to certificate trust store of applications using NSS
+### (e.g. Firefox, Thunderbird, Chromium)
+### Mozilla uses cert8, Chromium and Chrome use cert9
+
+###
+### Requirement: apt install libnss3-tools
+###
+
+
+###
+### CA file to install (CUSTOMIZE!)
+###
+
+certfile="root.cert.pem"
+certname="My Root CA"
+
+
+###
+### For cert8 (legacy - DBM)
+###
+
+for certDB in $(find ~/ -name "cert8.db")
+do
+    certdir=$(dirname ${certDB});
+    certutil -A -n "${certname}" -t "TCu,Cu,Tu" -i ${certfile} -d dbm:${certdir}
+done
+
+
+###
+### For cert9 (SQL)
+###
+
+for certDB in $(find ~/ -name "cert9.db")
+do
+    certdir=$(dirname ${certDB});
+    certutil -A -n "${certname}" -t "TCu,Cu,Tu" -i ${certfile} -d sql:${certdir}
+done
+```
+
 
 * https://knowledge.digicert.com/generalinformation/INFO4448.html
 * https://www.google.com/search?q=p7b+to+crt+linux
 * https://gist.github.com/jmervine/e4c9af3adb14b78856cc
+* https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html
