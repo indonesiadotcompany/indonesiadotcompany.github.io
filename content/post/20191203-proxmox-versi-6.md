@@ -1,5 +1,5 @@
 ---
-title: "Proxmox Add ZFS"
+title: "Proxmox Versi 6"
 date: 2020-07-10T08:17:54+07:00
 tags: ["linux", "server", "proxmox", "zfs"]
 author: "Widya"
