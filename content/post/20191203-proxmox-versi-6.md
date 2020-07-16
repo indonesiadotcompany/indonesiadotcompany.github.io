@@ -1,6 +1,6 @@
 ---
 title: "Proxmox Add ZFS"
-date: 2019-12-03T08:17:54+07:00
+date: 2020-07-10T08:17:54+07:00
 tags: ["linux", "server", "proxmox", "zfs"]
 author: "Widya"
 draft: false
