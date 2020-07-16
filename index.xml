@@ -34,57 +34,6 @@
     
       
         <item>
-          <title>Proxmox Add ZFS</title>
-          <link>https://blog.indonesiadot.com/2020/07/10/proxmox-add-zfs/</link>
-          <pubDate>Fri, 10 Jul 2020 08:17:54 WIB</pubDate>
-          <author>Widya</author>
-          <guid>https://blog.indonesiadot.com/2020/07/10/proxmox-add-zfs/</guid>
-          <description>
-
-&lt;h2 id=&#34;proxmox-add-zfs&#34;&gt;Proxmox Add ZFS&lt;/h2&gt;
-
-&lt;p&gt;Referensi:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/&#34;&gt;https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://pve.proxmox.com/wiki/ZFS_on_Linux&#34;&gt;https://pve.proxmox.com/wiki/ZFS_on_Linux&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;proxmox-cloud-init&#34;&gt;Proxmox cloud-init&lt;/h2&gt;
-
-&lt;p&gt;Ref:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://cloud.centos.org/centos/7/images/&#34;&gt;https://cloud.centos.org/centos/7/images/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://pve.proxmox.com/wiki/Cloud-Init_Support&#34;&gt;https://pve.proxmox.com/wiki/Cloud-Init_Support&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/&#34;&gt;https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;upgrade-proxmox-5-to-6&#34;&gt;upgrade proxmox 5 to 6&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0&#34;&gt;https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;tmux
-pve5to6
-#make sure it&#39;s ok
-systemctl stop pve-ha-lrm
-systemctl stop pve-ha-crm
-echo &amp;quot;deb http://download.proxmox.com/debian/corosync-3/ stretch main&amp;quot; &amp;gt; /etc/apt/sources.list.d/corosync3.list
-apt update
-apt dist-upgrade
-systemctl start pve-ha-lrm
-systemctl start pve-ha-crm
-sed -i &#39;s/stretch/buster/g&#39; /etc/apt/sources.list
-apt update
-apt dist-upgrade
-rm /etc/apt/sources.list.d/corosync3.list
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
           <title>Proxmox Beginner</title>
           <link>https://blog.indonesiadot.com/2020/07/10/proxmox-beginner/</link>
           <pubDate>Fri, 10 Jul 2020 08:17:54 WIB</pubDate>
@@ -133,6 +82,57 @@ iface vmbr0 inet static
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://indonesiadot.com&#34;&gt;https://indonesiadot.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Proxmox Versi 6</title>
+          <link>https://blog.indonesiadot.com/2020/07/10/proxmox-versi-6/</link>
+          <pubDate>Fri, 10 Jul 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/07/10/proxmox-versi-6/</guid>
+          <description>
+
+&lt;h2 id=&#34;proxmox-add-zfs&#34;&gt;Proxmox Add ZFS&lt;/h2&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/&#34;&gt;https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pve.proxmox.com/wiki/ZFS_on_Linux&#34;&gt;https://pve.proxmox.com/wiki/ZFS_on_Linux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;proxmox-cloud-init&#34;&gt;Proxmox cloud-init&lt;/h2&gt;
+
+&lt;p&gt;Ref:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.centos.org/centos/7/images/&#34;&gt;https://cloud.centos.org/centos/7/images/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pve.proxmox.com/wiki/Cloud-Init_Support&#34;&gt;https://pve.proxmox.com/wiki/Cloud-Init_Support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/&#34;&gt;https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;upgrade-proxmox-5-to-6&#34;&gt;upgrade proxmox 5 to 6&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0&#34;&gt;https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux
+pve5to6
+#make sure it&#39;s ok
+systemctl stop pve-ha-lrm
+systemctl stop pve-ha-crm
+echo &amp;quot;deb http://download.proxmox.com/debian/corosync-3/ stretch main&amp;quot; &amp;gt; /etc/apt/sources.list.d/corosync3.list
+apt update
+apt dist-upgrade
+systemctl start pve-ha-lrm
+systemctl start pve-ha-crm
+sed -i &#39;s/stretch/buster/g&#39; /etc/apt/sources.list
+apt update
+apt dist-upgrade
+rm /etc/apt/sources.list.d/corosync3.list
+&lt;/code&gt;&lt;/pre&gt;
 </description>
         </item>
       

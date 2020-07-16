@@ -12,18 +12,6 @@
     
     
     <item>
-      <title>Proxmox Add ZFS</title>
-      <link>https://blog.indonesiadot.com/2020/07/10/proxmox-add-zfs/</link>
-      <pubDate>Fri, 10 Jul 2020 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/2020/07/10/proxmox-add-zfs/</guid>
-      <description> Proxmox Add ZFS Referensi:
- https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/ https://pve.proxmox.com/wiki/ZFS_on_Linux  Proxmox cloud-init Ref:
- https://cloud.centos.org/centos/7/images/ https://pve.proxmox.com/wiki/Cloud-Init_Support https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/  upgrade proxmox 5 to 6 https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0
-tmux pve5to6 #make sure it&#39;s ok systemctl stop pve-ha-lrm systemctl stop pve-ha-crm echo &amp;quot;deb http://download.proxmox.com/debian/corosync-3/ stretch main&amp;quot; &amp;gt; /etc/apt/sources.list.d/corosync3.list apt update apt dist-upgrade systemctl start pve-ha-lrm systemctl start pve-ha-crm sed -i &#39;s/stretch/buster/g&#39; /etc/apt/sources.list apt update apt dist-upgrade rm /etc/apt/sources.list.d/corosync3.list  </description>
-    </item>
-    
-    <item>
       <title>Proxmox Beginner</title>
       <link>https://blog.indonesiadot.com/2020/07/10/proxmox-beginner/</link>
       <pubDate>Fri, 10 Jul 2020 08:17:54 +0700</pubDate>
@@ -32,6 +20,18 @@ tmux pve5to6 #make sure it&#39;s ok systemctl stop pve-ha-lrm systemctl stop pve
       <description>update proxmox repo https://pve.proxmox.com/wiki/Package_Repositories untuk bisa update proxmox harus dirubah dulu repo nya di file /etc/apt/sources.list (untuk proxmox 5.4 / debian 9 / stretch)
 deb http://kebo.pens.ac.id/debian stretch main contrib deb http://kebo.pens.ac.id/debian stretch-updates main contrib # security updates deb http://kebo.pens.ac.id/debian-security stretch/updates main contrib deb http://download.proxmox.com/debian/pve stretch pve-no-subscription  proxmox masquerade https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt
 auto lo iface lo inet loopback auto ens192 iface ens192 inet static address 10.11.8.202 netmask 255.255.255.0 gateway 10.11.8.1 auto vmbr0 iface vmbr0 inet static address 192.</description>
+    </item>
+    
+    <item>
+      <title>Proxmox Versi 6</title>
+      <link>https://blog.indonesiadot.com/2020/07/10/proxmox-versi-6/</link>
+      <pubDate>Fri, 10 Jul 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/07/10/proxmox-versi-6/</guid>
+      <description> Proxmox Add ZFS Referensi:
+ https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/ https://pve.proxmox.com/wiki/ZFS_on_Linux  Proxmox cloud-init Ref:
+ https://cloud.centos.org/centos/7/images/ https://pve.proxmox.com/wiki/Cloud-Init_Support https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/  upgrade proxmox 5 to 6 https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0
+tmux pve5to6 #make sure it&#39;s ok systemctl stop pve-ha-lrm systemctl stop pve-ha-crm echo &amp;quot;deb http://download.proxmox.com/debian/corosync-3/ stretch main&amp;quot; &amp;gt; /etc/apt/sources.list.d/corosync3.list apt update apt dist-upgrade systemctl start pve-ha-lrm systemctl start pve-ha-crm sed -i &#39;s/stretch/buster/g&#39; /etc/apt/sources.list apt update apt dist-upgrade rm /etc/apt/sources.list.d/corosync3.list  </description>
     </item>
     
     <item>

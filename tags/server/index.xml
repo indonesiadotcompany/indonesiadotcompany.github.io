@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Proxmox Add ZFS</title>
-      <link>https://blog.indonesiadot.com/2020/07/10/proxmox-add-zfs/</link>
+      <title>Proxmox Versi 6</title>
+      <link>https://blog.indonesiadot.com/2020/07/10/proxmox-versi-6/</link>
       <pubDate>Fri, 10 Jul 2020 08:17:54 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2020/07/10/proxmox-add-zfs/</guid>
+      <guid>https://blog.indonesiadot.com/2020/07/10/proxmox-versi-6/</guid>
       <description> Proxmox Add ZFS Referensi:
  https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/ https://pve.proxmox.com/wiki/ZFS_on_Linux  Proxmox cloud-init Ref:
  https://cloud.centos.org/centos/7/images/ https://pve.proxmox.com/wiki/Cloud-Init_Support https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/  upgrade proxmox 5 to 6 https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0
