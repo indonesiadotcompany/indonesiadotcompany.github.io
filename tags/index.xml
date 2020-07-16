@@ -48,11 +48,29 @@
     </item>
     
     <item>
+      <title>server</title>
+      <link>https://blog.indonesiadot.com/tags/server/</link>
+      <pubDate>Fri, 10 Jul 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>tips</title>
       <link>https://blog.indonesiadot.com/tags/tips/</link>
       <pubDate>Fri, 10 Jul 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zfs</title>
+      <link>https://blog.indonesiadot.com/tags/zfs/</link>
+      <pubDate>Fri, 10 Jul 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/zfs/</guid>
       <description></description>
     </item>
     
@@ -453,15 +471,6 @@
     </item>
     
     <item>
-      <title>zfs</title>
-      <link>https://blog.indonesiadot.com/tags/zfs/</link>
-      <pubDate>Fri, 06 Mar 2020 04:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/zfs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>bandwidth</title>
       <link>https://blog.indonesiadot.com/tags/bandwidth/</link>
       <pubDate>Thu, 05 Mar 2020 18:17:54 +0700</pubDate>
@@ -530,15 +539,6 @@
       <pubDate>Thu, 27 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/networking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>server</title>
-      <link>https://blog.indonesiadot.com/tags/server/</link>
-      <pubDate>Thu, 27 Feb 2020 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/server/</guid>
       <description></description>
     </item>
     

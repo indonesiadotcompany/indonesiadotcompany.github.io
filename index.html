@@ -797,6 +797,58 @@
     </div>
   
     <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/07/10/proxmox-add-zfs/">Proxmox Add ZFS</a></h1>
+        <span class="post-date">Jul 10, 2020</span>
+	
+
+<h2 id="proxmox-add-zfs">Proxmox Add ZFS</h2>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/">https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/</a></li>
+<li><a href="https://pve.proxmox.com/wiki/ZFS_on_Linux">https://pve.proxmox.com/wiki/ZFS_on_Linux</a></li>
+</ul>
+
+<h2 id="proxmox-cloud-init">Proxmox cloud-init</h2>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://cloud.centos.org/centos/7/images/">https://cloud.centos.org/centos/7/images/</a></li>
+<li><a href="https://pve.proxmox.com/wiki/Cloud-Init_Support">https://pve.proxmox.com/wiki/Cloud-Init_Support</a></li>
+<li><a href="https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/">https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/</a></li>
+</ul>
+
+<h2 id="upgrade-proxmox-5-to-6">upgrade proxmox 5 to 6</h2>
+
+<p><a href="https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0">https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0</a></p>
+
+<pre><code>tmux
+pve5to6
+#make sure it's ok
+systemctl stop pve-ha-lrm
+systemctl stop pve-ha-crm
+echo &quot;deb http://download.proxmox.com/debian/corosync-3/ stretch main&quot; &gt; /etc/apt/sources.list.d/corosync3.list
+apt update
+apt dist-upgrade
+systemctl start pve-ha-lrm
+systemctl start pve-ha-crm
+sed -i 's/stretch/buster/g' /etc/apt/sources.list
+apt update
+apt dist-upgrade
+rm /etc/apt/sources.list.d/corosync3.list
+</code></pre>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/07/10/proxmox-beginner/">Proxmox Beginner</a></h1>
         <span class="post-date">Jul 10, 2020</span>
 	
@@ -1196,22 +1248,6 @@ host    all         all         10.11.8.0/24    md5
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/beginner/">beginner</a>, <a href="https://blog.indonesiadot.com/tags/postgresql/">postgresql</a>, <a href="https://blog.indonesiadot.com/tags/psql/">psql</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/04/04/elk-elasticsearch-logstash-kibana-references/">Elk Elasticsearch Logstash Kibana References</a></h1>
-        <span class="post-date">Apr 4, 2020</span>
-	<ul>
-<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7">https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7</a></li>
-<li></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/elk/">elk</a>, <a href="https://blog.indonesiadot.com/tags/elasticsearch/">elasticsearch</a>, <a href="https://blog.indonesiadot.com/tags/logstash/">logstash</a>, <a href="https://blog.indonesiadot.com/tags/kibana/">kibana</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   

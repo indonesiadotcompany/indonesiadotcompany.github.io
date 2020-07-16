@@ -10,7 +10,7 @@
 
   <title>
     
-      zfs &middot; Blog Indonesiadot.Com
+      Proxmox Add ZFS &middot; Blog Indonesiadot.Com
     
   </title>
 
@@ -768,43 +768,56 @@
 
 
 <div class="post">
-  <h1 class="post-title">zfs</h1>
-  <ul id="list">
-  
-    <li>Jul 10, 2020 -
-      <a href="https://blog.indonesiadot.com/2020/07/10/proxmox-add-zfs/">Proxmox Add ZFS</a>
-    </li>
-  
-    <li>Mar 6, 2020 -
-      <a href="https://blog.indonesiadot.com/2020/03/06/proxmox-add-zfs-disk/">Proxmox add zfs disk</a>
-    </li>
-  
-    <li>Sep 30, 2019 -
-      <a href="https://blog.indonesiadot.com/2019/09/30/disk-serial-number/">Disk Serial Number</a>
-    </li>
-  
-    <li>Jul 15, 2018 -
-      <a href="https://blog.indonesiadot.com/2018/07/15/zfs-cool-feature-snapshot-replicate-etc/">zfs cool feature, snapshot, replicate, etc</a>
-    </li>
-  
-  </ul>
-</div>
-
-
-
-<div class="pagination">
-  
-  <span class="pagination-item older">Older</span>
+  <h1 class="post-title">Proxmox Add ZFS</h1>
+  <span class="post-date">Jul 10, 2020</span>
   
 
-  
-  <span class="pagination-item newer">Newer</span>
-  
+<h2 id="proxmox-add-zfs">Proxmox Add ZFS</h2>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/">https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/</a></li>
+<li><a href="https://pve.proxmox.com/wiki/ZFS_on_Linux">https://pve.proxmox.com/wiki/ZFS_on_Linux</a></li>
+</ul>
+
+<h2 id="proxmox-cloud-init">Proxmox cloud-init</h2>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://cloud.centos.org/centos/7/images/">https://cloud.centos.org/centos/7/images/</a></li>
+<li><a href="https://pve.proxmox.com/wiki/Cloud-Init_Support">https://pve.proxmox.com/wiki/Cloud-Init_Support</a></li>
+<li><a href="https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/">https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/</a></li>
+</ul>
+
+<h2 id="upgrade-proxmox-5-to-6">upgrade proxmox 5 to 6</h2>
+
+<p><a href="https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0">https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0</a></p>
+
+<pre><code>tmux
+pve5to6
+#make sure it's ok
+systemctl stop pve-ha-lrm
+systemctl stop pve-ha-crm
+echo &quot;deb http://download.proxmox.com/debian/corosync-3/ stretch main&quot; &gt; /etc/apt/sources.list.d/corosync3.list
+apt update
+apt dist-upgrade
+systemctl start pve-ha-lrm
+systemctl start pve-ha-crm
+sed -i 's/stretch/buster/g' /etc/apt/sources.list
+apt update
+apt dist-upgrade
+rm /etc/apt/sources.list.d/corosync3.list
+</code></pre>
+
 </div>
 
 <hr/>
 
 
+ Tags:
+ <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
 <hr/>
 Made with &hearts; using <a href="https://https://gohugo.io">hugo</a> by willing of <a href="https://www.google.com/search?q=asmaul+husna">Al-Khooliq Al-Mushowwir Al-Baari'</a>
 <p>&nbsp;</p>
