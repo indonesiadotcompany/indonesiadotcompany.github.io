@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Proxmox Beginner &middot; Blog Indonesiadot.Com
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/poole.css">
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/syntax.css">
+  <link rel="stylesheet" href="https://blog.indonesiadot.com/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blog.indonesiadot.com/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="https://blog.indonesiadot.com/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://blog.indonesiadot.com/atom.xml">
+</head>
+
+
+  <body class="theme-base-0c">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Blog dari <a href="https://indonesiadot.com" target="_blank">Indonesiadot.Com</a> adalah tempat menuliskan sesuatu mengenai teknologi, oprek, dan mengenai Indonesiadot.Com.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/">Home</a>
+    
+    <a class="sidebar-nav-item" href="https://blog.indonesiadot.com/post">Posts</a>
+    <a class="sidebar-nav-item" href="https://blog.indonesiadot.com/tags">Tags</a>
+
+    
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/about/">About</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
+      
+    
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2020. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="https://blog.indonesiadot.com/" title="Home">Blog Indonesiadot.Com</a>
+            <small>Web log of Indonesiadot.Com, Linux and updated technology</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Proxmox Beginner</h1>
+  <span class="post-date">Jul 10, 2020</span>
+  
+
+<h2 id="update-proxmox-repo">update proxmox repo</h2>
+
+<p><a href="https://pve.proxmox.com/wiki/Package_Repositories">https://pve.proxmox.com/wiki/Package_Repositories</a>
+untuk bisa update proxmox harus dirubah dulu repo nya di file /etc/apt/sources.list (untuk proxmox 5.4 / debian 9 / stretch)</p>
+
+<pre><code>deb http://kebo.pens.ac.id/debian stretch main contrib
+deb http://kebo.pens.ac.id/debian stretch-updates main contrib
+# security updates
+deb http://kebo.pens.ac.id/debian-security stretch/updates main contrib
+deb http://download.proxmox.com/debian/pve stretch pve-no-subscription
+</code></pre>
+
+<h2 id="proxmox-masquerade">proxmox masquerade</h2>
+
+<p><a href="https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt">https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt</a></p>
+
+<pre><code>auto lo
+iface lo inet loopback
+auto ens192
+iface ens192 inet static
+        address  10.11.8.202
+        netmask  255.255.255.0
+        gateway  10.11.8.1
+auto vmbr0
+iface vmbr0 inet static
+        address  192.168.10.1
+        netmask  255.255.255.0
+        bridge-ports none
+        bridge-stp off
+        bridge-fd 0
+
+        post-up echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+        post-up iptables -t nat -A POSTROUTING -j MASQUERADE
+        post-down iptables -t nat -D POSTROUTING eno1 -j MASQUERADE
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+</div>
+
+<hr/>
+
+
+ Tags:
+ <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/beginner/">beginner</a>
+<hr/>
+Made with &hearts; using <a href="https://https://gohugo.io">hugo</a> by willing of <a href="https://www.google.com/search?q=asmaul+husna">Al-Khooliq Al-Mushowwir Al-Baari'</a>
+<p>&nbsp;</p>
+
+	</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+  </body>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147159427-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147159427-1');
+</script>
+
+</html>
+

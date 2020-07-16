@@ -7,6 +7,71 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/</loc>
+    <lastmod>2020-07-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
+    <lastmod>2020-07-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/07/15/multi-python-on-virtualenv-using-pyenv/</loc>
+    <lastmod>2020-07-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2020-07-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/python/</loc>
+    <lastmod>2020-07-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2020-07-15T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/beginner/</loc>
+    <lastmod>2020-07-10T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/proxmox/</loc>
+    <lastmod>2020-07-10T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/07/10/proxmox-beginner/</loc>
+    <lastmod>2020-07-10T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
+    <lastmod>2020-07-10T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/redhat/</loc>
+    <lastmod>2020-07-02T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/07/02/redhat-rhel-free-for-developer/</loc>
+    <lastmod>2020-07-02T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/rhel/</loc>
+    <lastmod>2020-07-02T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
     <lastmod>2020-06-30T12:17:54+07:00</lastmod>
   </url>
@@ -17,32 +82,7 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2020-06-30T12:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2020-06-30T12:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/postgresql/</loc>
-    <lastmod>2020-06-30T12:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2020-06-30T12:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
-    <lastmod>2020-06-30T12:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
     <lastmod>2020-06-30T12:17:54+07:00</lastmod>
   </url>
   
@@ -84,11 +124,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/tags/google-authenticator/</loc>
     <lastmod>2020-06-23T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/beginner/</loc>
-    <lastmod>2020-06-12T08:17:54+07:00</lastmod>
   </url>
   
   <url>
@@ -367,11 +402,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/proxmox/</loc>
-    <lastmod>2020-03-06T04:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/2020/03/06/proxmox-add-zfs-disk/</loc>
     <lastmod>2020-03-06T04:17:54+07:00</lastmod>
   </url>
@@ -398,11 +428,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2020/03/05/</loc>
-    <lastmod>2020-03-05T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/python/</loc>
     <lastmod>2020-03-05T08:17:54+07:00</lastmod>
   </url>
   
@@ -572,11 +597,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/redhat/</loc>
-    <lastmod>2020-01-20T09:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/selinux/</loc>
     <lastmod>2020-01-20T09:17:54+07:00</lastmod>
   </url>
@@ -664,11 +684,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/tags/partition/</loc>
     <lastmod>2020-01-08T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/rhel/</loc>
-    <lastmod>2019-12-23T08:17:54+07:00</lastmod>
   </url>
   
   <url>

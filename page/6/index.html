@@ -736,6 +736,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -766,6 +772,248 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/">Centos 7 Resize Partition</a></h1>
+        <span class="post-date">Jan 8, 2020</span>
+	
+
+<h2 id="step-to-reproduce-on-vm">Step to reproduce on VM</h2>
+
+<p>Turn off the VM</p>
+
+<pre><code>qemu-img resize image.qcow2 +SIZE
+</code></pre>
+
+<p>where SIZE is the size to add (e.g. 10G for 10 gibibytes).</p>
+
+<p>Turn on the VM, fdisk /dev/vda, delete and create /dev/vda2, restart</p>
+
+<p>Login after restart, then run this command</p>
+
+<pre><code>pvresize /dev/vda2
+lvextend -r -l +100%FREE /dev/mapper/centos-root
+df -hl
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://maunium.net/blog/resizing-qcow2-images/">https://maunium.net/blog/resizing-qcow2-images/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/centos7/">centos7</a>, <a href="https://blog.indonesiadot.com/tags/partition/">partition</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/23/selinux-semanage/">Selinux semanage</a></h1>
+        <span class="post-date">Dec 23, 2019</span>
+	
+
+<p>content of selinux config /etc/selinux/config</p>
+
+<pre><code>SELINUX=enforcing
+SELINUXTYPE=targeted 
+</code></pre>
+
+<h2 id="semanage-packages">semanage packages</h2>
+
+<pre><code>yum provides semanage
+yum install -y policycoreutils-python
+</code></pre>
+
+<h2 id="semanage-list-port">semanage list port</h2>
+
+<pre><code>semanage port -l | grep ssh
+</code></pre>
+
+<h2 id="semanage-open-ssh-on-different-port">semanage open ssh on different port</h2>
+
+<p>add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port</p>
+
+<pre><code>semanage port -a -t ssh_port_t -p tcp 1022
+</code></pre>
+
+<p>then restart sshd service</p>
+
+<pre><code>systemctl restart sshd
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/">https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/rhel/">rhel</a>, <a href="https://blog.indonesiadot.com/tags/selinux/">selinux</a>, <a href="https://blog.indonesiadot.com/tags/semanage/">semanage</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/">Simple Virtualization Linux</a></h1>
+        <span class="post-date">Dec 22, 2019</span>
+	
+
+<h2 id="list-kvm-using-virsh">List kvm using virsh</h2>
+
+<pre><code>virsh list
+virsh list --all
+virsh --help
+</code></pre>
+
+<h2 id="create-vm-on-kvm-qemu-via-libvirt-with-command-line">Create vm on kvm / qemu via libvirt with command line</h2>
+
+<h3 id="pembuatan-vm-centos-7">Pembuatan vm centos 7</h3>
+
+<p>script bash virtcen.sh</p>
+
+<pre><code>#!/bin/bash
+
+NAMA=$1
+
+if [ -z &quot;$1&quot; ]; then
+ while [ -z &quot;$NAMA&quot; ]; do
+  echo -n &quot;masukan nama vm: &quot;
+  read NAMA
+ done
+fi
+
+virt-install \
+ --name $NAMA \
+ --ram 900 \
+ --disk path=$NAMA.qcow,size=6,bus=scsi,discard='unmap',format='qcow2' \
+ --controller type=scsi,model=virtio-scsi \
+ --vcpus 1 \
+ --cpu host \
+ --console pty,target_type=serial \
+ --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso \
+ --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot; \
+ --noautoconsole
+</code></pre>
+
+<p>file kickstart cenks.cfg</p>
+
+<pre><code>text
+install
+
+ignoredisk --only-use=sda
+clearpart --all
+autopart
+bootloader --location=mbr --driveorder=sda
+
+rootpw --iscrypted $1$R69aiGHP$BmqNaQ1ckncOT0I3t6DlN1
+user widysible --name widysible --iscrypted --password $1$u08OmYWr$s3v/lOnNMVyb5SCEwFFLG1
+
+timezone Asia/Jakarta
+network --bootproto=dhcp
+
+firewall --disabled
+#reboot --eject
+shutdown
+
+%packages
+@Core
+%end
+%post --interpreter=/bin/bash
+#exec &lt; /dev/tty6 &gt; /dev/tty6
+#chvt 6
+echo ### Add public ssh key for Ansible
+mkdir -m0700 -p /home/widysible/.ssh
+cat &lt;&lt;EOF &gt;/home/widysible/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTIv6ziCUfRwMfGGVwZoKtWLf51+OLzDwwQYXyrf8vmnY7tZB7GLWAWCmto2nsNfwBQiXBXWZ7rUfTM2og/xfTerrDexyBg1Polm0FAK9zNwDE77WqSeirCQFAQ0Q+GaJaERitrF5h+SfDBHIgoMEuWJMzCQvzaI/3WU2YB//LzcM3NckfxolxQbjMzPNweVZ6BpEOGB7a9BQh370+EFj8h9suOVPYmqV5L5M0gMrYiQ7qA2Zzf442g5AElJqU7p8EFUI4ttLnP8AlkxQvRQOWRcf11iQDAbJNF7UDh0iqYOe0cynnMUZQp1nmQD5t65L8tHp0k94P3bdN7FHvbjBL root@wid
+EOF
+chown -R widysible:widysible /home/ansible
+chmod 0600 /home/widysible/.ssh/authorized_keys
+# Allow Ansible to sudo w/o a password
+echo &quot;widysible ALL=(ALL) NOPASSWD:ALL&quot; &gt; /etc/sudoers.d/widysible
+# trim
+sed -i 's/issue_discards = 0/issue_discards = 1/' /etc/lvm/lvm.conf
+echo &quot;0 0 1 0 0 fstrim /&quot; | tee /etc/cron.d/fstrim
+sed -i '/ swap /s/^/#/' /etc/fstab
+sed -i 's/defaults/defaults,discard/' /etc/fstab
+echo ### Change back to terminal 1
+#chvt 1
+%end
+
+</code></pre>
+
+<p>Create VM using ansible playbook</p>
+
+<pre><code>---
+- name: create VMs
+  hosts: localhost
+  gather_facts: no
+  connection: local
+  become: true
+  vars_prompt:
+    - name: NAMA
+      prompt: &quot;Enter VM name&quot;
+      default: &quot;c7&quot;
+      private: no
+#  vars_files:
+#    - vms.yml
+
+  tasks:
+    - name: get VM disks
+      command: &quot;ls /var/lib/libvirt/images&quot;
+      register: disks
+      changed_when: &quot;disks.rc != 0&quot;
+
+    - name: get list of VMs
+      virt:
+        command: &quot;list_vms&quot;
+      register: vms
+
+    - name: create vm
+      command: &gt;
+                virt-install --name {{ NAMA }}
+                --cpu host --vcpus 1 --ram 900
+                --disk path=$NAMA.qcow,size=6,bus=scsi,discard='unmap',format='qcow2'
+                --controller type=scsi,model=virtio-scsi
+                --console pty,target_type=serial
+                --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso
+                --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot;
+                --noautoconsole
+</code></pre>
+
+<h2 id="get-vms-ip">Get VMs IP</h2>
+
+<pre><code>virsh domifaddr c7
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/">https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/</a></li>
+<li><a href="https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/">https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/</a></li>
+<li><a href="http://blog.leifmadsen.com/blog/2016/12/16/creating-virtual-machines-in-libvirt-with-virt-install/">http://blog.leifmadsen.com/blog/2016/12/16/creating-virtual-machines-in-libvirt-with-virt-install/</a></li>
+<li><a href="http://kvmonz.blogspot.com/p/knowledge-use-virt-install-for-kvm.html">http://kvmonz.blogspot.com/p/knowledge-use-virt-install-for-kvm.html</a></li>
+<li><a href="https://earlruby.org/2018/12/use-iso-and-kickstart-files-to-automatically-create-vms/">https://earlruby.org/2018/12/use-iso-and-kickstart-files-to-automatically-create-vms/</a></li>
+<li><a href="https://graspingtech.com/creating-virtual-machine-virt-install/">https://graspingtech.com/creating-virtual-machine-virt-install/</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Ubuntu_18.04&amp;p=kvm&amp;f=2">https://www.server-world.info/en/note?os=Ubuntu_18.04&amp;p=kvm&amp;f=2</a></li>
+<li><a href="http://blog.zencoffee.org/2016/06/easy-headless-kvm-deployment-virt-install/">http://blog.zencoffee.org/2016/06/easy-headless-kvm-deployment-virt-install/</a></li>
+<li><a href="https://gist.github.com/aladuca/854b78585c2bba961386">https://gist.github.com/aladuca/854b78585c2bba961386</a></li>
+<li><a href="https://www.cyberciti.biz/faq/find-ip-address-of-linux-kvm-guest-virtual-machine/">https://www.cyberciti.biz/faq/find-ip-address-of-linux-kvm-guest-virtual-machine/</a></li>
+<li><a href="https://www.cyberciti.biz/faq/linux-list-a-kvm-vm-guest-using-virsh-command/">https://www.cyberciti.biz/faq/linux-list-a-kvm-vm-guest-using-virsh-command/</a></li>
+<li><a href="https://hooks.technology/2017/10/create-vms-on-kvm-with-ansible/">https://hooks.technology/2017/10/create-vms-on-kvm-with-ansible/</a> (virt-builder and virt-install)</li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/virtualization/">virtualization</a>, <a href="https://blog.indonesiadot.com/tags/kvm/">kvm</a>, <a href="https://blog.indonesiadot.com/tags/qemu/">qemu</a>, <a href="https://blog.indonesiadot.com/tags/virt-install/">virt-install</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/05/jenkins-for-beginner/">jenkins for beginner</a></h1>
@@ -977,6 +1225,26 @@ If those don&rsquo;t help, try turning off routing and remote access in administ
 <li><a href="https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/">https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/</a></li>
 </ul>
 
+<h2 id="upgrade-proxmox-5-to-6">upgrade proxmox 5 to 6</h2>
+
+<p><a href="https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0">https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0</a></p>
+
+<pre><code>tmux
+pve5to6
+#make sure it's ok
+systemctl stop pve-ha-lrm
+systemctl stop pve-ha-crm
+echo &quot;deb http://download.proxmox.com/debian/corosync-3/ stretch main&quot; &gt; /etc/apt/sources.list.d/corosync3.list
+apt update
+apt dist-upgrade
+systemctl start pve-ha-lrm
+systemctl start pve-ha-crm
+sed -i 's/stretch/buster/g' /etc/apt/sources.list
+apt update
+apt dist-upgrade
+rm /etc/apt/sources.list.d/corosync3.list
+</code></pre>
+
 	<hr/>
 	
 	
@@ -1022,167 +1290,6 @@ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/awx/">awx</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/">Splunk Log Monitoring</a></h1>
-        <span class="post-date">Nov 15, 2019</span>
-	
-
-<h2 id="download">Download</h2>
-
-<p><a href="wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb" title="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;wget=true">deb</a>
-<a href="wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm" title="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;wget=true">rpm</a>
-<a href="wget -O splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz" title="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;platform=linux&amp;version=8.0.0&amp;product=splunk&amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;wget=true">tgz</a></p>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://docs.splunk.com/Documentation">https://docs.splunk.com/Documentation</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/splunk/">splunk</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/">Recommended Ansible Modules</a></h1>
-        <span class="post-date">Nov 5, 2019</span>
-	
-
-<h1 id="frequently-used-module">Frequently Used Module</h1>
-
-<h2 id="blockinfile">blockinfile</h2>
-
-<p>Module ini saya gunakan ketika muncul error pada saat menggunakan module lineinfile untuk memasukan beberapa baris sekaligus dalam beberapa tasks, dan ternyata dengan menggunakan module ini dengan hanya satu task bisa memasukan langsung beberapa baris.</p>
-
-<p>Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepada parameter minimalnya adalah path dan block saja.</p>
-
-<pre><code>- name: Insert correct line to /etc/ntp.conf
-  blockinfile:
-    path: /etc/ntp.conf
-    insertafter: ^#?server
-    state: present
-    block: |
-      server &quot;{{ ntp1 }}&quot;
-      server &quot;{{ ntp2 }}&quot;
-  notify: restart ntp
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.google.com/search?q=lineinfile+multiple+lines">https://www.google.com/search?q=lineinfile+multiple+lines</a></li>
-<li><a href="https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines">https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines</a></li>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html">https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html</a></li>
-<li><a href="https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py">https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py</a></li>
-</ul>
-
-<h2 id="find">find</h2>
-
-<p>Berikut contoh module find yang dicombine dengan module set_fact, when untuk menggunakan result matched (when seperti if dalam scripting / programming)</p>
-
-<pre><code>    - name: Search /etc/audit/rules.d for other DAC audit rules
-      find:
-        paths: /etc/audit/rules.d
-        recurse: false
-        contains: -F key=perm_mod$
-        patterns: '*.rules'
-      register: find_fchown
-      when: ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
-    - name: If existing DAC ruleset not found, use /etc/audit/rules.d/privileged.rules as the recipient for the rule
-      set_fact:
-        all_files:
-          - /etc/audit/rules.d/privileged.rules
-      when:
-        - find_fchown.matched is defined and find_fchown.matched == 0
-        - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
-    - name: Use matched file as the recipient for the rule
-      set_fact:
-        all_files:
-          - '{{ find_fchown.files | map(attribute=''path'') | list | first }}'
-      when:
-        - find_fchown.matched is defined and find_fchown.matched &gt; 0
-        - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
-</code></pre>
-
-<p>Referensi:
-* file remediation.yml dari oscap
-* <a href="https://docs.ansible.com/ansible/latest/modules/find_module.html">https://docs.ansible.com/ansible/latest/modules/find_module.html</a></p>
-
-<h2 id="pamd">pamd</h2>
-
-<p>module ini berguna untuk edit pam service tanpa harus mengedit file nya langsung, tanpa harus menggunakan module lineinfile, blockinfile, replace, etc. Dan berikut contohnya:</p>
-
-<pre><code>    - name: Add unlock_time argument to pam_faillock preauth
-      pamd:
-        name: '{{ item }}'
-        type: auth
-        control: required
-        module_path: pam_faillock.so
-        module_arguments: preauth silent unlock_time={{ var_accounts_passwords_pam_faillock_unlock_time
-          }}
-        state: args_present
-      loop:
-        - system-auth
-        - password-auth
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li>file remediation.yml oscap</li>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/pamd_module.html">https://docs.ansible.com/ansible/latest/modules/pamd_module.html</a></li>
-</ul>
-
-<h2 id="debug">debug</h2>
-
-<pre><code>    - name: download report
-      fetch:
-        src: /tmp/oscap-report.html
-        dest: /home/ansible/public_html/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
-        flat: yes
-    - debug:
-        msg: http://34.87.94.24/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
-</code></pre>
-
-<p>Ref:</p>
-
-<ul>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/debug_module.html">https://docs.ansible.com/ansible/latest/modules/debug_module.html</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/">Ansible and Openscap</a></h1>
-        <span class="post-date">Nov 4, 2019</span>
-	
-
-<h2 id="ansible-and-openscap-for-scanning-and-remediation-server-for-security-compliance-operating-system">Ansible and Openscap for scanning and remediation server for security compliance operating system</h2>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663">https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>, <a href="https://blog.indonesiadot.com/tags/openscap/">openscap</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/cis/">cis</a>, <a href="https://blog.indonesiadot.com/tags/stig/">stig</a>, <a href="https://blog.indonesiadot.com/tags/scan/">scan</a>, <a href="https://blog.indonesiadot.com/tags/remediation/">remediation</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   

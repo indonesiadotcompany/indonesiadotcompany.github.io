@@ -5,9 +5,113 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2020</rights>
-    <updated>2020-06-30 12:17:54 &#43;0700 WIB</updated>
+    <updated>2020-07-15 08:17:54 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>Multi python on virtualenv using pyenv</title>
+          <link>https://blog.indonesiadot.com/2020/07/15/multi-python-on-virtualenv-using-pyenv/</link>
+          <pubDate>Wed, 15 Jul 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/07/15/multi-python-on-virtualenv-using-pyenv/</guid>
+          <description>
+
+&lt;h2 id=&#34;pyenv&#34;&gt;pyenv&lt;/h2&gt;
+
+&lt;p&gt;Pos://realpython.com/intro-to-pyenv/&lt;/p&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://indonesiadot.com&#34;&gt;https://indonesiadot.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Proxmox Beginner</title>
+          <link>https://blog.indonesiadot.com/2020/07/10/proxmox-beginner/</link>
+          <pubDate>Fri, 10 Jul 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/07/10/proxmox-beginner/</guid>
+          <description>
+
+&lt;h2 id=&#34;update-proxmox-repo&#34;&gt;update proxmox repo&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pve.proxmox.com/wiki/Package_Repositories&#34;&gt;https://pve.proxmox.com/wiki/Package_Repositories&lt;/a&gt;
+untuk bisa update proxmox harus dirubah dulu repo nya di file /etc/apt/sources.list (untuk proxmox 5.4 / debian 9 / stretch)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;deb http://kebo.pens.ac.id/debian stretch main contrib
+deb http://kebo.pens.ac.id/debian stretch-updates main contrib
+# security updates
+deb http://kebo.pens.ac.id/debian-security stretch/updates main contrib
+deb http://download.proxmox.com/debian/pve stretch pve-no-subscription
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;proxmox-masquerade&#34;&gt;proxmox masquerade&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt&#34;&gt;https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;auto lo
+iface lo inet loopback
+auto ens192
+iface ens192 inet static
+        address  10.11.8.202
+        netmask  255.255.255.0
+        gateway  10.11.8.1
+auto vmbr0
+iface vmbr0 inet static
+        address  192.168.10.1
+        netmask  255.255.255.0
+        bridge-ports none
+        bridge-stp off
+        bridge-fd 0
+
+        post-up echo 1 &amp;gt; /proc/sys/net/ipv4/ip_forward
+        post-up iptables -t nat -A POSTROUTING -j MASQUERADE
+        post-down iptables -t nat -D POSTROUTING eno1 -j MASQUERADE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://indonesiadot.com&#34;&gt;https://indonesiadot.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Redhat RHEL free for developer</title>
+          <link>https://blog.indonesiadot.com/2020/07/02/redhat-rhel-free-for-developer/</link>
+          <pubDate>Thu, 02 Jul 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/07/02/redhat-rhel-free-for-developer/</guid>
+          <description>
+
+&lt;h2 id=&#34;langkah&#34;&gt;Langkah&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download&lt;/li&gt;
+&lt;li&gt;Install&lt;/li&gt;
+&lt;li&gt;Update&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Referensi:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.redhat.com/blog/2016/03/31/no-cost-rhel-developer-subscription-now-available/&#34;&gt;https://developers.redhat.com/blog/2016/03/31/no-cost-rhel-developer-subscription-now-available/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.redhat.com/products/rhel/download&#34;&gt;https://developers.redhat.com/products/rhel/download&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.turbonomic.com/blog/on-technology/deploying-a-red-hat-enterprise-linux-7-rhel7-on-virtualbox&#34;&gt;https://blog.turbonomic.com/blog/on-technology/deploying-a-red-hat-enterprise-linux-7-rhel7-on-virtualbox&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
       
     
       
@@ -499,10 +603,83 @@ openssl req –new –key domain.key –out domain.csr
 openssl pkcs7 -print_certs -inform der -in a.p7c -out out.cer
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;h2 id=&#34;create-cert-with-ca-certificate&#34;&gt;create cert with ca certificate&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.centlinux.com/2019/01/configure-certificate-authority-ca-centos-7.html&#34;&gt;https://www.centlinux.com/2019/01/configure-certificate-authority-ca-centos-7.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd /etc/pki/CA/private
+openssl genrsa -aes128 -out tower1CA.key 2048
+openssl req -new -x509 -days 1825 -key tower1CA.key -out ../certs/tower1CA.crt
+cd /etc/pki/tls/private
+openssl genrsa -out tower1.key 1024
+openssl req -new -key tower1.key -out tower1.csr
+openssl x509 -req -in tower1.csr -CA ../../CA/certs/tower1CA.crt -CAkey ../../CA/private/tower1CA.key -CAcreateserial -out ../certs/tower1.crt -days 3650
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;import-certificate&#34;&gt;import certificate&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://thomas-leister.de/en/how-to-import-ca-root-certificate/&#34;&gt;https://thomas-leister.de/en/how-to-import-ca-root-certificate/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;linux-debian-ubuntu-system&#34;&gt;Linux (Debian / Ubuntu) - system&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo mkdir /usr/local/share/ca-certificates/extra
+sudo cp root.cert.pem /usr/local/share/ca-certificates/extra/root.cert.crt
+sudo update-ca-certificates
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;browser-firefox-chromium&#34;&gt;Browser (Firefox, Chromium, …)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt install libnss3-tools
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This little helper script finds trust store databases and imports the new root certificate into them.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+### Script installs root.cert.pem to certificate trust store of applications using NSS
+### (e.g. Firefox, Thunderbird, Chromium)
+### Mozilla uses cert8, Chromium and Chrome use cert9
+
+###
+### Requirement: apt install libnss3-tools
+###
+
+
+###
+### CA file to install (CUSTOMIZE!)
+###
+
+certfile=&amp;quot;root.cert.pem&amp;quot;
+certname=&amp;quot;My Root CA&amp;quot;
+
+
+###
+### For cert8 (legacy - DBM)
+###
+
+for certDB in $(find ~/ -name &amp;quot;cert8.db&amp;quot;)
+do
+    certdir=$(dirname ${certDB});
+    certutil -A -n &amp;quot;${certname}&amp;quot; -t &amp;quot;TCu,Cu,Tu&amp;quot; -i ${certfile} -d dbm:${certdir}
+done
+
+
+###
+### For cert9 (SQL)
+###
+
+for certDB in $(find ~/ -name &amp;quot;cert9.db&amp;quot;)
+do
+    certdir=$(dirname ${certDB});
+    certutil -A -n &amp;quot;${certname}&amp;quot; -t &amp;quot;TCu,Cu,Tu&amp;quot; -i ${certfile} -d sql:${certdir}
+done
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://knowledge.digicert.com/generalinformation/INFO4448.html&#34;&gt;https://knowledge.digicert.com/generalinformation/INFO4448.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.google.com/search?q=p7b+to+crt+linux&#34;&gt;https://www.google.com/search?q=p7b+to+crt+linux&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://gist.github.com/jmervine/e4c9af3adb14b78856cc&#34;&gt;https://gist.github.com/jmervine/e4c9af3adb14b78856cc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html&#34;&gt;https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -2360,6 +2537,20 @@ python -m SimpleHTTPServer 8002
 &lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver&#34;&gt;https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.pcsuggest.com/best-lightweight-web-server-linux/&#34;&gt;https://www.pcsuggest.com/best-lightweight-web-server-linux/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&#34;multiple-python-version-on-centos-6&#34;&gt;multiple python version on centos 6&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/20842732/libpython2-7-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory&#34;&gt;https://stackoverflow.com/questions/20842732/libpython2-7-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory&lt;/a&gt;
+&lt;a href=&#34;https://www.2daygeek.com/install-python-3-on-centos-6/&#34;&gt;https://www.2daygeek.com/install-python-3-on-centos-6/&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yum install centos-release-scl -y
+yum --enablerepo=&#39;centos-sclo-rh&#39; install python27-python -y
+echo &amp;quot;/opt/rh/python27/root/usr/lib64&amp;quot; &amp;gt;&amp;gt; /etc/ld.so.conf
+ldconfig
+/opt/rh/python27/root/usr/bin/python --version
+yum --enablerepo=&#39;centos-sclo-rh&#39; install rh-python36-python
+/opt/rh/rh-python36/root/usr/bin/python --version
+&lt;/code&gt;&lt;/pre&gt;
 </description>
         </item>
       
@@ -3466,6 +3657,26 @@ If those don&amp;rsquo;t help, try turning off routing and remote access in admi
 &lt;li&gt;&lt;a href=&#34;https://pve.proxmox.com/wiki/Cloud-Init_Support&#34;&gt;https://pve.proxmox.com/wiki/Cloud-Init_Support&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/&#34;&gt;https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&#34;upgrade-proxmox-5-to-6&#34;&gt;upgrade proxmox 5 to 6&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0&#34;&gt;https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux
+pve5to6
+#make sure it&#39;s ok
+systemctl stop pve-ha-lrm
+systemctl stop pve-ha-crm
+echo &amp;quot;deb http://download.proxmox.com/debian/corosync-3/ stretch main&amp;quot; &amp;gt; /etc/apt/sources.list.d/corosync3.list
+apt update
+apt dist-upgrade
+systemctl start pve-ha-lrm
+systemctl start pve-ha-crm
+sed -i &#39;s/stretch/buster/g&#39; /etc/apt/sources.list
+apt update
+apt dist-upgrade
+rm /etc/apt/sources.list.d/corosync3.list
+&lt;/code&gt;&lt;/pre&gt;
 </description>
         </item>
       

@@ -6,10 +6,21 @@
     <description>Recent content in beginner on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Jun 2020 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/beginner/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Proxmox Beginner</title>
+      <link>https://blog.indonesiadot.com/2020/07/10/proxmox-beginner/</link>
+      <pubDate>Fri, 10 Jul 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/07/10/proxmox-beginner/</guid>
+      <description>update proxmox repo https://pve.proxmox.com/wiki/Package_Repositories untuk bisa update proxmox harus dirubah dulu repo nya di file /etc/apt/sources.list (untuk proxmox 5.4 / debian 9 / stretch)
+deb http://kebo.pens.ac.id/debian stretch main contrib deb http://kebo.pens.ac.id/debian stretch-updates main contrib # security updates deb http://kebo.pens.ac.id/debian-security stretch/updates main contrib deb http://download.proxmox.com/debian/pve stretch pve-no-subscription  proxmox masquerade https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt
+auto lo iface lo inet loopback auto ens192 iface ens192 inet static address 10.11.8.202 netmask 255.255.255.0 gateway 10.11.8.1 auto vmbr0 iface vmbr0 inet static address 192.</description>
+    </item>
     
     <item>
       <title>Postgresql</title>

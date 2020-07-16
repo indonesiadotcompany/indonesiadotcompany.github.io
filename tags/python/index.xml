@@ -6,10 +6,21 @@
     <description>Recent content in python on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Mar 2020 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Multi python on virtualenv using pyenv</title>
+      <link>https://blog.indonesiadot.com/2020/07/15/multi-python-on-virtualenv-using-pyenv/</link>
+      <pubDate>Wed, 15 Jul 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/07/15/multi-python-on-virtualenv-using-pyenv/</guid>
+      <description> pyenv Pos://realpython.com/intro-to-pyenv/
+Referensi:
+ https://indonesiadot.com  </description>
+    </item>
     
     <item>
       <title>Python Tips</title>
@@ -17,7 +28,8 @@
       <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/05/python-tips/</guid>
-      <description> module python web server python -m SimpleHTTPServer 8001 python -m SimpleHTTPServer 8002   https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver https://www.pcsuggest.com/best-lightweight-web-server-linux/  </description>
+      <description> module python web server python -m SimpleHTTPServer 8001 python -m SimpleHTTPServer 8002   https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver https://www.pcsuggest.com/best-lightweight-web-server-linux/  multiple python version on centos 6 https://stackoverflow.com/questions/20842732/libpython2-7-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory https://www.2daygeek.com/install-python-3-on-centos-6/
+yum install centos-release-scl -y yum --enablerepo=&#39;centos-sclo-rh&#39; install python27-python -y echo &amp;quot;/opt/rh/python27/root/usr/lib64&amp;quot; &amp;gt;&amp;gt; /etc/ld.so.conf ldconfig /opt/rh/python27/root/usr/bin/python --version yum --enablerepo=&#39;centos-sclo-rh&#39; install rh-python36-python /opt/rh/rh-python36/root/usr/bin/python --version  </description>
     </item>
     
     <item>

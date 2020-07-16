@@ -736,6 +736,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -766,6 +772,113 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/07/15/multi-python-on-virtualenv-using-pyenv/">Multi python on virtualenv using pyenv</a></h1>
+        <span class="post-date">Jul 15, 2020</span>
+	
+
+<h2 id="pyenv">pyenv</h2>
+
+<p>Pos://realpython.com/intro-to-pyenv/</p>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/python/">python</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/07/10/proxmox-beginner/">Proxmox Beginner</a></h1>
+        <span class="post-date">Jul 10, 2020</span>
+	
+
+<h2 id="update-proxmox-repo">update proxmox repo</h2>
+
+<p><a href="https://pve.proxmox.com/wiki/Package_Repositories">https://pve.proxmox.com/wiki/Package_Repositories</a>
+untuk bisa update proxmox harus dirubah dulu repo nya di file /etc/apt/sources.list (untuk proxmox 5.4 / debian 9 / stretch)</p>
+
+<pre><code>deb http://kebo.pens.ac.id/debian stretch main contrib
+deb http://kebo.pens.ac.id/debian stretch-updates main contrib
+# security updates
+deb http://kebo.pens.ac.id/debian-security stretch/updates main contrib
+deb http://download.proxmox.com/debian/pve stretch pve-no-subscription
+</code></pre>
+
+<h2 id="proxmox-masquerade">proxmox masquerade</h2>
+
+<p><a href="https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt">https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt</a></p>
+
+<pre><code>auto lo
+iface lo inet loopback
+auto ens192
+iface ens192 inet static
+        address  10.11.8.202
+        netmask  255.255.255.0
+        gateway  10.11.8.1
+auto vmbr0
+iface vmbr0 inet static
+        address  192.168.10.1
+        netmask  255.255.255.0
+        bridge-ports none
+        bridge-stp off
+        bridge-fd 0
+
+        post-up echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+        post-up iptables -t nat -A POSTROUTING -j MASQUERADE
+        post-down iptables -t nat -D POSTROUTING eno1 -j MASQUERADE
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/beginner/">beginner</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/07/02/redhat-rhel-free-for-developer/">Redhat RHEL free for developer</a></h1>
+        <span class="post-date">Jul 2, 2020</span>
+	
+
+<h2 id="langkah">Langkah</h2>
+
+<ul>
+<li>Download</li>
+<li>Install</li>
+<li>Update</li>
+</ul>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://developers.redhat.com/blog/2016/03/31/no-cost-rhel-developer-subscription-now-available/">https://developers.redhat.com/blog/2016/03/31/no-cost-rhel-developer-subscription-now-available/</a></li>
+<li><a href="https://developers.redhat.com/products/rhel/download">https://developers.redhat.com/products/rhel/download</a></li>
+<li><a href="https://blog.turbonomic.com/blog/on-technology/deploying-a-red-hat-enterprise-linux-7-rhel7-on-virtualbox">https://blog.turbonomic.com/blog/on-technology/deploying-a-red-hat-enterprise-linux-7-rhel7-on-virtualbox</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/redhat/">redhat</a>, <a href="https://blog.indonesiadot.com/tags/rhel/">rhel</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/06/30/ansible-postgresql/">Ansible postgresql</a></h1>
@@ -1099,85 +1212,6 @@ host    all         all         10.11.8.0/24    md5
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/elk/">elk</a>, <a href="https://blog.indonesiadot.com/tags/elasticsearch/">elasticsearch</a>, <a href="https://blog.indonesiadot.com/tags/logstash/">logstash</a>, <a href="https://blog.indonesiadot.com/tags/kibana/">kibana</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/">Ansible CI-CD CICD</a></h1>
-        <span class="post-date">Apr 3, 2020</span>
-	
-
-<h2 id="jenkins-ansible-tower">Jenkins Ansible Tower</h2>
-
-<p><img src="https://blog.indonesiadot.com/images/2020/continuous-delivery1.png" alt="ansible-cicd" /></p>
-
-<ul>
-<li><a href="https://plugins.jenkins.io/ansible-tower/">https://plugins.jenkins.io/ansible-tower/</a></li>
-<li><a href="https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower">https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower</a></li>
-<li><a href="https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process">https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process</a></li>
-<li><a href="https://dzone.com/articles/how-to-setup-continuous-delivery-environment">https://dzone.com/articles/how-to-setup-continuous-delivery-environment</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/cicd/">cicd</a>, <a href="https://blog.indonesiadot.com/tags/jenkins/">jenkins</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/04/03/security-compliance-baseline-benchmark/">Security Compliance Baseline Benchmark</a></h1>
-        <span class="post-date">Apr 3, 2020</span>
-	
-
-<h2 id="ssg-baseline">ssg baseline</h2>
-
-<ul>
-<li><a href="https://static.open-scap.org/">https://static.open-scap.org/</a></li>
-<li><a href="https://static.open-scap.org/ssg-guides/ssg-rhel7-guide-index.html">https://static.open-scap.org/ssg-guides/ssg-rhel7-guide-index.html</a></li>
-</ul>
-
-<h2 id="cis-baseline">cis baseline</h2>
-
-<ul>
-<li><a href="https://www.cisecurity.org/cis-benchmarks/">https://www.cisecurity.org/cis-benchmarks/</a></li>
-<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
-<li><a href="https://birau.com">https://birau.com</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/baseline/">baseline</a>, <a href="https://blog.indonesiadot.com/tags/benchmark/">benchmark</a>, <a href="https://blog.indonesiadot.com/tags/pci-dss/">pci-dss</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/27/sentinelone-epp-edr-on-premise/">Sentinelone EPP EDR On-Premise</a></h1>
-        <span class="post-date">Mar 27, 2020</span>
-	
-
-<h2 id="prerequisites-and-preparation">Prerequisites and preparation</h2>
-
-<h3 id="hardware-requirements-management-versions-grand-canyon-and-later">Hardware Requirements: Management Versions Grand Canyon and later</h3>
-
-<ul>
-<li>Agents 10,000 to 20,000</li>
-<li>CPU 16 Cores</li>
-<li>RAM 32 GB</li>
-
-<li><p>Disk Root: 16 GB, Disk 500 GB XFS</p></li>
-
-<li><p><a href="https://support.sentinelone.com/hc/en-us/articles/360010427613-On-Prem-OVA-Prerequisites-and-Preparation">https://support.sentinelone.com/hc/en-us/articles/360010427613-On-Prem-OVA-Prerequisites-and-Preparation</a></p></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/epp/">epp</a>, <a href="https://blog.indonesiadot.com/tags/edr/">edr</a>, <a href="https://blog.indonesiadot.com/tags/sentinelone/">sentinelone</a>, <a href="https://blog.indonesiadot.com/tags/on-premise/">on-premise</a>
 	 <hr/>
     </div>
   

@@ -6,10 +6,20 @@
     <description>Recent content in rhel on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Dec 2019 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/rhel/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Redhat RHEL free for developer</title>
+      <link>https://blog.indonesiadot.com/2020/07/02/redhat-rhel-free-for-developer/</link>
+      <pubDate>Thu, 02 Jul 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/07/02/redhat-rhel-free-for-developer/</guid>
+      <description> Langkah  Download Install Update  Referensi:
+ https://developers.redhat.com/blog/2016/03/31/no-cost-rhel-developer-subscription-now-available/ https://developers.redhat.com/products/rhel/download https://blog.turbonomic.com/blog/on-technology/deploying-a-red-hat-enterprise-linux-7-rhel7-on-virtualbox  </description>
+    </item>
     
     <item>
       <title>Selinux semanage</title>

@@ -736,6 +736,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -766,6 +772,105 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/">Video Editing On Linux</a></h1>
+        <span class="post-date">Feb 24, 2020</span>
+	
+
+<h2 id="cut-and-combine-video">Cut and Combine Video</h2>
+
+<p>Avidemux</p>
+
+<h2 id="youtube">Youtube</h2>
+
+<h3 id="add-text-caption-subtitle-anotasi-on-video">Add text / caption / subtitle / Anotasi on video</h3>
+
+<pre><code>1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &gt; Youtube Studio
+2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks
+3. Untuk video baru, klik set languages, lalu confirm
+4. Klik tombol ADD / Tambahkan subtitel atau CC baru.
+</code></pre>
+
+<h3 id="add-watermark">Add watermark</h3>
+
+<pre><code>ffmpeg -i input.mp4 -i watermark.png -filter_complex &quot;overlay=1500:1000&quot; output.mp4
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.nesabamedia.com/cara-membuat-subtitle-video-youtube/">https://www.nesabamedia.com/cara-membuat-subtitle-video-youtube/</a></li>
+<li><a href="https://readmoremyblog.wordpress.com/2012/03/11/cara-membuat-teks-atau-anotasi-pada-video-youtube/">https://readmoremyblog.wordpress.com/2012/03/11/cara-membuat-teks-atau-anotasi-pada-video-youtube/</a></li>
+<li><a href="https://shkspr.mobi/blog/2016/08/easy-ways-to-add-watermarks-to-images-and-videos-in-linux/">https://shkspr.mobi/blog/2016/08/easy-ways-to-add-watermarks-to-images-and-videos-in-linux/</a></li>
+<li><a href="https://www.vlchelp.com/how-to-change-subtitle-position-in-vlc/">https://www.vlchelp.com/how-to-change-subtitle-position-in-vlc/</a></li>
+<li><a href="https://downsub.com/">https://downsub.com/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/video/">video</a>, <a href="https://blog.indonesiadot.com/tags/editing/">editing</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/youtube/">youtube</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/">Ansible OS Hardening</a></h1>
+        <span class="post-date">Feb 20, 2020</span>
+	
+
+<h2 id="ansible-os-hardening">Ansible OS Hardening</h2>
+
+<pre><code>mkdir -p /data/backups
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/os-hardening/">os-hardening</a>, <a href="https://blog.indonesiadot.com/tags/hardening/">hardening</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/">Ansible Tower tips and trick</a></h1>
+        <span class="post-date">Feb 20, 2020</span>
+	
+
+<h2 id="ansible-tower-tips-and-trick">Ansible Tower tips and trick</h2>
+
+<h3 id="change-admin-password">Change admin password</h3>
+
+<pre><code>awx-manage changepassword admin
+</code></pre>
+
+<h3 id="backup-and-restore">backup and restore</h3>
+
+<ul>
+<li><a href="https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html">https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html</a></li>
+</ul>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html">https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html</a></li>
+<li><a href="https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/">https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/harbor/">harbor</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/registry/">registry</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/">Selinux Web Directory Permission</a></h1>
@@ -1061,248 +1166,6 @@ user.save!
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>, <a href="https://blog.indonesiadot.com/tags/gitlab/">gitlab</a>, <a href="https://blog.indonesiadot.com/tags/repository/">repository</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/">Centos 7 Resize Partition</a></h1>
-        <span class="post-date">Jan 8, 2020</span>
-	
-
-<h2 id="step-to-reproduce-on-vm">Step to reproduce on VM</h2>
-
-<p>Turn off the VM</p>
-
-<pre><code>qemu-img resize image.qcow2 +SIZE
-</code></pre>
-
-<p>where SIZE is the size to add (e.g. 10G for 10 gibibytes).</p>
-
-<p>Turn on the VM, fdisk /dev/vda, delete and create /dev/vda2, restart</p>
-
-<p>Login after restart, then run this command</p>
-
-<pre><code>pvresize /dev/vda2
-lvextend -r -l +100%FREE /dev/mapper/centos-root
-df -hl
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://maunium.net/blog/resizing-qcow2-images/">https://maunium.net/blog/resizing-qcow2-images/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/centos7/">centos7</a>, <a href="https://blog.indonesiadot.com/tags/partition/">partition</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/23/selinux-semanage/">Selinux semanage</a></h1>
-        <span class="post-date">Dec 23, 2019</span>
-	
-
-<p>content of selinux config /etc/selinux/config</p>
-
-<pre><code>SELINUX=enforcing
-SELINUXTYPE=targeted 
-</code></pre>
-
-<h2 id="semanage-packages">semanage packages</h2>
-
-<pre><code>yum provides semanage
-yum install -y policycoreutils-python
-</code></pre>
-
-<h2 id="semanage-list-port">semanage list port</h2>
-
-<pre><code>semanage port -l | grep ssh
-</code></pre>
-
-<h2 id="semanage-open-ssh-on-different-port">semanage open ssh on different port</h2>
-
-<p>add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port</p>
-
-<pre><code>semanage port -a -t ssh_port_t -p tcp 1022
-</code></pre>
-
-<p>then restart sshd service</p>
-
-<pre><code>systemctl restart sshd
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/">https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/rhel/">rhel</a>, <a href="https://blog.indonesiadot.com/tags/selinux/">selinux</a>, <a href="https://blog.indonesiadot.com/tags/semanage/">semanage</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/">Simple Virtualization Linux</a></h1>
-        <span class="post-date">Dec 22, 2019</span>
-	
-
-<h2 id="list-kvm-using-virsh">List kvm using virsh</h2>
-
-<pre><code>virsh list
-virsh list --all
-virsh --help
-</code></pre>
-
-<h2 id="create-vm-on-kvm-qemu-via-libvirt-with-command-line">Create vm on kvm / qemu via libvirt with command line</h2>
-
-<h3 id="pembuatan-vm-centos-7">Pembuatan vm centos 7</h3>
-
-<p>script bash virtcen.sh</p>
-
-<pre><code>#!/bin/bash
-
-NAMA=$1
-
-if [ -z &quot;$1&quot; ]; then
- while [ -z &quot;$NAMA&quot; ]; do
-  echo -n &quot;masukan nama vm: &quot;
-  read NAMA
- done
-fi
-
-virt-install \
- --name $NAMA \
- --ram 900 \
- --disk path=$NAMA.qcow,size=6,bus=scsi,discard='unmap',format='qcow2' \
- --controller type=scsi,model=virtio-scsi \
- --vcpus 1 \
- --cpu host \
- --console pty,target_type=serial \
- --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso \
- --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot; \
- --noautoconsole
-</code></pre>
-
-<p>file kickstart cenks.cfg</p>
-
-<pre><code>text
-install
-
-ignoredisk --only-use=sda
-clearpart --all
-autopart
-bootloader --location=mbr --driveorder=sda
-
-rootpw --iscrypted $1$R69aiGHP$BmqNaQ1ckncOT0I3t6DlN1
-user widysible --name widysible --iscrypted --password $1$u08OmYWr$s3v/lOnNMVyb5SCEwFFLG1
-
-timezone Asia/Jakarta
-network --bootproto=dhcp
-
-firewall --disabled
-#reboot --eject
-shutdown
-
-%packages
-@Core
-%end
-%post --interpreter=/bin/bash
-#exec &lt; /dev/tty6 &gt; /dev/tty6
-#chvt 6
-echo ### Add public ssh key for Ansible
-mkdir -m0700 -p /home/widysible/.ssh
-cat &lt;&lt;EOF &gt;/home/widysible/.ssh/authorized_keys
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTIv6ziCUfRwMfGGVwZoKtWLf51+OLzDwwQYXyrf8vmnY7tZB7GLWAWCmto2nsNfwBQiXBXWZ7rUfTM2og/xfTerrDexyBg1Polm0FAK9zNwDE77WqSeirCQFAQ0Q+GaJaERitrF5h+SfDBHIgoMEuWJMzCQvzaI/3WU2YB//LzcM3NckfxolxQbjMzPNweVZ6BpEOGB7a9BQh370+EFj8h9suOVPYmqV5L5M0gMrYiQ7qA2Zzf442g5AElJqU7p8EFUI4ttLnP8AlkxQvRQOWRcf11iQDAbJNF7UDh0iqYOe0cynnMUZQp1nmQD5t65L8tHp0k94P3bdN7FHvbjBL root@wid
-EOF
-chown -R widysible:widysible /home/ansible
-chmod 0600 /home/widysible/.ssh/authorized_keys
-# Allow Ansible to sudo w/o a password
-echo &quot;widysible ALL=(ALL) NOPASSWD:ALL&quot; &gt; /etc/sudoers.d/widysible
-# trim
-sed -i 's/issue_discards = 0/issue_discards = 1/' /etc/lvm/lvm.conf
-echo &quot;0 0 1 0 0 fstrim /&quot; | tee /etc/cron.d/fstrim
-sed -i '/ swap /s/^/#/' /etc/fstab
-sed -i 's/defaults/defaults,discard/' /etc/fstab
-echo ### Change back to terminal 1
-#chvt 1
-%end
-
-</code></pre>
-
-<p>Create VM using ansible playbook</p>
-
-<pre><code>---
-- name: create VMs
-  hosts: localhost
-  gather_facts: no
-  connection: local
-  become: true
-  vars_prompt:
-    - name: NAMA
-      prompt: &quot;Enter VM name&quot;
-      default: &quot;c7&quot;
-      private: no
-#  vars_files:
-#    - vms.yml
-
-  tasks:
-    - name: get VM disks
-      command: &quot;ls /var/lib/libvirt/images&quot;
-      register: disks
-      changed_when: &quot;disks.rc != 0&quot;
-
-    - name: get list of VMs
-      virt:
-        command: &quot;list_vms&quot;
-      register: vms
-
-    - name: create vm
-      command: &gt;
-                virt-install --name {{ NAMA }}
-                --cpu host --vcpus 1 --ram 900
-                --disk path=$NAMA.qcow,size=6,bus=scsi,discard='unmap',format='qcow2'
-                --controller type=scsi,model=virtio-scsi
-                --console pty,target_type=serial
-                --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso
-                --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot;
-                --noautoconsole
-</code></pre>
-
-<h2 id="get-vms-ip">Get VMs IP</h2>
-
-<pre><code>virsh domifaddr c7
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/">https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/</a></li>
-<li><a href="https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/">https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/</a></li>
-<li><a href="http://blog.leifmadsen.com/blog/2016/12/16/creating-virtual-machines-in-libvirt-with-virt-install/">http://blog.leifmadsen.com/blog/2016/12/16/creating-virtual-machines-in-libvirt-with-virt-install/</a></li>
-<li><a href="http://kvmonz.blogspot.com/p/knowledge-use-virt-install-for-kvm.html">http://kvmonz.blogspot.com/p/knowledge-use-virt-install-for-kvm.html</a></li>
-<li><a href="https://earlruby.org/2018/12/use-iso-and-kickstart-files-to-automatically-create-vms/">https://earlruby.org/2018/12/use-iso-and-kickstart-files-to-automatically-create-vms/</a></li>
-<li><a href="https://graspingtech.com/creating-virtual-machine-virt-install/">https://graspingtech.com/creating-virtual-machine-virt-install/</a></li>
-<li><a href="https://www.server-world.info/en/note?os=Ubuntu_18.04&amp;p=kvm&amp;f=2">https://www.server-world.info/en/note?os=Ubuntu_18.04&amp;p=kvm&amp;f=2</a></li>
-<li><a href="http://blog.zencoffee.org/2016/06/easy-headless-kvm-deployment-virt-install/">http://blog.zencoffee.org/2016/06/easy-headless-kvm-deployment-virt-install/</a></li>
-<li><a href="https://gist.github.com/aladuca/854b78585c2bba961386">https://gist.github.com/aladuca/854b78585c2bba961386</a></li>
-<li><a href="https://www.cyberciti.biz/faq/find-ip-address-of-linux-kvm-guest-virtual-machine/">https://www.cyberciti.biz/faq/find-ip-address-of-linux-kvm-guest-virtual-machine/</a></li>
-<li><a href="https://www.cyberciti.biz/faq/linux-list-a-kvm-vm-guest-using-virsh-command/">https://www.cyberciti.biz/faq/linux-list-a-kvm-vm-guest-using-virsh-command/</a></li>
-<li><a href="https://hooks.technology/2017/10/create-vms-on-kvm-with-ansible/">https://hooks.technology/2017/10/create-vms-on-kvm-with-ansible/</a> (virt-builder and virt-install)</li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/virtualization/">virtualization</a>, <a href="https://blog.indonesiadot.com/tags/kvm/">kvm</a>, <a href="https://blog.indonesiadot.com/tags/qemu/">qemu</a>, <a href="https://blog.indonesiadot.com/tags/virt-install/">virt-install</a>
 	 <hr/>
     </div>
   

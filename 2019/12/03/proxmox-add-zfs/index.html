@@ -735,6 +735,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -784,6 +790,26 @@
 <li><a href="https://pve.proxmox.com/wiki/Cloud-Init_Support">https://pve.proxmox.com/wiki/Cloud-Init_Support</a></li>
 <li><a href="https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/">https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/</a></li>
 </ul>
+
+<h2 id="upgrade-proxmox-5-to-6">upgrade proxmox 5 to 6</h2>
+
+<p><a href="https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0">https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0</a></p>
+
+<pre><code>tmux
+pve5to6
+#make sure it's ok
+systemctl stop pve-ha-lrm
+systemctl stop pve-ha-crm
+echo &quot;deb http://download.proxmox.com/debian/corosync-3/ stretch main&quot; &gt; /etc/apt/sources.list.d/corosync3.list
+apt update
+apt dist-upgrade
+systemctl start pve-ha-lrm
+systemctl start pve-ha-crm
+sed -i 's/stretch/buster/g' /etc/apt/sources.list
+apt update
+apt dist-upgrade
+rm /etc/apt/sources.list.d/corosync3.list
+</code></pre>
 
 </div>
 

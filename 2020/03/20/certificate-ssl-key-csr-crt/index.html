@@ -735,6 +735,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -841,10 +847,83 @@ openssl req –new –key domain.key –out domain.csr
 openssl pkcs7 -print_certs -inform der -in a.p7c -out out.cer
 </code></pre>
 
+<h2 id="create-cert-with-ca-certificate">create cert with ca certificate</h2>
+
+<p><a href="https://www.centlinux.com/2019/01/configure-certificate-authority-ca-centos-7.html">https://www.centlinux.com/2019/01/configure-certificate-authority-ca-centos-7.html</a></p>
+
+<pre><code>cd /etc/pki/CA/private
+openssl genrsa -aes128 -out tower1CA.key 2048
+openssl req -new -x509 -days 1825 -key tower1CA.key -out ../certs/tower1CA.crt
+cd /etc/pki/tls/private
+openssl genrsa -out tower1.key 1024
+openssl req -new -key tower1.key -out tower1.csr
+openssl x509 -req -in tower1.csr -CA ../../CA/certs/tower1CA.crt -CAkey ../../CA/private/tower1CA.key -CAcreateserial -out ../certs/tower1.crt -days 3650
+</code></pre>
+
+<h2 id="import-certificate">import certificate</h2>
+
+<p><a href="https://thomas-leister.de/en/how-to-import-ca-root-certificate/">https://thomas-leister.de/en/how-to-import-ca-root-certificate/</a></p>
+
+<h3 id="linux-debian-ubuntu-system">Linux (Debian / Ubuntu) - system</h3>
+
+<pre><code>sudo mkdir /usr/local/share/ca-certificates/extra
+sudo cp root.cert.pem /usr/local/share/ca-certificates/extra/root.cert.crt
+sudo update-ca-certificates
+</code></pre>
+
+<h3 id="browser-firefox-chromium">Browser (Firefox, Chromium, …)</h3>
+
+<pre><code>sudo apt install libnss3-tools
+</code></pre>
+
+<p>This little helper script finds trust store databases and imports the new root certificate into them.</p>
+
+<pre><code>#!/bin/bash
+
+### Script installs root.cert.pem to certificate trust store of applications using NSS
+### (e.g. Firefox, Thunderbird, Chromium)
+### Mozilla uses cert8, Chromium and Chrome use cert9
+
+###
+### Requirement: apt install libnss3-tools
+###
+
+
+###
+### CA file to install (CUSTOMIZE!)
+###
+
+certfile=&quot;root.cert.pem&quot;
+certname=&quot;My Root CA&quot;
+
+
+###
+### For cert8 (legacy - DBM)
+###
+
+for certDB in $(find ~/ -name &quot;cert8.db&quot;)
+do
+    certdir=$(dirname ${certDB});
+    certutil -A -n &quot;${certname}&quot; -t &quot;TCu,Cu,Tu&quot; -i ${certfile} -d dbm:${certdir}
+done
+
+
+###
+### For cert9 (SQL)
+###
+
+for certDB in $(find ~/ -name &quot;cert9.db&quot;)
+do
+    certdir=$(dirname ${certDB});
+    certutil -A -n &quot;${certname}&quot; -t &quot;TCu,Cu,Tu&quot; -i ${certfile} -d sql:${certdir}
+done
+</code></pre>
+
 <ul>
 <li><a href="https://knowledge.digicert.com/generalinformation/INFO4448.html">https://knowledge.digicert.com/generalinformation/INFO4448.html</a></li>
 <li><a href="https://www.google.com/search?q=p7b+to+crt+linux">https://www.google.com/search?q=p7b+to+crt+linux</a></li>
 <li><a href="https://gist.github.com/jmervine/e4c9af3adb14b78856cc">https://gist.github.com/jmervine/e4c9af3adb14b78856cc</a></li>
+<li><a href="https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html">https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html</a></li>
 </ul>
 
 </div>
