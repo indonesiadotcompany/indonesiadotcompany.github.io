@@ -72,3 +72,8 @@ apt install exfat-fuse exfat-utils
 
 * https://itsfoss.com/mount-exfat/
 
+## ssh-keygen non interactive
+```
+ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N ""
+```
+
