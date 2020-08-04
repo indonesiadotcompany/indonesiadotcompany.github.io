@@ -5,9 +5,108 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2020</rights>
-    <updated>2020-07-15 08:17:54 &#43;0700 WIB</updated>
+    <updated>2020-08-04 17:17:54 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>Jfrog for Beginner</title>
+          <link>https://blog.indonesiadot.com/2020/08/04/jfrog-for-beginner/</link>
+          <pubDate>Tue, 04 Aug 2020 17:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/08/04/jfrog-for-beginner/</guid>
+          <description>
+
+&lt;h2 id=&#34;install-jfrog-di-ubuntu&#34;&gt;Install jfrog di ubuntu&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://websiteforstudents.com/how-to-install-jfrog-artifactory-on-ubuntu-18-04-16-04/&#34;&gt;https://websiteforstudents.com/how-to-install-jfrog-artifactory-on-ubuntu-18-04-16-04/&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apt install wget software-properties-common apt-transport-https
+apt-get install openjdk-8-jdk openjdk-8-doc
+wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add -
+add-apt-repository &amp;quot;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&amp;quot;
+apt-get update
+apt install jfrog-artifactory-oss
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;membuat-repository-artifacts-baru-di-jfrog&#34;&gt;Membuat repository / artifacts baru di jfrog&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;klik menu administration, lalu klik menu repositories (sebelah kiri), lalu klik + New Local Repository (sebelah kanan)
+klik / pilih generic, lalu isi repository key atau nama repository dengan apa saja yg diinginkan misal ansible-test-report
+klik save
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;test-upload-dan-download-via-curl&#34;&gt;test upload dan download via curl&lt;/h2&gt;
+
+&lt;p&gt;buat dahulu bbrp file, misal test.txt, lalu upload dengan command curl&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl -uadmin:r4hasia01 -T test.txt &amp;quot;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;command untuk download memakai curl&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl -uadmin:r4hasia01 -O &amp;quot;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;test-upload-dengan-playbook-script&#34;&gt;test upload dengan playbook script&lt;/h2&gt;
+
+&lt;p&gt;buat file jfrog-upload.yml&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- hosts: all
+  gather_facts: false
+  connection: local
+  tasks:
+    - uri:
+        url: &#39;http://10.11.8.41:8081/artifactory/generic/test1.txt&#39;
+        src: ./test1.txt
+        method: PUT
+        return_content: true
+        user: admin
+        password: r4hasia01
+        force_basic_auth: true
+        status_code: 201
+        headers:
+          Content-Type: application/octet-stream
+          Accept: application/json
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;buat file test1.txt, lalu jalankan script playbooknya dengan:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ansible-playbook -i localhost, jfrog-upload.yml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;jfrog-cli&#34;&gt;Jfrog CLI&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://jfrog.com/getcli/&#34;&gt;https://jfrog.com/getcli/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory&#34;&gt;https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;untuk lebih memudahkan proses management jfrog bisa menggunakan jfrog cli&lt;/p&gt;
+
+&lt;p&gt;bisa download dulu dengan command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl -fL https://getcli.jfrog.io | sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;configure jfrog cli dengan&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./jfrog rt c jfroglan --url=http://10.11.8.41:8082/artifactory --user=admin --password=r4hasia01
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;dari sini bisa untuk delete file / direktori, misal delete file testdir yg sebelumnya terbuat, dengan command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./jfrog rt del generic/testdir
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;upload semua file di direktori dan taruh di direktori juga&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./jfrog rt u &amp;quot;testdir/&amp;quot; generic/testdir/
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
       
     
       
@@ -133,6 +232,47 @@ apt update
 apt dist-upgrade
 rm /etc/apt/sources.list.d/corosync3.list
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>iptables tips</title>
+          <link>https://blog.indonesiadot.com/2020/07/08/iptables-tips/</link>
+          <pubDate>Wed, 08 Jul 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/07/08/iptables-tips/</guid>
+          <description>
+
+&lt;p&gt;iptables adalah program utility untuk seting firewall di linux.&lt;/p&gt;
+
+&lt;h2 id=&#34;flush-all-rules-delete-all-chains-and-accept-all&#34;&gt;Flush All Rules, Delete All Chains, and Accept All&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules&#34;&gt;https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This section will show you how to flush all of your firewall rules, tables, and chains, and allow all network traffic.&lt;/p&gt;
+
+&lt;p&gt;Note: This will effectively disable your firewall. You should only follow this section if you want to start over the configuration of your firewall.&lt;/p&gt;
+
+&lt;p&gt;First, set the default policies for each of the built-in chains to ACCEPT. The main reason to do this is to ensure that you won’t be locked out from your server:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo iptables -P INPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then flush the nat and mangle tables, flush all chains (-F), and delete all non-default chains (-X):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo iptables -t nat -F
+sudo iptables -t mangle -F
+sudo iptables -F
+sudo iptables -X
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Your firewall will now allow all network traffic. If you list your rules now, you will will see there are none, and only the three default chains (INPUT, FORWARD, and OUTPUT) remain.&lt;/p&gt;
 </description>
         </item>
       
@@ -6655,6 +6795,11 @@ losetup /dev/loop11 filesystem.img
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://itsfoss.com/mount-exfat/&#34;&gt;https://itsfoss.com/mount-exfat/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&#34;ssh-keygen-non-interactive&#34;&gt;ssh-keygen non interactive&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N &amp;quot;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
         </item>
       

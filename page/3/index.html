@@ -742,6 +742,18 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -772,6 +784,59 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/18/ubuntu-tips/">Ubuntu tips</a></h1>
+        <span class="post-date">Mar 18, 2020</span>
+	
+
+<h2 id="install-specific-version">Install specific version</h2>
+
+<pre><code>apt-cache policy gparted
+apt install gparted=0.16.1-1
+</code></pre>
+
+<ul>
+<li><a href="https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package">https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package</a></li>
+</ul>
+
+<h2 id="apport-high-cpu">apport high cpu</h2>
+
+<pre><code>killall -9 apport
+service apport stop &amp;&amp; systemctl stop apport
+rm -f /var/crash/*
+apt-get remove apport -y
+</code></pre>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ubuntu/">ubuntu</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/">Ansible Tower Log Logstash ELK</a></h1>
+        <span class="post-date">Mar 16, 2020</span>
+	
+
+<h2 id="ansible-logstash-example">ansible logstash example</h2>
+
+<ul>
+<li><a href="https://github.com/widansible/elk-ansible">https://github.com/widansible/elk-ansible</a></li>
+<li><a href="https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack">https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack</a></li>
+<li><a href="https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html">https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html">https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>, <a href="https://blog.indonesiadot.com/tags/log/">log</a>, <a href="https://blog.indonesiadot.com/tags/logstash/">logstash</a>, <a href="https://blog.indonesiadot.com/tags/elk/">elk</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/16/kubernetes-references/">Kubernetes references</a></h1>
@@ -1081,132 +1146,6 @@ lvdisplay /dev/vg0/foo
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/disk/">disk</a>, <a href="https://blog.indonesiadot.com/tags/lvm/">lvm</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/12/ceph-tips/">Ceph tips</a></h1>
-        <span class="post-date">Mar 12, 2020</span>
-	
-
-<h2 id="remove-osd">remove osd</h2>
-
-<pre><code>systemctl stop ceph-osd.target
-systemctl stop ceph-osd@0
-ceph osd out 0
-ceph osd down 0
-ceph osd destroy 0
-ceph osd destroy 0 --yes-i-really-mean-it
-ceph osd rm 0
-ceph osd crush rm osd.0
-ceph auth del osd.0
-
-ceph-volume lvm zap /dev/sdX --destroy
-</code></pre>
-
-<ul>
-<li><a href="https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87">https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87</a></li>
-<li><a href="https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/">https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/</a></li>
-</ul>
-
-<h2 id="all-about-pg-num">all about pg_num</h2>
-
-<ul>
-<li><a href="https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox">https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox</a></li>
-</ul>
-
-<h2 id="ceph-one-single-node">ceph one / single node</h2>
-
-<pre><code>ceph osd getcrushmap -o crush_map_compressed
-crushtool -d crush_map_compressed -o crush_map_decompressed
-vi crush_map_decompressed
-</code></pre>
-
-<p>lalu cari bagian:</p>
-
-<pre><code>step chooseleaf firstn 0 type host
-</code></pre>
-
-<p>rubah menjadi:</p>
-
-<pre><code>step chooseleaf firstn 0 type osd
-</code></pre>
-
-<p>lalu insert hasilnya</p>
-
-<pre><code>crushtool -c crush_map_decompressed -o new_crush_map_compressed
-ceph osd setcrushmap -i new_crush_map_compressed
-ceph -s
-</code></pre>
-
-<ul>
-<li><a href="https://linoxide.com/linux-how-to/hwto-configure-single-node-ceph-cluster/">https://linoxide.com/linux-how-to/hwto-configure-single-node-ceph-cluster/</a></li>
-</ul>
-
-<p>Tutorial ceph bahasa indonesia</p>
-
-<ul>
-<li><a href="https://denstorial.blogspot.com/2019/01/tutorial.setup.ceph.storage.cluster.part.1.html">https://denstorial.blogspot.com/2019/01/tutorial.setup.ceph.storage.cluster.part.1.html</a></li>
-<li><a href="https://denstorial.blogspot.com/2019/02/troubleshooting.ceph.html">https://denstorial.blogspot.com/2019/02/troubleshooting.ceph.html</a></li>
-</ul>
-
-<h2 id="pg-placement-group-pg-num">PG (Placement Group) / pg_num</h2>
-
-<ul>
-<li><a href="https://docs.ceph.com/docs/mimic/rados/operations/placement-groups/">https://docs.ceph.com/docs/mimic/rados/operations/placement-groups/</a></li>
-<li><a href="https://www.sebastien-han.fr/blog/2013/03/12/ceph-change-pg-number-on-the-fly/">https://www.sebastien-han.fr/blog/2013/03/12/ceph-change-pg-number-on-the-fly/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ceph/">ceph</a>, <a href="https://blog.indonesiadot.com/tags/storage/">storage</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/10/lxd-lxc/">LXD-LXC</a></h1>
-        <span class="post-date">Mar 10, 2020</span>
-	
-
-<h2 id="lxc-set-static-ip">lxc set static ip</h2>
-
-<pre><code>lxc stop c1
-lxc network attach lxdbr0 c1 eth0 eth0
-lxc config device set c1 eth0 ipv4.address 10.99.10.42
-lxc start c1
-</code></pre>
-
-<ul>
-<li><a href="https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4">https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4</a></li>
-</ul>
-
-<h2 id="lxc-privileged-to-unprivileged">lxc privileged to unprivileged</h2>
-
-<p>Pada saat container (CT) lxc dalam unprivileged mode memiliki hak terbatas seperti akses ke device dan beberapa lainnya.</p>
-
-<p>Contoh pada saat menjalankan docker itu ada pesan error <em>Failed to reset devices.list on /system.slice</em></p>
-
-<p>Workaround nya adalah dengan membuat CT menjadi privileged mode, caranya yaitu:
-- backup CT
-- restore CT dengan uncheck unprivileged mode</p>
-
-<ul>
-<li><a href="https://github.com/lxc/lxd/issues/2004">https://github.com/lxc/lxd/issues/2004</a></li>
-<li><a href="https://forum.proxmox.com/threads/convert-privileged-to-unprivileged-container.31066/">https://forum.proxmox.com/threads/convert-privileged-to-unprivileged-container.31066/</a></li>
-</ul>
-
-<h2 id="rename-lxc-container">rename lxc container</h2>
-
-<pre><code>lxc move [ct-lama] [ct-baru]
-</code></pre>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ubuntu/">ubuntu</a>, <a href="https://blog.indonesiadot.com/tags/lxd/">lxd</a>, <a href="https://blog.indonesiadot.com/tags/lxc/">lxc</a>
 	 <hr/>
     </div>
   

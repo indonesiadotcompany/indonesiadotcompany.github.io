@@ -7,13 +7,48 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/tags/artifactory/</loc>
+    <lastmod>2020-08-04T17:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/artifacts/</loc>
+    <lastmod>2020-08-04T17:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2020-07-15T08:17:54+07:00</lastmod>
+    <lastmod>2020-08-04T17:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/jfrog/</loc>
+    <lastmod>2020-08-04T17:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/08/04/jfrog-for-beginner/</loc>
+    <lastmod>2020-08-04T17:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2020-07-15T08:17:54+07:00</lastmod>
+    <lastmod>2020-08-04T17:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2020-08-04T17:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/repository/</loc>
+    <lastmod>2020-08-04T17:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2020-08-04T17:17:54+07:00</lastmod>
   </url>
   
   <url>
@@ -22,17 +57,7 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2020-07-15T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/python/</loc>
-    <lastmod>2020-07-15T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
     <lastmod>2020-07-15T08:17:54+07:00</lastmod>
   </url>
   
@@ -69,6 +94,16 @@
   <url>
     <loc>https://blog.indonesiadot.com/tags/zfs/</loc>
     <lastmod>2020-07-10T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/iptables/</loc>
+    <lastmod>2020-07-08T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/07/08/iptables-tips/</loc>
+    <lastmod>2020-07-08T08:17:54+07:00</lastmod>
   </url>
   
   <url>
@@ -668,11 +703,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</loc>
-    <lastmod>2020-01-14T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/repository/</loc>
     <lastmod>2020-01-14T08:17:54+07:00</lastmod>
   </url>
   

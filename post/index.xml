@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Jul 2020 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2020 17:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jfrog for Beginner</title>
+      <link>https://blog.indonesiadot.com/2020/08/04/jfrog-for-beginner/</link>
+      <pubDate>Tue, 04 Aug 2020 17:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/08/04/jfrog-for-beginner/</guid>
+      <description>Install jfrog di ubuntu https://websiteforstudents.com/how-to-install-jfrog-artifactory-on-ubuntu-18-04-16-04/
+apt install wget software-properties-common apt-transport-https apt-get install openjdk-8-jdk openjdk-8-doc wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add - add-apt-repository &amp;quot;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&amp;quot; apt-get update apt install jfrog-artifactory-oss  Membuat repository / artifacts baru di jfrog klik menu administration, lalu klik menu repositories (sebelah kiri), lalu klik + New Local Repository (sebelah kanan) klik / pilih generic, lalu isi repository key atau nama repository dengan apa saja yg diinginkan misal ansible-test-report klik save  test upload dan download via curl buat dahulu bbrp file, misal test.</description>
+    </item>
     
     <item>
       <title>Multi python on virtualenv using pyenv</title>
@@ -43,6 +53,18 @@ auto lo iface lo inet loopback auto ens192 iface ens192 inet static address 10.1
  https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/ https://pve.proxmox.com/wiki/ZFS_on_Linux  Proxmox cloud-init Ref:
  https://cloud.centos.org/centos/7/images/ https://pve.proxmox.com/wiki/Cloud-Init_Support https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/  upgrade proxmox 5 to 6 https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0
 tmux pve5to6 #make sure it&#39;s ok systemctl stop pve-ha-lrm systemctl stop pve-ha-crm echo &amp;quot;deb http://download.proxmox.com/debian/corosync-3/ stretch main&amp;quot; &amp;gt; /etc/apt/sources.list.d/corosync3.list apt update apt dist-upgrade systemctl start pve-ha-lrm systemctl start pve-ha-crm sed -i &#39;s/stretch/buster/g&#39; /etc/apt/sources.list apt update apt dist-upgrade rm /etc/apt/sources.list.d/corosync3.list  </description>
+    </item>
+    
+    <item>
+      <title>iptables tips</title>
+      <link>https://blog.indonesiadot.com/2020/07/08/iptables-tips/</link>
+      <pubDate>Wed, 08 Jul 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/07/08/iptables-tips/</guid>
+      <description>iptables adalah program utility untuk seting firewall di linux.
+Flush All Rules, Delete All Chains, and Accept All  https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules  This section will show you how to flush all of your firewall rules, tables, and chains, and allow all network traffic.
+Note: This will effectively disable your firewall. You should only follow this section if you want to start over the configuration of your firewall.
+First, set the default policies for each of the built-in chains to ACCEPT.</description>
     </item>
     
     <item>
