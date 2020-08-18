@@ -103,3 +103,14 @@ Referensi:
 Ref:
 
 * http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_08_02.html#sect_08_02_02
+
+## /bin/bash^M: bad interpreter: No such file or directory
+* https://askubuntu.com/questions/304999/not-able-to-execute-a-sh-file-bin-bashm-bad-interpreter
+
+The ^M is a carriage return character. Linux uses the line feed character to mark the end of a line, whereas Windows uses the two-character sequence CR LF. Your file has Windows line endings, which is confusing Linux.
+
+Remove the spurious CR characters. You can do it with the following command:
+```
+sed -i -e 's/\r$//' create_mgw_3shelf_6xIPNI1P.sh
+```
+
