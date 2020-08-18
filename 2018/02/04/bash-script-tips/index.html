@@ -753,6 +753,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -897,6 +903,19 @@ fi
 <ul>
 <li><a href="http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_08_02.html#sect_08_02_02">http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_08_02.html#sect_08_02_02</a></li>
 </ul>
+
+<h2 id="bin-bash-m-bad-interpreter-no-such-file-or-directory">/bin/bash^M: bad interpreter: No such file or directory</h2>
+
+<ul>
+<li><a href="https://askubuntu.com/questions/304999/not-able-to-execute-a-sh-file-bin-bashm-bad-interpreter">https://askubuntu.com/questions/304999/not-able-to-execute-a-sh-file-bin-bashm-bad-interpreter</a></li>
+</ul>
+
+<p>The ^M is a carriage return character. Linux uses the line feed character to mark the end of a line, whereas Windows uses the two-character sequence CR LF. Your file has Windows line endings, which is confusing Linux.</p>
+
+<p>Remove the spurious CR characters. You can do it with the following command:</p>
+
+<pre><code>sed -i -e 's/\r$//' create_mgw_3shelf_6xIPNI1P.sh
+</code></pre>
 
 </div>
 

@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Aug 2020 17:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible sudoers</title>
+      <link>https://blog.indonesiadot.com/2020/08/11/ansible-sudoers/</link>
+      <pubDate>Tue, 11 Aug 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/08/11/ansible-sudoers/</guid>
+      <description>Contoh  https://code-maven.com/enable-ansible-passwordless-sudo https://stackoverflow.com/questions/37333305/ansible-create-a-user-with-sudo-privileges
+- hosts: all tasks: - lineinfile: path: /etc/sudoers state: present regexp: &#39;^%sudo&#39; line: &#39;%sudo ALL=(ALL) NOPASSWD: ALL&#39; validate: &#39;visudo -cf %s&#39;  contoh lain
+- name: Make sure we have a &#39;wheel&#39; group group: name: wheel state: present - name: Allow &#39;wheel&#39; group to have passwordless sudo lineinfile: dest: /etc/sudoers state: present regexp: &#39;^%wheel&#39; line: &#39;%wheel ALL=(ALL) NOPASSWD: ALL&#39; validate: &#39;visudo -cf %s&#39; - name: Add sudoers users to wheel group user: name=deployer groups=wheel append=yes state=present createhome=yes - name: Set up authorized keys for the deployer user authorized_key: user=deployer key=&amp;quot;{{item}}&amp;quot; with_file: - /home/railsdev/.</description>
+    </item>
     
     <item>
       <title>Jfrog for Beginner</title>

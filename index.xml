@@ -5,9 +5,68 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2020</rights>
-    <updated>2020-08-04 17:17:54 &#43;0700 WIB</updated>
+    <updated>2020-08-11 08:17:54 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>Ansible sudoers</title>
+          <link>https://blog.indonesiadot.com/2020/08/11/ansible-sudoers/</link>
+          <pubDate>Tue, 11 Aug 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/08/11/ansible-sudoers/</guid>
+          <description>
+
+&lt;h2 id=&#34;contoh&#34;&gt;Contoh&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://code-maven.com/enable-ansible-passwordless-sudo&#34;&gt;https://code-maven.com/enable-ansible-passwordless-sudo&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/37333305/ansible-create-a-user-with-sudo-privileges&#34;&gt;https://stackoverflow.com/questions/37333305/ansible-create-a-user-with-sudo-privileges&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- hosts: all
+tasks:
+- lineinfile:
+    path: /etc/sudoers
+    state: present
+    regexp: &#39;^%sudo&#39;
+    line: &#39;%sudo ALL=(ALL) NOPASSWD: ALL&#39;
+    validate: &#39;visudo -cf %s&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;contoh lain&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- name: Make sure we have a &#39;wheel&#39; group
+group:
+name: wheel
+state: present
+
+- name: Allow &#39;wheel&#39; group to have passwordless sudo
+lineinfile:
+dest: /etc/sudoers
+state: present
+regexp: &#39;^%wheel&#39;
+line: &#39;%wheel ALL=(ALL) NOPASSWD: ALL&#39;
+validate: &#39;visudo -cf %s&#39;
+
+- name: Add sudoers users to wheel group
+user:
+name=deployer
+groups=wheel
+append=yes
+state=present
+createhome=yes
+
+- name: Set up authorized keys for the deployer user
+authorized_key: user=deployer key=&amp;quot;{{item}}&amp;quot;
+with_file:
+- /home/railsdev/.ssh/id_rsa.pub
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
       
     
       
@@ -6521,6 +6580,19 @@ fi
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_08_02.html#sect_08_02_02&#34;&gt;http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_08_02.html#sect_08_02_02&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&#34;bin-bash-m-bad-interpreter-no-such-file-or-directory&#34;&gt;/bin/bash^M: bad interpreter: No such file or directory&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://askubuntu.com/questions/304999/not-able-to-execute-a-sh-file-bin-bashm-bad-interpreter&#34;&gt;https://askubuntu.com/questions/304999/not-able-to-execute-a-sh-file-bin-bashm-bad-interpreter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The ^M is a carriage return character. Linux uses the line feed character to mark the end of a line, whereas Windows uses the two-character sequence CR LF. Your file has Windows line endings, which is confusing Linux.&lt;/p&gt;
+
+&lt;p&gt;Remove the spurious CR characters. You can do it with the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sed -i -e &#39;s/\r$//&#39; create_mgw_3shelf_6xIPNI1P.sh
+&lt;/code&gt;&lt;/pre&gt;
 </description>
         </item>
       

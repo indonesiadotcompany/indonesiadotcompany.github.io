@@ -7,17 +7,52 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
+    <lastmod>2020-08-11T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/08/11/ansible-sudoers/</loc>
+    <lastmod>2020-08-11T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/</loc>
+    <lastmod>2020-08-11T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
+    <lastmod>2020-08-11T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/playbook/</loc>
+    <lastmod>2020-08-11T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2020-08-11T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/sudo/</loc>
+    <lastmod>2020-08-11T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2020-08-11T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/tags/artifactory/</loc>
     <lastmod>2020-08-04T17:17:54+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.indonesiadot.com/tags/artifacts/</loc>
-    <lastmod>2020-08-04T17:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/</loc>
     <lastmod>2020-08-04T17:17:54+07:00</lastmod>
   </url>
   
@@ -32,22 +67,7 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2020-08-04T17:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2020-08-04T17:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/repository/</loc>
-    <lastmod>2020-08-04T17:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
     <lastmod>2020-08-04T17:17:54+07:00</lastmod>
   </url>
   
@@ -119,11 +139,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/tags/rhel/</loc>
     <lastmod>2020-07-02T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
-    <lastmod>2020-06-30T12:17:54+07:00</lastmod>
   </url>
   
   <url>

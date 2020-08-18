@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Aug 2020 17:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ansible</title>
+      <link>https://blog.indonesiadot.com/tags/ansible/</link>
+      <pubDate>Tue, 11 Aug 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://blog.indonesiadot.com/tags/linux/</link>
+      <pubDate>Tue, 11 Aug 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>playbook</title>
+      <link>https://blog.indonesiadot.com/tags/playbook/</link>
+      <pubDate>Tue, 11 Aug 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/playbook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sudo</title>
+      <link>https://blog.indonesiadot.com/tags/sudo/</link>
+      <pubDate>Tue, 11 Aug 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/sudo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>artifactory</title>
@@ -35,15 +71,6 @@
       <pubDate>Tue, 04 Aug 2020 17:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/jfrog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://blog.indonesiadot.com/tags/linux/</link>
-      <pubDate>Tue, 04 Aug 2020 17:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -134,15 +161,6 @@
       <pubDate>Thu, 02 Jul 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/rhel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ansible</title>
-      <link>https://blog.indonesiadot.com/tags/ansible/</link>
-      <pubDate>Tue, 30 Jun 2020 12:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
       <description></description>
     </item>
     

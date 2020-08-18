@@ -754,6 +754,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -784,6 +790,39 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/magic-of-sed/">Magic of Sed</a></h1>
+        <span class="post-date">Oct 14, 2019</span>
+	
+
+<h2 id="insert-every-line-in-linux">Insert every line in linux</h2>
+
+<pre><code>sed 's/^/apt-get purge -y /' aptwantopurge.txt &gt; aptpurge.txt
+</code></pre>
+
+<h2 id="comment-out-a-line-that-contain-string">comment out a line that contain string</h2>
+
+<pre><code>sed -i '/ 2001 /s/^/#/' file
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.google.com/search?q=insert+every+line+linux&amp;oq=insert+every+line+linux">https://www.google.com/search?q=insert+every+line+linux&amp;oq=insert+every+line+linux</a></li>
+<li><a href="https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line">https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line</a></li>
+<li><a href="https://www.google.com/search?q=sed+cheatsheet&amp;oq=sed+cheatsheet">https://www.google.com/search?q=sed+cheatsheet&amp;oq=sed+cheatsheet</a></li>
+<li><a href="https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521">https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521</a></li>
+<li><a href="https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file">https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/sed/">sed</a>, <a href="https://blog.indonesiadot.com/tags/bash/">bash</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/">DOH DNS over HTTPS</a></h1>
@@ -1362,55 +1401,6 @@ git push origin hugo
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/">Proxmox optimized disk for auto trim / shrink</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<p>Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari <em>thin provision storage</em> atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.</p>
-
-<p>Persyaratan adalah:</p>
-
-<ul>
-<li>menggunakan <em>thin provisioned backing storage</em> seperti qcow2, thin-lvm, zfs pada server proxmox nya</li>
-<li>menggunakan Virtio SCSI controller pada guest option vm nya</li>
-<li>Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya</li>
-<li>Tambahkan discard mount options di /etc/fstab nya guest vm</li>
-<li>Enable fstrim.timer pada systemctl</li>
-</ul>
-
-<p>Adapun langkahnya, disini dilakukan perubahan pada VM yang sebelumnya telah terbuat dengan Virtio disk, dari disk yang kedua dari VM, agar lebih aman, dirubah satu persatu, dimulai dari disk kedua terlebih dahulu:</p>
-
-<ul>
-<li>edit dulu /etc/fstab bagian disk dari /dev/vdb1 menjadi /dev/sda1 (sda untuk drive scsi / sata, untuk lebih aman nya di komen dulu bagian disk /hdbck, untuk di mount manual, agar pada saat boot jika salah tidak nyangkut)</li>
-<li>shutdown vm</li>
-<li>detach disk</li>
-<li>edit disk, menjadi SCSI dan klik bagian advanced, lalu check discard</li>
-<li>start vm</li>
-<li>setelah login, jalankan fstrim -v /hdbck/</li>
-</ul>
-
-<p>Note:</p>
-
-<ul>
-<li>Untuk perubahan selanjutnya pada disk yang pertama, di edit dulu /etc/fstab nya, misal /dev/vda1 menjadi /dev/sda1, dan /dev/sda1 sebelumnya yg disk kedua yg telah di edit menjadi SCSI menjadi /dev/sdb1, lalu baru lakukan seperti langkah diatas dari shutdown vm sampai jalankan fstrim.</li>
-<li>Masukan juga pada crontab, agar dijalankan fstrim setiap bulan, jika memakai centos 6 dan dibawahnya</li>
-<li>Untuk membuktikannya, sambil mengecek di server proxmox dengan menggunakan command <code>zfs list</code> jika memakai zfs, <code>lvs</code> atau <code>lvdisplay</code> untuk thin-lvm, atau <code>du -sch</code> jika memakai qcow2 untuk mengetahui besar file sebelum dan setelah di guest vm nya dijalankan command <code>fstrim -av</code></li>
-</ul>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://pve.proxmox.com/wiki/Shrink_Qcow2_Disk_Files">https://pve.proxmox.com/wiki/Shrink_Qcow2_Disk_Files</a></li>
-<li><a href="https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/">https://kparal.wordpress.com/2017/10/06/automatically-shrink-your-vm-disk-images-when-you-delete-files/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/virtualization/">virtualization</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   
