@@ -759,6 +759,26 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -915,6 +935,40 @@ fi
 <p>Remove the spurious CR characters. You can do it with the following command:</p>
 
 <pre><code>sed -i -e 's/\r$//' create_mgw_3shelf_6xIPNI1P.sh
+</code></pre>
+
+<h2 id="redirect-error-output-to-file">Redirect error output to file</h2>
+
+<ul>
+<li><a href="https://www.cyberciti.biz/faq/linux-redirect-error-output-to-file/">https://www.cyberciti.biz/faq/linux-redirect-error-output-to-file/</a></li>
+</ul>
+
+<p>Syntax To redirect all output to file
+The syntax is as follows to redirect output (stdout) as follows:</p>
+
+<pre><code>command-name &gt;  output.txt
+command-name &gt;  stdout.txt
+</code></pre>
+
+<p>Syntax To redirect all error to file
+The syntax is as follows to redirect errors (stderr) as follows:</p>
+
+<pre><code>command-name 2&gt; errors.txt
+command-name 2&gt; stderr.txt
+</code></pre>
+
+<p>Syntax to redirect both output (stdout) and errors (stderr) to different files
+The syntax:</p>
+
+<pre><code>command1 &gt; out.txt 2&gt; err.txt
+command2 -f -z -y &gt; out.txt 2&gt; err.txt
+</code></pre>
+
+<p>Syntax to redirect both output (stdout) and errors (stderr) to same file
+The syntax is:</p>
+
+<pre><code>command1 &gt; everything.txt 2&gt;&amp;1
+command1 -arg &gt; everything.txt 2&gt;&amp;1
 </code></pre>
 
 </div>

@@ -6,10 +6,29 @@
     <description>Recent content in tips on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jul 2020 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2020 08:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/tips/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Centos Tips</title>
+      <link>https://blog.indonesiadot.com/2020/09/02/centos-tips/</link>
+      <pubDate>Wed, 02 Sep 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/09/02/centos-tips/</guid>
+      <description>whatprovides  https://www.itzgeek.com/how-tos/mini-howtos/netstat-command-not-found-on-centos-7-rhel-7-quick-fix.html
+yum whatprovides netstat   net-tools-2.0-0.25.20131004git.el7.x86_64 : Basic networking tools Repo : @base Matched from: Filename : /usr/bin/netstat</description>
+    </item>
+    
+    <item>
+      <title>Windows tips</title>
+      <link>https://blog.indonesiadot.com/2020/08/25/windows-tips/</link>
+      <pubDate>Tue, 25 Aug 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/08/25/windows-tips/</guid>
+      <description> CURL windows  https://develop.zendesk.com/hc/en-us/articles/360001068567-Installing-and-using-cURL#install http://curl.haxx.se/download.html  </description>
+    </item>
     
     <item>
       <title>Proxmox Beginner</title>

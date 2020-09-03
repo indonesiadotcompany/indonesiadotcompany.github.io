@@ -760,6 +760,26 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -790,6 +810,150 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/">Linux Tips and Trick</a></h1>
+        <span class="post-date">Jan 29, 2018</span>
+	
+
+<h2 id="cron-without-sending-mail">cron without sending mail</h2>
+
+<p>tambahkan MAILTO=&ldquo;&rdquo; di awal cron nya tambahkan &gt;/dev/null 2&gt;&amp;&amp;1 atau &gt; /dev/null atau &gt; /dev/null 2&gt;&amp;1 || true di belakang command cron nya</p>
+
+<h2 id="linux-rm-file-list-too-long">linux rm file list too long</h2>
+
+<pre><code>cd direktoriyangfilenyabanyak
+ls -1 | wc -l &amp;&amp; time find . -type f -delete
+find . -type f -print -delete
+</code></pre>
+
+<h2 id="incron">incron</h2>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="http://inotify.aiken.cz/?section=incron&amp;page=faq&amp;lang=en">http://inotify.aiken.cz/?section=incron&amp;page=faq&amp;lang=en</a></li>
+</ul>
+
+<h2 id="rsync-only-existing-file">rsync only existing file</h2>
+
+<pre><code>rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/
+</code></pre>
+
+<h2 id="umask-follow-parent-setgid">Umask follow parent / setgid</h2>
+
+<pre><code>chmod g+s /namafolder
+</code></pre>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://unix.stackexchange.com/questions/117190/best-way-to-sync-files-copy-only-existing-files-and-only-if-newer-than-target">https://unix.stackexchange.com/questions/117190/best-way-to-sync-files-copy-only-existing-files-and-only-if-newer-than-target</a></li>
+<li><a href="https://superuser.com/questions/151911/how-to-make-new-file-permission-inherit-from-the-parent-directory">https://superuser.com/questions/151911/how-to-make-new-file-permission-inherit-from-the-parent-directory</a></li>
+</ul>
+
+<h2 id="awk-example">awk example</h2>
+
+<pre><code>docker images
+docker images | grep widharbor.birau.com
+docker images | grep widharbor.birau.com | wc -l
+docker images | grep widharbor.birau.com | awk '{ print $1 &quot;:&quot; $2 }'
+docker rmi `docker images | grep widharbor.birau.com | awk '{ print $1 &quot;:&quot; $2 }'`
+</code></pre>
+
+<ul>
+<li><a href="https://www.linuxtechi.com/awk-command-tutorial-with-examples/">https://www.linuxtechi.com/awk-command-tutorial-with-examples/</a></li>
+</ul>
+
+<h2 id="create-sparse-thin-loop-file">create sparse / thin loop file</h2>
+
+<p>You can use the seek parameter of dd to create a sparse file:</p>
+
+<pre><code>dd if=/dev/zero of=filesystem.img  bs=1k seek=1024M count=1
+losetup /dev/loop11 filesystem.img
+#or use below to automatically find and set to first unused device
+#losetup -f filesystem.img
+</code></pre>
+
+<p>would create a file which can get up to 1G in size but will only occupy the necessary space.</p>
+
+<ul>
+<li><a href="https://serverfault.com/questions/344518/in-linux-how-can-i-create-thin-provisioned-file-so-it-can-be-mounted-and-a-file">https://serverfault.com/questions/344518/in-linux-how-can-i-create-thin-provisioned-file-so-it-can-be-mounted-and-a-file</a></li>
+</ul>
+
+<h2 id="mount-exfat-usb-external-disk">mount exfat usb / external disk</h2>
+
+<pre><code>apt install exfat-fuse exfat-utils
+</code></pre>
+
+<ul>
+<li><a href="https://itsfoss.com/mount-exfat/">https://itsfoss.com/mount-exfat/</a></li>
+</ul>
+
+<h2 id="ssh-keygen-non-interactive">ssh-keygen non interactive</h2>
+
+<pre><code>ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N &quot;&quot;
+</code></pre>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/trick/">trick</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/28/mysql-tips-and-trick/">MySQL tips and trick</a></h1>
+        <span class="post-date">Jan 28, 2018</span>
+	<p><div><b><br></b></div><b><div><b>Mysql performance</b></div><div><b><br></b></div><div><b><a href="https://www.infoworld.com/article/0/database-administration/10-essential-performance-tips-for-mysql.html">https://www.infoworld.com/article/0/database-administration/10-essential-performance-tips-for-mysql.html</a></b></div><div><b><br></b></div><div><b>MySQL insert row with highest id</b><br></div></b><br>Lock tables customers write; $max = SELECT MAX( customer_id ) FROM customers; INSERT INTO customers( customer_id, firstname, surname ) VALUES ($max+1 , &lsquo;jim&rsquo;, &lsquo;sock&rsquo;) unlock tables;  ref: <a href="https://stackoverflow.com/questions/5360117/insert-and-set-value-with-max1-problems">https://stackoverflow.com/questions/5360117/insert-and-set-value-with-max1-problems</a><br><b><br></b><b>mysqldump routines triggers view</b><br><br>karena default nya mysql akan dump trigger, maka hanya store procedure / function atau yg dikenal dengan routines saja yang dimasukan parameter nya  mysqldump &ndash;routines &ndash;no-create-info &ndash;no-data &ndash;no-create-db &ndash;skip-opt <database> &gt; outputfile.sql mysqldump &ndash;routines &ndash;no-create-info &ndash;no-data &ndash;no-create-db &ndash;skip-opt <database> | gzip &gt; outputfile.sql.gz</database></database><br><database><database><b><br></b></database></database><database><database><b>mysql change definer of trigger</b></database></database><br><br>mysqldump &ndash;skip-opt &ndash;no-data &ndash;no-create-db &ndash;no-create-info &ndash;routines &ndash;add-drop-trigger <database> &gt; outputfile-trigger.sql  lalu edit outputfile-trigger.sql dengan merename user DEFINER dengan CURRENT_USER atau <code>namauser</code>@<code>namahost</code></database><br><database><database><database><br></database></database></database><database><database><database><b>mysql gui (free)</b></database></database></database><br><database><database><database><br></database></database></database><database><database><database><a href="https://www.mysql.com/products/workbench/">https://www.mysql.com/products/workbench/</a></database></database></database><br>mysql workbench has performance monitoring too :)<br><database><database><database><br></database></database></database><database><database><database><b><a href="https://www.google.co.id/search?q=mysql+change+from+innodb+to+myisam+table">https://www.google.co.id/search?q=mysql+change+from+innodb+to+myisam+table</a></b></database></database></database><br><database><database><database><br></database></database></database><database><database><database>ALTER TABLE table_name ENGINE = MyISAM;</database></database></database><br><database><database><database>ALTER TABLE table_name ENGINE = InnoDB;</database></database></database></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/mysql/">mysql</a>, <a href="https://blog.indonesiadot.com/tags/sql/">sql</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/28/magento-admin-tips-and-trick/">Magento Admin tips and trick</a></h1>
+        <span class="post-date">Jan 28, 2018</span>
+	<p>How to create admin user in Magento 2 via Command Line  bin/magento admin:user:create &ndash;admin-user=&ldquo;admin&rdquo; &ndash;admin-password=&ldquo;123123q&rdquo; &ndash;admin-email=&ldquo;admin@example.com&rdquo; &ndash;admin-firstname=&ldquo;Admin&rdquo; &ndash;admin-lastname=&ldquo;Admin&rdquo;</p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/e-commerce/">e-commerce</a>, <a href="https://blog.indonesiadot.com/tags/magento/">magento</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/27/install-solr-server/">Install solr server</a></h1>
+        <span class="post-date">Sep 27, 2017</span>
+	<p>Here are the steps for Install solr server - base of search engine for magento  these steps run on ubuntu 16.04, because we follow this <a href="http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html">http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html</a>, we must install jdk 7 from ppa, but ubuntu 16.04 default with jdk 8  <br><pre>add-apt-repository ppa:openjdk-r/ppa<br />apt update<br />apt-get install openjdk-7-jdk<br />apt install supervisor<br /><br />su - user<br />mkdir apps &amp;&amp; cd apps<br />wget <a href="https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz">https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz</a><br />tar xzf ../apache-solr-3.4.0.tgz<br />mv apache-solr-3.4.0 solr34<br />cp /var/www/magento/lib/Apache/Solr/conf/* solr34/example/solr/conf/<br />cat &gt;&gt; apps/solr34/example/logging.properties <br /><br /># Default global logging level:<br />.level = INFO<br /><br /># Write to a file:<br />handlers = java.util.logging.FileHandler<br /><br /># Write log messages in XML format:<br /># Use java.util.logging.SimpleFormatter to log like Solr logs to the screen by default<br />java.util.logging.FileHandler.formatter = java.util.logging.XMLFormatter<br /><br /># Log to the current working directory, with log files named solrxxx.log<br />java.util.logging.FileHandler.pattern = /home/ehbm2/logs/solr%u.log<br /><br />[CTRL-C]<br /><br />exit<br /><br />cat &gt;&gt; /etc/supervisor/conf.d/solr.conf <br /><br />[program:solr]<br />user=ehbm2<br />#directory=/home/ehbm2/apps/solr141/example<br />directory=/home/ehbm2/apps/solr34/example<br />command=java -Djava.util.logging.config.file=logging.properties -jar start.jar<br />autostart=true<br />autorestart=true<br /><br />[CTRL-C]<br /><br />/etc/init.d/supervisor restart<br /><br /></pre></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/e-commerce/">e-commerce</a>, <a href="https://blog.indonesiadot.com/tags/magento/">magento</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/20/magento-maintenance-mode/">Magento maintenance mode</a></h1>
+        <span class="post-date">Sep 20, 2017</span>
+	<p>To set magento 2 in maintenance mode and to make nice maintenance page.<br /><br />1. make / get maintenance image for our maintenance page, ie: maintenance.png<br /><br />2. put at pub/errors/default/images directory under magento root directory, ie: /var/www/magento/pub/errors/default/images/maintenance.png<br /><br />3. edit and save /var/www/magento/pub/errors/default/503.phtml<br /><br /><blockquote><img height="100%" src="images/maintenance.png" width="100%" /></blockquote><br />4. run bin/magento maintenance:enable from magento root directory<br /><br />that&rsquo;s it, and you can see nicer maintenance mode in magento 2<br /><br />To set magento 1 in maintenance mode and to make nice maintenance page.<br /><br />1. make / get maintenance image for our maintenance page, ie: maintenance.png<br /><br />2. put at errors/default/ directory under magento root directory, ie: /var/www/magento/errors/default/maintenance.png<br /><br />3. edit and save /var/www/magento/errors/default/503.phtml <blockquote><h1>We are currently in Maintenance</h1>                <p>The server is currently under maintenance to give better service</p></blockquote><p>4. create file maintenance.flag at magento root directory</p></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/e-commerce/">e-commerce</a>, <a href="https://blog.indonesiadot.com/tags/magento/">magento</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/20/belajar-kultur-spirulina/">Belajar Kultur Spirulina</a></h1>
@@ -840,299 +1004,6 @@
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/blog/">blog</a>, <a href="https://blog.indonesiadot.com/tags/web/">web</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2015/11/28/desember-2015/">desember 2015</a></h1>
-        <span class="post-date">Nov 28, 2015</span>
-	<p>sebentar lagi bulan desember 2015 :)</p>
-
-	<hr/>
-	
-	
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2014/01/02/intro-lanyon/">Intro Lanyon</a></h1>
-        <span class="post-date">Jan 2, 2014</span>
-	
-
-<p>Lanyon is an unassuming <a href="http://jekyllrb.com">Jekyll</a> theme that places content first by tucking away navigation in a hidden drawer. It&rsquo;s based on <a href="http://getpoole.com">Poole</a>, the Jekyll butler.</p>
-
-<h3 id="built-on-poole">Built on Poole</h3>
-
-<p>Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by <a href="https://twitter.com/mdo">@mdo</a>. Poole, and every theme built on it (like Lanyon here) includes the following:</p>
-
-<ul>
-<li>Complete Jekyll setup included (layouts, config, <a href="https://blog.indonesiadot.com/404">404</a>, <a href="https://blog.indonesiadot.com/index.xml">RSS feed</a>, posts, and <a href="https://blog.indonesiadot.com/about">example page</a>)</li>
-<li>Mobile friendly design and development</li>
-<li>Easily scalable text and component sizing with <code>rem</code> units in the CSS</li>
-<li>Support for a wide gamut of HTML elements</li>
-<li>Related posts (time-based, because Jekyll) below each post</li>
-<li>Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)</li>
-</ul>
-
-<h3 id="lanyon-features">Lanyon features</h3>
-
-<p>In addition to the features of Poole, Lanyon adds the following:</p>
-
-<ul>
-<li>Toggleable sliding sidebar (built with only CSS) via <strong>☰</strong> link in top corner</li>
-<li>Sidebar includes support for textual modules and a dynamically generated navigation with active link support</li>
-<li>Two orientations for content and sidebar, default (left sidebar) and <a href="https://github.com/poole/lanyon#reverse-layout">reverse</a> (right sidebar), available via <code>&lt;body&gt;</code> classes</li>
-<li><a href="https://github.com/poole/lanyon#themes">Eight optional color schemes</a>, available via <code>&lt;body&gt;</code> classes</li>
-</ul>
-
-<p><a href="https://github.com/poole/lanyon#readme">Head to the readme</a> to learn more.</p>
-
-<h3 id="browser-support">Browser support</h3>
-
-<p>Lanyon is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.</p>
-
-<h3 id="download">Download</h3>
-
-<p>Lanyon is developed on and hosted with GitHub. Head to the <a href="https://github.com/poole/lanyon">GitHub repository</a> for downloads, bug reports, and features requests.</p>
-
-<p>Thanks!</p>
-
-	<hr/>
-	
-	
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2014/01/02/intro-lanyon-again/">Intro Lanyon Again</a></h1>
-        <span class="post-date">Jan 2, 2014</span>
-	
-
-<p>Lanyon is an unassuming <a href="http://jekyllrb.com">Jekyll</a> theme that places content first by tucking away navigation in a hidden drawer. It&rsquo;s based on <a href="http://getpoole.com">Poole</a>, the Jekyll butler.</p>
-
-<h3 id="built-on-poole">Built on Poole</h3>
-
-<p>Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by <a href="https://twitter.com/mdo">@mdo</a>. Poole, and every theme built on it (like Lanyon here) includes the following:</p>
-
-<ul>
-<li>Complete Jekyll setup included (layouts, config, <a href="https://blog.indonesiadot.com/404">404</a>, <a href="https://blog.indonesiadot.com/index.xml">RSS feed</a>, posts, and <a href="https://blog.indonesiadot.com/about">example page</a>)</li>
-<li>Mobile friendly design and development</li>
-<li>Easily scalable text and component sizing with <code>rem</code> units in the CSS</li>
-<li>Support for a wide gamut of HTML elements</li>
-<li>Related posts (time-based, because Jekyll) below each post</li>
-<li>Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)</li>
-</ul>
-
-<h3 id="lanyon-features">Lanyon features</h3>
-
-<p>In addition to the features of Poole, Lanyon adds the following:</p>
-
-<ul>
-<li>Toggleable sliding sidebar (built with only CSS) via <strong>☰</strong> link in top corner</li>
-<li>Sidebar includes support for textual modules and a dynamically generated navigation with active link support</li>
-<li>Two orientations for content and sidebar, default (left sidebar) and <a href="https://github.com/poole/lanyon#reverse-layout">reverse</a> (right sidebar), available via <code>&lt;body&gt;</code> classes</li>
-<li><a href="https://github.com/poole/lanyon#themes">Eight optional color schemes</a>, available via <code>&lt;body&gt;</code> classes</li>
-</ul>
-
-<p><a href="https://github.com/poole/lanyon#readme">Head to the readme</a> to learn more.</p>
-
-<h3 id="browser-support">Browser support</h3>
-
-<p>Lanyon is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.</p>
-
-<h3 id="download">Download</h3>
-
-<p>Lanyon is developed on and hosted with GitHub. Head to the <a href="https://github.com/poole/lanyon">GitHub repository</a> for downloads, bug reports, and features requests.</p>
-
-<p>Thanks!</p>
-
-	<hr/>
-	
-	
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2014/01/02/introducing-lanyon/">Introducing Lanyon</a></h1>
-        <span class="post-date">Jan 2, 2014</span>
-	
-
-<p>Lanyon is an unassuming <a href="http://jekyllrb.com">Jekyll</a> theme that places content first by tucking away navigation in a hidden drawer. It&rsquo;s based on <a href="http://getpoole.com">Poole</a>, the Jekyll butler.</p>
-
-<h3 id="built-on-poole">Built on Poole</h3>
-
-<p>Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by <a href="https://twitter.com/mdo">@mdo</a>. Poole, and every theme built on it (like Lanyon here) includes the following:</p>
-
-<ul>
-<li>Complete Jekyll setup included (layouts, config, <a href="https://blog.indonesiadot.com/404">404</a>, <a href="https://blog.indonesiadot.com/index.xml">RSS feed</a>, posts, and <a href="https://blog.indonesiadot.com/about">example page</a>)</li>
-<li>Mobile friendly design and development</li>
-<li>Easily scalable text and component sizing with <code>rem</code> units in the CSS</li>
-<li>Support for a wide gamut of HTML elements</li>
-<li>Related posts (time-based, because Jekyll) below each post</li>
-<li>Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)</li>
-</ul>
-
-<h3 id="lanyon-features">Lanyon features</h3>
-
-<p>In addition to the features of Poole, Lanyon adds the following:</p>
-
-<ul>
-<li>Toggleable sliding sidebar (built with only CSS) via <strong>☰</strong> link in top corner</li>
-<li>Sidebar includes support for textual modules and a dynamically generated navigation with active link support</li>
-<li>Two orientations for content and sidebar, default (left sidebar) and <a href="https://github.com/poole/lanyon#reverse-layout">reverse</a> (right sidebar), available via <code>&lt;body&gt;</code> classes</li>
-<li><a href="https://github.com/poole/lanyon#themes">Eight optional color schemes</a>, available via <code>&lt;body&gt;</code> classes</li>
-</ul>
-
-<p><a href="https://github.com/poole/lanyon#readme">Head to the readme</a> to learn more.</p>
-
-<h3 id="browser-support">Browser support</h3>
-
-<p>Lanyon is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.</p>
-
-<h3 id="download">Download</h3>
-
-<p>Lanyon is developed on and hosted with GitHub. Head to the <a href="https://github.com/poole/lanyon">GitHub repository</a> for downloads, bug reports, and features requests.</p>
-
-<p>Thanks!</p>
-
-	<hr/>
-	
-	
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2014/01/01/example-content/">Example content</a></h1>
-        <span class="post-date">Jan 1, 2014</span>
-	
-
-<div class="message">
-  Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
-</div>
-
-<p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. <em>Aenean eu leo quam.</em> Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-
-<blockquote>
-<p>Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-</blockquote>
-
-<p>Etiam porta <strong>sem malesuada magna</strong> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-
-<h2 id="inline-html-elements">Inline HTML elements</h2>
-
-<p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
-
-<ul>
-<li><strong>To bold text</strong>, use <code>&lt;strong&gt;</code>.</li>
-<li><em>To italicize text</em>, use <code>&lt;em&gt;</code>.</li>
-<li>Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use <code>&lt;abbr&gt;</code>, with an optional <code>title</code> attribute for the full phrase.</li>
-<li>Citations, like <cite>&mdash; Mark otto</cite>, should use <code>&lt;cite&gt;</code>.</li>
-<li><del>Deleted</del> text should use <code>&lt;del&gt;</code> and <ins>inserted</ins> text should use <code>&lt;ins&gt;</code>.</li>
-<li>Superscript <sup>text</sup> uses <code>&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code>&lt;sub&gt;</code>.</li>
-</ul>
-
-<p>Most of these elements are styled by browsers with few modifications on our part.</p>
-
-<h2 id="heading">Heading</h2>
-
-<p>Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-
-<h3 id="code">Code</h3>
-
-<p>Cum sociis natoque penatibus et magnis dis <code>code element</code> montes, nascetur ridiculus mus.</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Example can be run directly in your JavaScript console
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// Create a function that takes two arguments and returns the sum of those arguments
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">adder</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Function(<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;return a + b&#34;</span>);
-
-<span style="color:#75715e">// Call the function
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">adder</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">6</span>);
-<span style="color:#75715e">// &gt; 8
-</span></code></pre></div>
-
-<p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-
-<h3 id="lists">Lists</h3>
-
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-
-<ul>
-<li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-<li>Donec id elit non mi porta gravida at eget metus.</li>
-<li>Nulla vitae elit libero, a pharetra augue.</li>
-</ul>
-
-<p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-
-<ol>
-<li>Vestibulum id ligula porta felis euismod semper.</li>
-<li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-<li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-</ol>
-
-<p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
-
-<dl>
-  <dt>HyperText Markup Language (HTML)</dt>
-  <dd>The language used to describe and define the content of a Web page</dd>
-
-  <dt>Cascading Style Sheets (CSS)</dt>
-  <dd>Used to describe the appearance of Web content</dd>
-
-  <dt>JavaScript (JS)</dt>
-  <dd>The programming language used to build advanced Web sites and applications</dd>
-</dl>
-
-<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-
-<h3 id="tables">Tables</h3>
-
-<p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Upvotes</th>
-      <th>Downvotes</th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td>Totals</td>
-      <td>21</td>
-      <td>23</td>
-    </tr>
-  </tfoot>
-  <tbody>
-    <tr>
-      <td>Alice</td>
-      <td>10</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>Bob</td>
-      <td>4</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Charlie</td>
-      <td>7</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-
-<hr />
-
-<p>Want to see something else added? <a href="https://github.com/poole/poole/issues/new">Open an issue.</a></p>
-
-	<hr/>
-	
-	
 	 <hr/>
     </div>
   

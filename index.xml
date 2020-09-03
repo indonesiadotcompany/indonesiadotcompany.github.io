@@ -5,9 +5,271 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2020</rights>
-    <updated>2020-08-11 08:17:54 &#43;0700 WIB</updated>
+    <updated>2020-09-02 18:17:54 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>LDAP on Centos 7</title>
+          <link>https://blog.indonesiadot.com/2020/09/02/ldap-on-centos-7/</link>
+          <pubDate>Wed, 02 Sep 2020 18:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/09/02/ldap-on-centos-7/</guid>
+          <description>
+
+&lt;h2 id=&#34;server-setup&#34;&gt;Server setup&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html&#34;&gt;https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yum -y install openldap compat-openldap openldap-clients openldap-servers
+systemctl start slapd
+systemctl enable slapd
+slappasswd -h {SSHA} -s ldppassword
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;make note of ldappassword&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;create file db.ldif&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dn: olcDatabase={2}hdb,cn=config
+changetype: modify
+replace: olcSuffix
+olcSuffix: dc=itzgeek,dc=local
+
+dn: olcDatabase={2}hdb,cn=config
+changetype: modify
+replace: olcRootDN
+olcRootDN: cn=ldapadm,dc=itzgeek,dc=local
+
+dn: olcDatabase={2}hdb,cn=config
+changetype: modify
+replace: olcRootPW
+olcRootPW: {SSHA}d/thexcQUuSfe3rx3gRaEhHpNJ52N8D3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;replace the value of olcRootPW with ldappassword above&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ldapmodify -Y EXTERNAL  -H ldapi:/// -f db.ldif
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;create monitor.ldif&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dn: olcDatabase={1}monitor,cn=config
+changetype: modify
+replace: olcAccess
+olcAccess: {0}to * by dn.base=&amp;quot;gidNumber=0+uidNumber=0,cn=peercred,cn=external, cn=auth&amp;quot; read by dn.base=&amp;quot;cn=ldapadm,dc=itzgeek,dc=local&amp;quot; read by * none
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;then run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ldapmodify -Y EXTERNAL  -H ldapi:/// -f monitor.ldif
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;setup-ldap-database&#34;&gt;setup ldap database&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+chown ldap:ldap /var/lib/ldap/*
+ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/cosine.ldif
+ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/nis.ldif 
+ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/inetorgperson.ldif
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;create base.ldif&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dn: dc=itzgeek,dc=local
+dc: itzgeek
+objectClass: top
+objectClass: domain
+
+dn: cn=ldapadm ,dc=itzgeek,dc=local
+objectClass: organizationalRole
+cn: ldapadm
+description: LDAP Manager
+
+dn: ou=People,dc=itzgeek,dc=local
+objectClass: organizationalUnit
+ou: People
+
+dn: ou=Group,dc=itzgeek,dc=local
+objectClass: organizationalUnit
+ou: Group
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;build the directory structure&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ldapadd -x -W -D &amp;quot;cn=ldapadm,dc=itzgeek,dc=local&amp;quot; -f base.ldif
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;create ldap user, create file raj.ldif&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dn: uid=raj,ou=People,dc=itzgeek,dc=local
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: raj
+uid: raj
+uidNumber: 9999
+gidNumber: 100
+homeDirectory: /home/raj
+loginShell: /bin/bash
+gecos: Raj [Admin (at) ITzGeek]
+userPassword: {crypt}x
+shadowLastChange: 17058
+shadowMin: 0
+shadowMax: 99999
+shadowWarning: 7
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;create it&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ldapadd -x -W -D &amp;quot;cn=ldapadm,dc=itzgeek,dc=local&amp;quot; -f raj.ldif
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;assign password to the user&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ldappasswd -s password123 -W -D &amp;quot;cn=ldapadm,dc=itzgeek,dc=local&amp;quot; -x &amp;quot;uid=raj,ou=People,dc=itzgeek,dc=local&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;verify ldap entries&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ldapsearch -x cn=raj -b dc=itzgeek,dc=local
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;to delete the user&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ldapdelete -W -D &amp;quot;cn=ldapadm,dc=itzgeek,dc=local&amp;quot; &amp;quot;uid=raj,ou=People,dc=itzgeek,dc=local&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;enable-ldap-logging&#34;&gt;enable ldap logging&lt;/h3&gt;
+
+&lt;p&gt;add below line to /etc/rsyslog.conf&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;local4.* /var/log/ldap.log
+#*
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;then restart rsyslog&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;systemctl restart rsyslog
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;client-configuration&#34;&gt;client configuration&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html/2&#34;&gt;https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html/2&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://tylersguides.com/guides/configuring-openldap-authentication-centos-7/&#34;&gt;https://tylersguides.com/guides/configuring-openldap-authentication-centos-7/&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yum install -y openldap-clients nss-pam-ldapd
+authconfig --enableldap --enableldapauth --ldapserver=192.168.1.10 --ldapbasedn=&amp;quot;dc=itzgeek,dc=local&amp;quot; --enablemkhomedir --update
+systemctl restart  nslcd
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;verify-ldap-login&#34;&gt;verify ldap login&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;getent passwd raj
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;then test ssh to the ldap client with newly created user&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Centos Tips</title>
+          <link>https://blog.indonesiadot.com/2020/09/02/centos-tips/</link>
+          <pubDate>Wed, 02 Sep 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/09/02/centos-tips/</guid>
+          <description>
+
+&lt;h2 id=&#34;whatprovides&#34;&gt;whatprovides&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.itzgeek.com/how-tos/mini-howtos/netstat-command-not-found-on-centos-7-rhel-7-quick-fix.html&#34;&gt;https://www.itzgeek.com/how-tos/mini-howtos/netstat-command-not-found-on-centos-7-rhel-7-quick-fix.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yum whatprovides netstat
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;net-tools-2.0-0.25.20131004git.el7.x86_64 : Basic networking tools
+Repo        : @base
+Matched from:
+Filename    : /usr/bin/netstat&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>LXC on Centos</title>
+          <link>https://blog.indonesiadot.com/2020/08/27/lxc-on-centos/</link>
+          <pubDate>Thu, 27 Aug 2020 18:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/08/27/lxc-on-centos/</guid>
+          <description>
+
+&lt;h2 id=&#34;lxc-install-on-centos&#34;&gt;LXC install on centos&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tecmint.com/install-create-run-lxc-linux-containers-on-centos/&#34;&gt;https://www.tecmint.com/install-create-run-lxc-linux-containers-on-centos/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Samba share windows</title>
+          <link>https://blog.indonesiadot.com/2020/08/25/samba-share-windows/</link>
+          <pubDate>Tue, 25 Aug 2020 15:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/08/25/samba-share-windows/</guid>
+          <description>
+
+&lt;h2 id=&#34;setup-samba-on-ubuntu-linux&#34;&gt;Setup samba on ubuntu linux&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://adrianmejia.com/how-to-set-up-samba-in-ubuntu-linux-and-access-it-in-mac-os-and-windows/&#34;&gt;https://adrianmejia.com/how-to-set-up-samba-in-ubuntu-linux-and-access-it-in-mac-os-and-windows/&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apt install samba cifs-utils
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;lalu edit /etc/samba/smb.conf&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;systemctl restart smbd
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;test via windows, dengan mengakses \ip.atau.hostname.server&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Windows tips</title>
+          <link>https://blog.indonesiadot.com/2020/08/25/windows-tips/</link>
+          <pubDate>Tue, 25 Aug 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/08/25/windows-tips/</guid>
+          <description>
+
+&lt;h2 id=&#34;curl-windows&#34;&gt;CURL windows&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://develop.zendesk.com/hc/en-us/articles/360001068567-Installing-and-using-cURL#install&#34;&gt;https://develop.zendesk.com/hc/en-us/articles/360001068567-Installing-and-using-cURL#install&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://curl.haxx.se/download.html&#34;&gt;http://curl.haxx.se/download.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
       
     
       
@@ -472,6 +734,29 @@ load data local infile &#39;/tmp/hosts.txt&#39; into table hosts fields terminat
 &lt;li&gt;&lt;a href=&#34;https://www.postgresql.org/docs/9.1/backup-dump.html&#34;&gt;https://www.postgresql.org/docs/9.1/backup-dump.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.programmersought.com/article/23102305281/&#34;&gt;https://www.programmersought.com/article/23102305281/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/10762239/mysql-enable-load-data-local-infile&#34;&gt;https://stackoverflow.com/questions/10762239/mysql-enable-load-data-local-infile&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;postgresql-show-data-tables&#34;&gt;Postgresql show data tables&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://kb.objectrocket.com/postgresql/connect-to-postgresql-and-show-the-table-schema-967&#34;&gt;https://kb.objectrocket.com/postgresql/connect-to-postgresql-and-show-the-table-schema-967&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;psql -h 10.11.8.16 -U awxtower1
+\c awxtower1db
+\d
+\q
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;postgresql-create-remote-user-and-database&#34;&gt;Postgresql create remote user and database&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/&#34;&gt;https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;create database awxtower1db;
+create user awxtower1 with encrypted password &#39;awxtower1&#39;;
+grant all privileges on database awxtower1 to awxtower1;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -3164,6 +3449,40 @@ bash unifi-5.12.35.sh
 &lt;li&gt;&lt;a href=&#34;https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html&#34;&gt;https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/&#34;&gt;https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&#34;offline-ansible-tower-bundle&#34;&gt;Offline ansible tower bundle&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/&#34;&gt;https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;wget https://releases.ansible.com/ansible-tower/setup-bundle/ansible-tower-setup-bundle-3.7.2-1.tar.gz
+tar xzf ansible-tower-setup-bundle-3.7.2-1.tar.gz
+cd ansible-tower-setup-bundle-3.7.2-1
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;edit inventory&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yum install yum-utils
+yum install createrepo
+mkdir bundle/el7/repos/others
+cd bundle/el7/repos/others
+cat ../../base_packages.txt | xargs yumdownloader
+createrepo .
+cat &amp;lt;&amp;lt; EOF &amp;gt;&amp;gt; ~/ansible-tower-setup-bundle-3.7.2-1/roles/repos_el/templates/tower_bundle_el7.j2
+
+[others]
+name=Others
+baseurl=file://{{ bundle_install_folder }}/others
+enabled=1
+gpgcheck=0
+EOF
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;setelah selesai, lalu re-package the bundle&lt;/p&gt;
+
+&lt;p&gt;note:
+* ada bbrp paket yg dibutuhkan sebelum menjalankan setup.sh, paket ini bisa didapatkan dengan menginstall terlebih dahulu&lt;/p&gt;
 </description>
         </item>
       
@@ -6592,6 +6911,40 @@ fi
 &lt;p&gt;Remove the spurious CR characters. You can do it with the following command:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sed -i -e &#39;s/\r$//&#39; create_mgw_3shelf_6xIPNI1P.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;redirect-error-output-to-file&#34;&gt;Redirect error output to file&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cyberciti.biz/faq/linux-redirect-error-output-to-file/&#34;&gt;https://www.cyberciti.biz/faq/linux-redirect-error-output-to-file/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Syntax To redirect all output to file
+The syntax is as follows to redirect output (stdout) as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;command-name &amp;gt;  output.txt
+command-name &amp;gt;  stdout.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Syntax To redirect all error to file
+The syntax is as follows to redirect errors (stderr) as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;command-name 2&amp;gt; errors.txt
+command-name 2&amp;gt; stderr.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Syntax to redirect both output (stdout) and errors (stderr) to different files
+The syntax:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;command1 &amp;gt; out.txt 2&amp;gt; err.txt
+command2 -f -z -y &amp;gt; out.txt 2&amp;gt; err.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Syntax to redirect both output (stdout) and errors (stderr) to same file
+The syntax is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;command1 &amp;gt; everything.txt 2&amp;gt;&amp;amp;1
+command1 -arg &amp;gt; everything.txt 2&amp;gt;&amp;amp;1
 &lt;/code&gt;&lt;/pre&gt;
 </description>
         </item>

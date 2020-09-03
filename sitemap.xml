@@ -7,6 +7,96 @@
   </url>
   
   <url>
+    <loc>https://blog.indonesiadot.com/</loc>
+    <lastmod>2020-09-02T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/centos/</loc>
+    <lastmod>2020-09-02T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/ldap/</loc>
+    <lastmod>2020-09-02T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/09/02/ldap-on-centos-7/</loc>
+    <lastmod>2020-09-02T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
+    <lastmod>2020-09-02T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2020-09-02T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2020-09-02T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/09/02/centos-tips/</loc>
+    <lastmod>2020-09-02T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
+    <lastmod>2020-09-02T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/lxc/</loc>
+    <lastmod>2020-08-27T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/08/27/lxc-on-centos/</loc>
+    <lastmod>2020-08-27T18:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/samba/</loc>
+    <lastmod>2020-08-25T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/08/25/samba-share-windows/</loc>
+    <lastmod>2020-08-25T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/share/</loc>
+    <lastmod>2020-08-25T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/windows/</loc>
+    <lastmod>2020-08-25T15:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/mikocok/</loc>
+    <lastmod>2020-08-25T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/tags/winblows/</loc>
+    <lastmod>2020-08-25T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.indonesiadot.com/2020/08/25/windows-tips/</loc>
+    <lastmod>2020-08-25T08:17:54+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.indonesiadot.com/tags/ansible/</loc>
     <lastmod>2020-08-11T08:17:54+07:00</lastmod>
   </url>
@@ -17,32 +107,12 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2020-08-11T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
-    <lastmod>2020-08-11T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/playbook/</loc>
     <lastmod>2020-08-11T08:17:54+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2020-08-11T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/sudo/</loc>
-    <lastmod>2020-08-11T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
     <lastmod>2020-08-11T08:17:54+07:00</lastmod>
   </url>
   
@@ -107,11 +177,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/tips/</loc>
-    <lastmod>2020-07-10T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/tags/zfs/</loc>
     <lastmod>2020-07-10T08:17:54+07:00</lastmod>
   </url>
@@ -163,11 +228,6 @@
   
   <url>
     <loc>https://blog.indonesiadot.com/2020/06/24/ansible-to-windows-via-winrm/</loc>
-    <lastmod>2020-06-24T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/windows/</loc>
     <lastmod>2020-06-24T08:17:54+07:00</lastmod>
   </url>
   
@@ -372,11 +432,6 @@
   </url>
   
   <url>
-    <loc>https://blog.indonesiadot.com/tags/lxc/</loc>
-    <lastmod>2020-03-16T10:47:54+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.indonesiadot.com/2020/03/16/mxtoolbox-mail-blacklist/</loc>
     <lastmod>2020-03-16T10:17:54+07:00</lastmod>
   </url>
@@ -494,11 +549,6 @@
   <url>
     <loc>https://blog.indonesiadot.com/2020/03/05/python-tips/</loc>
     <lastmod>2020-03-05T08:17:54+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.indonesiadot.com/tags/centos/</loc>
-    <lastmod>2020-02-28T08:17:54+07:00</lastmod>
   </url>
   
   <url>

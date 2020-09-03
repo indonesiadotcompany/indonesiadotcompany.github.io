@@ -759,6 +759,26 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -817,6 +837,29 @@ load data local infile '/tmp/hosts.txt' into table hosts fields terminated by ',
 <li><a href="https://www.postgresql.org/docs/9.1/backup-dump.html">https://www.postgresql.org/docs/9.1/backup-dump.html</a></li>
 <li><a href="https://www.programmersought.com/article/23102305281/">https://www.programmersought.com/article/23102305281/</a></li>
 <li><a href="https://stackoverflow.com/questions/10762239/mysql-enable-load-data-local-infile">https://stackoverflow.com/questions/10762239/mysql-enable-load-data-local-infile</a></li>
+</ul>
+
+<h2 id="postgresql-show-data-tables">Postgresql show data tables</h2>
+
+<ul>
+<li><p><a href="https://kb.objectrocket.com/postgresql/connect-to-postgresql-and-show-the-table-schema-967">https://kb.objectrocket.com/postgresql/connect-to-postgresql-and-show-the-table-schema-967</a></p>
+
+<pre><code>psql -h 10.11.8.16 -U awxtower1
+\c awxtower1db
+\d
+\q
+</code></pre></li>
+</ul>
+
+<h2 id="postgresql-create-remote-user-and-database">Postgresql create remote user and database</h2>
+
+<ul>
+<li><p><a href="https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/">https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/</a></p>
+
+<pre><code>create database awxtower1db;
+create user awxtower1 with encrypted password 'awxtower1';
+grant all privileges on database awxtower1 to awxtower1;
+</code></pre></li>
 </ul>
 
 </div>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ldap on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/ldap/</link>
+    <description>Recent content in ldap on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Sep 2020 18:17:54 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/ldap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LDAP on Centos 7</title>
+      <link>https://blog.indonesiadot.com/2020/09/02/ldap-on-centos-7/</link>
+      <pubDate>Wed, 02 Sep 2020 18:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/09/02/ldap-on-centos-7/</guid>
+      <description>Server setup  https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html
+yum -y install openldap compat-openldap openldap-clients openldap-servers systemctl start slapd systemctl enable slapd slappasswd -h {SSHA} -s ldppassword  make note of ldappassword
+  create file db.ldif
+dn: olcDatabase={2}hdb,cn=config changetype: modify replace: olcSuffix olcSuffix: dc=itzgeek,dc=local dn: olcDatabase={2}hdb,cn=config changetype: modify replace: olcRootDN olcRootDN: cn=ldapadm,dc=itzgeek,dc=local dn: olcDatabase={2}hdb,cn=config changetype: modify replace: olcRootPW olcRootPW: {SSHA}d/thexcQUuSfe3rx3gRaEhHpNJ52N8D3  replace the value of olcRootPW with ldappassword above
+ldapmodify -Y EXTERNAL -H ldapi:/// -f db.</description>
+    </item>
+    
+  </channel>
+</rss>

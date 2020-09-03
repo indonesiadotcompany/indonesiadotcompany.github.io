@@ -6,10 +6,19 @@
     <description>Recent content in lxc on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Mar 2020 10:47:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 27 Aug 2020 18:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/lxc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LXC on Centos</title>
+      <link>https://blog.indonesiadot.com/2020/08/27/lxc-on-centos/</link>
+      <pubDate>Thu, 27 Aug 2020 18:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/08/27/lxc-on-centos/</guid>
+      <description> LXC install on centos  https://www.tecmint.com/install-create-run-lxc-linux-containers-on-centos/  </description>
+    </item>
     
     <item>
       <title>Kubernetes inside lxc</title>

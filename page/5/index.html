@@ -760,6 +760,26 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -790,6 +810,163 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/06/proxmox-add-zfs-disk/">Proxmox add zfs disk</a></h1>
+        <span class="post-date">Mar 6, 2020</span>
+	
+
+<h2 id="add-disk-hardware">Add Disk Hardware</h2>
+
+<p>Tambahkan harddisk di server secara berurutan port sata nya, dan catat ID disknya</p>
+
+<h2 id="setting-at-command-line">Setting at command line</h2>
+
+<pre><code>ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R
+ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4
+zpool create rpoolkube -o ashift=12 mirror /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4
+zpool status
+</code></pre>
+
+<h2 id="tambahkan-proxmox-storage-pool">Tambahkan proxmox storage pool</h2>
+
+<p>Dari proxmox pool, lalu klik storage, lalu add storage, pilih zfs.
+Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masukan block size 64k, lalu klik create.</p>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/netcat-bandwidth-test/">Netcat Bandwidth Test</a></h1>
+        <span class="post-date">Mar 5, 2020</span>
+	
+
+<h2 id="netcat-bandwidth-test">Netcat Bandwidth Test</h2>
+
+<h3 id="netcat-server">netcat-server</h3>
+
+<pre><code>nc -l -p 12345 | wc -c
+</code></pre>
+
+<h3 id="netcat-client">netcat-client</h3>
+
+<pre><code>dd if=/dev/zero bs=$((2**20)) count=$((2**10)) | nc -q 0 netcat-server 12345
+#or
+dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345
+</code></pre>
+
+<p>on the server run nload to see the bandwidth used at eth0 for incoming and outgoing</p>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/">https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/</a></li>
+<li><a href="https://www.thegeekstuff.com/2012/04/nc-command-examples/">https://www.thegeekstuff.com/2012/04/nc-command-examples/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/netcat/">netcat</a>, <a href="https://blog.indonesiadot.com/tags/bandwidth/">bandwidth</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/"></a></h1>
+        <span class="post-date">Mar 5, 2020</span>
+	
+
+<h2 id="post">Post</h2>
+
+<p>Ini adalah contoh post</p>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/python-tips/">Python Tips</a></h1>
+        <span class="post-date">Mar 5, 2020</span>
+	
+
+<h2 id="module-python-web-server">module python web server</h2>
+
+<pre><code>python -m SimpleHTTPServer 8001
+python -m SimpleHTTPServer 8002
+</code></pre>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver">https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver</a></li>
+<li><a href="https://www.pcsuggest.com/best-lightweight-web-server-linux/">https://www.pcsuggest.com/best-lightweight-web-server-linux/</a></li>
+</ul>
+
+<h2 id="multiple-python-version-on-centos-6">multiple python version on centos 6</h2>
+
+<p><a href="https://stackoverflow.com/questions/20842732/libpython2-7-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory">https://stackoverflow.com/questions/20842732/libpython2-7-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory</a>
+<a href="https://www.2daygeek.com/install-python-3-on-centos-6/">https://www.2daygeek.com/install-python-3-on-centos-6/</a></p>
+
+<pre><code>yum install centos-release-scl -y
+yum --enablerepo='centos-sclo-rh' install python27-python -y
+echo &quot;/opt/rh/python27/root/usr/lib64&quot; &gt;&gt; /etc/ld.so.conf
+ldconfig
+/opt/rh/python27/root/usr/bin/python --version
+yum --enablerepo='centos-sclo-rh' install rh-python36-python
+/opt/rh/rh-python36/root/usr/bin/python --version
+</code></pre>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/python/">python</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/28/yum-tips/">Yum tips</a></h1>
+        <span class="post-date">Feb 28, 2020</span>
+	
+
+<h2 id="yum-install-specific-version">Yum install specific version</h2>
+
+<pre><code>yum list docker-ce.x86_64 --showduplicates
+yum list docker-ce.x86_64 --showduplicates | sort -r
+yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09
+</code></pre>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos">https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/yum/">yum</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/28/docker-tips/">Docker Tips</a></h1>
@@ -1036,197 +1213,6 @@ bash unifi-5.12.35.sh
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/virus/">virus</a>, <a href="https://blog.indonesiadot.com/tags/virustotal/">virustotal</a>, <a href="https://blog.indonesiadot.com/tags/worm/">worm</a>, <a href="https://blog.indonesiadot.com/tags/trojan/">trojan</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/">Video Editing On Linux</a></h1>
-        <span class="post-date">Feb 24, 2020</span>
-	
-
-<h2 id="cut-and-combine-video">Cut and Combine Video</h2>
-
-<p>Avidemux</p>
-
-<h2 id="youtube">Youtube</h2>
-
-<h3 id="add-text-caption-subtitle-anotasi-on-video">Add text / caption / subtitle / Anotasi on video</h3>
-
-<pre><code>1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &gt; Youtube Studio
-2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks
-3. Untuk video baru, klik set languages, lalu confirm
-4. Klik tombol ADD / Tambahkan subtitel atau CC baru.
-</code></pre>
-
-<h3 id="add-watermark">Add watermark</h3>
-
-<pre><code>ffmpeg -i input.mp4 -i watermark.png -filter_complex &quot;overlay=1500:1000&quot; output.mp4
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.nesabamedia.com/cara-membuat-subtitle-video-youtube/">https://www.nesabamedia.com/cara-membuat-subtitle-video-youtube/</a></li>
-<li><a href="https://readmoremyblog.wordpress.com/2012/03/11/cara-membuat-teks-atau-anotasi-pada-video-youtube/">https://readmoremyblog.wordpress.com/2012/03/11/cara-membuat-teks-atau-anotasi-pada-video-youtube/</a></li>
-<li><a href="https://shkspr.mobi/blog/2016/08/easy-ways-to-add-watermarks-to-images-and-videos-in-linux/">https://shkspr.mobi/blog/2016/08/easy-ways-to-add-watermarks-to-images-and-videos-in-linux/</a></li>
-<li><a href="https://www.vlchelp.com/how-to-change-subtitle-position-in-vlc/">https://www.vlchelp.com/how-to-change-subtitle-position-in-vlc/</a></li>
-<li><a href="https://downsub.com/">https://downsub.com/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/video/">video</a>, <a href="https://blog.indonesiadot.com/tags/editing/">editing</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/youtube/">youtube</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/">Ansible OS Hardening</a></h1>
-        <span class="post-date">Feb 20, 2020</span>
-	
-
-<h2 id="ansible-os-hardening">Ansible OS Hardening</h2>
-
-<pre><code>mkdir -p /data/backups
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/os-hardening/">os-hardening</a>, <a href="https://blog.indonesiadot.com/tags/hardening/">hardening</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/">Ansible Tower tips and trick</a></h1>
-        <span class="post-date">Feb 20, 2020</span>
-	
-
-<h2 id="ansible-tower-tips-and-trick">Ansible Tower tips and trick</h2>
-
-<h3 id="change-admin-password">Change admin password</h3>
-
-<pre><code>awx-manage changepassword admin
-</code></pre>
-
-<h3 id="backup-and-restore">backup and restore</h3>
-
-<ul>
-<li><a href="https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html">https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html</a></li>
-</ul>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html">https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html</a></li>
-<li><a href="https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/">https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/harbor/">harbor</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/registry/">registry</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/">Selinux Web Directory Permission</a></h1>
-        <span class="post-date">Jan 20, 2020</span>
-	
-
-<h2 id="selinux-web-directory-permission">Selinux Web Directory Permission</h2>
-
-<p>Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.</p>
-
-<p>adapun command nya sebelum bisa diakses yaitu:</p>
-
-<pre><code>chcon -Rv --type=httpd_sys_rw_content_t /webserver
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/">https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/selinux/">selinux</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/permission/">permission</a>, <a href="https://blog.indonesiadot.com/tags/redhat/">redhat</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/">Harbor Container Registry</a></h1>
-        <span class="post-date">Jan 20, 2020</span>
-	
-
-<h2 id="harbor-install-step-by-step">harbor install step by step</h2>
-
-<p><a href="https://goharbor.io/docs/1.10/install-config/">https://goharbor.io/docs/1.10/install-config/</a></p>
-
-<ul>
-<li>install docker, docker-compose</li>
-<li>download <a href="https://github.com/goharbor/harbor/releases">https://github.com/goharbor/harbor/releases</a></li>
-
-<li><p>edit harbor.yml</p>
-
-<pre><code>hostname: 10.11.8.111
-</code></pre></li>
-
-<li><p>install</p>
-
-<pre><code>./prepare
-./install.sh --with-clair --with-chartmuseum
-</code></pre></li>
-
-<li><p>create projects dengan nama os (misalnya untuk menampung operating system)</p></li>
-</ul>
-
-<h2 id="harbor-client-push">harbor client push</h2>
-
-<ul>
-<li><p>edit /etc/docker/daemon.json</p>
-
-<pre><code>{ &quot;insecure-registries&quot;:[&quot;10.11.8.111&quot;] }
-</code></pre></li>
-
-<li><p>systemctl restart docker (hati2 jika ada container yg berjalan akan di stop)</p></li>
-
-<li><p>docker login 10.11.8.111</p></li>
-
-<li><p>docker tag centos:7 10.11.8.111/os/centos:7</p></li>
-
-<li><p>docker push 10.11.8.111/os/centos:7</p></li>
-</ul>
-
-<h2 id="widya-harbor-container-registry">Widya Harbor Container Registry</h2>
-
-<ul>
-<li><a href="https://widharbor.birau.com/">https://widharbor.birau.com/</a></li>
-</ul>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/harbor/">harbor</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/registry/">registry</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
 	 <hr/>
     </div>
   

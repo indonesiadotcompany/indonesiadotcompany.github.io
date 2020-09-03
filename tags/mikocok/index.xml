@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mikocok on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/mikocok/</link>
+    <description>Recent content in mikocok on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Aug 2020 08:17:54 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/mikocok/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows tips</title>
+      <link>https://blog.indonesiadot.com/2020/08/25/windows-tips/</link>
+      <pubDate>Tue, 25 Aug 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/08/25/windows-tips/</guid>
+      <description> CURL windows  https://develop.zendesk.com/hc/en-us/articles/360001068567-Installing-and-using-cURL#install http://curl.haxx.se/download.html  </description>
+    </item>
+    
+  </channel>
+</rss>

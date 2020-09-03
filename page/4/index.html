@@ -760,6 +760,26 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -790,6 +810,258 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/16/kubernetes-inside-lxc/">Kubernetes inside lxc</a></h1>
+        <span class="post-date">Mar 16, 2020</span>
+	
+
+<ul>
+<li><a href="https://medium.com/@kvaps/run-kubernetes-in-lxc-container-f04aa94b6c9c">https://medium.com/@kvaps/run-kubernetes-in-lxc-container-f04aa94b6c9c</a></li>
+<li><a href="https://github.com/corneliusweig/kubernetes-lxd">https://github.com/corneliusweig/kubernetes-lxd</a></li>
+<li><a href="https://www.sayem.org/k8s-on-lxd/">https://www.sayem.org/k8s-on-lxd/</a></li>
+<li><a href="https://discuss.linuxcontainers.org/t/working-install-of-docker-ce-in-lxc-unprivileged-container-in-proxmox/3828/4">https://discuss.linuxcontainers.org/t/working-install-of-docker-ce-in-lxc-unprivileged-container-in-proxmox/3828/4</a></li>
+<li><a href="https://forum.proxmox.com/threads/lxc-docker-containerd-cannot-find-lib-modules-4-15-18-9-pve.49406/">https://forum.proxmox.com/threads/lxc-docker-containerd-cannot-find-lib-modules-4-15-18-9-pve.49406/</a></li>
+<li><a href="https://forum.proxmox.com/threads/docker-in-lxc-container.45204/">https://forum.proxmox.com/threads/docker-in-lxc-container.45204/</a></li>
+<li><a href="https://discuss.linuxcontainers.org/t/how-to-add-kernel-modules-into-an-lxc-container/5033/3">https://discuss.linuxcontainers.org/t/how-to-add-kernel-modules-into-an-lxc-container/5033/3</a></li>
+</ul>
+
+<h2 id="kubernetes-haproxy">kubernetes haproxy</h2>
+
+<ul>
+<li><a href="https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076">https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/kubernetes/">kubernetes</a>, <a href="https://blog.indonesiadot.com/tags/lxc/">lxc</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/16/mxtoolbox-mail-blacklist/">Mxtoolbox mail blacklist</a></h1>
+        <span class="post-date">Mar 16, 2020</span>
+	
+
+<h2 id="free-alert-register-with-gmail">Free alert (register with gmail)</h2>
+
+<ul>
+<li><a href="https://mxtoolbox.com/public/registration.aspx?so=PB_FREE&amp;page=free_registration">https://mxtoolbox.com/public/registration.aspx?so=PB_FREE&amp;page=free_registration</a></li>
+<li><a href="https://mxtoolbox.com/blacklists.aspx">https://mxtoolbox.com/blacklists.aspx</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/16/qemu-tips/">Qemu Tips</a></h1>
+        <span class="post-date">Mar 16, 2020</span>
+	
+
+<h2 id="qemu-resize">Qemu resize</h2>
+
+<pre><code>qemu-img resize image.qcow2 +SIZE
+</code></pre>
+
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/qemu/">qemu</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/16/qmail-toaster/">Qmail Toaster</a></h1>
+        <span class="post-date">Mar 16, 2020</span>
+	
+
+<h2 id="qmail-ssl-letsencrypt">Qmail ssl letsencrypt</h2>
+
+<pre><code>yum install certbot python2-certbot python2-certbot-apache python2-certbot-dns-cloudflare
+cat &lt;EOF&gt; cloudflare.ini
+dns_cloudflare_email = user@example.com
+dns_cloudflare_api_key = j2c2166gd6688921b1497e7cfd6cf69f7f936
+EOF
+certbot certonly --dns-cloudflare --dns-cloudflare-credentials cloudflare.ini dns-cloudflare-propagation-seconds 60 -d *.example.com
+</code></pre>
+
+<p>Add to apache vhost centos</p>
+
+<pre><code>SSLCertificateFile /etc/letsencrypt/live/example.com/cert.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/example.com/privkey.pem
+Include /etc/letsencrypt/options-ssl-apache.conf
+SSLCertificateChainFile /etc/letsencrypt/live/example.com/fullchain.pem
+</code></pre>
+
+<p>Add to Dovecot CentOS 6 &amp; 7 (/etc/dovecot/toaster.conf)</p>
+
+<pre><code> ssl_cert = &lt;/etc/letsencrypt/live/example.com/fullchain.pem
+ ssl_key = &lt;/etc/letsencrypt/live/example.com/privkey.pem
+</code></pre>
+
+<p>Add to Qmail CentOS 6 &amp; 7</p>
+
+<pre><code> cp -p /var/qmail/control/servercert.pem /var/qmail/control/servercert.pem.bak
+ cat /etc/letsencrypt/live/example.com/privkey.pem /etc/letsencrypt/live/example.com/fullchain.pem &gt; /var/qmail/control/servercert.pem
+</code></pre>
+
+<p>Let&rsquo;s Encrypt auto renewal</p>
+
+<pre><code>  0 0 * * * /opt/certbot/certbot renew       #CentOS 7
+</code></pre>
+
+<p>Restart Qmail and Dovecot</p>
+
+<pre><code>qmailctl stop
+qmailctl start
+systemctl restart dovecot
+systemctl restart httpd
+</code></pre>
+
+<ul>
+<li><a href="http://www.qmailtoaster.net/ssl.html">http://www.qmailtoaster.net/ssl.html</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/qmail/">qmail</a>, <a href="https://blog.indonesiadot.com/tags/qmailtoaster/">qmailtoaster</a>, <a href="https://blog.indonesiadot.com/tags/mail/">mail</a>, <a href="https://blog.indonesiadot.com/tags/mailserver/">mailserver</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/13/sentinelone-epp-edr/">Sentinelone EPP EDR</a></h1>
+        <span class="post-date">Mar 13, 2020</span>
+	
+
+<h2 id="cloud-connectivity-became-offline">cloud connectivity became offline</h2>
+
+<ol>
+<li><p>make sure all of the docker container is run with docker ps</p></li>
+
+<li><p>the date of the on-prem server must be UTC</p>
+
+<pre><code>date
+</code></pre>
+
+<p>Wed Mar 11 09:18:42 UTC 2020</p></li>
+
+<li><p>test cloudgateway api info with curl</p>
+
+<pre><code>curl -v https://cloudgateway-prod-ap.sentinelone.net/api/v2/info
+</code></pre></li>
+
+<li><p>Trying 13.112.219.166&hellip;</p></li>
+
+<li><p>TCP_NODELAY set</p></li>
+
+<li><p>Connected to cloudgateway-prod-ap.sentinelone.net (13.112.219.166) port 443 (#0)</p></li>
+
+<li><p>ALPN, offering h2</p></li>
+
+<li><p>ALPN, offering http/1.1</p></li>
+
+<li><p>successfully set certificate verify locations:</p></li>
+
+<li><p>CAfile: /etc/ssl/certs/ca-certificates.crt
+CApath: /etc/ssl/certs</p></li>
+
+<li><p>TLSv1.3 (OUT), TLS handshake, Client hello (1):</p></li>
+
+<li><p>TLSv1.3 (IN), TLS handshake, Server hello (2):</p></li>
+
+<li><p>TLSv1.2 (IN), TLS handshake, Certificate (11):</p></li>
+
+<li><p>TLSv1.2 (IN), TLS handshake, Server key exchange (12):</p></li>
+
+<li><p>TLSv1.2 (IN), TLS handshake, Request CERT (13):</p></li>
+
+<li><p>TLSv1.2 (IN), TLS handshake, Server finished (14):</p></li>
+
+<li><p>TLSv1.2 (OUT), TLS handshake, Certificate (11):</p></li>
+
+<li><p>TLSv1.2 (OUT), TLS handshake, Client key exchange (16):</p></li>
+
+<li><p>TLSv1.2 (OUT), TLS change cipher, Client hello (1):</p></li>
+
+<li><p>TLSv1.2 (OUT), TLS handshake, Finished (20):</p></li>
+
+<li><p>TLSv1.2 (IN), TLS handshake, Finished (20):</p></li>
+
+<li><p>SSL connection using TLSv1.2 / ECDHE-RSA-AES256-GCM-SHA384</p></li>
+
+<li><p>ALPN, server accepted to use http/1.1</p></li>
+
+<li><p>Server certificate:</p></li>
+
+<li><p>subject: C=US; ST=California; L=Palo Alto; O=Sentinel Labs, Inc.; CN=*.sentinelone.net</p></li>
+
+<li><p>start date: Sep 11 00:00:00 2019 GMT</p></li>
+
+<li><p>expire date: Dec 1 12:00:00 2021 GMT</p></li>
+
+<li><p>subjectAltName: host &ldquo;cloudgateway-prod-ap.sentinelone.net&rdquo; matched cert&rsquo;s &ldquo;*.sentinelone.net&rdquo;</p></li>
+
+<li><p>issuer: C=US; O=DigiCert Inc; CN=DigiCert SHA2 Secure Server CA</p></li>
+
+<li><p>SSL certificate verify ok.
+&gt; GET /api/v2/info HTTP/1.1
+&gt; Host: cloudgateway-prod-ap.sentinelone.net
+&gt; User-Agent: curl/7.58.0
+&gt; Accept: <em>/</em>
+&gt;
+&lt; HTTP/1.1 200 OK
+&lt; Server: nginx/1.14.0 (Ubuntu)
+&lt; Date: Wed, 11 Mar 2020 09:19:32 GMT
+&lt; Content-Type: application/json
+&lt; Content-Length: 20
+&lt; Connection: keep-alive
+&lt; Access-Control-Allow-Origin: *
+&lt; Access-Control-Allow-Headers: Authentication-Token
+&lt;
+{&ldquo;version&rdquo;:&ldquo;4.1.4&rdquo;}</p></li>
+
+<li><p>Connection #0 to host cloudgateway-prod-ap.sentinelone.net left intact</p></li>
+
+<li><p>give settings.ini to support</p></li>
+
+<li><p>From the outputs you sent - &gt; Everything seems to be Ok,</p></li>
+</ol>
+
+<p>4.1. Add the following lines to the /etc/hosts file -&gt; Save -&gt; Exit:</p>
+
+<p>54.64.165.125 cloudgateway-prod-ap.sentinelone.net
+13.112.219.166 cloudgateway-prod-ap.sentinelone.net</p>
+
+<p>4.2. Run -&gt; sudo docker exec -u 0 -it scheduler /bin/bash
+The vi /etc/hosts -&gt;Add the 2 lines&gt; Save-&gt;Exit
+54.64.165.125 cloudgateway-prod-ap.sentinelone.net
+13.112.219.166 cloudgateway-prod-ap.sentinelone.net</p>
+
+<ul>
+<li>Restart the server after all the changes</li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/12/lvm-tips/">LVM tips</a></h1>
@@ -1061,163 +1333,6 @@ lxc start c1
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/06/proxmox-add-zfs-disk/">Proxmox add zfs disk</a></h1>
-        <span class="post-date">Mar 6, 2020</span>
-	
-
-<h2 id="add-disk-hardware">Add Disk Hardware</h2>
-
-<p>Tambahkan harddisk di server secara berurutan port sata nya, dan catat ID disknya</p>
-
-<h2 id="setting-at-command-line">Setting at command line</h2>
-
-<pre><code>ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R
-ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4
-zpool create rpoolkube -o ashift=12 mirror /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4
-zpool status
-</code></pre>
-
-<h2 id="tambahkan-proxmox-storage-pool">Tambahkan proxmox storage pool</h2>
-
-<p>Dari proxmox pool, lalu klik storage, lalu add storage, pilih zfs.
-Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masukan block size 64k, lalu klik create.</p>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/netcat-bandwidth-test/">Netcat Bandwidth Test</a></h1>
-        <span class="post-date">Mar 5, 2020</span>
-	
-
-<h2 id="netcat-bandwidth-test">Netcat Bandwidth Test</h2>
-
-<h3 id="netcat-server">netcat-server</h3>
-
-<pre><code>nc -l -p 12345 | wc -c
-</code></pre>
-
-<h3 id="netcat-client">netcat-client</h3>
-
-<pre><code>dd if=/dev/zero bs=$((2**20)) count=$((2**10)) | nc -q 0 netcat-server 12345
-#or
-dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345
-</code></pre>
-
-<p>on the server run nload to see the bandwidth used at eth0 for incoming and outgoing</p>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/">https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/</a></li>
-<li><a href="https://www.thegeekstuff.com/2012/04/nc-command-examples/">https://www.thegeekstuff.com/2012/04/nc-command-examples/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/netcat/">netcat</a>, <a href="https://blog.indonesiadot.com/tags/bandwidth/">bandwidth</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/"></a></h1>
-        <span class="post-date">Mar 5, 2020</span>
-	
-
-<h2 id="post">Post</h2>
-
-<p>Ini adalah contoh post</p>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/python-tips/">Python Tips</a></h1>
-        <span class="post-date">Mar 5, 2020</span>
-	
-
-<h2 id="module-python-web-server">module python web server</h2>
-
-<pre><code>python -m SimpleHTTPServer 8001
-python -m SimpleHTTPServer 8002
-</code></pre>
-
-<ul>
-<li><a href="https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver">https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver</a></li>
-<li><a href="https://www.pcsuggest.com/best-lightweight-web-server-linux/">https://www.pcsuggest.com/best-lightweight-web-server-linux/</a></li>
-</ul>
-
-<h2 id="multiple-python-version-on-centos-6">multiple python version on centos 6</h2>
-
-<p><a href="https://stackoverflow.com/questions/20842732/libpython2-7-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory">https://stackoverflow.com/questions/20842732/libpython2-7-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory</a>
-<a href="https://www.2daygeek.com/install-python-3-on-centos-6/">https://www.2daygeek.com/install-python-3-on-centos-6/</a></p>
-
-<pre><code>yum install centos-release-scl -y
-yum --enablerepo='centos-sclo-rh' install python27-python -y
-echo &quot;/opt/rh/python27/root/usr/lib64&quot; &gt;&gt; /etc/ld.so.conf
-ldconfig
-/opt/rh/python27/root/usr/bin/python --version
-yum --enablerepo='centos-sclo-rh' install rh-python36-python
-/opt/rh/rh-python36/root/usr/bin/python --version
-</code></pre>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/python/">python</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/28/yum-tips/">Yum tips</a></h1>
-        <span class="post-date">Feb 28, 2020</span>
-	
-
-<h2 id="yum-install-specific-version">Yum install specific version</h2>
-
-<pre><code>yum list docker-ce.x86_64 --showduplicates
-yum list docker-ce.x86_64 --showduplicates | sort -r
-yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09
-</code></pre>
-
-<ul>
-<li><a href="https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos">https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/yum/">yum</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>
 	 <hr/>
     </div>
   

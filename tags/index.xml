@@ -6,10 +6,100 @@
     <description>Recent content in Tags on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Aug 2020 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2020 18:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>centos</title>
+      <link>https://blog.indonesiadot.com/tags/centos/</link>
+      <pubDate>Wed, 02 Sep 2020 18:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/centos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ldap</title>
+      <link>https://blog.indonesiadot.com/tags/ldap/</link>
+      <pubDate>Wed, 02 Sep 2020 18:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/ldap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://blog.indonesiadot.com/tags/linux/</link>
+      <pubDate>Wed, 02 Sep 2020 18:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tips</title>
+      <link>https://blog.indonesiadot.com/tags/tips/</link>
+      <pubDate>Wed, 02 Sep 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lxc</title>
+      <link>https://blog.indonesiadot.com/tags/lxc/</link>
+      <pubDate>Thu, 27 Aug 2020 18:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/lxc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>samba</title>
+      <link>https://blog.indonesiadot.com/tags/samba/</link>
+      <pubDate>Tue, 25 Aug 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/samba/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>share</title>
+      <link>https://blog.indonesiadot.com/tags/share/</link>
+      <pubDate>Tue, 25 Aug 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/share/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://blog.indonesiadot.com/tags/windows/</link>
+      <pubDate>Tue, 25 Aug 2020 15:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mikocok</title>
+      <link>https://blog.indonesiadot.com/tags/mikocok/</link>
+      <pubDate>Tue, 25 Aug 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/mikocok/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>winblows</title>
+      <link>https://blog.indonesiadot.com/tags/winblows/</link>
+      <pubDate>Tue, 25 Aug 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/tags/winblows/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>ansible</title>
@@ -17,15 +107,6 @@
       <pubDate>Tue, 11 Aug 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/ansible/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://blog.indonesiadot.com/tags/linux/</link>
-      <pubDate>Tue, 11 Aug 2020 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -120,15 +201,6 @@
     </item>
     
     <item>
-      <title>tips</title>
-      <link>https://blog.indonesiadot.com/tags/tips/</link>
-      <pubDate>Fri, 10 Jul 2020 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/tips/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>zfs</title>
       <link>https://blog.indonesiadot.com/tags/zfs/</link>
       <pubDate>Fri, 10 Jul 2020 08:17:54 +0700</pubDate>
@@ -179,15 +251,6 @@
       <pubDate>Tue, 30 Jun 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/sql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>windows</title>
-      <link>https://blog.indonesiadot.com/tags/windows/</link>
-      <pubDate>Wed, 24 Jun 2020 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/windows/</guid>
       <description></description>
     </item>
     
@@ -435,15 +498,6 @@
     </item>
     
     <item>
-      <title>lxc</title>
-      <link>https://blog.indonesiadot.com/tags/lxc/</link>
-      <pubDate>Mon, 16 Mar 2020 10:47:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/lxc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>qemu</title>
       <link>https://blog.indonesiadot.com/tags/qemu/</link>
       <pubDate>Mon, 16 Mar 2020 10:17:54 +0700</pubDate>
@@ -548,15 +602,6 @@
       <pubDate>Thu, 05 Mar 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/tags/netcat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>centos</title>
-      <link>https://blog.indonesiadot.com/tags/centos/</link>
-      <pubDate>Fri, 28 Feb 2020 08:17:54 +0700</pubDate>
-      
-      <guid>https://blog.indonesiadot.com/tags/centos/</guid>
       <description></description>
     </item>
     
