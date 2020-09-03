@@ -31,3 +31,20 @@ Referensi:
 * https://www.programmersought.com/article/23102305281/
 * https://stackoverflow.com/questions/10762239/mysql-enable-load-data-local-infile
 
+## Postgresql show data tables
+* https://kb.objectrocket.com/postgresql/connect-to-postgresql-and-show-the-table-schema-967
+```
+psql -h 10.11.8.16 -U awxtower1
+\c awxtower1db
+\d
+\q
+```
+
+## Postgresql create remote user and database
+* https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/
+```
+create database awxtower1db;
+create user awxtower1 with encrypted password 'awxtower1';
+grant all privileges on database awxtower1 to awxtower1;
+```
+

@@ -113,4 +113,31 @@ Remove the spurious CR characters. You can do it with the following command:
 ```
 sed -i -e 's/\r$//' create_mgw_3shelf_6xIPNI1P.sh
 ```
+## Redirect error output to file
+* https://www.cyberciti.biz/faq/linux-redirect-error-output-to-file/
+
+Syntax To redirect all output to file
+The syntax is as follows to redirect output (stdout) as follows:
+```
+command-name >  output.txt
+command-name >  stdout.txt
+```
+Syntax To redirect all error to file
+The syntax is as follows to redirect errors (stderr) as follows:
+```
+command-name 2> errors.txt
+command-name 2> stderr.txt
+```
+Syntax to redirect both output (stdout) and errors (stderr) to different files
+The syntax:
+```
+command1 > out.txt 2> err.txt
+command2 -f -z -y > out.txt 2> err.txt
+```
+Syntax to redirect both output (stdout) and errors (stderr) to same file
+The syntax is:
+```
+command1 > everything.txt 2>&1
+command1 -arg > everything.txt 2>&1
+```
 
