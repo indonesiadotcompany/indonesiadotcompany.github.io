@@ -146,3 +146,32 @@ getent passwd raj
 
 then test ssh to the ldap client with newly created user
 
+## phpldapadmin
+* https://hostadvice.com/how-to/how-to-install-phpldapadmin-on-centos-7/
+
+```
+yum install epel-release -y
+yum -y install phpldapadmin
+```
+Modify your configuration file located at /etc/httpd/conf.d/phpldapadmin.conf
+```
+<IfModule mod_authz_core.c>
+    # Apache 2.4
+    Require all granted
+  </IfModule>
+```
+
+### configure phpldapadmin
+```
+$servers->setValue('server','host','127.0.0.1');
+$servers->setValue('server','port',389);
+$servers->setValue('login','bind_id','cn=ldapadm,dc=itzgeek,dc=local');
+$servers->setValue('appearance','password_hash','ssha');
+$servers->setValue('login','attr','dn');
+//$servers->setValue('login','attr','uid');
+```
+then start httpd
+```
+systemctl restart httpd
+```
+

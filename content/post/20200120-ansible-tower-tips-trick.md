@@ -51,3 +51,11 @@ setelah selesai, lalu re-package the bundle
 
 note:
 * ada bbrp paket yg dibutuhkan sebelum menjalankan setup.sh, paket ini bisa didapatkan dengan menginstall terlebih dahulu
+
+## ansible tower ldap linux
+* https://www.youtube.com/watch?v=E0QpSwXot68
+
+1. install openldap-servers on centos (available at this blog)
+2. configure ansible tower to add authentication to ldap server as describe on the video
+
+
