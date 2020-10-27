@@ -6,10 +6,32 @@
     <description>Recent content in tips on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Sep 2020 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2020 18:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/tips/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NC Tips</title>
+      <link>https://blog.indonesiadot.com/2020/10/15/nc-tips/</link>
+      <pubDate>Thu, 15 Oct 2020 18:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/10/15/nc-tips/</guid>
+      <description> Test udp port with nc  https://www.thegeekdiary.com/how-to-test-porttcp-udp-connectivity-from-a-linux-server/
+#nc -z -v -u [hostname/IP address] [port number] # nc -z -v -u 192.168.10.12 123 Connection to 192.118.20.95 123 port [udp/ntp] succeeded!   </description>
+    </item>
+    
+    <item>
+      <title>SSH error tips</title>
+      <link>https://blog.indonesiadot.com/2020/10/15/ssh-error-tips/</link>
+      <pubDate>Thu, 15 Oct 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/10/15/ssh-error-tips/</guid>
+      <description>ssh_exchange_identification read connection reset by peer  https://phoenixnap.com/kb/fix-connection-reset-by-peer-ssh-error  There are typos at /etc/hosts.allow, in example:
+shd: 10.11.8.15
+it should be
+sshd: 10.11.8.15</description>
+    </item>
     
     <item>
       <title>Centos Tips</title>

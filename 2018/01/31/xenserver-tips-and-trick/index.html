@@ -779,6 +779,22 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -808,7 +824,30 @@
 <div class="post">
   <h1 class="post-title">Xenserver tips and trick</h1>
   <span class="post-date">Jan 31, 2018</span>
-  <p><b>xenserver resize memory command</b><br /><br />Increase RAM for XenServer VM&rsquo;s through Command Line Interface.<br /><br />1.If the RAM editing option is graded out through XenCenter.<br />Solution<br />1.Take a putty/ssh connection to pool master<br /><br />2.Power off the VM.<br /><br />Execute the Below command to configure the new RAM:<br /><br />#xe vm-memory-limits-set &nbsp; &nbsp;uuid=<uuid of="" the="" valid="" vm=""> &nbsp; static-min=<nn>GiB/MiB &nbsp;dynamic-min=<nn>GiB/MiB &nbsp;dynamic-max=<nn>GiB/MiB &nbsp; &nbsp; static-max=<nn>GiB/MiB&nbsp;</nn></nn></nn></nn></uuid><br /><br />Example :<br />#xe vm-memory-limits-set &nbsp; &nbsp;uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f &nbsp; &nbsp; &nbsp;static-min=64GiB &nbsp; dynamic-min=64GiB &nbsp; dynamic-max=64GiB &nbsp; &nbsp;static-max=64GiB<br /><br />3.Start the VM.<br /><div><br /></div></p>
+  
+
+<h2 id="xenserver-resize-memory-command">xenserver resize memory command</h2>
+
+<p>Increase RAM for XenServer VM&rsquo;s through Command Line Interface.
+1. If the RAM editing option is graded out through XenCenter.</p>
+
+<p>Solution:
+1. Take a putty/ssh connection to pool master
+2. Power off the VM.</p>
+
+<p>Execute the Below command to configure the new RAM:</p>
+
+<pre><code>#xe vm-memory-limits-set uuid=&lt;uuid of=&quot;&quot; the=&quot;&quot; valid=&quot;&quot; vm=&quot;&quot;&gt; static-min=&lt;nn&gt;GiB/MiB dynamic-min=&lt;nn&gt;GiB/MiB dynamic-max=&lt;nn&gt;GiB/MiB static-max=&lt;nn&gt;GiB/MiB &lt;/nn&gt;&lt;/nn&gt;&lt;/nn&gt;&lt;/nn&gt;&lt;/uuid&gt;
+</code></pre>
+
+<p>Example :</p>
+
+<pre><code>#xe vm-memory-limits-set uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f static-min=64GiB dynamic-min=64GiB dynamic-max=64GiB static-max=64GiB
+</code></pre>
+
+<ol>
+<li>Start the VM.</li>
+</ol>
 
 </div>
 

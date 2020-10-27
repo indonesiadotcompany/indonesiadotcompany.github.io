@@ -17,17 +17,11 @@
       <pubDate>Wed, 31 Jan 2018 21:30:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/31/xenserver-tips-and-trick/</guid>
-      <description>xenserver resize memory command
-Increase RAM for XenServer VM&amp;rsquo;s through Command Line Interface.
-1.If the RAM editing option is graded out through XenCenter.
-Solution
-1.Take a putty/ssh connection to pool master
-2.Power off the VM.
+      <description>xenserver resize memory command Increase RAM for XenServer VM&amp;rsquo;s through Command Line Interface. 1. If the RAM editing option is graded out through XenCenter.
+Solution: 1. Take a putty/ssh connection to pool master 2. Power off the VM.
 Execute the Below command to configure the new RAM:
-#xe vm-memory-limits-set &amp;nbsp; &amp;nbsp;uuid=&amp;nbsp; static-min=GiB/MiB &amp;nbsp;dynamic-min=GiB/MiB &amp;nbsp;dynamic-max=GiB/MiB &amp;nbsp; &amp;nbsp; static-max=GiB/MiB&amp;nbsp;
-Example :
-#xe vm-memory-limits-set &amp;nbsp; &amp;nbsp;uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f &amp;nbsp; &amp;nbsp; &amp;nbsp;static-min=64GiB &amp;nbsp; dynamic-min=64GiB &amp;nbsp; dynamic-max=64GiB &amp;nbsp; &amp;nbsp;static-max=64GiB
-3.Start the VM.</description>
+#xe vm-memory-limits-set uuid=&amp;lt;uuid of=&amp;quot;&amp;quot; the=&amp;quot;&amp;quot; valid=&amp;quot;&amp;quot; vm=&amp;quot;&amp;quot;&amp;gt; static-min=&amp;lt;nn&amp;gt;GiB/MiB dynamic-min=&amp;lt;nn&amp;gt;GiB/MiB dynamic-max=&amp;lt;nn&amp;gt;GiB/MiB static-max=&amp;lt;nn&amp;gt;GiB/MiB &amp;lt;/nn&amp;gt;&amp;lt;/nn&amp;gt;&amp;lt;/nn&amp;gt;&amp;lt;/nn&amp;gt;&amp;lt;/uuid&amp;gt;  Example :
+#xe vm-memory-limits-set uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f static-min=64GiB dynamic-min=64GiB dynamic-max=64GiB static-max=64GiB   Start the VM.</description>
     </item>
     
   </channel>

@@ -780,6 +780,22 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -810,6 +826,184 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/08/04/jfrog-for-beginner/">Jfrog for Beginner</a></h1>
+        <span class="post-date">Aug 4, 2020</span>
+	
+
+<h2 id="install-jfrog-di-ubuntu">Install jfrog di ubuntu</h2>
+
+<p><a href="https://websiteforstudents.com/how-to-install-jfrog-artifactory-on-ubuntu-18-04-16-04/">https://websiteforstudents.com/how-to-install-jfrog-artifactory-on-ubuntu-18-04-16-04/</a></p>
+
+<pre><code>apt install wget software-properties-common apt-transport-https
+apt-get install openjdk-8-jdk openjdk-8-doc
+wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add -
+add-apt-repository &quot;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&quot;
+apt-get update
+apt install jfrog-artifactory-oss
+</code></pre>
+
+<h2 id="membuat-repository-artifacts-baru-di-jfrog">Membuat repository / artifacts baru di jfrog</h2>
+
+<pre><code>klik menu administration, lalu klik menu repositories (sebelah kiri), lalu klik + New Local Repository (sebelah kanan)
+klik / pilih generic, lalu isi repository key atau nama repository dengan apa saja yg diinginkan misal ansible-test-report
+klik save
+</code></pre>
+
+<h2 id="test-upload-dan-download-via-curl">test upload dan download via curl</h2>
+
+<p>buat dahulu bbrp file, misal test.txt, lalu upload dengan command curl</p>
+
+<pre><code>curl -uadmin:r4hasia01 -T test.txt &quot;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&quot;
+</code></pre>
+
+<p>command untuk download memakai curl</p>
+
+<pre><code>curl -uadmin:r4hasia01 -O &quot;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&quot;
+</code></pre>
+
+<h2 id="test-upload-dengan-playbook-script">test upload dengan playbook script</h2>
+
+<p>buat file jfrog-upload.yml</p>
+
+<pre><code>- hosts: all
+  gather_facts: false
+  connection: local
+  tasks:
+    - uri:
+        url: 'http://10.11.8.41:8081/artifactory/generic/test1.txt'
+        src: ./test1.txt
+        method: PUT
+        return_content: true
+        user: admin
+        password: r4hasia01
+        force_basic_auth: true
+        status_code: 201
+        headers:
+          Content-Type: application/octet-stream
+          Accept: application/json
+</code></pre>
+
+<p>buat file test1.txt, lalu jalankan script playbooknya dengan:</p>
+
+<pre><code>ansible-playbook -i localhost, jfrog-upload.yml
+</code></pre>
+
+<h2 id="jfrog-cli">Jfrog CLI</h2>
+
+<ul>
+<li><a href="https://jfrog.com/getcli/">https://jfrog.com/getcli/</a></li>
+<li><a href="https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory">https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory</a></li>
+</ul>
+
+<p>untuk lebih memudahkan proses management jfrog bisa menggunakan jfrog cli</p>
+
+<p>bisa download dulu dengan command:</p>
+
+<pre><code>curl -fL https://getcli.jfrog.io | sh
+</code></pre>
+
+<p>configure jfrog cli dengan</p>
+
+<pre><code>./jfrog rt c jfroglan --url=http://10.11.8.41:8082/artifactory --user=admin --password=r4hasia01
+</code></pre>
+
+<p>dari sini bisa untuk delete file / direktori, misal delete file testdir yg sebelumnya terbuat, dengan command:</p>
+
+<pre><code>./jfrog rt del generic/testdir
+</code></pre>
+
+<p>upload semua file di direktori dan taruh di direktori juga</p>
+
+<pre><code>./jfrog rt u &quot;testdir/&quot; generic/testdir/
+</code></pre>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/jfrog/">jfrog</a>, <a href="https://blog.indonesiadot.com/tags/repository/">repository</a>, <a href="https://blog.indonesiadot.com/tags/artifactory/">artifactory</a>, <a href="https://blog.indonesiadot.com/tags/artifacts/">artifacts</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/07/15/multi-python-on-virtualenv-using-pyenv/">Multi python on virtualenv using pyenv</a></h1>
+        <span class="post-date">Jul 15, 2020</span>
+	
+
+<h2 id="pyenv">pyenv</h2>
+
+<p>Pos://realpython.com/intro-to-pyenv/</p>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/python/">python</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/07/10/proxmox-beginner/">Proxmox Beginner</a></h1>
+        <span class="post-date">Jul 10, 2020</span>
+	
+
+<h2 id="update-proxmox-repo">update proxmox repo</h2>
+
+<p><a href="https://pve.proxmox.com/wiki/Package_Repositories">https://pve.proxmox.com/wiki/Package_Repositories</a>
+untuk bisa update proxmox harus dirubah dulu repo nya di file /etc/apt/sources.list (untuk proxmox 5.4 / debian 9 / stretch)</p>
+
+<pre><code>deb http://kebo.pens.ac.id/debian stretch main contrib
+deb http://kebo.pens.ac.id/debian stretch-updates main contrib
+# security updates
+deb http://kebo.pens.ac.id/debian-security stretch/updates main contrib
+deb http://download.proxmox.com/debian/pve stretch pve-no-subscription
+</code></pre>
+
+<h2 id="proxmox-masquerade">proxmox masquerade</h2>
+
+<p><a href="https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt">https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt</a></p>
+
+<pre><code>auto lo
+iface lo inet loopback
+auto ens192
+iface ens192 inet static
+        address  10.11.8.202
+        netmask  255.255.255.0
+        gateway  10.11.8.1
+auto vmbr0
+iface vmbr0 inet static
+        address  192.168.10.1
+        netmask  255.255.255.0
+        bridge-ports none
+        bridge-stp off
+        bridge-fd 0
+
+        post-up echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+        post-up iptables -t nat -A POSTROUTING -j MASQUERADE
+        post-down iptables -t nat -D POSTROUTING eno1 -j MASQUERADE
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/beginner/">beginner</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/07/10/proxmox-versi-6/">Proxmox Versi 6</a></h1>
@@ -1173,122 +1367,6 @@ ansible windows -m win_chocolatey -a &quot;name=7zip state=present&quot;
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/windows/">windows</a>, <a href="https://blog.indonesiadot.com/tags/winrm/">winrm</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/06/23/2fa-with-google-authenticator/">2FA with Google Authenticator</a></h1>
-        <span class="post-date">Jun 23, 2020</span>
-	
-
-<h2 id="ubuntu">Ubuntu</h2>
-
-<h3 id="pastikan-terdapat-baris-berikut-di-etc-ssh-sshd-config">Pastikan terdapat baris berikut di /etc/ssh/sshd_config</h3>
-
-<pre><code>ChallengeResponseAuthentication yes
-UsePAM yes
-</code></pre>
-
-<p>lalu restart service sshd</p>
-
-<h3 id="tambahkan-baris-berikut-di-akhir-etc-pam-d-common-auth">Tambahkan baris berikut di akhir /etc/pam.d/common-auth</h3>
-
-<pre><code>auth required pam_google_authenticator.so nullok
-</code></pre>
-
-<h3 id="go-go-gadget">Go go gadget</h3>
-
-<p>install google-authenticator app from android playstore, then add the server to show the code</p>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator">https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator</a></li>
-<li><a href="https://wiki.alpinelinux.org/wiki/Two_Factors_Authentication_With_OpenSSH">https://wiki.alpinelinux.org/wiki/Two_Factors_Authentication_With_OpenSSH</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/2fa/">2fa</a>, <a href="https://blog.indonesiadot.com/tags/google-authenticator/">google-authenticator</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/06/12/postgresql/">Postgresql</a></h1>
-        <span class="post-date">Jun 12, 2020</span>
-	
-
-<h2 id="install-pgadmin4-di-ubuntu-18">Install pgadmin4 di ubuntu 18</h2>
-
-<pre><code>apt-get install curl ca-certificates gnupg
-curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-sh -c 'echo &quot;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&quot; &gt; /etc/apt/sources.list.d/pgdg.list'
-apt update
-apt install pgadmin4
-</code></pre>
-
-<h2 id="create-db">create db</h2>
-
-<pre><code>su - postgres
-psql
-create database dvdrental;
-\q
-wget https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
-unzip dvdrental.zip
-pg_restore -d dvdrental dvdrental.tar
-psql -d dvdrental
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO pgtower;
-\q
-psql -U pgtower -d dvdrental
-select first_name from customer;
-\q
-</code></pre>
-
-<h2 id="pg-hba-conf">pg_hba.conf</h2>
-
-<pre><code>cat /var/opt/rh/rh-postgresql10/lib/pgsql/data/pg_hba.conf
-
-# Database administrative login by UNIX sockets
-# note: you may wish to restrict this further later
-local   all         postgres                                peer
-
-# TYPE  DATABASE    USER        CIDR-ADDRESS          METHOD
-local   all         all                               scram-sha-256
-host    all         all         127.0.0.1/32 scram-sha-256
-host    all         all         ::1/128 scram-sha-256
-host    all         all         10.11.8.0/24    md5
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.postgresqltutorial.com/postgresql-sample-database/">https://www.postgresqltutorial.com/postgresql-sample-database/</a></li>
-<li><a href="https://bobcares.com/blog/permission-denied-for-database-postgres/">https://bobcares.com/blog/permission-denied-for-database-postgres/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/beginner/">beginner</a>, <a href="https://blog.indonesiadot.com/tags/postgresql/">postgresql</a>, <a href="https://blog.indonesiadot.com/tags/psql/">psql</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/04/04/elk-elasticsearch-logstash-kibana-references/">Elk Elasticsearch Logstash Kibana References</a></h1>
-        <span class="post-date">Apr 4, 2020</span>
-	<ul>
-<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7">https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7</a></li>
-<li></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/elk/">elk</a>, <a href="https://blog.indonesiadot.com/tags/elasticsearch/">elasticsearch</a>, <a href="https://blog.indonesiadot.com/tags/logstash/">logstash</a>, <a href="https://blog.indonesiadot.com/tags/kibana/">kibana</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   

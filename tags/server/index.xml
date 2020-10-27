@@ -164,13 +164,14 @@ Referensi:
     </item>
     
     <item>
-      <title>Centos 7 Firewalld masquerade</title>
-      <link>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/</link>
+      <title>Centos 7 Firewalld</title>
+      <link>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld/</link>
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
-      <guid>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld-masquerade/</guid>
-      <description> Firewalld masquerade firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public  Referensi:
- https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/  </description>
+      <guid>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld/</guid>
+      <description> Firewalld masquerade  https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/
+firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public   Open port for specific ip address  https://serverfault.com/questions/684602/how-to-open-port-for-a-specific-ip-address-with-firewall-cmd-on-centos https://www.liquidweb.com/kb/an-introduction-to-firewalld/
+firewall-cmd --permanent --zone=public --add-rich-rule=&#39; rule family=&amp;quot;ipv4&amp;quot; source address=&amp;quot;1.2.3.4/32&amp;quot; port protocol=&amp;quot;tcp&amp;quot; port=&amp;quot;4567&amp;quot; accept&#39;   </description>
     </item>
     
     <item>

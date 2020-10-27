@@ -779,6 +779,22 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -968,6 +984,39 @@ systemctl restart  nslcd
 </code></pre>
 
 <p>then test ssh to the ldap client with newly created user</p>
+
+<h2 id="phpldapadmin">phpldapadmin</h2>
+
+<ul>
+<li><p><a href="https://hostadvice.com/how-to/how-to-install-phpldapadmin-on-centos-7/">https://hostadvice.com/how-to/how-to-install-phpldapadmin-on-centos-7/</a></p>
+
+<pre><code>yum install epel-release -y
+yum -y install phpldapadmin
+</code></pre></li>
+</ul>
+
+<p>Modify your configuration file located at /etc/httpd/conf.d/phpldapadmin.conf</p>
+
+<pre><code>&lt;IfModule mod_authz_core.c&gt;
+    # Apache 2.4
+    Require all granted
+  &lt;/IfModule&gt;
+</code></pre>
+
+<h3 id="configure-phpldapadmin">configure phpldapadmin</h3>
+
+<pre><code>$servers-&gt;setValue('server','host','127.0.0.1');
+$servers-&gt;setValue('server','port',389);
+$servers-&gt;setValue('login','bind_id','cn=ldapadm,dc=itzgeek,dc=local');
+$servers-&gt;setValue('appearance','password_hash','ssha');
+$servers-&gt;setValue('login','attr','dn');
+//$servers-&gt;setValue('login','attr','uid');
+</code></pre>
+
+<p>then start httpd</p>
+
+<pre><code>systemctl restart httpd
+</code></pre>
 
 </div>
 

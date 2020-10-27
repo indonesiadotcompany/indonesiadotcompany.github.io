@@ -780,6 +780,22 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -810,6 +826,84 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/18/ubuntu-tips/">Ubuntu tips</a></h1>
+        <span class="post-date">Mar 18, 2020</span>
+	
+
+<h2 id="install-specific-version">Install specific version</h2>
+
+<pre><code>apt-cache policy gparted
+apt install gparted=0.16.1-1
+</code></pre>
+
+<ul>
+<li><a href="https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package">https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package</a></li>
+</ul>
+
+<h2 id="apport-high-cpu">apport high cpu</h2>
+
+<pre><code>killall -9 apport
+service apport stop &amp;&amp; systemctl stop apport
+rm -f /var/crash/*
+apt-get remove apport -y
+</code></pre>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ubuntu/">ubuntu</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/">Ansible Tower Log Logstash ELK</a></h1>
+        <span class="post-date">Mar 16, 2020</span>
+	
+
+<h2 id="ansible-logstash-example">ansible logstash example</h2>
+
+<ul>
+<li><a href="https://github.com/widansible/elk-ansible">https://github.com/widansible/elk-ansible</a></li>
+<li><a href="https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack">https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack</a></li>
+<li><a href="https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html">https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html">https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>, <a href="https://blog.indonesiadot.com/tags/log/">log</a>, <a href="https://blog.indonesiadot.com/tags/logstash/">logstash</a>, <a href="https://blog.indonesiadot.com/tags/elk/">elk</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/16/kubernetes-references/">Kubernetes references</a></h1>
+        <span class="post-date">Mar 16, 2020</span>
+	
+
+<ul>
+<li><a href="https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076">https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076</a></li>
+<li><a href="https://medium.com/@kvaps/creating-baremethal-kubernetes-ha-cluster-with-kubeadm-and-keepalived-simple-guide">https://medium.com/@kvaps/creating-baremethal-kubernetes-ha-cluster-with-kubeadm-and-keepalived-simple-guide</a></li>
+<li><a href="https://medium.com/@kvaps/creating-high-available-baremetal-kubernetes-cluster-with-kubeadm-and-keepalived-simplest-guide-71766d5e25ae?source=---------6------------------">https://medium.com/@kvaps/creating-high-available-baremetal-kubernetes-cluster-with-kubeadm-and-keepalived-simplest-guide-71766d5e25ae?source=---------6------------------</a></li>
+</ul>
+
+<h2 id="kubernetes-monitoring">kubernetes monitoring</h2>
+
+<ul>
+<li><a href="https://medium.com/@kvaps/zabbix-solve-memory-monitoring-issue-inside-lxc-containers-98ddf191051c">https://medium.com/@kvaps/zabbix-solve-memory-monitoring-issue-inside-lxc-containers-98ddf191051c</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/kubernetes/">kubernetes</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/16/kubernetes-inside-lxc/">Kubernetes inside lxc</a></h1>
@@ -1094,245 +1188,6 @@ lvdisplay /dev/vg0/foo
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/disk/">disk</a>, <a href="https://blog.indonesiadot.com/tags/lvm/">lvm</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/12/ceph-tips/">Ceph tips</a></h1>
-        <span class="post-date">Mar 12, 2020</span>
-	
-
-<h2 id="remove-osd">remove osd</h2>
-
-<pre><code>systemctl stop ceph-osd.target
-systemctl stop ceph-osd@0
-ceph osd out 0
-ceph osd down 0
-ceph osd destroy 0
-ceph osd destroy 0 --yes-i-really-mean-it
-ceph osd rm 0
-ceph osd crush rm osd.0
-ceph auth del osd.0
-
-ceph-volume lvm zap /dev/sdX --destroy
-</code></pre>
-
-<ul>
-<li><a href="https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87">https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87</a></li>
-<li><a href="https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/">https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/</a></li>
-</ul>
-
-<h2 id="all-about-pg-num">all about pg_num</h2>
-
-<ul>
-<li><a href="https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox">https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox</a></li>
-</ul>
-
-<h2 id="ceph-one-single-node">ceph one / single node</h2>
-
-<pre><code>ceph osd getcrushmap -o crush_map_compressed
-crushtool -d crush_map_compressed -o crush_map_decompressed
-vi crush_map_decompressed
-</code></pre>
-
-<p>lalu cari bagian:</p>
-
-<pre><code>step chooseleaf firstn 0 type host
-</code></pre>
-
-<p>rubah menjadi:</p>
-
-<pre><code>step chooseleaf firstn 0 type osd
-</code></pre>
-
-<p>lalu insert hasilnya</p>
-
-<pre><code>crushtool -c crush_map_decompressed -o new_crush_map_compressed
-ceph osd setcrushmap -i new_crush_map_compressed
-ceph -s
-</code></pre>
-
-<ul>
-<li><a href="https://linoxide.com/linux-how-to/hwto-configure-single-node-ceph-cluster/">https://linoxide.com/linux-how-to/hwto-configure-single-node-ceph-cluster/</a></li>
-</ul>
-
-<p>Tutorial ceph bahasa indonesia</p>
-
-<ul>
-<li><a href="https://denstorial.blogspot.com/2019/01/tutorial.setup.ceph.storage.cluster.part.1.html">https://denstorial.blogspot.com/2019/01/tutorial.setup.ceph.storage.cluster.part.1.html</a></li>
-<li><a href="https://denstorial.blogspot.com/2019/02/troubleshooting.ceph.html">https://denstorial.blogspot.com/2019/02/troubleshooting.ceph.html</a></li>
-</ul>
-
-<h2 id="pg-placement-group-pg-num">PG (Placement Group) / pg_num</h2>
-
-<ul>
-<li><a href="https://docs.ceph.com/docs/mimic/rados/operations/placement-groups/">https://docs.ceph.com/docs/mimic/rados/operations/placement-groups/</a></li>
-<li><a href="https://www.sebastien-han.fr/blog/2013/03/12/ceph-change-pg-number-on-the-fly/">https://www.sebastien-han.fr/blog/2013/03/12/ceph-change-pg-number-on-the-fly/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ceph/">ceph</a>, <a href="https://blog.indonesiadot.com/tags/storage/">storage</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/10/lxd-lxc/">LXD-LXC</a></h1>
-        <span class="post-date">Mar 10, 2020</span>
-	
-
-<h2 id="lxc-set-static-ip">lxc set static ip</h2>
-
-<pre><code>lxc stop c1
-lxc network attach lxdbr0 c1 eth0 eth0
-lxc config device set c1 eth0 ipv4.address 10.99.10.42
-lxc start c1
-</code></pre>
-
-<ul>
-<li><a href="https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4">https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4</a></li>
-</ul>
-
-<h2 id="lxc-privileged-to-unprivileged">lxc privileged to unprivileged</h2>
-
-<p>Pada saat container (CT) lxc dalam unprivileged mode memiliki hak terbatas seperti akses ke device dan beberapa lainnya.</p>
-
-<p>Contoh pada saat menjalankan docker itu ada pesan error <em>Failed to reset devices.list on /system.slice</em></p>
-
-<p>Workaround nya adalah dengan membuat CT menjadi privileged mode, caranya yaitu:
-- backup CT
-- restore CT dengan uncheck unprivileged mode</p>
-
-<ul>
-<li><a href="https://github.com/lxc/lxd/issues/2004">https://github.com/lxc/lxd/issues/2004</a></li>
-<li><a href="https://forum.proxmox.com/threads/convert-privileged-to-unprivileged-container.31066/">https://forum.proxmox.com/threads/convert-privileged-to-unprivileged-container.31066/</a></li>
-</ul>
-
-<h2 id="rename-lxc-container">rename lxc container</h2>
-
-<pre><code>lxc move [ct-lama] [ct-baru]
-</code></pre>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ubuntu/">ubuntu</a>, <a href="https://blog.indonesiadot.com/tags/lxd/">lxd</a>, <a href="https://blog.indonesiadot.com/tags/lxc/">lxc</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution-1-briefing-session/">Ansible Test Implement for Security Hardening Solution 1 - Briefing Session</a></h1>
-        <span class="post-date">Mar 9, 2020</span>
-	
-
-<h2 id="background">Background</h2>
-
-<ul>
-<li>belum adanya standarisasi system security perusahaan yang mengacu kepada baseline standarisasi internasional seperti CIS, NIST atau PCI-DSS</li>
-<li>pekerjaan manual yang sangat kompleks, lama dan berat jika harus dilakukan secara manual untuk melakukan standarisasi security system</li>
-<li>masih banyaknya server perusahaan yang non-comply dengan standarisasi sistem security yang telah dibuat oleh perusahaan</li>
-</ul>
-
-<h2 id="objective">Objective</h2>
-
-<ul>
-<li>mengurangi serangan</li>
-<li>konfigurasi yang robust</li>
-<li>secured protocols</li>
-<li>comply kepada standarisasi internasional dan standarisasi internal perusahaan</li>
-</ul>
-
-<h2 id="technical-requirements">Technical Requirements</h2>
-
-<p>Langkah 1:</p>
-
-<ul>
-<li>Membuat security baseline
-
-<ul>
-<li>custom baseline CIS / PCI-DSS yang digabung dengan baseline internal perusahaan</li>
-</ul></li>
-<li>Implementasi dan enforce security baseline</li>
-</ul>
-
-<h3 id="technical-requirements-overall-scope-of-work-and-deliverable">Technical Requirements - Overall Scope of Work and deliverable:</h3>
-
-<ul>
-<li>Architecture and End-to-End Design (N)</li>
-<li>Hardware, Software and infrastructure components
-
-<ul>
-<li>Hardware</li>
-<li>2 server postgresql / ansible tower database server</li>
-<li>3 server ansible tower (cluster)</li>
-<li>1 server ansible tower for development / testing</li>
-<li>Software</li>
-<li>redhat / centos OS</li>
-<li>ansible</li>
-<li>ansible tower</li>
-<li>postgresql</li>
-<li>openscap</li>
-<li>ansible playbook / roles based on CIS / PCI-DSS / NIST baseline that combined with internal company baseline</li>
-</ul></li>
-<li>Hardware and software delivery and installation, incl. necessary testing (N)
-
-<ul>
-<li>install dua postgresql active - passive</li>
-<li>install ansible tower for production</li>
-<li>install ansible tower for development</li>
-<li>test implementasi / deployment manage server dari ansible tower development, lalu setelah ok, copy / replikasi semua template, playbook dan yg berkaitan ke ansible tower production</li>
-</ul></li>
-<li>Required supporting equipment and materials</li>
-<li>Services, including project management, implementation, integration and migration (N)</li>
-<li>Technical support (3 years) including
-
-<ul>
-<li>Hardware and software updates</li>
-<li>Service request support and management (SRSM)</li>
-<li>spares management with instant replacement (SPMS)</li>
-<li>first line maintenance incl. preventative maintenances (O&amp;M Assistance)</li>
-</ul></li>
-</ul>
-
-<h3 id="technical-requirements-software-scope">Technical Requirements Software Scope</h3>
-
-<ul>
-<li>Software components shall be grouped in two areas : 1. Development, 2. Operation</li>
-</ul>
-
-<h3 id="technical-requirements-services-scope">Technical Requirements Services Scope</h3>
-
-<ul>
-<li>Detailed micro-design and security implementation plan (N)</li>
-<li>Project management &amp; project technical documentation according to Telkomsel standards. (N)</li>
-</ul>
-
-<h3 id="technical-requirements-compliance-to-requirement">Technical Requirements - Compliance to requirement</h3>
-
-<p>Statements of Compliances</p>
-
-<ul>
-<li><p>Full Comply = The proposed solution can fulfill the specified requirement at the start of the project (Day 1)</p></li>
-
-<li><p>Comply with Customization = The proposed solution can fulfill the specified requirements with some customizations, and it must be ready when it is required by specific phase within the implementation timeline</p></li>
-
-<li><p>Not Comply = The proposed solution cannot fulfill the specified requirements</p></li>
-</ul>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>
 	 <hr/>
     </div>
   
