@@ -796,6 +796,8 @@
       
     
       
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -826,6 +828,66 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/08/11/ansible-sudoers/">Ansible sudoers</a></h1>
+        <span class="post-date">Aug 11, 2020</span>
+	
+
+<h2 id="contoh">Contoh</h2>
+
+<ul>
+<li><a href="https://code-maven.com/enable-ansible-passwordless-sudo">https://code-maven.com/enable-ansible-passwordless-sudo</a></li>
+
+<li><p><a href="https://stackoverflow.com/questions/37333305/ansible-create-a-user-with-sudo-privileges">https://stackoverflow.com/questions/37333305/ansible-create-a-user-with-sudo-privileges</a></p>
+
+<pre><code>- hosts: all
+tasks:
+- lineinfile:
+    path: /etc/sudoers
+    state: present
+    regexp: '^%sudo'
+    line: '%sudo ALL=(ALL) NOPASSWD: ALL'
+    validate: 'visudo -cf %s'
+</code></pre>
+
+<p>contoh lain</p>
+
+<pre><code>- name: Make sure we have a 'wheel' group
+group:
+name: wheel
+state: present
+
+- name: Allow 'wheel' group to have passwordless sudo
+lineinfile:
+dest: /etc/sudoers
+state: present
+regexp: '^%wheel'
+line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+validate: 'visudo -cf %s'
+
+- name: Add sudoers users to wheel group
+user:
+name=deployer
+groups=wheel
+append=yes
+state=present
+createhome=yes
+
+- name: Set up authorized keys for the deployer user
+authorized_key: user=deployer key=&quot;{{item}}&quot;
+with_file:
+- /home/railsdev/.ssh/id_rsa.pub
+</code></pre></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/playbook/">playbook</a>, <a href="https://blog.indonesiadot.com/tags/sudo/">sudo</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/08/04/jfrog-for-beginner/">Jfrog for Beginner</a></h1>
@@ -1263,110 +1325,6 @@ grant all privileges on database awxtower1 to awxtower1;
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/postgresql/">postgresql</a>, <a href="https://blog.indonesiadot.com/tags/sql/">sql</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/06/24/ansible-to-windows-via-winrm/">Ansible to Windows via winrm</a></h1>
-        <span class="post-date">Jun 24, 2020</span>
-	
-
-<h2 id="prerequisites-on-windows">Prerequisites on windows</h2>
-
-<h3 id="upgrading-powershell-and-net-framework">Upgrading PowerShell and .NET Framework</h3>
-
-<p><a href="https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html">https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html</a></p>
-
-<p>Buka powershell sebagai administrator, lalu copy paste bagian berikut:</p>
-
-<pre><code>$url = &quot;https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1&quot;
-$file = &quot;$env:temp\Upgrade-PowerShell.ps1&quot;
-$username = &quot;Administrator&quot;
-$password = &quot;Password&quot;
-
-(New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
-
-# Version can be 3.0, 4.0 or 5.1
-&amp;$file -Version 5.1 -Username $username -Password $password -Verbose
-</code></pre>
-
-<p>Once completed, you will need to remove auto logon and set the execution policy back to the default of Restricted. You can do this with the following PowerShell commands:</p>
-
-<pre><code># This isn't needed but is a good security practice to complete
-Set-ExecutionPolicy -ExecutionPolicy Restricted -Force
-
-$reg_winlogon_path = &quot;HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon&quot;
-Set-ItemProperty -Path $reg_winlogon_path -Name AutoAdminLogon -Value 0
-Remove-ItemProperty -Path $reg_winlogon_path -Name DefaultUserName -ErrorAction SilentlyContinue
-Remove-ItemProperty -Path $reg_winlogon_path -Name DefaultPassword -ErrorAction SilentlyContinue
-</code></pre>
-
-<h3 id="windows-preparation">Windows preparation</h3>
-
-<p><a href="https://medium.com/the-sysadmin/managing-windows-machines-with-ansible-60395445069f">https://medium.com/the-sysadmin/managing-windows-machines-with-ansible-60395445069f</a></p>
-
-<p>Buka cmd (command prompt) sebagai administrator, lalu copy paste bagian berikut:</p>
-
-<pre><code>@powershell -NoProfile -ExecutionPolicy Bypass -Command &quot;iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1'))&quot;
-</code></pre>
-
-<h3 id="prerequisites-di-sisi-ansible-engine">Prerequisites di sisi ansible engine</h3>
-
-<p><a href="https://stackoverflow.com/questions/51633907/msg-winrm-or-requests-is-not-installed-no-module-named-xmltodict">https://stackoverflow.com/questions/51633907/msg-winrm-or-requests-is-not-installed-no-module-named-xmltodict</a></p>
-
-<pre><code>pip install --ignore-installed pywinrm
-</code></pre>
-
-<h3 id="inventory-ansible">inventory ansible</h3>
-
-<p><a href="https://geekflare.com/connecting-windows-ansible-from-ubuntu/">https://geekflare.com/connecting-windows-ansible-from-ubuntu/</a></p>
-
-<pre><code>[windows]
-10.11.8.102 ansible_user=ansible ansible_password=pwdansibl3 ansible_winrm_port=5986 ansible_connection=winrm ansible_winrm_server_cert_validation=ignore
-</code></pre>
-
-<h3 id="test-it">test it</h3>
-
-<pre><code>ansible windows -m win_ping
-</code></pre>
-
-<h3 id="note">note</h3>
-
-<pre><code>ansible.cfg
-[defaults]
-inventory = ./inventory
-</code></pre>
-
-<h3 id="win-chocolatey-untuk-install-aplikasi">win chocolatey untuk install aplikasi</h3>
-
-<p><a href="https://chocolatey.org/docs/installation">https://chocolatey.org/docs/installation</a></p>
-
-<p>install terlebih dahulu chocolatey di windows dengan command:</p>
-
-<pre><code>@&quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot; [System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;
-</code></pre>
-
-<p>lalu test install beberapa aplikasi dengan ansible ad-hoc command:</p>
-
-<pre><code>ansible windows -m win_chocolatey -a &quot;name=putty state=present&quot;
-ansible windows -m win_chocolatey -a &quot;name=git state=present&quot;
-ansible windows -m win_chocolatey -a &quot;name=7zip state=present&quot;
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://github.com/jborean93/ansible-windows/tree/master/scripts">https://github.com/jborean93/ansible-windows/tree/master/scripts</a></li>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/list_of_windows_modules.html">https://docs.ansible.com/ansible/latest/modules/list_of_windows_modules.html</a></li>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/win_chocolatey_module.html#win-chocolatey-module">https://docs.ansible.com/ansible/latest/modules/win_chocolatey_module.html#win-chocolatey-module</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/windows/">windows</a>, <a href="https://blog.indonesiadot.com/tags/winrm/">winrm</a>
 	 <hr/>
     </div>
   
