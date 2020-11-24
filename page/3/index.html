@@ -798,6 +798,8 @@
       
     
       
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -828,6 +830,71 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/06/30/postgresql-tips/">Postgresql tips</a></h1>
+        <span class="post-date">Jun 30, 2020</span>
+	
+
+<h2 id="postgresql-export-and-import-to-mysql">Postgresql export and import to mysql</h2>
+
+<p>di server postgresql jalankan command berikut untuk export:</p>
+
+<pre><code>#pg_dump --verbose --schema-only --table=xx_user --db=test --file=/tmp/montower.sql
+pg_dump --verbose --schema-only --db=montower --file=/tmp/montower.sql
+
+psql -U namauserpsql montower
+copy xx_user to '/tmp/hosts.txt' with (delimiter ',');
+</code></pre>
+
+<p>di server mysql jalankan command berikut untuk import:</p>
+
+<pre><code>mysql --local-infile
+create database montower;
+use montower;
+#load data local infile '/home/postgres/user.txt' into table xx_user fields terminated by ',' lines terminated by '\n';
+load data local infile '/tmp/montower.sql' fields terminated by ',' lines terminated by '\n';
+load data local infile '/tmp/hosts.txt' into table hosts fields terminated by ',' lines terminated by '\n';
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.postgresql.org/docs/9.1/backup-dump.html">https://www.postgresql.org/docs/9.1/backup-dump.html</a></li>
+<li><a href="https://www.programmersought.com/article/23102305281/">https://www.programmersought.com/article/23102305281/</a></li>
+<li><a href="https://stackoverflow.com/questions/10762239/mysql-enable-load-data-local-infile">https://stackoverflow.com/questions/10762239/mysql-enable-load-data-local-infile</a></li>
+</ul>
+
+<h2 id="postgresql-show-data-tables">Postgresql show data tables</h2>
+
+<ul>
+<li><p><a href="https://kb.objectrocket.com/postgresql/connect-to-postgresql-and-show-the-table-schema-967">https://kb.objectrocket.com/postgresql/connect-to-postgresql-and-show-the-table-schema-967</a></p>
+
+<pre><code>psql -h 10.11.8.16 -U awxtower1
+\c awxtower1db
+\d
+\q
+</code></pre></li>
+</ul>
+
+<h2 id="postgresql-create-remote-user-and-database">Postgresql create remote user and database</h2>
+
+<ul>
+<li><p><a href="https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/">https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/</a></p>
+
+<pre><code>create database awxtower1db;
+create user awxtower1 with encrypted password 'awxtower1';
+grant all privileges on database awxtower1 to awxtower1;
+</code></pre></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/postgresql/">postgresql</a>, <a href="https://blog.indonesiadot.com/tags/sql/">sql</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/06/24/ansible-to-windows-via-winrm/">Ansible to Windows via winrm</a></h1>
@@ -1292,358 +1359,6 @@ done
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/certificate/">certificate</a>, <a href="https://blog.indonesiadot.com/tags/ssl/">ssl</a>, <a href="https://blog.indonesiadot.com/tags/csr/">csr</a>, <a href="https://blog.indonesiadot.com/tags/crt/">crt</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/18/ansible-tower-for-beginner/">Ansible Tower for beginner</a></h1>
-        <span class="post-date">Mar 18, 2020</span>
-	
-
-<p>Before going to start the installation steps, we need to know some benefits of Ansible Tower.</p>
-
-<h1 id="why-we-need-ansible-tower-and-it-s-benefits">Why we need Ansible Tower and it’s benefits?</h1>
-
-<ol>
-<li><p>Ansible Tower helps you scale IT automation, manage complex deployments and speed productivity.</p></li>
-
-<li><p>Centralize and control your IT infrastructure with a visual dashboard, role-based access control, job scheduling, integrated notifications and graphical inventory management.</p></li>
-
-<li><p>Ansible Tower’s REST API and CLI make it easy to embed Ansible Tower into existing  tools and processes.</p></li>
-
-<li><p>The Ansible Tower dashboard provides a heads-up NOC-style display for everything  going on in your Ansible environment.</p></li>
-
-<li><p>As soon as you log in, you’ll see your host and inventory status, all the recent job activity and a snapshot of recent job runs. Adjust your job status settings to graph data from specific job and time ranges.</p></li>
-
-<li><p>We can get Real-Time Job Status update:</p></li>
-</ol>
-
-<p>Within Ansible Tower, playbook runs stream by in real time. As Ansible automates across your infrastructure, you’ll see plays and tasks complete, broken down by each machine, and each success or failure, complete with output. Easily see the status of your automation, and what’s next in the queue.</p>
-
-<p>Other types of jobs, such as source control updates or cloud inventory refreshes, appear in the common job view. Know what Ansible Tower is up to at any time.</p>
-
-<ol>
-<li>Multi-Playbook Workflows:</li>
-</ol>
-
-<p>Ansible Tower Workflows allow you to easily model complex processes with Ansible Tower’s intuitive workflow editor. Ansible Tower workflows chain any number of playbooks, updates, and other workflows, regardless of whether they use different inventories, run as different users, run at once or utilize different credentials.</p>
-
-<p>You can build a provisioning workflow that provisions machines, applies a base system configuration, and deploys an application, all with different playbooks maintained by different teams. You can build a CI/CD testing workflow that builds an application, deploys it to a test environment, runs tests, and automatically promotes the application based on test results. Set up different playbooks to run in case of success or failure of a prior workflow playbook.</p>
-
-<ol>
-<li>Who Ran What Job When:</li>
-</ol>
-
-<p>With Ansible Tower, all automation activity is securely logged. Who ran it, how they customized it, what it did, where it happened – all securely stored and viewable later, or exported through Ansible Tower’s API.</p>
-
-<p>Activity streams extend this by showing a complete audit trail of all changes made to Ansible Tower itself – job creation, inventory changes, credential storage, all securely tracked.</p>
-
-<p>All audit and log information can be sent to your external logging and analytics provider to perform analysis of automation and event correlation   across your entire environment.</p>
-
-<ol>
-<li><p>Ansible Tower allows us to easily streamline the delivery of applications and services to both OpenStack and Amazon Clouds in a cost effective, simple, and secure manner.</p></li>
-
-<li><p>Scale Capacity With Tower Clusters:</p></li>
-</ol>
-
-<p>Connect multiple Ansible Tower nodes into a Ansible Tower cluster. Ansible Tower clusters add redundancy and capacity, allowing you to scale Ansible automation across your enterprise, including with reserved capacity for certain teams and jobs, and remote execution for access across network zones.</p>
-
-<ol>
-<li>Integrated Notifications:</li>
-</ol>
-
-<p>Stay informed of your automation status via integrated notifications.</p>
-
-<p>Notify a person or team when your job succeeds, or escalate when jobs fail. Send notifications across your entire organization at once, or customize on a per- job basis.</p>
-
-<p>Connect your notifications to Slack, Hipchat, PagerDuty, SMS, email, and more – or post notifications to a custom webhook to trigger other tools in your infrastructure.</p>
-
-<ol>
-<li>Schedule Ansible Jobs:</li>
-</ol>
-
-<p>Playbook runs, cloud inventory updates, and source control updates can be scheduled inside Ansible Tower – run now, run later, or run forever.</p>
-
-<p>Set up occasional tasks like nightly backups, periodic configuration remediation for compliance, or a full continuous delivery pipeline with just a few clicks.</p>
-
-<ol>
-<li>Manage And Track Your Entire Inventory:</li>
-</ol>
-
-<p>Ansible Tower helps you manage your entire infrastructure. Easily pull your  inventory from public cloud providers such as Amazon Web Services, Microsoft Azure, and more, or synchronize from your local OpenStack cloud or VMware environment. Connect your inventory directly to your Red Hat Satellite or Red Hat CloudForms environment, or your custom CMDB.</p>
-
-<p>Ansible Tower can keep your cloud inventory in sync, and Ansible Tower’s powerful provisioning callbacks allow nodes to request configuration on demand, enabling autoscaling. You can also see alerts from Red Hat Insights directly from Ansible Tower, and use Insights-provided Playbook Remediation to fix issues in your infrastructure.</p>
-
-<p>Plus, Ansible Tower Smart Inventories allow you to organize and automate hosts across all your providers based on a powerful host fact query engine.</p>
-
-<ol>
-<li>Remote Command Execution:</li>
-</ol>
-
-<p>Run simple tasks on any host or group of hosts in your inventory with Ansible Tower’s remote command execution. Add users or groups, reset passwords, restart a malfunctioning service or patch a critical security issue, quickly. As always, remote command execution uses Ansible Tower’s role-based access control engine and logs every action.</p>
-
-<ol>
-<li>Comprehensive Rest API And Tower CLI Tool:</li>
-</ol>
-
-<p>Far from being limited to just the user interface, every feature of Ansible Tower is available via Ansible Tower’s REST API, providing the ideal API for a systems management infrastructure to build against. Call Ansible Tower jobs from your build tools, show Ansible Tower information in your custom dashboards and more. Get API usage information and best practices with built-in documentation.</p>
-
-<h2 id="prerequisites">Prerequisites:</h2>
-
-<p>Ansible Tower server (I’m using a VMware environment, so both my servers are VMs)</p>
-
-<p>1 Core, 1GB RAM Ubuntu 12.04 LTS Server, 64-bit</p>
-
-<p>Active Directory Server (I’m using Windows Server 2012 R2)</p>
-
-<p>2 Cores, 4GB RAM</p>
-
-<p>Officially, Tower supports CentOS 6, RedHat Enterprise Linux 6, Ubuntu Server 12.04 LTS, and Ubuntu Server 14.04 LTS.</p>
-
-<p>Installing Tower requires Internet connectivity, because it downloads from their repo servers.</p>
-
-<p>I have managed to perform an offline installation, but you have to set up some kind of system to mirror their repositories, and change some settings in the Ansible Installer file.</p>
-
-<p>I <em>highly</em> recommend you dedicate a server (vm or otherwise) to Ansible Tower, because the installer will rewrite pg_hba.conf and supervisord.conf to suit its needs.  Everything is easier if you give it it’s own environment to run in.</p>
-
-<p>You <em>might</em> be able to do it in Docker, although I haven’t tried, and I’m willing to bet you’re asking for trouble.</p>
-
-<p>I’m going to assume you already know about installing Windows Server 2012 and building a domain controller. (If there’s significant call for it, I might write a separate blog post about this…)</p>
-
-<h1 id="installation-steps">Installation Steps:</h1>
-
-<h2 id="step-1">Step – 1:</h2>
-
-<p>Download the latest .tar file from ‘<a href="https://releases.ansible.com/ansible-tower/setup/&amp;#8217">https://releases.ansible.com/ansible-tower/setup/&amp;#8217</a>;</p>
-
-<h2 id="step-2">Step – 2:</h2>
-
-<p>Now untar the downloaded .tar file using below command:</p>
-
-<p>[devops@localhost ~]$ tar xvzf ansible-tower-setup-latest.tar.gz</p>
-
-<h2 id="step-3">Step – 3:</h2>
-
-<p>goto “ansible-tower-setup-<VERSION>” directory</p>
-
-<p>[devops@localhost ~]$ cd ansible-tower-setup-3.4.0-2</p>
-
-<h2 id="step-4">Step – 4:</h2>
-
-<p>edit inventory file which is present inside “ansible-tower-setup-3.4.0-2″ directory.</p>
-
-<p>Put the below content to inventory file:</p>
-
-<pre><code># /home/ubuntu/ansible-tower-setup-3.2.5/inventory file content
-
-[tower]
-localhost ansible_connection=local
-
-[database]
-
-[all:vars]
-admin_password=’admin’
-
-pg_host=”
-pg_port=”
-
-pg_database=’awx’
-pg_username=’awx’
-pg_password=’admin’
-
-rabbitmq_port=5672
-rabbitmq_vhost=tower
-rabbitmq_username=tower
-rabbitmq_password=’admin’
-rabbitmq_cookie=cookiemonster
-
-# Needs to be true for fqdns and ip addresses
-rabbitmq_use_long_name=false
-
-# Isolated Tower nodes automatically generate an RSA key for authentication;
-# To disable this behavior, set this value to false
-# isolated_key_generation=true
-################################# Up to here ########################
-</code></pre>
-
-<h2 id="step-5">Step – 5:</h2>
-
-<p>Now Run the ansible-tower setup by using below command:</p>
-
-<p>[devops@localhost ansible-tower-setup-3.4.0-2]$ sudo ansible-playbook -i inventory install.yml
-[INFO]  To Run Above command we should have ansible installed on this server</p>
-
-<p>[INFO]  If ansible is not present then please open the below link and install the ansible:</p>
-
-<p>[INFO]  <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-centos-7">https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-centos-7</a></p>
-
-<p>[INFO] SetUp will take approx 45 mins or more.</p>
-
-<p>Sample Output:</p>
-
-<pre><code>[sudo] password for devops:
-[WARNING]: Could not match supplied host pattern, ignoring: instance_group_*
-PLAY [tower:database:instance_group_*] ******************************************************************************************************************************
-
-TASK [check_config_static : Ensure expected variables are defined] **************************************************************************************************
-skipping: [localhost] =&gt; (item=tower_package_name)
-skipping: [localhost] =&gt; (item=tower_package_version)
-skipping: [localhost] =&gt; (item=tower_package_release)
-
-TASK [check_config_static : Detect unsupported HA inventory file] ***************************************************************************************************
-skipping: [localhost]
-
-TASK [check_config_static : Ensure at least one tower host is defined] **********************************************************************************************
-skipping: [localhost]
-
-TASK [check_config_static : Ensure only one database host exists] ***************************************************************************************************
-skipping: [localhost]
-
-TASK [check_config_static : Ensure when postgres host is defined that the port is defined] **************************************************************************
-skipping: [localhost]
-
-TASK [check_config_static : Ensure that when a database host is specified, that pg_host is defined] *****************************************************************
-skipping: [localhost]
-
-TASK [check_config_static : Ensure that when a database host is specified, that pg_port is defined] *****************************************************************
-skipping: [localhost]
-
-TASK [check_config_static : HA mode requires an external postgres database with pg_host defined] ********************************************************************
-skipping: [localhost]
-
-TASK [check_config_static : HA mode requires an external postgres database with pg_port defined] ********************************************************************
-skipping: [localhost]
-
-TASK [config_dynamic : Set database to internal or external] ********************************************************************************************************
-ok: [localhost]
-
-TASK [config_dynamic : Database decision] ***************************************************************************************************************************
-ok: [localhost] =&gt; {
-“config_dynamic_database”: “internal”
-}
-
-TASK [config_dynamic : Set postgres host and port to local if not set] **********************************************************************************************
-ok: [localhost]
-
-TASK [config_dynamic : Ensure connectivity to hosts and gather facts] ***********************************************************************************************
-ok: [localhost]
-
-TASK [config_dynamic : Get effective uid] ***************************************************************************************************************************
-changed: [localhost]
-
-TASK [config_dynamic : Ensure user is root] *************************************************************************************************************************
-skipping: [localhost]
-
-PLAY [Group nodes by OS distribution] *******************************************************************************************************************************
-
-TASK [Gathering Facts] **********************************************************************************************************************************************
-ok: [localhost]
-
-TASK [group hosts by distribution] **********************************************************************************************************************************
-ok: [localhost]
-[WARNING]: Could not match supplied host pattern, ignoring: RedHat-7*
-
-[WARNING]: Could not match supplied host pattern, ignoring: Ubuntu-16.04
-
-[WARNING]: Could not match supplied host pattern, ignoring: OracleLinux-7*
-PLAY [Group supported distributions] ********************************************************************************************************************************
-
-TASK [group hosts for supported distributions] **********************************************************************************************************************
-ok: [localhost]
-[WARNING]: Could not match supplied host pattern, ignoring: none
-
-.
-
-.
-
-.
-
-.
-
-TASK [misc : Create the default organization if it is needed.] ******************************************************************************************************
-changed: [localhost]
-
-RUNNING HANDLER [supervisor : restart supervisor] *******************************************************************************************************************
-changed: [localhost] =&gt; {
-“msg”: “Restarting supervisor.”
-}
-
-RUNNING HANDLER [supervisor : Stop supervisor.] *********************************************************************************************************************
-changed: [localhost]
-
-RUNNING HANDLER [supervisor : Wait for supervisor to stop.] *********************************************************************************************************
-ok: [localhost]
-
-RUNNING HANDLER [supervisor : Start supervisor.] ********************************************************************************************************************
-changed: [localhost]
-
-RUNNING HANDLER [nginx : restart nginx] *****************************************************************************************************************************
-changed: [localhost]
-
-PLAY [Install Tower isolated node(s)] *******************************************************************************************************************************
-skipping: no hosts matched
-
-PLAY RECAP **********************************************************************************************************************************************************
-localhost : ok=139 changed=65 unreachable=0 failed=0
-
-########### Sample Output Ends Here ############
-</code></pre>
-
-<h2 id="step-6-now-open-browser-and-type-below">Step – 6: Now, open browser and type below:</h2>
-
-<p><a href="https://Your-Server-IP-Address">https://Your-Server-IP-Address</a>  and hit enter.</p>
-
-<p>Example:</p>
-
-<p><a href="https://192.168.56.102">https://192.168.56.102</a></p>
-
-<p>1.Browser_Proceed_unsafe.png</p>
-
-<p>Now, Click on –&gt; Advance–&gt;click on–&gt;proceed to <192.168.56.102> –&gt;It will show as below</p>
-
-<p>It will automatically redirect to Ansible Tower page(as shown below)</p>
-
-<p>2.Login_Page_on_browser.png</p>
-
-<p>Now, Put your username and password(which you have provided in “/home/ubuntu/ansible-tower-setup-3.2.5/inventory” file)</p>
-
-<p>And click on “SIGN IN” button.</p>
-
-<p>After logged-in successfully, It will ask for license.Please click on “REQUEST LICENSE”3.Request_license.png</p>
-
-<p>It will take to you on ansible tower license request page.Please select the appropriate options and fill the all mandatory fields and click on “Submit” button as shown below:</p>
-
-<p>4.Redirect_to_get_license_after_filling_proper_details_main.png</p>
-
-<p>After Click on “Submit” button, it will send the license file to your mail within 1 business day. Please check the mail.</p>
-
-<p>After getting the license file, Please open the Ansible tower and do below things which are marked as Orange Square:</p>
-
-<p><img src="https://blog.indonesiadot.com/images/2020/3.1browse_license_file.png" alt="license" /></p>
-
-<p>And click on “Submit” button.</p>
-
-<p>After successful submission, It will show you the Ansible Tower Dashboard as shown below:</p>
-
-<p><img src="https://blog.indonesiadot.com/images/2020/5.After_successful_login_first_page_view.png" alt="login" /></p>
-
-<p>Finally, You have successful Ansible Tower installation on Centos 7 Machine.</p>
-
-<p>In the next blog we will see how to run the first playbook from Ansible Tower.</p>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/">https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/</a></li>
-<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-centos-7">https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-centos-7</a></li>
-<li><a href="https://releases.ansible.com/ansible-tower/docs/tower_user_guide-2.1.6.pdf">https://releases.ansible.com/ansible-tower/docs/tower_user_guide-2.1.6.pdf</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   

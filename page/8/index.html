@@ -798,6 +798,8 @@
       
     
       
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -828,6 +830,34 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/05/modsecurity-waf/">Modsecurity WAF</a></h1>
+        <span class="post-date">Dec 5, 2019</span>
+	
+
+<h2 id="modsecurity-waf">Modsecurity WAF</h2>
+
+<p><img src="https://blog.indonesiadot.com/images/2019/modsecurity-architecture.jpg" alt="routed-lans" /></p>
+
+<p>user yg mau sql injection di scan dulu sama modsecurity yg modsecurity baca ruleset (crs) kalau ada di rules nya di deny.
+kalau false positive, dinyatakan oleh client / developer bahwa itu sbnrnya aman, baru di exclude rule tersebut, kalau developer bisa nambel supaya bisa rubah supaya lebih sesuai ruleset nya lebih baik.</p>
+
+<p>intinya mudah sih yg opensource, cuma kelemahan nya nempel di host dan atau nempel di webserver, lalu kelemahan lain banyak false positive, sama ga ada ui nya, meski berjalan bagus bisa menahan serangan cuma agak sulit manage nya, terutama klo aplikasi yg ga standar, klo yg standar misal kaya wordpress mungkin lebih mudah.</p>
+
+<p>Referensi:</p>
+
+<ul>
+<li>Searching modsecurity architecture</li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/modsecurity/">modsecurity</a>, <a href="https://blog.indonesiadot.com/tags/webserver/">webserver</a>, <a href="https://blog.indonesiadot.com/tags/waf/">waf</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/04/openvpn-routed-lans/">Openvpn Routed LANS</a></h1>
@@ -1209,68 +1239,6 @@ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/syslog/">syslog</a>, <a href="https://blog.indonesiadot.com/tags/client/">client</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/31/regex-/-regexp-reference/">Regex / Regexp Reference</a></h1>
-        <span class="post-date">Oct 31, 2019</span>
-	
-
-<h2 id="regex-case-insensitive">Regex Case insensitive</h2>
-
-<p>(?i)</p>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean">https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean</a></li>
-<li><a href="https://regex101.com/r/hE9gB4/1">https://regex101.com/r/hE9gB4/1</a></li>
-<li><a href="https://regexr.com/3f4vo">https://regexr.com/3f4vo</a></li>
-</ul>
-
-<h2 id="regex-to-match-string-containing-two-names">Regex to match string containing two names</h2>
-
-<p>###Explanation of command that i am going to write:-</p>
-
-<p>. means any character, digit can come in place of .</p>
-
-<ul>
-<li>means zero or more occurrences of thing written just previous to it.</li>
-</ul>
-
-<p>| means &lsquo;or&rsquo;.</p>
-
-<p>So,</p>
-
-<pre><code>james.*jack
-</code></pre>
-
-<p>would search james , then any number of character until jack comes.</p>
-
-<p>Since you want either jack.*james or james.*jack</p>
-
-<p>Hence Command:</p>
-
-<p>jack.*james|james.*jack</p>
-
-<p>Ref:</p>
-
-<ul>
-<li><a href="https://stackoverflow.com/questions/4389644/regex-to-match-string-containing-two-names-in-any-order">https://stackoverflow.com/questions/4389644/regex-to-match-string-containing-two-names-in-any-order</a></li>
-</ul>
-
-<h2 id="regex-not-contain-substring-a-word">Regex not contain substring / a word</h2>
-
-<p>Ref:</p>
-
-<p><a href="https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word">https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word</a></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/regex/">regex</a>, <a href="https://blog.indonesiadot.com/tags/regexp/">regexp</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   

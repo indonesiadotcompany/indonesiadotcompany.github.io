@@ -798,6 +798,8 @@
       
     
       
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -828,6 +830,127 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/13/sentinelone-epp-edr/">Sentinelone EPP EDR</a></h1>
+        <span class="post-date">Mar 13, 2020</span>
+	
+
+<h2 id="cloud-connectivity-became-offline">cloud connectivity became offline</h2>
+
+<ol>
+<li><p>make sure all of the docker container is run with docker ps</p></li>
+
+<li><p>the date of the on-prem server must be UTC</p>
+
+<pre><code>date
+</code></pre>
+
+<p>Wed Mar 11 09:18:42 UTC 2020</p></li>
+
+<li><p>test cloudgateway api info with curl</p>
+
+<pre><code>curl -v https://cloudgateway-prod-ap.sentinelone.net/api/v2/info
+</code></pre></li>
+
+<li><p>Trying 13.112.219.166&hellip;</p></li>
+
+<li><p>TCP_NODELAY set</p></li>
+
+<li><p>Connected to cloudgateway-prod-ap.sentinelone.net (13.112.219.166) port 443 (#0)</p></li>
+
+<li><p>ALPN, offering h2</p></li>
+
+<li><p>ALPN, offering http/1.1</p></li>
+
+<li><p>successfully set certificate verify locations:</p></li>
+
+<li><p>CAfile: /etc/ssl/certs/ca-certificates.crt
+CApath: /etc/ssl/certs</p></li>
+
+<li><p>TLSv1.3 (OUT), TLS handshake, Client hello (1):</p></li>
+
+<li><p>TLSv1.3 (IN), TLS handshake, Server hello (2):</p></li>
+
+<li><p>TLSv1.2 (IN), TLS handshake, Certificate (11):</p></li>
+
+<li><p>TLSv1.2 (IN), TLS handshake, Server key exchange (12):</p></li>
+
+<li><p>TLSv1.2 (IN), TLS handshake, Request CERT (13):</p></li>
+
+<li><p>TLSv1.2 (IN), TLS handshake, Server finished (14):</p></li>
+
+<li><p>TLSv1.2 (OUT), TLS handshake, Certificate (11):</p></li>
+
+<li><p>TLSv1.2 (OUT), TLS handshake, Client key exchange (16):</p></li>
+
+<li><p>TLSv1.2 (OUT), TLS change cipher, Client hello (1):</p></li>
+
+<li><p>TLSv1.2 (OUT), TLS handshake, Finished (20):</p></li>
+
+<li><p>TLSv1.2 (IN), TLS handshake, Finished (20):</p></li>
+
+<li><p>SSL connection using TLSv1.2 / ECDHE-RSA-AES256-GCM-SHA384</p></li>
+
+<li><p>ALPN, server accepted to use http/1.1</p></li>
+
+<li><p>Server certificate:</p></li>
+
+<li><p>subject: C=US; ST=California; L=Palo Alto; O=Sentinel Labs, Inc.; CN=*.sentinelone.net</p></li>
+
+<li><p>start date: Sep 11 00:00:00 2019 GMT</p></li>
+
+<li><p>expire date: Dec 1 12:00:00 2021 GMT</p></li>
+
+<li><p>subjectAltName: host &ldquo;cloudgateway-prod-ap.sentinelone.net&rdquo; matched cert&rsquo;s &ldquo;*.sentinelone.net&rdquo;</p></li>
+
+<li><p>issuer: C=US; O=DigiCert Inc; CN=DigiCert SHA2 Secure Server CA</p></li>
+
+<li><p>SSL certificate verify ok.
+&gt; GET /api/v2/info HTTP/1.1
+&gt; Host: cloudgateway-prod-ap.sentinelone.net
+&gt; User-Agent: curl/7.58.0
+&gt; Accept: <em>/</em>
+&gt;
+&lt; HTTP/1.1 200 OK
+&lt; Server: nginx/1.14.0 (Ubuntu)
+&lt; Date: Wed, 11 Mar 2020 09:19:32 GMT
+&lt; Content-Type: application/json
+&lt; Content-Length: 20
+&lt; Connection: keep-alive
+&lt; Access-Control-Allow-Origin: *
+&lt; Access-Control-Allow-Headers: Authentication-Token
+&lt;
+{&ldquo;version&rdquo;:&ldquo;4.1.4&rdquo;}</p></li>
+
+<li><p>Connection #0 to host cloudgateway-prod-ap.sentinelone.net left intact</p></li>
+
+<li><p>give settings.ini to support</p></li>
+
+<li><p>From the outputs you sent - &gt; Everything seems to be Ok,</p></li>
+</ol>
+
+<p>4.1. Add the following lines to the /etc/hosts file -&gt; Save -&gt; Exit:</p>
+
+<p>54.64.165.125 cloudgateway-prod-ap.sentinelone.net
+13.112.219.166 cloudgateway-prod-ap.sentinelone.net</p>
+
+<p>4.2. Run -&gt; sudo docker exec -u 0 -it scheduler /bin/bash
+The vi /etc/hosts -&gt;Add the 2 lines&gt; Save-&gt;Exit
+54.64.165.125 cloudgateway-prod-ap.sentinelone.net
+13.112.219.166 cloudgateway-prod-ap.sentinelone.net</p>
+
+<ul>
+<li>Restart the server after all the changes</li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/12/lvm-tips/">LVM tips</a></h1>
@@ -1232,30 +1355,6 @@ yum --enablerepo='centos-sclo-rh' install rh-python36-python
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/python/">python</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/28/yum-tips/">Yum tips</a></h1>
-        <span class="post-date">Feb 28, 2020</span>
-	
-
-<h2 id="yum-install-specific-version">Yum install specific version</h2>
-
-<pre><code>yum list docker-ce.x86_64 --showduplicates
-yum list docker-ce.x86_64 --showduplicates | sort -r
-yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09
-</code></pre>
-
-<ul>
-<li><a href="https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos">https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/yum/">yum</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>
 	 <hr/>
     </div>
   
