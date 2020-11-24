@@ -800,6 +800,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -830,6 +838,19 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/27/install-solr-server/">Install solr server</a></h1>
+        <span class="post-date">Sep 27, 2017</span>
+	<p>Here are the steps for Install solr server - base of search engine for magento  these steps run on ubuntu 16.04, because we follow this <a href="http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html">http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html</a>, we must install jdk 7 from ppa, but ubuntu 16.04 default with jdk 8  <br><pre>add-apt-repository ppa:openjdk-r/ppa<br />apt update<br />apt-get install openjdk-7-jdk<br />apt install supervisor<br /><br />su - user<br />mkdir apps &amp;&amp; cd apps<br />wget <a href="https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz">https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz</a><br />tar xzf ../apache-solr-3.4.0.tgz<br />mv apache-solr-3.4.0 solr34<br />cp /var/www/magento/lib/Apache/Solr/conf/* solr34/example/solr/conf/<br />cat &gt;&gt; apps/solr34/example/logging.properties <br /><br /># Default global logging level:<br />.level = INFO<br /><br /># Write to a file:<br />handlers = java.util.logging.FileHandler<br /><br /># Write log messages in XML format:<br /># Use java.util.logging.SimpleFormatter to log like Solr logs to the screen by default<br />java.util.logging.FileHandler.formatter = java.util.logging.XMLFormatter<br /><br /># Log to the current working directory, with log files named solrxxx.log<br />java.util.logging.FileHandler.pattern = /home/ehbm2/logs/solr%u.log<br /><br />[CTRL-C]<br /><br />exit<br /><br />cat &gt;&gt; /etc/supervisor/conf.d/solr.conf <br /><br />[program:solr]<br />user=ehbm2<br />#directory=/home/ehbm2/apps/solr141/example<br />directory=/home/ehbm2/apps/solr34/example<br />command=java -Djava.util.logging.config.file=logging.properties -jar start.jar<br />autostart=true<br />autorestart=true<br /><br />[CTRL-C]<br /><br />/etc/init.d/supervisor restart<br /><br /></pre></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/e-commerce/">e-commerce</a>, <a href="https://blog.indonesiadot.com/tags/magento/">magento</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/20/magento-maintenance-mode/">Magento maintenance mode</a></h1>
@@ -958,55 +979,6 @@
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2014/01/02/intro-lanyon-again/">Intro Lanyon Again</a></h1>
-        <span class="post-date">Jan 2, 2014</span>
-	
-
-<p>Lanyon is an unassuming <a href="http://jekyllrb.com">Jekyll</a> theme that places content first by tucking away navigation in a hidden drawer. It&rsquo;s based on <a href="http://getpoole.com">Poole</a>, the Jekyll butler.</p>
-
-<h3 id="built-on-poole">Built on Poole</h3>
-
-<p>Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by <a href="https://twitter.com/mdo">@mdo</a>. Poole, and every theme built on it (like Lanyon here) includes the following:</p>
-
-<ul>
-<li>Complete Jekyll setup included (layouts, config, <a href="https://blog.indonesiadot.com/404">404</a>, <a href="https://blog.indonesiadot.com/index.xml">RSS feed</a>, posts, and <a href="https://blog.indonesiadot.com/about">example page</a>)</li>
-<li>Mobile friendly design and development</li>
-<li>Easily scalable text and component sizing with <code>rem</code> units in the CSS</li>
-<li>Support for a wide gamut of HTML elements</li>
-<li>Related posts (time-based, because Jekyll) below each post</li>
-<li>Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)</li>
-</ul>
-
-<h3 id="lanyon-features">Lanyon features</h3>
-
-<p>In addition to the features of Poole, Lanyon adds the following:</p>
-
-<ul>
-<li>Toggleable sliding sidebar (built with only CSS) via <strong>☰</strong> link in top corner</li>
-<li>Sidebar includes support for textual modules and a dynamically generated navigation with active link support</li>
-<li>Two orientations for content and sidebar, default (left sidebar) and <a href="https://github.com/poole/lanyon#reverse-layout">reverse</a> (right sidebar), available via <code>&lt;body&gt;</code> classes</li>
-<li><a href="https://github.com/poole/lanyon#themes">Eight optional color schemes</a>, available via <code>&lt;body&gt;</code> classes</li>
-</ul>
-
-<p><a href="https://github.com/poole/lanyon#readme">Head to the readme</a> to learn more.</p>
-
-<h3 id="browser-support">Browser support</h3>
-
-<p>Lanyon is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.</p>
-
-<h3 id="download">Download</h3>
-
-<p>Lanyon is developed on and hosted with GitHub. Head to the <a href="https://github.com/poole/lanyon">GitHub repository</a> for downloads, bug reports, and features requests.</p>
-
-<p>Thanks!</p>
-
-	<hr/>
-	
-	
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2014/01/02/introducing-lanyon/">Introducing Lanyon</a></h1>
         <span class="post-date">Jan 2, 2014</span>
 	
 

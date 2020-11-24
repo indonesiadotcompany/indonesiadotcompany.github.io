@@ -800,6 +800,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -830,6 +838,46 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/">Android USB File Transfer</a></h1>
+        <span class="post-date">Oct 14, 2019</span>
+	
+
+<h2 id="android-usb-file-transfer">Android USB File Transfer</h2>
+
+<pre><code>add-apt-repository ppa:webupd8team/unstable
+apt update
+apt-get install go-mtpfs
+mkdir /media/MyAndroid
+</code></pre>
+
+<h3 id="mount">mount</h3>
+
+<pre><code>go-mtpfs /media/MyAndroid
+</code></pre>
+
+<h3 id="unmount">unmount</h3>
+
+<pre><code>fusermount -u /media/MyAndroid
+</code></pre>
+
+<p>or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open <a href="ftp://ip.of.android:8888">ftp://ip.of.android:8888</a>, so you can access from pc via ftp client like filezilla.</p>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html">http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html</a></li>
+<li><a href="https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu">https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/android/">android</a>, <a href="https://blog.indonesiadot.com/tags/file/">file</a>, <a href="https://blog.indonesiadot.com/tags/mtp/">mtp</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld/">Centos 7 Firewalld</a></h1>
@@ -1326,95 +1374,6 @@ git push origin hugo
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/markdown/">markdown</a>, <a href="https://blog.indonesiadot.com/tags/static-site-generator/">static-site-generator</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/04/linux-security-tools/">linux Security Tools</a></h1>
-        <span class="post-date">Sep 4, 2019</span>
-	<p>Tools yang biasa digunakan pada server linux:</p>
-
-<ul>
-<li><p>Firewall</p>
-
-<ul>
-<li>iptables</li>
-<li>ipset</li>
-<li>shorewall</li>
-<li>csf</li>
-</ul></li>
-
-<li><p>Anti Malware</p>
-
-<ul>
-<li>maldet (malware detection for web directory)</li>
-</ul></li>
-
-<li><p>IDS</p>
-
-<ul>
-<li>tripwire</li>
-</ul></li>
-
-<li><p>Identity Server</p>
-
-<ul>
-<li><a href="https://freeipa.org">FreeIPA (IPA = Identity, Policy, Authentication)</a></li>
-</ul></li>
-
-<li><p>Security Checking / Scanning Solution</p>
-
-<ul>
-<li>OpenSCAP</li>
-<li>Rapid7</li>
-</ul></li>
-
-<li><p>CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</p>
-
-<ul>
-<li>TeemIP</li>
-<li>itop <a href="https://github.com/Combodo/iTop">https://github.com/Combodo/iTop</a></li>
-<li>infoblox</li>
-<li>efficientip</li>
-<li>ansible-cmdb</li>
-</ul></li>
-
-<li><p>WAF</p>
-
-<ul>
-<li><a href="http://www.waf-fle.org/">http://www.waf-fle.org/</a> console / web view for modsecurity admin</li>
-<li>modsecurity</li>
-<li>naxsi <a href="https://github.com/nbs-system/naxsi">https://github.com/nbs-system/naxsi</a></li>
-<li>shadow daemon <a href="https://shadowd.zecure.org/overview/introduction/">https://shadowd.zecure.org/overview/introduction/</a></li>
-<li>imperva berbayar</li>
-</ul></li>
-
-<li><p>Web Scanner</p>
-
-<ul>
-<li>nikto ( <a href="https://geekflare.com/nikto-webserver-scanner/">https://geekflare.com/nikto-webserver-scanner/</a> )</li>
-</ul></li>
-
-<li><p>Pentest</p>
-
-<ul>
-<li>owasp-zap <a href="https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b">https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b</a></li>
-<li>nessus <a href="https://www.tenable.com/tenable-for-education">https://www.tenable.com/tenable-for-education</a></li>
-</ul></li>
-</ul>
-
-<p>Referensi Openscap:</p>
-
-<ul>
-<li><a href="https://www.open-scap.org/">https://www.open-scap.org/</a></li>
-<li><a href="https://lifehacker.com/how-to-use-nessus-to-scan-a-network-for-vulnerabilities-1788261156">https://lifehacker.com/how-to-use-nessus-to-scan-a-network-for-vulnerabilities-1788261156</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>, <a href="https://blog.indonesiadot.com/tags/firewall/">firewall</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>
 	 <hr/>
     </div>
   

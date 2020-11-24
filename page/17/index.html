@@ -800,6 +800,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -830,6 +838,42 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/31/xenserver-tips-and-trick/">Xenserver tips and trick</a></h1>
+        <span class="post-date">Jan 31, 2018</span>
+	
+
+<h2 id="xenserver-resize-memory-command">xenserver resize memory command</h2>
+
+<p>Increase RAM for XenServer VM&rsquo;s through Command Line Interface.
+1. If the RAM editing option is graded out through XenCenter.</p>
+
+<p>Solution:
+1. Take a putty/ssh connection to pool master
+2. Power off the VM.</p>
+
+<p>Execute the Below command to configure the new RAM:</p>
+
+<pre><code>#xe vm-memory-limits-set uuid=&lt;uuid of=&quot;&quot; the=&quot;&quot; valid=&quot;&quot; vm=&quot;&quot;&gt; static-min=&lt;nn&gt;GiB/MiB dynamic-min=&lt;nn&gt;GiB/MiB dynamic-max=&lt;nn&gt;GiB/MiB static-max=&lt;nn&gt;GiB/MiB &lt;/nn&gt;&lt;/nn&gt;&lt;/nn&gt;&lt;/nn&gt;&lt;/uuid&gt;
+</code></pre>
+
+<p>Example :</p>
+
+<pre><code>#xe vm-memory-limits-set uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f static-min=64GiB dynamic-min=64GiB dynamic-max=64GiB static-max=64GiB
+</code></pre>
+
+<ol>
+<li>Start the VM.</li>
+</ol>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/xenserver/">xenserver</a>, <a href="https://blog.indonesiadot.com/tags/vps/">vps</a>, <a href="https://blog.indonesiadot.com/tags/cloud/">cloud</a>, <a href="https://blog.indonesiadot.com/tags/vm/">vm</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/31/ansible-awx/">Ansible AWX</a></h1>
@@ -1075,19 +1119,6 @@ losetup /dev/loop11 filesystem.img
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/28/magento-admin-tips-and-trick/">Magento Admin tips and trick</a></h1>
         <span class="post-date">Jan 28, 2018</span>
 	<p>How to create admin user in Magento 2 via Command Line  bin/magento admin:user:create &ndash;admin-user=&ldquo;admin&rdquo; &ndash;admin-password=&ldquo;123123q&rdquo; &ndash;admin-email=&ldquo;admin@example.com&rdquo; &ndash;admin-firstname=&ldquo;Admin&rdquo; &ndash;admin-lastname=&ldquo;Admin&rdquo;</p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/e-commerce/">e-commerce</a>, <a href="https://blog.indonesiadot.com/tags/magento/">magento</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/27/install-solr-server/">Install solr server</a></h1>
-        <span class="post-date">Sep 27, 2017</span>
-	<p>Here are the steps for Install solr server - base of search engine for magento  these steps run on ubuntu 16.04, because we follow this <a href="http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html">http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html</a>, we must install jdk 7 from ppa, but ubuntu 16.04 default with jdk 8  <br><pre>add-apt-repository ppa:openjdk-r/ppa<br />apt update<br />apt-get install openjdk-7-jdk<br />apt install supervisor<br /><br />su - user<br />mkdir apps &amp;&amp; cd apps<br />wget <a href="https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz">https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz</a><br />tar xzf ../apache-solr-3.4.0.tgz<br />mv apache-solr-3.4.0 solr34<br />cp /var/www/magento/lib/Apache/Solr/conf/* solr34/example/solr/conf/<br />cat &gt;&gt; apps/solr34/example/logging.properties <br /><br /># Default global logging level:<br />.level = INFO<br /><br /># Write to a file:<br />handlers = java.util.logging.FileHandler<br /><br /># Write log messages in XML format:<br /># Use java.util.logging.SimpleFormatter to log like Solr logs to the screen by default<br />java.util.logging.FileHandler.formatter = java.util.logging.XMLFormatter<br /><br /># Log to the current working directory, with log files named solrxxx.log<br />java.util.logging.FileHandler.pattern = /home/ehbm2/logs/solr%u.log<br /><br />[CTRL-C]<br /><br />exit<br /><br />cat &gt;&gt; /etc/supervisor/conf.d/solr.conf <br /><br />[program:solr]<br />user=ehbm2<br />#directory=/home/ehbm2/apps/solr141/example<br />directory=/home/ehbm2/apps/solr34/example<br />command=java -Djava.util.logging.config.file=logging.properties -jar start.jar<br />autostart=true<br />autorestart=true<br /><br />[CTRL-C]<br /><br />/etc/init.d/supervisor restart<br /><br /></pre></p>
 
 	<hr/>
 	

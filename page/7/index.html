@@ -800,6 +800,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -830,6 +838,34 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/">Selinux Web Directory Permission</a></h1>
+        <span class="post-date">Jan 20, 2020</span>
+	
+
+<h2 id="selinux-web-directory-permission">Selinux Web Directory Permission</h2>
+
+<p>Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.</p>
+
+<p>adapun command nya sebelum bisa diakses yaitu:</p>
+
+<pre><code>chcon -Rv --type=httpd_sys_rw_content_t /webserver
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/">https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/selinux/">selinux</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/permission/">permission</a>, <a href="https://blog.indonesiadot.com/tags/redhat/">redhat</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/">Harbor Container Registry</a></h1>
@@ -1339,27 +1375,6 @@ echo ### Change back to terminal 1
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/virtualization/">virtualization</a>, <a href="https://blog.indonesiadot.com/tags/kvm/">kvm</a>, <a href="https://blog.indonesiadot.com/tags/qemu/">qemu</a>, <a href="https://blog.indonesiadot.com/tags/virt-install/">virt-install</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/05/jenkins-for-beginner/">jenkins for beginner</a></h1>
-        <span class="post-date">Dec 5, 2019</span>
-	<p>Ref:</p>
-
-<ul>
-<li><a href="https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded">https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded</a></li>
-<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04">https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04</a></li>
-<li><a href="https://hub.docker.com/r/bitnami/jenkins/">https://hub.docker.com/r/bitnami/jenkins/</a></li>
-<li><a href="https://github.com/jenkinsci/docker/blob/master/README.md">https://github.com/jenkinsci/docker/blob/master/README.md</a></li>
-<li><a href="https://linuxize.com/post/how-to-install-jenkins-on-centos-7/">https://linuxize.com/post/how-to-install-jenkins-on-centos-7/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/jenkins/">jenkins</a>
 	 <hr/>
     </div>
   

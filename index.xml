@@ -5,9 +5,43 @@
     <language>en-us</language>
     <author>Widya</author>
     <rights>(C) 2020</rights>
-    <updated>2020-10-28 16:17:54 &#43;0700 WIB</updated>
+    <updated>2020-11-24 08:17:54 &#43;0700 WIB</updated>
 
     
+      
+    
+      
+        <item>
+          <title>Suse SLES for the first time</title>
+          <link>https://blog.indonesiadot.com/2020/11/24/suse-sles-for-the-first-time/</link>
+          <pubDate>Tue, 24 Nov 2020 08:17:54 WIB</pubDate>
+          <author>Widya</author>
+          <guid>https://blog.indonesiadot.com/2020/11/24/suse-sles-for-the-first-time/</guid>
+          <description>
+
+&lt;h2 id=&#34;sles-suse-linux-enterprise-registration-repository&#34;&gt;SLES (Suse Linux Enterprise registration, repository&lt;/h2&gt;
+
+&lt;p&gt;Prequisites:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;registration at myaccount.suse.com&lt;/li&gt;
+&lt;li&gt;login&lt;/li&gt;
+&lt;li&gt;go to download&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;go to &lt;a href=&#34;https://scc.suse.com/organizations/712401/subscriptions?family=sles&#34;&gt;https://scc.suse.com/organizations/712401/subscriptions?family=sles&lt;/a&gt; and subscribe&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SUSEConnect -r 57D5AC4E2693FAC6
+sleep 30
+SUSEConnect -p PackageHub/12.5/x86_64
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;test install suatu package&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;zypper -y install sudo
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
       
     
       

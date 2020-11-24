@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>suse on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/suse/</link>
+    <description>Recent content in suse on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Nov 2020 08:17:54 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.indonesiadot.com/tags/suse/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Suse SLES for the first time</title>
+      <link>https://blog.indonesiadot.com/2020/11/24/suse-sles-for-the-first-time/</link>
+      <pubDate>Tue, 24 Nov 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/11/24/suse-sles-for-the-first-time/</guid>
+      <description> SLES (Suse Linux Enterprise registration, repository Prequisites:
+ registration at myaccount.suse.com login go to download go to https://scc.suse.com/organizations/712401/subscriptions?family=sles and subscribe
+SUSEConnect -r 57D5AC4E2693FAC6 sleep 30 SUSEConnect -p PackageHub/12.5/x86_64   test install suatu package
+zypper -y install sudo  </description>
+    </item>
+    
+  </channel>
+</rss>

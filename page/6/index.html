@@ -800,6 +800,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -830,6 +838,44 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/python-tips/">Python Tips</a></h1>
+        <span class="post-date">Mar 5, 2020</span>
+	
+
+<h2 id="module-python-web-server">module python web server</h2>
+
+<pre><code>python -m SimpleHTTPServer 8001
+python -m SimpleHTTPServer 8002
+</code></pre>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver">https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver</a></li>
+<li><a href="https://www.pcsuggest.com/best-lightweight-web-server-linux/">https://www.pcsuggest.com/best-lightweight-web-server-linux/</a></li>
+</ul>
+
+<h2 id="multiple-python-version-on-centos-6">multiple python version on centos 6</h2>
+
+<p><a href="https://stackoverflow.com/questions/20842732/libpython2-7-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory">https://stackoverflow.com/questions/20842732/libpython2-7-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory</a>
+<a href="https://www.2daygeek.com/install-python-3-on-centos-6/">https://www.2daygeek.com/install-python-3-on-centos-6/</a></p>
+
+<pre><code>yum install centos-release-scl -y
+yum --enablerepo='centos-sclo-rh' install python27-python -y
+echo &quot;/opt/rh/python27/root/usr/lib64&quot; &gt;&gt; /etc/ld.so.conf
+ldconfig
+/opt/rh/python27/root/usr/bin/python --version
+yum --enablerepo='centos-sclo-rh' install rh-python36-python
+/opt/rh/rh-python36/root/usr/bin/python --version
+</code></pre>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/python/">python</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/28/yum-tips/">Yum tips</a></h1>
@@ -1244,34 +1290,6 @@ EOF
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/harbor/">harbor</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/registry/">registry</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/">Selinux Web Directory Permission</a></h1>
-        <span class="post-date">Jan 20, 2020</span>
-	
-
-<h2 id="selinux-web-directory-permission">Selinux Web Directory Permission</h2>
-
-<p>Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.</p>
-
-<p>adapun command nya sebelum bisa diakses yaitu:</p>
-
-<pre><code>chcon -Rv --type=httpd_sys_rw_content_t /webserver
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/">https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/selinux/">selinux</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/permission/">permission</a>, <a href="https://blog.indonesiadot.com/tags/redhat/">redhat</a>
 	 <hr/>
     </div>
   

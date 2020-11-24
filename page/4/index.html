@@ -800,6 +800,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -830,6 +838,173 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/20/certificate-ssl-key-csr-crt/">Certificate ssl key csr crt</a></h1>
+        <span class="post-date">Mar 20, 2020</span>
+	
+
+<h2 id="create-csr-ubuntu-18">create csr ubuntu 18</h2>
+
+<pre><code>openssl genrsa –out domain.key 2048
+openssl req –new –key domain.key –out domain.csr
+#or
+#openssl req -new -newkey rsa:2048 -nodes -keyout domain.key -out domain.csr
+</code></pre>
+
+<ul>
+<li><a href="https://vitux.com/how-to-generate-a-certificate-signing-request-csr-on-ubuntu/">https://vitux.com/how-to-generate-a-certificate-signing-request-csr-on-ubuntu/</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-18-04">https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-18-04</a></li>
+</ul>
+
+<h2 id="random-number-generator-rand-load-file-cannot-open-file-crypto-rand-randfile-c-88-filename-root-rnd">random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/root/.rnd</h2>
+
+<p>If you have RANDFILE=&hellip; configuration lines in your openssl.cnf than you can safely remove them</p>
+
+<ul>
+<li><a href="https://github.com/openssl/openssl/issues/7754">https://github.com/openssl/openssl/issues/7754</a></li>
+</ul>
+
+<h2 id="convert-p7b-p7c-pkcs7-to-crt">convert p7b / p7c / pkcs7 to crt</h2>
+
+<h3 id="description">Description</h3>
+
+<p>What are the differences between .p7b, .pfx, .p12, .pem, .der, .crt &amp; .cer Certificates?</p>
+
+<p>With so many servers, some require different formats.</p>
+
+<h2 id="pem-format">PEM Format</h2>
+
+<ul>
+<li>It is the most common format used for certificates</li>
+<li>Most servers (Ex: Apache) expects the certificates and private key to be in a separate files
+
+<ul>
+<li>Usually they are Base64 encoded ASCII files</li>
+<li>Extensions used for PEM certificates are .cer, .crt, .pem, .key files</li>
+<li>Apache and similar server uses PEM format certificates</li>
+</ul></li>
+</ul>
+
+<h2 id="der-format">DER Format</h2>
+
+<ul>
+<li>The DER format is the binary form of the certificate</li>
+<li>All types of certificates &amp; private keys can be encoded in DER format</li>
+<li>DER formatted certificates do not contain the &ldquo;BEGIN CERTIFICATE/END CERTIFICATE&rdquo; statements</li>
+<li>DER formatted certificates most often use the ‘.cer’ and &lsquo;.der&rsquo; extensions</li>
+<li>DER is typically used in Java Platforms</li>
+</ul>
+
+<h2 id="p7b-pkcs-7-format">P7B/PKCS#7 Format</h2>
+
+<ul>
+<li>The PKCS#7 or P7B format is stored in Base64 ASCII format and has a file extension of .p7b or .p7c</li>
+<li>A P7B file only contains certificates and chain certificates (Intermediate CAs), not the private key</li>
+<li>The most common platforms that support P7B files are Microsoft Windows and Java Tomcat</li>
+</ul>
+
+<h2 id="pfx-p12-pkcs-12-format">PFX/P12/PKCS#12 Format</h2>
+
+<ul>
+<li>The PKCS#12 or PFX/P12 format is a binary format for storing the server certificate, intermediate certificates, and the private key in one encryptable file</li>
+<li>These files usually have extensions such as .pfx and .p12</li>
+<li>They are typically used on Windows machines to import and export certificates and private keys</li>
+</ul>
+
+<p>If your server/device requires a different certificate format other than Base64 encoded X.509, a third party tool such as OpenSSL can be used to convert the certificate into the appropriate format.</p>
+
+<pre><code>openssl pkcs7 -print_certs -in old.p7b -out new.crt
+#or
+openssl pkcs7 -print_certs -inform der -in a.p7c -out out.cer
+</code></pre>
+
+<h2 id="create-cert-with-ca-certificate">create cert with ca certificate</h2>
+
+<p><a href="https://www.centlinux.com/2019/01/configure-certificate-authority-ca-centos-7.html">https://www.centlinux.com/2019/01/configure-certificate-authority-ca-centos-7.html</a></p>
+
+<pre><code>cd /etc/pki/CA/private
+openssl genrsa -aes128 -out tower1CA.key 2048
+openssl req -new -x509 -days 1825 -key tower1CA.key -out ../certs/tower1CA.crt
+cd /etc/pki/tls/private
+openssl genrsa -out tower1.key 1024
+openssl req -new -key tower1.key -out tower1.csr
+openssl x509 -req -in tower1.csr -CA ../../CA/certs/tower1CA.crt -CAkey ../../CA/private/tower1CA.key -CAcreateserial -out ../certs/tower1.crt -days 3650
+</code></pre>
+
+<h2 id="import-certificate">import certificate</h2>
+
+<p><a href="https://thomas-leister.de/en/how-to-import-ca-root-certificate/">https://thomas-leister.de/en/how-to-import-ca-root-certificate/</a></p>
+
+<h3 id="linux-debian-ubuntu-system">Linux (Debian / Ubuntu) - system</h3>
+
+<pre><code>sudo mkdir /usr/local/share/ca-certificates/extra
+sudo cp root.cert.pem /usr/local/share/ca-certificates/extra/root.cert.crt
+sudo update-ca-certificates
+</code></pre>
+
+<h3 id="browser-firefox-chromium">Browser (Firefox, Chromium, …)</h3>
+
+<pre><code>sudo apt install libnss3-tools
+</code></pre>
+
+<p>This little helper script finds trust store databases and imports the new root certificate into them.</p>
+
+<pre><code>#!/bin/bash
+
+### Script installs root.cert.pem to certificate trust store of applications using NSS
+### (e.g. Firefox, Thunderbird, Chromium)
+### Mozilla uses cert8, Chromium and Chrome use cert9
+
+###
+### Requirement: apt install libnss3-tools
+###
+
+
+###
+### CA file to install (CUSTOMIZE!)
+###
+
+certfile=&quot;root.cert.pem&quot;
+certname=&quot;My Root CA&quot;
+
+
+###
+### For cert8 (legacy - DBM)
+###
+
+for certDB in $(find ~/ -name &quot;cert8.db&quot;)
+do
+    certdir=$(dirname ${certDB});
+    certutil -A -n &quot;${certname}&quot; -t &quot;TCu,Cu,Tu&quot; -i ${certfile} -d dbm:${certdir}
+done
+
+
+###
+### For cert9 (SQL)
+###
+
+for certDB in $(find ~/ -name &quot;cert9.db&quot;)
+do
+    certdir=$(dirname ${certDB});
+    certutil -A -n &quot;${certname}&quot; -t &quot;TCu,Cu,Tu&quot; -i ${certfile} -d sql:${certdir}
+done
+</code></pre>
+
+<ul>
+<li><a href="https://knowledge.digicert.com/generalinformation/INFO4448.html">https://knowledge.digicert.com/generalinformation/INFO4448.html</a></li>
+<li><a href="https://www.google.com/search?q=p7b+to+crt+linux">https://www.google.com/search?q=p7b+to+crt+linux</a></li>
+<li><a href="https://gist.github.com/jmervine/e4c9af3adb14b78856cc">https://gist.github.com/jmervine/e4c9af3adb14b78856cc</a></li>
+<li><a href="https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html">https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/certificate/">certificate</a>, <a href="https://blog.indonesiadot.com/tags/ssl/">ssl</a>, <a href="https://blog.indonesiadot.com/tags/csr/">csr</a>, <a href="https://blog.indonesiadot.com/tags/crt/">crt</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/18/ansible-tower-for-beginner/">Ansible Tower for beginner</a></h1>
@@ -2129,66 +2304,6 @@ apt-get remove apport -y
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/qemu/">qemu</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/16/qmail-toaster/">Qmail Toaster</a></h1>
-        <span class="post-date">Mar 16, 2020</span>
-	
-
-<h2 id="qmail-ssl-letsencrypt">Qmail ssl letsencrypt</h2>
-
-<pre><code>yum install certbot python2-certbot python2-certbot-apache python2-certbot-dns-cloudflare
-cat &lt;EOF&gt; cloudflare.ini
-dns_cloudflare_email = user@example.com
-dns_cloudflare_api_key = j2c2166gd6688921b1497e7cfd6cf69f7f936
-EOF
-certbot certonly --dns-cloudflare --dns-cloudflare-credentials cloudflare.ini dns-cloudflare-propagation-seconds 60 -d *.example.com
-</code></pre>
-
-<p>Add to apache vhost centos</p>
-
-<pre><code>SSLCertificateFile /etc/letsencrypt/live/example.com/cert.pem
-SSLCertificateKeyFile /etc/letsencrypt/live/example.com/privkey.pem
-Include /etc/letsencrypt/options-ssl-apache.conf
-SSLCertificateChainFile /etc/letsencrypt/live/example.com/fullchain.pem
-</code></pre>
-
-<p>Add to Dovecot CentOS 6 &amp; 7 (/etc/dovecot/toaster.conf)</p>
-
-<pre><code> ssl_cert = &lt;/etc/letsencrypt/live/example.com/fullchain.pem
- ssl_key = &lt;/etc/letsencrypt/live/example.com/privkey.pem
-</code></pre>
-
-<p>Add to Qmail CentOS 6 &amp; 7</p>
-
-<pre><code> cp -p /var/qmail/control/servercert.pem /var/qmail/control/servercert.pem.bak
- cat /etc/letsencrypt/live/example.com/privkey.pem /etc/letsencrypt/live/example.com/fullchain.pem &gt; /var/qmail/control/servercert.pem
-</code></pre>
-
-<p>Let&rsquo;s Encrypt auto renewal</p>
-
-<pre><code>  0 0 * * * /opt/certbot/certbot renew       #CentOS 7
-</code></pre>
-
-<p>Restart Qmail and Dovecot</p>
-
-<pre><code>qmailctl stop
-qmailctl start
-systemctl restart dovecot
-systemctl restart httpd
-</code></pre>
-
-<ul>
-<li><a href="http://www.qmailtoaster.net/ssl.html">http://www.qmailtoaster.net/ssl.html</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/qmail/">qmail</a>, <a href="https://blog.indonesiadot.com/tags/qmailtoaster/">qmailtoaster</a>, <a href="https://blog.indonesiadot.com/tags/mail/">mail</a>, <a href="https://blog.indonesiadot.com/tags/mailserver/">mailserver</a>
 	 <hr/>
     </div>
   
