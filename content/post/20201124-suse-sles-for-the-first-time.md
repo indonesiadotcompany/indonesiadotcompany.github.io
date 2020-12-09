@@ -24,4 +24,8 @@ test install suatu package
 ```
 zypper -y install sudo
 ```
+referensi:
+
+https://www.suse.com/support/kb/doc/?id=000018564
+https://www.suse.com/support/kb/doc/?id=000018789
 
