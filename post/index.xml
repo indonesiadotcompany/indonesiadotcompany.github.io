@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Nov 2020 08:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 10 Dec 2020 01:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Alhikam Pasal 4</title>
+      <link>https://blog.indonesiadot.com/2020/12/10/alhikam-pasal-4/</link>
+      <pubDate>Thu, 10 Dec 2020 01:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/12/10/alhikam-pasal-4/</guid>
+      <description>Al Hikam Disampaikan oleh Guru Muhammad bakhiet bin abdul mughni Kalimantan Pengarang / penyusun kitab al hikam adalah Ahmad bin Muhammad bin Abdul Kariim bin Abdul Rohmaan bin Abdullooh bin Ahmad bin &amp;lsquo;Iisa bin Husain ibnu &amp;lsquo;Athooillaah Assakandari.  Hikmah 4 Lapangkan dirimu daripada tadbir, jangan engkau sibukkan dirimu dengan tadbir, maka bermula sesuatu yang telah mengurus dengan nya selain engkau daripada engkau, janganlah kamu ikut mengurus dengannya untuk diri engkau.</description>
+    </item>
     
     <item>
       <title>Suse SLES for the first time</title>
@@ -17,10 +26,11 @@
       <pubDate>Tue, 24 Nov 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/11/24/suse-sles-for-the-first-time/</guid>
-      <description> SLES (Suse Linux Enterprise registration, repository Prequisites:
+      <description>SLES (Suse Linux Enterprise registration, repository Prequisites:
  registration at myaccount.suse.com login go to download go to https://scc.suse.com/organizations/712401/subscriptions?family=sles and subscribe
 SUSEConnect -r 57D5AC4E2693FAC6 sleep 30 SUSEConnect -p PackageHub/12.5/x86_64   test install suatu package
-zypper -y install sudo  </description>
+zypper -y install sudo  referensi:
+https://www.suse.com/support/kb/doc/?id=000018564 https://www.suse.com/support/kb/doc/?id=000018789</description>
     </item>
     
     <item>

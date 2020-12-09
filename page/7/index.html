@@ -808,6 +808,8 @@
       
     
       
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -838,6 +840,84 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/">Ansible Tower tips and trick</a></h1>
+        <span class="post-date">Feb 20, 2020</span>
+	
+
+<h2 id="ansible-tower-tips-and-trick">Ansible Tower tips and trick</h2>
+
+<h3 id="change-admin-password">Change admin password</h3>
+
+<pre><code>awx-manage changepassword admin
+</code></pre>
+
+<h3 id="backup-and-restore">backup and restore</h3>
+
+<ul>
+<li><a href="https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html">https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html</a></li>
+</ul>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html">https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html</a></li>
+<li><a href="https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/">https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/</a></li>
+</ul>
+
+<h2 id="offline-ansible-tower-bundle">Offline ansible tower bundle</h2>
+
+<ul>
+<li><p><a href="https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/">https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/</a></p>
+
+<pre><code>wget https://releases.ansible.com/ansible-tower/setup-bundle/ansible-tower-setup-bundle-3.7.2-1.tar.gz
+tar xzf ansible-tower-setup-bundle-3.7.2-1.tar.gz
+cd ansible-tower-setup-bundle-3.7.2-1
+</code></pre></li>
+</ul>
+
+<p>edit inventory</p>
+
+<pre><code>yum install yum-utils
+yum install createrepo
+mkdir bundle/el7/repos/others
+cd bundle/el7/repos/others
+cat ../../base_packages.txt | xargs yumdownloader
+createrepo .
+cat &lt;&lt; EOF &gt;&gt; ~/ansible-tower-setup-bundle-3.7.2-1/roles/repos_el/templates/tower_bundle_el7.j2
+
+[others]
+name=Others
+baseurl=file://{{ bundle_install_folder }}/others
+enabled=1
+gpgcheck=0
+EOF
+</code></pre>
+
+<p>setelah selesai, lalu re-package the bundle</p>
+
+<p>note:
+* ada bbrp paket yg dibutuhkan sebelum menjalankan setup.sh, paket ini bisa didapatkan dengan menginstall terlebih dahulu</p>
+
+<h2 id="ansible-tower-ldap-linux">ansible tower ldap linux</h2>
+
+<ul>
+<li><a href="https://www.youtube.com/watch?v=E0QpSwXot68">https://www.youtube.com/watch?v=E0QpSwXot68</a></li>
+</ul>
+
+<ol>
+<li>install openldap-servers on centos (available at this blog)</li>
+<li>configure ansible tower to add authentication to ldap server as describe on the video</li>
+</ol>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/harbor/">harbor</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/registry/">registry</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/">Selinux Web Directory Permission</a></h1>
@@ -1218,163 +1298,6 @@ yum install -y policycoreutils-python
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/rhel/">rhel</a>, <a href="https://blog.indonesiadot.com/tags/selinux/">selinux</a>, <a href="https://blog.indonesiadot.com/tags/semanage/">semanage</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/">Simple Virtualization Linux</a></h1>
-        <span class="post-date">Dec 22, 2019</span>
-	
-
-<h2 id="list-kvm-using-virsh">List kvm using virsh</h2>
-
-<pre><code>virsh list
-virsh list --all
-virsh --help
-</code></pre>
-
-<h2 id="create-vm-on-kvm-qemu-via-libvirt-with-command-line">Create vm on kvm / qemu via libvirt with command line</h2>
-
-<h3 id="pembuatan-vm-centos-7">Pembuatan vm centos 7</h3>
-
-<p>script bash virtcen.sh</p>
-
-<pre><code>#!/bin/bash
-
-NAMA=$1
-
-if [ -z &quot;$1&quot; ]; then
- while [ -z &quot;$NAMA&quot; ]; do
-  echo -n &quot;masukan nama vm: &quot;
-  read NAMA
- done
-fi
-
-virt-install \
- --name $NAMA \
- --ram 900 \
- --disk path=$NAMA.qcow,size=6,bus=scsi,discard='unmap',format='qcow2' \
- --controller type=scsi,model=virtio-scsi \
- --vcpus 1 \
- --cpu host \
- --console pty,target_type=serial \
- --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso \
- --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot; \
- --noautoconsole
-</code></pre>
-
-<p>file kickstart cenks.cfg</p>
-
-<pre><code>text
-install
-
-ignoredisk --only-use=sda
-clearpart --all
-autopart
-bootloader --location=mbr --driveorder=sda
-
-rootpw --iscrypted $1$R69aiGHP$BmqNaQ1ckncOT0I3t6DlN1
-user widysible --name widysible --iscrypted --password $1$u08OmYWr$s3v/lOnNMVyb5SCEwFFLG1
-
-timezone Asia/Jakarta
-network --bootproto=dhcp
-
-firewall --disabled
-#reboot --eject
-shutdown
-
-%packages
-@Core
-%end
-%post --interpreter=/bin/bash
-#exec &lt; /dev/tty6 &gt; /dev/tty6
-#chvt 6
-echo ### Add public ssh key for Ansible
-mkdir -m0700 -p /home/widysible/.ssh
-cat &lt;&lt;EOF &gt;/home/widysible/.ssh/authorized_keys
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTIv6ziCUfRwMfGGVwZoKtWLf51+OLzDwwQYXyrf8vmnY7tZB7GLWAWCmto2nsNfwBQiXBXWZ7rUfTM2og/xfTerrDexyBg1Polm0FAK9zNwDE77WqSeirCQFAQ0Q+GaJaERitrF5h+SfDBHIgoMEuWJMzCQvzaI/3WU2YB//LzcM3NckfxolxQbjMzPNweVZ6BpEOGB7a9BQh370+EFj8h9suOVPYmqV5L5M0gMrYiQ7qA2Zzf442g5AElJqU7p8EFUI4ttLnP8AlkxQvRQOWRcf11iQDAbJNF7UDh0iqYOe0cynnMUZQp1nmQD5t65L8tHp0k94P3bdN7FHvbjBL root@wid
-EOF
-chown -R widysible:widysible /home/ansible
-chmod 0600 /home/widysible/.ssh/authorized_keys
-# Allow Ansible to sudo w/o a password
-echo &quot;widysible ALL=(ALL) NOPASSWD:ALL&quot; &gt; /etc/sudoers.d/widysible
-# trim
-sed -i 's/issue_discards = 0/issue_discards = 1/' /etc/lvm/lvm.conf
-echo &quot;0 0 1 0 0 fstrim /&quot; | tee /etc/cron.d/fstrim
-sed -i '/ swap /s/^/#/' /etc/fstab
-sed -i 's/defaults/defaults,discard/' /etc/fstab
-echo ### Change back to terminal 1
-#chvt 1
-%end
-
-</code></pre>
-
-<p>Create VM using ansible playbook</p>
-
-<pre><code>---
-- name: create VMs
-  hosts: localhost
-  gather_facts: no
-  connection: local
-  become: true
-  vars_prompt:
-    - name: NAMA
-      prompt: &quot;Enter VM name&quot;
-      default: &quot;c7&quot;
-      private: no
-#  vars_files:
-#    - vms.yml
-
-  tasks:
-    - name: get VM disks
-      command: &quot;ls /var/lib/libvirt/images&quot;
-      register: disks
-      changed_when: &quot;disks.rc != 0&quot;
-
-    - name: get list of VMs
-      virt:
-        command: &quot;list_vms&quot;
-      register: vms
-
-    - name: create vm
-      command: &gt;
-                virt-install --name {{ NAMA }}
-                --cpu host --vcpus 1 --ram 900
-                --disk path=$NAMA.qcow,size=6,bus=scsi,discard='unmap',format='qcow2'
-                --controller type=scsi,model=virtio-scsi
-                --console pty,target_type=serial
-                --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso
-                --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot;
-                --noautoconsole
-</code></pre>
-
-<h2 id="get-vms-ip">Get VMs IP</h2>
-
-<pre><code>virsh domifaddr c7
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/">https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/</a></li>
-<li><a href="https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/">https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/</a></li>
-<li><a href="http://blog.leifmadsen.com/blog/2016/12/16/creating-virtual-machines-in-libvirt-with-virt-install/">http://blog.leifmadsen.com/blog/2016/12/16/creating-virtual-machines-in-libvirt-with-virt-install/</a></li>
-<li><a href="http://kvmonz.blogspot.com/p/knowledge-use-virt-install-for-kvm.html">http://kvmonz.blogspot.com/p/knowledge-use-virt-install-for-kvm.html</a></li>
-<li><a href="https://earlruby.org/2018/12/use-iso-and-kickstart-files-to-automatically-create-vms/">https://earlruby.org/2018/12/use-iso-and-kickstart-files-to-automatically-create-vms/</a></li>
-<li><a href="https://graspingtech.com/creating-virtual-machine-virt-install/">https://graspingtech.com/creating-virtual-machine-virt-install/</a></li>
-<li><a href="https://www.server-world.info/en/note?os=Ubuntu_18.04&amp;p=kvm&amp;f=2">https://www.server-world.info/en/note?os=Ubuntu_18.04&amp;p=kvm&amp;f=2</a></li>
-<li><a href="http://blog.zencoffee.org/2016/06/easy-headless-kvm-deployment-virt-install/">http://blog.zencoffee.org/2016/06/easy-headless-kvm-deployment-virt-install/</a></li>
-<li><a href="https://gist.github.com/aladuca/854b78585c2bba961386">https://gist.github.com/aladuca/854b78585c2bba961386</a></li>
-<li><a href="https://www.cyberciti.biz/faq/find-ip-address-of-linux-kvm-guest-virtual-machine/">https://www.cyberciti.biz/faq/find-ip-address-of-linux-kvm-guest-virtual-machine/</a></li>
-<li><a href="https://www.cyberciti.biz/faq/linux-list-a-kvm-vm-guest-using-virsh-command/">https://www.cyberciti.biz/faq/linux-list-a-kvm-vm-guest-using-virsh-command/</a></li>
-<li><a href="https://hooks.technology/2017/10/create-vms-on-kvm-with-ansible/">https://hooks.technology/2017/10/create-vms-on-kvm-with-ansible/</a> (virt-builder and virt-install)</li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/virtualization/">virtualization</a>, <a href="https://blog.indonesiadot.com/tags/kvm/">kvm</a>, <a href="https://blog.indonesiadot.com/tags/qemu/">qemu</a>, <a href="https://blog.indonesiadot.com/tags/virt-install/">virt-install</a>
 	 <hr/>
     </div>
   
