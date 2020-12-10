@@ -810,6 +810,10 @@
       
     
       
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -840,6 +844,91 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/">Centos 7 Resize Partition</a></h1>
+        <span class="post-date">Jan 8, 2020</span>
+	
+
+<h2 id="step-to-reproduce-on-vm">Step to reproduce on VM</h2>
+
+<p>Turn off the VM</p>
+
+<pre><code>qemu-img resize image.qcow2 +SIZE
+</code></pre>
+
+<p>where SIZE is the size to add (e.g. 10G for 10 gibibytes).</p>
+
+<p>Turn on the VM, fdisk /dev/vda, delete and create /dev/vda2, restart</p>
+
+<p>Login after restart, then run this command</p>
+
+<pre><code>pvresize /dev/vda2
+lvextend -r -l +100%FREE /dev/mapper/centos-root
+df -hl
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://maunium.net/blog/resizing-qcow2-images/">https://maunium.net/blog/resizing-qcow2-images/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/centos7/">centos7</a>, <a href="https://blog.indonesiadot.com/tags/partition/">partition</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/23/selinux-semanage/">Selinux semanage</a></h1>
+        <span class="post-date">Dec 23, 2019</span>
+	
+
+<p>content of selinux config /etc/selinux/config</p>
+
+<pre><code>SELINUX=enforcing
+SELINUXTYPE=targeted 
+</code></pre>
+
+<h2 id="semanage-packages">semanage packages</h2>
+
+<pre><code>yum provides semanage
+yum install -y policycoreutils-python
+</code></pre>
+
+<h2 id="semanage-list-port">semanage list port</h2>
+
+<pre><code>semanage port -l | grep ssh
+</code></pre>
+
+<h2 id="semanage-open-ssh-on-different-port">semanage open ssh on different port</h2>
+
+<p>add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port</p>
+
+<pre><code>semanage port -a -t ssh_port_t -p tcp 1022
+</code></pre>
+
+<p>then restart sshd service</p>
+
+<pre><code>systemctl restart sshd
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/">https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/rhel/">rhel</a>, <a href="https://blog.indonesiadot.com/tags/selinux/">selinux</a>, <a href="https://blog.indonesiadot.com/tags/semanage/">semanage</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/">Simple Virtualization Linux</a></h1>
@@ -1246,142 +1335,6 @@ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/splunk/">splunk</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/">Recommended Ansible Modules</a></h1>
-        <span class="post-date">Nov 5, 2019</span>
-	
-
-<h1 id="frequently-used-module">Frequently Used Module</h1>
-
-<h2 id="blockinfile">blockinfile</h2>
-
-<p>Module ini saya gunakan ketika muncul error pada saat menggunakan module lineinfile untuk memasukan beberapa baris sekaligus dalam beberapa tasks, dan ternyata dengan menggunakan module ini dengan hanya satu task bisa memasukan langsung beberapa baris.</p>
-
-<p>Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepada parameter minimalnya adalah path dan block saja.</p>
-
-<pre><code>- name: Insert correct line to /etc/ntp.conf
-  blockinfile:
-    path: /etc/ntp.conf
-    insertafter: ^#?server
-    state: present
-    block: |
-      server &quot;{{ ntp1 }}&quot;
-      server &quot;{{ ntp2 }}&quot;
-  notify: restart ntp
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.google.com/search?q=lineinfile+multiple+lines">https://www.google.com/search?q=lineinfile+multiple+lines</a></li>
-<li><a href="https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines">https://stackoverflow.com/questions/24334115/ansible-lineinfile-for-several-lines</a></li>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html">https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html</a></li>
-<li><a href="https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py">https://github.com/widansible/ansible/blob/devel/lib/ansible/modules/files/blockinfile.py</a></li>
-</ul>
-
-<h2 id="find">find</h2>
-
-<p>Berikut contoh module find yang dicombine dengan module set_fact, when untuk menggunakan result matched (when seperti if dalam scripting / programming)</p>
-
-<pre><code>    - name: Search /etc/audit/rules.d for other DAC audit rules
-      find:
-        paths: /etc/audit/rules.d
-        recurse: false
-        contains: -F key=perm_mod$
-        patterns: '*.rules'
-      register: find_fchown
-      when: ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
-    - name: If existing DAC ruleset not found, use /etc/audit/rules.d/privileged.rules as the recipient for the rule
-      set_fact:
-        all_files:
-          - /etc/audit/rules.d/privileged.rules
-      when:
-        - find_fchown.matched is defined and find_fchown.matched == 0
-        - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
-    - name: Use matched file as the recipient for the rule
-      set_fact:
-        all_files:
-          - '{{ find_fchown.files | map(attribute=''path'') | list | first }}'
-      when:
-        - find_fchown.matched is defined and find_fchown.matched &gt; 0
-        - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
-</code></pre>
-
-<p>Referensi:
-* file remediation.yml dari oscap
-* <a href="https://docs.ansible.com/ansible/latest/modules/find_module.html">https://docs.ansible.com/ansible/latest/modules/find_module.html</a></p>
-
-<h2 id="pamd">pamd</h2>
-
-<p>module ini berguna untuk edit pam service tanpa harus mengedit file nya langsung, tanpa harus menggunakan module lineinfile, blockinfile, replace, etc. Dan berikut contohnya:</p>
-
-<pre><code>    - name: Add unlock_time argument to pam_faillock preauth
-      pamd:
-        name: '{{ item }}'
-        type: auth
-        control: required
-        module_path: pam_faillock.so
-        module_arguments: preauth silent unlock_time={{ var_accounts_passwords_pam_faillock_unlock_time
-          }}
-        state: args_present
-      loop:
-        - system-auth
-        - password-auth
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li>file remediation.yml oscap</li>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/pamd_module.html">https://docs.ansible.com/ansible/latest/modules/pamd_module.html</a></li>
-</ul>
-
-<h2 id="debug">debug</h2>
-
-<pre><code>    - name: download report
-      fetch:
-        src: /tmp/oscap-report.html
-        dest: /home/ansible/public_html/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
-        flat: yes
-    - debug:
-        msg: http://34.87.94.24/oscap/{{ ansible_hostname }}-report-{{ DATE }}.html
-</code></pre>
-
-<p>Ref:</p>
-
-<ul>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/debug_module.html">https://docs.ansible.com/ansible/latest/modules/debug_module.html</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/">Ansible and Openscap</a></h1>
-        <span class="post-date">Nov 4, 2019</span>
-	
-
-<h2 id="ansible-and-openscap-for-scanning-and-remediation-server-for-security-compliance-operating-system">Ansible and Openscap for scanning and remediation server for security compliance operating system</h2>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663">https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>, <a href="https://blog.indonesiadot.com/tags/openscap/">openscap</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/cis/">cis</a>, <a href="https://blog.indonesiadot.com/tags/stig/">stig</a>, <a href="https://blog.indonesiadot.com/tags/scan/">scan</a>, <a href="https://blog.indonesiadot.com/tags/remediation/">remediation</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   

@@ -810,6 +810,10 @@
       
     
       
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -840,6 +844,238 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/09/02/ldap-on-centos-7/">LDAP on Centos 7</a></h1>
+        <span class="post-date">Sep 2, 2020</span>
+	
+
+<h2 id="server-setup">Server setup</h2>
+
+<ul>
+<li><p><a href="https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html">https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html</a></p>
+
+<pre><code>yum -y install openldap compat-openldap openldap-clients openldap-servers
+systemctl start slapd
+systemctl enable slapd
+slappasswd -h {SSHA} -s ldppassword
+</code></pre>
+
+<p>make note of ldappassword</p></li>
+</ul>
+
+<p>create file db.ldif</p>
+
+<pre><code>dn: olcDatabase={2}hdb,cn=config
+changetype: modify
+replace: olcSuffix
+olcSuffix: dc=itzgeek,dc=local
+
+dn: olcDatabase={2}hdb,cn=config
+changetype: modify
+replace: olcRootDN
+olcRootDN: cn=ldapadm,dc=itzgeek,dc=local
+
+dn: olcDatabase={2}hdb,cn=config
+changetype: modify
+replace: olcRootPW
+olcRootPW: {SSHA}d/thexcQUuSfe3rx3gRaEhHpNJ52N8D3
+</code></pre>
+
+<p>replace the value of olcRootPW with ldappassword above</p>
+
+<pre><code>ldapmodify -Y EXTERNAL  -H ldapi:/// -f db.ldif
+</code></pre>
+
+<p>create monitor.ldif</p>
+
+<pre><code>dn: olcDatabase={1}monitor,cn=config
+changetype: modify
+replace: olcAccess
+olcAccess: {0}to * by dn.base=&quot;gidNumber=0+uidNumber=0,cn=peercred,cn=external, cn=auth&quot; read by dn.base=&quot;cn=ldapadm,dc=itzgeek,dc=local&quot; read by * none
+</code></pre>
+
+<p>then run</p>
+
+<pre><code>ldapmodify -Y EXTERNAL  -H ldapi:/// -f monitor.ldif
+</code></pre>
+
+<h3 id="setup-ldap-database">setup ldap database</h3>
+
+<pre><code>cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+chown ldap:ldap /var/lib/ldap/*
+ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/cosine.ldif
+ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/nis.ldif 
+ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/inetorgperson.ldif
+</code></pre>
+
+<p>create base.ldif</p>
+
+<pre><code>dn: dc=itzgeek,dc=local
+dc: itzgeek
+objectClass: top
+objectClass: domain
+
+dn: cn=ldapadm ,dc=itzgeek,dc=local
+objectClass: organizationalRole
+cn: ldapadm
+description: LDAP Manager
+
+dn: ou=People,dc=itzgeek,dc=local
+objectClass: organizationalUnit
+ou: People
+
+dn: ou=Group,dc=itzgeek,dc=local
+objectClass: organizationalUnit
+ou: Group
+</code></pre>
+
+<p>build the directory structure</p>
+
+<pre><code>ldapadd -x -W -D &quot;cn=ldapadm,dc=itzgeek,dc=local&quot; -f base.ldif
+</code></pre>
+
+<p>create ldap user, create file raj.ldif</p>
+
+<pre><code>dn: uid=raj,ou=People,dc=itzgeek,dc=local
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: raj
+uid: raj
+uidNumber: 9999
+gidNumber: 100
+homeDirectory: /home/raj
+loginShell: /bin/bash
+gecos: Raj [Admin (at) ITzGeek]
+userPassword: {crypt}x
+shadowLastChange: 17058
+shadowMin: 0
+shadowMax: 99999
+shadowWarning: 7
+</code></pre>
+
+<p>create it</p>
+
+<pre><code>ldapadd -x -W -D &quot;cn=ldapadm,dc=itzgeek,dc=local&quot; -f raj.ldif
+</code></pre>
+
+<p>assign password to the user</p>
+
+<pre><code>ldappasswd -s password123 -W -D &quot;cn=ldapadm,dc=itzgeek,dc=local&quot; -x &quot;uid=raj,ou=People,dc=itzgeek,dc=local&quot;
+</code></pre>
+
+<p>verify ldap entries</p>
+
+<pre><code>ldapsearch -x cn=raj -b dc=itzgeek,dc=local
+</code></pre>
+
+<p>to delete the user</p>
+
+<pre><code>ldapdelete -W -D &quot;cn=ldapadm,dc=itzgeek,dc=local&quot; &quot;uid=raj,ou=People,dc=itzgeek,dc=local&quot;
+</code></pre>
+
+<h3 id="enable-ldap-logging">enable ldap logging</h3>
+
+<p>add below line to /etc/rsyslog.conf</p>
+
+<pre><code>local4.* /var/log/ldap.log
+#*
+</code></pre>
+
+<p>then restart rsyslog</p>
+
+<pre><code>systemctl restart rsyslog
+</code></pre>
+
+<h2 id="client-configuration">client configuration</h2>
+
+<ul>
+<li><a href="https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html/2">https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html/2</a></li>
+
+<li><p><a href="https://tylersguides.com/guides/configuring-openldap-authentication-centos-7/">https://tylersguides.com/guides/configuring-openldap-authentication-centos-7/</a></p>
+
+<pre><code>yum install -y openldap-clients nss-pam-ldapd
+authconfig --enableldap --enableldapauth --ldapserver=192.168.1.10 --ldapbasedn=&quot;dc=itzgeek,dc=local&quot; --enablemkhomedir --update
+systemctl restart  nslcd
+</code></pre></li>
+</ul>
+
+<h3 id="verify-ldap-login">verify ldap login</h3>
+
+<pre><code>getent passwd raj
+</code></pre>
+
+<p>then test ssh to the ldap client with newly created user</p>
+
+<h2 id="phpldapadmin">phpldapadmin</h2>
+
+<ul>
+<li><p><a href="https://hostadvice.com/how-to/how-to-install-phpldapadmin-on-centos-7/">https://hostadvice.com/how-to/how-to-install-phpldapadmin-on-centos-7/</a></p>
+
+<pre><code>yum install epel-release -y
+yum -y install phpldapadmin
+</code></pre></li>
+</ul>
+
+<p>Modify your configuration file located at /etc/httpd/conf.d/phpldapadmin.conf</p>
+
+<pre><code>&lt;IfModule mod_authz_core.c&gt;
+    # Apache 2.4
+    Require all granted
+  &lt;/IfModule&gt;
+</code></pre>
+
+<h3 id="configure-phpldapadmin">configure phpldapadmin</h3>
+
+<pre><code>$servers-&gt;setValue('server','host','127.0.0.1');
+$servers-&gt;setValue('server','port',389);
+$servers-&gt;setValue('login','bind_id','cn=ldapadm,dc=itzgeek,dc=local');
+$servers-&gt;setValue('appearance','password_hash','ssha');
+$servers-&gt;setValue('login','attr','dn');
+//$servers-&gt;setValue('login','attr','uid');
+</code></pre>
+
+<p>then start httpd</p>
+
+<pre><code>systemctl restart httpd
+</code></pre>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/ldap/">ldap</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/09/02/centos-tips/">Centos Tips</a></h1>
+        <span class="post-date">Sep 2, 2020</span>
+	
+
+<h2 id="whatprovides">whatprovides</h2>
+
+<ul>
+<li><p><a href="https://www.itzgeek.com/how-tos/mini-howtos/netstat-command-not-found-on-centos-7-rhel-7-quick-fix.html">https://www.itzgeek.com/how-tos/mini-howtos/netstat-command-not-found-on-centos-7-rhel-7-quick-fix.html</a></p>
+
+<pre><code>yum whatprovides netstat
+</code></pre></li>
+</ul>
+
+<p>net-tools-2.0-0.25.20131004git.el7.x86_64 : Basic networking tools
+Repo        : @base
+Matched from:
+Filename    : /usr/bin/netstat</p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/08/27/lxc-on-centos/">LXC on Centos</a></h1>
@@ -1144,100 +1380,6 @@ iface vmbr0 inet static
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/beginner/">beginner</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/07/10/proxmox-versi-6/">Proxmox Versi 6</a></h1>
-        <span class="post-date">Jul 10, 2020</span>
-	
-
-<h2 id="proxmox-add-zfs">Proxmox Add ZFS</h2>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/">https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/</a></li>
-<li><a href="https://pve.proxmox.com/wiki/ZFS_on_Linux">https://pve.proxmox.com/wiki/ZFS_on_Linux</a></li>
-</ul>
-
-<h2 id="proxmox-cloud-init">Proxmox cloud-init</h2>
-
-<p>Ref:</p>
-
-<ul>
-<li><a href="https://cloud.centos.org/centos/7/images/">https://cloud.centos.org/centos/7/images/</a></li>
-<li><a href="https://pve.proxmox.com/wiki/Cloud-Init_Support">https://pve.proxmox.com/wiki/Cloud-Init_Support</a></li>
-<li><a href="https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/">https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/</a></li>
-</ul>
-
-<h2 id="upgrade-proxmox-5-to-6">upgrade proxmox 5 to 6</h2>
-
-<p><a href="https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0">https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0</a></p>
-
-<pre><code>tmux
-pve5to6
-#make sure it's ok
-systemctl stop pve-ha-lrm
-systemctl stop pve-ha-crm
-echo &quot;deb http://download.proxmox.com/debian/corosync-3/ stretch main&quot; &gt; /etc/apt/sources.list.d/corosync3.list
-apt update
-apt dist-upgrade
-systemctl start pve-ha-lrm
-systemctl start pve-ha-crm
-sed -i 's/stretch/buster/g' /etc/apt/sources.list
-apt update
-apt dist-upgrade
-rm /etc/apt/sources.list.d/corosync3.list
-</code></pre>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/07/08/iptables-tips/">iptables tips</a></h1>
-        <span class="post-date">Jul 8, 2020</span>
-	
-
-<p>iptables adalah program utility untuk seting firewall di linux.</p>
-
-<h2 id="flush-all-rules-delete-all-chains-and-accept-all">Flush All Rules, Delete All Chains, and Accept All</h2>
-
-<ul>
-<li><a href="https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules">https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules</a></li>
-</ul>
-
-<p>This section will show you how to flush all of your firewall rules, tables, and chains, and allow all network traffic.</p>
-
-<p>Note: This will effectively disable your firewall. You should only follow this section if you want to start over the configuration of your firewall.</p>
-
-<p>First, set the default policies for each of the built-in chains to ACCEPT. The main reason to do this is to ensure that you won’t be locked out from your server:</p>
-
-<pre><code>sudo iptables -P INPUT ACCEPT
-sudo iptables -P FORWARD ACCEPT
-sudo iptables -P OUTPUT ACCEPT
-</code></pre>
-
-<p>Then flush the nat and mangle tables, flush all chains (-F), and delete all non-default chains (-X):</p>
-
-<pre><code>sudo iptables -t nat -F
-sudo iptables -t mangle -F
-sudo iptables -F
-sudo iptables -X
-</code></pre>
-
-<p>Your firewall will now allow all network traffic. If you list your rules now, you will will see there are none, and only the three default chains (INPUT, FORWARD, and OUTPUT) remain.</p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/iptables/">iptables</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   

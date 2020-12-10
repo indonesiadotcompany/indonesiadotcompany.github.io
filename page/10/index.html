@@ -810,6 +810,10 @@
       
     
       
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -840,6 +844,100 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/25/create-gcp-vm-using-gcloud-from-command-line/">Create GCP VM using gcloud from command line</a></h1>
+        <span class="post-date">Oct 25, 2019</span>
+	<p>Pembuatan virtual machine di GCP / Google Cloud Platform menggunakan gcloud command line bermanfaat untuk mempermudah pembuatan VM tanpa harus mengakses web browser.</p>
+
+<p>Berikut langkah nya yang dilakukan di OS Centos 7:</p>
+
+<pre><code>sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &lt;&lt; EOM
+[google-cloud-sdk]
+name=Google Cloud SDK
+baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
+       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOM
+sudo yum install google-cloud-sdk
+gcloud init
+</code></pre>
+
+<p>Berikut langkah yang dilakukan di OS ubuntu / debian:</p>
+
+<pre><code>echo &quot;deb http://packages.cloud.google.com/apt cloud-sdk main&quot; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk
+gcloud init
+</code></pre>
+
+<p>Pada saat initialize ini akan diminta untuk memasukan user google yang akan digunakan, diikuti saja semua langkah nya sampai dengan memasukan verifikasi.</p>
+
+<p>Setelah itu bisa menjalankan script 1-gcp-centos.sh berikut:</p>
+
+<pre><code>bash 1-gcp-centos.sh namavm
+</code></pre>
+
+<p>Berikut script 1-gcp-centos.sh</p>
+
+<pre><code>#!/bin/bash
+
+if [ -z &quot;$1&quot; ]; then
+ NAMA=$1
+ while [ -z &quot;$NAMA&quot; ]; do
+  echo &quot;masukan nama vm:&quot;
+  read NAMA
+ done
+ # Create GCE VM with disk storage
+ gcloud compute instances create $NAMA \
+  --machine-type f1-micro \
+  --network default \
+  --subnet default \
+  --network-tier PREMIUM \
+  --maintenance-policy MIGRATE \
+  --scopes https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append \
+  --image centos-7-v20191014 \
+  --image-project centos-cloud \
+  --boot-disk-size 10GB \
+  --boot-disk-type pd-standard \
+  --boot-disk-device-name compute-disk
+fi
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://cloud.google.com/sdk/docs/quickstart-redhat-centos">https://cloud.google.com/sdk/docs/quickstart-redhat-centos</a></li>
+<li><a href="https://github.com/garystafford/ansible-gcp-demo">https://github.com/garystafford/ansible-gcp-demo</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/cloud/">cloud</a>, <a href="https://blog.indonesiadot.com/tags/gcp/">gcp</a>, <a href="https://blog.indonesiadot.com/tags/google-cloud-platform/">google-cloud-platform</a>, <a href="https://blog.indonesiadot.com/tags/google/">google</a>, <a href="https://blog.indonesiadot.com/tags/gcloud/">gcloud</a>, <a href="https://blog.indonesiadot.com/tags/command/">command</a>, <a href="https://blog.indonesiadot.com/tags/bash/">bash</a>, <a href="https://blog.indonesiadot.com/tags/script/">script</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/25/gcp-and-ansible/">GCP and Ansible</a></h1>
+        <span class="post-date">Oct 25, 2019</span>
+	<p>Referensi:</p>
+
+<ul>
+<li><a href="https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/">https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/cloud/">cloud</a>, <a href="https://blog.indonesiadot.com/tags/gcp/">gcp</a>, <a href="https://blog.indonesiadot.com/tags/google-cloud-platform/">google-cloud-platform</a>, <a href="https://blog.indonesiadot.com/tags/google/">google</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/">Kernel Hardening Tips</a></h1>
@@ -1254,118 +1352,6 @@ smartctl -a /dev/sda | grep &ldquo;Short&rdquo;</p>
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/disk/">disk</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/smartctl/">smartctl</a>, <a href="https://blog.indonesiadot.com/tags/raid/">raid</a>, <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/28/ids-tripwire/">IDS Tripwire</a></h1>
-        <span class="post-date">Sep 28, 2019</span>
-	<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/">https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/</a></li>
-<li><a href="https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html">https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html</a></li>
-<li><a href="https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/">https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/</a></li>
-<li><a href="https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d">https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/tripwire/">tripwire</a>, <a href="https://blog.indonesiadot.com/tags/splunk/">splunk</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/hugo-hosting-dengan-github/">Hugo hosting dengan github</a></h1>
-        <span class="post-date">Sep 24, 2019</span>
-	<p>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:</p>
-
-<ul>
-<li>Nama user: tpinews</li>
-<li>Nama repositori yang harus dibuat: tpinews.github.io</li>
-</ul>
-
-<p>Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:</p>
-
-<pre><code>mkdir tpinews
-cd tpinews
-touch .gitignore
-git init
-git add .
-git commit -m 'komat kamit awal'
-git remote add origin https://tpinews.github.io.git
-git push origin master
-
-git checkout -b hugo
-hugo new site . --force
-cp -r /path/kumpulanthemeshugo/travelify themes/
-cp -r themes/travelify/exampleSite/* .
-cp /path/scripts/push-deploy.sh .
-git add .
-git commit -m 'komit hugo'
-git push origin hugo
-
-git submodule add -b master https://tpinews.github.io.git public
-./push-deploy.sh
-git branch -d master
-</code></pre>
-
-<p>Pastikan juga config.toml sudah sesuai, seperti nama theme dan lainnya, dan bisa di test di localhost dengan menjalankan <code>hugo server</code> dan mengakses <a href="http://localhost:1313">http://localhost:1313</a> di browser untuk melihat hasilnya.</p>
-
-<p>Command di atas hanya dilakukan pertama kali saja, untuk selanjutnya yang dilakukan setelah melakukan perubahan dan ingin mengupdate di github, cukup menjalankan script push-deploy.sh</p>
-
-<p>Disini theme yang digunakan misalnya travelify yang sudah disiapkan, dan juga script untuk push-deploy.sh untuk memudahkan deploy sebagai berikut:</p>
-
-<pre><code>#!/bin/sh
-# If a command fails then the deploy stops
-set -e
-printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
-git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
- msg=&quot;$*&quot;
-fi
-git commit -m &quot;$msg&quot;
-git push origin hugo
-
-printf &quot;\033[0;32mDeploy public hugo to branch master...\033[0m\n&quot;
-HUGO_ENV=production hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
-cd public
-git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
-        msg=&quot;$*&quot;
-fi
-git commit -m &quot;$msg&quot;
-git push origin master
-
-printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
-cd ..
-git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
-        msg=&quot;$*&quot;
-fi
-git commit -m &quot;$msg&quot;
-git push origin hugo
-</code></pre>
-
-<p>Note:</p>
-
-<p>Untuk lebih mudah tidak perlu memasukan password, bisa di buat dari menu settings account github, lalu pilih menu sebelah kiri bawah bagian Developer settings, lalu Personal access tokens dan generate new token.</p>
-
-<p>Lalu copy token tersebut dan tambahkan pada file .git/config dan .git/modules/public/config ,bagian url nya, sehingga menjadi seperti contoh berikut:</p>
-
-<pre><code>   url = https://namauser:tokenhasidaricopygeneratenewtoken@namarepository.github.io.git
-</code></pre>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>, <a href="https://blog.indonesiadot.com/tags/github/">github</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>
 	 <hr/>
     </div>
   

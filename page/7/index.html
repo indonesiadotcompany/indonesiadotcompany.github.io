@@ -810,6 +810,10 @@
       
     
       
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -840,6 +844,72 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/">Video Editing On Linux</a></h1>
+        <span class="post-date">Feb 24, 2020</span>
+	
+
+<h2 id="cut-and-combine-video">Cut and Combine Video</h2>
+
+<p>Avidemux</p>
+
+<h2 id="youtube">Youtube</h2>
+
+<h3 id="add-text-caption-subtitle-anotasi-on-video">Add text / caption / subtitle / Anotasi on video</h3>
+
+<pre><code>1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &gt; Youtube Studio
+2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks
+3. Untuk video baru, klik set languages, lalu confirm
+4. Klik tombol ADD / Tambahkan subtitel atau CC baru.
+</code></pre>
+
+<h3 id="add-watermark">Add watermark</h3>
+
+<pre><code>ffmpeg -i input.mp4 -i watermark.png -filter_complex &quot;overlay=1500:1000&quot; output.mp4
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://www.nesabamedia.com/cara-membuat-subtitle-video-youtube/">https://www.nesabamedia.com/cara-membuat-subtitle-video-youtube/</a></li>
+<li><a href="https://readmoremyblog.wordpress.com/2012/03/11/cara-membuat-teks-atau-anotasi-pada-video-youtube/">https://readmoremyblog.wordpress.com/2012/03/11/cara-membuat-teks-atau-anotasi-pada-video-youtube/</a></li>
+<li><a href="https://shkspr.mobi/blog/2016/08/easy-ways-to-add-watermarks-to-images-and-videos-in-linux/">https://shkspr.mobi/blog/2016/08/easy-ways-to-add-watermarks-to-images-and-videos-in-linux/</a></li>
+<li><a href="https://www.vlchelp.com/how-to-change-subtitle-position-in-vlc/">https://www.vlchelp.com/how-to-change-subtitle-position-in-vlc/</a></li>
+<li><a href="https://downsub.com/">https://downsub.com/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/video/">video</a>, <a href="https://blog.indonesiadot.com/tags/editing/">editing</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/youtube/">youtube</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/">Ansible OS Hardening</a></h1>
+        <span class="post-date">Feb 20, 2020</span>
+	
+
+<h2 id="ansible-os-hardening">Ansible OS Hardening</h2>
+
+<pre><code>mkdir -p /data/backups
+</code></pre>
+
+<p>Referensi:</p>
+
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/os-hardening/">os-hardening</a>, <a href="https://blog.indonesiadot.com/tags/hardening/">hardening</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/">Ansible Tower tips and trick</a></h1>
@@ -1213,91 +1283,6 @@ user.save!
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/git/">git</a>, <a href="https://blog.indonesiadot.com/tags/gitlab/">gitlab</a>, <a href="https://blog.indonesiadot.com/tags/repository/">repository</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/">Centos 7 Resize Partition</a></h1>
-        <span class="post-date">Jan 8, 2020</span>
-	
-
-<h2 id="step-to-reproduce-on-vm">Step to reproduce on VM</h2>
-
-<p>Turn off the VM</p>
-
-<pre><code>qemu-img resize image.qcow2 +SIZE
-</code></pre>
-
-<p>where SIZE is the size to add (e.g. 10G for 10 gibibytes).</p>
-
-<p>Turn on the VM, fdisk /dev/vda, delete and create /dev/vda2, restart</p>
-
-<p>Login after restart, then run this command</p>
-
-<pre><code>pvresize /dev/vda2
-lvextend -r -l +100%FREE /dev/mapper/centos-root
-df -hl
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://maunium.net/blog/resizing-qcow2-images/">https://maunium.net/blog/resizing-qcow2-images/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/centos7/">centos7</a>, <a href="https://blog.indonesiadot.com/tags/partition/">partition</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/23/selinux-semanage/">Selinux semanage</a></h1>
-        <span class="post-date">Dec 23, 2019</span>
-	
-
-<p>content of selinux config /etc/selinux/config</p>
-
-<pre><code>SELINUX=enforcing
-SELINUXTYPE=targeted 
-</code></pre>
-
-<h2 id="semanage-packages">semanage packages</h2>
-
-<pre><code>yum provides semanage
-yum install -y policycoreutils-python
-</code></pre>
-
-<h2 id="semanage-list-port">semanage list port</h2>
-
-<pre><code>semanage port -l | grep ssh
-</code></pre>
-
-<h2 id="semanage-open-ssh-on-different-port">semanage open ssh on different port</h2>
-
-<p>add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port</p>
-
-<pre><code>semanage port -a -t ssh_port_t -p tcp 1022
-</code></pre>
-
-<p>then restart sshd service</p>
-
-<pre><code>systemctl restart sshd
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/">https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/rhel/">rhel</a>, <a href="https://blog.indonesiadot.com/tags/selinux/">selinux</a>, <a href="https://blog.indonesiadot.com/tags/semanage/">semanage</a>
 	 <hr/>
     </div>
   
