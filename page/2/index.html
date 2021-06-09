@@ -814,6 +814,8 @@
       
     
       
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -844,6 +846,33 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/10/15/ssh-error-tips/">SSH error tips</a></h1>
+        <span class="post-date">Oct 15, 2020</span>
+	
+
+<h2 id="ssh-exchange-identification-read-connection-reset-by-peer">ssh_exchange_identification read connection reset by peer</h2>
+
+<ul>
+<li><a href="https://phoenixnap.com/kb/fix-connection-reset-by-peer-ssh-error">https://phoenixnap.com/kb/fix-connection-reset-by-peer-ssh-error</a></li>
+</ul>
+
+<p>There are typos at /etc/hosts.allow, in example:</p>
+
+<p>shd: 10.11.8.15</p>
+
+<p>it should be</p>
+
+<p>sshd: 10.11.8.15</p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ssh/">ssh</a>, <a href="https://blog.indonesiadot.com/tags/hosts.allow/">hosts.allow</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/09/02/ldap-on-centos-7/">LDAP on Centos 7</a></h1>
@@ -1325,61 +1354,6 @@ klik save
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/python/">python</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/07/10/proxmox-beginner/">Proxmox Beginner</a></h1>
-        <span class="post-date">Jul 10, 2020</span>
-	
-
-<h2 id="update-proxmox-repo">update proxmox repo</h2>
-
-<p><a href="https://pve.proxmox.com/wiki/Package_Repositories">https://pve.proxmox.com/wiki/Package_Repositories</a>
-untuk bisa update proxmox harus dirubah dulu repo nya di file /etc/apt/sources.list (untuk proxmox 5.4 / debian 9 / stretch)</p>
-
-<pre><code>deb http://kebo.pens.ac.id/debian stretch main contrib
-deb http://kebo.pens.ac.id/debian stretch-updates main contrib
-# security updates
-deb http://kebo.pens.ac.id/debian-security stretch/updates main contrib
-deb http://download.proxmox.com/debian/pve stretch pve-no-subscription
-</code></pre>
-
-<h2 id="proxmox-masquerade">proxmox masquerade</h2>
-
-<p><a href="https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt">https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt</a></p>
-
-<pre><code>auto lo
-iface lo inet loopback
-auto ens192
-iface ens192 inet static
-        address  10.11.8.202
-        netmask  255.255.255.0
-        gateway  10.11.8.1
-auto vmbr0
-iface vmbr0 inet static
-        address  192.168.10.1
-        netmask  255.255.255.0
-        bridge-ports none
-        bridge-stp off
-        bridge-fd 0
-
-        post-up echo 1 &gt; /proc/sys/net/ipv4/ip_forward
-        post-up iptables -t nat -A POSTROUTING -j MASQUERADE
-        post-down iptables -t nat -D POSTROUTING eno1 -j MASQUERADE
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/proxmox/">proxmox</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/beginner/">beginner</a>
 	 <hr/>
     </div>
   

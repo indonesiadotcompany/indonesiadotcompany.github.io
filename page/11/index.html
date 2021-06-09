@@ -814,6 +814,8 @@
       
     
       
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -844,6 +846,45 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/30/disk-serial-number/">Disk Serial Number</a></h1>
+        <span class="post-date">Sep 30, 2019</span>
+	
+
+<p>Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.</p>
+
+<p>Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:</p>
+
+<ul>
+<li>lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb)</li>
+<li>smartctl -a /dev/sda #lihat bagian atas serial number nya</li>
+<li>udevadm info /dev/sda</li>
+</ul>
+
+<h2 id="smartctl-to-get-disk-smart-status">smartctl to get disk smart status</h2>
+
+<p>```
+smartctl -H /dev/sda
+smartctl -i /dev/sda
+smartctl &ndash;test=short /dev/sda
+#smartctl &ndash;test=long /dev/sda
+smartctl -a /dev/sda
+smartctl -a /dev/sda | grep &ldquo;Short&rdquo;</p>
+
+<p>Ref:</p>
+
+<ul>
+<li><a href="https://www.techrepublic.com/blog/linux-and-open-source/using-smartctl-to-get-smart-status-information-on-your-hard-drives/">https://www.techrepublic.com/blog/linux-and-open-source/using-smartctl-to-get-smart-status-information-on-your-hard-drives/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/disk/">disk</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/smartctl/">smartctl</a>, <a href="https://blog.indonesiadot.com/tags/raid/">raid</a>, <a href="https://blog.indonesiadot.com/tags/zfs/">zfs</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/28/ids-tripwire/">IDS Tripwire</a></h1>
@@ -1412,31 +1453,6 @@ kubectl delete node &lt;namanode&gt;
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/kubernetes/">kubernetes</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/">Ubuntu upgrade 14.04 to 16.04 to 18.04</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<p>Berikut langkah yang dilakukan, tapi sebelumnya pastikan backup, backup dan backup</p>
-
-<pre><code>sudo apt-get update
-sudo apt-get upgrade
-sudo do-release-upgrade -f DistUpgradeViewNonInteractive
-</code></pre>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04">https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04</a></li>
-<li><a href="https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4">https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ubuntu/">ubuntu</a>, <a href="https://blog.indonesiadot.com/tags/upgrade/">upgrade</a>
 	 <hr/>
     </div>
   
