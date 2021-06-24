@@ -6,7 +6,7 @@ author: "Widya"
 draft: false
 ---
 
-## Perjalanan Hijrah 2021
+## Perjalanan Hijrah - Pendahuluan
 
 Berawal sejak lama mengalami dilema dengan pekerjaan IT yang dirasa banyak mengerjakan sesuatu yang kurang kehalalannya, merasakan kehidupan keluarga kurang baik, merasa berdosa dengan banyaknya maksiat yang sudah dilakukan dan banyak lagi kejadian yang melatarbelakanginya.
 
