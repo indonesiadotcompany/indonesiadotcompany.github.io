@@ -6,10 +6,20 @@
     <description>Recent content in storage on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Mar 2020 18:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 10 Jun 2021 06:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/tags/storage/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Install and setup ftp on Freenas 11</title>
+      <link>https://blog.indonesiadot.com/2021/06/10/install-and-setup-ftp-on-freenas-11/</link>
+      <pubDate>Thu, 10 Jun 2021 06:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2021/06/10/install-and-setup-ftp-on-freenas-11/</guid>
+      <description> Install and setup ftp on Freenas 11  Install freenas Configure via CLI Configure via web Add pool Add dataset Add group from accounts Add user from accounts Edit dataset permission based on accounts created start ftp service  Referensi:
+ http://toolstolearnarabic.blogspot.com/2017/02/arabic-learning-books-pdfs-google-drive.html https://www.matrix7.com.au/freenas/freenas-11-2-u7-ftp-setup/  </description>
+    </item>
     
     <item>
       <title>Ceph tips</title>

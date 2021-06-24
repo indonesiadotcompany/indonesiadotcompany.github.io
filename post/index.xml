@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Dec 2020 13:17:54 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 10 Jun 2021 06:17:54 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.indonesiadot.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Install and setup ftp on Freenas 11</title>
+      <link>https://blog.indonesiadot.com/2021/06/10/install-and-setup-ftp-on-freenas-11/</link>
+      <pubDate>Thu, 10 Jun 2021 06:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2021/06/10/install-and-setup-ftp-on-freenas-11/</guid>
+      <description> Install and setup ftp on Freenas 11  Install freenas Configure via CLI Configure via web Add pool Add dataset Add group from accounts Add user from accounts Edit dataset permission based on accounts created start ftp service  Referensi:
+ http://toolstolearnarabic.blogspot.com/2017/02/arabic-learning-books-pdfs-google-drive.html https://www.matrix7.com.au/freenas/freenas-11-2-u7-ftp-setup/  </description>
+    </item>
     
     <item>
       <title>Alhikam Pasal 6</title>
@@ -520,6 +530,16 @@ Referensi:
       <description> Post Ini adalah contoh post
 Referensi:
  https://indonesiadot.com  </description>
+    </item>
+    
+    <item>
+      <title>Perjalanan Hijrah - insyaAllooh</title>
+      <link>https://blog.indonesiadot.com/2020/03/05/perjalanan-hijrah-insyaallooh/</link>
+      <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2020/03/05/perjalanan-hijrah-insyaallooh/</guid>
+      <description>Perjalanan Hijrah 2021 Berawal sejak lama mengalami dilema dengan pekerjaan IT yang dirasa banyak mengerjakan sesuatu yang kurang kehalalannya, merasakan kehidupan keluarga kurang baik, merasa berdosa dengan banyaknya maksiat yang sudah dilakukan dan banyak lagi kejadian yang melatarbelakanginya.
+Hijrah pertama yang mungkin belum total, tapi sudah ke arah lebih baik, meski ada beberapa cobaan yang mungkin belum bisa dilewati dengan baik, yaitu hijrah dari Jakarta ke Tangerang. (bagian ini tidak dibahas disini).</description>
     </item>
     
     <item>

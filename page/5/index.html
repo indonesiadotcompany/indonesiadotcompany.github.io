@@ -816,6 +816,22 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -823,7 +839,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2020. All rights reserved.</p>
+    <p>&copy; 2021. All rights reserved.</p>
   </div>
 </div>
 
@@ -846,6 +862,28 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/">Ansible Tower Log Logstash ELK</a></h1>
+        <span class="post-date">Mar 16, 2020</span>
+	
+
+<h2 id="ansible-logstash-example">ansible logstash example</h2>
+
+<ul>
+<li><a href="https://github.com/widansible/elk-ansible">https://github.com/widansible/elk-ansible</a></li>
+<li><a href="https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack">https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack</a></li>
+<li><a href="https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html">https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html">https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/ansibletower/">ansibletower</a>, <a href="https://blog.indonesiadot.com/tags/log/">log</a>, <a href="https://blog.indonesiadot.com/tags/logstash/">logstash</a>, <a href="https://blog.indonesiadot.com/tags/elk/">elk</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/16/kubernetes-references/">Kubernetes references</a></h1>
@@ -1236,51 +1274,6 @@ ceph -s
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ceph/">ceph</a>, <a href="https://blog.indonesiadot.com/tags/storage/">storage</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/10/lxd-lxc/">LXD-LXC</a></h1>
-        <span class="post-date">Mar 10, 2020</span>
-	
-
-<h2 id="lxc-set-static-ip">lxc set static ip</h2>
-
-<pre><code>lxc stop c1
-lxc network attach lxdbr0 c1 eth0 eth0
-lxc config device set c1 eth0 ipv4.address 10.99.10.42
-lxc start c1
-</code></pre>
-
-<ul>
-<li><a href="https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4">https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4</a></li>
-</ul>
-
-<h2 id="lxc-privileged-to-unprivileged">lxc privileged to unprivileged</h2>
-
-<p>Pada saat container (CT) lxc dalam unprivileged mode memiliki hak terbatas seperti akses ke device dan beberapa lainnya.</p>
-
-<p>Contoh pada saat menjalankan docker itu ada pesan error <em>Failed to reset devices.list on /system.slice</em></p>
-
-<p>Workaround nya adalah dengan membuat CT menjadi privileged mode, caranya yaitu:
-- backup CT
-- restore CT dengan uncheck unprivileged mode</p>
-
-<ul>
-<li><a href="https://github.com/lxc/lxd/issues/2004">https://github.com/lxc/lxd/issues/2004</a></li>
-<li><a href="https://forum.proxmox.com/threads/convert-privileged-to-unprivileged-container.31066/">https://forum.proxmox.com/threads/convert-privileged-to-unprivileged-container.31066/</a></li>
-</ul>
-
-<h2 id="rename-lxc-container">rename lxc container</h2>
-
-<pre><code>lxc move [ct-lama] [ct-baru]
-</code></pre>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ubuntu/">ubuntu</a>, <a href="https://blog.indonesiadot.com/tags/lxd/">lxd</a>, <a href="https://blog.indonesiadot.com/tags/lxc/">lxc</a>
 	 <hr/>
     </div>
   
