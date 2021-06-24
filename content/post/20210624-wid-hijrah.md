@@ -1,12 +1,12 @@
 ---
-title: "Perjalanan Hijrah - insyaAllooh"
+title: "Perjalanan Hijrah - insyaAllooh - Pendahuluan"
 date: 2021-06-24T14:17:54+07:00
 tags: ["wid", "hijrah", "insyaAllooh"]
 author: "Widya"
 draft: false
 ---
 
-## Perjalanan Hijrah - Pendahuluan
+# Perjalanan Hijrah - Pendahuluan
 
 Berawal sejak lama mengalami dilema dengan pekerjaan IT yang dirasa banyak mengerjakan sesuatu yang kurang kehalalannya, merasakan kehidupan keluarga kurang baik, merasa berdosa dengan banyaknya maksiat yang sudah dilakukan dan banyak lagi kejadian yang melatarbelakanginya.
 
