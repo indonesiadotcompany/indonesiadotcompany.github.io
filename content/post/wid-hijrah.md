@@ -1,6 +1,6 @@
 ---
 title: "Perjalanan Hijrah - insyaAllooh"
-date: 2020-03-05T08:17:54+07:00
+date: 2021-06-24T14:17:54+07:00
 tags: ["wid", "hijrah", "insyaAllooh"]
 author: "Widya"
 draft: false
