@@ -864,6 +864,87 @@
 <div class="post">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/12/ceph-tips/">Ceph tips</a></h1>
+        <span class="post-date">Mar 12, 2020</span>
+	
+
+<h2 id="remove-osd">remove osd</h2>
+
+<pre><code>systemctl stop ceph-osd.target
+systemctl stop ceph-osd@0
+ceph osd out 0
+ceph osd down 0
+ceph osd destroy 0
+ceph osd destroy 0 --yes-i-really-mean-it
+ceph osd rm 0
+ceph osd crush rm osd.0
+ceph auth del osd.0
+
+ceph-volume lvm zap /dev/sdX --destroy
+</code></pre>
+
+<ul>
+<li><a href="https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87">https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87</a></li>
+<li><a href="https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/">https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/</a></li>
+</ul>
+
+<h2 id="all-about-pg-num">all about pg_num</h2>
+
+<ul>
+<li><a href="https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox">https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox</a></li>
+</ul>
+
+<h2 id="ceph-one-single-node">ceph one / single node</h2>
+
+<pre><code>ceph osd getcrushmap -o crush_map_compressed
+crushtool -d crush_map_compressed -o crush_map_decompressed
+vi crush_map_decompressed
+</code></pre>
+
+<p>lalu cari bagian:</p>
+
+<pre><code>step chooseleaf firstn 0 type host
+</code></pre>
+
+<p>rubah menjadi:</p>
+
+<pre><code>step chooseleaf firstn 0 type osd
+</code></pre>
+
+<p>lalu insert hasilnya</p>
+
+<pre><code>crushtool -c crush_map_decompressed -o new_crush_map_compressed
+ceph osd setcrushmap -i new_crush_map_compressed
+ceph -s
+</code></pre>
+
+<ul>
+<li><a href="https://linoxide.com/linux-how-to/hwto-configure-single-node-ceph-cluster/">https://linoxide.com/linux-how-to/hwto-configure-single-node-ceph-cluster/</a></li>
+</ul>
+
+<p>Tutorial ceph bahasa indonesia</p>
+
+<ul>
+<li><a href="https://denstorial.blogspot.com/2019/01/tutorial.setup.ceph.storage.cluster.part.1.html">https://denstorial.blogspot.com/2019/01/tutorial.setup.ceph.storage.cluster.part.1.html</a></li>
+<li><a href="https://denstorial.blogspot.com/2019/02/troubleshooting.ceph.html">https://denstorial.blogspot.com/2019/02/troubleshooting.ceph.html</a></li>
+</ul>
+
+<h2 id="pg-placement-group-pg-num">PG (Placement Group) / pg_num</h2>
+
+<ul>
+<li><a href="https://docs.ceph.com/docs/mimic/rados/operations/placement-groups/">https://docs.ceph.com/docs/mimic/rados/operations/placement-groups/</a></li>
+<li><a href="https://www.sebastien-han.fr/blog/2013/03/12/ceph-change-pg-number-on-the-fly/">https://www.sebastien-han.fr/blog/2013/03/12/ceph-change-pg-number-on-the-fly/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ceph/">ceph</a>, <a href="https://blog.indonesiadot.com/tags/storage/">storage</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/10/lxd-lxc/">LXD-LXC</a></h1>
         <span class="post-date">Mar 10, 2020</span>
 	
@@ -1113,36 +1194,6 @@ dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/perjalanan-hijrah-insyaallooh/">Perjalanan Hijrah - insyaAllooh</a></h1>
-        <span class="post-date">Mar 5, 2020</span>
-	
-
-<h2 id="perjalanan-hijrah-2021">Perjalanan Hijrah 2021</h2>
-
-<p>Berawal sejak lama mengalami dilema dengan pekerjaan IT yang dirasa banyak mengerjakan sesuatu yang kurang kehalalannya, merasakan kehidupan keluarga kurang baik, merasa berdosa dengan banyaknya maksiat yang sudah dilakukan dan banyak lagi kejadian yang melatarbelakanginya.</p>
-
-<p>Hijrah pertama yang mungkin belum total, tapi sudah ke arah lebih baik, meski ada beberapa cobaan yang mungkin belum bisa dilewati dengan baik, yaitu hijrah dari Jakarta ke Tangerang. (bagian ini tidak dibahas disini).</p>
-
-<p>Hijrah selanjutnya yang semoga insyaAllooh lebih baik untuk dunia akhirat, yaitu hijrah ke Pandeglang, saat ini yaitu ke daerah cipeucang.</p>
-
-<p>Berawal dari keinginan lama (mungkin sejak 2017 sudah sering survei lokasi, tapi belum ada yg cocok, baik dari harga atau tempat atau lokasi) ingin memiliki tempat di pandeglang (banyak yang melatarbelakanginya) hingga terbayangkan, terucapkan bahwa nanti akan mempunyai tanah pinggir jalan desa, bentuknya sawah berundak, tidak terlalu lebar tapi panjang ke belakang, lebih dari 1000 meter dan ada mata air.
-Lalu timbul keinginan untuk silaturahmi ke Abuya Mufassir, cuma belum ada yang bisa menemani, sampai akhirnya erwin (sahabat Habib Zein Alaydrus) bisa menemani, lalu disana sempat mengutarakan keinginan untuk hijrah sejak lama, karena pekerjaan yang sekarang di IT itu rentan dengan korupsi, ribawi dan keduniawian lain yang kurang baik, pada waktu kesana hari senin, tiba disana sehabis ashar, lalu langsung pulang sore itu juga dan kehujanan dari pandeglang sampai tangerang, tapi sering menyebut bahwa itu adalah hujan rahmat, berkah Allooh :).
-Seminggu kemudian melihat di aplikasi jual beli online, bagian properti tanah daerah pandeglang ada lokasi tanah sawah yang ditawarkan (4 bulan lalu pernah melihat juga iklan ini, tapi sepertinya belum laku juga), lalu memberanikan diri untuk menanyakan dan survei, ternyata lokasinya ketika dilihat Alhamdulillaah cocok dan lalu dinegosiasikan supaya pembayaran bisa dibayar 50 juta terlebih dahulu, dengan sisa dicicil selama 3 bulan ke depan, dan ternyata disetujui, sore itu juga langsung ke tangerang untuk mengambil uang dan mengajak erwin untuk menemani.
-Karena saat itu kondisi sedang masih ada kontrak kerja di jakarta yang masih harus diselesaikan jadi belum bisa langsung ke pandeglang, sampai pada awal 2021 baru bisa ke pandeglang.</p>
-
-<p>Mohon doanya supaya perjalanan hijrah ke arah yang lebih baik selamat dunia akhirat ini bisa dilalui, semoga insyaAllooh semua cobaan yg ada dapat dilewati dengan baik, lulus jayyid jiddan :) (jujur cobaannya lumayan, sekali lagi mohon doanya untuk kebaikan karena Allooh ya).</p>
-
-<p><img src="https://blog.indonesiadot.com/images/2021/cipeucang-depan.png" alt="cipeucang-depan" /></p>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/wid/">wid</a>, <a href="https://blog.indonesiadot.com/tags/hijrah/">hijrah</a>, <a href="https://blog.indonesiadot.com/tags/insyaallooh/">insyaAllooh</a>
 	 <hr/>
     </div>
   

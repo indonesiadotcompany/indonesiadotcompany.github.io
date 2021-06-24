@@ -864,6 +864,106 @@
 <div class="post">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/08/04/jfrog-for-beginner/">Jfrog for Beginner</a></h1>
+        <span class="post-date">Aug 4, 2020</span>
+	
+
+<h2 id="install-jfrog-di-ubuntu">Install jfrog di ubuntu</h2>
+
+<p><a href="https://websiteforstudents.com/how-to-install-jfrog-artifactory-on-ubuntu-18-04-16-04/">https://websiteforstudents.com/how-to-install-jfrog-artifactory-on-ubuntu-18-04-16-04/</a></p>
+
+<pre><code>apt install wget software-properties-common apt-transport-https
+apt-get install openjdk-8-jdk openjdk-8-doc
+wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add -
+add-apt-repository &quot;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&quot;
+apt-get update
+apt install jfrog-artifactory-oss
+</code></pre>
+
+<h2 id="membuat-repository-artifacts-baru-di-jfrog">Membuat repository / artifacts baru di jfrog</h2>
+
+<pre><code>klik menu administration, lalu klik menu repositories (sebelah kiri), lalu klik + New Local Repository (sebelah kanan)
+klik / pilih generic, lalu isi repository key atau nama repository dengan apa saja yg diinginkan misal ansible-test-report
+klik save
+</code></pre>
+
+<h2 id="test-upload-dan-download-via-curl">test upload dan download via curl</h2>
+
+<p>buat dahulu bbrp file, misal test.txt, lalu upload dengan command curl</p>
+
+<pre><code>curl -uadmin:r4hasia01 -T test.txt &quot;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&quot;
+</code></pre>
+
+<p>command untuk download memakai curl</p>
+
+<pre><code>curl -uadmin:r4hasia01 -O &quot;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&quot;
+</code></pre>
+
+<h2 id="test-upload-dengan-playbook-script">test upload dengan playbook script</h2>
+
+<p>buat file jfrog-upload.yml</p>
+
+<pre><code>- hosts: all
+  gather_facts: false
+  connection: local
+  tasks:
+    - uri:
+        url: 'http://10.11.8.41:8081/artifactory/generic/test1.txt'
+        src: ./test1.txt
+        method: PUT
+        return_content: true
+        user: admin
+        password: r4hasia01
+        force_basic_auth: true
+        status_code: 201
+        headers:
+          Content-Type: application/octet-stream
+          Accept: application/json
+</code></pre>
+
+<p>buat file test1.txt, lalu jalankan script playbooknya dengan:</p>
+
+<pre><code>ansible-playbook -i localhost, jfrog-upload.yml
+</code></pre>
+
+<h2 id="jfrog-cli">Jfrog CLI</h2>
+
+<ul>
+<li><a href="https://jfrog.com/getcli/">https://jfrog.com/getcli/</a></li>
+<li><a href="https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory">https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory</a></li>
+</ul>
+
+<p>untuk lebih memudahkan proses management jfrog bisa menggunakan jfrog cli</p>
+
+<p>bisa download dulu dengan command:</p>
+
+<pre><code>curl -fL https://getcli.jfrog.io | sh
+</code></pre>
+
+<p>configure jfrog cli dengan</p>
+
+<pre><code>./jfrog rt c jfroglan --url=http://10.11.8.41:8082/artifactory --user=admin --password=r4hasia01
+</code></pre>
+
+<p>dari sini bisa untuk delete file / direktori, misal delete file testdir yg sebelumnya terbuat, dengan command:</p>
+
+<pre><code>./jfrog rt del generic/testdir
+</code></pre>
+
+<p>upload semua file di direktori dan taruh di direktori juga</p>
+
+<pre><code>./jfrog rt u &quot;testdir/&quot; generic/testdir/
+</code></pre>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/jfrog/">jfrog</a>, <a href="https://blog.indonesiadot.com/tags/repository/">repository</a>, <a href="https://blog.indonesiadot.com/tags/artifactory/">artifactory</a>, <a href="https://blog.indonesiadot.com/tags/artifacts/">artifacts</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/07/15/multi-python-on-virtualenv-using-pyenv/">Multi python on virtualenv using pyenv</a></h1>
         <span class="post-date">Jul 15, 2020</span>
 	
@@ -1303,45 +1403,6 @@ ansible windows -m win_chocolatey -a &quot;name=7zip state=present&quot;
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/windows/">windows</a>, <a href="https://blog.indonesiadot.com/tags/winrm/">winrm</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/06/23/2fa-with-google-authenticator/">2FA with Google Authenticator</a></h1>
-        <span class="post-date">Jun 23, 2020</span>
-	
-
-<h2 id="ubuntu">Ubuntu</h2>
-
-<h3 id="pastikan-terdapat-baris-berikut-di-etc-ssh-sshd-config">Pastikan terdapat baris berikut di /etc/ssh/sshd_config</h3>
-
-<pre><code>ChallengeResponseAuthentication yes
-UsePAM yes
-</code></pre>
-
-<p>lalu restart service sshd</p>
-
-<h3 id="tambahkan-baris-berikut-di-akhir-etc-pam-d-common-auth">Tambahkan baris berikut di akhir /etc/pam.d/common-auth</h3>
-
-<pre><code>auth required pam_google_authenticator.so nullok
-</code></pre>
-
-<h3 id="go-go-gadget">Go go gadget</h3>
-
-<p>install google-authenticator app from android playstore, then add the server to show the code</p>
-
-<p>Referensi:</p>
-
-<ul>
-<li><a href="https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator">https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator</a></li>
-<li><a href="https://wiki.alpinelinux.org/wiki/Two_Factors_Authentication_With_OpenSSH">https://wiki.alpinelinux.org/wiki/Two_Factors_Authentication_With_OpenSSH</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/2fa/">2fa</a>, <a href="https://blog.indonesiadot.com/tags/google-authenticator/">google-authenticator</a>
 	 <hr/>
     </div>
   
