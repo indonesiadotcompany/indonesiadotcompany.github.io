@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>web on Blog Indonesiadot.Com</title>
@@ -6,11 +6,7 @@
     <description>Recent content in web on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Sep 2019 08:17:48 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/web/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 24 Sep 2019 08:17:48 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo hosting dengan github</title>
       <link>https://blog.indonesiadot.com/2019/09/24/hugo-hosting-dengan-github/</link>
@@ -18,8 +14,8 @@
       
       <guid>https://blog.indonesiadot.com/2019/09/24/hugo-hosting-dengan-github/</guid>
       <description>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:
- Nama user: tpinews Nama repositori yang harus dibuat: tpinews.github.io  Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:
-mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;komat kamit awal&#39; git remote add origin https://tpinews.github.io.git git push origin master git checkout -b hugo hugo new site .</description>
+Nama user: tpinews Nama repositori yang harus dibuat: tpinews.github.io Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:
+mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &amp;#39;komat kamit awal&amp;#39; git remote add origin https://tpinews.github.io.git git push origin master git checkout -b hugo hugo new site .</description>
     </item>
     
     <item>
@@ -28,11 +24,11 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
       <pubDate>Tue, 24 Sep 2019 08:17:16 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/24/markdown-tips/</guid>
-      <description> markdown insert image Ini adalah markdown untuk menampilkan gambar yang terletak di dalam folder / direktori pada postingan di hugo
-![nama-image](path/to/image)  markdown insert link Ini adalah markdown untuk menampilkan link url pada kata atau kalimat di halaman web
-[kata atau kalimat](http://link.url/yang-dituju)  seperti contoh diatas
-[markdown](https://www.petanikode.com/markdown-pemula/)  Referensi markdown images:
- https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images  </description>
+      <description>markdown insert image Ini adalah markdown untuk menampilkan gambar yang terletak di dalam folder / direktori pada postingan di hugo
+![nama-image](path/to/image) markdown insert link Ini adalah markdown untuk menampilkan link url pada kata atau kalimat di halaman web
+[kata atau kalimat](http://link.url/yang-dituju) seperti contoh diatas
+[markdown](https://www.petanikode.com/markdown-pemula/) Referensi markdown images:
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images </description>
     </item>
     
     <item>
@@ -41,10 +37,10 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
       <pubDate>Mon, 02 Sep 2019 08:17:16 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/</guid>
-      <description>manage hugo dari pc / laptop lain git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io git checkout hugo rm -rf public git add . git commit -m &#39;remove public&#39; git push git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public  Referensi hugo dasar:
- https://www.petanikode.com/topik/hugo https://gohugo.io/getting-started/quick-start/ https://gohugo.io/hosting-and-deployment/hosting-on-github/ https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html  Referensi hugo dan e-commerce:
- https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce  hugo lanyon tags edit themes/lanyonindo/layouts/partials/sidebar.html
- &amp;lt;a class=&amp;quot;sidebar-nav-item {{ if .IsHome }} active {{ end }}&amp;quot; href=&amp;quot;/&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt; &amp;lt;!</description>
+      <description>manage hugo dari pc / laptop lain git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io git checkout hugo rm -rf public git add . git commit -m &amp;#39;remove public&amp;#39; git push git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public Referensi hugo dasar:
+https://www.petanikode.com/topik/hugo https://gohugo.io/getting-started/quick-start/ https://gohugo.io/hosting-and-deployment/hosting-on-github/ https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html Referensi hugo dan e-commerce:
+https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce hugo lanyon tags edit themes/lanyonindo/layouts/partials/sidebar.html
+&amp;lt;a class=&amp;#34;sidebar-nav-item {{ if .IsHome }} active {{ end }}&amp;#34; href=&amp;#34;/&amp;#34;&amp;gt;Home&amp;lt;/a&amp;gt; &amp;lt;!-- &amp;lt;a class=&amp;#34;sidebar-nav-item {{ if eq .RelPermalink &amp;#34;/post/&amp;#34; }} active {{ end }}&amp;#34; href=&amp;#34;/post&amp;#34;&amp;gt;Posts&amp;lt;/a&amp;gt; --&amp;gt; &amp;lt;a class=&amp;#34;sidebar-nav-item&amp;#34; href=&amp;#34;/post&amp;#34;&amp;gt;Posts&amp;lt;/a&amp;gt; &amp;lt;a class=&amp;#34;sidebar-nav-item&amp;#34; href=&amp;#34;/tags&amp;#34;&amp;gt;Tags&amp;lt;/a&amp;gt; </description>
     </item>
     
     <item>
@@ -54,8 +50,8 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
       
       <guid>https://blog.indonesiadot.com/2019/09/02/migrasi-antar-hugo/</guid>
       <description>To remove a submodule you need to:
- Delete the relevant section from the .gitmodules file. Stage the .gitmodules changes git add .gitmodules Delete the relevant section from .git/config. Run git rm &amp;ndash;cached path_to_submodule (no trailing slash). Run rm -rf .git/modules/path_to_submodule (no trailing slash). Commit git commit -m &amp;ldquo;Removed submodule &amp;ldquo; Delete the now untracked submodule files rm -rf path_to_submodule  Referensi:
- https://indonesiadot.com https://gist.github.com/myusuf3/7f645819ded92bda6677  </description>
+Delete the relevant section from the .gitmodules file. Stage the .gitmodules changes git add .gitmodules Delete the relevant section from .git/config. Run git rm &amp;ndash;cached path_to_submodule (no trailing slash). Run rm -rf .git/modules/path_to_submodule (no trailing slash). Commit git commit -m &amp;ldquo;Removed submodule &amp;quot; Delete the now untracked submodule files rm -rf path_to_submodule Referensi:
+https://indonesiadot.com https://gist.github.com/myusuf3/7f645819ded92bda6677 </description>
     </item>
     
     <item>
@@ -64,25 +60,7 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
       <pubDate>Wed, 30 May 2018 01:14:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/05/30/wordpress-tips-and-trick/</guid>
-      <description>themes
-
-native themes&amp;nbsp;nativewptheme.net
-https://www.cr*ckthemes.com/2018/03/27/native-v1-3-4-powerful-startup-development-tool/
-http://www91.zippyshare.com/v/y7mJuKcb/file.html
-https://www.google.co.id/search?q=aprimo+null
-https://www.null5.top/aprimo-v1-3-mobile-app-landing-wordpress-theme/
-https://www.google.co.id/search?q=upload+max+size+wordpress+.htaccess
-http://www.wpbeginner.com/wp-tutorials/how-to-increase-the-maximum-file-upload-size-in-wordpress/
-cat &amp;gt;&amp;gt; .htaccess
-php_value upload_max_filesize 64Mphp_value post_max_size 64Mphp_value max_execution_time 300php_value max_input_time 300
-https://www.google.co.id/search?q=display+error+htaccess
-https://stackoverflow.com/questions/6127980/enabling-error-display-in-php-via-htaccess-only
-cat &amp;gt;&amp;gt; .htaccess
-php_flag display_startup_errors off
-php_flag display_errors off
-php_flag html_errors off
-php_flag log_errors off
-Thanks</description>
+      <description>themesnative themes nativewptheme.nethttps://www.cr*ckthemes.com/2018/03/27/native-v1-3-4-powerful-startup-development-tool/http://www91.zippyshare.com/v/y7mJuKcb/file.htmlhttps://www.google.co.id/search?q=aprimo+nullhttps://www.null5.top/aprimo-v1-3-mobile-app-landing-wordpress-theme/https://www.google.co.id/search?q=upload+max+size+wordpress+.htaccesshttp://www.wpbeginner.com/wp-tutorials/how-to-increase-the-maximum-file-upload-size-in-wordpress/cat &amp;gt;&amp;gt; .htaccessphp_value upload_max_filesize 64Mphp_value post_max_size 64Mphp_value max_execution_time 300php_value max_input_time 300https://www.google.co.id/search?q=display+error+htaccesshttps://stackoverflow.com/questions/6127980/enabling-error-display-in-php-via-htaccess-onlycat &amp;gt;&amp;gt; .htaccessphp_flag display_startup_errors offphp_flag display_errors offphp_flag html_errors offphp_flag log_errors offThanks</description>
     </item>
     
     <item>
@@ -91,11 +69,7 @@ Thanks</description>
       <pubDate>Sat, 26 May 2018 07:10:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/05/26/belajar-ispconfig-webhosting-control-panel/</guid>
-      <description>Berikut adalah alamat / url tutorial untuk belajar instalasi / setup ispconfig webhosting control panel :
-https://www.howtoforge.com/tutorial/perfect-server-ubuntu-with-nginx-and-ispconfig-3/3/
-https://www.howtoforge.com/tutorial/securing-ispconfig-3-with-a-free-lets-encrypt-ssl-certificate/
-https://github.com/SpeedWP/ispconfig-nginx-pagespeed/wiki/ISP-Config
-https://www.howtoforge.com/community/threads/install-monit.64712/</description>
+      <description>Berikut adalah alamat / url tutorial untuk belajar instalasi / setup ispconfig webhosting control panel :https://www.howtoforge.com/tutorial/perfect-server-ubuntu-with-nginx-and-ispconfig-3/3/https://www.howtoforge.com/tutorial/securing-ispconfig-3-with-a-free-lets-encrypt-ssl-certificate/https://github.com/SpeedWP/ispconfig-nginx-pagespeed/wiki/ISP-Confighttps://www.howtoforge.com/community/threads/install-monit.64712/</description>
     </item>
     
     <item>
@@ -104,9 +78,7 @@ https://www.howtoforge.com/community/threads/install-monit.64712/</description>
       <pubDate>Sat, 26 May 2018 06:54:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/05/26/perubahan-era-webhosting/</guid>
-      <description>Sebelum tahun 2000 website merupakan barang berharga di indonesia, meski sudah marak di luar negeri, dengan berbagai konten dinamis seperti portal berita dan konten statik menggunakan html dan animasi css, js dan flash yang baru muncul pada tahun 1996.
-Tahun 2000 era webhosting bermunculan di indonesia, baru beberapa pemain besar webhosting yang bermain, website sudah makin marak.
-Tahun 2005 era webhosting dengan pemain baru bermunculan, di awali dengan hadirnya CMS seperti joomla dan CMS lain yang memudahkan pembuatan website instant, era website dinamis.</description>
+      <description>Sebelum tahun 2000 website merupakan barang berharga di indonesia, meski sudah marak di luar negeri, dengan berbagai konten dinamis seperti portal berita dan konten statik menggunakan html dan animasi css, js dan flash yang baru muncul pada tahun 1996.Tahun 2000 era webhosting bermunculan di indonesia, baru beberapa pemain besar webhosting yang bermain, website sudah makin marak.Tahun 2005 era webhosting dengan pemain baru bermunculan, di awali dengan hadirnya CMS seperti joomla dan CMS lain yang memudahkan pembuatan website instant, era website dinamis.</description>
     </item>
     
     <item>
@@ -115,8 +87,8 @@ Tahun 2005 era webhosting dengan pemain baru bermunculan, di awali dengan hadirn
       <pubDate>Mon, 19 Feb 2018 10:18:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/19/nginx-tips-and-trick/</guid>
-      <description> Nginx location directory  location /static/ { alias /web/test.example.com/static/; autoindex on; }   https://stackoverflow.com/questions/11570321/configure-nginx-with-multiple-locations-with-different-root-folders-on-subdomain  Referensi:
- https://www.sitepoint.com/brotli-compression-wordpress/  </description>
+      <description>Nginx location directory location /static/ { alias /web/test.example.com/static/; autoindex on; } https://stackoverflow.com/questions/11570321/configure-nginx-with-multiple-locations-with-different-root-folders-on-subdomain Referensi:
+https://www.sitepoint.com/brotli-compression-wordpress/ </description>
     </item>
     
     <item>
@@ -125,9 +97,7 @@ Tahun 2005 era webhosting dengan pemain baru bermunculan, di awali dengan hadirn
       <pubDate>Fri, 09 Feb 2018 01:26:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/09/nginx-php-fpm-tuning-for-best-performance/</guid>
-      <description>&amp;lt;!&amp;ndash;td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}
-&amp;ndash;&amp;gt;
-/etc/nginx/nginx.confworker_processes 8;note: dont make auto, try to raise the worker process to get the good result, from 8, 16 or 20, and keep the good oneworker_connections 19000;worker_rlimit_nofile 20000;note: try to raise the worker connection and workekr_rlimit_nofile to get the good result, and keep the good oneworker_processes 16;events {worker_connections 30000;worker_rlimit_nofile 31000;}http {open_file_cache max=100000 inactive=10s;open_file_cache_valid 120s;/etc/nginx/sites-enable/sophieparis.confupstream backend {server unix:/run/php/pool1-fpm.sock weight=100 max_fails=5 fail_timeout=5;server unix:/run/php/pool2-fpm.sock weight=100 max_fails=5 fail_timeout=5;server unix:/run/php/pool3-fpm.</description>
+      <description> </description>
     </item>
     
     <item>
@@ -136,10 +106,7 @@ Tahun 2005 era webhosting dengan pemain baru bermunculan, di awali dengan hadirn
       <pubDate>Fri, 25 Aug 2017 03:48:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2017/08/25/redirect-to-widyamedia.indonesiadot.com/</guid>
-      <description>Actually this should be done long time ago, i thought it would be better if i wrote some of my experiences / experiments in public space like blogspot or wordpress, but with custom domain to be readable by all of people around the world :)
-And here are the steps for redirecting to widyamedia.indonesiadot.com
-* login to blogger.com or register if you don&amp;rsquo;t have one
-* select the account you wanna manage and choose Settings - Basic from left menu</description>
+      <description> </description>
     </item>
     
   </channel>

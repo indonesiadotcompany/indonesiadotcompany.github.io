@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>postgresql on Blog Indonesiadot.Com</title>
@@ -6,20 +6,16 @@
     <description>Recent content in postgresql on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Jun 2020 12:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 30 Jun 2020 12:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ansible postgresql</title>
       <link>https://blog.indonesiadot.com/2020/06/30/ansible-postgresql/</link>
       <pubDate>Tue, 30 Jun 2020 12:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/06/30/ansible-postgresql/</guid>
-      <description>Requirements pip install psycopg2-binary  playbooks cat psql.yml
-- hosts: localhost become: yes gather_facts: no connection: local tasks: - name: Simple select query to acme db postgresql_query: db: pgtower login_user: pgtower login_password: pgtower query: SELECT version() register: result - debug: var: result  cat psqlgraf.yml
-- hosts: localhost become: yes gather_facts: no connection: local tasks: - name: Simple select query to acme db postgresql_query: db: montower login_host: 10.11.8.13 login_user: ansible login_password: r4hasia query: SELECT * from hosts register: result - debug: var: result  run with command:</description>
+      <description>Requirements pip install psycopg2-binary playbooks cat psql.yml
+- hosts: localhost become: yes gather_facts: no connection: local tasks: - name: Simple select query to acme db postgresql_query: db: pgtower login_user: pgtower login_password: pgtower query: SELECT version() register: result - debug: var: result cat psqlgraf.yml
+- hosts: localhost become: yes gather_facts: no connection: local tasks: - name: Simple select query to acme db postgresql_query: db: montower login_host: 10.11.8.13 login_user: ansible login_password: r4hasia query: SELECT * from hosts register: result - debug: var: result run with command:</description>
     </item>
     
     <item>
@@ -29,8 +25,8 @@
       
       <guid>https://blog.indonesiadot.com/2020/06/30/postgresql-tips/</guid>
       <description>Postgresql export and import to mysql di server postgresql jalankan command berikut untuk export:
-#pg_dump --verbose --schema-only --table=xx_user --db=test --file=/tmp/montower.sql pg_dump --verbose --schema-only --db=montower --file=/tmp/montower.sql psql -U namauserpsql montower copy xx_user to &#39;/tmp/hosts.txt&#39; with (delimiter &#39;,&#39;);  di server mysql jalankan command berikut untuk import:
-mysql --local-infile create database montower; use montower; #load data local infile &#39;/home/postgres/user.txt&#39; into table xx_user fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;; load data local infile &#39;/tmp/montower.</description>
+#pg_dump --verbose --schema-only --table=xx_user --db=test --file=/tmp/montower.sql pg_dump --verbose --schema-only --db=montower --file=/tmp/montower.sql psql -U namauserpsql montower copy xx_user to &amp;#39;/tmp/hosts.txt&amp;#39; with (delimiter &amp;#39;,&amp;#39;); di server mysql jalankan command berikut untuk import:
+mysql --local-infile create database montower; use montower; #load data local infile &amp;#39;/home/postgres/user.txt&amp;#39; into table xx_user fields terminated by &amp;#39;,&amp;#39; lines terminated by &amp;#39;\n&amp;#39;; load data local infile &amp;#39;/tmp/montower.</description>
     </item>
     
     <item>
@@ -39,7 +35,7 @@ mysql --local-infile create database montower; use montower; #load data local in
       <pubDate>Fri, 12 Jun 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/06/12/postgresql/</guid>
-      <description>Install pgadmin4 di ubuntu 18 apt-get install curl ca-certificates gnupg curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - sh -c &#39;echo &amp;quot;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&amp;quot; &amp;gt; /etc/apt/sources.list.d/pgdg.list&#39; apt update apt install pgadmin4  create db su - postgres psql create database dvdrental; \q wget https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip unzip dvdrental.zip pg_restore -d dvdrental dvdrental.tar psql -d dvdrental GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO pgtower; \q psql -U pgtower -d dvdrental select first_name from customer; \q  pg_hba.</description>
+      <description>Install pgadmin4 di ubuntu 18 apt-get install curl ca-certificates gnupg curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - sh -c &amp;#39;echo &amp;#34;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&amp;#34; &amp;gt; /etc/apt/sources.list.d/pgdg.list&amp;#39; apt update apt install pgadmin4 create db su - postgres psql create database dvdrental; \q wget https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip unzip dvdrental.zip pg_restore -d dvdrental dvdrental.tar psql -d dvdrental GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO pgtower; \q psql -U pgtower -d dvdrental select first_name from customer; \q pg_hba.</description>
     </item>
     
     <item>
@@ -51,8 +47,8 @@ mysql --local-infile create database montower; use montower; #load data local in
       <description>Install Ansible Tower Persyaratan:
 Hardware: RAM minimal 3,75 GB OS: Centos 7
 Langkah yang dilakukan
-yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz tar -xzvf ansible-tower-setup-latest.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh  Configure Ansible Tower after installation Akses Ansible tower Web UI dari
-https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
+yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz tar -xzvf ansible-tower-setup-latest.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh Configure Ansible Tower after installation Akses Ansible tower Web UI dari
+https://&amp;lt;Ansible Tower IP or Hostname&amp;gt; Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
     </item>
     
   </channel>

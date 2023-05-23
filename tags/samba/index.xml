@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>samba on Blog Indonesiadot.Com</title>
@@ -6,21 +6,15 @@
     <description>Recent content in samba on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Aug 2020 15:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/samba/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 25 Aug 2020 15:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/samba/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Samba share windows</title>
       <link>https://blog.indonesiadot.com/2020/08/25/samba-share-windows/</link>
       <pubDate>Tue, 25 Aug 2020 15:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/08/25/samba-share-windows/</guid>
-      <description> Setup samba on ubuntu linux  https://adrianmejia.com/how-to-set-up-samba-in-ubuntu-linux-and-access-it-in-mac-os-and-windows/
-apt install samba cifs-utils  lalu edit /etc/samba/smb.conf
-systemctl restart smbd  test via windows, dengan mengakses \ip.atau.hostname.server
-  </description>
+      <description>Setup samba on ubuntu linux https://adrianmejia.com/how-to-set-up-samba-in-ubuntu-linux-and-access-it-in-mac-os-and-windows/ apt install samba cifs-utils lalu edit /etc/samba/smb.conf
+systemctl restart smbd test via windows, dengan mengakses \ip.atau.hostname.server</description>
     </item>
     
   </channel>

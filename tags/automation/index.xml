@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>automation on Blog Indonesiadot.Com</title>
@@ -6,11 +6,7 @@
     <description>Recent content in automation on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Nov 2019 08:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/automation/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 05 Nov 2019 08:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Recommended Ansible Modules</title>
       <link>https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/</link>
@@ -19,7 +15,7 @@
       <guid>https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/</guid>
       <description>Frequently Used Module blockinfile Module ini saya gunakan ketika muncul error pada saat menggunakan module lineinfile untuk memasukan beberapa baris sekaligus dalam beberapa tasks, dan ternyata dengan menggunakan module ini dengan hanya satu task bisa memasukan langsung beberapa baris.
 Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepada parameter minimalnya adalah path dan block saja.
-- name: Insert correct line to /etc/ntp.conf blockinfile: path: /etc/ntp.conf insertafter: ^#?</description>
+- name: Insert correct line to /etc/ntp.conf blockinfile: path: /etc/ntp.conf insertafter: ^#?server state: present block: | server &amp;#34;{{ ntp1 }}&amp;#34; server &amp;#34;{{ ntp2 }}&amp;#34; notify: restart ntp Referensi:</description>
     </item>
     
     <item>
@@ -28,8 +24,8 @@ Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepa
       <pubDate>Mon, 04 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/</guid>
-      <description> Ansible and Openscap for scanning and remediation server for security compliance operating system Referensi:
- https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663  </description>
+      <description>Ansible and Openscap for scanning and remediation server for security compliance operating system Referensi:
+https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663 </description>
     </item>
     
     <item>
@@ -39,7 +35,7 @@ Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepa
       
       <guid>https://blog.indonesiadot.com/2019/10/25/gcp-and-ansible/</guid>
       <description>Referensi:
- https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/  </description>
+https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/ </description>
     </item>
     
     <item>
@@ -48,8 +44,8 @@ Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepa
       <pubDate>Wed, 31 Jan 2018 23:30:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/31/ansible-tips/</guid>
-      <description> Ansible gather facts Using facter too
- http://docs.ansible.com/ansible/latest/setup_module.html#examples  ansible php composer  https://knpuniversity.com/screencast/ansible/ansible-composer  ansible playbook interactive / ansible prompt  https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html  ansible-playbook command  https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/  Ansible integrations  https://www.ansible.com/integrations/devops-tools  </description>
+      <description>Ansible gather facts Using facter too
+http://docs.ansible.com/ansible/latest/setup_module.html#examples ansible php composer https://knpuniversity.com/screencast/ansible/ansible-composer ansible playbook interactive / ansible prompt https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html ansible-playbook command https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/ Ansible integrations https://www.ansible.com/integrations/devops-tools </description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cli on Blog Indonesiadot.Com</title>
@@ -6,22 +6,14 @@
     <description>Recent content in cli on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Mar 2018 20:58:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/cli/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 04 Mar 2018 20:58:00 +0000</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/cli/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>digitalocean DO cli</title>
       <link>https://blog.indonesiadot.com/2018/03/04/digitalocean-do-cli/</link>
       <pubDate>Sun, 04 Mar 2018 20:58:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/03/04/digitalocean-do-cli/</guid>
-      <description>digitalocean snapshot and recreate based on that snapshot (clone like)
-doctl compute droplet-action snapshot DropletID &amp;ndash;snapshot-name SnapshotName
-doctl compute droplet-action snapshot 83360000 &amp;ndash;snapshot-name 20180303-birau-snap
-doctl compute droplet create NewDropletName &amp;ndash;size 512mb &amp;ndash;image SnapshotID &amp;ndash;region sgp1 &amp;ndash;ssh-keys Ssh:key:hexadecimal
-doctl compute droplet create birau-server-2 &amp;ndash;size 512mb &amp;ndash;image 32187000 &amp;ndash;region sgp1 &amp;ndash;ssh-keys b0:10:00:d6:8b:00:4f:96:39:1b:89:00:00:00:00:00</description>
+      <description>digitalocean snapshot and recreate based on that snapshot (clone like)doctl compute droplet-action snapshot DropletID &amp;ndash;snapshot-name SnapshotNamedoctl compute droplet-action snapshot 83360000 &amp;ndash;snapshot-name 20180303-birau-snapdoctl compute droplet create NewDropletName &amp;ndash;size 512mb &amp;ndash;image SnapshotID &amp;ndash;region sgp1 &amp;ndash;ssh-keys Ssh:key:hexadecimaldoctl compute droplet create birau-server-2 &amp;ndash;size 512mb &amp;ndash;image 32187000 &amp;ndash;region sgp1 &amp;ndash;ssh-keys b0:10:00:d6:8b:00:4f:96:39:1b:89:00:00:00:00:00</description>
     </item>
     
   </channel>

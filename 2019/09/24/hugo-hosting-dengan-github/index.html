@@ -865,20 +865,17 @@
   <h1 class="post-title">Hugo hosting dengan github</h1>
   <span class="post-date">Sep 24, 2019</span>
   <p>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:</p>
-
 <ul>
 <li>Nama user: tpinews</li>
 <li>Nama repositori yang harus dibuat: tpinews.github.io</li>
 </ul>
-
 <p>Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:</p>
-
-<pre><code>mkdir tpinews
+<pre tabindex="0"><code>mkdir tpinews
 cd tpinews
 touch .gitignore
 git init
 git add .
-git commit -m 'komat kamit awal'
+git commit -m &#39;komat kamit awal&#39;
 git remote add origin https://tpinews.github.io.git
 git push origin master
 
@@ -888,63 +885,52 @@ cp -r /path/kumpulanthemeshugo/travelify themes/
 cp -r themes/travelify/exampleSite/* .
 cp /path/scripts/push-deploy.sh .
 git add .
-git commit -m 'komit hugo'
+git commit -m &#39;komit hugo&#39;
 git push origin hugo
 
 git submodule add -b master https://tpinews.github.io.git public
 ./push-deploy.sh
 git branch -d master
-</code></pre>
-
-<p>Pastikan juga config.toml sudah sesuai, seperti nama theme dan lainnya, dan bisa di test di localhost dengan menjalankan <code>hugo server</code> dan mengakses <a href="http://localhost:1313">http://localhost:1313</a> di browser untuk melihat hasilnya.</p>
-
+</code></pre><p>Pastikan juga config.toml sudah sesuai, seperti nama theme dan lainnya, dan bisa di test di localhost dengan menjalankan <code>hugo server</code> dan mengakses http://localhost:1313 di browser untuk melihat hasilnya.</p>
 <p>Command di atas hanya dilakukan pertama kali saja, untuk selanjutnya yang dilakukan setelah melakukan perubahan dan ingin mengupdate di github, cukup menjalankan script push-deploy.sh</p>
-
 <p>Disini theme yang digunakan misalnya travelify yang sudah disiapkan, dan juga script untuk push-deploy.sh untuk memudahkan deploy sebagai berikut:</p>
-
-<pre><code>#!/bin/sh
+<pre tabindex="0"><code>#!/bin/sh
 # If a command fails then the deploy stops
 set -e
-printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
+printf &#34;\033[0;32mPush to branch hugo...\033[0m\n&#34;
 git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
- msg=&quot;$*&quot;
+msg=&#34;rebuilding site $(date)&#34;
+if [ -n &#34;$*&#34; ]; then
+ msg=&#34;$*&#34;
 fi
-git commit -m &quot;$msg&quot;
+git commit -m &#34;$msg&#34;
 git push origin hugo
 
-printf &quot;\033[0;32mDeploy public hugo to branch master...\033[0m\n&quot;
+printf &#34;\033[0;32mDeploy public hugo to branch master...\033[0m\n&#34;
 HUGO_ENV=production hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
 cd public
 git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
-        msg=&quot;$*&quot;
+msg=&#34;rebuilding site $(date)&#34;
+if [ -n &#34;$*&#34; ]; then
+        msg=&#34;$*&#34;
 fi
-git commit -m &quot;$msg&quot;
+git commit -m &#34;$msg&#34;
 git push origin master
 
-printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
+printf &#34;\033[0;32mPush to branch hugo...\033[0m\n&#34;
 cd ..
 git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
-        msg=&quot;$*&quot;
+msg=&#34;rebuilding site $(date)&#34;
+if [ -n &#34;$*&#34; ]; then
+        msg=&#34;$*&#34;
 fi
-git commit -m &quot;$msg&quot;
+git commit -m &#34;$msg&#34;
 git push origin hugo
-</code></pre>
-
-<p>Note:</p>
-
+</code></pre><p>Note:</p>
 <p>Untuk lebih mudah tidak perlu memasukan password, bisa di buat dari menu settings account github, lalu pilih menu sebelah kiri bawah bagian Developer settings, lalu Personal access tokens dan generate new token.</p>
-
 <p>Lalu copy token tersebut dan tambahkan pada file .git/config dan .git/modules/public/config ,bagian url nya, sehingga menjadi seperti contoh berikut:</p>
-
-<pre><code>   url = https://namauser:tokenhasidaricopygeneratenewtoken@namarepository.github.io.git
+<pre tabindex="0"><code>   url = https://namauser:tokenhasidaricopygeneratenewtoken@namarepository.github.io.git
 </code></pre>
-
 </div>
 
 <hr/>

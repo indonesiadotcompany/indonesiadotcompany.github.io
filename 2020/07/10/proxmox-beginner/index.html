@@ -864,25 +864,17 @@
 <div class="post">
   <h1 class="post-title">Proxmox Beginner</h1>
   <span class="post-date">Jul 10, 2020</span>
-  
-
-<h2 id="update-proxmox-repo">update proxmox repo</h2>
-
+  <h2 id="update-proxmox-repo">update proxmox repo</h2>
 <p><a href="https://pve.proxmox.com/wiki/Package_Repositories">https://pve.proxmox.com/wiki/Package_Repositories</a>
 untuk bisa update proxmox harus dirubah dulu repo nya di file /etc/apt/sources.list (untuk proxmox 5.4 / debian 9 / stretch)</p>
-
-<pre><code>deb http://kebo.pens.ac.id/debian stretch main contrib
+<pre tabindex="0"><code>deb http://kebo.pens.ac.id/debian stretch main contrib
 deb http://kebo.pens.ac.id/debian stretch-updates main contrib
 # security updates
 deb http://kebo.pens.ac.id/debian-security stretch/updates main contrib
 deb http://download.proxmox.com/debian/pve stretch pve-no-subscription
-</code></pre>
-
-<h2 id="proxmox-masquerade">proxmox masquerade</h2>
-
+</code></pre><h2 id="proxmox-masquerade">proxmox masquerade</h2>
 <p><a href="https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt">https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt</a></p>
-
-<pre><code>auto lo
+<pre tabindex="0"><code>auto lo
 iface lo inet loopback
 auto ens192
 iface ens192 inet static
@@ -900,10 +892,7 @@ iface vmbr0 inet static
         post-up echo 1 &gt; /proc/sys/net/ipv4/ip_forward
         post-up iptables -t nat -A POSTROUTING -j MASQUERADE
         post-down iptables -t nat -D POSTROUTING eno1 -j MASQUERADE
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>

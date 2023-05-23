@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>trick on Blog Indonesiadot.Com</title>
@@ -6,20 +6,16 @@
     <description>Recent content in trick on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Jan 2018 00:59:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/trick/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 29 Jan 2018 00:59:00 +0000</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/trick/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux Tips and Trick</title>
       <link>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</link>
       <pubDate>Mon, 29 Jan 2018 00:59:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</guid>
-      <description>cron without sending mail tambahkan MAILTO=&amp;ldquo;&amp;rdquo; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
-linux rm file list too long cd direktoriyangfilenyabanyak ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete find . -type f -print -delete  incron Ref:
- http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en  rsync only existing file rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/  Umask follow parent / setgid chmod g+s /namafolder  Ref:</description>
+      <description>cron without sending mail tambahkan MAILTO=&amp;quot;&amp;quot; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
+linux rm file list too long cd direktoriyangfilenyabanyak ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete find . -type f -print -delete incron Ref:
+http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en rsync only existing file rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/ Umask follow parent / setgid chmod g+s /namafolder Ref:</description>
     </item>
     
   </channel>

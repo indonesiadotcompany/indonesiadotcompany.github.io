@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>storage on Blog Indonesiadot.Com</title>
@@ -6,19 +6,15 @@
     <description>Recent content in storage on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Jun 2021 06:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/storage/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 10 Jun 2021 06:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/storage/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install and setup ftp on Freenas 11</title>
       <link>https://blog.indonesiadot.com/2021/06/10/install-and-setup-ftp-on-freenas-11/</link>
       <pubDate>Thu, 10 Jun 2021 06:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2021/06/10/install-and-setup-ftp-on-freenas-11/</guid>
-      <description> Install and setup ftp on Freenas 11  Install freenas Configure via CLI Configure via web Add pool Add dataset Add group from accounts Add user from accounts Edit dataset permission based on accounts created start ftp service  Referensi:
- https://www.matrix7.com.au/freenas/freenas-11-2-u7-ftp-setup/  </description>
+      <description>Install and setup ftp on Freenas 11 Install freenas Configure via CLI Configure via web Add pool Add dataset Add group from accounts Add user from accounts Edit dataset permission based on accounts created start ftp service Referensi:
+https://www.matrix7.com.au/freenas/freenas-11-2-u7-ftp-setup/ </description>
     </item>
     
     <item>
@@ -27,7 +23,8 @@
       <pubDate>Thu, 12 Mar 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/12/ceph-tips/</guid>
-      <description>remove osd systemctl stop ceph-osd.target systemctl stop ceph-osd@0 ceph osd out 0 ceph osd down 0 ceph osd destroy 0 ceph osd destroy 0 --yes-i-really-mean-it ceph osd rm 0 ceph osd crush rm osd.0 ceph auth del osd.0 ceph-volume lvm zap /dev/sdX --destroy   https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87 https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/  all about pg_num  https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox  ceph one / single node ceph osd getcrushmap -o crush_map_compressed crushtool -d crush_map_compressed -o crush_map_decompressed vi crush_map_decompressed  lalu cari bagian:</description>
+      <description>remove osd systemctl stop ceph-osd.target systemctl stop ceph-osd@0 ceph osd out 0 ceph osd down 0 ceph osd destroy 0 ceph osd destroy 0 --yes-i-really-mean-it ceph osd rm 0 ceph osd crush rm osd.0 ceph auth del osd.0 ceph-volume lvm zap /dev/sdX --destroy https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87 https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/ all about pg_num https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox ceph one / single node ceph osd getcrushmap -o crush_map_compressed crushtool -d crush_map_compressed -o crush_map_decompressed vi crush_map_decompressed lalu cari bagian:
+step chooseleaf firstn 0 type host rubah menjadi:</description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>registry on Blog Indonesiadot.Com</title>
@@ -6,21 +6,18 @@
     <description>Recent content in registry on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Feb 2020 08:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/registry/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 20 Feb 2020 08:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/registry/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ansible Tower tips and trick</title>
       <link>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</link>
       <pubDate>Thu, 20 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</guid>
-      <description>Ansible Tower tips and trick Change admin password awx-manage changepassword admin  backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
- https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/  Offline ansible tower bundle  https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/
-wget https://releases.ansible.com/ansible-tower/setup-bundle/ansible-tower-setup-bundle-3.7.2-1.tar.gz tar xzf ansible-tower-setup-bundle-3.7.2-1.tar.gz cd ansible-tower-setup-bundle-3.7.2-1   edit inventory
-yum install yum-utils yum install createrepo mkdir bundle/el7/repos/others cd bundle/el7/repos/others cat ../../base_packages.txt | xargs yumdownloader createrepo . cat &amp;lt;&amp;lt; EOF &amp;gt;&amp;gt; ~/ansible-tower-setup-bundle-3.7.2-1/roles/repos_el/templates/tower_bundle_el7.j2 [others] name=Others baseurl=file://{{ bundle_install_folder }}/others enabled=1 gpgcheck=0 EOF  setelah selesai, lalu re-package the bundle</description>
+      <description>Ansible Tower tips and trick Change admin password awx-manage changepassword admin backup and restore https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html Referensi:
+https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/ Offline ansible tower bundle https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/ wget https://releases.ansible.com/ansible-tower/setup-bundle/ansible-tower-setup-bundle-3.7.2-1.tar.gz tar xzf ansible-tower-setup-bundle-3.7.2-1.tar.gz cd ansible-tower-setup-bundle-3.7.2-1 edit inventory
+yum install yum-utils yum install createrepo mkdir bundle/el7/repos/others cd bundle/el7/repos/others cat ../../base_packages.txt | xargs yumdownloader createrepo . cat &amp;lt;&amp;lt; EOF &amp;gt;&amp;gt; ~/ansible-tower-setup-bundle-3.7.2-1/roles/repos_el/templates/tower_bundle_el7.j2 [others] name=Others baseurl=file://{{ bundle_install_folder }}/others enabled=1 gpgcheck=0 EOF setelah selesai, lalu re-package the bundle
+note:
+ada bbrp paket yg dibutuhkan sebelum menjalankan setup.</description>
     </item>
     
     <item>
@@ -30,14 +27,8 @@ yum install yum-utils yum install createrepo mkdir bundle/el7/repos/others cd bu
       
       <guid>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</guid>
       <description>harbor install step by step https://goharbor.io/docs/1.10/install-config/
- install docker, docker-compose download https://github.com/goharbor/harbor/releases edit harbor.yml
-hostname: 10.11.8.111  install
-./prepare ./install.sh --with-clair --with-chartmuseum  create projects dengan nama os (misalnya untuk menampung operating system)
-  harbor client push  edit /etc/docker/daemon.json
-{ &amp;quot;insecure-registries&amp;quot;:[&amp;quot;10.11.8.111&amp;quot;] }  systemctl restart docker (hati2 jika ada container yg berjalan akan di stop)
- docker login 10.11.8.111
- docker tag centos:7 10.11.8.111/os/centos:7
- docker push 10.</description>
+install docker, docker-compose download https://github.com/goharbor/harbor/releases edit harbor.yml hostname: 10.11.8.111 install ./prepare ./install.sh --with-clair --with-chartmuseum create projects dengan nama os (misalnya untuk menampung operating system) harbor client push edit /etc/docker/daemon.json { &amp;#34;insecure-registries&amp;#34;:[&amp;#34;10.11.8.111&amp;#34;] } systemctl restart docker (hati2 jika ada container yg berjalan akan di stop) docker login 10.11.8.111 docker tag centos:7 10.11.8.111/os/centos:7 docker push 10.11.8.111/os/centos:7 Widya Harbor Container Registry https://widharbor.birau.com/ Referensi:
+https://indonesiadot.com </description>
     </item>
     
   </channel>

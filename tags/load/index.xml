@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>load on Blog Indonesiadot.Com</title>
@@ -6,20 +6,16 @@
     <description>Recent content in load on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Jul 2018 08:41:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/load/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 28 Jul 2018 08:41:00 +0000</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/load/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Stress test on Linux</title>
       <link>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</link>
       <pubDate>Sat, 28 Jul 2018 08:41:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</guid>
-      <description>yum -y install wget wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-1.el7.rf.x86_64.rpm yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm stress -c 8 -i 4 -t 10s stress -c 8 -i 9 -m 9 --vm-bytes 1024M  On ubuntu server, use apt to install stress
+      <description>yum -y install wget wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-1.el7.rf.x86_64.rpm yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm stress -c 8 -i 4 -t 10s stress -c 8 -i 9 -m 9 --vm-bytes 1024M On ubuntu server, use apt to install stress
 Ref:
- https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2 https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/  </description>
+https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2 https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/ </description>
     </item>
     
   </channel>

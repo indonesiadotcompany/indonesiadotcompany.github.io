@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>masquerade on Blog Indonesiadot.Com</title>
@@ -6,20 +6,14 @@
     <description>Recent content in masquerade on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Oct 2019 08:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/masquerade/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 14 Oct 2019 08:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/masquerade/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Centos 7 Firewalld</title>
       <link>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld/</link>
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld/</guid>
-      <description> Firewalld masquerade  https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/
-firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public   Open port for specific ip address  https://serverfault.com/questions/684602/how-to-open-port-for-a-specific-ip-address-with-firewall-cmd-on-centos https://www.liquidweb.com/kb/an-introduction-to-firewalld/
-firewall-cmd --permanent --zone=public --add-rich-rule=&#39; rule family=&amp;quot;ipv4&amp;quot; source address=&amp;quot;1.2.3.4/32&amp;quot; port protocol=&amp;quot;tcp&amp;quot; port=&amp;quot;4567&amp;quot; accept&#39;   </description>
+      <description>Firewalld masquerade https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/ firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public Open port for specific ip address https://serverfault.com/questions/684602/how-to-open-port-for-a-specific-ip-address-with-firewall-cmd-on-centos https://www.liquidweb.com/kb/an-introduction-to-firewalld/ firewall-cmd --permanent --zone=public --add-rich-rule=&amp;#39; rule family=&amp;#34;ipv4&amp;#34; source address=&amp;#34;1.2.3.4/32&amp;#34; port protocol=&amp;#34;tcp&amp;#34; port=&amp;#34;4567&amp;#34; accept&amp;#39; </description>
     </item>
     
   </channel>

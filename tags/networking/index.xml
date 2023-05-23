@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>networking on Blog Indonesiadot.Com</title>
@@ -6,11 +6,7 @@
     <description>Recent content in networking on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Feb 2020 08:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/networking/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 27 Feb 2020 08:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/networking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ubuntu networking using netplan</title>
       <link>https://blog.indonesiadot.com/2020/02/27/ubuntu-networking-using-netplan/</link>
@@ -19,7 +15,7 @@
       <guid>https://blog.indonesiadot.com/2020/02/27/ubuntu-networking-using-netplan/</guid>
       <description>Ubuntu networking using netplan Configuration To configure netplan, save configuration files under /etc/netplan/ with a .yaml extension (e.g. /etc/netplan/config.yaml), then run sudo netplan apply. This command parses and applies the configuration to the system. Configuration written to disk under /etc/netplan/ will persist between reboots.
 Using DHCP and static addressing To let the interface named ‘enp3s0’ get an address via DHCP, create a YAML file with the following:
-network: version: 2 renderer: networkd ethernets: enp3s0: dhcp4: true  To instead set a static IP address, use the addresses key, which takes a list of (IPv4 or IPv6), addresses along with the subnet prefix length (e.</description>
+network: version: 2 renderer: networkd ethernets: enp3s0: dhcp4: true To instead set a static IP address, use the addresses key, which takes a list of (IPv4 or IPv6), addresses along with the subnet prefix length (e.</description>
     </item>
     
     <item>
@@ -29,7 +25,7 @@ network: version: 2 renderer: networkd ethernets: enp3s0: dhcp4: true  To instea
       
       <guid>https://blog.indonesiadot.com/2018/03/07/winbox-under-linux/</guid>
       <description>Referensi:
- https://www.google.co.id/search?q=winbox+under+linux https://github.com/mriza/winbox-installer https://udariza.wordpress.com/  </description>
+https://www.google.co.id/search?q=winbox+under+linux https://github.com/mriza/winbox-installer https://udariza.wordpress.com/ </description>
     </item>
     
   </channel>

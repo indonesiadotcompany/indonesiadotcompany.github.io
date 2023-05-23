@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>reference on Blog Indonesiadot.Com</title>
@@ -6,11 +6,7 @@
     <description>Recent content in reference on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Oct 2019 08:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/reference/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 28 Oct 2019 08:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/reference/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ansible Reference</title>
       <link>https://blog.indonesiadot.com/2019/10/28/ansible-reference/</link>
@@ -18,8 +14,8 @@
       
       <guid>https://blog.indonesiadot.com/2019/10/28/ansible-reference/</guid>
       <description>Postingan ini adalah referensi untuk belajar ansible dan bisa juga sebagai tips, meski sudah ada postingan sebelumnya yang berisi ansible tips :)
-Jenkins-ci Ref: * https://galaxy.ansible.com/geerlingguy/jenkins/ * http://rundeck.org * Goci / gocd
-Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &#39;/&#39; mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot;  atau</description>
+Jenkins-ci Ref:
+https://galaxy.ansible.com/geerlingguy/jenkins/ http://rundeck.org Goci / gocd Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &amp;#39;/&amp;#39; mount: &amp;#34;{{ ansible_mounts | selectattr(&amp;#39;mount&amp;#39;,&amp;#39;equalto&amp;#39;,mountname) | list | first }}&amp;#34; atau</description>
     </item>
     
   </channel>

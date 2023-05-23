@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tripwire on Blog Indonesiadot.Com</title>
@@ -6,11 +6,7 @@
     <description>Recent content in tripwire on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Sep 2019 08:17:36 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/tripwire/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 28 Sep 2019 08:17:36 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/tripwire/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>IDS Tripwire</title>
       <link>https://blog.indonesiadot.com/2019/09/28/ids-tripwire/</link>
@@ -18,7 +14,7 @@
       
       <guid>https://blog.indonesiadot.com/2019/09/28/ids-tripwire/</guid>
       <description>Referensi:
- https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/ https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/ https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d  </description>
+https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/ https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/ https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d </description>
     </item>
     
   </channel>

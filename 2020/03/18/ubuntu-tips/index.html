@@ -864,26 +864,18 @@
 <div class="post">
   <h1 class="post-title">Ubuntu tips</h1>
   <span class="post-date">Mar 18, 2020</span>
-  
-
-<h2 id="install-specific-version">Install specific version</h2>
-
-<pre><code>apt-cache policy gparted
+  <h2 id="install-specific-version">Install specific version</h2>
+<pre tabindex="0"><code>apt-cache policy gparted
 apt install gparted=0.16.1-1
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package">https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package</a></li>
 </ul>
-
 <h2 id="apport-high-cpu">apport high cpu</h2>
-
-<pre><code>killall -9 apport
+<pre tabindex="0"><code>killall -9 apport
 service apport stop &amp;&amp; systemctl stop apport
 rm -f /var/crash/*
 apt-get remove apport -y
 </code></pre>
-
 </div>
 
 <hr/>

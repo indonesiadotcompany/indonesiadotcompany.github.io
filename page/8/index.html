@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.57.2" />
+	<meta name="generator" content="Hugo 0.106.0">
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -870,10 +870,7 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/">Ansible Tower first Implementation</a></h1>
         <span class="post-date">Jan 19, 2020</span>
-	
-
-<h2 id="ansible-tower-first-implementation">Ansible Tower first Implementation</h2>
-
+	<h2 id="ansible-tower-first-implementation">Ansible Tower first Implementation</h2>
 <ul>
 <li>Install ansible tower</li>
 <li>masukan license</li>
@@ -881,64 +878,48 @@
 <li>tambahkan <strong>access - users</strong></li>
 <li>tambahkan <strong>access - teams</strong></li>
 <li>tambahkan <strong>resources - inventory</strong></li>
-
-<li><p>siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)</p>
-
-<pre><code>chmod g+s /var/lib/awx/projects
-cp -r test /var/lib/awx/projects/
-</code></pre></li>
-
-<li><p>tambahkan <strong>resources - projects</strong></p></li>
-
-<li><p>buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine</p></li>
-
-<li><p>buat host client / node yang mau di manage di /etc/hosts</p></li>
-
-<li><p>tambahkan <strong>resources - credentials</strong></p></li>
-
-<li><p>tambahkan <strong>resources - templates</strong></p></li>
-
-<li><p>test launch jobs based on template yg baru dibuat</p></li>
+<li>siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)</li>
 </ul>
-
-<h2 id="ansible-tower-openscap">Ansible tower + openscap</h2>
-
+<pre tabindex="0"><code>chmod g+s /var/lib/awx/projects
+cp -r test /var/lib/awx/projects/
+</code></pre><ul>
+<li>tambahkan <strong>resources - projects</strong></li>
+<li>buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine</li>
+<li>buat host client / node yang mau di manage di /etc/hosts</li>
+<li>tambahkan <strong>resources - credentials</strong></li>
+<li>tambahkan <strong>resources - templates</strong></li>
+<li>test launch jobs based on template yg baru dibuat</li>
+</ul>
+<h2 id="ansible-tower--openscap">Ansible tower + openscap</h2>
 <ul>
-<li><p>install scap-workbench</p>
-
-<pre><code>yum install scap-workbench xauth -y
-</code></pre></li>
-
-<li><p>buat direktori report</p>
-
-<pre><code>mkdir /report                                                                                                                                                                                               
+<li>install scap-workbench</li>
+</ul>
+<pre tabindex="0"><code>yum install scap-workbench xauth -y
+</code></pre><ul>
+<li>buat direktori report</li>
+</ul>
+<pre tabindex="0"><code>mkdir /report                                                                                                                                                                                               
 chgrp awx /report                                                                                                                                                                                           
 chmod g+s /report/
 chcon -Rv --type=httpd_sys_rw_content_t /report/
 ln -s /report /var/lib/awx/public/
-</code></pre></li>
-
-<li><p>tambahkan direktori report di nginx</p>
-
-<pre><code>    location /report {
-            alias /var/lib/awx/public/report;
-            autoindex on;
-    }
-</code></pre></li>
-
-<li><p>akses scap-workbench dari laptop</p>
-
-<pre><code>ssh -X -C tower1
-scap-workbench
-</code></pre></li>
-
-<li><p>jalankan <strong>Scan</strong> Remote Machine (over SSH) ke ansible@client1 (jika muncul popup, pilih centos7)</p></li>
-
-<li><p>Save generate result html ke /report (tambahkan pembeda semisal datetime untuk membedakan tiap file report)</p></li>
+</code></pre><ul>
+<li>tambahkan direktori report di nginx</li>
 </ul>
-
+<pre tabindex="0"><code>        location /report {
+                alias /var/lib/awx/public/report;
+                autoindex on;
+        }
+</code></pre><ul>
+<li>akses scap-workbench dari laptop</li>
+</ul>
+<pre tabindex="0"><code>ssh -X -C tower1
+scap-workbench
+</code></pre><ul>
+<li>jalankan <strong>Scan</strong> Remote Machine (over SSH) ke ansible@client1 (jika muncul popup, pilih centos7)</li>
+<li>Save generate result html ke /report (tambahkan pembeda semisal datetime untuk membedakan tiap file report)</li>
+</ul>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>
@@ -954,25 +935,16 @@ scap-workbench
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/">Letsencrypt certbot unatteded</a></h1>
         <span class="post-date">Jan 19, 2020</span>
-	
-
-<h2 id="letsencrypt-with-certbot-unatteded-way">Letsencrypt with certbot unatteded way</h2>
-
+	<h2 id="letsencrypt-with-certbot-unatteded-way">Letsencrypt with certbot unatteded way</h2>
 <p>This is for ubuntu linux</p>
-
-<pre><code>add-apt-repository ppa:certbot/certbot -y
+<pre tabindex="0"><code>add-apt-repository ppa:certbot/certbot -y
 apt install certbot -y
 certbot certonly --standalone --preferred-challenges http --non-interactive  --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com
-</code></pre>
-
-<h2 id="note">Note:</h2>
-
+</code></pre><h2 id="note">Note:</h2>
 <ul>
 <li>before running certbot command, you must already pointing domain / subdomain address to destination ip</li>
 </ul>
-
 <h2 id="referensi">Referensi:</h2>
-
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>
@@ -988,25 +960,16 @@ certbot certonly --standalone --preferred-challenges http --non-interactive  --s
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/">Docker Compose on Linux</a></h1>
         <span class="post-date">Jan 15, 2020</span>
-	
-
-<h2 id="setup-docker">Setup docker</h2>
-
-<pre><code>curl -fsSL https://get.docker.com/ | sh
+	<h2 id="setup-docker">Setup docker</h2>
+<pre tabindex="0"><code>curl -fsSL https://get.docker.com/ | sh
 usermod -aG docker namauser
 systemctl enable docker
 systemctl start docker
-</code></pre>
-
-<h2 id="setup-docker-compose">Setup docker-compose</h2>
-
-<pre><code>sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+</code></pre><h2 id="setup-docker-compose">Setup docker-compose</h2>
+<pre tabindex="0"><code>sudo curl -L &#34;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&#34; -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a></li>
 </ul>
@@ -1022,45 +985,31 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/">Gitlab on Ubuntu 16.04</a></h1>
         <span class="post-date">Jan 14, 2020</span>
-	
-
-<h2 id="instalasi-gitlab-di-ubuntu-16-04">Instalasi Gitlab di Ubuntu 16.04</h2>
-
+	<h2 id="instalasi-gitlab-di-ubuntu-1604">Instalasi Gitlab di Ubuntu 16.04</h2>
 <h2 id="widya-gitlab">Widya Gitlab</h2>
-
 <ul>
 <li><a href="https://widgitgog.birau.com/dashboard/projects">https://widgitgog.birau.com/dashboard/projects</a></li>
 </ul>
-
-<h3 id="change-update-hostname">change / update hostname</h3>
-
-<pre><code>sed -i 's/widgitgog/widgit/g' /etc/gitlab/gitlab.rb
+<h3 id="change--update-hostname">change / update hostname</h3>
+<pre tabindex="0"><code>sed -i &#39;s/widgitgog/widgit/g&#39; /etc/gitlab/gitlab.rb
 gitlab-ctl reconfigure
 gitlab-ctl restart
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="https://docs.gitlab.com/omnibus/settings/configuration.html">https://docs.gitlab.com/omnibus/settings/configuration.html</a></li>
 </ul>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/">https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/</a></li>
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04">https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04</a></li>
 </ul>
-
 <h2 id="gitlab-reset-password-from-database">gitlab reset password from database</h2>
-
-<pre><code>gitlab-rails console -e production
+<pre tabindex="0"><code>gitlab-rails console -e production
 user = User.where(id: 1).first
-user = User.find_by(email: 'admin@example.com')
-user.password = 'secret_pass'
-user.password_confirmation = 'secret_pass'
+user = User.find_by(email: &#39;admin@example.com&#39;)
+user.password = &#39;secret_pass&#39;
+user.password_confirmation = &#39;secret_pass&#39;
 user.save!
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="https://docs.gitlab.com/ee/security/reset_root_password.html">https://docs.gitlab.com/ee/security/reset_root_password.html</a></li>
 </ul>
 
@@ -1075,28 +1024,16 @@ user.save!
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/">Centos 7 Resize Partition</a></h1>
         <span class="post-date">Jan 8, 2020</span>
-	
-
-<h2 id="step-to-reproduce-on-vm">Step to reproduce on VM</h2>
-
+	<h2 id="step-to-reproduce-on-vm">Step to reproduce on VM</h2>
 <p>Turn off the VM</p>
-
-<pre><code>qemu-img resize image.qcow2 +SIZE
-</code></pre>
-
-<p>where SIZE is the size to add (e.g. 10G for 10 gibibytes).</p>
-
+<pre tabindex="0"><code>qemu-img resize image.qcow2 +SIZE
+</code></pre><p>where SIZE is the size to add (e.g. 10G for 10 gibibytes).</p>
 <p>Turn on the VM, fdisk /dev/vda, delete and create /dev/vda2, restart</p>
-
 <p>Login after restart, then run this command</p>
-
-<pre><code>pvresize /dev/vda2
+<pre tabindex="0"><code>pvresize /dev/vda2
 lvextend -r -l +100%FREE /dev/mapper/centos-root
 df -hl
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://maunium.net/blog/resizing-qcow2-images/">https://maunium.net/blog/resizing-qcow2-images/</a></li>
 </ul>
@@ -1112,39 +1049,20 @@ df -hl
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/23/selinux-semanage/">Selinux semanage</a></h1>
         <span class="post-date">Dec 23, 2019</span>
-	
-
-<p>content of selinux config /etc/selinux/config</p>
-
-<pre><code>SELINUX=enforcing
+	<p>content of selinux config /etc/selinux/config</p>
+<pre tabindex="0"><code>SELINUX=enforcing
 SELINUXTYPE=targeted 
-</code></pre>
-
-<h2 id="semanage-packages">semanage packages</h2>
-
-<pre><code>yum provides semanage
+</code></pre><h2 id="semanage-packages">semanage packages</h2>
+<pre tabindex="0"><code>yum provides semanage
 yum install -y policycoreutils-python
-</code></pre>
-
-<h2 id="semanage-list-port">semanage list port</h2>
-
-<pre><code>semanage port -l | grep ssh
-</code></pre>
-
-<h2 id="semanage-open-ssh-on-different-port">semanage open ssh on different port</h2>
-
+</code></pre><h2 id="semanage-list-port">semanage list port</h2>
+<pre tabindex="0"><code>semanage port -l | grep ssh
+</code></pre><h2 id="semanage-open-ssh-on-different-port">semanage open ssh on different port</h2>
 <p>add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port</p>
-
-<pre><code>semanage port -a -t ssh_port_t -p tcp 1022
-</code></pre>
-
-<p>then restart sshd service</p>
-
-<pre><code>systemctl restart sshd
-</code></pre>
-
-<p>Referensi:</p>
-
+<pre tabindex="0"><code>semanage port -a -t ssh_port_t -p tcp 1022
+</code></pre><p>then restart sshd service</p>
+<pre tabindex="0"><code>systemctl restart sshd
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/">https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/</a></li>
 </ul>
@@ -1160,28 +1078,20 @@ yum install -y policycoreutils-python
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/">Simple Virtualization Linux</a></h1>
         <span class="post-date">Dec 22, 2019</span>
-	
-
-<h2 id="list-kvm-using-virsh">List kvm using virsh</h2>
-
-<pre><code>virsh list
+	<h2 id="list-kvm-using-virsh">List kvm using virsh</h2>
+<pre tabindex="0"><code>virsh list
 virsh list --all
 virsh --help
-</code></pre>
-
-<h2 id="create-vm-on-kvm-qemu-via-libvirt-with-command-line">Create vm on kvm / qemu via libvirt with command line</h2>
-
+</code></pre><h2 id="create-vm-on-kvm--qemu-via-libvirt-with-command-line">Create vm on kvm / qemu via libvirt with command line</h2>
 <h3 id="pembuatan-vm-centos-7">Pembuatan vm centos 7</h3>
-
 <p>script bash virtcen.sh</p>
-
-<pre><code>#!/bin/bash
+<pre tabindex="0"><code>#!/bin/bash
 
 NAMA=$1
 
-if [ -z &quot;$1&quot; ]; then
- while [ -z &quot;$NAMA&quot; ]; do
-  echo -n &quot;masukan nama vm: &quot;
+if [ -z &#34;$1&#34; ]; then
+ while [ -z &#34;$NAMA&#34; ]; do
+  echo -n &#34;masukan nama vm: &#34;
   read NAMA
  done
 fi
@@ -1189,19 +1099,16 @@ fi
 virt-install \
  --name $NAMA \
  --ram 900 \
- --disk path=$NAMA.qcow,size=6,bus=scsi,discard='unmap',format='qcow2' \
+ --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&#39;unmap&#39;,format=&#39;qcow2&#39; \
  --controller type=scsi,model=virtio-scsi \
  --vcpus 1 \
  --cpu host \
  --console pty,target_type=serial \
  --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso \
- --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot; \
+ --initrd-inject=cenks.cfg --extra-args &#34;inst.ks=file:/cenks.cfg&#34; \
  --noautoconsole
-</code></pre>
-
-<p>file kickstart cenks.cfg</p>
-
-<pre><code>text
+</code></pre><p>file kickstart cenks.cfg</p>
+<pre tabindex="0"><code>text
 install
 
 ignoredisk --only-use=sda
@@ -1233,21 +1140,17 @@ EOF
 chown -R widysible:widysible /home/ansible
 chmod 0600 /home/widysible/.ssh/authorized_keys
 # Allow Ansible to sudo w/o a password
-echo &quot;widysible ALL=(ALL) NOPASSWD:ALL&quot; &gt; /etc/sudoers.d/widysible
+echo &#34;widysible ALL=(ALL) NOPASSWD:ALL&#34; &gt; /etc/sudoers.d/widysible
 # trim
-sed -i 's/issue_discards = 0/issue_discards = 1/' /etc/lvm/lvm.conf
-echo &quot;0 0 1 0 0 fstrim /&quot; | tee /etc/cron.d/fstrim
-sed -i '/ swap /s/^/#/' /etc/fstab
-sed -i 's/defaults/defaults,discard/' /etc/fstab
+sed -i &#39;s/issue_discards = 0/issue_discards = 1/&#39; /etc/lvm/lvm.conf
+echo &#34;0 0 1 0 0 fstrim /&#34; | tee /etc/cron.d/fstrim
+sed -i &#39;/ swap /s/^/#/&#39; /etc/fstab
+sed -i &#39;s/defaults/defaults,discard/&#39; /etc/fstab
 echo ### Change back to terminal 1
 #chvt 1
 %end
-
-</code></pre>
-
-<p>Create VM using ansible playbook</p>
-
-<pre><code>---
+</code></pre><p>Create VM using ansible playbook</p>
+<pre tabindex="0"><code>---
 - name: create VMs
   hosts: localhost
   gather_facts: no
@@ -1255,42 +1158,36 @@ echo ### Change back to terminal 1
   become: true
   vars_prompt:
     - name: NAMA
-      prompt: &quot;Enter VM name&quot;
-      default: &quot;c7&quot;
+      prompt: &#34;Enter VM name&#34;
+      default: &#34;c7&#34;
       private: no
 #  vars_files:
 #    - vms.yml
 
   tasks:
     - name: get VM disks
-      command: &quot;ls /var/lib/libvirt/images&quot;
+      command: &#34;ls /var/lib/libvirt/images&#34;
       register: disks
-      changed_when: &quot;disks.rc != 0&quot;
+      changed_when: &#34;disks.rc != 0&#34;
 
     - name: get list of VMs
       virt:
-        command: &quot;list_vms&quot;
+        command: &#34;list_vms&#34;
       register: vms
 
     - name: create vm
       command: &gt;
                 virt-install --name {{ NAMA }}
                 --cpu host --vcpus 1 --ram 900
-                --disk path=$NAMA.qcow,size=6,bus=scsi,discard='unmap',format='qcow2'
+                --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&#39;unmap&#39;,format=&#39;qcow2&#39;
                 --controller type=scsi,model=virtio-scsi
                 --console pty,target_type=serial
                 --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso
-                --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot;
+                --initrd-inject=cenks.cfg --extra-args &#34;inst.ks=file:/cenks.cfg&#34;
                 --noautoconsole
-</code></pre>
-
-<h2 id="get-vms-ip">Get VMs IP</h2>
-
-<pre><code>virsh domifaddr c7
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><h2 id="get-vms-ip">Get VMs IP</h2>
+<pre tabindex="0"><code>virsh domifaddr c7
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/">https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/</a></li>
 <li><a href="https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/">https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/</a></li>
@@ -1318,7 +1215,6 @@ echo ### Change back to terminal 1
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/05/jenkins-for-beginner/">jenkins for beginner</a></h1>
         <span class="post-date">Dec 5, 2019</span>
 	<p>Ref:</p>
-
 <ul>
 <li><a href="https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded">https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded</a></li>
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04">https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04</a></li>
@@ -1338,19 +1234,12 @@ echo ### Change back to terminal 1
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/05/modsecurity-waf/">Modsecurity WAF</a></h1>
         <span class="post-date">Dec 5, 2019</span>
-	
-
-<h2 id="modsecurity-waf">Modsecurity WAF</h2>
-
-<p><img src="https://blog.indonesiadot.com/images/2019/modsecurity-architecture.jpg" alt="routed-lans" /></p>
-
+	<h2 id="modsecurity-waf">Modsecurity WAF</h2>
+<p><img src="https://blog.indonesiadot.com/images/2019/modsecurity-architecture.jpg" alt="routed-lans"></p>
 <p>user yg mau sql injection di scan dulu sama modsecurity yg modsecurity baca ruleset (crs) kalau ada di rules nya di deny.
 kalau false positive, dinyatakan oleh client / developer bahwa itu sbnrnya aman, baru di exclude rule tersebut, kalau developer bisa nambel supaya bisa rubah supaya lebih sesuai ruleset nya lebih baik.</p>
-
 <p>intinya mudah sih yg opensource, cuma kelemahan nya nempel di host dan atau nempel di webserver, lalu kelemahan lain banyak false positive, sama ga ada ui nya, meski berjalan bagus bisa menahan serangan cuma agak sulit manage nya, terutama klo aplikasi yg ga standar, klo yg standar misal kaya wordpress mungkin lebih mudah.</p>
-
 <p>Referensi:</p>
-
 <ul>
 <li>Searching modsecurity architecture</li>
 </ul>

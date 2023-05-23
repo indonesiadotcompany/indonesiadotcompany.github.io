@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>magento on Blog Indonesiadot.Com</title>
@@ -6,18 +6,14 @@
     <description>Recent content in magento on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Feb 2018 01:05:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/magento/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 13 Feb 2018 01:05:00 +0000</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/magento/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Jenkins magento 2</title>
       <link>https://blog.indonesiadot.com/2018/02/13/jenkins-magento-2/</link>
       <pubDate>Tue, 13 Feb 2018 01:05:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/13/jenkins-magento-2/</guid>
-      <description>https://cloudkul.com/blog/magento2-continuous-integration-continuous-deployment-using-jenkins/</description>
+      <description> </description>
     </item>
     
     <item>
@@ -44,17 +40,7 @@
       <pubDate>Wed, 27 Sep 2017 20:02:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2017/09/27/install-solr-server/</guid>
-      <description>Here are the steps for Install solr server - base of search engine for magento these steps run on ubuntu 16.04, because we follow this http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html, we must install jdk 7 from ppa, but ubuntu 16.04 default with jdk 8 add-apt-repository ppa:openjdk-r/ppa
-apt update
-apt-get install openjdk-7-jdk
-apt install supervisor
-su - user
-mkdir apps &amp;amp;&amp;amp; cd apps
-wget https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz
-tar xzf ../apache-solr-3.4.0.tgz
-mv apache-solr-3.4.0 solr34
-cp /var/www/magento/lib/Apache/Solr/conf/* solr34/example/solr/conf/
-cat &amp;gt;&amp;gt; apps/solr34/example/logging.</description>
+      <description>Here are the steps for Install solr server - base of search engine for magento these steps run on ubuntu 16.04, because we follow this http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html, we must install jdk 7 from ppa, but ubuntu 16.04 default with jdk 8 add-apt-repository ppa:openjdk-r/ppaapt updateapt-get install openjdk-7-jdkapt install supervisorsu - usermkdir apps &amp;amp;&amp;amp; cd appswget https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgztar xzf ../apache-solr-3.4.0.tgzmv apache-solr-3.4.0 solr34cp /var/www/magento/lib/Apache/Solr/conf/* solr34/example/solr/conf/cat &amp;gt;&amp;gt; apps/solr34/example/logging.properties # Default global logging level:.level = INFO# Write to a file:handlers = java.</description>
     </item>
     
     <item>
@@ -63,14 +49,7 @@ cat &amp;gt;&amp;gt; apps/solr34/example/logging.</description>
       <pubDate>Wed, 20 Sep 2017 23:45:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2017/09/20/magento-maintenance-mode/</guid>
-      <description>To set magento 2 in maintenance mode and to make nice maintenance page.
-1. make / get maintenance image for our maintenance page, ie: maintenance.png
-2. put at pub/errors/default/images directory under magento root directory, ie: /var/www/magento/pub/errors/default/images/maintenance.png
-3. edit and save /var/www/magento/pub/errors/default/503.phtml
-
-4. run bin/magento maintenance:enable from magento root directory
-that&amp;rsquo;s it, and you can see nicer maintenance mode in magento 2
-To set magento 1 in maintenance mode and to make nice maintenance page.</description>
+      <description>To set magento 2 in maintenance mode and to make nice maintenance page.1. make / get maintenance image for our maintenance page, ie: maintenance.png2. put at pub/errors/default/images directory under magento root directory, ie: /var/www/magento/pub/errors/default/images/maintenance.png3. edit and save /var/www/magento/pub/errors/default/503.phtml4. run bin/magento maintenance:enable from magento root directorythat&amp;rsquo;s it, and you can see nicer maintenance mode in magento 2To set magento 1 in maintenance mode and to make nice maintenance page.1. make / get maintenance image for our maintenance page, ie: maintenance.</description>
     </item>
     
   </channel>

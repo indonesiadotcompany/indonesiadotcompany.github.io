@@ -864,20 +864,14 @@
 <div class="post">
   <h1 class="post-title">Postgresql</h1>
   <span class="post-date">Jun 12, 2020</span>
-  
-
-<h2 id="install-pgadmin4-di-ubuntu-18">Install pgadmin4 di ubuntu 18</h2>
-
-<pre><code>apt-get install curl ca-certificates gnupg
+  <h2 id="install-pgadmin4-di-ubuntu-18">Install pgadmin4 di ubuntu 18</h2>
+<pre tabindex="0"><code>apt-get install curl ca-certificates gnupg
 curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-sh -c 'echo &quot;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&quot; &gt; /etc/apt/sources.list.d/pgdg.list'
+sh -c &#39;echo &#34;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&#34; &gt; /etc/apt/sources.list.d/pgdg.list&#39;
 apt update
 apt install pgadmin4
-</code></pre>
-
-<h2 id="create-db">create db</h2>
-
-<pre><code>su - postgres
+</code></pre><h2 id="create-db">create db</h2>
+<pre tabindex="0"><code>su - postgres
 psql
 create database dvdrental;
 \q
@@ -890,11 +884,8 @@ GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO pgtower;
 psql -U pgtower -d dvdrental
 select first_name from customer;
 \q
-</code></pre>
-
-<h2 id="pg-hba-conf">pg_hba.conf</h2>
-
-<pre><code>cat /var/opt/rh/rh-postgresql10/lib/pgsql/data/pg_hba.conf
+</code></pre><h2 id="pg_hbaconf">pg_hba.conf</h2>
+<pre tabindex="0"><code>cat /var/opt/rh/rh-postgresql10/lib/pgsql/data/pg_hba.conf
 
 # Database administrative login by UNIX sockets
 # note: you may wish to restrict this further later
@@ -905,10 +896,7 @@ local   all         all                               scram-sha-256
 host    all         all         127.0.0.1/32 scram-sha-256
 host    all         all         ::1/128 scram-sha-256
 host    all         all         10.11.8.0/24    md5
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.postgresqltutorial.com/postgresql-sample-database/">https://www.postgresqltutorial.com/postgresql-sample-database/</a></li>
 <li><a href="https://bobcares.com/blog/permission-denied-for-database-postgres/">https://bobcares.com/blog/permission-denied-for-database-postgres/</a></li>

@@ -864,49 +864,31 @@
 <div class="post">
   <h1 class="post-title">Jfrog for Beginner</h1>
   <span class="post-date">Aug 4, 2020</span>
-  
-
-<h2 id="install-jfrog-di-ubuntu">Install jfrog di ubuntu</h2>
-
+  <h2 id="install-jfrog-di-ubuntu">Install jfrog di ubuntu</h2>
 <p><a href="https://websiteforstudents.com/how-to-install-jfrog-artifactory-on-ubuntu-18-04-16-04/">https://websiteforstudents.com/how-to-install-jfrog-artifactory-on-ubuntu-18-04-16-04/</a></p>
-
-<pre><code>apt install wget software-properties-common apt-transport-https
+<pre tabindex="0"><code>apt install wget software-properties-common apt-transport-https
 apt-get install openjdk-8-jdk openjdk-8-doc
 wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add -
-add-apt-repository &quot;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&quot;
+add-apt-repository &#34;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&#34;
 apt-get update
 apt install jfrog-artifactory-oss
-</code></pre>
-
-<h2 id="membuat-repository-artifacts-baru-di-jfrog">Membuat repository / artifacts baru di jfrog</h2>
-
-<pre><code>klik menu administration, lalu klik menu repositories (sebelah kiri), lalu klik + New Local Repository (sebelah kanan)
+</code></pre><h2 id="membuat-repository--artifacts-baru-di-jfrog">Membuat repository / artifacts baru di jfrog</h2>
+<pre tabindex="0"><code>klik menu administration, lalu klik menu repositories (sebelah kiri), lalu klik + New Local Repository (sebelah kanan)
 klik / pilih generic, lalu isi repository key atau nama repository dengan apa saja yg diinginkan misal ansible-test-report
 klik save
-</code></pre>
-
-<h2 id="test-upload-dan-download-via-curl">test upload dan download via curl</h2>
-
+</code></pre><h2 id="test-upload-dan-download-via-curl">test upload dan download via curl</h2>
 <p>buat dahulu bbrp file, misal test.txt, lalu upload dengan command curl</p>
-
-<pre><code>curl -uadmin:r4hasia01 -T test.txt &quot;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&quot;
-</code></pre>
-
-<p>command untuk download memakai curl</p>
-
-<pre><code>curl -uadmin:r4hasia01 -O &quot;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&quot;
-</code></pre>
-
-<h2 id="test-upload-dengan-playbook-script">test upload dengan playbook script</h2>
-
+<pre tabindex="0"><code>curl -uadmin:r4hasia01 -T test.txt &#34;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&#34;
+</code></pre><p>command untuk download memakai curl</p>
+<pre tabindex="0"><code>curl -uadmin:r4hasia01 -O &#34;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&#34;
+</code></pre><h2 id="test-upload-dengan-playbook-script">test upload dengan playbook script</h2>
 <p>buat file jfrog-upload.yml</p>
-
-<pre><code>- hosts: all
+<pre tabindex="0"><code>- hosts: all
   gather_facts: false
   connection: local
   tasks:
     - uri:
-        url: 'http://10.11.8.41:8081/artifactory/generic/test1.txt'
+        url: &#39;http://10.11.8.41:8081/artifactory/generic/test1.txt&#39;
         src: ./test1.txt
         method: PUT
         return_content: true
@@ -917,42 +899,23 @@ klik save
         headers:
           Content-Type: application/octet-stream
           Accept: application/json
-</code></pre>
-
-<p>buat file test1.txt, lalu jalankan script playbooknya dengan:</p>
-
-<pre><code>ansible-playbook -i localhost, jfrog-upload.yml
-</code></pre>
-
-<h2 id="jfrog-cli">Jfrog CLI</h2>
-
+</code></pre><p>buat file test1.txt, lalu jalankan script playbooknya dengan:</p>
+<pre tabindex="0"><code>ansible-playbook -i localhost, jfrog-upload.yml
+</code></pre><h2 id="jfrog-cli">Jfrog CLI</h2>
 <ul>
 <li><a href="https://jfrog.com/getcli/">https://jfrog.com/getcli/</a></li>
 <li><a href="https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory">https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory</a></li>
 </ul>
-
 <p>untuk lebih memudahkan proses management jfrog bisa menggunakan jfrog cli</p>
-
 <p>bisa download dulu dengan command:</p>
-
-<pre><code>curl -fL https://getcli.jfrog.io | sh
+<pre tabindex="0"><code>curl -fL https://getcli.jfrog.io | sh
+</code></pre><p>configure jfrog cli dengan</p>
+<pre tabindex="0"><code>./jfrog rt c jfroglan --url=http://10.11.8.41:8082/artifactory --user=admin --password=r4hasia01
+</code></pre><p>dari sini bisa untuk delete file / direktori, misal delete file testdir yg sebelumnya terbuat, dengan command:</p>
+<pre tabindex="0"><code>./jfrog rt del generic/testdir
+</code></pre><p>upload semua file di direktori dan taruh di direktori juga</p>
+<pre tabindex="0"><code>./jfrog rt u &#34;testdir/&#34; generic/testdir/
 </code></pre>
-
-<p>configure jfrog cli dengan</p>
-
-<pre><code>./jfrog rt c jfroglan --url=http://10.11.8.41:8082/artifactory --user=admin --password=r4hasia01
-</code></pre>
-
-<p>dari sini bisa untuk delete file / direktori, misal delete file testdir yg sebelumnya terbuat, dengan command:</p>
-
-<pre><code>./jfrog rt del generic/testdir
-</code></pre>
-
-<p>upload semua file di direktori dan taruh di direktori juga</p>
-
-<pre><code>./jfrog rt u &quot;testdir/&quot; generic/testdir/
-</code></pre>
-
 </div>
 
 <hr/>

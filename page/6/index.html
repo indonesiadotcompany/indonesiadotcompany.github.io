@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.57.2" />
+	<meta name="generator" content="Hugo 0.106.0">
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -870,26 +870,17 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/12/lvm-tips/">LVM tips</a></h1>
         <span class="post-date">Mar 12, 2020</span>
-	
-
-<h2 id="resize-increase-lvm">resize / increase lvm</h2>
-
-<pre><code>lvextend --size +10G /dev/vg0/foo
+	<h2 id="resize--increase-lvm">resize / increase lvm</h2>
+<pre tabindex="0"><code>lvextend --size +10G /dev/vg0/foo
 lvextend --size 20G /dev/vg0/foo
 lvdisplay /dev/vg0/foo
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="http://www.microhowto.info/howto/increase_the_size_of_an_lvm_logical_volume.html">http://www.microhowto.info/howto/increase_the_size_of_an_lvm_logical_volume.html</a></li>
 <li><a href="https://linoxide.com/linux-how-to/lvm-configuration-linux/">https://linoxide.com/linux-how-to/lvm-configuration-linux/</a></li>
 </ul>
-
 <h2 id="pvresize">pvresize</h2>
-
-<pre><code>pvresize /dev/sda3
-</code></pre>
-
-<ul>
+<pre tabindex="0"><code>pvresize /dev/sda3
+</code></pre><ul>
 <li><a href="https://www.thegeekdiary.com/centos-rhel-how-to-resize-extend-existing-physical-volume-pv/">https://www.thegeekdiary.com/centos-rhel-how-to-resize-extend-existing-physical-volume-pv/</a></li>
 </ul>
 
@@ -904,11 +895,8 @@ lvdisplay /dev/vg0/foo
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/12/ceph-tips/">Ceph tips</a></h1>
         <span class="post-date">Mar 12, 2020</span>
-	
-
-<h2 id="remove-osd">remove osd</h2>
-
-<pre><code>systemctl stop ceph-osd.target
+	<h2 id="remove-osd">remove osd</h2>
+<pre tabindex="0"><code>systemctl stop ceph-osd.target
 systemctl stop ceph-osd@0
 ceph osd out 0
 ceph osd down 0
@@ -919,56 +907,35 @@ ceph osd crush rm osd.0
 ceph auth del osd.0
 
 ceph-volume lvm zap /dev/sdX --destroy
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87">https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87</a></li>
 <li><a href="https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/">https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/</a></li>
 </ul>
-
-<h2 id="all-about-pg-num">all about pg_num</h2>
-
+<h2 id="all-about-pg_num">all about pg_num</h2>
 <ul>
 <li><a href="https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox">https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox</a></li>
 </ul>
-
-<h2 id="ceph-one-single-node">ceph one / single node</h2>
-
-<pre><code>ceph osd getcrushmap -o crush_map_compressed
+<h2 id="ceph-one--single-node">ceph one / single node</h2>
+<pre tabindex="0"><code>ceph osd getcrushmap -o crush_map_compressed
 crushtool -d crush_map_compressed -o crush_map_decompressed
 vi crush_map_decompressed
-</code></pre>
-
-<p>lalu cari bagian:</p>
-
-<pre><code>step chooseleaf firstn 0 type host
-</code></pre>
-
-<p>rubah menjadi:</p>
-
-<pre><code>step chooseleaf firstn 0 type osd
-</code></pre>
-
-<p>lalu insert hasilnya</p>
-
-<pre><code>crushtool -c crush_map_decompressed -o new_crush_map_compressed
+</code></pre><p>lalu cari bagian:</p>
+<pre tabindex="0"><code>step chooseleaf firstn 0 type host
+</code></pre><p>rubah menjadi:</p>
+<pre tabindex="0"><code>step chooseleaf firstn 0 type osd
+</code></pre><p>lalu insert hasilnya</p>
+<pre tabindex="0"><code>crushtool -c crush_map_decompressed -o new_crush_map_compressed
 ceph osd setcrushmap -i new_crush_map_compressed
 ceph -s
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="https://linoxide.com/linux-how-to/hwto-configure-single-node-ceph-cluster/">https://linoxide.com/linux-how-to/hwto-configure-single-node-ceph-cluster/</a></li>
 </ul>
-
 <p>Tutorial ceph bahasa indonesia</p>
-
 <ul>
 <li><a href="https://denstorial.blogspot.com/2019/01/tutorial.setup.ceph.storage.cluster.part.1.html">https://denstorial.blogspot.com/2019/01/tutorial.setup.ceph.storage.cluster.part.1.html</a></li>
 <li><a href="https://denstorial.blogspot.com/2019/02/troubleshooting.ceph.html">https://denstorial.blogspot.com/2019/02/troubleshooting.ceph.html</a></li>
 </ul>
-
-<h2 id="pg-placement-group-pg-num">PG (Placement Group) / pg_num</h2>
-
+<h2 id="pg-placement-group--pg_num">PG (Placement Group) / pg_num</h2>
 <ul>
 <li><a href="https://docs.ceph.com/docs/mimic/rados/operations/placement-groups/">https://docs.ceph.com/docs/mimic/rados/operations/placement-groups/</a></li>
 <li><a href="https://www.sebastien-han.fr/blog/2013/03/12/ceph-change-pg-number-on-the-fly/">https://www.sebastien-han.fr/blog/2013/03/12/ceph-change-pg-number-on-the-fly/</a></li>
@@ -985,40 +952,29 @@ ceph -s
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/10/lxd-lxc/">LXD-LXC</a></h1>
         <span class="post-date">Mar 10, 2020</span>
-	
-
-<h2 id="lxc-set-static-ip">lxc set static ip</h2>
-
-<pre><code>lxc stop c1
+	<h2 id="lxc-set-static-ip">lxc set static ip</h2>
+<pre tabindex="0"><code>lxc stop c1
 lxc network attach lxdbr0 c1 eth0 eth0
 lxc config device set c1 eth0 ipv4.address 10.99.10.42
 lxc start c1
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4">https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4</a></li>
 </ul>
-
 <h2 id="lxc-privileged-to-unprivileged">lxc privileged to unprivileged</h2>
-
 <p>Pada saat container (CT) lxc dalam unprivileged mode memiliki hak terbatas seperti akses ke device dan beberapa lainnya.</p>
-
 <p>Contoh pada saat menjalankan docker itu ada pesan error <em>Failed to reset devices.list on /system.slice</em></p>
-
-<p>Workaround nya adalah dengan membuat CT menjadi privileged mode, caranya yaitu:
-- backup CT
-- restore CT dengan uncheck unprivileged mode</p>
-
+<p>Workaround nya adalah dengan membuat CT menjadi privileged mode, caranya yaitu:</p>
+<ul>
+<li>backup CT</li>
+<li>restore CT dengan uncheck unprivileged mode</li>
+</ul>
 <ul>
 <li><a href="https://github.com/lxc/lxd/issues/2004">https://github.com/lxc/lxd/issues/2004</a></li>
 <li><a href="https://forum.proxmox.com/threads/convert-privileged-to-unprivileged-container.31066/">https://forum.proxmox.com/threads/convert-privileged-to-unprivileged-container.31066/</a></li>
 </ul>
-
 <h2 id="rename-lxc-container">rename lxc container</h2>
-
-<pre><code>lxc move [ct-lama] [ct-baru]
+<pre tabindex="0"><code>lxc move [ct-lama] [ct-baru]
 </code></pre>
-
 	<hr/>
 	
 	
@@ -1030,104 +986,99 @@ lxc start c1
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution-1-briefing-session/">Ansible Test Implement for Security Hardening Solution 1 - Briefing Session</a></h1>
         <span class="post-date">Mar 9, 2020</span>
-	
-
-<h2 id="background">Background</h2>
-
+	<h2 id="background">Background</h2>
 <ul>
 <li>belum adanya standarisasi system security perusahaan yang mengacu kepada baseline standarisasi internasional seperti CIS, NIST atau PCI-DSS</li>
 <li>pekerjaan manual yang sangat kompleks, lama dan berat jika harus dilakukan secara manual untuk melakukan standarisasi security system</li>
 <li>masih banyaknya server perusahaan yang non-comply dengan standarisasi sistem security yang telah dibuat oleh perusahaan</li>
 </ul>
-
 <h2 id="objective">Objective</h2>
-
 <ul>
 <li>mengurangi serangan</li>
 <li>konfigurasi yang robust</li>
 <li>secured protocols</li>
 <li>comply kepada standarisasi internasional dan standarisasi internal perusahaan</li>
 </ul>
-
 <h2 id="technical-requirements">Technical Requirements</h2>
-
 <p>Langkah 1:</p>
-
 <ul>
 <li>Membuat security baseline
-
 <ul>
 <li>custom baseline CIS / PCI-DSS yang digabung dengan baseline internal perusahaan</li>
-</ul></li>
+</ul>
+</li>
 <li>Implementasi dan enforce security baseline</li>
 </ul>
-
-<h3 id="technical-requirements-overall-scope-of-work-and-deliverable">Technical Requirements - Overall Scope of Work and deliverable:</h3>
-
+<h3 id="technical-requirements---overall-scope-of-work-and-deliverable">Technical Requirements - Overall Scope of Work and deliverable:</h3>
 <ul>
 <li>Architecture and End-to-End Design (N)</li>
 <li>Hardware, Software and infrastructure components
-
 <ul>
-<li>Hardware</li>
+<li>Hardware
+<ul>
 <li>2 server postgresql / ansible tower database server</li>
 <li>3 server ansible tower (cluster)</li>
 <li>1 server ansible tower for development / testing</li>
-<li>Software</li>
+</ul>
+</li>
+<li>Software
+<ul>
 <li>redhat / centos OS</li>
 <li>ansible</li>
 <li>ansible tower</li>
 <li>postgresql</li>
 <li>openscap</li>
 <li>ansible playbook / roles based on CIS / PCI-DSS / NIST baseline that combined with internal company baseline</li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Hardware and software delivery and installation, incl. necessary testing (N)
-
 <ul>
 <li>install dua postgresql active - passive</li>
+</ul>
+<ul>
 <li>install ansible tower for production</li>
+</ul>
+<ul>
 <li>install ansible tower for development</li>
 <li>test implementasi / deployment manage server dari ansible tower development, lalu setelah ok, copy / replikasi semua template, playbook dan yg berkaitan ke ansible tower production</li>
-</ul></li>
+</ul>
+</li>
 <li>Required supporting equipment and materials</li>
 <li>Services, including project management, implementation, integration and migration (N)</li>
 <li>Technical support (3 years) including
-
 <ul>
 <li>Hardware and software updates</li>
 <li>Service request support and management (SRSM)</li>
 <li>spares management with instant replacement (SPMS)</li>
 <li>first line maintenance incl. preventative maintenances (O&amp;M Assistance)</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="technical-requirements-software-scope">Technical Requirements Software Scope</h3>
-
 <ul>
 <li>Software components shall be grouped in two areas : 1. Development, 2. Operation</li>
 </ul>
-
 <h3 id="technical-requirements-services-scope">Technical Requirements Services Scope</h3>
-
 <ul>
 <li>Detailed micro-design and security implementation plan (N)</li>
 <li>Project management &amp; project technical documentation according to Telkomsel standards. (N)</li>
 </ul>
-
-<h3 id="technical-requirements-compliance-to-requirement">Technical Requirements - Compliance to requirement</h3>
-
+<h3 id="technical-requirements---compliance-to-requirement">Technical Requirements - Compliance to requirement</h3>
 <p>Statements of Compliances</p>
-
 <ul>
-<li><p>Full Comply = The proposed solution can fulfill the specified requirement at the start of the project (Day 1)</p></li>
-
-<li><p>Comply with Customization = The proposed solution can fulfill the specified requirements with some customizations, and it must be ready when it is required by specific phase within the implementation timeline</p></li>
-
-<li><p>Not Comply = The proposed solution cannot fulfill the specified requirements</p></li>
+<li>
+<p>Full Comply = The proposed solution can fulfill the specified requirement at the start of the project (Day 1)</p>
+</li>
+<li>
+<p>Comply with Customization = The proposed solution can fulfill the specified requirements with some customizations, and it must be ready when it is required by specific phase within the implementation timeline</p>
+</li>
+<li>
+<p>Not Comply = The proposed solution cannot fulfill the specified requirements</p>
+</li>
 </ul>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>
@@ -1143,27 +1094,17 @@ lxc start c1
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/06/proxmox-add-zfs-disk/">Proxmox add zfs disk</a></h1>
         <span class="post-date">Mar 6, 2020</span>
-	
-
-<h2 id="add-disk-hardware">Add Disk Hardware</h2>
-
+	<h2 id="add-disk-hardware">Add Disk Hardware</h2>
 <p>Tambahkan harddisk di server secara berurutan port sata nya, dan catat ID disknya</p>
-
 <h2 id="setting-at-command-line">Setting at command line</h2>
-
-<pre><code>ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R
+<pre tabindex="0"><code>ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R
 ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4
 zpool create rpoolkube -o ashift=12 mirror /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4
 zpool status
-</code></pre>
-
-<h2 id="tambahkan-proxmox-storage-pool">Tambahkan proxmox storage pool</h2>
-
+</code></pre><h2 id="tambahkan-proxmox-storage-pool">Tambahkan proxmox storage pool</h2>
 <p>Dari proxmox pool, lalu klik storage, lalu add storage, pilih zfs.
 Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masukan block size 64k, lalu klik create.</p>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>
@@ -1179,26 +1120,15 @@ Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masuka
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/netcat-bandwidth-test/">Netcat Bandwidth Test</a></h1>
         <span class="post-date">Mar 5, 2020</span>
-	
-
-<h2 id="netcat-bandwidth-test">Netcat Bandwidth Test</h2>
-
+	<h2 id="netcat-bandwidth-test">Netcat Bandwidth Test</h2>
 <h3 id="netcat-server">netcat-server</h3>
-
-<pre><code>nc -l -p 12345 | wc -c
-</code></pre>
-
-<h3 id="netcat-client">netcat-client</h3>
-
-<pre><code>dd if=/dev/zero bs=$((2**20)) count=$((2**10)) | nc -q 0 netcat-server 12345
+<pre tabindex="0"><code>nc -l -p 12345 | wc -c
+</code></pre><h3 id="netcat-client">netcat-client</h3>
+<pre tabindex="0"><code>dd if=/dev/zero bs=$((2**20)) count=$((2**10)) | nc -q 0 netcat-server 12345
 #or
 dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345
-</code></pre>
-
-<p>on the server run nload to see the bandwidth used at eth0 for incoming and outgoing</p>
-
+</code></pre><p>on the server run nload to see the bandwidth used at eth0 for incoming and outgoing</p>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/">https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/</a></li>
 <li><a href="https://www.thegeekstuff.com/2012/04/nc-command-examples/">https://www.thegeekstuff.com/2012/04/nc-command-examples/</a></li>
@@ -1215,14 +1145,9 @@ dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/"></a></h1>
         <span class="post-date">Mar 5, 2020</span>
-	
-
-<h2 id="post">Post</h2>
-
+	<h2 id="post">Post</h2>
 <p>Ini adalah contoh post</p>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>
@@ -1238,33 +1163,24 @@ dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/python-tips/">Python Tips</a></h1>
         <span class="post-date">Mar 5, 2020</span>
-	
-
-<h2 id="module-python-web-server">module python web server</h2>
-
-<pre><code>python -m SimpleHTTPServer 8001
+	<h2 id="module-python-web-server">module python web server</h2>
+<pre tabindex="0"><code>python -m SimpleHTTPServer 8001
 python -m SimpleHTTPServer 8002
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver">https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver</a></li>
 <li><a href="https://www.pcsuggest.com/best-lightweight-web-server-linux/">https://www.pcsuggest.com/best-lightweight-web-server-linux/</a></li>
 </ul>
-
 <h2 id="multiple-python-version-on-centos-6">multiple python version on centos 6</h2>
-
 <p><a href="https://stackoverflow.com/questions/20842732/libpython2-7-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory">https://stackoverflow.com/questions/20842732/libpython2-7-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory</a>
 <a href="https://www.2daygeek.com/install-python-3-on-centos-6/">https://www.2daygeek.com/install-python-3-on-centos-6/</a></p>
-
-<pre><code>yum install centos-release-scl -y
-yum --enablerepo='centos-sclo-rh' install python27-python -y
-echo &quot;/opt/rh/python27/root/usr/lib64&quot; &gt;&gt; /etc/ld.so.conf
+<pre tabindex="0"><code>yum install centos-release-scl -y
+yum --enablerepo=&#39;centos-sclo-rh&#39; install python27-python -y
+echo &#34;/opt/rh/python27/root/usr/lib64&#34; &gt;&gt; /etc/ld.so.conf
 ldconfig
 /opt/rh/python27/root/usr/bin/python --version
-yum --enablerepo='centos-sclo-rh' install rh-python36-python
+yum --enablerepo=&#39;centos-sclo-rh&#39; install rh-python36-python
 /opt/rh/rh-python36/root/usr/bin/python --version
 </code></pre>
-
 	<hr/>
 	
 	
@@ -1276,16 +1192,11 @@ yum --enablerepo='centos-sclo-rh' install rh-python36-python
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/28/yum-tips/">Yum tips</a></h1>
         <span class="post-date">Feb 28, 2020</span>
-	
-
-<h2 id="yum-install-specific-version">Yum install specific version</h2>
-
-<pre><code>yum list docker-ce.x86_64 --showduplicates
+	<h2 id="yum-install-specific-version">Yum install specific version</h2>
+<pre tabindex="0"><code>yum list docker-ce.x86_64 --showduplicates
 yum list docker-ce.x86_64 --showduplicates | sort -r
 yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos">https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos</a></li>
 </ul>
 

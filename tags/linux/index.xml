@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on Blog Indonesiadot.Com</title>
@@ -6,20 +6,16 @@
     <description>Recent content in linux on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Dec 2020 08:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 10 Dec 2020 08:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test posting</title>
       <link>https://blog.indonesiadot.com/2020/12/10/test-posting/</link>
       <pubDate>Thu, 10 Dec 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/12/10/test-posting/</guid>
-      <description> Post Ini adalah contoh post
+      <description>Post Ini adalah contoh post
 Referensi:
- https://indonesiadot.com  </description>
+https://indonesiadot.com </description>
     </item>
     
     <item>
@@ -29,9 +25,8 @@ Referensi:
       
       <guid>https://blog.indonesiadot.com/2020/11/24/suse-sles-for-the-first-time/</guid>
       <description>SLES (Suse Linux Enterprise registration, repository Prequisites:
- registration at myaccount.suse.com login go to download go to https://scc.suse.com/organizations/712401/subscriptions?family=sles and subscribe
-SUSEConnect -r 57D5AC4E2693FAC6 sleep 30 SUSEConnect -p PackageHub/12.5/x86_64   test install suatu package
-zypper -y install sudo  referensi:
+registration at myaccount.suse.com login go to download go to https://scc.suse.com/organizations/712401/subscriptions?family=sles and subscribe SUSEConnect -r 57D5AC4E2693FAC6 sleep 30 SUSEConnect -p PackageHub/12.5/x86_64 test install suatu package
+zypper -y install sudo referensi:
 https://www.suse.com/support/kb/doc/?id=000018564 https://www.suse.com/support/kb/doc/?id=000018789</description>
     </item>
     
@@ -41,8 +36,7 @@ https://www.suse.com/support/kb/doc/?id=000018564 https://www.suse.com/support/k
       <pubDate>Thu, 15 Oct 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/10/15/nc-tips/</guid>
-      <description> Test udp port with nc  https://www.thegeekdiary.com/how-to-test-porttcp-udp-connectivity-from-a-linux-server/
-#nc -z -v -u [hostname/IP address] [port number] # nc -z -v -u 192.168.10.12 123 Connection to 192.118.20.95 123 port [udp/ntp] succeeded!   </description>
+      <description>Test udp port with nc https://www.thegeekdiary.com/how-to-test-porttcp-udp-connectivity-from-a-linux-server/ #nc -z -v -u [hostname/IP address] [port number] # nc -z -v -u 192.168.10.12 123 Connection to 192.118.20.95 123 port [udp/ntp] succeeded! </description>
     </item>
     
     <item>
@@ -51,7 +45,7 @@ https://www.suse.com/support/kb/doc/?id=000018564 https://www.suse.com/support/k
       <pubDate>Thu, 15 Oct 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/10/15/ssh-error-tips/</guid>
-      <description>ssh_exchange_identification read connection reset by peer  https://phoenixnap.com/kb/fix-connection-reset-by-peer-ssh-error  There are typos at /etc/hosts.allow, in example:
+      <description>ssh_exchange_identification read connection reset by peer https://phoenixnap.com/kb/fix-connection-reset-by-peer-ssh-error There are typos at /etc/hosts.allow, in example:
 shd: 10.11.8.15
 it should be
 sshd: 10.11.8.15</description>
@@ -63,11 +57,11 @@ sshd: 10.11.8.15</description>
       <pubDate>Wed, 02 Sep 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/09/02/ldap-on-centos-7/</guid>
-      <description>Server setup  https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html
-yum -y install openldap compat-openldap openldap-clients openldap-servers systemctl start slapd systemctl enable slapd slappasswd -h {SSHA} -s ldppassword  make note of ldappassword
-  create file db.ldif
-dn: olcDatabase={2}hdb,cn=config changetype: modify replace: olcSuffix olcSuffix: dc=itzgeek,dc=local dn: olcDatabase={2}hdb,cn=config changetype: modify replace: olcRootDN olcRootDN: cn=ldapadm,dc=itzgeek,dc=local dn: olcDatabase={2}hdb,cn=config changetype: modify replace: olcRootPW olcRootPW: {SSHA}d/thexcQUuSfe3rx3gRaEhHpNJ52N8D3  replace the value of olcRootPW with ldappassword above
-ldapmodify -Y EXTERNAL -H ldapi:/// -f db.</description>
+      <description>Server setup https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html yum -y install openldap compat-openldap openldap-clients openldap-servers systemctl start slapd systemctl enable slapd slappasswd -h {SSHA} -s ldppassword make note of ldappassword
+create file db.ldif
+dn: olcDatabase={2}hdb,cn=config changetype: modify replace: olcSuffix olcSuffix: dc=itzgeek,dc=local dn: olcDatabase={2}hdb,cn=config changetype: modify replace: olcRootDN olcRootDN: cn=ldapadm,dc=itzgeek,dc=local dn: olcDatabase={2}hdb,cn=config changetype: modify replace: olcRootPW olcRootPW: {SSHA}d/thexcQUuSfe3rx3gRaEhHpNJ52N8D3 replace the value of olcRootPW with ldappassword above
+ldapmodify -Y EXTERNAL -H ldapi:/// -f db.ldif create monitor.ldif
+dn: olcDatabase={1}monitor,cn=config changetype: modify replace: olcAccess olcAccess: {0}to * by dn.</description>
     </item>
     
     <item>
@@ -76,8 +70,7 @@ ldapmodify -Y EXTERNAL -H ldapi:/// -f db.</description>
       <pubDate>Wed, 02 Sep 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/09/02/centos-tips/</guid>
-      <description>whatprovides  https://www.itzgeek.com/how-tos/mini-howtos/netstat-command-not-found-on-centos-7-rhel-7-quick-fix.html
-yum whatprovides netstat   net-tools-2.0-0.25.20131004git.el7.x86_64 : Basic networking tools Repo : @base Matched from: Filename : /usr/bin/netstat</description>
+      <description>whatprovides https://www.itzgeek.com/how-tos/mini-howtos/netstat-command-not-found-on-centos-7-rhel-7-quick-fix.html yum whatprovides netstat net-tools-2.0-0.25.20131004git.el7.x86_64 : Basic networking tools Repo : @base Matched from: Filename : /usr/bin/netstat</description>
     </item>
     
     <item>
@@ -86,7 +79,7 @@ yum whatprovides netstat   net-tools-2.0-0.25.20131004git.el7.x86_64 : Basic net
       <pubDate>Thu, 27 Aug 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/08/27/lxc-on-centos/</guid>
-      <description> LXC install on centos  https://www.tecmint.com/install-create-run-lxc-linux-containers-on-centos/  </description>
+      <description>LXC install on centos https://www.tecmint.com/install-create-run-lxc-linux-containers-on-centos/ </description>
     </item>
     
     <item>
@@ -95,10 +88,8 @@ yum whatprovides netstat   net-tools-2.0-0.25.20131004git.el7.x86_64 : Basic net
       <pubDate>Tue, 25 Aug 2020 15:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/08/25/samba-share-windows/</guid>
-      <description> Setup samba on ubuntu linux  https://adrianmejia.com/how-to-set-up-samba-in-ubuntu-linux-and-access-it-in-mac-os-and-windows/
-apt install samba cifs-utils  lalu edit /etc/samba/smb.conf
-systemctl restart smbd  test via windows, dengan mengakses \ip.atau.hostname.server
-  </description>
+      <description>Setup samba on ubuntu linux https://adrianmejia.com/how-to-set-up-samba-in-ubuntu-linux-and-access-it-in-mac-os-and-windows/ apt install samba cifs-utils lalu edit /etc/samba/smb.conf
+systemctl restart smbd test via windows, dengan mengakses \ip.atau.hostname.server</description>
     </item>
     
     <item>
@@ -107,9 +98,8 @@ systemctl restart smbd  test via windows, dengan mengakses \ip.atau.hostname.ser
       <pubDate>Tue, 11 Aug 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/08/11/ansible-sudoers/</guid>
-      <description>Contoh  https://code-maven.com/enable-ansible-passwordless-sudo https://stackoverflow.com/questions/37333305/ansible-create-a-user-with-sudo-privileges
-- hosts: all tasks: - lineinfile: path: /etc/sudoers state: present regexp: &#39;^%sudo&#39; line: &#39;%sudo ALL=(ALL) NOPASSWD: ALL&#39; validate: &#39;visudo -cf %s&#39;  contoh lain
-- name: Make sure we have a &#39;wheel&#39; group group: name: wheel state: present - name: Allow &#39;wheel&#39; group to have passwordless sudo lineinfile: dest: /etc/sudoers state: present regexp: &#39;^%wheel&#39; line: &#39;%wheel ALL=(ALL) NOPASSWD: ALL&#39; validate: &#39;visudo -cf %s&#39; - name: Add sudoers users to wheel group user: name=deployer groups=wheel append=yes state=present createhome=yes - name: Set up authorized keys for the deployer user authorized_key: user=deployer key=&amp;quot;{{item}}&amp;quot; with_file: - /home/railsdev/.</description>
+      <description>Contoh https://code-maven.com/enable-ansible-passwordless-sudo https://stackoverflow.com/questions/37333305/ansible-create-a-user-with-sudo-privileges - hosts: all tasks: - lineinfile: path: /etc/sudoers state: present regexp: &amp;#39;^%sudo&amp;#39; line: &amp;#39;%sudo ALL=(ALL) NOPASSWD: ALL&amp;#39; validate: &amp;#39;visudo -cf %s&amp;#39; contoh lain
+- name: Make sure we have a &amp;#39;wheel&amp;#39; group group: name: wheel state: present - name: Allow &amp;#39;wheel&amp;#39; group to have passwordless sudo lineinfile: dest: /etc/sudoers state: present regexp: &amp;#39;^%wheel&amp;#39; line: &amp;#39;%wheel ALL=(ALL) NOPASSWD: ALL&amp;#39; validate: &amp;#39;visudo -cf %s&amp;#39; - name: Add sudoers users to wheel group user: name=deployer groups=wheel append=yes state=present createhome=yes - name: Set up authorized keys for the deployer user authorized_key: user=deployer key=&amp;#34;{{item}}&amp;#34; with_file: - /home/railsdev/.</description>
     </item>
     
     <item>
@@ -119,7 +109,7 @@ systemctl restart smbd  test via windows, dengan mengakses \ip.atau.hostname.ser
       
       <guid>https://blog.indonesiadot.com/2020/08/04/jfrog-for-beginner/</guid>
       <description>Install jfrog di ubuntu https://websiteforstudents.com/how-to-install-jfrog-artifactory-on-ubuntu-18-04-16-04/
-apt install wget software-properties-common apt-transport-https apt-get install openjdk-8-jdk openjdk-8-doc wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add - add-apt-repository &amp;quot;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&amp;quot; apt-get update apt install jfrog-artifactory-oss  Membuat repository / artifacts baru di jfrog klik menu administration, lalu klik menu repositories (sebelah kiri), lalu klik + New Local Repository (sebelah kanan) klik / pilih generic, lalu isi repository key atau nama repository dengan apa saja yg diinginkan misal ansible-test-report klik save  test upload dan download via curl buat dahulu bbrp file, misal test.</description>
+apt install wget software-properties-common apt-transport-https apt-get install openjdk-8-jdk openjdk-8-doc wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add - add-apt-repository &amp;#34;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&amp;#34; apt-get update apt install jfrog-artifactory-oss Membuat repository / artifacts baru di jfrog klik menu administration, lalu klik menu repositories (sebelah kiri), lalu klik + New Local Repository (sebelah kanan) klik / pilih generic, lalu isi repository key atau nama repository dengan apa saja yg diinginkan misal ansible-test-report klik save test upload dan download via curl buat dahulu bbrp file, misal test.</description>
     </item>
     
     <item>
@@ -128,9 +118,9 @@ apt install wget software-properties-common apt-transport-https apt-get install 
       <pubDate>Wed, 15 Jul 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/07/15/multi-python-on-virtualenv-using-pyenv/</guid>
-      <description> pyenv Pos://realpython.com/intro-to-pyenv/
+      <description>pyenv Pos://realpython.com/intro-to-pyenv/
 Referensi:
- https://indonesiadot.com  </description>
+https://indonesiadot.com </description>
     </item>
     
     <item>
@@ -140,7 +130,7 @@ Referensi:
       
       <guid>https://blog.indonesiadot.com/2020/07/10/proxmox-beginner/</guid>
       <description>update proxmox repo https://pve.proxmox.com/wiki/Package_Repositories untuk bisa update proxmox harus dirubah dulu repo nya di file /etc/apt/sources.list (untuk proxmox 5.4 / debian 9 / stretch)
-deb http://kebo.pens.ac.id/debian stretch main contrib deb http://kebo.pens.ac.id/debian stretch-updates main contrib # security updates deb http://kebo.pens.ac.id/debian-security stretch/updates main contrib deb http://download.proxmox.com/debian/pve stretch pve-no-subscription  proxmox masquerade https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt
+deb http://kebo.pens.ac.id/debian stretch main contrib deb http://kebo.pens.ac.id/debian stretch-updates main contrib # security updates deb http://kebo.pens.ac.id/debian-security stretch/updates main contrib deb http://download.proxmox.com/debian/pve stretch pve-no-subscription proxmox masquerade https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt
 auto lo iface lo inet loopback auto ens192 iface ens192 inet static address 10.11.8.202 netmask 255.255.255.0 gateway 10.11.8.1 auto vmbr0 iface vmbr0 inet static address 192.</description>
     </item>
     
@@ -150,10 +140,10 @@ auto lo iface lo inet loopback auto ens192 iface ens192 inet static address 10.1
       <pubDate>Fri, 10 Jul 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/07/10/proxmox-versi-6/</guid>
-      <description> Proxmox Add ZFS Referensi:
- https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/ https://pve.proxmox.com/wiki/ZFS_on_Linux  Proxmox cloud-init Ref:
- https://cloud.centos.org/centos/7/images/ https://pve.proxmox.com/wiki/Cloud-Init_Support https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/  upgrade proxmox 5 to 6 https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0
-tmux pve5to6 #make sure it&#39;s ok systemctl stop pve-ha-lrm systemctl stop pve-ha-crm echo &amp;quot;deb http://download.proxmox.com/debian/corosync-3/ stretch main&amp;quot; &amp;gt; /etc/apt/sources.list.d/corosync3.list apt update apt dist-upgrade systemctl start pve-ha-lrm systemctl start pve-ha-crm sed -i &#39;s/stretch/buster/g&#39; /etc/apt/sources.list apt update apt dist-upgrade rm /etc/apt/sources.list.d/corosync3.list  </description>
+      <description>Proxmox Add ZFS Referensi:
+https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/ https://pve.proxmox.com/wiki/ZFS_on_Linux Proxmox cloud-init Ref:
+https://cloud.centos.org/centos/7/images/ https://pve.proxmox.com/wiki/Cloud-Init_Support https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/ upgrade proxmox 5 to 6 https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0
+tmux pve5to6 #make sure it&amp;#39;s ok systemctl stop pve-ha-lrm systemctl stop pve-ha-crm echo &amp;#34;deb http://download.proxmox.com/debian/corosync-3/ stretch main&amp;#34; &amp;gt; /etc/apt/sources.list.d/corosync3.list apt update apt dist-upgrade systemctl start pve-ha-lrm systemctl start pve-ha-crm sed -i &amp;#39;s/stretch/buster/g&amp;#39; /etc/apt/sources.list apt update apt dist-upgrade rm /etc/apt/sources.list.d/corosync3.list </description>
     </item>
     
     <item>
@@ -163,7 +153,7 @@ tmux pve5to6 #make sure it&#39;s ok systemctl stop pve-ha-lrm systemctl stop pve
       
       <guid>https://blog.indonesiadot.com/2020/07/08/iptables-tips/</guid>
       <description>iptables adalah program utility untuk seting firewall di linux.
-Flush All Rules, Delete All Chains, and Accept All  https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules  This section will show you how to flush all of your firewall rules, tables, and chains, and allow all network traffic.
+Flush All Rules, Delete All Chains, and Accept All https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules This section will show you how to flush all of your firewall rules, tables, and chains, and allow all network traffic.
 Note: This will effectively disable your firewall. You should only follow this section if you want to start over the configuration of your firewall.
 First, set the default policies for each of the built-in chains to ACCEPT.</description>
     </item>
@@ -174,8 +164,8 @@ First, set the default policies for each of the built-in chains to ACCEPT.</desc
       <pubDate>Thu, 02 Jul 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/07/02/redhat-rhel-free-for-developer/</guid>
-      <description> Langkah  Download Install Update  Referensi:
- https://developers.redhat.com/blog/2016/03/31/no-cost-rhel-developer-subscription-now-available/ https://developers.redhat.com/products/rhel/download https://blog.turbonomic.com/blog/on-technology/deploying-a-red-hat-enterprise-linux-7-rhel7-on-virtualbox  </description>
+      <description>Langkah Download Install Update Referensi:
+https://developers.redhat.com/blog/2016/03/31/no-cost-rhel-developer-subscription-now-available/ https://developers.redhat.com/products/rhel/download https://blog.turbonomic.com/blog/on-technology/deploying-a-red-hat-enterprise-linux-7-rhel7-on-virtualbox </description>
     </item>
     
     <item>
@@ -184,9 +174,9 @@ First, set the default policies for each of the built-in chains to ACCEPT.</desc
       <pubDate>Tue, 30 Jun 2020 12:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/06/30/ansible-postgresql/</guid>
-      <description>Requirements pip install psycopg2-binary  playbooks cat psql.yml
-- hosts: localhost become: yes gather_facts: no connection: local tasks: - name: Simple select query to acme db postgresql_query: db: pgtower login_user: pgtower login_password: pgtower query: SELECT version() register: result - debug: var: result  cat psqlgraf.yml
-- hosts: localhost become: yes gather_facts: no connection: local tasks: - name: Simple select query to acme db postgresql_query: db: montower login_host: 10.11.8.13 login_user: ansible login_password: r4hasia query: SELECT * from hosts register: result - debug: var: result  run with command:</description>
+      <description>Requirements pip install psycopg2-binary playbooks cat psql.yml
+- hosts: localhost become: yes gather_facts: no connection: local tasks: - name: Simple select query to acme db postgresql_query: db: pgtower login_user: pgtower login_password: pgtower query: SELECT version() register: result - debug: var: result cat psqlgraf.yml
+- hosts: localhost become: yes gather_facts: no connection: local tasks: - name: Simple select query to acme db postgresql_query: db: montower login_host: 10.11.8.13 login_user: ansible login_password: r4hasia query: SELECT * from hosts register: result - debug: var: result run with command:</description>
     </item>
     
     <item>
@@ -196,8 +186,8 @@ First, set the default policies for each of the built-in chains to ACCEPT.</desc
       
       <guid>https://blog.indonesiadot.com/2020/06/30/postgresql-tips/</guid>
       <description>Postgresql export and import to mysql di server postgresql jalankan command berikut untuk export:
-#pg_dump --verbose --schema-only --table=xx_user --db=test --file=/tmp/montower.sql pg_dump --verbose --schema-only --db=montower --file=/tmp/montower.sql psql -U namauserpsql montower copy xx_user to &#39;/tmp/hosts.txt&#39; with (delimiter &#39;,&#39;);  di server mysql jalankan command berikut untuk import:
-mysql --local-infile create database montower; use montower; #load data local infile &#39;/home/postgres/user.txt&#39; into table xx_user fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;; load data local infile &#39;/tmp/montower.</description>
+#pg_dump --verbose --schema-only --table=xx_user --db=test --file=/tmp/montower.sql pg_dump --verbose --schema-only --db=montower --file=/tmp/montower.sql psql -U namauserpsql montower copy xx_user to &amp;#39;/tmp/hosts.txt&amp;#39; with (delimiter &amp;#39;,&amp;#39;); di server mysql jalankan command berikut untuk import:
+mysql --local-infile create database montower; use montower; #load data local infile &amp;#39;/home/postgres/user.txt&amp;#39; into table xx_user fields terminated by &amp;#39;,&amp;#39; lines terminated by &amp;#39;\n&amp;#39;; load data local infile &amp;#39;/tmp/montower.</description>
     </item>
     
     <item>
@@ -208,7 +198,7 @@ mysql --local-infile create database montower; use montower; #load data local in
       <guid>https://blog.indonesiadot.com/2020/06/24/ansible-to-windows-via-winrm/</guid>
       <description>Prerequisites on windows Upgrading PowerShell and .NET Framework https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html
 Buka powershell sebagai administrator, lalu copy paste bagian berikut:
-$url = &amp;quot;https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1&amp;quot; $file = &amp;quot;$env:temp\Upgrade-PowerShell.ps1&amp;quot; $username = &amp;quot;Administrator&amp;quot; $password = &amp;quot;Password&amp;quot; (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file) Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force # Version can be 3.0, 4.0 or 5.1 &amp;amp;$file -Version 5.1 -Username $username -Password $password -Verbose  Once completed, you will need to remove auto logon and set the execution policy back to the default of Restricted.</description>
+$url = &amp;#34;https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1&amp;#34; $file = &amp;#34;$env:temp\Upgrade-PowerShell.ps1&amp;#34; $username = &amp;#34;Administrator&amp;#34; $password = &amp;#34;Password&amp;#34; (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file) Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force # Version can be 3.0, 4.0 or 5.1 &amp;amp;$file -Version 5.1 -Username $username -Password $password -Verbose Once completed, you will need to remove auto logon and set the execution policy back to the default of Restricted.</description>
     </item>
     
     <item>
@@ -217,10 +207,10 @@ $url = &amp;quot;https://raw.githubusercontent.com/jborean93/ansible-windows/mas
       <pubDate>Tue, 23 Jun 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/06/23/2fa-with-google-authenticator/</guid>
-      <description> Ubuntu Pastikan terdapat baris berikut di /etc/ssh/sshd_config ChallengeResponseAuthentication yes UsePAM yes  lalu restart service sshd
-Tambahkan baris berikut di akhir /etc/pam.d/common-auth auth required pam_google_authenticator.so nullok  Go go gadget install google-authenticator app from android playstore, then add the server to show the code
+      <description>Ubuntu Pastikan terdapat baris berikut di /etc/ssh/sshd_config ChallengeResponseAuthentication yes UsePAM yes lalu restart service sshd
+Tambahkan baris berikut di akhir /etc/pam.d/common-auth auth required pam_google_authenticator.so nullok Go go gadget install google-authenticator app from android playstore, then add the server to show the code
 Referensi:
- https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator https://wiki.alpinelinux.org/wiki/Two_Factors_Authentication_With_OpenSSH  </description>
+https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator https://wiki.alpinelinux.org/wiki/Two_Factors_Authentication_With_OpenSSH </description>
     </item>
     
     <item>
@@ -229,7 +219,7 @@ Referensi:
       <pubDate>Fri, 12 Jun 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/06/12/postgresql/</guid>
-      <description>Install pgadmin4 di ubuntu 18 apt-get install curl ca-certificates gnupg curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - sh -c &#39;echo &amp;quot;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&amp;quot; &amp;gt; /etc/apt/sources.list.d/pgdg.list&#39; apt update apt install pgadmin4  create db su - postgres psql create database dvdrental; \q wget https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip unzip dvdrental.zip pg_restore -d dvdrental dvdrental.tar psql -d dvdrental GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO pgtower; \q psql -U pgtower -d dvdrental select first_name from customer; \q  pg_hba.</description>
+      <description>Install pgadmin4 di ubuntu 18 apt-get install curl ca-certificates gnupg curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - sh -c &amp;#39;echo &amp;#34;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&amp;#34; &amp;gt; /etc/apt/sources.list.d/pgdg.list&amp;#39; apt update apt install pgadmin4 create db su - postgres psql create database dvdrental; \q wget https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip unzip dvdrental.zip pg_restore -d dvdrental dvdrental.tar psql -d dvdrental GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO pgtower; \q psql -U pgtower -d dvdrental select first_name from customer; \q pg_hba.</description>
     </item>
     
     <item>
@@ -238,7 +228,7 @@ Referensi:
       <pubDate>Sat, 04 Apr 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/04/04/elk-elasticsearch-logstash-kibana-references/</guid>
-      <description> https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7   </description>
+      <description> https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7 </description>
     </item>
     
     <item>
@@ -247,7 +237,7 @@ Referensi:
       <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</guid>
-      <description> Jenkins Ansible Tower  https://plugins.jenkins.io/ansible-tower/ https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process https://dzone.com/articles/how-to-setup-continuous-delivery-environment  </description>
+      <description>Jenkins Ansible Tower https://plugins.jenkins.io/ansible-tower/ https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process https://dzone.com/articles/how-to-setup-continuous-delivery-environment </description>
     </item>
     
     <item>
@@ -256,7 +246,7 @@ Referensi:
       <pubDate>Fri, 03 Apr 2020 15:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/04/03/security-compliance-baseline-benchmark/</guid>
-      <description> ssg baseline  https://static.open-scap.org/ https://static.open-scap.org/ssg-guides/ssg-rhel7-guide-index.html  cis baseline  https://www.cisecurity.org/cis-benchmarks/ https://indonesiadot.com https://birau.com  </description>
+      <description>ssg baseline https://static.open-scap.org/ https://static.open-scap.org/ssg-guides/ssg-rhel7-guide-index.html cis baseline https://www.cisecurity.org/cis-benchmarks/ https://indonesiadot.com https://birau.com </description>
     </item>
     
     <item>
@@ -265,9 +255,11 @@ Referensi:
       <pubDate>Fri, 27 Mar 2020 12:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/27/sentinelone-epp-edr-on-premise/</guid>
-      <description> Prerequisites and preparation Hardware Requirements: Management Versions Grand Canyon and later  Agents 10,000 to 20,000 CPU 16 Cores RAM 32 GB Disk Root: 16 GB, Disk 500 GB XFS
- https://support.sentinelone.com/hc/en-us/articles/360010427613-On-Prem-OVA-Prerequisites-and-Preparation
-  </description>
+      <description>Prerequisites and preparation Hardware Requirements: Management Versions Grand Canyon and later Agents 10,000 to 20,000
+CPU 16 Cores
+RAM 32 GB
+Disk Root: 16 GB, Disk 500 GB XFS
+https://support.sentinelone.com/hc/en-us/articles/360010427613-On-Prem-OVA-Prerequisites-and-Preparation</description>
     </item>
     
     <item>
@@ -276,8 +268,8 @@ Referensi:
       <pubDate>Fri, 20 Mar 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/20/certificate-ssl-key-csr-crt/</guid>
-      <description>create csr ubuntu 18 openssl genrsa –out domain.key 2048 openssl req –new –key domain.key –out domain.csr #or #openssl req -new -newkey rsa:2048 -nodes -keyout domain.key -out domain.csr   https://vitux.com/how-to-generate-a-certificate-signing-request-csr-on-ubuntu/ https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-18-04  random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/root/.rnd If you have RANDFILE=&amp;hellip; configuration lines in your openssl.cnf than you can safely remove them
- https://github.com/openssl/openssl/issues/7754  convert p7b / p7c / pkcs7 to crt Description What are the differences between .</description>
+      <description>create csr ubuntu 18 openssl genrsa –out domain.key 2048 openssl req –new –key domain.key –out domain.csr #or #openssl req -new -newkey rsa:2048 -nodes -keyout domain.key -out domain.csr https://vitux.com/how-to-generate-a-certificate-signing-request-csr-on-ubuntu/ https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-18-04 random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/root/.rnd If you have RANDFILE=&amp;hellip; configuration lines in your openssl.cnf than you can safely remove them
+https://github.com/openssl/openssl/issues/7754 convert p7b / p7c / pkcs7 to crt Description What are the differences between .p7b, .pfx, .p12, .pem, .der, .crt &amp;amp; .</description>
     </item>
     
     <item>
@@ -287,9 +279,9 @@ Referensi:
       
       <guid>https://blog.indonesiadot.com/2020/03/18/ansible-tower-for-beginner/</guid>
       <description>Before going to start the installation steps, we need to know some benefits of Ansible Tower.
-Why we need Ansible Tower and it’s benefits?  Ansible Tower helps you scale IT automation, manage complex deployments and speed productivity.
- Centralize and control your IT infrastructure with a visual dashboard, role-based access control, job scheduling, integrated notifications and graphical inventory management.
- Ansible Tower’s REST API and CLI make it easy to embed Ansible Tower into existing tools and processes.</description>
+Why we need Ansible Tower and it’s benefits? Ansible Tower helps you scale IT automation, manage complex deployments and speed productivity.
+Centralize and control your IT infrastructure with a visual dashboard, role-based access control, job scheduling, integrated notifications and graphical inventory management.
+Ansible Tower’s REST API and CLI make it easy to embed Ansible Tower into existing tools and processes.</description>
     </item>
     
     <item>
@@ -308,7 +300,7 @@ Elasticsearch handles storage and provides a RESTful search and analytics endpoi
       <pubDate>Wed, 18 Mar 2020 07:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/18/ubuntu-tips/</guid>
-      <description> Install specific version apt-cache policy gparted apt install gparted=0.16.1-1   https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package  apport high cpu killall -9 apport service apport stop &amp;amp;&amp;amp; systemctl stop apport rm -f /var/crash/* apt-get remove apport -y  </description>
+      <description>Install specific version apt-cache policy gparted apt install gparted=0.16.1-1 https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package apport high cpu killall -9 apport service apport stop &amp;amp;&amp;amp; systemctl stop apport rm -f /var/crash/* apt-get remove apport -y </description>
     </item>
     
     <item>
@@ -317,7 +309,7 @@ Elasticsearch handles storage and provides a RESTful search and analytics endpoi
       <pubDate>Mon, 16 Mar 2020 19:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</guid>
-      <description> ansible logstash example  https://github.com/widansible/elk-ansible https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html  </description>
+      <description>ansible logstash example https://github.com/widansible/elk-ansible https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html </description>
     </item>
     
     <item>
@@ -326,7 +318,7 @@ Elasticsearch handles storage and provides a RESTful search and analytics endpoi
       <pubDate>Mon, 16 Mar 2020 10:57:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/16/kubernetes-references/</guid>
-      <description>  https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076 https://medium.com/@kvaps/creating-baremethal-kubernetes-ha-cluster-with-kubeadm-and-keepalived-simple-guide https://medium.com/@kvaps/creating-high-available-baremetal-kubernetes-cluster-with-kubeadm-and-keepalived-simplest-guide-71766d5e25ae?source=---------6------------------  kubernetes monitoring  https://medium.com/@kvaps/zabbix-solve-memory-monitoring-issue-inside-lxc-containers-98ddf191051c  </description>
+      <description> https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076 https://medium.com/@kvaps/creating-baremethal-kubernetes-ha-cluster-with-kubeadm-and-keepalived-simple-guide https://medium.com/@kvaps/creating-high-available-baremetal-kubernetes-cluster-with-kubeadm-and-keepalived-simplest-guide-71766d5e25ae?source=---------6------------------ kubernetes monitoring https://medium.com/@kvaps/zabbix-solve-memory-monitoring-issue-inside-lxc-containers-98ddf191051c </description>
     </item>
     
     <item>
@@ -335,7 +327,7 @@ Elasticsearch handles storage and provides a RESTful search and analytics endpoi
       <pubDate>Mon, 16 Mar 2020 10:47:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/16/kubernetes-inside-lxc/</guid>
-      <description>  https://medium.com/@kvaps/run-kubernetes-in-lxc-container-f04aa94b6c9c https://github.com/corneliusweig/kubernetes-lxd https://www.sayem.org/k8s-on-lxd/ https://discuss.linuxcontainers.org/t/working-install-of-docker-ce-in-lxc-unprivileged-container-in-proxmox/3828/4 https://forum.proxmox.com/threads/lxc-docker-containerd-cannot-find-lib-modules-4-15-18-9-pve.49406/ https://forum.proxmox.com/threads/docker-in-lxc-container.45204/ https://discuss.linuxcontainers.org/t/how-to-add-kernel-modules-into-an-lxc-container/5033/3  kubernetes haproxy  https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076  </description>
+      <description> https://medium.com/@kvaps/run-kubernetes-in-lxc-container-f04aa94b6c9c https://github.com/corneliusweig/kubernetes-lxd https://www.sayem.org/k8s-on-lxd/ https://discuss.linuxcontainers.org/t/working-install-of-docker-ce-in-lxc-unprivileged-container-in-proxmox/3828/4 https://forum.proxmox.com/threads/lxc-docker-containerd-cannot-find-lib-modules-4-15-18-9-pve.49406/ https://forum.proxmox.com/threads/docker-in-lxc-container.45204/ https://discuss.linuxcontainers.org/t/how-to-add-kernel-modules-into-an-lxc-container/5033/3 kubernetes haproxy https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076 </description>
     </item>
     
     <item>
@@ -344,7 +336,7 @@ Elasticsearch handles storage and provides a RESTful search and analytics endpoi
       <pubDate>Mon, 16 Mar 2020 10:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/16/mxtoolbox-mail-blacklist/</guid>
-      <description> Free alert (register with gmail)  https://mxtoolbox.com/public/registration.aspx?so=PB_FREE&amp;amp;page=free_registration https://mxtoolbox.com/blacklists.aspx  </description>
+      <description>Free alert (register with gmail) https://mxtoolbox.com/public/registration.aspx?so=PB_FREE&amp;amp;page=free_registration https://mxtoolbox.com/blacklists.aspx </description>
     </item>
     
     <item>
@@ -353,7 +345,7 @@ Elasticsearch handles storage and provides a RESTful search and analytics endpoi
       <pubDate>Mon, 16 Mar 2020 10:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/16/qemu-tips/</guid>
-      <description> Qemu resize qemu-img resize image.qcow2 +SIZE   https://indonesiadot.com  </description>
+      <description>Qemu resize qemu-img resize image.qcow2 +SIZE https://indonesiadot.com </description>
     </item>
     
     <item>
@@ -362,10 +354,10 @@ Elasticsearch handles storage and provides a RESTful search and analytics endpoi
       <pubDate>Mon, 16 Mar 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/16/qmail-toaster/</guid>
-      <description>Qmail ssl letsencrypt yum install certbot python2-certbot python2-certbot-apache python2-certbot-dns-cloudflare cat &amp;lt;EOF&amp;gt; cloudflare.ini dns_cloudflare_email = user@example.com dns_cloudflare_api_key = j2c2166gd6688921b1497e7cfd6cf69f7f936 EOF certbot certonly --dns-cloudflare --dns-cloudflare-credentials cloudflare.ini dns-cloudflare-propagation-seconds 60 -d *.example.com  Add to apache vhost centos
-SSLCertificateFile /etc/letsencrypt/live/example.com/cert.pem SSLCertificateKeyFile /etc/letsencrypt/live/example.com/privkey.pem Include /etc/letsencrypt/options-ssl-apache.conf SSLCertificateChainFile /etc/letsencrypt/live/example.com/fullchain.pem  Add to Dovecot CentOS 6 &amp;amp; 7 (/etc/dovecot/toaster.conf)
- ssl_cert = &amp;lt;/etc/letsencrypt/live/example.com/fullchain.pem ssl_key = &amp;lt;/etc/letsencrypt/live/example.com/privkey.pem  Add to Qmail CentOS 6 &amp;amp; 7
- cp -p /var/qmail/control/servercert.</description>
+      <description>Qmail ssl letsencrypt yum install certbot python2-certbot python2-certbot-apache python2-certbot-dns-cloudflare cat &amp;lt;EOF&amp;gt; cloudflare.ini dns_cloudflare_email = user@example.com dns_cloudflare_api_key = j2c2166gd6688921b1497e7cfd6cf69f7f936 EOF certbot certonly --dns-cloudflare --dns-cloudflare-credentials cloudflare.ini dns-cloudflare-propagation-seconds 60 -d *.example.com Add to apache vhost centos
+SSLCertificateFile /etc/letsencrypt/live/example.com/cert.pem SSLCertificateKeyFile /etc/letsencrypt/live/example.com/privkey.pem Include /etc/letsencrypt/options-ssl-apache.conf SSLCertificateChainFile /etc/letsencrypt/live/example.com/fullchain.pem Add to Dovecot CentOS 6 &amp;amp; 7 (/etc/dovecot/toaster.conf)
+ssl_cert = &amp;lt;/etc/letsencrypt/live/example.com/fullchain.pem ssl_key = &amp;lt;/etc/letsencrypt/live/example.com/privkey.pem Add to Qmail CentOS 6 &amp;amp; 7
+cp -p /var/qmail/control/servercert.pem /var/qmail/control/servercert.pem.bak cat /etc/letsencrypt/live/example.com/privkey.pem /etc/letsencrypt/live/example.com/fullchain.pem &amp;gt; /var/qmail/control/servercert.</description>
     </item>
     
     <item>
@@ -374,16 +366,10 @@ SSLCertificateFile /etc/letsencrypt/live/example.com/cert.pem SSLCertificateKeyF
       <pubDate>Fri, 13 Mar 2020 06:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/13/sentinelone-epp-edr/</guid>
-      <description>cloud connectivity became offline  make sure all of the docker container is run with docker ps
- the date of the on-prem server must be UTC
-date  Wed Mar 11 09:18:42 UTC 2020
- test cloudgateway api info with curl
-curl -v https://cloudgateway-prod-ap.sentinelone.net/api/v2/info  Trying 13.112.219.166&amp;hellip;
- TCP_NODELAY set
- Connected to cloudgateway-prod-ap.sentinelone.net (13.112.219.166) port 443 (#0)
- ALPN, offering h2
- ALPN, offering http/1.1
- successfully set certificate verify locations:</description>
+      <description>cloud connectivity became offline make sure all of the docker container is run with docker ps
+the date of the on-prem server must be UTC
+date Wed Mar 11 09:18:42 UTC 2020
+test cloudgateway api info with curl curl -v https://cloudgateway-prod-ap.sentinelone.net/api/v2/info Trying 13.112.219.166&amp;hellip; TCP_NODELAY set Connected to cloudgateway-prod-ap.sentinelone.net (13.112.219.166) port 443 (#0) ALPN, offering h2 ALPN, offering http/1.1 successfully set certificate verify locations: CAfile: /etc/ssl/certs/ca-certificates.crt CApath: /etc/ssl/certs TLSv1.3 (OUT), TLS handshake, Client hello (1): TLSv1.</description>
     </item>
     
     <item>
@@ -392,7 +378,7 @@ curl -v https://cloudgateway-prod-ap.sentinelone.net/api/v2/info  Trying 13.112.
       <pubDate>Thu, 12 Mar 2020 20:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/12/lvm-tips/</guid>
-      <description> resize / increase lvm lvextend --size +10G /dev/vg0/foo lvextend --size 20G /dev/vg0/foo lvdisplay /dev/vg0/foo   http://www.microhowto.info/howto/increase_the_size_of_an_lvm_logical_volume.html https://linoxide.com/linux-how-to/lvm-configuration-linux/  pvresize pvresize /dev/sda3   https://www.thegeekdiary.com/centos-rhel-how-to-resize-extend-existing-physical-volume-pv/  </description>
+      <description>resize / increase lvm lvextend --size +10G /dev/vg0/foo lvextend --size 20G /dev/vg0/foo lvdisplay /dev/vg0/foo http://www.microhowto.info/howto/increase_the_size_of_an_lvm_logical_volume.html https://linoxide.com/linux-how-to/lvm-configuration-linux/ pvresize pvresize /dev/sda3 https://www.thegeekdiary.com/centos-rhel-how-to-resize-extend-existing-physical-volume-pv/ </description>
     </item>
     
     <item>
@@ -401,7 +387,8 @@ curl -v https://cloudgateway-prod-ap.sentinelone.net/api/v2/info  Trying 13.112.
       <pubDate>Thu, 12 Mar 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/12/ceph-tips/</guid>
-      <description>remove osd systemctl stop ceph-osd.target systemctl stop ceph-osd@0 ceph osd out 0 ceph osd down 0 ceph osd destroy 0 ceph osd destroy 0 --yes-i-really-mean-it ceph osd rm 0 ceph osd crush rm osd.0 ceph auth del osd.0 ceph-volume lvm zap /dev/sdX --destroy   https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87 https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/  all about pg_num  https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox  ceph one / single node ceph osd getcrushmap -o crush_map_compressed crushtool -d crush_map_compressed -o crush_map_decompressed vi crush_map_decompressed  lalu cari bagian:</description>
+      <description>remove osd systemctl stop ceph-osd.target systemctl stop ceph-osd@0 ceph osd out 0 ceph osd down 0 ceph osd destroy 0 ceph osd destroy 0 --yes-i-really-mean-it ceph osd rm 0 ceph osd crush rm osd.0 ceph auth del osd.0 ceph-volume lvm zap /dev/sdX --destroy https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87 https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/ all about pg_num https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox ceph one / single node ceph osd getcrushmap -o crush_map_compressed crushtool -d crush_map_compressed -o crush_map_decompressed vi crush_map_decompressed lalu cari bagian:
+step chooseleaf firstn 0 type host rubah menjadi:</description>
     </item>
     
     <item>
@@ -410,9 +397,9 @@ curl -v https://cloudgateway-prod-ap.sentinelone.net/api/v2/info  Trying 13.112.
       <pubDate>Tue, 10 Mar 2020 06:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/10/lxd-lxc/</guid>
-      <description>lxc set static ip lxc stop c1 lxc network attach lxdbr0 c1 eth0 eth0 lxc config device set c1 eth0 ipv4.address 10.99.10.42 lxc start c1   https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4  lxc privileged to unprivileged Pada saat container (CT) lxc dalam unprivileged mode memiliki hak terbatas seperti akses ke device dan beberapa lainnya.
+      <description>lxc set static ip lxc stop c1 lxc network attach lxdbr0 c1 eth0 eth0 lxc config device set c1 eth0 ipv4.address 10.99.10.42 lxc start c1 https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4 lxc privileged to unprivileged Pada saat container (CT) lxc dalam unprivileged mode memiliki hak terbatas seperti akses ke device dan beberapa lainnya.
 Contoh pada saat menjalankan docker itu ada pesan error Failed to reset devices.list on /system.slice
-Workaround nya adalah dengan membuat CT menjadi privileged mode, caranya yaitu: - backup CT - restore CT dengan uncheck unprivileged mode</description>
+Workaround nya adalah dengan membuat CT menjadi privileged mode, caranya yaitu:</description>
     </item>
     
     <item>
@@ -421,7 +408,7 @@ Workaround nya adalah dengan membuat CT menjadi privileged mode, caranya yaitu: 
       <pubDate>Mon, 09 Mar 2020 17:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution-1-briefing-session/</guid>
-      <description>Background  belum adanya standarisasi system security perusahaan yang mengacu kepada baseline standarisasi internasional seperti CIS, NIST atau PCI-DSS pekerjaan manual yang sangat kompleks, lama dan berat jika harus dilakukan secara manual untuk melakukan standarisasi security system masih banyaknya server perusahaan yang non-comply dengan standarisasi sistem security yang telah dibuat oleh perusahaan  Objective  mengurangi serangan konfigurasi yang robust secured protocols comply kepada standarisasi internasional dan standarisasi internal perusahaan  Technical Requirements Langkah 1:</description>
+      <description>Background belum adanya standarisasi system security perusahaan yang mengacu kepada baseline standarisasi internasional seperti CIS, NIST atau PCI-DSS pekerjaan manual yang sangat kompleks, lama dan berat jika harus dilakukan secara manual untuk melakukan standarisasi security system masih banyaknya server perusahaan yang non-comply dengan standarisasi sistem security yang telah dibuat oleh perusahaan Objective mengurangi serangan konfigurasi yang robust secured protocols comply kepada standarisasi internasional dan standarisasi internal perusahaan Technical Requirements Langkah 1:</description>
     </item>
     
     <item>
@@ -431,7 +418,7 @@ Workaround nya adalah dengan membuat CT menjadi privileged mode, caranya yaitu: 
       
       <guid>https://blog.indonesiadot.com/2020/03/06/proxmox-add-zfs-disk/</guid>
       <description>Add Disk Hardware Tambahkan harddisk di server secara berurutan port sata nya, dan catat ID disknya
-Setting at command line ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4 zpool create rpoolkube -o ashift=12 mirror /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4 zpool status  Tambahkan proxmox storage pool Dari proxmox pool, lalu klik storage, lalu add storage, pilih zfs. Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masukan block size 64k, lalu klik create.</description>
+Setting at command line ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4 zpool create rpoolkube -o ashift=12 mirror /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4 zpool status Tambahkan proxmox storage pool Dari proxmox pool, lalu klik storage, lalu add storage, pilih zfs. Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masukan block size 64k, lalu klik create.</description>
     </item>
     
     <item>
@@ -440,9 +427,9 @@ Setting at command line ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R l
       <pubDate>Thu, 05 Mar 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/05/netcat-bandwidth-test/</guid>
-      <description> Netcat Bandwidth Test netcat-server nc -l -p 12345 | wc -c  netcat-client dd if=/dev/zero bs=$((2**20)) count=$((2**10)) | nc -q 0 netcat-server 12345 #or dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345  on the server run nload to see the bandwidth used at eth0 for incoming and outgoing
+      <description>Netcat Bandwidth Test netcat-server nc -l -p 12345 | wc -c netcat-client dd if=/dev/zero bs=$((2**20)) count=$((2**10)) | nc -q 0 netcat-server 12345 #or dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345 on the server run nload to see the bandwidth used at eth0 for incoming and outgoing
 Referensi:
- https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/ https://www.thegeekstuff.com/2012/04/nc-command-examples/  </description>
+https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/ https://www.thegeekstuff.com/2012/04/nc-command-examples/ </description>
     </item>
     
     <item>
@@ -451,9 +438,9 @@ Referensi:
       <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/05/</guid>
-      <description> Post Ini adalah contoh post
+      <description>Post Ini adalah contoh post
 Referensi:
- https://indonesiadot.com  </description>
+https://indonesiadot.com </description>
     </item>
     
     <item>
@@ -462,8 +449,8 @@ Referensi:
       <pubDate>Thu, 05 Mar 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/05/python-tips/</guid>
-      <description> module python web server python -m SimpleHTTPServer 8001 python -m SimpleHTTPServer 8002   https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver https://www.pcsuggest.com/best-lightweight-web-server-linux/  multiple python version on centos 6 https://stackoverflow.com/questions/20842732/libpython2-7-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory https://www.2daygeek.com/install-python-3-on-centos-6/
-yum install centos-release-scl -y yum --enablerepo=&#39;centos-sclo-rh&#39; install python27-python -y echo &amp;quot;/opt/rh/python27/root/usr/lib64&amp;quot; &amp;gt;&amp;gt; /etc/ld.so.conf ldconfig /opt/rh/python27/root/usr/bin/python --version yum --enablerepo=&#39;centos-sclo-rh&#39; install rh-python36-python /opt/rh/rh-python36/root/usr/bin/python --version  </description>
+      <description>module python web server python -m SimpleHTTPServer 8001 python -m SimpleHTTPServer 8002 https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver https://www.pcsuggest.com/best-lightweight-web-server-linux/ multiple python version on centos 6 https://stackoverflow.com/questions/20842732/libpython2-7-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory https://www.2daygeek.com/install-python-3-on-centos-6/
+yum install centos-release-scl -y yum --enablerepo=&amp;#39;centos-sclo-rh&amp;#39; install python27-python -y echo &amp;#34;/opt/rh/python27/root/usr/lib64&amp;#34; &amp;gt;&amp;gt; /etc/ld.so.conf ldconfig /opt/rh/python27/root/usr/bin/python --version yum --enablerepo=&amp;#39;centos-sclo-rh&amp;#39; install rh-python36-python /opt/rh/rh-python36/root/usr/bin/python --version </description>
     </item>
     
     <item>
@@ -472,7 +459,7 @@ yum install centos-release-scl -y yum --enablerepo=&#39;centos-sclo-rh&#39; inst
       <pubDate>Fri, 28 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/28/yum-tips/</guid>
-      <description> Yum install specific version yum list docker-ce.x86_64 --showduplicates yum list docker-ce.x86_64 --showduplicates | sort -r yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09   https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos  </description>
+      <description>Yum install specific version yum list docker-ce.x86_64 --showduplicates yum list docker-ce.x86_64 --showduplicates | sort -r yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09 https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos </description>
     </item>
     
     <item>
@@ -483,7 +470,7 @@ yum install centos-release-scl -y yum --enablerepo=&#39;centos-sclo-rh&#39; inst
       <guid>https://blog.indonesiadot.com/2020/02/27/ubuntu-networking-using-netplan/</guid>
       <description>Ubuntu networking using netplan Configuration To configure netplan, save configuration files under /etc/netplan/ with a .yaml extension (e.g. /etc/netplan/config.yaml), then run sudo netplan apply. This command parses and applies the configuration to the system. Configuration written to disk under /etc/netplan/ will persist between reboots.
 Using DHCP and static addressing To let the interface named ‘enp3s0’ get an address via DHCP, create a YAML file with the following:
-network: version: 2 renderer: networkd ethernets: enp3s0: dhcp4: true  To instead set a static IP address, use the addresses key, which takes a list of (IPv4 or IPv6), addresses along with the subnet prefix length (e.</description>
+network: version: 2 renderer: networkd ethernets: enp3s0: dhcp4: true To instead set a static IP address, use the addresses key, which takes a list of (IPv4 or IPv6), addresses along with the subnet prefix length (e.</description>
     </item>
     
     <item>
@@ -492,9 +479,9 @@ network: version: 2 renderer: networkd ethernets: enp3s0: dhcp4: true  To instea
       <pubDate>Tue, 25 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/25/ubiquiti-unifi-on-linux-ubuntu/</guid>
-      <description> Ubiquiti Unifi on Linux Ubuntu apt-get update; apt-get install ca-certificates wget -y wget https://get.glennr.nl/unifi/install/unifi-5.12.35.sh bash unifi-5.12.35.sh  access your unifi controller at https://ip.of.your.server:8443
+      <description>Ubiquiti Unifi on Linux Ubuntu apt-get update; apt-get install ca-certificates wget -y wget https://get.glennr.nl/unifi/install/unifi-5.12.35.sh bash unifi-5.12.35.sh access your unifi controller at https://ip.of.your.server:8443
 Referensi:
- https://community.ui.com/questions/UniFi-Installation-Scripts-or-UniFi-Easy-Update-Script-or-UniFi-Lets-Encrypt-or-Ubuntu-16-04-18-04-/ccbc7530-dd61-40a7-82ec-22b17f027776 https://github.com/widcampur/ubiquiti-unifi-controller-install  </description>
+https://community.ui.com/questions/UniFi-Installation-Scripts-or-UniFi-Easy-Update-Script-or-UniFi-Lets-Encrypt-or-Ubuntu-16-04-18-04-/ccbc7530-dd61-40a7-82ec-22b17f027776 https://github.com/widcampur/ubiquiti-unifi-controller-install </description>
     </item>
     
     <item>
@@ -503,8 +490,8 @@ Referensi:
       <pubDate>Mon, 24 Feb 2020 22:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/24/analisa-virus-dengan-virustotal/</guid>
-      <description> Analisa Virus dengan virustotal Referensi:
- https://www.virustotal.com/gui/home/upload  </description>
+      <description>Analisa Virus dengan virustotal Referensi:
+https://www.virustotal.com/gui/home/upload </description>
     </item>
     
     <item>
@@ -514,7 +501,7 @@ Referensi:
       
       <guid>https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/</guid>
       <description>Cut and Combine Video Avidemux
-Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &amp;gt; Youtube Studio 2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks 3. Untuk video baru, klik set languages, lalu confirm 4. Klik tombol ADD / Tambahkan subtitel atau CC baru.  Add watermark ffmpeg -i input.mp4 -i watermark.</description>
+Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &amp;gt; Youtube Studio 2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks 3. Untuk video baru, klik set languages, lalu confirm 4. Klik tombol ADD / Tambahkan subtitel atau CC baru. Add watermark ffmpeg -i input.mp4 -i watermark.png -filter_complex &amp;#34;overlay=1500:1000&amp;#34; output.</description>
     </item>
     
     <item>
@@ -523,8 +510,8 @@ Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio 
       <pubDate>Thu, 20 Feb 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</guid>
-      <description> Ansible OS Hardening mkdir -p /data/backups  Referensi:
- https://indonesiadot.com  </description>
+      <description>Ansible OS Hardening mkdir -p /data/backups Referensi:
+https://indonesiadot.com </description>
     </item>
     
     <item>
@@ -533,10 +520,11 @@ Youtube Add text / caption / subtitle / Anotasi on video 1. Buka Youtube Studio 
       <pubDate>Thu, 20 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</guid>
-      <description>Ansible Tower tips and trick Change admin password awx-manage changepassword admin  backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
- https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/  Offline ansible tower bundle  https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/
-wget https://releases.ansible.com/ansible-tower/setup-bundle/ansible-tower-setup-bundle-3.7.2-1.tar.gz tar xzf ansible-tower-setup-bundle-3.7.2-1.tar.gz cd ansible-tower-setup-bundle-3.7.2-1   edit inventory
-yum install yum-utils yum install createrepo mkdir bundle/el7/repos/others cd bundle/el7/repos/others cat ../../base_packages.txt | xargs yumdownloader createrepo . cat &amp;lt;&amp;lt; EOF &amp;gt;&amp;gt; ~/ansible-tower-setup-bundle-3.7.2-1/roles/repos_el/templates/tower_bundle_el7.j2 [others] name=Others baseurl=file://{{ bundle_install_folder }}/others enabled=1 gpgcheck=0 EOF  setelah selesai, lalu re-package the bundle</description>
+      <description>Ansible Tower tips and trick Change admin password awx-manage changepassword admin backup and restore https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html Referensi:
+https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/ Offline ansible tower bundle https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/ wget https://releases.ansible.com/ansible-tower/setup-bundle/ansible-tower-setup-bundle-3.7.2-1.tar.gz tar xzf ansible-tower-setup-bundle-3.7.2-1.tar.gz cd ansible-tower-setup-bundle-3.7.2-1 edit inventory
+yum install yum-utils yum install createrepo mkdir bundle/el7/repos/others cd bundle/el7/repos/others cat ../../base_packages.txt | xargs yumdownloader createrepo . cat &amp;lt;&amp;lt; EOF &amp;gt;&amp;gt; ~/ansible-tower-setup-bundle-3.7.2-1/roles/repos_el/templates/tower_bundle_el7.j2 [others] name=Others baseurl=file://{{ bundle_install_folder }}/others enabled=1 gpgcheck=0 EOF setelah selesai, lalu re-package the bundle
+note:
+ada bbrp paket yg dibutuhkan sebelum menjalankan setup.</description>
     </item>
     
     <item>
@@ -545,10 +533,10 @@ yum install yum-utils yum install createrepo mkdir bundle/el7/repos/others cd bu
       <pubDate>Mon, 20 Jan 2020 09:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</guid>
-      <description> Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
+      <description>Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
 adapun command nya sebelum bisa diakses yaitu:
-chcon -Rv --type=httpd_sys_rw_content_t /webserver  Referensi:
- https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/  </description>
+chcon -Rv --type=httpd_sys_rw_content_t /webserver Referensi:
+https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/ </description>
     </item>
     
     <item>
@@ -558,14 +546,8 @@ chcon -Rv --type=httpd_sys_rw_content_t /webserver  Referensi:
       
       <guid>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</guid>
       <description>harbor install step by step https://goharbor.io/docs/1.10/install-config/
- install docker, docker-compose download https://github.com/goharbor/harbor/releases edit harbor.yml
-hostname: 10.11.8.111  install
-./prepare ./install.sh --with-clair --with-chartmuseum  create projects dengan nama os (misalnya untuk menampung operating system)
-  harbor client push  edit /etc/docker/daemon.json
-{ &amp;quot;insecure-registries&amp;quot;:[&amp;quot;10.11.8.111&amp;quot;] }  systemctl restart docker (hati2 jika ada container yg berjalan akan di stop)
- docker login 10.11.8.111
- docker tag centos:7 10.11.8.111/os/centos:7
- docker push 10.</description>
+install docker, docker-compose download https://github.com/goharbor/harbor/releases edit harbor.yml hostname: 10.11.8.111 install ./prepare ./install.sh --with-clair --with-chartmuseum create projects dengan nama os (misalnya untuk menampung operating system) harbor client push edit /etc/docker/daemon.json { &amp;#34;insecure-registries&amp;#34;:[&amp;#34;10.11.8.111&amp;#34;] } systemctl restart docker (hati2 jika ada container yg berjalan akan di stop) docker login 10.11.8.111 docker tag centos:7 10.11.8.111/os/centos:7 docker push 10.11.8.111/os/centos:7 Widya Harbor Container Registry https://widharbor.birau.com/ Referensi:
+https://indonesiadot.com </description>
     </item>
     
     <item>
@@ -574,9 +556,7 @@ hostname: 10.11.8.111  install
       <pubDate>Sun, 19 Jan 2020 15:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/</guid>
-      <description>Ansible Tower first Implementation  Install ansible tower masukan license tambahkan access - organization tambahkan access - users tambahkan access - teams tambahkan resources - inventory siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)
-chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/  tambahkan resources - projects
- buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine</description>
+      <description>Ansible Tower first Implementation Install ansible tower masukan license tambahkan access - organization tambahkan access - users tambahkan access - teams tambahkan resources - inventory siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses) chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/ tambahkan resources - projects buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine buat host client / node yang mau di manage di /etc/hosts tambahkan resources - credentials tambahkan resources - templates test launch jobs based on template yg baru dibuat Ansible tower + openscap install scap-workbench yum install scap-workbench xauth -y buat direktori report mkdir /report chgrp awx /report chmod g+s /report/ chcon -Rv --type=httpd_sys_rw_content_t /report/ ln -s /report /var/lib/awx/public/ tambahkan direktori report di nginx location /report { alias /var/lib/awx/public/report; autoindex on; } akses scap-workbench dari laptop ssh -X -C tower1 scap-workbench jalankan Scan Remote Machine (over SSH) ke ansible@client1 (jika muncul popup, pilih centos7) Save generate result html ke /report (tambahkan pembeda semisal datetime untuk membedakan tiap file report) Referensi:</description>
     </item>
     
     <item>
@@ -585,8 +565,8 @@ chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/  tambahkan res
       <pubDate>Sun, 19 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/</guid>
-      <description> Letsencrypt with certbot unatteded way This is for ubuntu linux
-add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonly --standalone --preferred-challenges http --non-interactive --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com  Note:  before running certbot command, you must already pointing domain / subdomain address to destination ip  Referensi:  https://indonesiadot.com  </description>
+      <description>Letsencrypt with certbot unatteded way This is for ubuntu linux
+add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonly --standalone --preferred-challenges http --non-interactive --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com Note: before running certbot command, you must already pointing domain / subdomain address to destination ip Referensi: https://indonesiadot.com </description>
     </item>
     
     <item>
@@ -595,8 +575,8 @@ add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonl
       <pubDate>Wed, 15 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</guid>
-      <description> Setup docker curl -fsSL https://get.docker.com/ | sh usermod -aG docker namauser systemctl enable docker systemctl start docker  Setup docker-compose sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose  Referensi:
- https://docs.docker.com/compose/install/  </description>
+      <description>Setup docker curl -fsSL https://get.docker.com/ | sh usermod -aG docker namauser systemctl enable docker systemctl start docker Setup docker-compose sudo curl -L &amp;#34;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;#34; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
+https://docs.docker.com/compose/install/ </description>
     </item>
     
     <item>
@@ -605,8 +585,8 @@ add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonl
       <pubDate>Tue, 14 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</guid>
-      <description> Instalasi Gitlab di Ubuntu 16.04 Widya Gitlab  https://widgitgog.birau.com/dashboard/projects  change / update hostname sed -i &#39;s/widgitgog/widgit/g&#39; /etc/gitlab/gitlab.rb gitlab-ctl reconfigure gitlab-ctl restart   https://docs.gitlab.com/omnibus/settings/configuration.html  Referensi:
- https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04  gitlab reset password from database gitlab-rails console -e production user = User.where(id: 1).first user = User.find_by(email: &#39;admin@example.com&#39;) user.password = &#39;secret_pass&#39; user.password_confirmation = &#39;secret_pass&#39; user.save!   https://docs.gitlab.com/ee/security/reset_root_password.html  </description>
+      <description>Instalasi Gitlab di Ubuntu 16.04 Widya Gitlab https://widgitgog.birau.com/dashboard/projects change / update hostname sed -i &amp;#39;s/widgitgog/widgit/g&amp;#39; /etc/gitlab/gitlab.rb gitlab-ctl reconfigure gitlab-ctl restart https://docs.gitlab.com/omnibus/settings/configuration.html Referensi:
+https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04 gitlab reset password from database gitlab-rails console -e production user = User.where(id: 1).first user = User.find_by(email: &amp;#39;admin@example.com&amp;#39;) user.password = &amp;#39;secret_pass&amp;#39; user.password_confirmation = &amp;#39;secret_pass&amp;#39; user.save! https://docs.gitlab.com/ee/security/reset_root_password.html </description>
     </item>
     
     <item>
@@ -615,12 +595,12 @@ add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonl
       <pubDate>Wed, 08 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/</guid>
-      <description> Step to reproduce on VM Turn off the VM
-qemu-img resize image.qcow2 +SIZE  where SIZE is the size to add (e.g. 10G for 10 gibibytes).
+      <description>Step to reproduce on VM Turn off the VM
+qemu-img resize image.qcow2 +SIZE where SIZE is the size to add (e.g. 10G for 10 gibibytes).
 Turn on the VM, fdisk /dev/vda, delete and create /dev/vda2, restart
 Login after restart, then run this command
-pvresize /dev/vda2 lvextend -r -l +100%FREE /dev/mapper/centos-root df -hl  Referensi:
- https://maunium.net/blog/resizing-qcow2-images/  </description>
+pvresize /dev/vda2 lvextend -r -l +100%FREE /dev/mapper/centos-root df -hl Referensi:
+https://maunium.net/blog/resizing-qcow2-images/ </description>
     </item>
     
     <item>
@@ -630,9 +610,10 @@ pvresize /dev/vda2 lvextend -r -l +100%FREE /dev/mapper/centos-root df -hl  Refe
       
       <guid>https://blog.indonesiadot.com/2019/12/23/selinux-semanage/</guid>
       <description>content of selinux config /etc/selinux/config
-SELINUX=enforcing SELINUXTYPE=targeted  semanage packages yum provides semanage yum install -y policycoreutils-python  semanage list port semanage port -l | grep ssh  semanage open ssh on different port add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port
-semanage port -a -t ssh_port_t -p tcp 1022  then restart sshd service
-systemctl restart sshd  Referensi:</description>
+SELINUX=enforcing SELINUXTYPE=targeted semanage packages yum provides semanage yum install -y policycoreutils-python semanage list port semanage port -l | grep ssh semanage open ssh on different port add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port
+semanage port -a -t ssh_port_t -p tcp 1022 then restart sshd service
+systemctl restart sshd Referensi:
+https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/ </description>
     </item>
     
     <item>
@@ -641,8 +622,8 @@ systemctl restart sshd  Referensi:</description>
       <pubDate>Sun, 22 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</guid>
-      <description>List kvm using virsh virsh list virsh list --all virsh --help  Create vm on kvm / qemu via libvirt with command line Pembuatan vm centos 7 script bash virtcen.sh
-#!/bin/bash NAMA=$1 if [ -z &amp;quot;$1&amp;quot; ]; then while [ -z &amp;quot;$NAMA&amp;quot; ]; do echo -n &amp;quot;masukan nama vm: &amp;quot; read NAMA done fi virt-install \ --name $NAMA \ --ram 900 \ --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&#39;unmap&#39;,format=&#39;qcow2&#39; \ --controller type=scsi,model=virtio-scsi \ --vcpus 1 \ --cpu host \ --console pty,target_type=serial \ --location /iso/CentOS-7.</description>
+      <description>List kvm using virsh virsh list virsh list --all virsh --help Create vm on kvm / qemu via libvirt with command line Pembuatan vm centos 7 script bash virtcen.sh
+#!/bin/bash NAMA=$1 if [ -z &amp;#34;$1&amp;#34; ]; then while [ -z &amp;#34;$NAMA&amp;#34; ]; do echo -n &amp;#34;masukan nama vm: &amp;#34; read NAMA done fi virt-install \ --name $NAMA \ --ram 900 \ --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&amp;#39;unmap&amp;#39;,format=&amp;#39;qcow2&amp;#39; \ --controller type=scsi,model=virtio-scsi \ --vcpus 1 \ --cpu host \ --console pty,target_type=serial \ --location /iso/CentOS-7.</description>
     </item>
     
     <item>
@@ -652,7 +633,7 @@ systemctl restart sshd  Referensi:</description>
       
       <guid>https://blog.indonesiadot.com/2019/12/05/jenkins-for-beginner/</guid>
       <description>Ref:
- https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04 https://hub.docker.com/r/bitnami/jenkins/ https://github.com/jenkinsci/docker/blob/master/README.md https://linuxize.com/post/how-to-install-jenkins-on-centos-7/  </description>
+https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04 https://hub.docker.com/r/bitnami/jenkins/ https://github.com/jenkinsci/docker/blob/master/README.md https://linuxize.com/post/how-to-install-jenkins-on-centos-7/ </description>
     </item>
     
     <item>
@@ -684,9 +665,9 @@ Every machine with a LAN behind it must have IP forwarding enabled.</description
       <pubDate>Wed, 04 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/12/04/ansible-cycle-evolution-diagram-security/</guid>
-      <description> Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
+      <description>Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
 Referensi:
- https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/ https://swimlane.com/blog/siem-soar/ https://www.ansible.com/blog/the-journey-to-security-automation  </description>
+https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/ https://swimlane.com/blog/siem-soar/ https://www.ansible.com/blog/the-journey-to-security-automation </description>
     </item>
     
     <item>
@@ -695,9 +676,9 @@ Referensi:
       <pubDate>Tue, 26 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/26/ansible-awx-2019/</guid>
-      <description> Ansible AWX install docker-compose tanpa pip, tanpa compile curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose  Referensi:
- https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/ https://medium.com/swlh/ansible-awx-installation-5861b115455a https://devzero.co.za/2019/02/28/high-availability-awx-ansible/ https://github.com/sujiar37/AWX-HA-InstanceGroup  Not yet tested:
- https://github.com/MrMEEE/awx-build https://awx.wiki/installation https://github.com/powertim/deploy_awx-rpm https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/  </description>
+      <description>Ansible AWX install docker-compose tanpa pip, tanpa compile curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
+https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/ https://medium.com/swlh/ansible-awx-installation-5861b115455a https://devzero.co.za/2019/02/28/high-availability-awx-ansible/ https://github.com/sujiar37/AWX-HA-InstanceGroup Not yet tested:
+https://github.com/MrMEEE/awx-build https://awx.wiki/installation https://github.com/powertim/deploy_awx-rpm https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/ </description>
     </item>
     
     <item>
@@ -706,9 +687,9 @@ Referensi:
       <pubDate>Fri, 15 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/</guid>
-      <description> Download deb rpm tgz
+      <description>Download [deb](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;amp;wget=true&#39;) [rpm](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;amp;wget=true&#39;) [tgz](wget -O splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;amp;wget=true&#39;)
 Referensi:
- https://docs.splunk.com/Documentation  </description>
+https://docs.splunk.com/Documentation </description>
     </item>
     
     <item>
@@ -719,7 +700,7 @@ Referensi:
       <guid>https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/</guid>
       <description>Frequently Used Module blockinfile Module ini saya gunakan ketika muncul error pada saat menggunakan module lineinfile untuk memasukan beberapa baris sekaligus dalam beberapa tasks, dan ternyata dengan menggunakan module ini dengan hanya satu task bisa memasukan langsung beberapa baris.
 Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepada parameter minimalnya adalah path dan block saja.
-- name: Insert correct line to /etc/ntp.conf blockinfile: path: /etc/ntp.conf insertafter: ^#?</description>
+- name: Insert correct line to /etc/ntp.conf blockinfile: path: /etc/ntp.conf insertafter: ^#?server state: present block: | server &amp;#34;{{ ntp1 }}&amp;#34; server &amp;#34;{{ ntp2 }}&amp;#34; notify: restart ntp Referensi:</description>
     </item>
     
     <item>
@@ -728,8 +709,8 @@ Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepa
       <pubDate>Mon, 04 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/</guid>
-      <description> Ansible and Openscap for scanning and remediation server for security compliance operating system Referensi:
- https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663  </description>
+      <description>Ansible and Openscap for scanning and remediation server for security compliance operating system Referensi:
+https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663 </description>
     </item>
     
     <item>
@@ -738,8 +719,8 @@ Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepa
       <pubDate>Sun, 03 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/03/openscap-reference/</guid>
-      <description> Openscap Custom Profile Referensi:
- https://martin.preisler.me/2013/11/xccdf-tailoring/ https://static.open-scap.org/openscap-1.2/oscap_user_manual.html  </description>
+      <description>Openscap Custom Profile Referensi:
+https://martin.preisler.me/2013/11/xccdf-tailoring/ https://static.open-scap.org/openscap-1.2/oscap_user_manual.html </description>
     </item>
     
     <item>
@@ -748,8 +729,8 @@ Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepa
       <pubDate>Thu, 31 Oct 2019 16:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/31/centos-syslog-server/</guid>
-      <description> Setup Syslog Server and setup syslog client to it on Centos 7 Referensi:
- https://www.svennd.be/setup-central-syslog-server-on-centos-7/ https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/ https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html  </description>
+      <description>Setup Syslog Server and setup syslog client to it on Centos 7 Referensi:
+https://www.svennd.be/setup-central-syslog-server-on-centos-7/ https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/ https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html </description>
     </item>
     
     <item>
@@ -760,11 +741,12 @@ Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepa
       <guid>https://blog.indonesiadot.com/2019/10/31/regex-/-regexp-reference/</guid>
       <description>Regex Case insensitive (?i)
 Referensi:
- https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean https://regex101.com/r/hE9gB4/1 https://regexr.com/3f4vo  Regex to match string containing two names ###Explanation of command that i am going to write:-
+https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean https://regex101.com/r/hE9gB4/1 https://regexr.com/3f4vo Regex to match string containing two names ###Explanation of command that i am going to write:-
 . means any character, digit can come in place of .
- means zero or more occurrences of thing written just previous to it.  | means &amp;lsquo;or&amp;rsquo;.
+means zero or more occurrences of thing written just previous to it. | means &amp;lsquo;or&amp;rsquo;.
 So,
-james.*jack  would search james , then any number of character until jack comes.</description>
+james.*jack would search james , then any number of character until jack comes.
+Since you want either jack.*james or james.</description>
     </item>
     
     <item>
@@ -773,10 +755,10 @@ james.*jack  would search james , then any number of character until jack comes.
       <pubDate>Tue, 29 Oct 2019 14:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/29/linux-os-hardening/</guid>
-      <description> Password Policies Centos 7 Referensi:
- https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/ https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/  Centos 7 Hardening Guide Referensi:
- https://www.lisenet.com/2017/centos-7-server-hardening-guide/  Linux ASLR and kernel.randomize_va_space Ref:
- https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/  </description>
+      <description>Password Policies Centos 7 Referensi:
+https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/ https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/ Centos 7 Hardening Guide Referensi:
+https://www.lisenet.com/2017/centos-7-server-hardening-guide/ Linux ASLR and kernel.randomize_va_space Ref:
+https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/ </description>
     </item>
     
     <item>
@@ -785,8 +767,8 @@ james.*jack  would search james , then any number of character until jack comes.
       <pubDate>Tue, 29 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/</guid>
-      <description> TCP Wrapper Referensi:
- https://www.server-world.info/en/note?os=CentOS_7&amp;amp;p=tcp_wrapper https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/  </description>
+      <description>TCP Wrapper Referensi:
+https://www.server-world.info/en/note?os=CentOS_7&amp;amp;p=tcp_wrapper https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/ </description>
     </item>
     
     <item>
@@ -796,8 +778,8 @@ james.*jack  would search james , then any number of character until jack comes.
       
       <guid>https://blog.indonesiadot.com/2019/10/28/ansible-reference/</guid>
       <description>Postingan ini adalah referensi untuk belajar ansible dan bisa juga sebagai tips, meski sudah ada postingan sebelumnya yang berisi ansible tips :)
-Jenkins-ci Ref: * https://galaxy.ansible.com/geerlingguy/jenkins/ * http://rundeck.org * Goci / gocd
-Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &#39;/&#39; mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot;  atau</description>
+Jenkins-ci Ref:
+https://galaxy.ansible.com/geerlingguy/jenkins/ http://rundeck.org Goci / gocd Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &amp;#39;/&amp;#39; mount: &amp;#34;{{ ansible_mounts | selectattr(&amp;#39;mount&amp;#39;,&amp;#39;equalto&amp;#39;,mountname) | list | first }}&amp;#34; atau</description>
     </item>
     
     <item>
@@ -807,13 +789,13 @@ Ansible check disk - name: Ensure that free space on {{ mountname }} is grater t
       
       <guid>https://blog.indonesiadot.com/2019/10/26/tmux-screen-tips/</guid>
       <description>Tmux cheatsheet tmux shortcuts &amp;amp; cheatsheet start new:
-tmux  start new with session name:
-tmux new -s myname  attach:
-tmux a # (or at, or attach)  attach to named:
-tmux a -t myname  list sessions:
-tmux ls  kill session:
-tmux kill-session -t myname  Kill all the tmux sessions:
-tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#39; | xargs kill  In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:</description>
+tmux start new with session name:
+tmux new -s myname attach:
+tmux a # (or at, or attach) attach to named:
+tmux a -t myname list sessions:
+tmux ls kill session:
+tmux kill-session -t myname Kill all the tmux sessions:
+tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#39; | xargs kill In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:</description>
     </item>
     
     <item>
@@ -822,9 +804,9 @@ tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#3
       <pubDate>Tue, 15 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/</guid>
-      <description> Disable and blacklist Linux modules Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya
-blacklist firewire_core install firewire_core /bin/true  Referensi:
- CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/  </description>
+      <description>Disable and blacklist Linux modules Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya
+blacklist firewire_core install firewire_core /bin/true Referensi:
+CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/ </description>
     </item>
     
     <item>
@@ -833,9 +815,9 @@ blacklist firewire_core install firewire_core /bin/true  Referensi:
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/</guid>
-      <description> Android USB File Transfer add-apt-repository ppa:webupd8team/unstable apt update apt-get install go-mtpfs mkdir /media/MyAndroid  mount go-mtpfs /media/MyAndroid  unmount fusermount -u /media/MyAndroid  or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open ftp://ip.of.android:8888, so you can access from pc via ftp client like filezilla.
+      <description>Android USB File Transfer add-apt-repository ppa:webupd8team/unstable apt update apt-get install go-mtpfs mkdir /media/MyAndroid mount go-mtpfs /media/MyAndroid unmount fusermount -u /media/MyAndroid or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open ftp://ip.of.android:8888, so you can access from pc via ftp client like filezilla.
 Referensi:
- http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu  </description>
+http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu </description>
     </item>
     
     <item>
@@ -844,9 +826,7 @@ Referensi:
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld/</guid>
-      <description> Firewalld masquerade  https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/
-firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public   Open port for specific ip address  https://serverfault.com/questions/684602/how-to-open-port-for-a-specific-ip-address-with-firewall-cmd-on-centos https://www.liquidweb.com/kb/an-introduction-to-firewalld/
-firewall-cmd --permanent --zone=public --add-rich-rule=&#39; rule family=&amp;quot;ipv4&amp;quot; source address=&amp;quot;1.2.3.4/32&amp;quot; port protocol=&amp;quot;tcp&amp;quot; port=&amp;quot;4567&amp;quot; accept&#39;   </description>
+      <description>Firewalld masquerade https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/ firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public Open port for specific ip address https://serverfault.com/questions/684602/how-to-open-port-for-a-specific-ip-address-with-firewall-cmd-on-centos https://www.liquidweb.com/kb/an-introduction-to-firewalld/ firewall-cmd --permanent --zone=public --add-rich-rule=&amp;#39; rule family=&amp;#34;ipv4&amp;#34; source address=&amp;#34;1.2.3.4/32&amp;#34; port protocol=&amp;#34;tcp&amp;#34; port=&amp;#34;4567&amp;#34; accept&amp;#39; </description>
     </item>
     
     <item>
@@ -855,8 +835,8 @@ firewall-cmd --permanent --zone=public --add-rich-rule=&#39; rule family=&amp;qu
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</guid>
-      <description> Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt  comment out a line that contain string sed -i &#39;/ 2001 /s/^/#/&#39; file  Referensi:
- https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521 https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file  </description>
+      <description>Insert every line in linux sed &amp;#39;s/^/apt-get purge -y /&amp;#39; aptwantopurge.txt &amp;gt; aptpurge.txt comment out a line that contain string sed -i &amp;#39;/ 2001 /s/^/#/&amp;#39; file Referensi:
+https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521 https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file </description>
     </item>
     
     <item>
@@ -865,10 +845,10 @@ firewall-cmd --permanent --zone=public --add-rich-rule=&#39; rule family=&amp;qu
       <pubDate>Sun, 13 Oct 2019 07:09:53 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/</guid>
-      <description>Security DNS di sisi client Install dnscrypt-proxy add-apt-repository ppa:shevchuk/dnscrypt-proxy apt update apt install dnscrypt-proxy  Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel server_name menjadi seperti contoh berikut:
-server_names = [&#39;cloudflare&#39;, &#39;google&#39;]  lalu restart service dnscrypt-proxy
-systemctl restart dnscrypt-proxy  edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy
-nameserver 127.0.2.1  Install DNS over HTTPS server Install dengan cara paket instalasi deb wget &amp;quot;https://www.aaflalo.me/?smd_process_download=1&amp;amp;download_id=1326&amp;quot; mv index* doh-server.deb dpkg -i doh-server_*_amd64.deb  Install dengan cara compile wget https://dl.</description>
+      <description>Security DNS di sisi client Install dnscrypt-proxy add-apt-repository ppa:shevchuk/dnscrypt-proxy apt update apt install dnscrypt-proxy Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel server_name menjadi seperti contoh berikut:
+server_names = [&amp;#39;cloudflare&amp;#39;, &amp;#39;google&amp;#39;] lalu restart service dnscrypt-proxy
+systemctl restart dnscrypt-proxy edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy
+nameserver 127.0.2.1 Install DNS over HTTPS server Install dengan cara paket instalasi deb wget &amp;#34;https://www.aaflalo.me/?smd_process_download=1&amp;amp;download_id=1326&amp;#34; mv index* doh-server.deb dpkg -i doh-server_*_amd64.deb Install dengan cara compile wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz sudo tar -C /usr/local -xzf go1.</description>
     </item>
     
     <item>
@@ -880,8 +860,8 @@ nameserver 127.0.2.1  Install DNS over HTTPS server Install dengan cara paket in
       <description>Install Ansible Tower Persyaratan:
 Hardware: RAM minimal 3,75 GB OS: Centos 7
 Langkah yang dilakukan
-yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz tar -xzvf ansible-tower-setup-latest.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh  Configure Ansible Tower after installation Akses Ansible tower Web UI dari
-https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
+yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz tar -xzvf ansible-tower-setup-latest.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh Configure Ansible Tower after installation Akses Ansible tower Web UI dari
+https://&amp;lt;Ansible Tower IP or Hostname&amp;gt; Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
     </item>
     
     <item>
@@ -891,7 +871,7 @@ https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari http
       
       <guid>https://blog.indonesiadot.com/2019/09/28/ids-tripwire/</guid>
       <description>Referensi:
- https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/ https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/ https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d  </description>
+https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/ https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/ https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d </description>
     </item>
     
     <item>
@@ -901,12 +881,28 @@ https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari http
       
       <guid>https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
- Firewall
- iptables ipset shorewall csf  Anti Malware
- maldet (malware detection for web directory)  IDS
- tripwire  Identity Server
- FreeIPA (IPA = Identity, Policy, Authentication)  Security Checking / Scanning Solution
- OpenSCAP Rapid7  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</description>
+Firewall
+iptables
+ipset
+shorewall
+csf
+Anti Malware
+maldet (malware detection for web directory)
+IDS
+tripwire
+Identity Server
+FreeIPA (IPA = Identity, Policy, Authentication)
+Security Checking / Scanning Solution
+OpenSCAP
+Rapid7
+CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets
+TeemIP
+itop https://github.com/Combodo/iTop
+infoblox
+efficientip
+ansible-cmdb
+WAF
+http://www.waf-fle.org/ console / web view for modsecurity admin</description>
     </item>
     
     <item>
@@ -916,15 +912,25 @@ https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari http
       
       <guid>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
- Virtualization (Desktop)
- Virtualbox  Graphic
- Gimp  Mail
- Thunderbird Mail (client)  Multimedia
- Avidemux  Video Conference
- jitsi More and more  Customer support live chat
- rocket.chat tawk.to simple chat  Networking
- nload   Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut
- https://blog.indonesiadot.com/2019/09/04/linux-security-tools/  </description>
+Virtualization (Desktop)
+Virtualbox
+Graphic
+Gimp
+Mail
+Thunderbird Mail (client)
+Multimedia
+Avidemux
+Video Conference
+jitsi
+More and more
+Customer support live chat
+rocket.chat
+tawk.to
+simple chat
+Networking
+nload
+Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut
+https://blog.indonesiadot.com/2019/09/04/linux-security-tools/ </description>
     </item>
     
     <item>
@@ -935,7 +941,7 @@ https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari http
       <guid>https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/</guid>
       <description>Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari thin provision storage atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.
 Persyaratan adalah:
- menggunakan thin provisioned backing storage seperti qcow2, thin-lvm, zfs pada server proxmox nya menggunakan Virtio SCSI controller pada guest option vm nya Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya Tambahkan discard mount options di /etc/fstab nya guest vm Enable fstrim.</description>
+menggunakan thin provisioned backing storage seperti qcow2, thin-lvm, zfs pada server proxmox nya menggunakan Virtio SCSI controller pada guest option vm nya Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya Tambahkan discard mount options di /etc/fstab nya guest vm Enable fstrim.</description>
     </item>
     
     <item>
@@ -945,8 +951,8 @@ Persyaratan adalah:
       
       <guid>https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/</guid>
       <description>Berikut langkah yang dilakukan, tapi sebelumnya pastikan backup, backup dan backup
-sudo apt-get update sudo apt-get upgrade sudo do-release-upgrade -f DistUpgradeViewNonInteractive  Referensi:
- https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04 https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4  </description>
+sudo apt-get update sudo apt-get upgrade sudo do-release-upgrade -f DistUpgradeViewNonInteractive Referensi:
+https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04 https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4 </description>
     </item>
     
     <item>
@@ -955,9 +961,9 @@ sudo apt-get update sudo apt-get upgrade sudo do-release-upgrade -f DistUpgradeV
       <pubDate>Sat, 28 Jul 2018 08:41:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</guid>
-      <description>yum -y install wget wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-1.el7.rf.x86_64.rpm yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm stress -c 8 -i 4 -t 10s stress -c 8 -i 9 -m 9 --vm-bytes 1024M  On ubuntu server, use apt to install stress
+      <description>yum -y install wget wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-1.el7.rf.x86_64.rpm yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm stress -c 8 -i 4 -t 10s stress -c 8 -i 9 -m 9 --vm-bytes 1024M On ubuntu server, use apt to install stress
 Ref:
- https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2 https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/  </description>
+https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2 https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/ </description>
     </item>
     
     <item>
@@ -966,7 +972,7 @@ Ref:
       <pubDate>Wed, 04 Apr 2018 18:45:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/04/04/all-about-icinga-monitoring/</guid>
-      <description>icinga2 installation on ubuntu 16  https://www.icinga.com/docs/icinga2/latest/doc/02-getting-started/ https://www.icinga.com/docs/icingaweb2/latest/doc/02-Installation/ https://www.rosehosting.com/blog/install-icinga-2-on-ubuntu-16-04/ https://blog.x-toolz.com/installing-icinga2-icingaweb2-on-ubuntu-16-04-3-lts/ https://github.com/jpfluger/examples/blob/master/ubuntu-14.04/icinga2-server.md https://www.google.co.id/search?q=icinga2+change+ssh+port https://monitoring-portal.org/woltlab/index.php?thread/32752-ssh-monitoring-different-port/  added a line into the servicedefinition: Code apply Service &amp;ldquo;ssh&amp;rdquo; { import &amp;ldquo;generic-service&amp;rdquo; check_command = &amp;ldquo;ssh&amp;rdquo; vars.port = host.vars.ssh_port assign where host.address &amp;amp;&amp;amp; host.vars.os == &amp;ldquo;Linux&amp;rdquo; ignore where host.name == &amp;ldquo;localhost&amp;rdquo; /* for upgrade safety */ }
+      <description>icinga2 installation on ubuntu 16 https://www.icinga.com/docs/icinga2/latest/doc/02-getting-started/ https://www.icinga.com/docs/icingaweb2/latest/doc/02-Installation/ https://www.rosehosting.com/blog/install-icinga-2-on-ubuntu-16-04/ https://blog.x-toolz.com/installing-icinga2-icingaweb2-on-ubuntu-16-04-3-lts/ https://github.com/jpfluger/examples/blob/master/ubuntu-14.04/icinga2-server.md https://www.google.co.id/search?q=icinga2+change+ssh+port https://monitoring-portal.org/woltlab/index.php?thread/32752-ssh-monitoring-different-port/ added a line into the servicedefinition: Code apply Service &amp;ldquo;ssh&amp;rdquo; { import &amp;ldquo;generic-service&amp;rdquo; check_command = &amp;ldquo;ssh&amp;rdquo; vars.port = host.vars.ssh_port assign where host.address &amp;amp;&amp;amp; host.vars.os == &amp;ldquo;Linux&amp;rdquo; ignore where host.name == &amp;ldquo;localhost&amp;rdquo; /* for upgrade safety */ }
 and in the hostdef: Code object Host &amp;ldquo;webarchiv&amp;rdquo; { vars.ssh_port = 1023 }</description>
     </item>
     
@@ -977,7 +983,7 @@ and in the hostdef: Code object Host &amp;ldquo;webarchiv&amp;rdquo; { vars.ssh_
       
       <guid>https://blog.indonesiadot.com/2018/03/07/winbox-under-linux/</guid>
       <description>Referensi:
- https://www.google.co.id/search?q=winbox+under+linux https://github.com/mriza/winbox-installer https://udariza.wordpress.com/  </description>
+https://www.google.co.id/search?q=winbox+under+linux https://github.com/mriza/winbox-installer https://udariza.wordpress.com/ </description>
     </item>
     
     <item>
@@ -986,8 +992,7 @@ and in the hostdef: Code object Host &amp;ldquo;webarchiv&amp;rdquo; { vars.ssh_
       <pubDate>Thu, 22 Feb 2018 11:12:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/22/invoice-ninja-free-open-source-invoicing-system/</guid>
-      <description>https://www.invoiceninja.org/
-https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/</description>
+      <description>https://www.invoiceninja.org/https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/</description>
     </item>
     
     <item>
@@ -996,14 +1001,7 @@ https://www.unixmen.com/installing-invoice-ninja-centos-7-part-one/</description
       <pubDate>Sat, 17 Feb 2018 10:41:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/17/munin-nginx/</guid>
-      <description>http://guide.munin-monitoring.org/en/stable-2.0/example/webserver/nginx.html
-http://guide.munin-monitoring.org/en/latest/example/webserver/nginx.html
-http://iinclude.in/2017/12/03/how-to-install-the-munin-monitoring-tool-on-ubuntu-16-04-with-nginx/
-https://www.stephenrlang.com/2016/03/how-to-setup-munin-on-ubuntu/
-https://github.com/tjstein/php5-fpm-munin-plugins
-https://serverfault.com/questions/315460/munin-email-notification
-https://blog-en.openalfa.com/how-to-configure-alerts-in-munin
-https://prefetch.net/blog/index.php/2011/07/13/gathering-statistics-from-your-postfix-mail-logs/</description>
+      <description> </description>
     </item>
     
     <item>
@@ -1012,9 +1010,7 @@ https://prefetch.net/blog/index.php/2011/07/13/gathering-statistics-from-your-po
       <pubDate>Fri, 16 Feb 2018 05:28:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/02/16/linux-server-monitoring/</guid>
-      <description>https://blog.serverdensity.com/80-linux-monitoring-tools-know/
-https://logz.io/blog/grafana-vs-kibana/
-http://docs.grafana.org/features/datasources/</description>
+      <description> </description>
     </item>
     
     <item>
@@ -1024,8 +1020,8 @@ http://docs.grafana.org/features/datasources/</description>
       
       <guid>https://blog.indonesiadot.com/2018/02/04/bash-script-tips/</guid>
       <description>Bash scripting cheatsheet Referensi:
- https://devhints.io/bash  bash or and How to Use Logical OR &amp;amp; AND in Shell Script with Examples Logical OR &amp;amp; AND operations are very useful where multiple conditions are used in our programs (scripts).
- OR is used between two or multiple conditions. It returns true if any one of conditions returns as true. AND is used between two or multiple conditions. It returns true only if all the conditions returns as true.</description>
+https://devhints.io/bash bash or and How to Use Logical OR &amp;amp; AND in Shell Script with Examples Logical OR &amp;amp; AND operations are very useful where multiple conditions are used in our programs (scripts).
+OR is used between two or multiple conditions. It returns true if any one of conditions returns as true. AND is used between two or multiple conditions. It returns true only if all the conditions returns as true.</description>
     </item>
     
     <item>
@@ -1034,9 +1030,7 @@ http://docs.grafana.org/features/datasources/</description>
       <pubDate>Wed, 31 Jan 2018 20:35:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/31/change-image-resolution-from-linux-command-line/</guid>
-      <description>change image resolution command line
-https://imagemagick.org/discourse-server/viewtopic.php?t=24890
-https://www.howtogeek.com/109369/how-to-quickly-resize-convert-modify-images-from-the-linux-terminal/amp/</description>
+      <description> </description>
     </item>
     
     <item>
@@ -1045,9 +1039,9 @@ https://www.howtogeek.com/109369/how-to-quickly-resize-convert-modify-images-fro
       <pubDate>Mon, 29 Jan 2018 00:59:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/29/linux-tips-and-trick/</guid>
-      <description>cron without sending mail tambahkan MAILTO=&amp;ldquo;&amp;rdquo; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
-linux rm file list too long cd direktoriyangfilenyabanyak ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete find . -type f -print -delete  incron Ref:
- http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en  rsync only existing file rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/  Umask follow parent / setgid chmod g+s /namafolder  Ref:</description>
+      <description>cron without sending mail tambahkan MAILTO=&amp;quot;&amp;quot; di awal cron nya tambahkan &amp;gt;/dev/null 2&amp;gt;&amp;amp;&amp;amp;1 atau &amp;gt; /dev/null atau &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 || true di belakang command cron nya
+linux rm file list too long cd direktoriyangfilenyabanyak ls -1 | wc -l &amp;amp;&amp;amp; time find . -type f -delete find . -type f -print -delete incron Ref:
+http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en rsync only existing file rsync -va --existing /data/backups/etc/ /data/backups/host1/etc/ Umask follow parent / setgid chmod g+s /namafolder Ref:</description>
     </item>
     
   </channel>

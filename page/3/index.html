@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.57.2" />
+	<meta name="generator" content="Hugo 0.106.0">
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -870,55 +870,46 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/08/11/ansible-sudoers/">Ansible sudoers</a></h1>
         <span class="post-date">Aug 11, 2020</span>
-	
-
-<h2 id="contoh">Contoh</h2>
-
+	<h2 id="contoh">Contoh</h2>
 <ul>
 <li><a href="https://code-maven.com/enable-ansible-passwordless-sudo">https://code-maven.com/enable-ansible-passwordless-sudo</a></li>
-
-<li><p><a href="https://stackoverflow.com/questions/37333305/ansible-create-a-user-with-sudo-privileges">https://stackoverflow.com/questions/37333305/ansible-create-a-user-with-sudo-privileges</a></p>
-
-<pre><code>- hosts: all
-tasks:
-- lineinfile:
-    path: /etc/sudoers
+<li><a href="https://stackoverflow.com/questions/37333305/ansible-create-a-user-with-sudo-privileges">https://stackoverflow.com/questions/37333305/ansible-create-a-user-with-sudo-privileges</a></li>
+</ul>
+<pre tabindex="0"><code>- hosts: all
+  tasks:
+    - lineinfile:
+        path: /etc/sudoers
+        state: present
+        regexp: &#39;^%sudo&#39;
+        line: &#39;%sudo ALL=(ALL) NOPASSWD: ALL&#39;
+        validate: &#39;visudo -cf %s&#39;
+</code></pre><p>contoh lain</p>
+<pre tabindex="0"><code>- name: Make sure we have a &#39;wheel&#39; group
+  group:
+    name: wheel
     state: present
-    regexp: '^%sudo'
-    line: '%sudo ALL=(ALL) NOPASSWD: ALL'
-    validate: 'visudo -cf %s'
-</code></pre>
 
-<p>contoh lain</p>
-
-<pre><code>- name: Make sure we have a 'wheel' group
-group:
-name: wheel
-state: present
-
-- name: Allow 'wheel' group to have passwordless sudo
-lineinfile:
-dest: /etc/sudoers
-state: present
-regexp: '^%wheel'
-line: '%wheel ALL=(ALL) NOPASSWD: ALL'
-validate: 'visudo -cf %s'
+- name: Allow &#39;wheel&#39; group to have passwordless sudo
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: &#39;^%wheel&#39;
+    line: &#39;%wheel ALL=(ALL) NOPASSWD: ALL&#39;
+    validate: &#39;visudo -cf %s&#39;
 
 - name: Add sudoers users to wheel group
-user:
-name=deployer
-groups=wheel
-append=yes
-state=present
-createhome=yes
+  user:
+    name=deployer
+    groups=wheel
+    append=yes
+    state=present
+    createhome=yes
 
 - name: Set up authorized keys for the deployer user
-authorized_key: user=deployer key=&quot;{{item}}&quot;
-with_file:
-- /home/railsdev/.ssh/id_rsa.pub
-</code></pre></li>
-</ul>
-
+  authorized_key: user=deployer key=&#34;{{item}}&#34;
+  with_file:
+    - /home/railsdev/.ssh/id_rsa.pub
+</code></pre>
 	<hr/>
 	
 	
@@ -930,49 +921,31 @@ with_file:
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/08/04/jfrog-for-beginner/">Jfrog for Beginner</a></h1>
         <span class="post-date">Aug 4, 2020</span>
-	
-
-<h2 id="install-jfrog-di-ubuntu">Install jfrog di ubuntu</h2>
-
+	<h2 id="install-jfrog-di-ubuntu">Install jfrog di ubuntu</h2>
 <p><a href="https://websiteforstudents.com/how-to-install-jfrog-artifactory-on-ubuntu-18-04-16-04/">https://websiteforstudents.com/how-to-install-jfrog-artifactory-on-ubuntu-18-04-16-04/</a></p>
-
-<pre><code>apt install wget software-properties-common apt-transport-https
+<pre tabindex="0"><code>apt install wget software-properties-common apt-transport-https
 apt-get install openjdk-8-jdk openjdk-8-doc
 wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add -
-add-apt-repository &quot;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&quot;
+add-apt-repository &#34;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&#34;
 apt-get update
 apt install jfrog-artifactory-oss
-</code></pre>
-
-<h2 id="membuat-repository-artifacts-baru-di-jfrog">Membuat repository / artifacts baru di jfrog</h2>
-
-<pre><code>klik menu administration, lalu klik menu repositories (sebelah kiri), lalu klik + New Local Repository (sebelah kanan)
+</code></pre><h2 id="membuat-repository--artifacts-baru-di-jfrog">Membuat repository / artifacts baru di jfrog</h2>
+<pre tabindex="0"><code>klik menu administration, lalu klik menu repositories (sebelah kiri), lalu klik + New Local Repository (sebelah kanan)
 klik / pilih generic, lalu isi repository key atau nama repository dengan apa saja yg diinginkan misal ansible-test-report
 klik save
-</code></pre>
-
-<h2 id="test-upload-dan-download-via-curl">test upload dan download via curl</h2>
-
+</code></pre><h2 id="test-upload-dan-download-via-curl">test upload dan download via curl</h2>
 <p>buat dahulu bbrp file, misal test.txt, lalu upload dengan command curl</p>
-
-<pre><code>curl -uadmin:r4hasia01 -T test.txt &quot;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&quot;
-</code></pre>
-
-<p>command untuk download memakai curl</p>
-
-<pre><code>curl -uadmin:r4hasia01 -O &quot;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&quot;
-</code></pre>
-
-<h2 id="test-upload-dengan-playbook-script">test upload dengan playbook script</h2>
-
+<pre tabindex="0"><code>curl -uadmin:r4hasia01 -T test.txt &#34;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&#34;
+</code></pre><p>command untuk download memakai curl</p>
+<pre tabindex="0"><code>curl -uadmin:r4hasia01 -O &#34;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&#34;
+</code></pre><h2 id="test-upload-dengan-playbook-script">test upload dengan playbook script</h2>
 <p>buat file jfrog-upload.yml</p>
-
-<pre><code>- hosts: all
+<pre tabindex="0"><code>- hosts: all
   gather_facts: false
   connection: local
   tasks:
     - uri:
-        url: 'http://10.11.8.41:8081/artifactory/generic/test1.txt'
+        url: &#39;http://10.11.8.41:8081/artifactory/generic/test1.txt&#39;
         src: ./test1.txt
         method: PUT
         return_content: true
@@ -983,42 +956,23 @@ klik save
         headers:
           Content-Type: application/octet-stream
           Accept: application/json
-</code></pre>
-
-<p>buat file test1.txt, lalu jalankan script playbooknya dengan:</p>
-
-<pre><code>ansible-playbook -i localhost, jfrog-upload.yml
-</code></pre>
-
-<h2 id="jfrog-cli">Jfrog CLI</h2>
-
+</code></pre><p>buat file test1.txt, lalu jalankan script playbooknya dengan:</p>
+<pre tabindex="0"><code>ansible-playbook -i localhost, jfrog-upload.yml
+</code></pre><h2 id="jfrog-cli">Jfrog CLI</h2>
 <ul>
 <li><a href="https://jfrog.com/getcli/">https://jfrog.com/getcli/</a></li>
 <li><a href="https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory">https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory</a></li>
 </ul>
-
 <p>untuk lebih memudahkan proses management jfrog bisa menggunakan jfrog cli</p>
-
 <p>bisa download dulu dengan command:</p>
-
-<pre><code>curl -fL https://getcli.jfrog.io | sh
+<pre tabindex="0"><code>curl -fL https://getcli.jfrog.io | sh
+</code></pre><p>configure jfrog cli dengan</p>
+<pre tabindex="0"><code>./jfrog rt c jfroglan --url=http://10.11.8.41:8082/artifactory --user=admin --password=r4hasia01
+</code></pre><p>dari sini bisa untuk delete file / direktori, misal delete file testdir yg sebelumnya terbuat, dengan command:</p>
+<pre tabindex="0"><code>./jfrog rt del generic/testdir
+</code></pre><p>upload semua file di direktori dan taruh di direktori juga</p>
+<pre tabindex="0"><code>./jfrog rt u &#34;testdir/&#34; generic/testdir/
 </code></pre>
-
-<p>configure jfrog cli dengan</p>
-
-<pre><code>./jfrog rt c jfroglan --url=http://10.11.8.41:8082/artifactory --user=admin --password=r4hasia01
-</code></pre>
-
-<p>dari sini bisa untuk delete file / direktori, misal delete file testdir yg sebelumnya terbuat, dengan command:</p>
-
-<pre><code>./jfrog rt del generic/testdir
-</code></pre>
-
-<p>upload semua file di direktori dan taruh di direktori juga</p>
-
-<pre><code>./jfrog rt u &quot;testdir/&quot; generic/testdir/
-</code></pre>
-
 	<hr/>
 	
 	
@@ -1030,14 +984,9 @@ klik save
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/07/15/multi-python-on-virtualenv-using-pyenv/">Multi python on virtualenv using pyenv</a></h1>
         <span class="post-date">Jul 15, 2020</span>
-	
-
-<h2 id="pyenv">pyenv</h2>
-
+	<h2 id="pyenv">pyenv</h2>
 <p>Pos://realpython.com/intro-to-pyenv/</p>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>
@@ -1053,25 +1002,17 @@ klik save
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/07/10/proxmox-beginner/">Proxmox Beginner</a></h1>
         <span class="post-date">Jul 10, 2020</span>
-	
-
-<h2 id="update-proxmox-repo">update proxmox repo</h2>
-
+	<h2 id="update-proxmox-repo">update proxmox repo</h2>
 <p><a href="https://pve.proxmox.com/wiki/Package_Repositories">https://pve.proxmox.com/wiki/Package_Repositories</a>
 untuk bisa update proxmox harus dirubah dulu repo nya di file /etc/apt/sources.list (untuk proxmox 5.4 / debian 9 / stretch)</p>
-
-<pre><code>deb http://kebo.pens.ac.id/debian stretch main contrib
+<pre tabindex="0"><code>deb http://kebo.pens.ac.id/debian stretch main contrib
 deb http://kebo.pens.ac.id/debian stretch-updates main contrib
 # security updates
 deb http://kebo.pens.ac.id/debian-security stretch/updates main contrib
 deb http://download.proxmox.com/debian/pve stretch pve-no-subscription
-</code></pre>
-
-<h2 id="proxmox-masquerade">proxmox masquerade</h2>
-
+</code></pre><h2 id="proxmox-masquerade">proxmox masquerade</h2>
 <p><a href="https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt">https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt</a></p>
-
-<pre><code>auto lo
+<pre tabindex="0"><code>auto lo
 iface lo inet loopback
 auto ens192
 iface ens192 inet static
@@ -1089,10 +1030,7 @@ iface vmbr0 inet static
         post-up echo 1 &gt; /proc/sys/net/ipv4/ip_forward
         post-up iptables -t nat -A POSTROUTING -j MASQUERADE
         post-down iptables -t nat -D POSTROUTING eno1 -j MASQUERADE
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>
@@ -1108,47 +1046,36 @@ iface vmbr0 inet static
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/07/10/proxmox-versi-6/">Proxmox Versi 6</a></h1>
         <span class="post-date">Jul 10, 2020</span>
-	
-
-<h2 id="proxmox-add-zfs">Proxmox Add ZFS</h2>
-
+	<h2 id="proxmox-add-zfs">Proxmox Add ZFS</h2>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/">https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/</a></li>
 <li><a href="https://pve.proxmox.com/wiki/ZFS_on_Linux">https://pve.proxmox.com/wiki/ZFS_on_Linux</a></li>
 </ul>
-
 <h2 id="proxmox-cloud-init">Proxmox cloud-init</h2>
-
 <p>Ref:</p>
-
 <ul>
 <li><a href="https://cloud.centos.org/centos/7/images/">https://cloud.centos.org/centos/7/images/</a></li>
 <li><a href="https://pve.proxmox.com/wiki/Cloud-Init_Support">https://pve.proxmox.com/wiki/Cloud-Init_Support</a></li>
 <li><a href="https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/">https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/</a></li>
 </ul>
-
 <h2 id="upgrade-proxmox-5-to-6">upgrade proxmox 5 to 6</h2>
-
 <p><a href="https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0">https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0</a></p>
-
-<pre><code>tmux
+<pre tabindex="0"><code>tmux
 pve5to6
-#make sure it's ok
+#make sure it&#39;s ok
 systemctl stop pve-ha-lrm
 systemctl stop pve-ha-crm
-echo &quot;deb http://download.proxmox.com/debian/corosync-3/ stretch main&quot; &gt; /etc/apt/sources.list.d/corosync3.list
+echo &#34;deb http://download.proxmox.com/debian/corosync-3/ stretch main&#34; &gt; /etc/apt/sources.list.d/corosync3.list
 apt update
 apt dist-upgrade
 systemctl start pve-ha-lrm
 systemctl start pve-ha-crm
-sed -i 's/stretch/buster/g' /etc/apt/sources.list
+sed -i &#39;s/stretch/buster/g&#39; /etc/apt/sources.list
 apt update
 apt dist-upgrade
 rm /etc/apt/sources.list.d/corosync3.list
 </code></pre>
-
 	<hr/>
 	
 	
@@ -1160,36 +1087,23 @@ rm /etc/apt/sources.list.d/corosync3.list
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/07/08/iptables-tips/">iptables tips</a></h1>
         <span class="post-date">Jul 8, 2020</span>
-	
-
-<p>iptables adalah program utility untuk seting firewall di linux.</p>
-
+	<p>iptables adalah program utility untuk seting firewall di linux.</p>
 <h2 id="flush-all-rules-delete-all-chains-and-accept-all">Flush All Rules, Delete All Chains, and Accept All</h2>
-
 <ul>
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules">https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules</a></li>
 </ul>
-
 <p>This section will show you how to flush all of your firewall rules, tables, and chains, and allow all network traffic.</p>
-
 <p>Note: This will effectively disable your firewall. You should only follow this section if you want to start over the configuration of your firewall.</p>
-
 <p>First, set the default policies for each of the built-in chains to ACCEPT. The main reason to do this is to ensure that you won’t be locked out from your server:</p>
-
-<pre><code>sudo iptables -P INPUT ACCEPT
+<pre tabindex="0"><code>sudo iptables -P INPUT ACCEPT
 sudo iptables -P FORWARD ACCEPT
 sudo iptables -P OUTPUT ACCEPT
-</code></pre>
-
-<p>Then flush the nat and mangle tables, flush all chains (-F), and delete all non-default chains (-X):</p>
-
-<pre><code>sudo iptables -t nat -F
+</code></pre><p>Then flush the nat and mangle tables, flush all chains (-F), and delete all non-default chains (-X):</p>
+<pre tabindex="0"><code>sudo iptables -t nat -F
 sudo iptables -t mangle -F
 sudo iptables -F
 sudo iptables -X
-</code></pre>
-
-<p>Your firewall will now allow all network traffic. If you list your rules now, you will will see there are none, and only the three default chains (INPUT, FORWARD, and OUTPUT) remain.</p>
+</code></pre><p>Your firewall will now allow all network traffic. If you list your rules now, you will will see there are none, and only the three default chains (INPUT, FORWARD, and OUTPUT) remain.</p>
 
 	<hr/>
 	
@@ -1202,18 +1116,13 @@ sudo iptables -X
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/07/02/redhat-rhel-free-for-developer/">Redhat RHEL free for developer</a></h1>
         <span class="post-date">Jul 2, 2020</span>
-	
-
-<h2 id="langkah">Langkah</h2>
-
+	<h2 id="langkah">Langkah</h2>
 <ul>
 <li>Download</li>
 <li>Install</li>
 <li>Update</li>
 </ul>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://developers.redhat.com/blog/2016/03/31/no-cost-rhel-developer-subscription-now-available/">https://developers.redhat.com/blog/2016/03/31/no-cost-rhel-developer-subscription-now-available/</a></li>
 <li><a href="https://developers.redhat.com/products/rhel/download">https://developers.redhat.com/products/rhel/download</a></li>
@@ -1231,18 +1140,11 @@ sudo iptables -X
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/06/30/ansible-postgresql/">Ansible postgresql</a></h1>
         <span class="post-date">Jun 30, 2020</span>
-	
-
-<h2 id="requirements">Requirements</h2>
-
-<pre><code>pip install psycopg2-binary
-</code></pre>
-
-<h2 id="playbooks">playbooks</h2>
-
+	<h2 id="requirements">Requirements</h2>
+<pre tabindex="0"><code>pip install psycopg2-binary
+</code></pre><h2 id="playbooks">playbooks</h2>
 <p>cat psql.yml</p>
-
-<pre><code>- hosts: localhost
+<pre tabindex="0"><code>- hosts: localhost
   become: yes
   gather_facts: no
   connection: local
@@ -1258,11 +1160,8 @@ sudo iptables -X
 
   - debug:
       var: result
-</code></pre>
-
-<p>cat psqlgraf.yml</p>
-
-<pre><code>- hosts: localhost
+</code></pre><p>cat psqlgraf.yml</p>
+<pre tabindex="0"><code>- hosts: localhost
   become: yes
   gather_facts: no
   connection: local
@@ -1279,15 +1178,9 @@ sudo iptables -X
 
   - debug:
       var: result
-</code></pre>
-
-<p>run with command:</p>
-
-<pre><code>ansible-playbook psql.yml
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><p>run with command:</p>
+<pre tabindex="0"><code>ansible-playbook psql.yml
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://docs.ansible.com/ansible/latest/modules/postgresql_query_module.html">https://docs.ansible.com/ansible/latest/modules/postgresql_query_module.html</a></li>
 <li><a href="https://github.com/elmarx/ansible-mysql-query">https://github.com/elmarx/ansible-mysql-query</a></li>
@@ -1304,60 +1197,42 @@ sudo iptables -X
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/06/30/postgresql-tips/">Postgresql tips</a></h1>
         <span class="post-date">Jun 30, 2020</span>
-	
-
-<h2 id="postgresql-export-and-import-to-mysql">Postgresql export and import to mysql</h2>
-
+	<h2 id="postgresql-export-and-import-to-mysql">Postgresql export and import to mysql</h2>
 <p>di server postgresql jalankan command berikut untuk export:</p>
-
-<pre><code>#pg_dump --verbose --schema-only --table=xx_user --db=test --file=/tmp/montower.sql
+<pre tabindex="0"><code>#pg_dump --verbose --schema-only --table=xx_user --db=test --file=/tmp/montower.sql
 pg_dump --verbose --schema-only --db=montower --file=/tmp/montower.sql
 
 psql -U namauserpsql montower
-copy xx_user to '/tmp/hosts.txt' with (delimiter ',');
-</code></pre>
-
-<p>di server mysql jalankan command berikut untuk import:</p>
-
-<pre><code>mysql --local-infile
+copy xx_user to &#39;/tmp/hosts.txt&#39; with (delimiter &#39;,&#39;);
+</code></pre><p>di server mysql jalankan command berikut untuk import:</p>
+<pre tabindex="0"><code>mysql --local-infile
 create database montower;
 use montower;
-#load data local infile '/home/postgres/user.txt' into table xx_user fields terminated by ',' lines terminated by '\n';
-load data local infile '/tmp/montower.sql' fields terminated by ',' lines terminated by '\n';
-load data local infile '/tmp/hosts.txt' into table hosts fields terminated by ',' lines terminated by '\n';
-</code></pre>
-
-<p>Referensi:</p>
-
+#load data local infile &#39;/home/postgres/user.txt&#39; into table xx_user fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;;
+load data local infile &#39;/tmp/montower.sql&#39; fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;;
+load data local infile &#39;/tmp/hosts.txt&#39; into table hosts fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;;
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.postgresql.org/docs/9.1/backup-dump.html">https://www.postgresql.org/docs/9.1/backup-dump.html</a></li>
 <li><a href="https://www.programmersought.com/article/23102305281/">https://www.programmersought.com/article/23102305281/</a></li>
 <li><a href="https://stackoverflow.com/questions/10762239/mysql-enable-load-data-local-infile">https://stackoverflow.com/questions/10762239/mysql-enable-load-data-local-infile</a></li>
 </ul>
-
 <h2 id="postgresql-show-data-tables">Postgresql show data tables</h2>
-
 <ul>
-<li><p><a href="https://kb.objectrocket.com/postgresql/connect-to-postgresql-and-show-the-table-schema-967">https://kb.objectrocket.com/postgresql/connect-to-postgresql-and-show-the-table-schema-967</a></p>
-
-<pre><code>psql -h 10.11.8.16 -U awxtower1
+<li><a href="https://kb.objectrocket.com/postgresql/connect-to-postgresql-and-show-the-table-schema-967">https://kb.objectrocket.com/postgresql/connect-to-postgresql-and-show-the-table-schema-967</a></li>
+</ul>
+<pre tabindex="0"><code>psql -h 10.11.8.16 -U awxtower1
 \c awxtower1db
 \d
 \q
-</code></pre></li>
-</ul>
-
-<h2 id="postgresql-create-remote-user-and-database">Postgresql create remote user and database</h2>
-
+</code></pre><h2 id="postgresql-create-remote-user-and-database">Postgresql create remote user and database</h2>
 <ul>
-<li><p><a href="https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/">https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/</a></p>
-
-<pre><code>create database awxtower1db;
-create user awxtower1 with encrypted password 'awxtower1';
-grant all privileges on database awxtower1 to awxtower1;
-</code></pre></li>
+<li><a href="https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/">https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/</a></li>
 </ul>
-
+<pre tabindex="0"><code>create database awxtower1db;
+create user awxtower1 with encrypted password &#39;awxtower1&#39;;
+grant all privileges on database awxtower1 to awxtower1;
+</code></pre>
 	<hr/>
 	
 	

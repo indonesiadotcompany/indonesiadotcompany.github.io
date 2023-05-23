@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>netcat on Blog Indonesiadot.Com</title>
@@ -6,20 +6,16 @@
     <description>Recent content in netcat on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Mar 2020 18:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/netcat/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 05 Mar 2020 18:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/netcat/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Netcat Bandwidth Test</title>
       <link>https://blog.indonesiadot.com/2020/03/05/netcat-bandwidth-test/</link>
       <pubDate>Thu, 05 Mar 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/05/netcat-bandwidth-test/</guid>
-      <description> Netcat Bandwidth Test netcat-server nc -l -p 12345 | wc -c  netcat-client dd if=/dev/zero bs=$((2**20)) count=$((2**10)) | nc -q 0 netcat-server 12345 #or dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345  on the server run nload to see the bandwidth used at eth0 for incoming and outgoing
+      <description>Netcat Bandwidth Test netcat-server nc -l -p 12345 | wc -c netcat-client dd if=/dev/zero bs=$((2**20)) count=$((2**10)) | nc -q 0 netcat-server 12345 #or dd if=/dev/zero bs=1024k count=300 | nc netcat-server 12345 on the server run nload to see the bandwidth used at eth0 for incoming and outgoing
 Referensi:
- https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/ https://www.thegeekstuff.com/2012/04/nc-command-examples/  </description>
+https://blog.bjdean.id.au/2017/03/bandwidth-measurement-using-netcat/ https://www.thegeekstuff.com/2012/04/nc-command-examples/ </description>
     </item>
     
   </channel>

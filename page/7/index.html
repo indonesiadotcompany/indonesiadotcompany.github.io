@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.57.2" />
+	<meta name="generator" content="Hugo 0.106.0">
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -870,28 +870,16 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/28/docker-tips/">Docker Tips</a></h1>
         <span class="post-date">Feb 28, 2020</span>
-	
-
-<h2 id="docker-run-example">Docker run example</h2>
-
-<pre><code>docker run -it alpine /bin/ash
-</code></pre>
-
-<p>Where -i = interactive, -t make tty for the running process, /bin/ash is the command to run.</p>
-
+	<h2 id="docker-run-example">Docker run example</h2>
+<pre tabindex="0"><code>docker run -it alpine /bin/ash
+</code></pre><p>Where -i = interactive, -t make tty for the running process, /bin/ash is the command to run.</p>
 <p>docker run &ndash;help</p>
-
 <h2 id="how-to-get-ip-of-running-docker">How to get ip of running docker</h2>
-
-<pre><code>docker ps
+<pre tabindex="0"><code>docker ps
 docker inspect &lt;containernameorid&gt;
-docker inspect &lt;containernameorid&gt; | grep '&quot;IPAddress&quot;' | head -n 1
-</code></pre>
-
-<p>Where head is opossite from tail, man head, man tail</p>
-
+docker inspect &lt;containernameorid&gt; | grep &#39;&#34;IPAddress&#34;&#39; | head -n 1
+</code></pre><p>Where head is opossite from tail, man head, man tail</p>
 <p>Ref:</p>
-
 <ul>
 <li><a href="https://docs.docker.com/engine/security/certificates/">https://docs.docker.com/engine/security/certificates/</a></li>
 <li><a href="https://docs.docker.com/engine/security/https/">https://docs.docker.com/engine/security/https/</a></li>
@@ -900,42 +888,29 @@ docker inspect &lt;containernameorid&gt; | grep '&quot;IPAddress&quot;' | head -
 <li><a href="https://github.com/MoimHossain/docker-viswarm">https://github.com/MoimHossain/docker-viswarm</a></li>
 <li><a href="https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host">https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host</a></li>
 </ul>
-
 <h2 id="docker-with-sshd">docker with sshd</h2>
-
 <p><a href="https://gist.github.com/widyaunix/580dd6bbed4754631659317d4b1e8344">https://gist.github.com/widyaunix/580dd6bbed4754631659317d4b1e8344</a></p>
-
 <p>Create Dockerfile</p>
-
-<pre><code>FROM centos
+<pre tabindex="0"><code>FROM centos
 
 RUN yum -y install openssh-server
-RUN ssh-keygen -q -N &quot;&quot; -t dsa -f /etc/ssh/ssh_host_ecdsa_key &amp;&amp; ssh-keygen -q -N &quot;&quot; -t rsa -f /etc/ssh/ssh_host_rsa_key
+RUN ssh-keygen -q -N &#34;&#34; -t dsa -f /etc/ssh/ssh_host_ecdsa_key &amp;&amp; ssh-keygen -q -N &#34;&#34; -t rsa -f /etc/ssh/ssh_host_rsa_key
 RUN ssh-keygen -A
-RUN echo 'root:r4hasia' | chpasswd
-RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN echo &#39;root:r4hasia&#39; | chpasswd
+RUN sed -i &#39;s/PermitRootLogin prohibit-password/PermitRootLogin yes/&#39; /etc/ssh/sshd_config
 ADD id_rsa.pub /root/.ssh/authorized_keys
 
 EXPOSE 22
-CMD [&quot;/usr/sbin/sshd&quot;, &quot;-D&quot;]
-</code></pre>
-
-<p>Then build to image using this command:</p>
-
-<pre><code>docker build -t centossh ./
+CMD [&#34;/usr/sbin/sshd&#34;, &#34;-D&#34;]
+</code></pre><p>Then build to image using this command:</p>
+<pre tabindex="0"><code>docker build -t centossh ./
 docker images
-</code></pre>
-
-<p>WARNING: docker ssh considered evil</p>
-
+</code></pre><p>WARNING: docker ssh considered evil</p>
 <p><a href="https://jpetazzo.github.io/2014/06/23/docker-ssh-considered-evil/">https://jpetazzo.github.io/2014/06/23/docker-ssh-considered-evil/</a></p>
-
 <h2 id="docker-with-static-ip">docker with static ip</h2>
-
-<pre><code>docker network create --subnet=172.1.0.0/24 docnet
+<pre tabindex="0"><code>docker network create --subnet=172.1.0.0/24 docnet
 docker run --name centos810 --net docnet --ip 172.1.0.10 --rm -d centossh
 </code></pre>
-
 	<hr/>
 	
 	
@@ -947,29 +922,19 @@ docker run --name centos810 --net docnet --ip 172.1.0.10 --rm -d centossh
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/27/ubuntu-networking-using-netplan/">Ubuntu networking using netplan</a></h1>
         <span class="post-date">Feb 27, 2020</span>
-	
-
-<h1 id="ubuntu-networking-using-netplan">Ubuntu networking using netplan</h1>
-
+	<h1 id="ubuntu-networking-using-netplan">Ubuntu networking using netplan</h1>
 <h2 id="configuration">Configuration</h2>
-
 <p>To configure netplan, save configuration files under /etc/netplan/ with a .yaml extension (e.g. /etc/netplan/config.yaml), then run sudo netplan apply. This command parses and applies the configuration to the system. Configuration written to disk under /etc/netplan/ will persist between reboots.</p>
-
 <h2 id="using-dhcp-and-static-addressing">Using DHCP and static addressing</h2>
-
 <p>To let the interface named ‘enp3s0’ get an address via DHCP, create a YAML file with the following:</p>
-
-<pre><code>network:
+<pre tabindex="0"><code>network:
   version: 2
   renderer: networkd
   ethernets:
     enp3s0:
       dhcp4: true
-</code></pre>
-
-<p>To instead set a static IP address, use the addresses key, which takes a list of (IPv4 or IPv6), addresses along with the subnet prefix length (e.g. /24). Gateway and DNS information can be provided as well:</p>
-
-<pre><code>network:
+</code></pre><p>To instead set a static IP address, use the addresses key, which takes a list of (IPv4 or IPv6), addresses along with the subnet prefix length (e.g. /24). Gateway and DNS information can be provided as well:</p>
+<pre tabindex="0"><code>network:
   version: 2
   renderer: networkd
   ethernets:
@@ -980,15 +945,10 @@ docker run --name centos810 --net docnet --ip 172.1.0.10 --rm -d centossh
       nameservers:
           search: [mydomain, otherdomain]
           addresses: [10.10.10.1, 1.1.1.1]
-</code></pre>
-
-<h2 id="connecting-multiple-interfaces-with-dhcp">Connecting multiple interfaces with DHCP</h2>
-
+</code></pre><h2 id="connecting-multiple-interfaces-with-dhcp">Connecting multiple interfaces with DHCP</h2>
 <p>Many systems now include more than one network interface. Servers will commonly need to connect to multiple networks, and may require that traffic to the Internet goes through a specific interface despite all of them providing a valid gateway.</p>
-
 <p>One can achieve the exact routing desired over DHCP by specifying a metric for the routes retrieved over DHCP, which will ensure some routes are preferred over others. In this example, ‘enred’ is preferred over ‘engreen’, as it has a lower route metric:</p>
-
-<pre><code>network:
+<pre tabindex="0"><code>network:
   version: 2
   ethernets:
     enred:
@@ -999,26 +959,18 @@ docker run --name centos810 --net docnet --ip 172.1.0.10 --rm -d centossh
       dhcp4: yes
       dhcp4-overrides:
         route-metric: 200
-</code></pre>
-
-<h2 id="connecting-to-an-open-wireless-network">Connecting to an open wireless network</h2>
-
+</code></pre><h2 id="connecting-to-an-open-wireless-network">Connecting to an open wireless network</h2>
 <p>Netplan easily supports connecting to an open wireless network (one that is not secured by a password), only requiring that the access point is defined:</p>
-
-<pre><code>network:
+<pre tabindex="0"><code>network:
   version: 2
   wifis:
     wl0:
       access-points:
         opennetwork: {}
       dhcp4: yes
-</code></pre>
-
-<h2 id="connecting-to-a-wpa-personal-wireless-network">Connecting to a WPA Personal wireless network</h2>
-
+</code></pre><h2 id="connecting-to-a-wpa-personal-wireless-network">Connecting to a WPA Personal wireless network</h2>
 <p>Wireless devices use the ‘wifis’ key and share the same configuration options with wired ethernet devices. The wireless access point name and password should also be specified:</p>
-
-<pre><code>network:
+<pre tabindex="0"><code>network:
   version: 2
   renderer: networkd
   wifis:
@@ -1030,15 +982,11 @@ docker run --name centos810 --net docnet --ip 172.1.0.10 --rm -d centossh
       nameservers:
         addresses: [192.168.0.1, 8.8.8.8]
       access-points:
-        &quot;network_ssid_name&quot;:
-          password: &quot;**********&quot;
-</code></pre>
-
-<h2 id="using-multiple-addresses-on-a-single-interface">Using multiple addresses on a single interface</h2>
-
+        &#34;network_ssid_name&#34;:
+          password: &#34;**********&#34;
+</code></pre><h2 id="using-multiple-addresses-on-a-single-interface">Using multiple addresses on a single interface</h2>
 <p>The addresses key can take a list of addresses to assign to an interface:</p>
-
-<pre><code>network:
+<pre tabindex="0"><code>network:
   version: 2
   renderer: networkd
   ethernets:
@@ -1047,12 +995,8 @@ docker run --name centos810 --net docnet --ip 172.1.0.10 --rm -d centossh
        - 10.100.1.38/24
        - 10.100.1.39/24
      gateway4: 10.100.1.1
-</code></pre>
-
-<p>Interface aliases (e.g. eth0:0) are not supported.</p>
-
+</code></pre><p>Interface aliases (e.g. eth0:0) are not supported.</p>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://netplan.io/examples">https://netplan.io/examples</a></li>
 </ul>
@@ -1068,19 +1012,12 @@ docker run --name centos810 --net docnet --ip 172.1.0.10 --rm -d centossh
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/25/ubiquiti-unifi-on-linux-ubuntu/">Ubiquiti Unifi on Linux Ubuntu</a></h1>
         <span class="post-date">Feb 25, 2020</span>
-	
-
-<h2 id="ubiquiti-unifi-on-linux-ubuntu">Ubiquiti Unifi on Linux Ubuntu</h2>
-
-<pre><code>apt-get update; apt-get install ca-certificates wget -y
+	<h2 id="ubiquiti-unifi-on-linux-ubuntu">Ubiquiti Unifi on Linux Ubuntu</h2>
+<pre tabindex="0"><code>apt-get update; apt-get install ca-certificates wget -y
 wget https://get.glennr.nl/unifi/install/unifi-5.12.35.sh
 bash unifi-5.12.35.sh
-</code></pre>
-
-<p>access your unifi controller at <a href="https://ip.of.your.server:8443">https://ip.of.your.server:8443</a></p>
-
+</code></pre><p>access your unifi controller at <a href="https://ip.of.your.server:8443">https://ip.of.your.server:8443</a></p>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://community.ui.com/questions/UniFi-Installation-Scripts-or-UniFi-Easy-Update-Script-or-UniFi-Lets-Encrypt-or-Ubuntu-16-04-18-04-/ccbc7530-dd61-40a7-82ec-22b17f027776">https://community.ui.com/questions/UniFi-Installation-Scripts-or-UniFi-Easy-Update-Script-or-UniFi-Lets-Encrypt-or-Ubuntu-16-04-18-04-/ccbc7530-dd61-40a7-82ec-22b17f027776</a></li>
 <li><a href="https://github.com/widcampur/ubiquiti-unifi-controller-install">https://github.com/widcampur/ubiquiti-unifi-controller-install</a></li>
@@ -1097,12 +1034,8 @@ bash unifi-5.12.35.sh
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/24/analisa-virus-dengan-virustotal/">Analisa Virus dengan virustotal</a></h1>
         <span class="post-date">Feb 24, 2020</span>
-	
-
-<h2 id="analisa-virus-dengan-virustotal">Analisa Virus dengan virustotal</h2>
-
+	<h2 id="analisa-virus-dengan-virustotal">Analisa Virus dengan virustotal</h2>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://www.virustotal.com/gui/home/upload">https://www.virustotal.com/gui/home/upload</a></li>
 </ul>
@@ -1118,29 +1051,17 @@ bash unifi-5.12.35.sh
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/24/video-editing-on-linux/">Video Editing On Linux</a></h1>
         <span class="post-date">Feb 24, 2020</span>
-	
-
-<h2 id="cut-and-combine-video">Cut and Combine Video</h2>
-
+	<h2 id="cut-and-combine-video">Cut and Combine Video</h2>
 <p>Avidemux</p>
-
 <h2 id="youtube">Youtube</h2>
-
-<h3 id="add-text-caption-subtitle-anotasi-on-video">Add text / caption / subtitle / Anotasi on video</h3>
-
-<pre><code>1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &gt; Youtube Studio
+<h3 id="add-text--caption--subtitle--anotasi-on-video">Add text / caption / subtitle / Anotasi on video</h3>
+<pre tabindex="0"><code>1. Buka Youtube Studio dengan mengklik icon akun Anda di sebelah kanan atas &gt; Youtube Studio
 2. Pilih menu Subtitles, lalu klik video yang yang ingin diberi teks
 3. Untuk video baru, klik set languages, lalu confirm
 4. Klik tombol ADD / Tambahkan subtitel atau CC baru.
-</code></pre>
-
-<h3 id="add-watermark">Add watermark</h3>
-
-<pre><code>ffmpeg -i input.mp4 -i watermark.png -filter_complex &quot;overlay=1500:1000&quot; output.mp4
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><h3 id="add-watermark">Add watermark</h3>
+<pre tabindex="0"><code>ffmpeg -i input.mp4 -i watermark.png -filter_complex &#34;overlay=1500:1000&#34; output.mp4
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.nesabamedia.com/cara-membuat-subtitle-video-youtube/">https://www.nesabamedia.com/cara-membuat-subtitle-video-youtube/</a></li>
 <li><a href="https://readmoremyblog.wordpress.com/2012/03/11/cara-membuat-teks-atau-anotasi-pada-video-youtube/">https://readmoremyblog.wordpress.com/2012/03/11/cara-membuat-teks-atau-anotasi-pada-video-youtube/</a></li>
@@ -1160,15 +1081,9 @@ bash unifi-5.12.35.sh
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/">Ansible OS Hardening</a></h1>
         <span class="post-date">Feb 20, 2020</span>
-	
-
-<h2 id="ansible-os-hardening">Ansible OS Hardening</h2>
-
-<pre><code>mkdir -p /data/backups
-</code></pre>
-
-<p>Referensi:</p>
-
+	<h2 id="ansible-os-hardening">Ansible OS Hardening</h2>
+<pre tabindex="0"><code>mkdir -p /data/backups
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>
@@ -1184,42 +1099,27 @@ bash unifi-5.12.35.sh
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/">Ansible Tower tips and trick</a></h1>
         <span class="post-date">Feb 20, 2020</span>
-	
-
-<h2 id="ansible-tower-tips-and-trick">Ansible Tower tips and trick</h2>
-
+	<h2 id="ansible-tower-tips-and-trick">Ansible Tower tips and trick</h2>
 <h3 id="change-admin-password">Change admin password</h3>
-
-<pre><code>awx-manage changepassword admin
-</code></pre>
-
-<h3 id="backup-and-restore">backup and restore</h3>
-
+<pre tabindex="0"><code>awx-manage changepassword admin
+</code></pre><h3 id="backup-and-restore">backup and restore</h3>
 <ul>
 <li><a href="https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html">https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html</a></li>
 </ul>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html">https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html</a></li>
 <li><a href="https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/">https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/</a></li>
 </ul>
-
 <h2 id="offline-ansible-tower-bundle">Offline ansible tower bundle</h2>
-
 <ul>
-<li><p><a href="https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/">https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/</a></p>
-
-<pre><code>wget https://releases.ansible.com/ansible-tower/setup-bundle/ansible-tower-setup-bundle-3.7.2-1.tar.gz
+<li><a href="https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/">https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/</a></li>
+</ul>
+<pre tabindex="0"><code>wget https://releases.ansible.com/ansible-tower/setup-bundle/ansible-tower-setup-bundle-3.7.2-1.tar.gz
 tar xzf ansible-tower-setup-bundle-3.7.2-1.tar.gz
 cd ansible-tower-setup-bundle-3.7.2-1
-</code></pre></li>
-</ul>
-
-<p>edit inventory</p>
-
-<pre><code>yum install yum-utils
+</code></pre><p>edit inventory</p>
+<pre tabindex="0"><code>yum install yum-utils
 yum install createrepo
 mkdir bundle/el7/repos/others
 cd bundle/el7/repos/others
@@ -1233,19 +1133,15 @@ baseurl=file://{{ bundle_install_folder }}/others
 enabled=1
 gpgcheck=0
 EOF
-</code></pre>
-
-<p>setelah selesai, lalu re-package the bundle</p>
-
-<p>note:
-* ada bbrp paket yg dibutuhkan sebelum menjalankan setup.sh, paket ini bisa didapatkan dengan menginstall terlebih dahulu</p>
-
+</code></pre><p>setelah selesai, lalu re-package the bundle</p>
+<p>note:</p>
+<ul>
+<li>ada bbrp paket yg dibutuhkan sebelum menjalankan setup.sh, paket ini bisa didapatkan dengan menginstall terlebih dahulu</li>
+</ul>
 <h2 id="ansible-tower-ldap-linux">ansible tower ldap linux</h2>
-
 <ul>
 <li><a href="https://www.youtube.com/watch?v=E0QpSwXot68">https://www.youtube.com/watch?v=E0QpSwXot68</a></li>
 </ul>
-
 <ol>
 <li>install openldap-servers on centos (available at this blog)</li>
 <li>configure ansible tower to add authentication to ldap server as describe on the video</li>
@@ -1262,19 +1158,11 @@ EOF
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/">Selinux Web Directory Permission</a></h1>
         <span class="post-date">Jan 20, 2020</span>
-	
-
-<h2 id="selinux-web-directory-permission">Selinux Web Directory Permission</h2>
-
+	<h2 id="selinux-web-directory-permission">Selinux Web Directory Permission</h2>
 <p>Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.</p>
-
 <p>adapun command nya sebelum bisa diakses yaitu:</p>
-
-<pre><code>chcon -Rv --type=httpd_sys_rw_content_t /webserver
-</code></pre>
-
-<p>Referensi:</p>
-
+<pre tabindex="0"><code>chcon -Rv --type=httpd_sys_rw_content_t /webserver
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/">https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/</a></li>
 </ul>
@@ -1290,55 +1178,38 @@ EOF
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/">Harbor Container Registry</a></h1>
         <span class="post-date">Jan 20, 2020</span>
-	
-
-<h2 id="harbor-install-step-by-step">harbor install step by step</h2>
-
+	<h2 id="harbor-install-step-by-step">harbor install step by step</h2>
 <p><a href="https://goharbor.io/docs/1.10/install-config/">https://goharbor.io/docs/1.10/install-config/</a></p>
-
 <ul>
 <li>install docker, docker-compose</li>
 <li>download <a href="https://github.com/goharbor/harbor/releases">https://github.com/goharbor/harbor/releases</a></li>
-
-<li><p>edit harbor.yml</p>
-
-<pre><code>hostname: 10.11.8.111
-</code></pre></li>
-
-<li><p>install</p>
-
-<pre><code>./prepare
+<li>edit harbor.yml</li>
+</ul>
+<pre tabindex="0"><code>hostname: 10.11.8.111
+</code></pre><ul>
+<li>install</li>
+</ul>
+<pre tabindex="0"><code>./prepare
 ./install.sh --with-clair --with-chartmuseum
-</code></pre></li>
-
-<li><p>create projects dengan nama os (misalnya untuk menampung operating system)</p></li>
+</code></pre><ul>
+<li>create projects dengan nama os (misalnya untuk menampung operating system)</li>
 </ul>
-
 <h2 id="harbor-client-push">harbor client push</h2>
-
 <ul>
-<li><p>edit /etc/docker/daemon.json</p>
-
-<pre><code>{ &quot;insecure-registries&quot;:[&quot;10.11.8.111&quot;] }
-</code></pre></li>
-
-<li><p>systemctl restart docker (hati2 jika ada container yg berjalan akan di stop)</p></li>
-
-<li><p>docker login 10.11.8.111</p></li>
-
-<li><p>docker tag centos:7 10.11.8.111/os/centos:7</p></li>
-
-<li><p>docker push 10.11.8.111/os/centos:7</p></li>
+<li>edit /etc/docker/daemon.json</li>
 </ul>
-
+<pre tabindex="0"><code>{ &#34;insecure-registries&#34;:[&#34;10.11.8.111&#34;] }
+</code></pre><ul>
+<li>systemctl restart docker (hati2 jika ada container yg berjalan akan di stop)</li>
+<li>docker login 10.11.8.111</li>
+<li>docker tag centos:7 10.11.8.111/os/centos:7</li>
+<li>docker push 10.11.8.111/os/centos:7</li>
+</ul>
 <h2 id="widya-harbor-container-registry">Widya Harbor Container Registry</h2>
-
 <ul>
 <li><a href="https://widharbor.birau.com/">https://widharbor.birau.com/</a></li>
 </ul>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>

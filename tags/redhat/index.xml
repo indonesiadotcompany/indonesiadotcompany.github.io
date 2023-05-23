@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>redhat on Blog Indonesiadot.Com</title>
@@ -6,19 +6,15 @@
     <description>Recent content in redhat on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Jul 2020 08:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/redhat/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 02 Jul 2020 08:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/redhat/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Redhat RHEL free for developer</title>
       <link>https://blog.indonesiadot.com/2020/07/02/redhat-rhel-free-for-developer/</link>
       <pubDate>Thu, 02 Jul 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/07/02/redhat-rhel-free-for-developer/</guid>
-      <description> Langkah  Download Install Update  Referensi:
- https://developers.redhat.com/blog/2016/03/31/no-cost-rhel-developer-subscription-now-available/ https://developers.redhat.com/products/rhel/download https://blog.turbonomic.com/blog/on-technology/deploying-a-red-hat-enterprise-linux-7-rhel7-on-virtualbox  </description>
+      <description>Langkah Download Install Update Referensi:
+https://developers.redhat.com/blog/2016/03/31/no-cost-rhel-developer-subscription-now-available/ https://developers.redhat.com/products/rhel/download https://blog.turbonomic.com/blog/on-technology/deploying-a-red-hat-enterprise-linux-7-rhel7-on-virtualbox </description>
     </item>
     
     <item>
@@ -27,10 +23,10 @@
       <pubDate>Mon, 20 Jan 2020 09:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</guid>
-      <description> Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
+      <description>Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
 adapun command nya sebelum bisa diakses yaitu:
-chcon -Rv --type=httpd_sys_rw_content_t /webserver  Referensi:
- https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/  </description>
+chcon -Rv --type=httpd_sys_rw_content_t /webserver Referensi:
+https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/ </description>
     </item>
     
   </channel>

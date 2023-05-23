@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>jfrog on Blog Indonesiadot.Com</title>
@@ -6,11 +6,7 @@
     <description>Recent content in jfrog on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Aug 2020 17:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/jfrog/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 04 Aug 2020 17:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/jfrog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Jfrog for Beginner</title>
       <link>https://blog.indonesiadot.com/2020/08/04/jfrog-for-beginner/</link>
@@ -18,7 +14,7 @@
       
       <guid>https://blog.indonesiadot.com/2020/08/04/jfrog-for-beginner/</guid>
       <description>Install jfrog di ubuntu https://websiteforstudents.com/how-to-install-jfrog-artifactory-on-ubuntu-18-04-16-04/
-apt install wget software-properties-common apt-transport-https apt-get install openjdk-8-jdk openjdk-8-doc wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add - add-apt-repository &amp;quot;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&amp;quot; apt-get update apt install jfrog-artifactory-oss  Membuat repository / artifacts baru di jfrog klik menu administration, lalu klik menu repositories (sebelah kiri), lalu klik + New Local Repository (sebelah kanan) klik / pilih generic, lalu isi repository key atau nama repository dengan apa saja yg diinginkan misal ansible-test-report klik save  test upload dan download via curl buat dahulu bbrp file, misal test.</description>
+apt install wget software-properties-common apt-transport-https apt-get install openjdk-8-jdk openjdk-8-doc wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add - add-apt-repository &amp;#34;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&amp;#34; apt-get update apt install jfrog-artifactory-oss Membuat repository / artifacts baru di jfrog klik menu administration, lalu klik menu repositories (sebelah kiri), lalu klik + New Local Repository (sebelah kanan) klik / pilih generic, lalu isi repository key atau nama repository dengan apa saja yg diinginkan misal ansible-test-report klik save test upload dan download via curl buat dahulu bbrp file, misal test.</description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>log on Blog Indonesiadot.Com</title>
@@ -6,18 +6,14 @@
     <description>Recent content in log on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Mar 2020 19:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/log/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 16 Mar 2020 19:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/log/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ansible Tower Log Logstash ELK</title>
       <link>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</link>
       <pubDate>Mon, 16 Mar 2020 19:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</guid>
-      <description> ansible logstash example  https://github.com/widansible/elk-ansible https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html  </description>
+      <description>ansible logstash example https://github.com/widansible/elk-ansible https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html </description>
     </item>
     
   </channel>

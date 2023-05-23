@@ -864,29 +864,16 @@
 <div class="post">
   <h1 class="post-title">2FA with Google Authenticator</h1>
   <span class="post-date">Jun 23, 2020</span>
-  
-
-<h2 id="ubuntu">Ubuntu</h2>
-
-<h3 id="pastikan-terdapat-baris-berikut-di-etc-ssh-sshd-config">Pastikan terdapat baris berikut di /etc/ssh/sshd_config</h3>
-
-<pre><code>ChallengeResponseAuthentication yes
+  <h2 id="ubuntu">Ubuntu</h2>
+<h3 id="pastikan-terdapat-baris-berikut-di-etcsshsshd_config">Pastikan terdapat baris berikut di /etc/ssh/sshd_config</h3>
+<pre tabindex="0"><code>ChallengeResponseAuthentication yes
 UsePAM yes
-</code></pre>
-
-<p>lalu restart service sshd</p>
-
-<h3 id="tambahkan-baris-berikut-di-akhir-etc-pam-d-common-auth">Tambahkan baris berikut di akhir /etc/pam.d/common-auth</h3>
-
-<pre><code>auth required pam_google_authenticator.so nullok
-</code></pre>
-
-<h3 id="go-go-gadget">Go go gadget</h3>
-
+</code></pre><p>lalu restart service sshd</p>
+<h3 id="tambahkan-baris-berikut-di-akhir-etcpamdcommon-auth">Tambahkan baris berikut di akhir /etc/pam.d/common-auth</h3>
+<pre tabindex="0"><code>auth required pam_google_authenticator.so nullok
+</code></pre><h3 id="go-go-gadget">Go go gadget</h3>
 <p>install google-authenticator app from android playstore, then add the server to show the code</p>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator">https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator</a></li>
 <li><a href="https://wiki.alpinelinux.org/wiki/Two_Factors_Authentication_With_OpenSSH">https://wiki.alpinelinux.org/wiki/Two_Factors_Authentication_With_OpenSSH</a></li>

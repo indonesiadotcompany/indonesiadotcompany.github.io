@@ -864,44 +864,24 @@
 <div class="post">
   <h1 class="post-title">DOH DNS over HTTPS</h1>
   <span class="post-date">Oct 13, 2019</span>
-  
-
-<h2 id="security-dns-di-sisi-client">Security DNS di sisi client</h2>
-
+  <h2 id="security-dns-di-sisi-client">Security DNS di sisi client</h2>
 <h3 id="install-dnscrypt-proxy">Install dnscrypt-proxy</h3>
-
-<pre><code>add-apt-repository ppa:shevchuk/dnscrypt-proxy
+<pre tabindex="0"><code>add-apt-repository ppa:shevchuk/dnscrypt-proxy
 apt update
 apt install dnscrypt-proxy
-</code></pre>
-
-<p>Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel <strong>server_name</strong> menjadi seperti contoh berikut:</p>
-
-<pre><code>server_names = ['cloudflare', 'google']
-</code></pre>
-
-<p>lalu restart service dnscrypt-proxy</p>
-
-<pre><code>systemctl restart dnscrypt-proxy
-</code></pre>
-
-<p>edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy</p>
-
-<pre><code>nameserver 127.0.2.1
-</code></pre>
-
-<h2 id="install-dns-over-https-server">Install DNS over HTTPS server</h2>
-
+</code></pre><p>Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel <strong>server_name</strong> menjadi seperti contoh berikut:</p>
+<pre tabindex="0"><code>server_names = [&#39;cloudflare&#39;, &#39;google&#39;]
+</code></pre><p>lalu restart service dnscrypt-proxy</p>
+<pre tabindex="0"><code>systemctl restart dnscrypt-proxy
+</code></pre><p>edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy</p>
+<pre tabindex="0"><code>nameserver 127.0.2.1
+</code></pre><h2 id="install-dns-over-https-server">Install DNS over HTTPS server</h2>
 <h3 id="install-dengan-cara-paket-instalasi-deb">Install dengan cara paket instalasi deb</h3>
-
-<pre><code>wget &quot;https://www.aaflalo.me/?smd_process_download=1&amp;download_id=1326&quot;
+<pre tabindex="0"><code>wget &#34;https://www.aaflalo.me/?smd_process_download=1&amp;download_id=1326&#34;
 mv index* doh-server.deb
 dpkg -i doh-server_*_amd64.deb
-</code></pre>
-
-<h3 id="install-dengan-cara-compile">Install dengan cara compile</h3>
-
-<pre><code>wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
+</code></pre><h3 id="install-dengan-cara-compile">Install dengan cara compile</h3>
+<pre tabindex="0"><code>wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.13.linux-amd64.tar.gz
 wget https://github.com/m13253/dns-over-https/archive/v2.1.2.tar.gz
 tar xzf v2.1.2.tar.gz
@@ -910,11 +890,8 @@ make &amp;&amp; make install
 add-apt-repository ppa:ondrej/nginx
 apt update
 apt install nginx-full
-</code></pre>
-
-<p>Buat file /etc/nginx/sites-available/doh yang isinya:</p>
-
-<pre><code>upstream dns-backend {
+</code></pre><p>Buat file /etc/nginx/sites-available/doh yang isinya:</p>
+<pre tabindex="0"><code>upstream dns-backend {
     server 127.0.0.1:8053;
 }
 server {
@@ -935,73 +912,48 @@ server {
                 proxy_pass http://dns-backend/dns-query ;
         }
 }
-</code></pre>
-
-<p>lalu jalankan</p>
-
-<pre><code>ln -s /etc/nginx/sites-available/dns-over-https /etc/nginx/sites-enabled/dns-over-https
+</code></pre><p>lalu jalankan</p>
+<pre tabindex="0"><code>ln -s /etc/nginx/sites-available/dns-over-https /etc/nginx/sites-enabled/dns-over-https
 nginx -t
 systemctl reload nginx
 add-apt-repository ppa:certbot/certbot
 apt update
 apt install python-certbot-nginx
 certbot --nginx -d dns.example.com
-</code></pre>
-
-<p>If that’s successful, certbot will ask how you’d like to configure your HTTPS settings.</p>
-
-<pre><code>Please choose whether or not to redirect HTTP traffic to HTTPS, removing HTTP access.
+</code></pre><p>If that’s successful, certbot will ask how you’d like to configure your HTTPS settings.</p>
+<pre tabindex="0"><code>Please choose whether or not to redirect HTTP traffic to HTTPS, removing HTTP access.
 -------------------------------------------------------------------------------
 1: No redirect - Make no further changes to the webserver configuration.
 2: Redirect - Make all requests redirect to secure HTTPS access. Choose this for
-new sites, or if you're confident your site works on HTTPS. You can undo this
-change by editing your web server's configuration.
+new sites, or if you&#39;re confident your site works on HTTPS. You can undo this
+change by editing your web server&#39;s configuration.
 -------------------------------------------------------------------------------
-Select the appropriate number [1-2] then [enter] (press 'c' to cancel):
-</code></pre>
-
-<p>I advise to choose redirect to be sure it use only HTTPS.</p>
-
+Select the appropriate number [1-2] then [enter] (press &#39;c&#39; to cancel):
+</code></pre><p>I advise to choose redirect to be sure it use only HTTPS.</p>
 <p>Edit the file /etc/letsencrypt/options-ssl-nginx.conf and replace its content by this.</p>
-
-<pre><code>ssl_session_cache shared:le_nginx_SSL:1m;
+<pre tabindex="0"><code>ssl_session_cache shared:le_nginx_SSL:1m;
 ssl_session_timeout 1440m;
 ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
 # Enable modern TLS cipher suites
-ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
+ssl_ciphers &#39;ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256&#39;;
 # The order of cipher suites matters
 ssl_prefer_server_ciphers on;
-add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot; always;
-</code></pre>
-
-<p>Then reload nginx.</p>
-
-<pre><code>systemctl reload nginx
-</code></pre>
-
-<h2 id="tips">TIPS</h2>
-
+add_header Strict-Transport-Security &#34;max-age=31536000; includeSubDomains&#34; always;
+</code></pre><p>Then reload nginx.</p>
+<pre tabindex="0"><code>systemctl reload nginx
+</code></pre><h2 id="tips">TIPS</h2>
 <p>Untuk menggunakan server DOH yang telah kita buat pada dnscrypt-proxy client, buat stamp dulu di <a href="https://dnscrypt.info/stamps/">https://dnscrypt.info/stamps/</a></p>
-
-<p><img src="images/doh.png" alt="DOH" /></p>
-
+<p><img src="images/doh.png" alt="DOH"></p>
 <p>lalu isi nama doh dan stamp nya seperti contoh:</p>
+<pre tabindex="0"><code>[static]
 
-<pre><code>[static]
-
-[static.'gcp']
-   stamp = 'sdns://AgcAAAAAAAAADTM0Ljg3LjExNy4xMDUADWdjcC5iaXJhdS5jb20KL2Rucy1xdWVyeQ'
-[static.'doh']
-   stamp = 'sdns://AgcAAAAAAAAACzQ1Ljc3LjM2LjU0ABJkb2guYmlyYXUuY29tOjM0NDMKL2Rucy1xdWVyeQ'
-</code></pre>
-
-<p>dan tambahkan dibagian server_name menjadi seperti ini:</p>
-
-<pre><code>server_names = ['doh', 'gcp', 'cloudflare', 'google']
-</code></pre>
-
-<p>Referensi:</p>
-
+[static.&#39;gcp&#39;]
+   stamp = &#39;sdns://AgcAAAAAAAAADTM0Ljg3LjExNy4xMDUADWdjcC5iaXJhdS5jb20KL2Rucy1xdWVyeQ&#39;
+[static.&#39;doh&#39;]
+   stamp = &#39;sdns://AgcAAAAAAAAACzQ1Ljc3LjM2LjU0ABJkb2guYmlyYXUuY29tOjM0NDMKL2Rucy1xdWVyeQ&#39;
+</code></pre><p>dan tambahkan dibagian server_name menjadi seperti ini:</p>
+<pre tabindex="0"><code>server_names = [&#39;doh&#39;, &#39;gcp&#39;, &#39;cloudflare&#39;, &#39;google&#39;]
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.aaflalo.me/2018/10/tutorial-setup-dns-over-https-server/">https://www.aaflalo.me/2018/10/tutorial-setup-dns-over-https-server/</a></li>
 <li><a href="https://github.com/m13253/dns-over-https">https://github.com/m13253/dns-over-https</a></li>

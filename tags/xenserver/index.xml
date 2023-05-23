@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>xenserver on Blog Indonesiadot.Com</title>
@@ -6,19 +6,14 @@
     <description>Recent content in xenserver on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Mar 2018 21:56:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/xenserver/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 19 Mar 2018 21:56:00 +0000</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/xenserver/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Xenserver provisioning with ansible</title>
       <link>https://blog.indonesiadot.com/2018/03/19/xenserver-provisioning-with-ansible/</link>
       <pubDate>Mon, 19 Mar 2018 21:56:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/03/19/xenserver-provisioning-with-ansible/</guid>
-      <description>https://medium.com/@jrisch/using-ansible-to-automate-vm-creation-on-xenserver-d092aa484a06
-Using Ansible to automate VM creation on XenServerI’ve been using Xenserver at Fab:IT for the last 8 or 9 years, and during that time, I’ve automated the installation of, mostly Debian and Ubuntu, VM’s in several ways. The most successful way, was a shell script with certain sane defaults built in, combined with preseed files for the various Debian and Ubuntu versions, and small shell scripts for handling the installation of Xentools in the VM, after the initial reboot.</description>
+      <description>https://medium.com/@jrisch/using-ansible-to-automate-vm-creation-on-xenserver-d092aa484a06Using Ansible to automate VM creation on XenServerI’ve been using Xenserver at Fab:IT for the last 8 or 9 years, and during that time, I’ve automated the installation of, mostly Debian and Ubuntu, VM’s in several ways. The most successful way, was a shell script with certain sane defaults built in, combined with preseed files for the various Debian and Ubuntu versions, and small shell scripts for handling the installation of Xentools in the VM, after the initial reboot.</description>
     </item>
     
     <item>
@@ -27,11 +22,11 @@ Using Ansible to automate VM creation on XenServerI’ve been using Xenserver at
       <pubDate>Wed, 31 Jan 2018 21:30:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/31/xenserver-tips-and-trick/</guid>
-      <description>xenserver resize memory command Increase RAM for XenServer VM&amp;rsquo;s through Command Line Interface. 1. If the RAM editing option is graded out through XenCenter.
-Solution: 1. Take a putty/ssh connection to pool master 2. Power off the VM.
-Execute the Below command to configure the new RAM:
-#xe vm-memory-limits-set uuid=&amp;lt;uuid of=&amp;quot;&amp;quot; the=&amp;quot;&amp;quot; valid=&amp;quot;&amp;quot; vm=&amp;quot;&amp;quot;&amp;gt; static-min=&amp;lt;nn&amp;gt;GiB/MiB dynamic-min=&amp;lt;nn&amp;gt;GiB/MiB dynamic-max=&amp;lt;nn&amp;gt;GiB/MiB static-max=&amp;lt;nn&amp;gt;GiB/MiB &amp;lt;/nn&amp;gt;&amp;lt;/nn&amp;gt;&amp;lt;/nn&amp;gt;&amp;lt;/nn&amp;gt;&amp;lt;/uuid&amp;gt;  Example :
-#xe vm-memory-limits-set uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f static-min=64GiB dynamic-min=64GiB dynamic-max=64GiB static-max=64GiB   Start the VM.</description>
+      <description>xenserver resize memory command Increase RAM for XenServer VM&amp;rsquo;s through Command Line Interface.
+If the RAM editing option is graded out through XenCenter. Solution:
+Take a putty/ssh connection to pool master Power off the VM. Execute the Below command to configure the new RAM:
+#xe vm-memory-limits-set uuid=&amp;lt;uuid of=&amp;#34;&amp;#34; the=&amp;#34;&amp;#34; valid=&amp;#34;&amp;#34; vm=&amp;#34;&amp;#34;&amp;gt; static-min=&amp;lt;nn&amp;gt;GiB/MiB dynamic-min=&amp;lt;nn&amp;gt;GiB/MiB dynamic-max=&amp;lt;nn&amp;gt;GiB/MiB static-max=&amp;lt;nn&amp;gt;GiB/MiB &amp;lt;/nn&amp;gt;&amp;lt;/nn&amp;gt;&amp;lt;/nn&amp;gt;&amp;lt;/nn&amp;gt;&amp;lt;/uuid&amp;gt; Example :
+#xe vm-memory-limits-set uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f static-min=64GiB dynamic-min=64GiB dynamic-max=64GiB static-max=64GiB Start the VM. </description>
     </item>
     
   </channel>

@@ -864,40 +864,29 @@
 <div class="post">
   <h1 class="post-title">LXD-LXC</h1>
   <span class="post-date">Mar 10, 2020</span>
-  
-
-<h2 id="lxc-set-static-ip">lxc set static ip</h2>
-
-<pre><code>lxc stop c1
+  <h2 id="lxc-set-static-ip">lxc set static ip</h2>
+<pre tabindex="0"><code>lxc stop c1
 lxc network attach lxdbr0 c1 eth0 eth0
 lxc config device set c1 eth0 ipv4.address 10.99.10.42
 lxc start c1
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4">https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4</a></li>
 </ul>
-
 <h2 id="lxc-privileged-to-unprivileged">lxc privileged to unprivileged</h2>
-
 <p>Pada saat container (CT) lxc dalam unprivileged mode memiliki hak terbatas seperti akses ke device dan beberapa lainnya.</p>
-
 <p>Contoh pada saat menjalankan docker itu ada pesan error <em>Failed to reset devices.list on /system.slice</em></p>
-
-<p>Workaround nya adalah dengan membuat CT menjadi privileged mode, caranya yaitu:
-- backup CT
-- restore CT dengan uncheck unprivileged mode</p>
-
+<p>Workaround nya adalah dengan membuat CT menjadi privileged mode, caranya yaitu:</p>
+<ul>
+<li>backup CT</li>
+<li>restore CT dengan uncheck unprivileged mode</li>
+</ul>
 <ul>
 <li><a href="https://github.com/lxc/lxd/issues/2004">https://github.com/lxc/lxd/issues/2004</a></li>
 <li><a href="https://forum.proxmox.com/threads/convert-privileged-to-unprivileged-container.31066/">https://forum.proxmox.com/threads/convert-privileged-to-unprivileged-container.31066/</a></li>
 </ul>
-
 <h2 id="rename-lxc-container">rename lxc container</h2>
-
-<pre><code>lxc move [ct-lama] [ct-baru]
+<pre tabindex="0"><code>lxc move [ct-lama] [ct-baru]
 </code></pre>
-
 </div>
 
 <hr/>

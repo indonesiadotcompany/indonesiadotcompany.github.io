@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>proxmox on Blog Indonesiadot.Com</title>
@@ -6,11 +6,7 @@
     <description>Recent content in proxmox on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jul 2020 08:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/proxmox/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 10 Jul 2020 08:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/proxmox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Proxmox Beginner</title>
       <link>https://blog.indonesiadot.com/2020/07/10/proxmox-beginner/</link>
@@ -18,7 +14,7 @@
       
       <guid>https://blog.indonesiadot.com/2020/07/10/proxmox-beginner/</guid>
       <description>update proxmox repo https://pve.proxmox.com/wiki/Package_Repositories untuk bisa update proxmox harus dirubah dulu repo nya di file /etc/apt/sources.list (untuk proxmox 5.4 / debian 9 / stretch)
-deb http://kebo.pens.ac.id/debian stretch main contrib deb http://kebo.pens.ac.id/debian stretch-updates main contrib # security updates deb http://kebo.pens.ac.id/debian-security stretch/updates main contrib deb http://download.proxmox.com/debian/pve stretch pve-no-subscription  proxmox masquerade https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt
+deb http://kebo.pens.ac.id/debian stretch main contrib deb http://kebo.pens.ac.id/debian stretch-updates main contrib # security updates deb http://kebo.pens.ac.id/debian-security stretch/updates main contrib deb http://download.proxmox.com/debian/pve stretch pve-no-subscription proxmox masquerade https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt
 auto lo iface lo inet loopback auto ens192 iface ens192 inet static address 10.11.8.202 netmask 255.255.255.0 gateway 10.11.8.1 auto vmbr0 iface vmbr0 inet static address 192.</description>
     </item>
     
@@ -28,10 +24,10 @@ auto lo iface lo inet loopback auto ens192 iface ens192 inet static address 10.1
       <pubDate>Fri, 10 Jul 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/07/10/proxmox-versi-6/</guid>
-      <description> Proxmox Add ZFS Referensi:
- https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/ https://pve.proxmox.com/wiki/ZFS_on_Linux  Proxmox cloud-init Ref:
- https://cloud.centos.org/centos/7/images/ https://pve.proxmox.com/wiki/Cloud-Init_Support https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/  upgrade proxmox 5 to 6 https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0
-tmux pve5to6 #make sure it&#39;s ok systemctl stop pve-ha-lrm systemctl stop pve-ha-crm echo &amp;quot;deb http://download.proxmox.com/debian/corosync-3/ stretch main&amp;quot; &amp;gt; /etc/apt/sources.list.d/corosync3.list apt update apt dist-upgrade systemctl start pve-ha-lrm systemctl start pve-ha-crm sed -i &#39;s/stretch/buster/g&#39; /etc/apt/sources.list apt update apt dist-upgrade rm /etc/apt/sources.list.d/corosync3.list  </description>
+      <description>Proxmox Add ZFS Referensi:
+https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/ https://pve.proxmox.com/wiki/ZFS_on_Linux Proxmox cloud-init Ref:
+https://cloud.centos.org/centos/7/images/ https://pve.proxmox.com/wiki/Cloud-Init_Support https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/ upgrade proxmox 5 to 6 https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0
+tmux pve5to6 #make sure it&amp;#39;s ok systemctl stop pve-ha-lrm systemctl stop pve-ha-crm echo &amp;#34;deb http://download.proxmox.com/debian/corosync-3/ stretch main&amp;#34; &amp;gt; /etc/apt/sources.list.d/corosync3.list apt update apt dist-upgrade systemctl start pve-ha-lrm systemctl start pve-ha-crm sed -i &amp;#39;s/stretch/buster/g&amp;#39; /etc/apt/sources.list apt update apt dist-upgrade rm /etc/apt/sources.list.d/corosync3.list </description>
     </item>
     
     <item>
@@ -41,7 +37,7 @@ tmux pve5to6 #make sure it&#39;s ok systemctl stop pve-ha-lrm systemctl stop pve
       
       <guid>https://blog.indonesiadot.com/2020/03/06/proxmox-add-zfs-disk/</guid>
       <description>Add Disk Hardware Tambahkan harddisk di server secara berurutan port sata nya, dan catat ID disknya
-Setting at command line ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4 zpool create rpoolkube -o ashift=12 mirror /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4 zpool status  Tambahkan proxmox storage pool Dari proxmox pool, lalu klik storage, lalu add storage, pilih zfs. Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masukan block size 64k, lalu klik create.</description>
+Setting at command line ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4 zpool create rpoolkube -o ashift=12 mirror /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC1999L4 zpool status Tambahkan proxmox storage pool Dari proxmox pool, lalu klik storage, lalu add storage, pilih zfs. Beri nama id storage nya, lalu pilih pool yang baru yaitu rpoolkube, lalu masukan block size 64k, lalu klik create.</description>
     </item>
     
     <item>
@@ -52,7 +48,7 @@ Setting at command line ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R l
       <guid>https://blog.indonesiadot.com/2019/09/02/proxmox-optimized-disk-for-auto-trim-/-shrink/</guid>
       <description>Dalam implementasi proxmox, yang harus diperhatikan adalah type disk pada awal pembuatan, ini berguna agar disk system secara keseluruhan tidak cepat full, dan fungsi dari thin provision storage atau storage yang bisa tetap thin sesuai file yang ada di vm, bukan berdasarkan disk yang dialokasikan.
 Persyaratan adalah:
- menggunakan thin provisioned backing storage seperti qcow2, thin-lvm, zfs pada server proxmox nya menggunakan Virtio SCSI controller pada guest option vm nya Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya Tambahkan discard mount options di /etc/fstab nya guest vm Enable fstrim.</description>
+menggunakan thin provisioned backing storage seperti qcow2, thin-lvm, zfs pada server proxmox nya menggunakan Virtio SCSI controller pada guest option vm nya Menggunakan SCSI bus/device saat pembuatan hdd pada guest vm nya dan check bagian discard option nya Tambahkan discard mount options di /etc/fstab nya guest vm Enable fstrim.</description>
     </item>
     
   </channel>

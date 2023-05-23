@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.57.2" />
+	<meta name="generator" content="Hugo 0.106.0">
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -870,29 +870,19 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/29/linux-os-hardening/">Linux OS Hardening</a></h1>
         <span class="post-date">Oct 29, 2019</span>
-	
-
-<h2 id="password-policies-centos-7">Password Policies Centos 7</h2>
-
+	<h2 id="password-policies-centos-7">Password Policies Centos 7</h2>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/">https://www.theurbanpenguin.com/administering-local-password-policies-in-centos-7/</a></li>
 <li><a href="https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/">https://kifarunix.com/enforce-password-complexity-policy-on-centos-7-rhel-derivatives/</a></li>
 </ul>
-
 <h2 id="centos-7-hardening-guide">Centos 7 Hardening Guide</h2>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://www.lisenet.com/2017/centos-7-server-hardening-guide/">https://www.lisenet.com/2017/centos-7-server-hardening-guide/</a></li>
 </ul>
-
-<h2 id="linux-aslr-and-kernel-randomize-va-space">Linux ASLR and kernel.randomize_va_space</h2>
-
+<h2 id="linux-aslr-and-kernelrandomize_va_space">Linux ASLR and kernel.randomize_va_space</h2>
 <p>Ref:</p>
-
 <ul>
 <li><a href="https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/">https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/</a></li>
 </ul>
@@ -908,12 +898,8 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/">TCP Wrapper</a></h1>
         <span class="post-date">Oct 29, 2019</span>
-	
-
-<h2 id="tcp-wrapper">TCP Wrapper</h2>
-
+	<h2 id="tcp-wrapper">TCP Wrapper</h2>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=tcp_wrapper">https://www.server-world.info/en/note?os=CentOS_7&amp;p=tcp_wrapper</a></li>
 <li><a href="https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/">https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/</a></li>
@@ -930,84 +916,61 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/28/ansible-reference/">Ansible Reference</a></h1>
         <span class="post-date">Oct 28, 2019</span>
-	
-
-<p>Postingan ini adalah referensi untuk belajar ansible dan bisa juga sebagai tips, meski sudah ada postingan sebelumnya yang berisi ansible tips :)</p>
-
+	<p>Postingan ini adalah referensi untuk belajar ansible dan bisa juga sebagai tips, meski sudah ada postingan sebelumnya yang berisi ansible tips :)</p>
 <h2 id="jenkins-ci">Jenkins-ci</h2>
-
-<p>Ref:
-* <a href="https://galaxy.ansible.com/geerlingguy/jenkins/">https://galaxy.ansible.com/geerlingguy/jenkins/</a>
-* <a href="http://rundeck.org">http://rundeck.org</a>
-* Goci / gocd</p>
-
+<p>Ref:</p>
+<ul>
+<li><a href="https://galaxy.ansible.com/geerlingguy/jenkins/">https://galaxy.ansible.com/geerlingguy/jenkins/</a></li>
+<li><a href="http://rundeck.org">http://rundeck.org</a></li>
+<li>Goci / gocd</li>
+</ul>
 <h2 id="ansible-check-disk">Ansible check disk</h2>
-
-<pre><code>- name: Ensure that free space on {{ mountname }} is grater than 40%
+<pre tabindex="0"><code>- name: Ensure that free space on {{ mountname }} is grater than 40%
   assert:
     that: mount.size_available &gt; mount.size_total|float * 0.4
     msg: disk space has reached 60% threshold
   vars:
-    mountname: '/'
-    mount: &quot;{{ ansible_mounts | selectattr('mount','equalto',mountname) | list | first }}&quot;
-</code></pre>
-
-<p>atau</p>
-
-<pre><code>- name: Ensure that free space on the tested volume is greater than 15%
+    mountname: &#39;/&#39;
+    mount: &#34;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&#34;
+</code></pre><p>atau</p>
+<pre tabindex="0"><code>- name: Ensure that free space on the tested volume is greater than 15%
   assert:
     that:
       - mount.size_available &gt; mount.size_total|float * 0.15
     msg: Disk space has reached 85% threshold
   vars:
-    mount: &quot;{{ ansible_mounts | selectattr('mount','equalto',item.mount) | list | first }}&quot;
+    mount: &#34;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,item.mount) | list | first }}&#34;
   with_items:
-    - &quot;{{ ansible_mounts }}&quot;
-</code></pre>
-
-<p>atau</p>
-
-<pre><code>name: 'Ensure that free space on {{ mountname }} is grater than 30%'
+    - &#34;{{ ansible_mounts }}&#34;
+</code></pre><p>atau</p>
+<pre tabindex="0"><code>name: &#39;Ensure that free space on {{ mountname }} is grater than 30%&#39;
 assert:
   that: item.size_available &gt; item.size_total|float * 0.3
-  msg: 'disk space has reached 70% threshold'
+  msg: &#39;disk space has reached 70% threshold&#39;
 when: item.mount == mountname
-with_items: '{{ ansible_mounts }}'
-</code></pre>
-
-<p>Referensi:</p>
-
+with_items: &#39;{{ ansible_mounts }}&#39;
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/44077630/ansible-to-check-diskspace-for-mounts-mentioned-as-variable">https://stackoverflow.com/questions/44077630/ansible-to-check-diskspace-for-mounts-mentioned-as-variable</a></li>
 </ul>
-
 <h2 id="ansible-role-tutorial">Ansible role tutorial</h2>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://medium.com/@brad.simonin/learning-ansible-and-ansible-roles-with-centos-7-linux-817406f7b542">https://medium.com/@brad.simonin/learning-ansible-and-ansible-roles-with-centos-7-linux-817406f7b542</a></li>
 </ul>
-
 <h2 id="ansible-create-file-based-on-date">Ansible create file based on date</h2>
-
-<pre><code>- name: Backup and compress /etc/ to /data/backups based on date
+<pre tabindex="0"><code>- name: Backup and compress /etc/ to /data/backups based on date
   archive:
     path: /etc/
     dest: /data/backups/etc-{{ date }}.tgz
   vars:
-    date: &quot;{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}&quot;
-</code></pre>
-
-<p>Referensi:</p>
-
+    date: &#34;{{ lookup(&#39;pipe&#39;, &#39;date +%Y%m%d-%H%M&#39;) }}&#34;
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://serverfault.com/questions/728662/ansible-manipulate-file-with-a-date-format">https://serverfault.com/questions/728662/ansible-manipulate-file-with-a-date-format</a></li>
 </ul>
-
 <h2 id="ansible-check-file-if-exists-or-not">Ansible check file if exists or not</h2>
-
-<pre><code>- name: Check that the hosts.allow exists
+<pre tabindex="0"><code>- name: Check that the hosts.allow exists
   stat:
     path: /etc/hosts.allow
   register: stat_allow
@@ -1016,37 +979,24 @@ with_items: '{{ ansible_mounts }}'
     path: /etc/hosts.allow
     state: touch
   when: stat_allow.stat.exists == False
-</code></pre>
-
-<p>Ref:</p>
-
+</code></pre><p>Ref:</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/35654286/how-check-a-file-exists-in-ansible">https://stackoverflow.com/questions/35654286/how-check-a-file-exists-in-ansible</a></li>
 </ul>
-
 <h2 id="ansible-explicit-data-type-casting-str-indicator">Ansible explicit data type casting !!str indicator</h2>
-
 <p>!!str indicator which simply forces the value to be a string.</p>
-
 <p>Ref:</p>
-
 <ul>
 <li><a href="https://github.com/ansible/ansible/issues/11905">https://github.com/ansible/ansible/issues/11905</a></li>
 <li><a href="https://github.com/ansible/ansible/issues/11151">https://github.com/ansible/ansible/issues/11151</a></li>
 </ul>
-
 <h2 id="ansible-lineinfile-module">Ansible lineinfile module</h2>
-
 <p>Ref:</p>
-
 <ul>
 <li><a href="https://docs.ansible.com/ansible/latest/modules/lineinfile_module.html">https://docs.ansible.com/ansible/latest/modules/lineinfile_module.html</a></li>
 </ul>
-
-<h2 id="ansible-find-register-variable-and-output-to-terminal-echo">Ansible find, register variable, and output to terminal / echo</h2>
-
+<h2 id="ansible-find-register-variable-and-output-to-terminal--echo">Ansible find, register variable, and output to terminal / echo</h2>
 <p>Ref:</p>
-
 <ul>
 <li><a href="https://www.mydailytutorials.com/ansible-register-variables/">https://www.mydailytutorials.com/ansible-register-variables/</a></li>
 <li><a href="https://serverfault.com/questions/537060/how-to-see-stdout-of-ansible-commands">https://serverfault.com/questions/537060/how-to-see-stdout-of-ansible-commands</a></li>
@@ -1054,26 +1004,17 @@ with_items: '{{ ansible_mounts }}'
 <li><a href="https://docs.ansible.com/ansible/latest/modules/find_module.html">https://docs.ansible.com/ansible/latest/modules/find_module.html</a></li>
 <li><a href="https://serverfault.com/questions/945821/ansible-find-get-path-of-a-directory">https://serverfault.com/questions/945821/ansible-find-get-path-of-a-directory</a></li>
 </ul>
-
 <h2 id="ansible-show-detailed-output-using-callback-plugins">Ansible show detailed output using callback plugins</h2>
-
 <p>Ref:</p>
-
 <ul>
 <li><a href="https://docs.ansible.com/ansible/latest/plugins/callback.html">https://docs.ansible.com/ansible/latest/plugins/callback.html</a></li>
 <li><a href="https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html">https://docs.ansible.com/ansible/latest/plugins/callback/profile_tasks.html</a></li>
 </ul>
-
 <h2 id="ansible-copy-only-on-remote-host">ansible copy only on remote host</h2>
-
-<pre><code>name: copy files task
+<pre tabindex="0"><code>name: copy files task
   shell: cp source/path/file destination/path/file 
-</code></pre>
-
-<p>or using remote_src flag on copy module</p>
-
+</code></pre><p>or using remote_src flag on copy module</p>
 <p>Ref:</p>
-
 <ul>
 <li><a href="https://stackoverflow.com/questions/41130757/ansible-copy-or-move-files-only-on-remote-host">https://stackoverflow.com/questions/41130757/ansible-copy-or-move-files-only-on-remote-host</a></li>
 </ul>
@@ -1089,58 +1030,36 @@ with_items: '{{ ansible_mounts }}'
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/26/tmux-screen-tips/">Tmux screen tips</a></h1>
         <span class="post-date">Oct 26, 2019</span>
-	
-
-<h1 id="tmux-cheatsheet">Tmux cheatsheet</h1>
-
-<h1 id="tmux-shortcuts-cheatsheet">tmux shortcuts &amp; cheatsheet</h1>
-
+	<h1 id="tmux-cheatsheet">Tmux cheatsheet</h1>
+<h1 id="tmux-shortcuts--cheatsheet">tmux shortcuts &amp; cheatsheet</h1>
 <p>start new:</p>
-
 <pre><code>tmux
 </code></pre>
-
 <p>start new with session name:</p>
-
 <pre><code>tmux new -s myname
 </code></pre>
-
 <p>attach:</p>
-
 <pre><code>tmux a  #  (or at, or attach)
 </code></pre>
-
 <p>attach to named:</p>
-
 <pre><code>tmux a -t myname
 </code></pre>
-
 <p>list sessions:</p>
-
 <pre><code>tmux ls
 </code></pre>
-
-<p><a name="killSessions"></a>kill session:</p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->kill session:</p>
 <pre><code>tmux kill-session -t myname
 </code></pre>
-
-<p><a name="killAllSessions"></a>Kill all the tmux sessions:</p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->Kill all the tmux sessions:</p>
 <pre><code>tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
 </code></pre>
-
 <p>In tmux, hit the prefix <code>ctrl+b</code> (my modified prefix is ctrl+a) and then:</p>
-
 <h2 id="sessions">Sessions</h2>
-
 <pre><code>:new&lt;CR&gt;  new session
 s  list sessions
 $  name session
 </code></pre>
-
-<h2 id="a-name-windowstabs-a-windows-tabs"><a name="WindowsTabs"></a>Windows (tabs)</h2>
-
+<h2 id="a-namewindowstabsawindows-tabs"><!-- raw HTML omitted --><!-- raw HTML omitted -->Windows (tabs)</h2>
 <pre><code>c  create window
 w  list windows
 n  next window
@@ -1149,9 +1068,7 @@ f  find window
 ,  name window
 &amp;  kill window
 </code></pre>
-
-<h2 id="a-name-panessplits-a-panes-splits"><a name="PanesSplits"></a>Panes (splits)</h2>
-
+<h2 id="a-namepanessplitsapanes-splits"><!-- raw HTML omitted --><!-- raw HTML omitted -->Panes (splits)</h2>
 <pre><code>%  vertical split
 &quot;  horizontal split
 
@@ -1166,20 +1083,12 @@ x  kill pane
 &lt;prefix&gt; } (Move the current pane right)
 &lt;prefix&gt; z toggle pane zoom
 </code></pre>
-
-<h2 id="a-name-syncpanes-a-sync-panes"><a name="syncPanes"></a>Sync Panes</h2>
-
+<h2 id="a-namesyncpanesasync-panes"><!-- raw HTML omitted --><!-- raw HTML omitted -->Sync Panes</h2>
 <p>You can do this by switching to the appropriate window, typing your Tmux prefix (commonly Ctrl-B or Ctrl-A) and then a colon to bring up a Tmux command line, and typing:</p>
-
-<pre><code>:setw synchronize-panes
-</code></pre>
-
-<p>You can optionally add on or off to specify which state you want; otherwise the option is simply toggled. This option is specific to one window, so it won’t change the way your other sessions or windows operate. When you’re done, toggle it off again by repeating the command. <a href="http://blog.sanctum.geek.nz/sync-tmux-panes/">tip source</a></p>
-
+<pre tabindex="0"><code>:setw synchronize-panes
+</code></pre><p>You can optionally add on or off to specify which state you want; otherwise the option is simply toggled. This option is specific to one window, so it won’t change the way your other sessions or windows operate. When you’re done, toggle it off again by repeating the command. <a href="http://blog.sanctum.geek.nz/sync-tmux-panes/">tip source</a></p>
 <h2 id="resizing-panes">Resizing Panes</h2>
-
 <p>You can also resize panes if you don’t like the layout defaults. I personally rarely need to do this, though it’s handy to know how. Here is the basic syntax to resize panes:</p>
-
 <pre><code>PREFIX : resize-pane -D (Resizes the current pane down)
 PREFIX : resize-pane -U (Resizes the current pane upward)
 PREFIX : resize-pane -L (Resizes the current pane left)
@@ -1191,20 +1100,13 @@ PREFIX : resize-pane -R 20 (Resizes the current pane right by 20 cells)
 PREFIX : resize-pane -t 2 20 (Resizes the pane with the id of 2 down by 20 cells)
 PREFIX : resize-pane -t -L 20 (Resizes the pane with the id of 2 left by 20 cells)
 </code></pre>
-
 <h2 id="copy-mode">Copy mode:</h2>
-
 <p>Pressing PREFIX [ places us in Copy mode. We can then use our movement keys to move our cursor around the screen. By default, the arrow keys work. we set our configuration file to use Vim keys for moving between windows and resizing panes so we wouldn’t have to take our hands off the home row. tmux has a vi mode for working with the buffer as well. To enable it, add this line to .tmux.conf:</p>
-
 <pre><code>setw -g mode-keys vi
 </code></pre>
-
 <p>With this option set, we can use h, j, k, and l to move around our buffer.</p>
-
 <p>To get out of Copy mode, we just press the ENTER key. Moving around one character at a time isn’t very efficient. Since we enabled vi mode, we can also use some other visible shortcuts to move around the buffer.</p>
-
 <p>For example, we can use &ldquo;w&rdquo; to jump to the next word and &ldquo;b&rdquo; to jump back one word. And we can use &ldquo;f&rdquo;, followed by any character, to jump to that character on the same line, and &ldquo;F&rdquo; to jump backwards on the line.</p>
-
 <pre><code>   Function                vi             emacs
    Back to indentation     ^              M-m
    Clear selection         Escape         C-g
@@ -1237,17 +1139,13 @@ PREFIX : resize-pane -t -L 20 (Resizes the pane with the id of 2 left by 20 cell
    Start selection         Space          C-Space
    Transpose chars                        C-t
 </code></pre>
-
 <h2 id="misc">Misc</h2>
-
 <pre><code>d  detach
 t  big clock
 ?  list shortcuts
 :  prompt
 </code></pre>
-
 <h2 id="configurations-options">Configurations Options:</h2>
-
 <pre><code># Mouse support - set to on if you want to use the mouse
 * setw -g mode-mouse off
 * set -g mouse-select-pane off
@@ -1269,35 +1167,25 @@ unbind Up bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t
 unbind Down
 bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
 </code></pre>
-
 <h2 id="resources">Resources:</h2>
-
 <ul>
 <li><a href="http://pragprog.com/book/bhtmux/tmux">tmux: Productive Mouse-Free Development</a></li>
 <li><a href="http://superuser.com/questions/343572/tmux-how-do-i-reorder-my-windows">How to reorder windows</a></li>
 </ul>
-
 <h2 id="notes">Notes:</h2>
-
 <ul>
 <li></li>
 </ul>
-
 <h2 id="changelog">Changelog:</h2>
-
 <ul>
 <li>1411143833002 - Added <a href="#PanesSplits">toggle zoom</a> under Panes (splits) section.</li>
 <li>1411143833002 - <a href="#syncPanes">Added Sync Panes</a></li>
 <li>1414276652677 - <a href="#killAllSessions">Added Kill all tmux sessions </a></li>
 <li>1438585211173 - <a href="#WindowsTabs">corrected create and add next and previus thanks to @justinjhendrick</a></li>
 </ul>
-
 <h2 id="request-an-update">Request an Update:</h2>
-
 <p>We Noticed that our Cheatsheet is growing and people are coloberating to add new tips and tricks, so please tweet to me what would you like to add and let&rsquo;s make it better!</p>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://tmuxcheatsheet.com/">https://tmuxcheatsheet.com/</a></li>
 <li><a href="https://gist.github.com/MohamedAlaa/2961058">https://gist.github.com/MohamedAlaa/2961058</a></li>
@@ -1315,10 +1203,8 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/25/create-gcp-vm-using-gcloud-from-command-line/">Create GCP VM using gcloud from command line</a></h1>
         <span class="post-date">Oct 25, 2019</span>
 	<p>Pembuatan virtual machine di GCP / Google Cloud Platform menggunakan gcloud command line bermanfaat untuk mempermudah pembuatan VM tanpa harus mengakses web browser.</p>
-
 <p>Berikut langkah nya yang dilakukan di OS Centos 7:</p>
-
-<pre><code>sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &lt;&lt; EOM
+<pre tabindex="0"><code>sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &lt;&lt; EOM
 [google-cloud-sdk]
 name=Google Cloud SDK
 baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
@@ -1330,31 +1216,21 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
 EOM
 sudo yum install google-cloud-sdk
 gcloud init
-</code></pre>
-
-<p>Berikut langkah yang dilakukan di OS ubuntu / debian:</p>
-
-<pre><code>echo &quot;deb http://packages.cloud.google.com/apt cloud-sdk main&quot; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+</code></pre><p>Berikut langkah yang dilakukan di OS ubuntu / debian:</p>
+<pre tabindex="0"><code>echo &#34;deb http://packages.cloud.google.com/apt cloud-sdk main&#34; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk
 gcloud init
-</code></pre>
-
-<p>Pada saat initialize ini akan diminta untuk memasukan user google yang akan digunakan, diikuti saja semua langkah nya sampai dengan memasukan verifikasi.</p>
-
+</code></pre><p>Pada saat initialize ini akan diminta untuk memasukan user google yang akan digunakan, diikuti saja semua langkah nya sampai dengan memasukan verifikasi.</p>
 <p>Setelah itu bisa menjalankan script 1-gcp-centos.sh berikut:</p>
+<pre tabindex="0"><code>bash 1-gcp-centos.sh namavm
+</code></pre><p>Berikut script 1-gcp-centos.sh</p>
+<pre tabindex="0"><code>#!/bin/bash
 
-<pre><code>bash 1-gcp-centos.sh namavm
-</code></pre>
-
-<p>Berikut script 1-gcp-centos.sh</p>
-
-<pre><code>#!/bin/bash
-
-if [ -z &quot;$1&quot; ]; then
+if [ -z &#34;$1&#34; ]; then
  NAMA=$1
- while [ -z &quot;$NAMA&quot; ]; do
-  echo &quot;masukan nama vm:&quot;
+ while [ -z &#34;$NAMA&#34; ]; do
+  echo &#34;masukan nama vm:&#34;
   read NAMA
  done
  # Create GCE VM with disk storage
@@ -1371,10 +1247,7 @@ if [ -z &quot;$1&quot; ]; then
   --boot-disk-type pd-standard \
   --boot-disk-device-name compute-disk
 fi
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://cloud.google.com/sdk/docs/quickstart-redhat-centos">https://cloud.google.com/sdk/docs/quickstart-redhat-centos</a></li>
 <li><a href="https://github.com/garystafford/ansible-gcp-demo">https://github.com/garystafford/ansible-gcp-demo</a></li>
@@ -1392,7 +1265,6 @@ fi
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/25/gcp-and-ansible/">GCP and Ansible</a></h1>
         <span class="post-date">Oct 25, 2019</span>
 	<p>Referensi:</p>
-
 <ul>
 <li><a href="https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/">https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/</a></li>
 </ul>
@@ -1408,18 +1280,11 @@ fi
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/">Kernel Hardening Tips</a></h1>
         <span class="post-date">Oct 15, 2019</span>
-	
-
-<h2 id="disable-and-blacklist-linux-modules">Disable and blacklist Linux modules</h2>
-
+	<h2 id="disable-and-blacklist-linux-modules">Disable and blacklist Linux modules</h2>
 <p>Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya</p>
-
-<pre><code>blacklist firewire_core
+<pre tabindex="0"><code>blacklist firewire_core
 install firewire_core /bin/true
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><p>Referensi:</p>
 <ul>
 <li>CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf</li>
 <li><a href="https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/">https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/</a></li>
@@ -1436,30 +1301,17 @@ install firewire_core /bin/true
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/">Android USB File Transfer</a></h1>
         <span class="post-date">Oct 14, 2019</span>
-	
-
-<h2 id="android-usb-file-transfer">Android USB File Transfer</h2>
-
-<pre><code>add-apt-repository ppa:webupd8team/unstable
+	<h2 id="android-usb-file-transfer">Android USB File Transfer</h2>
+<pre tabindex="0"><code>add-apt-repository ppa:webupd8team/unstable
 apt update
 apt-get install go-mtpfs
 mkdir /media/MyAndroid
-</code></pre>
-
-<h3 id="mount">mount</h3>
-
-<pre><code>go-mtpfs /media/MyAndroid
-</code></pre>
-
-<h3 id="unmount">unmount</h3>
-
-<pre><code>fusermount -u /media/MyAndroid
-</code></pre>
-
-<p>or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open <a href="ftp://ip.of.android:8888">ftp://ip.of.android:8888</a>, so you can access from pc via ftp client like filezilla.</p>
-
+</code></pre><h3 id="mount">mount</h3>
+<pre tabindex="0"><code>go-mtpfs /media/MyAndroid
+</code></pre><h3 id="unmount">unmount</h3>
+<pre tabindex="0"><code>fusermount -u /media/MyAndroid
+</code></pre><p>or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open <a href="ftp://ip.of.android:8888">ftp://ip.of.android:8888</a>, so you can access from pc via ftp client like filezilla.</p>
 <p>Referensi:</p>
-
 <ul>
 <li><a href="http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html">http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html</a></li>
 <li><a href="https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu">https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu</a></li>
@@ -1476,35 +1328,25 @@ mkdir /media/MyAndroid
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld/">Centos 7 Firewalld</a></h1>
         <span class="post-date">Oct 14, 2019</span>
-	
-
-<h2 id="firewalld-masquerade">Firewalld masquerade</h2>
-
+	<h2 id="firewalld-masquerade">Firewalld masquerade</h2>
 <ul>
-<li><p><a href="https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/">https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/</a></p>
-
-<pre><code>firewall-cmd --get-active-zones
+<li><a href="https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/">https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/</a></li>
+</ul>
+<pre tabindex="0"><code>firewall-cmd --get-active-zones
 firewall-cmd --list-all --zone=public
 firewall-cmd --add-masquerade --zone=public --permanent
 firewall-cmd --reload
 firewall-cmd --list-all --zone=public
-</code></pre></li>
-</ul>
-
-<h2 id="open-port-for-specific-ip-address">Open port for specific ip address</h2>
-
+</code></pre><h2 id="open-port-for-specific-ip-address">Open port for specific ip address</h2>
 <ul>
 <li><a href="https://serverfault.com/questions/684602/how-to-open-port-for-a-specific-ip-address-with-firewall-cmd-on-centos">https://serverfault.com/questions/684602/how-to-open-port-for-a-specific-ip-address-with-firewall-cmd-on-centos</a></li>
-
-<li><p><a href="https://www.liquidweb.com/kb/an-introduction-to-firewalld/">https://www.liquidweb.com/kb/an-introduction-to-firewalld/</a></p>
-
-<pre><code>firewall-cmd --permanent --zone=public --add-rich-rule='
-rule family=&quot;ipv4&quot;
-source address=&quot;1.2.3.4/32&quot;
-port protocol=&quot;tcp&quot; port=&quot;4567&quot; accept'
-</code></pre></li>
+<li><a href="https://www.liquidweb.com/kb/an-introduction-to-firewalld/">https://www.liquidweb.com/kb/an-introduction-to-firewalld/</a></li>
 </ul>
-
+<pre tabindex="0"><code>firewall-cmd --permanent --zone=public --add-rich-rule=&#39;
+  rule family=&#34;ipv4&#34;
+  source address=&#34;1.2.3.4/32&#34;
+  port protocol=&#34;tcp&#34; port=&#34;4567&#34; accept&#39;
+</code></pre>
 	<hr/>
 	
 	

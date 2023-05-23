@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.57.2" />
+	<meta name="generator" content="Hugo 0.106.0">
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -870,20 +870,11 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/magic-of-sed/">Magic of Sed</a></h1>
         <span class="post-date">Oct 14, 2019</span>
-	
-
-<h2 id="insert-every-line-in-linux">Insert every line in linux</h2>
-
-<pre><code>sed 's/^/apt-get purge -y /' aptwantopurge.txt &gt; aptpurge.txt
-</code></pre>
-
-<h2 id="comment-out-a-line-that-contain-string">comment out a line that contain string</h2>
-
-<pre><code>sed -i '/ 2001 /s/^/#/' file
-</code></pre>
-
-<p>Referensi:</p>
-
+	<h2 id="insert-every-line-in-linux">Insert every line in linux</h2>
+<pre tabindex="0"><code>sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &gt; aptpurge.txt
+</code></pre><h2 id="comment-out-a-line-that-contain-string">comment out a line that contain string</h2>
+<pre tabindex="0"><code>sed -i &#39;/ 2001 /s/^/#/&#39; file
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.google.com/search?q=insert+every+line+linux&amp;oq=insert+every+line+linux">https://www.google.com/search?q=insert+every+line+linux&amp;oq=insert+every+line+linux</a></li>
 <li><a href="https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line">https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line</a></li>
@@ -903,44 +894,24 @@
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/13/doh-dns-over-https/">DOH DNS over HTTPS</a></h1>
         <span class="post-date">Oct 13, 2019</span>
-	
-
-<h2 id="security-dns-di-sisi-client">Security DNS di sisi client</h2>
-
+	<h2 id="security-dns-di-sisi-client">Security DNS di sisi client</h2>
 <h3 id="install-dnscrypt-proxy">Install dnscrypt-proxy</h3>
-
-<pre><code>add-apt-repository ppa:shevchuk/dnscrypt-proxy
+<pre tabindex="0"><code>add-apt-repository ppa:shevchuk/dnscrypt-proxy
 apt update
 apt install dnscrypt-proxy
-</code></pre>
-
-<p>Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel <strong>server_name</strong> menjadi seperti contoh berikut:</p>
-
-<pre><code>server_names = ['cloudflare', 'google']
-</code></pre>
-
-<p>lalu restart service dnscrypt-proxy</p>
-
-<pre><code>systemctl restart dnscrypt-proxy
-</code></pre>
-
-<p>edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy</p>
-
-<pre><code>nameserver 127.0.2.1
-</code></pre>
-
-<h2 id="install-dns-over-https-server">Install DNS over HTTPS server</h2>
-
+</code></pre><p>Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel <strong>server_name</strong> menjadi seperti contoh berikut:</p>
+<pre tabindex="0"><code>server_names = [&#39;cloudflare&#39;, &#39;google&#39;]
+</code></pre><p>lalu restart service dnscrypt-proxy</p>
+<pre tabindex="0"><code>systemctl restart dnscrypt-proxy
+</code></pre><p>edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy</p>
+<pre tabindex="0"><code>nameserver 127.0.2.1
+</code></pre><h2 id="install-dns-over-https-server">Install DNS over HTTPS server</h2>
 <h3 id="install-dengan-cara-paket-instalasi-deb">Install dengan cara paket instalasi deb</h3>
-
-<pre><code>wget &quot;https://www.aaflalo.me/?smd_process_download=1&amp;download_id=1326&quot;
+<pre tabindex="0"><code>wget &#34;https://www.aaflalo.me/?smd_process_download=1&amp;download_id=1326&#34;
 mv index* doh-server.deb
 dpkg -i doh-server_*_amd64.deb
-</code></pre>
-
-<h3 id="install-dengan-cara-compile">Install dengan cara compile</h3>
-
-<pre><code>wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
+</code></pre><h3 id="install-dengan-cara-compile">Install dengan cara compile</h3>
+<pre tabindex="0"><code>wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.13.linux-amd64.tar.gz
 wget https://github.com/m13253/dns-over-https/archive/v2.1.2.tar.gz
 tar xzf v2.1.2.tar.gz
@@ -949,11 +920,8 @@ make &amp;&amp; make install
 add-apt-repository ppa:ondrej/nginx
 apt update
 apt install nginx-full
-</code></pre>
-
-<p>Buat file /etc/nginx/sites-available/doh yang isinya:</p>
-
-<pre><code>upstream dns-backend {
+</code></pre><p>Buat file /etc/nginx/sites-available/doh yang isinya:</p>
+<pre tabindex="0"><code>upstream dns-backend {
     server 127.0.0.1:8053;
 }
 server {
@@ -974,73 +942,48 @@ server {
                 proxy_pass http://dns-backend/dns-query ;
         }
 }
-</code></pre>
-
-<p>lalu jalankan</p>
-
-<pre><code>ln -s /etc/nginx/sites-available/dns-over-https /etc/nginx/sites-enabled/dns-over-https
+</code></pre><p>lalu jalankan</p>
+<pre tabindex="0"><code>ln -s /etc/nginx/sites-available/dns-over-https /etc/nginx/sites-enabled/dns-over-https
 nginx -t
 systemctl reload nginx
 add-apt-repository ppa:certbot/certbot
 apt update
 apt install python-certbot-nginx
 certbot --nginx -d dns.example.com
-</code></pre>
-
-<p>If that’s successful, certbot will ask how you’d like to configure your HTTPS settings.</p>
-
-<pre><code>Please choose whether or not to redirect HTTP traffic to HTTPS, removing HTTP access.
+</code></pre><p>If that’s successful, certbot will ask how you’d like to configure your HTTPS settings.</p>
+<pre tabindex="0"><code>Please choose whether or not to redirect HTTP traffic to HTTPS, removing HTTP access.
 -------------------------------------------------------------------------------
 1: No redirect - Make no further changes to the webserver configuration.
 2: Redirect - Make all requests redirect to secure HTTPS access. Choose this for
-new sites, or if you're confident your site works on HTTPS. You can undo this
-change by editing your web server's configuration.
+new sites, or if you&#39;re confident your site works on HTTPS. You can undo this
+change by editing your web server&#39;s configuration.
 -------------------------------------------------------------------------------
-Select the appropriate number [1-2] then [enter] (press 'c' to cancel):
-</code></pre>
-
-<p>I advise to choose redirect to be sure it use only HTTPS.</p>
-
+Select the appropriate number [1-2] then [enter] (press &#39;c&#39; to cancel):
+</code></pre><p>I advise to choose redirect to be sure it use only HTTPS.</p>
 <p>Edit the file /etc/letsencrypt/options-ssl-nginx.conf and replace its content by this.</p>
-
-<pre><code>ssl_session_cache shared:le_nginx_SSL:1m;
+<pre tabindex="0"><code>ssl_session_cache shared:le_nginx_SSL:1m;
 ssl_session_timeout 1440m;
 ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
 # Enable modern TLS cipher suites
-ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
+ssl_ciphers &#39;ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256&#39;;
 # The order of cipher suites matters
 ssl_prefer_server_ciphers on;
-add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot; always;
-</code></pre>
-
-<p>Then reload nginx.</p>
-
-<pre><code>systemctl reload nginx
-</code></pre>
-
-<h2 id="tips">TIPS</h2>
-
+add_header Strict-Transport-Security &#34;max-age=31536000; includeSubDomains&#34; always;
+</code></pre><p>Then reload nginx.</p>
+<pre tabindex="0"><code>systemctl reload nginx
+</code></pre><h2 id="tips">TIPS</h2>
 <p>Untuk menggunakan server DOH yang telah kita buat pada dnscrypt-proxy client, buat stamp dulu di <a href="https://dnscrypt.info/stamps/">https://dnscrypt.info/stamps/</a></p>
-
-<p><img src="images/doh.png" alt="DOH" /></p>
-
+<p><img src="images/doh.png" alt="DOH"></p>
 <p>lalu isi nama doh dan stamp nya seperti contoh:</p>
+<pre tabindex="0"><code>[static]
 
-<pre><code>[static]
-
-[static.'gcp']
-   stamp = 'sdns://AgcAAAAAAAAADTM0Ljg3LjExNy4xMDUADWdjcC5iaXJhdS5jb20KL2Rucy1xdWVyeQ'
-[static.'doh']
-   stamp = 'sdns://AgcAAAAAAAAACzQ1Ljc3LjM2LjU0ABJkb2guYmlyYXUuY29tOjM0NDMKL2Rucy1xdWVyeQ'
-</code></pre>
-
-<p>dan tambahkan dibagian server_name menjadi seperti ini:</p>
-
-<pre><code>server_names = ['doh', 'gcp', 'cloudflare', 'google']
-</code></pre>
-
-<p>Referensi:</p>
-
+[static.&#39;gcp&#39;]
+   stamp = &#39;sdns://AgcAAAAAAAAADTM0Ljg3LjExNy4xMDUADWdjcC5iaXJhdS5jb20KL2Rucy1xdWVyeQ&#39;
+[static.&#39;doh&#39;]
+   stamp = &#39;sdns://AgcAAAAAAAAACzQ1Ljc3LjM2LjU0ABJkb2guYmlyYXUuY29tOjM0NDMKL2Rucy1xdWVyeQ&#39;
+</code></pre><p>dan tambahkan dibagian server_name menjadi seperti ini:</p>
+<pre tabindex="0"><code>server_names = [&#39;doh&#39;, &#39;gcp&#39;, &#39;cloudflare&#39;, &#39;google&#39;]
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.aaflalo.me/2018/10/tutorial-setup-dns-over-https-server/">https://www.aaflalo.me/2018/10/tutorial-setup-dns-over-https-server/</a></li>
 <li><a href="https://github.com/m13253/dns-over-https">https://github.com/m13253/dns-over-https</a></li>
@@ -1058,67 +1001,43 @@ add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&q
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/10/belajar-ansible-tower/">Belajar Ansible Tower</a></h1>
         <span class="post-date">Oct 10, 2019</span>
-	
-
-<h2 id="install-ansible-tower">Install Ansible Tower</h2>
-
+	<h2 id="install-ansible-tower">Install Ansible Tower</h2>
 <p>Persyaratan:</p>
-
 <p>Hardware: RAM minimal 3,75 GB
 OS: Centos 7</p>
-
 <p>Langkah yang dilakukan</p>
-
-<pre><code>yum install -y ansible
+<pre tabindex="0"><code>yum install -y ansible
 wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz
 tar -xzvf ansible-tower-setup-latest.tar.gz
 cd ansible-tower-setup-3.1.5/
 (edit inventory file, isi bagian yang dibutuhkan terutama password)
 (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram)
 ./setup.sh
-</code></pre>
-
-<h2 id="configure-ansible-tower-after-installation">Configure Ansible Tower after installation</h2>
-
+</code></pre><h2 id="configure-ansible-tower-after-installation">Configure Ansible Tower after installation</h2>
 <p>Akses Ansible tower Web UI dari</p>
-
-<pre><code>https://&lt;Ansible Tower IP or Hostname&gt;
-</code></pre>
-
-<p>Dapatkan lisensi dari <a href="https://www.ansible.com/license">https://www.ansible.com/license</a>
+<pre tabindex="0"><code>https://&lt;Ansible Tower IP or Hostname&gt;
+</code></pre><p>Dapatkan lisensi dari <a href="https://www.ansible.com/license">https://www.ansible.com/license</a>
 lalu masukkan license tersebut ke halaman awal setelah login</p>
-
 <h2 id="untuk-centos-7">Untuk centos 7</h2>
-
 <p>seting selinux state ke permissive</p>
-
-<pre><code>SELINUX=permissive
-</code></pre>
-
-<p>tambahkan firewall untuk https</p>
-
-<pre><code>systemctl enable firewalld
+<pre tabindex="0"><code>SELINUX=permissive
+</code></pre><p>tambahkan firewall untuk https</p>
+<pre tabindex="0"><code>systemctl enable firewalld
 firewall-cmd --add-service=http --permanent;firewall-cmd --add-service=https --permanent
 systemctl restart firewalld
-</code></pre>
-
-<h2 id="ansible-tower-license">Ansible tower license</h2>
-
-<pre><code>{
-    &quot;company_name&quot;: &quot;widyamedia&quot;,
-    &quot;contact_email&quot;: &quot;widyamedia@gmail.com&quot;,
-    &quot;contact_name&quot;: &quot;widya media&quot;,
-    &quot;hostname&quot;: &quot;0f6a792b962445f2b0cd337a1ebb05c2&quot;,
-    &quot;instance_count&quot;: 10,
-    &quot;license_date&quot;: 2116912142,
-    &quot;license_key&quot;: &quot;0c8906958684422f6b25a2748a285f3c63601899b0bca26df2dc4d2805ec05c6&quot;,
-    &quot;license_type&quot;: &quot;basic&quot;,
-    &quot;subscription_name&quot;: &quot;Red Hat Ansible Tower, Self-Support (10 Managed Nodes)&quot;
+</code></pre><h2 id="ansible-tower-license">Ansible tower license</h2>
+<pre tabindex="0"><code>{
+    &#34;company_name&#34;: &#34;widyamedia&#34;,
+    &#34;contact_email&#34;: &#34;widyamedia@gmail.com&#34;,
+    &#34;contact_name&#34;: &#34;widya media&#34;,
+    &#34;hostname&#34;: &#34;0f6a792b962445f2b0cd337a1ebb05c2&#34;,
+    &#34;instance_count&#34;: 10,
+    &#34;license_date&#34;: 2116912142,
+    &#34;license_key&#34;: &#34;0c8906958684422f6b25a2748a285f3c63601899b0bca26df2dc4d2805ec05c6&#34;,
+    &#34;license_type&#34;: &#34;basic&#34;,
+    &#34;subscription_name&#34;: &#34;Red Hat Ansible Tower, Self-Support (10 Managed Nodes)&#34;
 }
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.ansible.com/products/tower/trial">https://www.ansible.com/products/tower/trial</a></li>
 <li><a href="https://docs.ansible.com/ansible-tower/">https://docs.ansible.com/ansible-tower/</a></li>
@@ -1139,34 +1058,25 @@ systemctl restart firewalld
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/30/disk-serial-number/">Disk Serial Number</a></h1>
         <span class="post-date">Sep 30, 2019</span>
-	
-
-<p>Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.</p>
-
+	<p>Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.</p>
 <p>Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:</p>
-
 <ul>
 <li>lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb)</li>
 <li>smartctl -a /dev/sda #lihat bagian atas serial number nya</li>
 <li>udevadm info /dev/sda</li>
 </ul>
-
 <h2 id="smartctl-to-get-disk-smart-status">smartctl to get disk smart status</h2>
-
-<p>```
-smartctl -H /dev/sda
+<pre tabindex="0"><code>smartctl -H /dev/sda
 smartctl -i /dev/sda
-smartctl &ndash;test=short /dev/sda
-#smartctl &ndash;test=long /dev/sda
+smartctl --test=short /dev/sda
+#smartctl --test=long /dev/sda
 smartctl -a /dev/sda
-smartctl -a /dev/sda | grep &ldquo;Short&rdquo;</p>
+smartctl -a /dev/sda | grep &#34;Short&#34;
 
-<p>Ref:</p>
+Ref:
 
-<ul>
-<li><a href="https://www.techrepublic.com/blog/linux-and-open-source/using-smartctl-to-get-smart-status-information-on-your-hard-drives/">https://www.techrepublic.com/blog/linux-and-open-source/using-smartctl-to-get-smart-status-information-on-your-hard-drives/</a></li>
-</ul>
-
+* https://www.techrepublic.com/blog/linux-and-open-source/using-smartctl-to-get-smart-status-information-on-your-hard-drives/
+</code></pre>
 	<hr/>
 	
 	
@@ -1179,7 +1089,6 @@ smartctl -a /dev/sda | grep &ldquo;Short&rdquo;</p>
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/28/ids-tripwire/">IDS Tripwire</a></h1>
         <span class="post-date">Sep 28, 2019</span>
 	<p>Referensi:</p>
-
 <ul>
 <li><a href="https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/">https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/</a></li>
 <li><a href="https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html">https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html</a></li>
@@ -1199,20 +1108,17 @@ smartctl -a /dev/sda | grep &ldquo;Short&rdquo;</p>
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/hugo-hosting-dengan-github/">Hugo hosting dengan github</a></h1>
         <span class="post-date">Sep 24, 2019</span>
 	<p>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:</p>
-
 <ul>
 <li>Nama user: tpinews</li>
 <li>Nama repositori yang harus dibuat: tpinews.github.io</li>
 </ul>
-
 <p>Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:</p>
-
-<pre><code>mkdir tpinews
+<pre tabindex="0"><code>mkdir tpinews
 cd tpinews
 touch .gitignore
 git init
 git add .
-git commit -m 'komat kamit awal'
+git commit -m &#39;komat kamit awal&#39;
 git remote add origin https://tpinews.github.io.git
 git push origin master
 
@@ -1222,63 +1128,52 @@ cp -r /path/kumpulanthemeshugo/travelify themes/
 cp -r themes/travelify/exampleSite/* .
 cp /path/scripts/push-deploy.sh .
 git add .
-git commit -m 'komit hugo'
+git commit -m &#39;komit hugo&#39;
 git push origin hugo
 
 git submodule add -b master https://tpinews.github.io.git public
 ./push-deploy.sh
 git branch -d master
-</code></pre>
-
-<p>Pastikan juga config.toml sudah sesuai, seperti nama theme dan lainnya, dan bisa di test di localhost dengan menjalankan <code>hugo server</code> dan mengakses <a href="http://localhost:1313">http://localhost:1313</a> di browser untuk melihat hasilnya.</p>
-
+</code></pre><p>Pastikan juga config.toml sudah sesuai, seperti nama theme dan lainnya, dan bisa di test di localhost dengan menjalankan <code>hugo server</code> dan mengakses http://localhost:1313 di browser untuk melihat hasilnya.</p>
 <p>Command di atas hanya dilakukan pertama kali saja, untuk selanjutnya yang dilakukan setelah melakukan perubahan dan ingin mengupdate di github, cukup menjalankan script push-deploy.sh</p>
-
 <p>Disini theme yang digunakan misalnya travelify yang sudah disiapkan, dan juga script untuk push-deploy.sh untuk memudahkan deploy sebagai berikut:</p>
-
-<pre><code>#!/bin/sh
+<pre tabindex="0"><code>#!/bin/sh
 # If a command fails then the deploy stops
 set -e
-printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
+printf &#34;\033[0;32mPush to branch hugo...\033[0m\n&#34;
 git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
- msg=&quot;$*&quot;
+msg=&#34;rebuilding site $(date)&#34;
+if [ -n &#34;$*&#34; ]; then
+ msg=&#34;$*&#34;
 fi
-git commit -m &quot;$msg&quot;
+git commit -m &#34;$msg&#34;
 git push origin hugo
 
-printf &quot;\033[0;32mDeploy public hugo to branch master...\033[0m\n&quot;
+printf &#34;\033[0;32mDeploy public hugo to branch master...\033[0m\n&#34;
 HUGO_ENV=production hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
 cd public
 git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
-        msg=&quot;$*&quot;
+msg=&#34;rebuilding site $(date)&#34;
+if [ -n &#34;$*&#34; ]; then
+        msg=&#34;$*&#34;
 fi
-git commit -m &quot;$msg&quot;
+git commit -m &#34;$msg&#34;
 git push origin master
 
-printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
+printf &#34;\033[0;32mPush to branch hugo...\033[0m\n&#34;
 cd ..
 git add .
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
-        msg=&quot;$*&quot;
+msg=&#34;rebuilding site $(date)&#34;
+if [ -n &#34;$*&#34; ]; then
+        msg=&#34;$*&#34;
 fi
-git commit -m &quot;$msg&quot;
+git commit -m &#34;$msg&#34;
 git push origin hugo
-</code></pre>
-
-<p>Note:</p>
-
+</code></pre><p>Note:</p>
 <p>Untuk lebih mudah tidak perlu memasukan password, bisa di buat dari menu settings account github, lalu pilih menu sebelah kiri bawah bagian Developer settings, lalu Personal access tokens dan generate new token.</p>
-
 <p>Lalu copy token tersebut dan tambahkan pada file .git/config dan .git/modules/public/config ,bagian url nya, sehingga menjadi seperti contoh berikut:</p>
-
-<pre><code>   url = https://namauser:tokenhasidaricopygeneratenewtoken@namarepository.github.io.git
+<pre tabindex="0"><code>   url = https://namauser:tokenhasidaricopygeneratenewtoken@namarepository.github.io.git
 </code></pre>
-
 	<hr/>
 	
 	
@@ -1290,29 +1185,15 @@ git push origin hugo
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/24/markdown-tips/">Markdown tips</a></h1>
         <span class="post-date">Sep 24, 2019</span>
-	
-
-<h2 id="markdown-insert-image"><em>markdown</em> insert image</h2>
-
+	<h2 id="markdown-insert-image"><em>markdown</em> insert image</h2>
 <p>Ini adalah <a href="https://www.petanikode.com/markdown-pemula/"><em>markdown</em></a> untuk menampilkan gambar yang terletak di dalam folder / direktori pada postingan di hugo</p>
-
-<pre><code>![nama-image](path/to/image)
-</code></pre>
-
-<h2 id="markdown-insert-link">markdown insert link</h2>
-
+<pre tabindex="0"><code>![nama-image](path/to/image)
+</code></pre><h2 id="markdown-insert-link">markdown insert link</h2>
 <p>Ini adalah markdown untuk menampilkan link <em>url</em> pada kata atau kalimat di halaman web</p>
-
-<pre><code>[kata atau kalimat](http://link.url/yang-dituju)
-</code></pre>
-
-<p>seperti contoh diatas</p>
-
-<pre><code>[markdown](https://www.petanikode.com/markdown-pemula/)
-</code></pre>
-
-<p>Referensi markdown images:</p>
-
+<pre tabindex="0"><code>[kata atau kalimat](http://link.url/yang-dituju)
+</code></pre><p>seperti contoh diatas</p>
+<pre tabindex="0"><code>[markdown](https://www.petanikode.com/markdown-pemula/)
+</code></pre><p>Referensi markdown images:</p>
 <ul>
 <li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images</a></li>
 </ul>
@@ -1329,78 +1210,102 @@ git push origin hugo
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/04/linux-security-tools/">linux Security Tools</a></h1>
         <span class="post-date">Sep 4, 2019</span>
 	<p>Tools yang biasa digunakan pada server linux:</p>
-
 <ul>
-<li><p>Firewall</p>
-
-<ul>
-<li>iptables</li>
-<li>ipset</li>
-<li>shorewall</li>
-<li>csf</li>
-</ul></li>
-
-<li><p>Anti Malware</p>
-
-<ul>
-<li>maldet (malware detection for web directory)</li>
-</ul></li>
-
-<li><p>IDS</p>
-
-<ul>
-<li>tripwire</li>
-</ul></li>
-
-<li><p>Identity Server</p>
-
-<ul>
-<li><a href="https://freeipa.org">FreeIPA (IPA = Identity, Policy, Authentication)</a></li>
-</ul></li>
-
-<li><p>Security Checking / Scanning Solution</p>
-
-<ul>
-<li>OpenSCAP</li>
-<li>Rapid7</li>
-</ul></li>
-
-<li><p>CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</p>
-
-<ul>
-<li>TeemIP</li>
-<li>itop <a href="https://github.com/Combodo/iTop">https://github.com/Combodo/iTop</a></li>
-<li>infoblox</li>
-<li>efficientip</li>
-<li>ansible-cmdb</li>
-</ul></li>
-
-<li><p>WAF</p>
-
-<ul>
-<li><a href="http://www.waf-fle.org/">http://www.waf-fle.org/</a> console / web view for modsecurity admin</li>
-<li>modsecurity</li>
-<li>naxsi <a href="https://github.com/nbs-system/naxsi">https://github.com/nbs-system/naxsi</a></li>
-<li>shadow daemon <a href="https://shadowd.zecure.org/overview/introduction/">https://shadowd.zecure.org/overview/introduction/</a></li>
-<li>imperva berbayar</li>
-</ul></li>
-
-<li><p>Web Scanner</p>
-
-<ul>
-<li>nikto ( <a href="https://geekflare.com/nikto-webserver-scanner/">https://geekflare.com/nikto-webserver-scanner/</a> )</li>
-</ul></li>
-
-<li><p>Pentest</p>
-
-<ul>
-<li>owasp-zap <a href="https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b">https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b</a></li>
-<li>nessus <a href="https://www.tenable.com/tenable-for-education">https://www.tenable.com/tenable-for-education</a></li>
-</ul></li>
+<li>
+<p>Firewall</p>
+</li>
+<li>
+<p>iptables</p>
+</li>
+<li>
+<p>ipset</p>
+</li>
+<li>
+<p>shorewall</p>
+</li>
+<li>
+<p>csf</p>
+</li>
+<li>
+<p>Anti Malware</p>
+</li>
+<li>
+<p>maldet (malware detection for web directory)</p>
+</li>
+<li>
+<p>IDS</p>
+</li>
+<li>
+<p>tripwire</p>
+</li>
+<li>
+<p>Identity Server</p>
+</li>
+<li>
+<p><a href="https://freeipa.org">FreeIPA (IPA = Identity, Policy, Authentication)</a></p>
+</li>
+<li>
+<p>Security Checking / Scanning Solution</p>
+</li>
+<li>
+<p>OpenSCAP</p>
+</li>
+<li>
+<p>Rapid7</p>
+</li>
+<li>
+<p>CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</p>
+</li>
+<li>
+<p>TeemIP</p>
+</li>
+<li>
+<p>itop <a href="https://github.com/Combodo/iTop">https://github.com/Combodo/iTop</a></p>
+</li>
+<li>
+<p>infoblox</p>
+</li>
+<li>
+<p>efficientip</p>
+</li>
+<li>
+<p>ansible-cmdb</p>
+</li>
+<li>
+<p>WAF</p>
+</li>
+<li>
+<p><a href="http://www.waf-fle.org/">http://www.waf-fle.org/</a> console / web view for modsecurity admin</p>
+</li>
+<li>
+<p>modsecurity</p>
+</li>
+<li>
+<p>naxsi <a href="https://github.com/nbs-system/naxsi">https://github.com/nbs-system/naxsi</a></p>
+</li>
+<li>
+<p>shadow daemon <a href="https://shadowd.zecure.org/overview/introduction/">https://shadowd.zecure.org/overview/introduction/</a></p>
+</li>
+<li>
+<p>imperva berbayar</p>
+</li>
+<li>
+<p>Web Scanner</p>
+</li>
+<li>
+<p>nikto ( <a href="https://geekflare.com/nikto-webserver-scanner/">https://geekflare.com/nikto-webserver-scanner/</a> )</p>
+</li>
+<li>
+<p>Pentest</p>
+</li>
+<li>
+<p>owasp-zap <a href="https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b">https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b</a></p>
+</li>
+<li>
+<p>nessus <a href="https://www.tenable.com/tenable-for-education">https://www.tenable.com/tenable-for-education</a></p>
+</li>
 </ul>
-
 <p>Referensi Openscap:</p>
-
 <ul>
 <li><a href="https://www.open-scap.org/">https://www.open-scap.org/</a></li>
 <li><a href="https://lifehacker.com/how-to-use-nessus-to-scan-a-network-for-vulnerabilities-1788261156">https://lifehacker.com/how-to-use-nessus-to-scan-a-network-for-vulnerabilities-1788261156</a></li>
@@ -1418,56 +1323,60 @@ git push origin hugo
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/linux-server-tools/">linux Server Tools</a></h1>
         <span class="post-date">Sep 2, 2019</span>
 	<p>Tools yang biasa digunakan pada server linux:</p>
-
 <ul>
-<li><p>Virtualization (Desktop)</p>
-
-<ul>
-<li>Virtualbox</li>
-</ul></li>
-
-<li><p>Graphic</p>
-
-<ul>
-<li>Gimp</li>
-</ul></li>
-
-<li><p>Mail</p>
-
-<ul>
-<li>Thunderbird Mail (client)</li>
-</ul></li>
-
-<li><p>Multimedia</p>
-
-<ul>
-<li>Avidemux</li>
-</ul></li>
-
-<li><p>Video Conference</p>
-
-<ul>
-<li>jitsi</li>
-<li><a href="https://medevel.com/10-os-video-conferencing/">More and more</a></li>
-</ul></li>
-
-<li><p>Customer support live chat</p>
-
-<ul>
-<li>rocket.chat</li>
-<li>tawk.to</li>
-<li><a href="https://github.com/juliancwirko/s-chat-app">simple chat</a></li>
-</ul></li>
-
-<li><p>Networking</p>
-
-<ul>
-<li><a href="https://www.linux.com/tutorials/monitoring-network-load-nload-part-2/">nload</a></li>
-</ul></li>
+<li>
+<p>Virtualization (Desktop)</p>
+</li>
+<li>
+<p>Virtualbox</p>
+</li>
+<li>
+<p>Graphic</p>
+</li>
+<li>
+<p>Gimp</p>
+</li>
+<li>
+<p>Mail</p>
+</li>
+<li>
+<p>Thunderbird Mail (client)</p>
+</li>
+<li>
+<p>Multimedia</p>
+</li>
+<li>
+<p>Avidemux</p>
+</li>
+<li>
+<p>Video Conference</p>
+</li>
+<li>
+<p>jitsi</p>
+</li>
+<li>
+<p><a href="https://medevel.com/10-os-video-conferencing/">More and more</a></p>
+</li>
+<li>
+<p>Customer support live chat</p>
+</li>
+<li>
+<p>rocket.chat</p>
+</li>
+<li>
+<p>tawk.to</p>
+</li>
+<li>
+<p><a href="https://github.com/juliancwirko/s-chat-app">simple chat</a></p>
+</li>
+<li>
+<p>Networking</p>
+</li>
+<li>
+<p><a href="https://www.linux.com/tutorials/monitoring-network-load-nload-part-2/">nload</a></p>
+</li>
 </ul>
-
 <p>Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut</p>
-
 <ul>
 <li><a href="https://blog.indonesiadot.com/2019/09/04/linux-security-tools/">https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</a></li>
 </ul>

@@ -864,55 +864,38 @@
 <div class="post">
   <h1 class="post-title">Harbor Container Registry</h1>
   <span class="post-date">Jan 20, 2020</span>
-  
-
-<h2 id="harbor-install-step-by-step">harbor install step by step</h2>
-
+  <h2 id="harbor-install-step-by-step">harbor install step by step</h2>
 <p><a href="https://goharbor.io/docs/1.10/install-config/">https://goharbor.io/docs/1.10/install-config/</a></p>
-
 <ul>
 <li>install docker, docker-compose</li>
 <li>download <a href="https://github.com/goharbor/harbor/releases">https://github.com/goharbor/harbor/releases</a></li>
-
-<li><p>edit harbor.yml</p>
-
-<pre><code>hostname: 10.11.8.111
-</code></pre></li>
-
-<li><p>install</p>
-
-<pre><code>./prepare
+<li>edit harbor.yml</li>
+</ul>
+<pre tabindex="0"><code>hostname: 10.11.8.111
+</code></pre><ul>
+<li>install</li>
+</ul>
+<pre tabindex="0"><code>./prepare
 ./install.sh --with-clair --with-chartmuseum
-</code></pre></li>
-
-<li><p>create projects dengan nama os (misalnya untuk menampung operating system)</p></li>
+</code></pre><ul>
+<li>create projects dengan nama os (misalnya untuk menampung operating system)</li>
 </ul>
-
 <h2 id="harbor-client-push">harbor client push</h2>
-
 <ul>
-<li><p>edit /etc/docker/daemon.json</p>
-
-<pre><code>{ &quot;insecure-registries&quot;:[&quot;10.11.8.111&quot;] }
-</code></pre></li>
-
-<li><p>systemctl restart docker (hati2 jika ada container yg berjalan akan di stop)</p></li>
-
-<li><p>docker login 10.11.8.111</p></li>
-
-<li><p>docker tag centos:7 10.11.8.111/os/centos:7</p></li>
-
-<li><p>docker push 10.11.8.111/os/centos:7</p></li>
+<li>edit /etc/docker/daemon.json</li>
 </ul>
-
+<pre tabindex="0"><code>{ &#34;insecure-registries&#34;:[&#34;10.11.8.111&#34;] }
+</code></pre><ul>
+<li>systemctl restart docker (hati2 jika ada container yg berjalan akan di stop)</li>
+<li>docker login 10.11.8.111</li>
+<li>docker tag centos:7 10.11.8.111/os/centos:7</li>
+<li>docker push 10.11.8.111/os/centos:7</li>
+</ul>
 <h2 id="widya-harbor-container-registry">Widya Harbor Container Registry</h2>
-
 <ul>
 <li><a href="https://widharbor.birau.com/">https://widharbor.birau.com/</a></li>
 </ul>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>

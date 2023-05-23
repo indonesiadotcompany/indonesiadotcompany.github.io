@@ -864,18 +864,11 @@
 <div class="post">
   <h1 class="post-title">Ansible postgresql</h1>
   <span class="post-date">Jun 30, 2020</span>
-  
-
-<h2 id="requirements">Requirements</h2>
-
-<pre><code>pip install psycopg2-binary
-</code></pre>
-
-<h2 id="playbooks">playbooks</h2>
-
+  <h2 id="requirements">Requirements</h2>
+<pre tabindex="0"><code>pip install psycopg2-binary
+</code></pre><h2 id="playbooks">playbooks</h2>
 <p>cat psql.yml</p>
-
-<pre><code>- hosts: localhost
+<pre tabindex="0"><code>- hosts: localhost
   become: yes
   gather_facts: no
   connection: local
@@ -891,11 +884,8 @@
 
   - debug:
       var: result
-</code></pre>
-
-<p>cat psqlgraf.yml</p>
-
-<pre><code>- hosts: localhost
+</code></pre><p>cat psqlgraf.yml</p>
+<pre tabindex="0"><code>- hosts: localhost
   become: yes
   gather_facts: no
   connection: local
@@ -912,15 +902,9 @@
 
   - debug:
       var: result
-</code></pre>
-
-<p>run with command:</p>
-
-<pre><code>ansible-playbook psql.yml
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><p>run with command:</p>
+<pre tabindex="0"><code>ansible-playbook psql.yml
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://docs.ansible.com/ansible/latest/modules/postgresql_query_module.html">https://docs.ansible.com/ansible/latest/modules/postgresql_query_module.html</a></li>
 <li><a href="https://github.com/elmarx/ansible-mysql-query">https://github.com/elmarx/ansible-mysql-query</a></li>

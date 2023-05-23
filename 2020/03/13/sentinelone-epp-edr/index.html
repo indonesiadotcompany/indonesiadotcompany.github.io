@@ -864,85 +864,58 @@
 <div class="post">
   <h1 class="post-title">Sentinelone EPP EDR</h1>
   <span class="post-date">Mar 13, 2020</span>
-  
-
-<h2 id="cloud-connectivity-became-offline">cloud connectivity became offline</h2>
-
-<ol>
-<li><p>make sure all of the docker container is run with docker ps</p></li>
-
-<li><p>the date of the on-prem server must be UTC</p>
-
-<pre><code>date
-</code></pre>
-
-<p>Wed Mar 11 09:18:42 UTC 2020</p></li>
-
-<li><p>test cloudgateway api info with curl</p>
-
-<pre><code>curl -v https://cloudgateway-prod-ap.sentinelone.net/api/v2/info
-</code></pre></li>
-
-<li><p>Trying 13.112.219.166&hellip;</p></li>
-
-<li><p>TCP_NODELAY set</p></li>
-
-<li><p>Connected to cloudgateway-prod-ap.sentinelone.net (13.112.219.166) port 443 (#0)</p></li>
-
-<li><p>ALPN, offering h2</p></li>
-
-<li><p>ALPN, offering http/1.1</p></li>
-
-<li><p>successfully set certificate verify locations:</p></li>
-
-<li><p>CAfile: /etc/ssl/certs/ca-certificates.crt
-CApath: /etc/ssl/certs</p></li>
-
-<li><p>TLSv1.3 (OUT), TLS handshake, Client hello (1):</p></li>
-
-<li><p>TLSv1.3 (IN), TLS handshake, Server hello (2):</p></li>
-
-<li><p>TLSv1.2 (IN), TLS handshake, Certificate (11):</p></li>
-
-<li><p>TLSv1.2 (IN), TLS handshake, Server key exchange (12):</p></li>
-
-<li><p>TLSv1.2 (IN), TLS handshake, Request CERT (13):</p></li>
-
-<li><p>TLSv1.2 (IN), TLS handshake, Server finished (14):</p></li>
-
-<li><p>TLSv1.2 (OUT), TLS handshake, Certificate (11):</p></li>
-
-<li><p>TLSv1.2 (OUT), TLS handshake, Client key exchange (16):</p></li>
-
-<li><p>TLSv1.2 (OUT), TLS change cipher, Client hello (1):</p></li>
-
-<li><p>TLSv1.2 (OUT), TLS handshake, Finished (20):</p></li>
-
-<li><p>TLSv1.2 (IN), TLS handshake, Finished (20):</p></li>
-
-<li><p>SSL connection using TLSv1.2 / ECDHE-RSA-AES256-GCM-SHA384</p></li>
-
-<li><p>ALPN, server accepted to use http/1.1</p></li>
-
-<li><p>Server certificate:</p></li>
-
-<li><p>subject: C=US; ST=California; L=Palo Alto; O=Sentinel Labs, Inc.; CN=*.sentinelone.net</p></li>
-
-<li><p>start date: Sep 11 00:00:00 2019 GMT</p></li>
-
-<li><p>expire date: Dec 1 12:00:00 2021 GMT</p></li>
-
-<li><p>subjectAltName: host &ldquo;cloudgateway-prod-ap.sentinelone.net&rdquo; matched cert&rsquo;s &ldquo;*.sentinelone.net&rdquo;</p></li>
-
-<li><p>issuer: C=US; O=DigiCert Inc; CN=DigiCert SHA2 Secure Server CA</p></li>
-
-<li><p>SSL certificate verify ok.
-&gt; GET /api/v2/info HTTP/1.1
-&gt; Host: cloudgateway-prod-ap.sentinelone.net
-&gt; User-Agent: curl/7.58.0
-&gt; Accept: <em>/</em>
-&gt;
-&lt; HTTP/1.1 200 OK
+  <h2 id="cloud-connectivity-became-offline">cloud connectivity became offline</h2>
+<ol start="0">
+<li>
+<p>make sure all of the docker container is run with docker ps</p>
+</li>
+<li>
+<p>the date of the on-prem server must be UTC</p>
+</li>
+</ol>
+<pre tabindex="0"><code>date
+</code></pre><p>Wed Mar 11 09:18:42 UTC 2020</p>
+<ol start="2">
+<li>test cloudgateway api info with curl</li>
+</ol>
+<pre tabindex="0"><code>curl -v https://cloudgateway-prod-ap.sentinelone.net/api/v2/info
+</code></pre><ul>
+<li>Trying 13.112.219.166&hellip;</li>
+<li>TCP_NODELAY set</li>
+<li>Connected to cloudgateway-prod-ap.sentinelone.net (13.112.219.166) port 443 (#0)</li>
+<li>ALPN, offering h2</li>
+<li>ALPN, offering http/1.1</li>
+<li>successfully set certificate verify locations:</li>
+<li>CAfile: /etc/ssl/certs/ca-certificates.crt
+CApath: /etc/ssl/certs</li>
+<li>TLSv1.3 (OUT), TLS handshake, Client hello (1):</li>
+<li>TLSv1.3 (IN), TLS handshake, Server hello (2):</li>
+<li>TLSv1.2 (IN), TLS handshake, Certificate (11):</li>
+<li>TLSv1.2 (IN), TLS handshake, Server key exchange (12):</li>
+<li>TLSv1.2 (IN), TLS handshake, Request CERT (13):</li>
+<li>TLSv1.2 (IN), TLS handshake, Server finished (14):</li>
+<li>TLSv1.2 (OUT), TLS handshake, Certificate (11):</li>
+<li>TLSv1.2 (OUT), TLS handshake, Client key exchange (16):</li>
+<li>TLSv1.2 (OUT), TLS change cipher, Client hello (1):</li>
+<li>TLSv1.2 (OUT), TLS handshake, Finished (20):</li>
+<li>TLSv1.2 (IN), TLS handshake, Finished (20):</li>
+<li>SSL connection using TLSv1.2 / ECDHE-RSA-AES256-GCM-SHA384</li>
+<li>ALPN, server accepted to use http/1.1</li>
+<li>Server certificate:</li>
+<li>subject: C=US; ST=California; L=Palo Alto; O=Sentinel Labs, Inc.; CN=*.sentinelone.net</li>
+<li>start date: Sep 11 00:00:00 2019 GMT</li>
+<li>expire date: Dec 1 12:00:00 2021 GMT</li>
+<li>subjectAltName: host &ldquo;cloudgateway-prod-ap.sentinelone.net&rdquo; matched cert&rsquo;s &ldquo;*.sentinelone.net&rdquo;</li>
+<li>issuer: C=US; O=DigiCert Inc; CN=DigiCert SHA2 Secure Server CA</li>
+<li>SSL certificate verify ok.</li>
+</ul>
+<blockquote>
+<p>GET /api/v2/info HTTP/1.1
+Host: cloudgateway-prod-ap.sentinelone.net
+User-Agent: curl/7.58.0
+Accept: <em>/</em></p>
+</blockquote>
+<p>&lt; HTTP/1.1 200 OK
 &lt; Server: nginx/1.14.0 (Ubuntu)
 &lt; Date: Wed, 11 Mar 2020 09:19:32 GMT
 &lt; Content-Type: application/json
@@ -951,25 +924,25 @@ CApath: /etc/ssl/certs</p></li>
 &lt; Access-Control-Allow-Origin: *
 &lt; Access-Control-Allow-Headers: Authentication-Token
 &lt;
-{&ldquo;version&rdquo;:&ldquo;4.1.4&rdquo;}</p></li>
-
-<li><p>Connection #0 to host cloudgateway-prod-ap.sentinelone.net left intact</p></li>
-
-<li><p>give settings.ini to support</p></li>
-
-<li><p>From the outputs you sent - &gt; Everything seems to be Ok,</p></li>
+{&ldquo;version&rdquo;:&ldquo;4.1.4&rdquo;}</p>
+<ul>
+<li>Connection #0 to host cloudgateway-prod-ap.sentinelone.net left intact</li>
+</ul>
+<ol start="3">
+<li>
+<p>give settings.ini to support</p>
+</li>
+<li>
+<p>From the outputs you sent - &gt; Everything seems to be Ok,</p>
+</li>
 </ol>
-
 <p>4.1. Add the following lines to the /etc/hosts file -&gt; Save -&gt; Exit:</p>
-
 <p>54.64.165.125 cloudgateway-prod-ap.sentinelone.net
 13.112.219.166 cloudgateway-prod-ap.sentinelone.net</p>
-
 <p>4.2. Run -&gt; sudo docker exec -u 0 -it scheduler /bin/bash
 The vi /etc/hosts -&gt;Add the 2 lines&gt; Save-&gt;Exit
 54.64.165.125 cloudgateway-prod-ap.sentinelone.net
 13.112.219.166 cloudgateway-prod-ap.sentinelone.net</p>
-
 <ul>
 <li>Restart the server after all the changes</li>
 </ul>

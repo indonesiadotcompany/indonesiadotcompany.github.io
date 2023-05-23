@@ -864,104 +864,99 @@
 <div class="post">
   <h1 class="post-title">Ansible Test Implement for Security Hardening Solution 1 - Briefing Session</h1>
   <span class="post-date">Mar 9, 2020</span>
-  
-
-<h2 id="background">Background</h2>
-
+  <h2 id="background">Background</h2>
 <ul>
 <li>belum adanya standarisasi system security perusahaan yang mengacu kepada baseline standarisasi internasional seperti CIS, NIST atau PCI-DSS</li>
 <li>pekerjaan manual yang sangat kompleks, lama dan berat jika harus dilakukan secara manual untuk melakukan standarisasi security system</li>
 <li>masih banyaknya server perusahaan yang non-comply dengan standarisasi sistem security yang telah dibuat oleh perusahaan</li>
 </ul>
-
 <h2 id="objective">Objective</h2>
-
 <ul>
 <li>mengurangi serangan</li>
 <li>konfigurasi yang robust</li>
 <li>secured protocols</li>
 <li>comply kepada standarisasi internasional dan standarisasi internal perusahaan</li>
 </ul>
-
 <h2 id="technical-requirements">Technical Requirements</h2>
-
 <p>Langkah 1:</p>
-
 <ul>
 <li>Membuat security baseline
-
 <ul>
 <li>custom baseline CIS / PCI-DSS yang digabung dengan baseline internal perusahaan</li>
-</ul></li>
+</ul>
+</li>
 <li>Implementasi dan enforce security baseline</li>
 </ul>
-
-<h3 id="technical-requirements-overall-scope-of-work-and-deliverable">Technical Requirements - Overall Scope of Work and deliverable:</h3>
-
+<h3 id="technical-requirements---overall-scope-of-work-and-deliverable">Technical Requirements - Overall Scope of Work and deliverable:</h3>
 <ul>
 <li>Architecture and End-to-End Design (N)</li>
 <li>Hardware, Software and infrastructure components
-
 <ul>
-<li>Hardware</li>
+<li>Hardware
+<ul>
 <li>2 server postgresql / ansible tower database server</li>
 <li>3 server ansible tower (cluster)</li>
 <li>1 server ansible tower for development / testing</li>
-<li>Software</li>
+</ul>
+</li>
+<li>Software
+<ul>
 <li>redhat / centos OS</li>
 <li>ansible</li>
 <li>ansible tower</li>
 <li>postgresql</li>
 <li>openscap</li>
 <li>ansible playbook / roles based on CIS / PCI-DSS / NIST baseline that combined with internal company baseline</li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Hardware and software delivery and installation, incl. necessary testing (N)
-
 <ul>
 <li>install dua postgresql active - passive</li>
+</ul>
+<ul>
 <li>install ansible tower for production</li>
+</ul>
+<ul>
 <li>install ansible tower for development</li>
 <li>test implementasi / deployment manage server dari ansible tower development, lalu setelah ok, copy / replikasi semua template, playbook dan yg berkaitan ke ansible tower production</li>
-</ul></li>
+</ul>
+</li>
 <li>Required supporting equipment and materials</li>
 <li>Services, including project management, implementation, integration and migration (N)</li>
 <li>Technical support (3 years) including
-
 <ul>
 <li>Hardware and software updates</li>
 <li>Service request support and management (SRSM)</li>
 <li>spares management with instant replacement (SPMS)</li>
 <li>first line maintenance incl. preventative maintenances (O&amp;M Assistance)</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="technical-requirements-software-scope">Technical Requirements Software Scope</h3>
-
 <ul>
 <li>Software components shall be grouped in two areas : 1. Development, 2. Operation</li>
 </ul>
-
 <h3 id="technical-requirements-services-scope">Technical Requirements Services Scope</h3>
-
 <ul>
 <li>Detailed micro-design and security implementation plan (N)</li>
 <li>Project management &amp; project technical documentation according to Telkomsel standards. (N)</li>
 </ul>
-
-<h3 id="technical-requirements-compliance-to-requirement">Technical Requirements - Compliance to requirement</h3>
-
+<h3 id="technical-requirements---compliance-to-requirement">Technical Requirements - Compliance to requirement</h3>
 <p>Statements of Compliances</p>
-
 <ul>
-<li><p>Full Comply = The proposed solution can fulfill the specified requirement at the start of the project (Day 1)</p></li>
-
-<li><p>Comply with Customization = The proposed solution can fulfill the specified requirements with some customizations, and it must be ready when it is required by specific phase within the implementation timeline</p></li>
-
-<li><p>Not Comply = The proposed solution cannot fulfill the specified requirements</p></li>
+<li>
+<p>Full Comply = The proposed solution can fulfill the specified requirement at the start of the project (Day 1)</p>
+</li>
+<li>
+<p>Comply with Customization = The proposed solution can fulfill the specified requirements with some customizations, and it must be ready when it is required by specific phase within the implementation timeline</p>
+</li>
+<li>
+<p>Not Comply = The proposed solution cannot fulfill the specified requirements</p>
+</li>
 </ul>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
 </ul>

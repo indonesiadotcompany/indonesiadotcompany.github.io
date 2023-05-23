@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>freenas on Blog Indonesiadot.Com</title>
@@ -6,19 +6,15 @@
     <description>Recent content in freenas on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Jun 2021 06:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/freenas/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 10 Jun 2021 06:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/freenas/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install and setup ftp on Freenas 11</title>
       <link>https://blog.indonesiadot.com/2021/06/10/install-and-setup-ftp-on-freenas-11/</link>
       <pubDate>Thu, 10 Jun 2021 06:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2021/06/10/install-and-setup-ftp-on-freenas-11/</guid>
-      <description> Install and setup ftp on Freenas 11  Install freenas Configure via CLI Configure via web Add pool Add dataset Add group from accounts Add user from accounts Edit dataset permission based on accounts created start ftp service  Referensi:
- https://www.matrix7.com.au/freenas/freenas-11-2-u7-ftp-setup/  </description>
+      <description>Install and setup ftp on Freenas 11 Install freenas Configure via CLI Configure via web Add pool Add dataset Add group from accounts Add user from accounts Edit dataset permission based on accounts created start ftp service Referensi:
+https://www.matrix7.com.au/freenas/freenas-11-2-u7-ftp-setup/ </description>
     </item>
     
   </channel>

@@ -864,26 +864,17 @@
 <div class="post">
   <h1 class="post-title">LVM tips</h1>
   <span class="post-date">Mar 12, 2020</span>
-  
-
-<h2 id="resize-increase-lvm">resize / increase lvm</h2>
-
-<pre><code>lvextend --size +10G /dev/vg0/foo
+  <h2 id="resize--increase-lvm">resize / increase lvm</h2>
+<pre tabindex="0"><code>lvextend --size +10G /dev/vg0/foo
 lvextend --size 20G /dev/vg0/foo
 lvdisplay /dev/vg0/foo
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="http://www.microhowto.info/howto/increase_the_size_of_an_lvm_logical_volume.html">http://www.microhowto.info/howto/increase_the_size_of_an_lvm_logical_volume.html</a></li>
 <li><a href="https://linoxide.com/linux-how-to/lvm-configuration-linux/">https://linoxide.com/linux-how-to/lvm-configuration-linux/</a></li>
 </ul>
-
 <h2 id="pvresize">pvresize</h2>
-
-<pre><code>pvresize /dev/sda3
-</code></pre>
-
-<ul>
+<pre tabindex="0"><code>pvresize /dev/sda3
+</code></pre><ul>
 <li><a href="https://www.thegeekdiary.com/centos-rhel-how-to-resize-extend-existing-physical-volume-pv/">https://www.thegeekdiary.com/centos-rhel-how-to-resize-extend-existing-physical-volume-pv/</a></li>
 </ul>
 

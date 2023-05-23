@@ -864,60 +864,42 @@
 <div class="post">
   <h1 class="post-title">Postgresql tips</h1>
   <span class="post-date">Jun 30, 2020</span>
-  
-
-<h2 id="postgresql-export-and-import-to-mysql">Postgresql export and import to mysql</h2>
-
+  <h2 id="postgresql-export-and-import-to-mysql">Postgresql export and import to mysql</h2>
 <p>di server postgresql jalankan command berikut untuk export:</p>
-
-<pre><code>#pg_dump --verbose --schema-only --table=xx_user --db=test --file=/tmp/montower.sql
+<pre tabindex="0"><code>#pg_dump --verbose --schema-only --table=xx_user --db=test --file=/tmp/montower.sql
 pg_dump --verbose --schema-only --db=montower --file=/tmp/montower.sql
 
 psql -U namauserpsql montower
-copy xx_user to '/tmp/hosts.txt' with (delimiter ',');
-</code></pre>
-
-<p>di server mysql jalankan command berikut untuk import:</p>
-
-<pre><code>mysql --local-infile
+copy xx_user to &#39;/tmp/hosts.txt&#39; with (delimiter &#39;,&#39;);
+</code></pre><p>di server mysql jalankan command berikut untuk import:</p>
+<pre tabindex="0"><code>mysql --local-infile
 create database montower;
 use montower;
-#load data local infile '/home/postgres/user.txt' into table xx_user fields terminated by ',' lines terminated by '\n';
-load data local infile '/tmp/montower.sql' fields terminated by ',' lines terminated by '\n';
-load data local infile '/tmp/hosts.txt' into table hosts fields terminated by ',' lines terminated by '\n';
-</code></pre>
-
-<p>Referensi:</p>
-
+#load data local infile &#39;/home/postgres/user.txt&#39; into table xx_user fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;;
+load data local infile &#39;/tmp/montower.sql&#39; fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;;
+load data local infile &#39;/tmp/hosts.txt&#39; into table hosts fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;;
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.postgresql.org/docs/9.1/backup-dump.html">https://www.postgresql.org/docs/9.1/backup-dump.html</a></li>
 <li><a href="https://www.programmersought.com/article/23102305281/">https://www.programmersought.com/article/23102305281/</a></li>
 <li><a href="https://stackoverflow.com/questions/10762239/mysql-enable-load-data-local-infile">https://stackoverflow.com/questions/10762239/mysql-enable-load-data-local-infile</a></li>
 </ul>
-
 <h2 id="postgresql-show-data-tables">Postgresql show data tables</h2>
-
 <ul>
-<li><p><a href="https://kb.objectrocket.com/postgresql/connect-to-postgresql-and-show-the-table-schema-967">https://kb.objectrocket.com/postgresql/connect-to-postgresql-and-show-the-table-schema-967</a></p>
-
-<pre><code>psql -h 10.11.8.16 -U awxtower1
+<li><a href="https://kb.objectrocket.com/postgresql/connect-to-postgresql-and-show-the-table-schema-967">https://kb.objectrocket.com/postgresql/connect-to-postgresql-and-show-the-table-schema-967</a></li>
+</ul>
+<pre tabindex="0"><code>psql -h 10.11.8.16 -U awxtower1
 \c awxtower1db
 \d
 \q
-</code></pre></li>
-</ul>
-
-<h2 id="postgresql-create-remote-user-and-database">Postgresql create remote user and database</h2>
-
+</code></pre><h2 id="postgresql-create-remote-user-and-database">Postgresql create remote user and database</h2>
 <ul>
-<li><p><a href="https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/">https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/</a></p>
-
-<pre><code>create database awxtower1db;
-create user awxtower1 with encrypted password 'awxtower1';
-grant all privileges on database awxtower1 to awxtower1;
-</code></pre></li>
+<li><a href="https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/">https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/</a></li>
 </ul>
-
+<pre tabindex="0"><code>create database awxtower1db;
+create user awxtower1 with encrypted password &#39;awxtower1&#39;;
+grant all privileges on database awxtower1 to awxtower1;
+</code></pre>
 </div>
 
 <hr/>

@@ -864,42 +864,27 @@
 <div class="post">
   <h1 class="post-title">Ansible Tower tips and trick</h1>
   <span class="post-date">Feb 20, 2020</span>
-  
-
-<h2 id="ansible-tower-tips-and-trick">Ansible Tower tips and trick</h2>
-
+  <h2 id="ansible-tower-tips-and-trick">Ansible Tower tips and trick</h2>
 <h3 id="change-admin-password">Change admin password</h3>
-
-<pre><code>awx-manage changepassword admin
-</code></pre>
-
-<h3 id="backup-and-restore">backup and restore</h3>
-
+<pre tabindex="0"><code>awx-manage changepassword admin
+</code></pre><h3 id="backup-and-restore">backup and restore</h3>
 <ul>
 <li><a href="https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html">https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html</a></li>
 </ul>
-
 <p>Referensi:</p>
-
 <ul>
 <li><a href="https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html">https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html</a></li>
 <li><a href="https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/">https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/</a></li>
 </ul>
-
 <h2 id="offline-ansible-tower-bundle">Offline ansible tower bundle</h2>
-
 <ul>
-<li><p><a href="https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/">https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/</a></p>
-
-<pre><code>wget https://releases.ansible.com/ansible-tower/setup-bundle/ansible-tower-setup-bundle-3.7.2-1.tar.gz
+<li><a href="https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/">https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/</a></li>
+</ul>
+<pre tabindex="0"><code>wget https://releases.ansible.com/ansible-tower/setup-bundle/ansible-tower-setup-bundle-3.7.2-1.tar.gz
 tar xzf ansible-tower-setup-bundle-3.7.2-1.tar.gz
 cd ansible-tower-setup-bundle-3.7.2-1
-</code></pre></li>
-</ul>
-
-<p>edit inventory</p>
-
-<pre><code>yum install yum-utils
+</code></pre><p>edit inventory</p>
+<pre tabindex="0"><code>yum install yum-utils
 yum install createrepo
 mkdir bundle/el7/repos/others
 cd bundle/el7/repos/others
@@ -913,19 +898,15 @@ baseurl=file://{{ bundle_install_folder }}/others
 enabled=1
 gpgcheck=0
 EOF
-</code></pre>
-
-<p>setelah selesai, lalu re-package the bundle</p>
-
-<p>note:
-* ada bbrp paket yg dibutuhkan sebelum menjalankan setup.sh, paket ini bisa didapatkan dengan menginstall terlebih dahulu</p>
-
+</code></pre><p>setelah selesai, lalu re-package the bundle</p>
+<p>note:</p>
+<ul>
+<li>ada bbrp paket yg dibutuhkan sebelum menjalankan setup.sh, paket ini bisa didapatkan dengan menginstall terlebih dahulu</li>
+</ul>
 <h2 id="ansible-tower-ldap-linux">ansible tower ldap linux</h2>
-
 <ul>
 <li><a href="https://www.youtube.com/watch?v=E0QpSwXot68">https://www.youtube.com/watch?v=E0QpSwXot68</a></li>
 </ul>
-
 <ol>
 <li>install openldap-servers on centos (available at this blog)</li>
 <li>configure ansible tower to add authentication to ldap server as describe on the video</li>

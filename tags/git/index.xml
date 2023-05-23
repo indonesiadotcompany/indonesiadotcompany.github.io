@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on Blog Indonesiadot.Com</title>
@@ -6,19 +6,15 @@
     <description>Recent content in git on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Jan 2020 08:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 14 Jan 2020 08:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gitlab on Ubuntu 16.04</title>
       <link>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</link>
       <pubDate>Tue, 14 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</guid>
-      <description> Instalasi Gitlab di Ubuntu 16.04 Widya Gitlab  https://widgitgog.birau.com/dashboard/projects  change / update hostname sed -i &#39;s/widgitgog/widgit/g&#39; /etc/gitlab/gitlab.rb gitlab-ctl reconfigure gitlab-ctl restart   https://docs.gitlab.com/omnibus/settings/configuration.html  Referensi:
- https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04  gitlab reset password from database gitlab-rails console -e production user = User.where(id: 1).first user = User.find_by(email: &#39;admin@example.com&#39;) user.password = &#39;secret_pass&#39; user.password_confirmation = &#39;secret_pass&#39; user.save!   https://docs.gitlab.com/ee/security/reset_root_password.html  </description>
+      <description>Instalasi Gitlab di Ubuntu 16.04 Widya Gitlab https://widgitgog.birau.com/dashboard/projects change / update hostname sed -i &amp;#39;s/widgitgog/widgit/g&amp;#39; /etc/gitlab/gitlab.rb gitlab-ctl reconfigure gitlab-ctl restart https://docs.gitlab.com/omnibus/settings/configuration.html Referensi:
+https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04 gitlab reset password from database gitlab-rails console -e production user = User.where(id: 1).first user = User.find_by(email: &amp;#39;admin@example.com&amp;#39;) user.password = &amp;#39;secret_pass&amp;#39; user.password_confirmation = &amp;#39;secret_pass&amp;#39; user.save! https://docs.gitlab.com/ee/security/reset_root_password.html </description>
     </item>
     
     <item>
@@ -28,8 +24,8 @@
       
       <guid>https://blog.indonesiadot.com/2019/09/24/hugo-hosting-dengan-github/</guid>
       <description>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:
- Nama user: tpinews Nama repositori yang harus dibuat: tpinews.github.io  Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:
-mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;komat kamit awal&#39; git remote add origin https://tpinews.github.io.git git push origin master git checkout -b hugo hugo new site .</description>
+Nama user: tpinews Nama repositori yang harus dibuat: tpinews.github.io Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:
+mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &amp;#39;komat kamit awal&amp;#39; git remote add origin https://tpinews.github.io.git git push origin master git checkout -b hugo hugo new site .</description>
     </item>
     
     <item>
@@ -38,9 +34,9 @@ mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;
       <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/git-tips/</guid>
-      <description>git without gnome-askpass unset SSH_ASKPASS   https://gist.github.com/joseluisq/d0e66c5f718250c90075  git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge  untuk menggabungkan isi dari branch hotfix ke master
-git checkout master git merge hotfix  git undo merge Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan
-git reflog git reset --hard &amp;lt;id_repository_log&amp;gt;  Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</description>
+      <description>git without gnome-askpass unset SSH_ASKPASS https://gist.github.com/joseluisq/d0e66c5f718250c90075 git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge untuk menggabungkan isi dari branch hotfix ke master
+git checkout master git merge hotfix git undo merge Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan
+git reflog git reset --hard &amp;lt;id_repository_log&amp;gt; Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</description>
     </item>
     
   </channel>

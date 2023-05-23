@@ -864,33 +864,24 @@
 <div class="post">
   <h1 class="post-title">Python Tips</h1>
   <span class="post-date">Mar 5, 2020</span>
-  
-
-<h2 id="module-python-web-server">module python web server</h2>
-
-<pre><code>python -m SimpleHTTPServer 8001
+  <h2 id="module-python-web-server">module python web server</h2>
+<pre tabindex="0"><code>python -m SimpleHTTPServer 8001
 python -m SimpleHTTPServer 8002
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><a href="https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver">https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver</a></li>
 <li><a href="https://www.pcsuggest.com/best-lightweight-web-server-linux/">https://www.pcsuggest.com/best-lightweight-web-server-linux/</a></li>
 </ul>
-
 <h2 id="multiple-python-version-on-centos-6">multiple python version on centos 6</h2>
-
 <p><a href="https://stackoverflow.com/questions/20842732/libpython2-7-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory">https://stackoverflow.com/questions/20842732/libpython2-7-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory</a>
 <a href="https://www.2daygeek.com/install-python-3-on-centos-6/">https://www.2daygeek.com/install-python-3-on-centos-6/</a></p>
-
-<pre><code>yum install centos-release-scl -y
-yum --enablerepo='centos-sclo-rh' install python27-python -y
-echo &quot;/opt/rh/python27/root/usr/lib64&quot; &gt;&gt; /etc/ld.so.conf
+<pre tabindex="0"><code>yum install centos-release-scl -y
+yum --enablerepo=&#39;centos-sclo-rh&#39; install python27-python -y
+echo &#34;/opt/rh/python27/root/usr/lib64&#34; &gt;&gt; /etc/ld.so.conf
 ldconfig
 /opt/rh/python27/root/usr/bin/python --version
-yum --enablerepo='centos-sclo-rh' install rh-python36-python
+yum --enablerepo=&#39;centos-sclo-rh&#39; install rh-python36-python
 /opt/rh/rh-python36/root/usr/bin/python --version
 </code></pre>
-
 </div>
 
 <hr/>

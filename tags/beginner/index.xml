@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>beginner on Blog Indonesiadot.Com</title>
@@ -6,11 +6,7 @@
     <description>Recent content in beginner on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jul 2020 08:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/beginner/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 10 Jul 2020 08:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/beginner/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Proxmox Beginner</title>
       <link>https://blog.indonesiadot.com/2020/07/10/proxmox-beginner/</link>
@@ -18,7 +14,7 @@
       
       <guid>https://blog.indonesiadot.com/2020/07/10/proxmox-beginner/</guid>
       <description>update proxmox repo https://pve.proxmox.com/wiki/Package_Repositories untuk bisa update proxmox harus dirubah dulu repo nya di file /etc/apt/sources.list (untuk proxmox 5.4 / debian 9 / stretch)
-deb http://kebo.pens.ac.id/debian stretch main contrib deb http://kebo.pens.ac.id/debian stretch-updates main contrib # security updates deb http://kebo.pens.ac.id/debian-security stretch/updates main contrib deb http://download.proxmox.com/debian/pve stretch pve-no-subscription  proxmox masquerade https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt
+deb http://kebo.pens.ac.id/debian stretch main contrib deb http://kebo.pens.ac.id/debian stretch-updates main contrib # security updates deb http://kebo.pens.ac.id/debian-security stretch/updates main contrib deb http://download.proxmox.com/debian/pve stretch pve-no-subscription proxmox masquerade https://pve.proxmox.com/wiki/Network_Configuration#_masquerading_nat_with_tt_span_class_monospaced_iptables_span_tt
 auto lo iface lo inet loopback auto ens192 iface ens192 inet static address 10.11.8.202 netmask 255.255.255.0 gateway 10.11.8.1 auto vmbr0 iface vmbr0 inet static address 192.</description>
     </item>
     
@@ -28,7 +24,7 @@ auto lo iface lo inet loopback auto ens192 iface ens192 inet static address 10.1
       <pubDate>Fri, 12 Jun 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/06/12/postgresql/</guid>
-      <description>Install pgadmin4 di ubuntu 18 apt-get install curl ca-certificates gnupg curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - sh -c &#39;echo &amp;quot;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&amp;quot; &amp;gt; /etc/apt/sources.list.d/pgdg.list&#39; apt update apt install pgadmin4  create db su - postgres psql create database dvdrental; \q wget https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip unzip dvdrental.zip pg_restore -d dvdrental dvdrental.tar psql -d dvdrental GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO pgtower; \q psql -U pgtower -d dvdrental select first_name from customer; \q  pg_hba.</description>
+      <description>Install pgadmin4 di ubuntu 18 apt-get install curl ca-certificates gnupg curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - sh -c &amp;#39;echo &amp;#34;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&amp;#34; &amp;gt; /etc/apt/sources.list.d/pgdg.list&amp;#39; apt update apt install pgadmin4 create db su - postgres psql create database dvdrental; \q wget https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip unzip dvdrental.zip pg_restore -d dvdrental dvdrental.tar psql -d dvdrental GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO pgtower; \q psql -U pgtower -d dvdrental select first_name from customer; \q pg_hba.</description>
     </item>
     
   </channel>

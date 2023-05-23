@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>google-authenticator on Blog Indonesiadot.Com</title>
@@ -6,21 +6,17 @@
     <description>Recent content in google-authenticator on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jun 2020 08:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/google-authenticator/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 23 Jun 2020 08:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/google-authenticator/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2FA with Google Authenticator</title>
       <link>https://blog.indonesiadot.com/2020/06/23/2fa-with-google-authenticator/</link>
       <pubDate>Tue, 23 Jun 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/06/23/2fa-with-google-authenticator/</guid>
-      <description> Ubuntu Pastikan terdapat baris berikut di /etc/ssh/sshd_config ChallengeResponseAuthentication yes UsePAM yes  lalu restart service sshd
-Tambahkan baris berikut di akhir /etc/pam.d/common-auth auth required pam_google_authenticator.so nullok  Go go gadget install google-authenticator app from android playstore, then add the server to show the code
+      <description>Ubuntu Pastikan terdapat baris berikut di /etc/ssh/sshd_config ChallengeResponseAuthentication yes UsePAM yes lalu restart service sshd
+Tambahkan baris berikut di akhir /etc/pam.d/common-auth auth required pam_google_authenticator.so nullok Go go gadget install google-authenticator app from android playstore, then add the server to show the code
 Referensi:
- https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator https://wiki.alpinelinux.org/wiki/Two_Factors_Authentication_With_OpenSSH  </description>
+https://www.techradar.com/how-to/how-to-add-two-factor-authentication-to-linux-with-google-authenticator https://wiki.alpinelinux.org/wiki/Two_Factors_Authentication_With_OpenSSH </description>
     </item>
     
   </channel>

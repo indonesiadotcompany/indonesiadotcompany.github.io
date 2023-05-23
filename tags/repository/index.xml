@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>repository on Blog Indonesiadot.Com</title>
@@ -6,11 +6,7 @@
     <description>Recent content in repository on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Aug 2020 17:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/repository/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 04 Aug 2020 17:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/repository/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Jfrog for Beginner</title>
       <link>https://blog.indonesiadot.com/2020/08/04/jfrog-for-beginner/</link>
@@ -18,7 +14,7 @@
       
       <guid>https://blog.indonesiadot.com/2020/08/04/jfrog-for-beginner/</guid>
       <description>Install jfrog di ubuntu https://websiteforstudents.com/how-to-install-jfrog-artifactory-on-ubuntu-18-04-16-04/
-apt install wget software-properties-common apt-transport-https apt-get install openjdk-8-jdk openjdk-8-doc wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add - add-apt-repository &amp;quot;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&amp;quot; apt-get update apt install jfrog-artifactory-oss  Membuat repository / artifacts baru di jfrog klik menu administration, lalu klik menu repositories (sebelah kiri), lalu klik + New Local Repository (sebelah kanan) klik / pilih generic, lalu isi repository key atau nama repository dengan apa saja yg diinginkan misal ansible-test-report klik save  test upload dan download via curl buat dahulu bbrp file, misal test.</description>
+apt install wget software-properties-common apt-transport-https apt-get install openjdk-8-jdk openjdk-8-doc wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add - add-apt-repository &amp;#34;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&amp;#34; apt-get update apt install jfrog-artifactory-oss Membuat repository / artifacts baru di jfrog klik menu administration, lalu klik menu repositories (sebelah kiri), lalu klik + New Local Repository (sebelah kanan) klik / pilih generic, lalu isi repository key atau nama repository dengan apa saja yg diinginkan misal ansible-test-report klik save test upload dan download via curl buat dahulu bbrp file, misal test.</description>
     </item>
     
     <item>
@@ -27,8 +23,8 @@ apt install wget software-properties-common apt-transport-https apt-get install 
       <pubDate>Tue, 14 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/14/gitlab-on-ubuntu-16.04/</guid>
-      <description> Instalasi Gitlab di Ubuntu 16.04 Widya Gitlab  https://widgitgog.birau.com/dashboard/projects  change / update hostname sed -i &#39;s/widgitgog/widgit/g&#39; /etc/gitlab/gitlab.rb gitlab-ctl reconfigure gitlab-ctl restart   https://docs.gitlab.com/omnibus/settings/configuration.html  Referensi:
- https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04  gitlab reset password from database gitlab-rails console -e production user = User.where(id: 1).first user = User.find_by(email: &#39;admin@example.com&#39;) user.password = &#39;secret_pass&#39; user.password_confirmation = &#39;secret_pass&#39; user.save!   https://docs.gitlab.com/ee/security/reset_root_password.html  </description>
+      <description>Instalasi Gitlab di Ubuntu 16.04 Widya Gitlab https://widgitgog.birau.com/dashboard/projects change / update hostname sed -i &amp;#39;s/widgitgog/widgit/g&amp;#39; /etc/gitlab/gitlab.rb gitlab-ctl reconfigure gitlab-ctl restart https://docs.gitlab.com/omnibus/settings/configuration.html Referensi:
+https://www.howtoforge.com/tutorial/how-to-install-and-configure-gitlab-on-ubuntu-16-04/ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04 gitlab reset password from database gitlab-rails console -e production user = User.where(id: 1).first user = User.find_by(email: &amp;#39;admin@example.com&amp;#39;) user.password = &amp;#39;secret_pass&amp;#39; user.password_confirmation = &amp;#39;secret_pass&amp;#39; user.save! https://docs.gitlab.com/ee/security/reset_root_password.html </description>
     </item>
     
     <item>
@@ -37,9 +33,9 @@ apt install wget software-properties-common apt-transport-https apt-get install 
       <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/git-tips/</guid>
-      <description>git without gnome-askpass unset SSH_ASKPASS   https://gist.github.com/joseluisq/d0e66c5f718250c90075  git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge  untuk menggabungkan isi dari branch hotfix ke master
-git checkout master git merge hotfix  git undo merge Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan
-git reflog git reset --hard &amp;lt;id_repository_log&amp;gt;  Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</description>
+      <description>git without gnome-askpass unset SSH_ASKPASS https://gist.github.com/joseluisq/d0e66c5f718250c90075 git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge untuk menggabungkan isi dari branch hotfix ke master
+git checkout master git merge hotfix git undo merge Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan
+git reflog git reset --hard &amp;lt;id_repository_log&amp;gt; Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</description>
     </item>
     
   </channel>

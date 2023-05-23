@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>scripting on Blog Indonesiadot.Com</title>
@@ -6,21 +6,17 @@
     <description>Recent content in scripting on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Sep 2019 08:17:16 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/scripting/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 02 Sep 2019 08:17:16 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/scripting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pembuatan web statis dengan hugo</title>
       <link>https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/</link>
       <pubDate>Mon, 02 Sep 2019 08:17:16 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/pembuatan-web-statis-dengan-hugo/</guid>
-      <description>manage hugo dari pc / laptop lain git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io git checkout hugo rm -rf public git add . git commit -m &#39;remove public&#39; git push git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public  Referensi hugo dasar:
- https://www.petanikode.com/topik/hugo https://gohugo.io/getting-started/quick-start/ https://gohugo.io/hosting-and-deployment/hosting-on-github/ https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html  Referensi hugo dan e-commerce:
- https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce  hugo lanyon tags edit themes/lanyonindo/layouts/partials/sidebar.html
- &amp;lt;a class=&amp;quot;sidebar-nav-item {{ if .IsHome }} active {{ end }}&amp;quot; href=&amp;quot;/&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt; &amp;lt;!</description>
+      <description>manage hugo dari pc / laptop lain git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io git checkout hugo rm -rf public git add . git commit -m &amp;#39;remove public&amp;#39; git push git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public Referensi hugo dasar:
+https://www.petanikode.com/topik/hugo https://gohugo.io/getting-started/quick-start/ https://gohugo.io/hosting-and-deployment/hosting-on-github/ https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html Referensi hugo dan e-commerce:
+https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce hugo lanyon tags edit themes/lanyonindo/layouts/partials/sidebar.html
+&amp;lt;a class=&amp;#34;sidebar-nav-item {{ if .IsHome }} active {{ end }}&amp;#34; href=&amp;#34;/&amp;#34;&amp;gt;Home&amp;lt;/a&amp;gt; &amp;lt;!-- &amp;lt;a class=&amp;#34;sidebar-nav-item {{ if eq .RelPermalink &amp;#34;/post/&amp;#34; }} active {{ end }}&amp;#34; href=&amp;#34;/post&amp;#34;&amp;gt;Posts&amp;lt;/a&amp;gt; --&amp;gt; &amp;lt;a class=&amp;#34;sidebar-nav-item&amp;#34; href=&amp;#34;/post&amp;#34;&amp;gt;Posts&amp;lt;/a&amp;gt; &amp;lt;a class=&amp;#34;sidebar-nav-item&amp;#34; href=&amp;#34;/tags&amp;#34;&amp;gt;Tags&amp;lt;/a&amp;gt; </description>
     </item>
     
     <item>

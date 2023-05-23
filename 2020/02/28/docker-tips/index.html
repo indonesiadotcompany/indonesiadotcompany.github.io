@@ -864,28 +864,16 @@
 <div class="post">
   <h1 class="post-title">Docker Tips</h1>
   <span class="post-date">Feb 28, 2020</span>
-  
-
-<h2 id="docker-run-example">Docker run example</h2>
-
-<pre><code>docker run -it alpine /bin/ash
-</code></pre>
-
-<p>Where -i = interactive, -t make tty for the running process, /bin/ash is the command to run.</p>
-
+  <h2 id="docker-run-example">Docker run example</h2>
+<pre tabindex="0"><code>docker run -it alpine /bin/ash
+</code></pre><p>Where -i = interactive, -t make tty for the running process, /bin/ash is the command to run.</p>
 <p>docker run &ndash;help</p>
-
 <h2 id="how-to-get-ip-of-running-docker">How to get ip of running docker</h2>
-
-<pre><code>docker ps
+<pre tabindex="0"><code>docker ps
 docker inspect &lt;containernameorid&gt;
-docker inspect &lt;containernameorid&gt; | grep '&quot;IPAddress&quot;' | head -n 1
-</code></pre>
-
-<p>Where head is opossite from tail, man head, man tail</p>
-
+docker inspect &lt;containernameorid&gt; | grep &#39;&#34;IPAddress&#34;&#39; | head -n 1
+</code></pre><p>Where head is opossite from tail, man head, man tail</p>
 <p>Ref:</p>
-
 <ul>
 <li><a href="https://docs.docker.com/engine/security/certificates/">https://docs.docker.com/engine/security/certificates/</a></li>
 <li><a href="https://docs.docker.com/engine/security/https/">https://docs.docker.com/engine/security/https/</a></li>
@@ -894,42 +882,29 @@ docker inspect &lt;containernameorid&gt; | grep '&quot;IPAddress&quot;' | head -
 <li><a href="https://github.com/MoimHossain/docker-viswarm">https://github.com/MoimHossain/docker-viswarm</a></li>
 <li><a href="https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host">https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host</a></li>
 </ul>
-
 <h2 id="docker-with-sshd">docker with sshd</h2>
-
 <p><a href="https://gist.github.com/widyaunix/580dd6bbed4754631659317d4b1e8344">https://gist.github.com/widyaunix/580dd6bbed4754631659317d4b1e8344</a></p>
-
 <p>Create Dockerfile</p>
-
-<pre><code>FROM centos
+<pre tabindex="0"><code>FROM centos
 
 RUN yum -y install openssh-server
-RUN ssh-keygen -q -N &quot;&quot; -t dsa -f /etc/ssh/ssh_host_ecdsa_key &amp;&amp; ssh-keygen -q -N &quot;&quot; -t rsa -f /etc/ssh/ssh_host_rsa_key
+RUN ssh-keygen -q -N &#34;&#34; -t dsa -f /etc/ssh/ssh_host_ecdsa_key &amp;&amp; ssh-keygen -q -N &#34;&#34; -t rsa -f /etc/ssh/ssh_host_rsa_key
 RUN ssh-keygen -A
-RUN echo 'root:r4hasia' | chpasswd
-RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN echo &#39;root:r4hasia&#39; | chpasswd
+RUN sed -i &#39;s/PermitRootLogin prohibit-password/PermitRootLogin yes/&#39; /etc/ssh/sshd_config
 ADD id_rsa.pub /root/.ssh/authorized_keys
 
 EXPOSE 22
-CMD [&quot;/usr/sbin/sshd&quot;, &quot;-D&quot;]
-</code></pre>
-
-<p>Then build to image using this command:</p>
-
-<pre><code>docker build -t centossh ./
+CMD [&#34;/usr/sbin/sshd&#34;, &#34;-D&#34;]
+</code></pre><p>Then build to image using this command:</p>
+<pre tabindex="0"><code>docker build -t centossh ./
 docker images
-</code></pre>
-
-<p>WARNING: docker ssh considered evil</p>
-
+</code></pre><p>WARNING: docker ssh considered evil</p>
 <p><a href="https://jpetazzo.github.io/2014/06/23/docker-ssh-considered-evil/">https://jpetazzo.github.io/2014/06/23/docker-ssh-considered-evil/</a></p>
-
 <h2 id="docker-with-static-ip">docker with static ip</h2>
-
-<pre><code>docker network create --subnet=172.1.0.0/24 docnet
+<pre tabindex="0"><code>docker network create --subnet=172.1.0.0/24 docnet
 docker run --name centos810 --net docnet --ip 172.1.0.10 --rm -d centossh
 </code></pre>
-
 </div>
 
 <hr/>

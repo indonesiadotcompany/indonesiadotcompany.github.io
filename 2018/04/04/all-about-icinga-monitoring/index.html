@@ -864,10 +864,7 @@
 <div class="post">
   <h1 class="post-title">All about icinga monitoring</h1>
   <span class="post-date">Apr 4, 2018</span>
-  
-
-<h2 id="icinga2-installation-on-ubuntu-16">icinga2 installation on ubuntu 16</h2>
-
+  <h2 id="icinga2-installation-on-ubuntu-16">icinga2 installation on ubuntu 16</h2>
 <ul>
 <li><a href="https://www.icinga.com/docs/icinga2/latest/doc/02-getting-started/">https://www.icinga.com/docs/icinga2/latest/doc/02-getting-started/</a></li>
 <li><a href="https://www.icinga.com/docs/icingaweb2/latest/doc/02-Installation/">https://www.icinga.com/docs/icingaweb2/latest/doc/02-Installation/</a></li>
@@ -877,7 +874,6 @@
 <li><a href="https://www.google.co.id/search?q=icinga2+change+ssh+port">https://www.google.co.id/search?q=icinga2+change+ssh+port</a></li>
 <li><a href="https://monitoring-portal.org/woltlab/index.php?thread/32752-ssh-monitoring-different-port/">https://monitoring-portal.org/woltlab/index.php?thread/32752-ssh-monitoring-different-port/</a></li>
 </ul>
-
 <p>added a line into the servicedefinition:
 Code
 apply Service &ldquo;ssh&rdquo; {
@@ -887,7 +883,6 @@ vars.port = host.vars.ssh_port
 assign where host.address &amp;&amp; host.vars.os == &ldquo;Linux&rdquo;
 ignore where host.name == &ldquo;localhost&rdquo; /* for upgrade safety */
 }</p>
-
 <p>and in the hostdef:
 Code
 object Host &ldquo;webarchiv&rdquo; {

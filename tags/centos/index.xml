@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>centos on Blog Indonesiadot.Com</title>
@@ -6,22 +6,18 @@
     <description>Recent content in centos on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Sep 2020 18:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/centos/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 02 Sep 2020 18:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/centos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LDAP on Centos 7</title>
       <link>https://blog.indonesiadot.com/2020/09/02/ldap-on-centos-7/</link>
       <pubDate>Wed, 02 Sep 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/09/02/ldap-on-centos-7/</guid>
-      <description>Server setup  https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html
-yum -y install openldap compat-openldap openldap-clients openldap-servers systemctl start slapd systemctl enable slapd slappasswd -h {SSHA} -s ldppassword  make note of ldappassword
-  create file db.ldif
-dn: olcDatabase={2}hdb,cn=config changetype: modify replace: olcSuffix olcSuffix: dc=itzgeek,dc=local dn: olcDatabase={2}hdb,cn=config changetype: modify replace: olcRootDN olcRootDN: cn=ldapadm,dc=itzgeek,dc=local dn: olcDatabase={2}hdb,cn=config changetype: modify replace: olcRootPW olcRootPW: {SSHA}d/thexcQUuSfe3rx3gRaEhHpNJ52N8D3  replace the value of olcRootPW with ldappassword above
-ldapmodify -Y EXTERNAL -H ldapi:/// -f db.</description>
+      <description>Server setup https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html yum -y install openldap compat-openldap openldap-clients openldap-servers systemctl start slapd systemctl enable slapd slappasswd -h {SSHA} -s ldppassword make note of ldappassword
+create file db.ldif
+dn: olcDatabase={2}hdb,cn=config changetype: modify replace: olcSuffix olcSuffix: dc=itzgeek,dc=local dn: olcDatabase={2}hdb,cn=config changetype: modify replace: olcRootDN olcRootDN: cn=ldapadm,dc=itzgeek,dc=local dn: olcDatabase={2}hdb,cn=config changetype: modify replace: olcRootPW olcRootPW: {SSHA}d/thexcQUuSfe3rx3gRaEhHpNJ52N8D3 replace the value of olcRootPW with ldappassword above
+ldapmodify -Y EXTERNAL -H ldapi:/// -f db.ldif create monitor.ldif
+dn: olcDatabase={1}monitor,cn=config changetype: modify replace: olcAccess olcAccess: {0}to * by dn.</description>
     </item>
     
     <item>
@@ -30,8 +26,7 @@ ldapmodify -Y EXTERNAL -H ldapi:/// -f db.</description>
       <pubDate>Wed, 02 Sep 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/09/02/centos-tips/</guid>
-      <description>whatprovides  https://www.itzgeek.com/how-tos/mini-howtos/netstat-command-not-found-on-centos-7-rhel-7-quick-fix.html
-yum whatprovides netstat   net-tools-2.0-0.25.20131004git.el7.x86_64 : Basic networking tools Repo : @base Matched from: Filename : /usr/bin/netstat</description>
+      <description>whatprovides https://www.itzgeek.com/how-tos/mini-howtos/netstat-command-not-found-on-centos-7-rhel-7-quick-fix.html yum whatprovides netstat net-tools-2.0-0.25.20131004git.el7.x86_64 : Basic networking tools Repo : @base Matched from: Filename : /usr/bin/netstat</description>
     </item>
     
     <item>
@@ -40,7 +35,7 @@ yum whatprovides netstat   net-tools-2.0-0.25.20131004git.el7.x86_64 : Basic net
       <pubDate>Thu, 27 Aug 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/08/27/lxc-on-centos/</guid>
-      <description> LXC install on centos  https://www.tecmint.com/install-create-run-lxc-linux-containers-on-centos/  </description>
+      <description>LXC install on centos https://www.tecmint.com/install-create-run-lxc-linux-containers-on-centos/ </description>
     </item>
     
     <item>
@@ -49,7 +44,7 @@ yum whatprovides netstat   net-tools-2.0-0.25.20131004git.el7.x86_64 : Basic net
       <pubDate>Fri, 28 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/28/yum-tips/</guid>
-      <description> Yum install specific version yum list docker-ce.x86_64 --showduplicates yum list docker-ce.x86_64 --showduplicates | sort -r yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09   https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos  </description>
+      <description>Yum install specific version yum list docker-ce.x86_64 --showduplicates yum list docker-ce.x86_64 --showduplicates | sort -r yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09 https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos </description>
     </item>
     
     <item>
@@ -58,10 +53,10 @@ yum whatprovides netstat   net-tools-2.0-0.25.20131004git.el7.x86_64 : Basic net
       <pubDate>Mon, 20 Jan 2020 09:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/</guid>
-      <description> Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
+      <description>Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
 adapun command nya sebelum bisa diakses yaitu:
-chcon -Rv --type=httpd_sys_rw_content_t /webserver  Referensi:
- https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/  </description>
+chcon -Rv --type=httpd_sys_rw_content_t /webserver Referensi:
+https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/ </description>
     </item>
     
     <item>
@@ -70,12 +65,12 @@ chcon -Rv --type=httpd_sys_rw_content_t /webserver  Referensi:
       <pubDate>Wed, 08 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/08/centos-7-resize-partition/</guid>
-      <description> Step to reproduce on VM Turn off the VM
-qemu-img resize image.qcow2 +SIZE  where SIZE is the size to add (e.g. 10G for 10 gibibytes).
+      <description>Step to reproduce on VM Turn off the VM
+qemu-img resize image.qcow2 +SIZE where SIZE is the size to add (e.g. 10G for 10 gibibytes).
 Turn on the VM, fdisk /dev/vda, delete and create /dev/vda2, restart
 Login after restart, then run this command
-pvresize /dev/vda2 lvextend -r -l +100%FREE /dev/mapper/centos-root df -hl  Referensi:
- https://maunium.net/blog/resizing-qcow2-images/  </description>
+pvresize /dev/vda2 lvextend -r -l +100%FREE /dev/mapper/centos-root df -hl Referensi:
+https://maunium.net/blog/resizing-qcow2-images/ </description>
     </item>
     
     <item>
@@ -85,9 +80,10 @@ pvresize /dev/vda2 lvextend -r -l +100%FREE /dev/mapper/centos-root df -hl  Refe
       
       <guid>https://blog.indonesiadot.com/2019/12/23/selinux-semanage/</guid>
       <description>content of selinux config /etc/selinux/config
-SELINUX=enforcing SELINUXTYPE=targeted  semanage packages yum provides semanage yum install -y policycoreutils-python  semanage list port semanage port -l | grep ssh  semanage open ssh on different port add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port
-semanage port -a -t ssh_port_t -p tcp 1022  then restart sshd service
-systemctl restart sshd  Referensi:</description>
+SELINUX=enforcing SELINUXTYPE=targeted semanage packages yum provides semanage yum install -y policycoreutils-python semanage list port semanage port -l | grep ssh semanage open ssh on different port add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port
+semanage port -a -t ssh_port_t -p tcp 1022 then restart sshd service
+systemctl restart sshd Referensi:
+https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/ </description>
     </item>
     
     <item>
@@ -96,9 +92,7 @@ systemctl restart sshd  Referensi:</description>
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld/</guid>
-      <description> Firewalld masquerade  https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/
-firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public   Open port for specific ip address  https://serverfault.com/questions/684602/how-to-open-port-for-a-specific-ip-address-with-firewall-cmd-on-centos https://www.liquidweb.com/kb/an-introduction-to-firewalld/
-firewall-cmd --permanent --zone=public --add-rich-rule=&#39; rule family=&amp;quot;ipv4&amp;quot; source address=&amp;quot;1.2.3.4/32&amp;quot; port protocol=&amp;quot;tcp&amp;quot; port=&amp;quot;4567&amp;quot; accept&#39;   </description>
+      <description>Firewalld masquerade https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/ firewall-cmd --get-active-zones firewall-cmd --list-all --zone=public firewall-cmd --add-masquerade --zone=public --permanent firewall-cmd --reload firewall-cmd --list-all --zone=public Open port for specific ip address https://serverfault.com/questions/684602/how-to-open-port-for-a-specific-ip-address-with-firewall-cmd-on-centos https://www.liquidweb.com/kb/an-introduction-to-firewalld/ firewall-cmd --permanent --zone=public --add-rich-rule=&amp;#39; rule family=&amp;#34;ipv4&amp;#34; source address=&amp;#34;1.2.3.4/32&amp;#34; port protocol=&amp;#34;tcp&amp;#34; port=&amp;#34;4567&amp;#34; accept&amp;#39; </description>
     </item>
     
   </channel>

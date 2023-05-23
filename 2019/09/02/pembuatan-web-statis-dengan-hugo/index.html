@@ -864,45 +864,33 @@
 <div class="post">
   <h1 class="post-title">Pembuatan web statis dengan hugo</h1>
   <span class="post-date">Sep 2, 2019</span>
-  
-
-<h2 id="manage-hugo-dari-pc-laptop-lain">manage hugo dari pc / laptop lain</h2>
-
-<pre><code>git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io
+  <h2 id="manage-hugo-dari-pc--laptop-lain">manage hugo dari pc / laptop lain</h2>
+<pre tabindex="0"><code>git clone https://github.com/indonesiadotcompany/indonesiadotcompany.github.io
 git checkout hugo
 rm -rf public
 git add .
-git commit -m 'remove public'
+git commit -m &#39;remove public&#39;
 git push
 git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public
-</code></pre>
-
-<p>Referensi hugo dasar:</p>
-
+</code></pre><p>Referensi hugo dasar:</p>
 <ul>
 <li><a href="https://www.petanikode.com/topik/hugo">https://www.petanikode.com/topik/hugo</a></li>
 <li><a href="https://gohugo.io/getting-started/quick-start/">https://gohugo.io/getting-started/quick-start/</a></li>
 <li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></li>
 <li><a href="https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html">https://www.opentechguides.com/how-to/article/hugo/164/hugo-site-build.html</a></li>
 </ul>
-
 <p>Referensi hugo dan e-commerce:</p>
-
 <ul>
 <li><a href="https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf">https://dev.to/couellet/blazing-fast-jamstack-e-commerce-w-hugo-forestry-netlify-4npf</a></li>
 <li><a href="https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce">https://snipcart.com/blog/hugo-tutorial-static-site-ecommerce</a></li>
 </ul>
-
 <h2 id="hugo-lanyon-tags">hugo lanyon tags</h2>
-
 <p>edit themes/lanyonindo/layouts/partials/sidebar.html</p>
-
-<pre><code>    &lt;a class=&quot;sidebar-nav-item {{ if .IsHome }} active {{ end }}&quot; href=&quot;/&quot;&gt;Home&lt;/a&gt;
-    &lt;!--    &lt;a class=&quot;sidebar-nav-item {{ if eq .RelPermalink &quot;/post/&quot; }} active {{ end }}&quot; href=&quot;/post&quot;&gt;Posts&lt;/a&gt; --&gt;
-    &lt;a class=&quot;sidebar-nav-item&quot; href=&quot;/post&quot;&gt;Posts&lt;/a&gt;
-    &lt;a class=&quot;sidebar-nav-item&quot; href=&quot;/tags&quot;&gt;Tags&lt;/a&gt;
+<pre tabindex="0"><code>    &lt;a class=&#34;sidebar-nav-item {{ if .IsHome }} active {{ end }}&#34; href=&#34;/&#34;&gt;Home&lt;/a&gt;
+    &lt;!--    &lt;a class=&#34;sidebar-nav-item {{ if eq .RelPermalink &#34;/post/&#34; }} active {{ end }}&#34; href=&#34;/post&#34;&gt;Posts&lt;/a&gt; --&gt;
+    &lt;a class=&#34;sidebar-nav-item&#34; href=&#34;/post&#34;&gt;Posts&lt;/a&gt;
+    &lt;a class=&#34;sidebar-nav-item&#34; href=&#34;/tags&#34;&gt;Tags&lt;/a&gt;
 </code></pre>
-
 </div>
 
 <hr/>

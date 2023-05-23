@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ansible on Blog Indonesiadot.Com</title>
@@ -6,20 +6,15 @@
     <description>Recent content in ansible on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Aug 2020 08:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 11 Aug 2020 08:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ansible sudoers</title>
       <link>https://blog.indonesiadot.com/2020/08/11/ansible-sudoers/</link>
       <pubDate>Tue, 11 Aug 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/08/11/ansible-sudoers/</guid>
-      <description>Contoh  https://code-maven.com/enable-ansible-passwordless-sudo https://stackoverflow.com/questions/37333305/ansible-create-a-user-with-sudo-privileges
-- hosts: all tasks: - lineinfile: path: /etc/sudoers state: present regexp: &#39;^%sudo&#39; line: &#39;%sudo ALL=(ALL) NOPASSWD: ALL&#39; validate: &#39;visudo -cf %s&#39;  contoh lain
-- name: Make sure we have a &#39;wheel&#39; group group: name: wheel state: present - name: Allow &#39;wheel&#39; group to have passwordless sudo lineinfile: dest: /etc/sudoers state: present regexp: &#39;^%wheel&#39; line: &#39;%wheel ALL=(ALL) NOPASSWD: ALL&#39; validate: &#39;visudo -cf %s&#39; - name: Add sudoers users to wheel group user: name=deployer groups=wheel append=yes state=present createhome=yes - name: Set up authorized keys for the deployer user authorized_key: user=deployer key=&amp;quot;{{item}}&amp;quot; with_file: - /home/railsdev/.</description>
+      <description>Contoh https://code-maven.com/enable-ansible-passwordless-sudo https://stackoverflow.com/questions/37333305/ansible-create-a-user-with-sudo-privileges - hosts: all tasks: - lineinfile: path: /etc/sudoers state: present regexp: &amp;#39;^%sudo&amp;#39; line: &amp;#39;%sudo ALL=(ALL) NOPASSWD: ALL&amp;#39; validate: &amp;#39;visudo -cf %s&amp;#39; contoh lain
+- name: Make sure we have a &amp;#39;wheel&amp;#39; group group: name: wheel state: present - name: Allow &amp;#39;wheel&amp;#39; group to have passwordless sudo lineinfile: dest: /etc/sudoers state: present regexp: &amp;#39;^%wheel&amp;#39; line: &amp;#39;%wheel ALL=(ALL) NOPASSWD: ALL&amp;#39; validate: &amp;#39;visudo -cf %s&amp;#39; - name: Add sudoers users to wheel group user: name=deployer groups=wheel append=yes state=present createhome=yes - name: Set up authorized keys for the deployer user authorized_key: user=deployer key=&amp;#34;{{item}}&amp;#34; with_file: - /home/railsdev/.</description>
     </item>
     
     <item>
@@ -28,9 +23,9 @@
       <pubDate>Tue, 30 Jun 2020 12:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/06/30/ansible-postgresql/</guid>
-      <description>Requirements pip install psycopg2-binary  playbooks cat psql.yml
-- hosts: localhost become: yes gather_facts: no connection: local tasks: - name: Simple select query to acme db postgresql_query: db: pgtower login_user: pgtower login_password: pgtower query: SELECT version() register: result - debug: var: result  cat psqlgraf.yml
-- hosts: localhost become: yes gather_facts: no connection: local tasks: - name: Simple select query to acme db postgresql_query: db: montower login_host: 10.11.8.13 login_user: ansible login_password: r4hasia query: SELECT * from hosts register: result - debug: var: result  run with command:</description>
+      <description>Requirements pip install psycopg2-binary playbooks cat psql.yml
+- hosts: localhost become: yes gather_facts: no connection: local tasks: - name: Simple select query to acme db postgresql_query: db: pgtower login_user: pgtower login_password: pgtower query: SELECT version() register: result - debug: var: result cat psqlgraf.yml
+- hosts: localhost become: yes gather_facts: no connection: local tasks: - name: Simple select query to acme db postgresql_query: db: montower login_host: 10.11.8.13 login_user: ansible login_password: r4hasia query: SELECT * from hosts register: result - debug: var: result run with command:</description>
     </item>
     
     <item>
@@ -41,7 +36,7 @@
       <guid>https://blog.indonesiadot.com/2020/06/24/ansible-to-windows-via-winrm/</guid>
       <description>Prerequisites on windows Upgrading PowerShell and .NET Framework https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html
 Buka powershell sebagai administrator, lalu copy paste bagian berikut:
-$url = &amp;quot;https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1&amp;quot; $file = &amp;quot;$env:temp\Upgrade-PowerShell.ps1&amp;quot; $username = &amp;quot;Administrator&amp;quot; $password = &amp;quot;Password&amp;quot; (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file) Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force # Version can be 3.0, 4.0 or 5.1 &amp;amp;$file -Version 5.1 -Username $username -Password $password -Verbose  Once completed, you will need to remove auto logon and set the execution policy back to the default of Restricted.</description>
+$url = &amp;#34;https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1&amp;#34; $file = &amp;#34;$env:temp\Upgrade-PowerShell.ps1&amp;#34; $username = &amp;#34;Administrator&amp;#34; $password = &amp;#34;Password&amp;#34; (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file) Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force # Version can be 3.0, 4.0 or 5.1 &amp;amp;$file -Version 5.1 -Username $username -Password $password -Verbose Once completed, you will need to remove auto logon and set the execution policy back to the default of Restricted.</description>
     </item>
     
     <item>
@@ -50,7 +45,7 @@ $url = &amp;quot;https://raw.githubusercontent.com/jborean93/ansible-windows/mas
       <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</guid>
-      <description> Jenkins Ansible Tower  https://plugins.jenkins.io/ansible-tower/ https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process https://dzone.com/articles/how-to-setup-continuous-delivery-environment  </description>
+      <description>Jenkins Ansible Tower https://plugins.jenkins.io/ansible-tower/ https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process https://dzone.com/articles/how-to-setup-continuous-delivery-environment </description>
     </item>
     
     <item>
@@ -60,9 +55,9 @@ $url = &amp;quot;https://raw.githubusercontent.com/jborean93/ansible-windows/mas
       
       <guid>https://blog.indonesiadot.com/2020/03/18/ansible-tower-for-beginner/</guid>
       <description>Before going to start the installation steps, we need to know some benefits of Ansible Tower.
-Why we need Ansible Tower and it’s benefits?  Ansible Tower helps you scale IT automation, manage complex deployments and speed productivity.
- Centralize and control your IT infrastructure with a visual dashboard, role-based access control, job scheduling, integrated notifications and graphical inventory management.
- Ansible Tower’s REST API and CLI make it easy to embed Ansible Tower into existing tools and processes.</description>
+Why we need Ansible Tower and it’s benefits? Ansible Tower helps you scale IT automation, manage complex deployments and speed productivity.
+Centralize and control your IT infrastructure with a visual dashboard, role-based access control, job scheduling, integrated notifications and graphical inventory management.
+Ansible Tower’s REST API and CLI make it easy to embed Ansible Tower into existing tools and processes.</description>
     </item>
     
     <item>
@@ -71,7 +66,7 @@ Why we need Ansible Tower and it’s benefits?  Ansible Tower helps you scale IT
       <pubDate>Mon, 16 Mar 2020 19:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</guid>
-      <description> ansible logstash example  https://github.com/widansible/elk-ansible https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html  </description>
+      <description>ansible logstash example https://github.com/widansible/elk-ansible https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html </description>
     </item>
     
     <item>
@@ -80,7 +75,7 @@ Why we need Ansible Tower and it’s benefits?  Ansible Tower helps you scale IT
       <pubDate>Mon, 09 Mar 2020 17:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution-1-briefing-session/</guid>
-      <description>Background  belum adanya standarisasi system security perusahaan yang mengacu kepada baseline standarisasi internasional seperti CIS, NIST atau PCI-DSS pekerjaan manual yang sangat kompleks, lama dan berat jika harus dilakukan secara manual untuk melakukan standarisasi security system masih banyaknya server perusahaan yang non-comply dengan standarisasi sistem security yang telah dibuat oleh perusahaan  Objective  mengurangi serangan konfigurasi yang robust secured protocols comply kepada standarisasi internasional dan standarisasi internal perusahaan  Technical Requirements Langkah 1:</description>
+      <description>Background belum adanya standarisasi system security perusahaan yang mengacu kepada baseline standarisasi internasional seperti CIS, NIST atau PCI-DSS pekerjaan manual yang sangat kompleks, lama dan berat jika harus dilakukan secara manual untuk melakukan standarisasi security system masih banyaknya server perusahaan yang non-comply dengan standarisasi sistem security yang telah dibuat oleh perusahaan Objective mengurangi serangan konfigurasi yang robust secured protocols comply kepada standarisasi internasional dan standarisasi internal perusahaan Technical Requirements Langkah 1:</description>
     </item>
     
     <item>
@@ -89,8 +84,8 @@ Why we need Ansible Tower and it’s benefits?  Ansible Tower helps you scale IT
       <pubDate>Thu, 20 Feb 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</guid>
-      <description> Ansible OS Hardening mkdir -p /data/backups  Referensi:
- https://indonesiadot.com  </description>
+      <description>Ansible OS Hardening mkdir -p /data/backups Referensi:
+https://indonesiadot.com </description>
     </item>
     
     <item>
@@ -99,9 +94,7 @@ Why we need Ansible Tower and it’s benefits?  Ansible Tower helps you scale IT
       <pubDate>Sun, 19 Jan 2020 15:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/</guid>
-      <description>Ansible Tower first Implementation  Install ansible tower masukan license tambahkan access - organization tambahkan access - users tambahkan access - teams tambahkan resources - inventory siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)
-chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/  tambahkan resources - projects
- buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine</description>
+      <description>Ansible Tower first Implementation Install ansible tower masukan license tambahkan access - organization tambahkan access - users tambahkan access - teams tambahkan resources - inventory siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses) chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/ tambahkan resources - projects buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine buat host client / node yang mau di manage di /etc/hosts tambahkan resources - credentials tambahkan resources - templates test launch jobs based on template yg baru dibuat Ansible tower + openscap install scap-workbench yum install scap-workbench xauth -y buat direktori report mkdir /report chgrp awx /report chmod g+s /report/ chcon -Rv --type=httpd_sys_rw_content_t /report/ ln -s /report /var/lib/awx/public/ tambahkan direktori report di nginx location /report { alias /var/lib/awx/public/report; autoindex on; } akses scap-workbench dari laptop ssh -X -C tower1 scap-workbench jalankan Scan Remote Machine (over SSH) ke ansible@client1 (jika muncul popup, pilih centos7) Save generate result html ke /report (tambahkan pembeda semisal datetime untuk membedakan tiap file report) Referensi:</description>
     </item>
     
     <item>
@@ -110,9 +103,9 @@ chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/  tambahkan res
       <pubDate>Wed, 04 Dec 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/12/04/ansible-cycle-evolution-diagram-security/</guid>
-      <description> Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
+      <description>Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
 Referensi:
- https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/ https://swimlane.com/blog/siem-soar/ https://www.ansible.com/blog/the-journey-to-security-automation  </description>
+https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/ https://swimlane.com/blog/siem-soar/ https://www.ansible.com/blog/the-journey-to-security-automation </description>
     </item>
     
     <item>
@@ -121,9 +114,9 @@ Referensi:
       <pubDate>Tue, 26 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/26/ansible-awx-2019/</guid>
-      <description> Ansible AWX install docker-compose tanpa pip, tanpa compile curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose  Referensi:
- https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/ https://medium.com/swlh/ansible-awx-installation-5861b115455a https://devzero.co.za/2019/02/28/high-availability-awx-ansible/ https://github.com/sujiar37/AWX-HA-InstanceGroup  Not yet tested:
- https://github.com/MrMEEE/awx-build https://awx.wiki/installation https://github.com/powertim/deploy_awx-rpm https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/  </description>
+      <description>Ansible AWX install docker-compose tanpa pip, tanpa compile curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
+https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-nginx-reverse-proxy-on-ubuntu-1804/ https://medium.com/swlh/ansible-awx-installation-5861b115455a https://devzero.co.za/2019/02/28/high-availability-awx-ansible/ https://github.com/sujiar37/AWX-HA-InstanceGroup Not yet tested:
+https://github.com/MrMEEE/awx-build https://awx.wiki/installation https://github.com/powertim/deploy_awx-rpm https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/ </description>
     </item>
     
     <item>
@@ -134,7 +127,7 @@ Referensi:
       <guid>https://blog.indonesiadot.com/2019/11/05/recommended-ansible-modules/</guid>
       <description>Frequently Used Module blockinfile Module ini saya gunakan ketika muncul error pada saat menggunakan module lineinfile untuk memasukan beberapa baris sekaligus dalam beberapa tasks, dan ternyata dengan menggunakan module ini dengan hanya satu task bisa memasukan langsung beberapa baris.
 Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepada parameter minimalnya adalah path dan block saja.
-- name: Insert correct line to /etc/ntp.conf blockinfile: path: /etc/ntp.conf insertafter: ^#?</description>
+- name: Insert correct line to /etc/ntp.conf blockinfile: path: /etc/ntp.conf insertafter: ^#?server state: present block: | server &amp;#34;{{ ntp1 }}&amp;#34; server &amp;#34;{{ ntp2 }}&amp;#34; notify: restart ntp Referensi:</description>
     </item>
     
     <item>
@@ -143,8 +136,8 @@ Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepa
       <pubDate>Mon, 04 Nov 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/</guid>
-      <description> Ansible and Openscap for scanning and remediation server for security compliance operating system Referensi:
- https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663  </description>
+      <description>Ansible and Openscap for scanning and remediation server for security compliance operating system Referensi:
+https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663 </description>
     </item>
     
     <item>
@@ -154,8 +147,8 @@ Ini hanya sekedar contoh, meski banyak parameter yang digunakan, cuma fokus kepa
       
       <guid>https://blog.indonesiadot.com/2019/10/28/ansible-reference/</guid>
       <description>Postingan ini adalah referensi untuk belajar ansible dan bisa juga sebagai tips, meski sudah ada postingan sebelumnya yang berisi ansible tips :)
-Jenkins-ci Ref: * https://galaxy.ansible.com/geerlingguy/jenkins/ * http://rundeck.org * Goci / gocd
-Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &#39;/&#39; mount: &amp;quot;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&amp;quot;  atau</description>
+Jenkins-ci Ref:
+https://galaxy.ansible.com/geerlingguy/jenkins/ http://rundeck.org Goci / gocd Ansible check disk - name: Ensure that free space on {{ mountname }} is grater than 40% assert: that: mount.size_available &amp;gt; mount.size_total|float * 0.4 msg: disk space has reached 60% threshold vars: mountname: &amp;#39;/&amp;#39; mount: &amp;#34;{{ ansible_mounts | selectattr(&amp;#39;mount&amp;#39;,&amp;#39;equalto&amp;#39;,mountname) | list | first }}&amp;#34; atau</description>
     </item>
     
     <item>
@@ -165,7 +158,7 @@ Ansible check disk - name: Ensure that free space on {{ mountname }} is grater t
       
       <guid>https://blog.indonesiadot.com/2019/10/25/gcp-and-ansible/</guid>
       <description>Referensi:
- https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/  </description>
+https://programmaticponderings.com/2019/01/30/getting-started-with-red-hat-ansible-for-google-cloud-platform/ </description>
     </item>
     
     <item>
@@ -177,8 +170,8 @@ Ansible check disk - name: Ensure that free space on {{ mountname }} is grater t
       <description>Install Ansible Tower Persyaratan:
 Hardware: RAM minimal 3,75 GB OS: Centos 7
 Langkah yang dilakukan
-yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz tar -xzvf ansible-tower-setup-latest.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh  Configure Ansible Tower after installation Akses Ansible tower Web UI dari
-https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
+yum install -y ansible wget http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz tar -xzvf ansible-tower-setup-latest.tar.gz cd ansible-tower-setup-3.1.5/ (edit inventory file, isi bagian yang dibutuhkan terutama password) (edit roles/preflight/defaults/main.yml, jika ingin menurunkan minimal ram) ./setup.sh Configure Ansible Tower after installation Akses Ansible tower Web UI dari
+https://&amp;lt;Ansible Tower IP or Hostname&amp;gt; Dapatkan lisensi dari https://www.ansible.com/license lalu masukkan license tersebut ke halaman awal setelah login</description>
     </item>
     
     <item>
@@ -187,8 +180,7 @@ https://&amp;lt;Ansible Tower IP or Hostname&amp;gt;  Dapatkan lisensi dari http
       <pubDate>Mon, 19 Mar 2018 21:56:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/03/19/xenserver-provisioning-with-ansible/</guid>
-      <description>https://medium.com/@jrisch/using-ansible-to-automate-vm-creation-on-xenserver-d092aa484a06
-Using Ansible to automate VM creation on XenServerI’ve been using Xenserver at Fab:IT for the last 8 or 9 years, and during that time, I’ve automated the installation of, mostly Debian and Ubuntu, VM’s in several ways. The most successful way, was a shell script with certain sane defaults built in, combined with preseed files for the various Debian and Ubuntu versions, and small shell scripts for handling the installation of Xentools in the VM, after the initial reboot.</description>
+      <description>https://medium.com/@jrisch/using-ansible-to-automate-vm-creation-on-xenserver-d092aa484a06Using Ansible to automate VM creation on XenServerI’ve been using Xenserver at Fab:IT for the last 8 or 9 years, and during that time, I’ve automated the installation of, mostly Debian and Ubuntu, VM’s in several ways. The most successful way, was a shell script with certain sane defaults built in, combined with preseed files for the various Debian and Ubuntu versions, and small shell scripts for handling the installation of Xentools in the VM, after the initial reboot.</description>
     </item>
     
     <item>
@@ -197,8 +189,8 @@ Using Ansible to automate VM creation on XenServerI’ve been using Xenserver at
       <pubDate>Wed, 31 Jan 2018 23:30:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/01/31/ansible-tips/</guid>
-      <description> Ansible gather facts Using facter too
- http://docs.ansible.com/ansible/latest/setup_module.html#examples  ansible php composer  https://knpuniversity.com/screencast/ansible/ansible-composer  ansible playbook interactive / ansible prompt  https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html  ansible-playbook command  https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/  Ansible integrations  https://www.ansible.com/integrations/devops-tools  </description>
+      <description>Ansible gather facts Using facter too
+http://docs.ansible.com/ansible/latest/setup_module.html#examples ansible php composer https://knpuniversity.com/screencast/ansible/ansible-composer ansible playbook interactive / ansible prompt https://docs.ansible.com/ansible/latest/user_guide/playbooks_prompts.html ansible-playbook command https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/ Ansible integrations https://www.ansible.com/integrations/devops-tools </description>
     </item>
     
   </channel>

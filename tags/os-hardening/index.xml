@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>os-hardening on Blog Indonesiadot.Com</title>
@@ -6,19 +6,15 @@
     <description>Recent content in os-hardening on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Feb 2020 18:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/os-hardening/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 20 Feb 2020 18:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/os-hardening/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ansible OS Hardening</title>
       <link>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</link>
       <pubDate>Thu, 20 Feb 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</guid>
-      <description> Ansible OS Hardening mkdir -p /data/backups  Referensi:
- https://indonesiadot.com  </description>
+      <description>Ansible OS Hardening mkdir -p /data/backups Referensi:
+https://indonesiadot.com </description>
     </item>
     
   </channel>

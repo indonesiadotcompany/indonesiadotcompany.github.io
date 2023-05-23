@@ -864,28 +864,21 @@
 <div class="post">
   <h1 class="post-title">Xenserver tips and trick</h1>
   <span class="post-date">Jan 31, 2018</span>
-  
-
-<h2 id="xenserver-resize-memory-command">xenserver resize memory command</h2>
-
-<p>Increase RAM for XenServer VM&rsquo;s through Command Line Interface.
-1. If the RAM editing option is graded out through XenCenter.</p>
-
-<p>Solution:
-1. Take a putty/ssh connection to pool master
-2. Power off the VM.</p>
-
-<p>Execute the Below command to configure the new RAM:</p>
-
-<pre><code>#xe vm-memory-limits-set uuid=&lt;uuid of=&quot;&quot; the=&quot;&quot; valid=&quot;&quot; vm=&quot;&quot;&gt; static-min=&lt;nn&gt;GiB/MiB dynamic-min=&lt;nn&gt;GiB/MiB dynamic-max=&lt;nn&gt;GiB/MiB static-max=&lt;nn&gt;GiB/MiB &lt;/nn&gt;&lt;/nn&gt;&lt;/nn&gt;&lt;/nn&gt;&lt;/uuid&gt;
-</code></pre>
-
-<p>Example :</p>
-
-<pre><code>#xe vm-memory-limits-set uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f static-min=64GiB dynamic-min=64GiB dynamic-max=64GiB static-max=64GiB
-</code></pre>
-
+  <h2 id="xenserver-resize-memory-command">xenserver resize memory command</h2>
+<p>Increase RAM for XenServer VM&rsquo;s through Command Line Interface.</p>
 <ol>
+<li>If the RAM editing option is graded out through XenCenter.</li>
+</ol>
+<p>Solution:</p>
+<ol>
+<li>Take a putty/ssh connection to pool master</li>
+<li>Power off the VM.</li>
+</ol>
+<p>Execute the Below command to configure the new RAM:</p>
+<pre tabindex="0"><code>#xe vm-memory-limits-set uuid=&lt;uuid of=&#34;&#34; the=&#34;&#34; valid=&#34;&#34; vm=&#34;&#34;&gt; static-min=&lt;nn&gt;GiB/MiB dynamic-min=&lt;nn&gt;GiB/MiB dynamic-max=&lt;nn&gt;GiB/MiB static-max=&lt;nn&gt;GiB/MiB &lt;/nn&gt;&lt;/nn&gt;&lt;/nn&gt;&lt;/nn&gt;&lt;/uuid&gt;
+</code></pre><p>Example :</p>
+<pre tabindex="0"><code>#xe vm-memory-limits-set uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f static-min=64GiB dynamic-min=64GiB dynamic-max=64GiB static-max=64GiB
+</code></pre><ol start="3">
 <li>Start the VM.</li>
 </ol>
 

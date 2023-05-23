@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>lxc on Blog Indonesiadot.Com</title>
@@ -6,18 +6,14 @@
     <description>Recent content in lxc on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Aug 2020 18:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/lxc/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 27 Aug 2020 18:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/lxc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LXC on Centos</title>
       <link>https://blog.indonesiadot.com/2020/08/27/lxc-on-centos/</link>
       <pubDate>Thu, 27 Aug 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/08/27/lxc-on-centos/</guid>
-      <description> LXC install on centos  https://www.tecmint.com/install-create-run-lxc-linux-containers-on-centos/  </description>
+      <description>LXC install on centos https://www.tecmint.com/install-create-run-lxc-linux-containers-on-centos/ </description>
     </item>
     
     <item>
@@ -26,7 +22,7 @@
       <pubDate>Mon, 16 Mar 2020 10:47:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/16/kubernetes-inside-lxc/</guid>
-      <description>  https://medium.com/@kvaps/run-kubernetes-in-lxc-container-f04aa94b6c9c https://github.com/corneliusweig/kubernetes-lxd https://www.sayem.org/k8s-on-lxd/ https://discuss.linuxcontainers.org/t/working-install-of-docker-ce-in-lxc-unprivileged-container-in-proxmox/3828/4 https://forum.proxmox.com/threads/lxc-docker-containerd-cannot-find-lib-modules-4-15-18-9-pve.49406/ https://forum.proxmox.com/threads/docker-in-lxc-container.45204/ https://discuss.linuxcontainers.org/t/how-to-add-kernel-modules-into-an-lxc-container/5033/3  kubernetes haproxy  https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076  </description>
+      <description> https://medium.com/@kvaps/run-kubernetes-in-lxc-container-f04aa94b6c9c https://github.com/corneliusweig/kubernetes-lxd https://www.sayem.org/k8s-on-lxd/ https://discuss.linuxcontainers.org/t/working-install-of-docker-ce-in-lxc-unprivileged-container-in-proxmox/3828/4 https://forum.proxmox.com/threads/lxc-docker-containerd-cannot-find-lib-modules-4-15-18-9-pve.49406/ https://forum.proxmox.com/threads/docker-in-lxc-container.45204/ https://discuss.linuxcontainers.org/t/how-to-add-kernel-modules-into-an-lxc-container/5033/3 kubernetes haproxy https://medium.com/@kvaps/for-make-this-scheme-more-safe-you-can-add-haproxy-layer-between-keepalived-and-kube-apiservers-62c344283076 </description>
     </item>
     
     <item>
@@ -35,9 +31,9 @@
       <pubDate>Tue, 10 Mar 2020 06:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/10/lxd-lxc/</guid>
-      <description>lxc set static ip lxc stop c1 lxc network attach lxdbr0 c1 eth0 eth0 lxc config device set c1 eth0 ipv4.address 10.99.10.42 lxc start c1   https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4  lxc privileged to unprivileged Pada saat container (CT) lxc dalam unprivileged mode memiliki hak terbatas seperti akses ke device dan beberapa lainnya.
+      <description>lxc set static ip lxc stop c1 lxc network attach lxdbr0 c1 eth0 eth0 lxc config device set c1 eth0 ipv4.address 10.99.10.42 lxc start c1 https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4 lxc privileged to unprivileged Pada saat container (CT) lxc dalam unprivileged mode memiliki hak terbatas seperti akses ke device dan beberapa lainnya.
 Contoh pada saat menjalankan docker itu ada pesan error Failed to reset devices.list on /system.slice
-Workaround nya adalah dengan membuat CT menjadi privileged mode, caranya yaitu: - backup CT - restore CT dengan uncheck unprivileged mode</description>
+Workaround nya adalah dengan membuat CT menjadi privileged mode, caranya yaitu:</description>
     </item>
     
   </channel>

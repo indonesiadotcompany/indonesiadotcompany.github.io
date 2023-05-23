@@ -864,25 +864,17 @@
 <div class="post">
   <h1 class="post-title">LDAP on Centos 7</h1>
   <span class="post-date">Sep 2, 2020</span>
-  
-
-<h2 id="server-setup">Server setup</h2>
-
+  <h2 id="server-setup">Server setup</h2>
 <ul>
-<li><p><a href="https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html">https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html</a></p>
-
-<pre><code>yum -y install openldap compat-openldap openldap-clients openldap-servers
+<li><a href="https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html">https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html</a></li>
+</ul>
+<pre tabindex="0"><code>yum -y install openldap compat-openldap openldap-clients openldap-servers
 systemctl start slapd
 systemctl enable slapd
 slappasswd -h {SSHA} -s ldppassword
-</code></pre>
-
-<p>make note of ldappassword</p></li>
-</ul>
-
+</code></pre><p>make note of ldappassword</p>
 <p>create file db.ldif</p>
-
-<pre><code>dn: olcDatabase={2}hdb,cn=config
+<pre tabindex="0"><code>dn: olcDatabase={2}hdb,cn=config
 changetype: modify
 replace: olcSuffix
 olcSuffix: dc=itzgeek,dc=local
@@ -896,38 +888,23 @@ dn: olcDatabase={2}hdb,cn=config
 changetype: modify
 replace: olcRootPW
 olcRootPW: {SSHA}d/thexcQUuSfe3rx3gRaEhHpNJ52N8D3
-</code></pre>
-
-<p>replace the value of olcRootPW with ldappassword above</p>
-
-<pre><code>ldapmodify -Y EXTERNAL  -H ldapi:/// -f db.ldif
-</code></pre>
-
-<p>create monitor.ldif</p>
-
-<pre><code>dn: olcDatabase={1}monitor,cn=config
+</code></pre><p>replace the value of olcRootPW with ldappassword above</p>
+<pre tabindex="0"><code>ldapmodify -Y EXTERNAL  -H ldapi:/// -f db.ldif
+</code></pre><p>create monitor.ldif</p>
+<pre tabindex="0"><code>dn: olcDatabase={1}monitor,cn=config
 changetype: modify
 replace: olcAccess
-olcAccess: {0}to * by dn.base=&quot;gidNumber=0+uidNumber=0,cn=peercred,cn=external, cn=auth&quot; read by dn.base=&quot;cn=ldapadm,dc=itzgeek,dc=local&quot; read by * none
-</code></pre>
-
-<p>then run</p>
-
-<pre><code>ldapmodify -Y EXTERNAL  -H ldapi:/// -f monitor.ldif
-</code></pre>
-
-<h3 id="setup-ldap-database">setup ldap database</h3>
-
-<pre><code>cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+olcAccess: {0}to * by dn.base=&#34;gidNumber=0+uidNumber=0,cn=peercred,cn=external, cn=auth&#34; read by dn.base=&#34;cn=ldapadm,dc=itzgeek,dc=local&#34; read by * none
+</code></pre><p>then run</p>
+<pre tabindex="0"><code>ldapmodify -Y EXTERNAL  -H ldapi:/// -f monitor.ldif
+</code></pre><h3 id="setup-ldap-database">setup ldap database</h3>
+<pre tabindex="0"><code>cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
 chown ldap:ldap /var/lib/ldap/*
 ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/cosine.ldif
 ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/nis.ldif 
 ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/inetorgperson.ldif
-</code></pre>
-
-<p>create base.ldif</p>
-
-<pre><code>dn: dc=itzgeek,dc=local
+</code></pre><p>create base.ldif</p>
+<pre tabindex="0"><code>dn: dc=itzgeek,dc=local
 dc: itzgeek
 objectClass: top
 objectClass: domain
@@ -944,16 +921,10 @@ ou: People
 dn: ou=Group,dc=itzgeek,dc=local
 objectClass: organizationalUnit
 ou: Group
-</code></pre>
-
-<p>build the directory structure</p>
-
-<pre><code>ldapadd -x -W -D &quot;cn=ldapadm,dc=itzgeek,dc=local&quot; -f base.ldif
-</code></pre>
-
-<p>create ldap user, create file raj.ldif</p>
-
-<pre><code>dn: uid=raj,ou=People,dc=itzgeek,dc=local
+</code></pre><p>build the directory structure</p>
+<pre tabindex="0"><code>ldapadd -x -W -D &#34;cn=ldapadm,dc=itzgeek,dc=local&#34; -f base.ldif
+</code></pre><p>create ldap user, create file raj.ldif</p>
+<pre tabindex="0"><code>dn: uid=raj,ou=People,dc=itzgeek,dc=local
 objectClass: top
 objectClass: account
 objectClass: posixAccount
@@ -970,94 +941,52 @@ shadowLastChange: 17058
 shadowMin: 0
 shadowMax: 99999
 shadowWarning: 7
-</code></pre>
-
-<p>create it</p>
-
-<pre><code>ldapadd -x -W -D &quot;cn=ldapadm,dc=itzgeek,dc=local&quot; -f raj.ldif
-</code></pre>
-
-<p>assign password to the user</p>
-
-<pre><code>ldappasswd -s password123 -W -D &quot;cn=ldapadm,dc=itzgeek,dc=local&quot; -x &quot;uid=raj,ou=People,dc=itzgeek,dc=local&quot;
-</code></pre>
-
-<p>verify ldap entries</p>
-
-<pre><code>ldapsearch -x cn=raj -b dc=itzgeek,dc=local
-</code></pre>
-
-<p>to delete the user</p>
-
-<pre><code>ldapdelete -W -D &quot;cn=ldapadm,dc=itzgeek,dc=local&quot; &quot;uid=raj,ou=People,dc=itzgeek,dc=local&quot;
-</code></pre>
-
-<h3 id="enable-ldap-logging">enable ldap logging</h3>
-
+</code></pre><p>create it</p>
+<pre tabindex="0"><code>ldapadd -x -W -D &#34;cn=ldapadm,dc=itzgeek,dc=local&#34; -f raj.ldif
+</code></pre><p>assign password to the user</p>
+<pre tabindex="0"><code>ldappasswd -s password123 -W -D &#34;cn=ldapadm,dc=itzgeek,dc=local&#34; -x &#34;uid=raj,ou=People,dc=itzgeek,dc=local&#34;
+</code></pre><p>verify ldap entries</p>
+<pre tabindex="0"><code>ldapsearch -x cn=raj -b dc=itzgeek,dc=local
+</code></pre><p>to delete the user</p>
+<pre tabindex="0"><code>ldapdelete -W -D &#34;cn=ldapadm,dc=itzgeek,dc=local&#34; &#34;uid=raj,ou=People,dc=itzgeek,dc=local&#34;
+</code></pre><h3 id="enable-ldap-logging">enable ldap logging</h3>
 <p>add below line to /etc/rsyslog.conf</p>
-
-<pre><code>local4.* /var/log/ldap.log
+<pre tabindex="0"><code>local4.* /var/log/ldap.log
 #*
-</code></pre>
-
-<p>then restart rsyslog</p>
-
-<pre><code>systemctl restart rsyslog
-</code></pre>
-
-<h2 id="client-configuration">client configuration</h2>
-
+</code></pre><p>then restart rsyslog</p>
+<pre tabindex="0"><code>systemctl restart rsyslog
+</code></pre><h2 id="client-configuration">client configuration</h2>
 <ul>
 <li><a href="https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html/2">https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html/2</a></li>
-
-<li><p><a href="https://tylersguides.com/guides/configuring-openldap-authentication-centos-7/">https://tylersguides.com/guides/configuring-openldap-authentication-centos-7/</a></p>
-
-<pre><code>yum install -y openldap-clients nss-pam-ldapd
-authconfig --enableldap --enableldapauth --ldapserver=192.168.1.10 --ldapbasedn=&quot;dc=itzgeek,dc=local&quot; --enablemkhomedir --update
+<li><a href="https://tylersguides.com/guides/configuring-openldap-authentication-centos-7/">https://tylersguides.com/guides/configuring-openldap-authentication-centos-7/</a></li>
+</ul>
+<pre tabindex="0"><code>yum install -y openldap-clients nss-pam-ldapd
+authconfig --enableldap --enableldapauth --ldapserver=192.168.1.10 --ldapbasedn=&#34;dc=itzgeek,dc=local&#34; --enablemkhomedir --update
 systemctl restart  nslcd
-</code></pre></li>
-</ul>
-
-<h3 id="verify-ldap-login">verify ldap login</h3>
-
-<pre><code>getent passwd raj
-</code></pre>
-
-<p>then test ssh to the ldap client with newly created user</p>
-
+</code></pre><h3 id="verify-ldap-login">verify ldap login</h3>
+<pre tabindex="0"><code>getent passwd raj
+</code></pre><p>then test ssh to the ldap client with newly created user</p>
 <h2 id="phpldapadmin">phpldapadmin</h2>
-
 <ul>
-<li><p><a href="https://hostadvice.com/how-to/how-to-install-phpldapadmin-on-centos-7/">https://hostadvice.com/how-to/how-to-install-phpldapadmin-on-centos-7/</a></p>
-
-<pre><code>yum install epel-release -y
-yum -y install phpldapadmin
-</code></pre></li>
+<li><a href="https://hostadvice.com/how-to/how-to-install-phpldapadmin-on-centos-7/">https://hostadvice.com/how-to/how-to-install-phpldapadmin-on-centos-7/</a></li>
 </ul>
-
-<p>Modify your configuration file located at /etc/httpd/conf.d/phpldapadmin.conf</p>
-
-<pre><code>&lt;IfModule mod_authz_core.c&gt;
+<pre tabindex="0"><code>yum install epel-release -y
+yum -y install phpldapadmin
+</code></pre><p>Modify your configuration file located at /etc/httpd/conf.d/phpldapadmin.conf</p>
+<pre tabindex="0"><code>&lt;IfModule mod_authz_core.c&gt;
     # Apache 2.4
     Require all granted
   &lt;/IfModule&gt;
+</code></pre><h3 id="configure-phpldapadmin">configure phpldapadmin</h3>
+<pre tabindex="0"><code>$servers-&gt;setValue(&#39;server&#39;,&#39;host&#39;,&#39;127.0.0.1&#39;);
+$servers-&gt;setValue(&#39;server&#39;,&#39;port&#39;,389);
+$servers-&gt;setValue(&#39;login&#39;,&#39;bind_id&#39;,&#39;cn=ldapadm,dc=itzgeek,dc=local&#39;);
+$servers-&gt;setValue(&#39;appearance&#39;,&#39;password_hash&#39;,&#39;ssha&#39;);
+$servers-&gt;setValue(&#39;login&#39;,&#39;attr&#39;,&#39;dn&#39;);
+//$servers-&gt;setValue(&#39;login&#39;,&#39;attr&#39;,&#39;uid&#39;);
+</code></pre><p>then start httpd</p>
+<pre tabindex="0"><code>systemctl restart httpd
 </code></pre>
-
-<h3 id="configure-phpldapadmin">configure phpldapadmin</h3>
-
-<pre><code>$servers-&gt;setValue('server','host','127.0.0.1');
-$servers-&gt;setValue('server','port',389);
-$servers-&gt;setValue('login','bind_id','cn=ldapadm,dc=itzgeek,dc=local');
-$servers-&gt;setValue('appearance','password_hash','ssha');
-$servers-&gt;setValue('login','attr','dn');
-//$servers-&gt;setValue('login','attr','uid');
-</code></pre>
-
-<p>then start httpd</p>
-
-<pre><code>systemctl restart httpd
-</code></pre>
-
 </div>
 
 <hr/>

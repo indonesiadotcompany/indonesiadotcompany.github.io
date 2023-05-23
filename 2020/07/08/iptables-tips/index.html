@@ -864,36 +864,23 @@
 <div class="post">
   <h1 class="post-title">iptables tips</h1>
   <span class="post-date">Jul 8, 2020</span>
-  
-
-<p>iptables adalah program utility untuk seting firewall di linux.</p>
-
+  <p>iptables adalah program utility untuk seting firewall di linux.</p>
 <h2 id="flush-all-rules-delete-all-chains-and-accept-all">Flush All Rules, Delete All Chains, and Accept All</h2>
-
 <ul>
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules">https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules</a></li>
 </ul>
-
 <p>This section will show you how to flush all of your firewall rules, tables, and chains, and allow all network traffic.</p>
-
 <p>Note: This will effectively disable your firewall. You should only follow this section if you want to start over the configuration of your firewall.</p>
-
 <p>First, set the default policies for each of the built-in chains to ACCEPT. The main reason to do this is to ensure that you won’t be locked out from your server:</p>
-
-<pre><code>sudo iptables -P INPUT ACCEPT
+<pre tabindex="0"><code>sudo iptables -P INPUT ACCEPT
 sudo iptables -P FORWARD ACCEPT
 sudo iptables -P OUTPUT ACCEPT
-</code></pre>
-
-<p>Then flush the nat and mangle tables, flush all chains (-F), and delete all non-default chains (-X):</p>
-
-<pre><code>sudo iptables -t nat -F
+</code></pre><p>Then flush the nat and mangle tables, flush all chains (-F), and delete all non-default chains (-X):</p>
+<pre tabindex="0"><code>sudo iptables -t nat -F
 sudo iptables -t mangle -F
 sudo iptables -F
 sudo iptables -X
-</code></pre>
-
-<p>Your firewall will now allow all network traffic. If you list your rules now, you will will see there are none, and only the three default chains (INPUT, FORWARD, and OUTPUT) remain.</p>
+</code></pre><p>Your firewall will now allow all network traffic. If you list your rules now, you will will see there are none, and only the three default chains (INPUT, FORWARD, and OUTPUT) remain.</p>
 
 </div>
 

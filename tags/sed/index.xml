@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sed on Blog Indonesiadot.Com</title>
@@ -6,19 +6,15 @@
     <description>Recent content in sed on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Oct 2019 08:17:54 +0700</lastBuildDate>
-    
-	<atom:link href="https://blog.indonesiadot.com/tags/sed/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 14 Oct 2019 08:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/sed/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Magic of Sed</title>
       <link>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</link>
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</guid>
-      <description> Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt  comment out a line that contain string sed -i &#39;/ 2001 /s/^/#/&#39; file  Referensi:
- https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521 https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file  </description>
+      <description>Insert every line in linux sed &amp;#39;s/^/apt-get purge -y /&amp;#39; aptwantopurge.txt &amp;gt; aptpurge.txt comment out a line that contain string sed -i &amp;#39;/ 2001 /s/^/#/&amp;#39; file Referensi:
+https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521 https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file </description>
     </item>
     
   </channel>

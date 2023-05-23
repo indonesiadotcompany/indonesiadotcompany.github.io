@@ -864,28 +864,20 @@
 <div class="post">
   <h1 class="post-title">Simple Virtualization Linux</h1>
   <span class="post-date">Dec 22, 2019</span>
-  
-
-<h2 id="list-kvm-using-virsh">List kvm using virsh</h2>
-
-<pre><code>virsh list
+  <h2 id="list-kvm-using-virsh">List kvm using virsh</h2>
+<pre tabindex="0"><code>virsh list
 virsh list --all
 virsh --help
-</code></pre>
-
-<h2 id="create-vm-on-kvm-qemu-via-libvirt-with-command-line">Create vm on kvm / qemu via libvirt with command line</h2>
-
+</code></pre><h2 id="create-vm-on-kvm--qemu-via-libvirt-with-command-line">Create vm on kvm / qemu via libvirt with command line</h2>
 <h3 id="pembuatan-vm-centos-7">Pembuatan vm centos 7</h3>
-
 <p>script bash virtcen.sh</p>
-
-<pre><code>#!/bin/bash
+<pre tabindex="0"><code>#!/bin/bash
 
 NAMA=$1
 
-if [ -z &quot;$1&quot; ]; then
- while [ -z &quot;$NAMA&quot; ]; do
-  echo -n &quot;masukan nama vm: &quot;
+if [ -z &#34;$1&#34; ]; then
+ while [ -z &#34;$NAMA&#34; ]; do
+  echo -n &#34;masukan nama vm: &#34;
   read NAMA
  done
 fi
@@ -893,19 +885,16 @@ fi
 virt-install \
  --name $NAMA \
  --ram 900 \
- --disk path=$NAMA.qcow,size=6,bus=scsi,discard='unmap',format='qcow2' \
+ --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&#39;unmap&#39;,format=&#39;qcow2&#39; \
  --controller type=scsi,model=virtio-scsi \
  --vcpus 1 \
  --cpu host \
  --console pty,target_type=serial \
  --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso \
- --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot; \
+ --initrd-inject=cenks.cfg --extra-args &#34;inst.ks=file:/cenks.cfg&#34; \
  --noautoconsole
-</code></pre>
-
-<p>file kickstart cenks.cfg</p>
-
-<pre><code>text
+</code></pre><p>file kickstart cenks.cfg</p>
+<pre tabindex="0"><code>text
 install
 
 ignoredisk --only-use=sda
@@ -937,21 +926,17 @@ EOF
 chown -R widysible:widysible /home/ansible
 chmod 0600 /home/widysible/.ssh/authorized_keys
 # Allow Ansible to sudo w/o a password
-echo &quot;widysible ALL=(ALL) NOPASSWD:ALL&quot; &gt; /etc/sudoers.d/widysible
+echo &#34;widysible ALL=(ALL) NOPASSWD:ALL&#34; &gt; /etc/sudoers.d/widysible
 # trim
-sed -i 's/issue_discards = 0/issue_discards = 1/' /etc/lvm/lvm.conf
-echo &quot;0 0 1 0 0 fstrim /&quot; | tee /etc/cron.d/fstrim
-sed -i '/ swap /s/^/#/' /etc/fstab
-sed -i 's/defaults/defaults,discard/' /etc/fstab
+sed -i &#39;s/issue_discards = 0/issue_discards = 1/&#39; /etc/lvm/lvm.conf
+echo &#34;0 0 1 0 0 fstrim /&#34; | tee /etc/cron.d/fstrim
+sed -i &#39;/ swap /s/^/#/&#39; /etc/fstab
+sed -i &#39;s/defaults/defaults,discard/&#39; /etc/fstab
 echo ### Change back to terminal 1
 #chvt 1
 %end
-
-</code></pre>
-
-<p>Create VM using ansible playbook</p>
-
-<pre><code>---
+</code></pre><p>Create VM using ansible playbook</p>
+<pre tabindex="0"><code>---
 - name: create VMs
   hosts: localhost
   gather_facts: no
@@ -959,42 +944,36 @@ echo ### Change back to terminal 1
   become: true
   vars_prompt:
     - name: NAMA
-      prompt: &quot;Enter VM name&quot;
-      default: &quot;c7&quot;
+      prompt: &#34;Enter VM name&#34;
+      default: &#34;c7&#34;
       private: no
 #  vars_files:
 #    - vms.yml
 
   tasks:
     - name: get VM disks
-      command: &quot;ls /var/lib/libvirt/images&quot;
+      command: &#34;ls /var/lib/libvirt/images&#34;
       register: disks
-      changed_when: &quot;disks.rc != 0&quot;
+      changed_when: &#34;disks.rc != 0&#34;
 
     - name: get list of VMs
       virt:
-        command: &quot;list_vms&quot;
+        command: &#34;list_vms&#34;
       register: vms
 
     - name: create vm
       command: &gt;
                 virt-install --name {{ NAMA }}
                 --cpu host --vcpus 1 --ram 900
-                --disk path=$NAMA.qcow,size=6,bus=scsi,discard='unmap',format='qcow2'
+                --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&#39;unmap&#39;,format=&#39;qcow2&#39;
                 --controller type=scsi,model=virtio-scsi
                 --console pty,target_type=serial
                 --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso
-                --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot;
+                --initrd-inject=cenks.cfg --extra-args &#34;inst.ks=file:/cenks.cfg&#34;
                 --noautoconsole
-</code></pre>
-
-<h2 id="get-vms-ip">Get VMs IP</h2>
-
-<pre><code>virsh domifaddr c7
-</code></pre>
-
-<p>Referensi:</p>
-
+</code></pre><h2 id="get-vms-ip">Get VMs IP</h2>
+<pre tabindex="0"><code>virsh domifaddr c7
+</code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/">https://www.srv24x7.com/kickstart-install-centos-7-using-virt-install/</a></li>
 <li><a href="https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/">https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/</a></li>
