@@ -1,7 +1,7 @@
 ---
 title: "Perjalanan Hijrah - insyaAllooh - Pendahuluan"
 date: 2021-06-24T14:17:54+07:00
-tags: ["wid", "hijrah", "insyaAllooh"]
+tags: ["wid", "hijrah", "pandeglang", "insyaAllooh"]
 author: "Widya"
 draft: false
 ---
