@@ -14,7 +14,7 @@
       
       <guid>https://blog.indonesiadot.com/2020/07/08/iptables-tips/</guid>
       <description>iptables adalah program utility untuk seting firewall di linux.
-Flush All Rules, Delete All Chains, and Accept All https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules This section will show you how to flush all of your firewall rules, tables, and chains, and allow all network traffic.
+Flush All Rules, Delete All Chains, and Accept All  https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules  This section will show you how to flush all of your firewall rules, tables, and chains, and allow all network traffic.
 Note: This will effectively disable your firewall. You should only follow this section if you want to start over the configuration of your firewall.
 First, set the default policies for each of the built-in chains to ACCEPT.</description>
     </item>

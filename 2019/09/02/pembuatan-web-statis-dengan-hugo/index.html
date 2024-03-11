@@ -835,6 +835,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -842,7 +850,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -869,7 +877,7 @@
 git checkout hugo
 rm -rf public
 git add .
-git commit -m &#39;remove public&#39;
+git commit -m 'remove public'
 git push
 git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiadotcompany.github.io public
 </code></pre><p>Referensi hugo dasar:</p>
@@ -886,10 +894,10 @@ git submodule add -f -b master https://github.com/indonesiadotcompany/indonesiad
 </ul>
 <h2 id="hugo-lanyon-tags">hugo lanyon tags</h2>
 <p>edit themes/lanyonindo/layouts/partials/sidebar.html</p>
-<pre tabindex="0"><code>    &lt;a class=&#34;sidebar-nav-item {{ if .IsHome }} active {{ end }}&#34; href=&#34;/&#34;&gt;Home&lt;/a&gt;
-    &lt;!--    &lt;a class=&#34;sidebar-nav-item {{ if eq .RelPermalink &#34;/post/&#34; }} active {{ end }}&#34; href=&#34;/post&#34;&gt;Posts&lt;/a&gt; --&gt;
-    &lt;a class=&#34;sidebar-nav-item&#34; href=&#34;/post&#34;&gt;Posts&lt;/a&gt;
-    &lt;a class=&#34;sidebar-nav-item&#34; href=&#34;/tags&#34;&gt;Tags&lt;/a&gt;
+<pre tabindex="0"><code>    &lt;a class=&quot;sidebar-nav-item {{ if .IsHome }} active {{ end }}&quot; href=&quot;/&quot;&gt;Home&lt;/a&gt;
+    &lt;!--    &lt;a class=&quot;sidebar-nav-item {{ if eq .RelPermalink &quot;/post/&quot; }} active {{ end }}&quot; href=&quot;/post&quot;&gt;Posts&lt;/a&gt; --&gt;
+    &lt;a class=&quot;sidebar-nav-item&quot; href=&quot;/post&quot;&gt;Posts&lt;/a&gt;
+    &lt;a class=&quot;sidebar-nav-item&quot; href=&quot;/tags&quot;&gt;Tags&lt;/a&gt;
 </code></pre>
 </div>
 

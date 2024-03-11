@@ -14,28 +14,21 @@
       
       <guid>https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
-Firewall
-iptables
-ipset
-shorewall
-csf
-Anti Malware
-maldet (malware detection for web directory)
-IDS
-tripwire
-Identity Server
-FreeIPA (IPA = Identity, Policy, Authentication)
-Security Checking / Scanning Solution
-OpenSCAP
-Rapid7
-CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets
-TeemIP
-itop https://github.com/Combodo/iTop
-infoblox
-efficientip
-ansible-cmdb
-WAF
-http://www.waf-fle.org/ console / web view for modsecurity admin</description>
+  Firewall
+  iptables
+  ipset
+  shorewall
+  csf
+  Anti Malware
+  maldet (malware detection for web directory)
+  IDS
+  tripwire
+  Identity Server
+  FreeIPA (IPA = Identity, Policy, Authentication)
+  Security Checking / Scanning Solution
+  OpenSCAP
+  Rapid7
+  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</description>
     </item>
     
     <item>
@@ -45,25 +38,24 @@ http://www.waf-fle.org/ console / web view for modsecurity admin</description>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/linux-server-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
-Virtualization (Desktop)
-Virtualbox
-Graphic
-Gimp
-Mail
-Thunderbird Mail (client)
-Multimedia
-Avidemux
-Video Conference
-jitsi
-More and more
-Customer support live chat
-rocket.chat
-tawk.to
-simple chat
-Networking
-nload
-Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut
-https://blog.indonesiadot.com/2019/09/04/linux-security-tools/ </description>
+  Virtualization (Desktop)
+  Virtualbox
+  Graphic
+  Gimp
+  Mail
+  Thunderbird Mail (client)
+  Multimedia
+  Avidemux
+  Video Conference
+  jitsi
+  More and more
+  Customer support live chat
+  rocket.chat
+  tawk.to
+  simple chat
+  Networking
+  nload
+  Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut</description>
     </item>
     
     <item>
@@ -72,7 +64,7 @@ https://blog.indonesiadot.com/2019/09/04/linux-security-tools/ </description>
       <pubDate>Mon, 02 Sep 2019 08:17:21 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/git-tips/</guid>
-      <description>git without gnome-askpass unset SSH_ASKPASS https://gist.github.com/joseluisq/d0e66c5f718250c90075 git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge untuk menggabungkan isi dari branch hotfix ke master
+      <description>git without gnome-askpass unset SSH_ASKPASS  https://gist.github.com/joseluisq/d0e66c5f718250c90075  git merge Contohnya branch master isinya kurang lengkap, dan branch hotfix isinya lengkap lalu git merge  untuk menggabungkan isi dari branch hotfix ke master
 git checkout master git merge hotfix git undo merge Ini adalah langkah untuk mengembalikan data yang terlanjur di merge ke repository log yang diinginkan
 git reflog git reset --hard &amp;lt;id_repository_log&amp;gt; Langkahnya, lihat dulu id repository log mana yang terakhir dilakukan, setelah itu baru dikembalikan</description>
     </item>

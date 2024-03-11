@@ -14,13 +14,13 @@
       
       <guid>https://blog.indonesiadot.com/2019/10/26/tmux-screen-tips/</guid>
       <description>Tmux cheatsheet tmux shortcuts &amp;amp; cheatsheet start new:
-tmux start new with session name:
-tmux new -s myname attach:
-tmux a # (or at, or attach) attach to named:
-tmux a -t myname list sessions:
-tmux ls kill session:
-tmux kill-session -t myname Kill all the tmux sessions:
-tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#39; | xargs kill In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:</description>
+tmux  start new with session name:
+tmux new -s myname  attach:
+tmux a # (or at, or attach)  attach to named:
+tmux a -t myname  list sessions:
+tmux ls  kill session:
+tmux kill-session -t myname  Kill all the tmux sessions:
+tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#39; | xargs kill  In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:</description>
     </item>
     
   </channel>

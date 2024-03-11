@@ -24,10 +24,10 @@ Syaratnya cuma account google dan kartu debit Visa, tidak perlu kartu kredit, di
       
       <guid>https://blog.indonesiadot.com/2018/01/31/xenserver-tips-and-trick/</guid>
       <description>xenserver resize memory command Increase RAM for XenServer VM&amp;rsquo;s through Command Line Interface.
-If the RAM editing option is graded out through XenCenter. Solution:
-Take a putty/ssh connection to pool master Power off the VM. Execute the Below command to configure the new RAM:
-#xe vm-memory-limits-set uuid=&amp;lt;uuid of=&amp;#34;&amp;#34; the=&amp;#34;&amp;#34; valid=&amp;#34;&amp;#34; vm=&amp;#34;&amp;#34;&amp;gt; static-min=&amp;lt;nn&amp;gt;GiB/MiB dynamic-min=&amp;lt;nn&amp;gt;GiB/MiB dynamic-max=&amp;lt;nn&amp;gt;GiB/MiB static-max=&amp;lt;nn&amp;gt;GiB/MiB &amp;lt;/nn&amp;gt;&amp;lt;/nn&amp;gt;&amp;lt;/nn&amp;gt;&amp;lt;/nn&amp;gt;&amp;lt;/uuid&amp;gt; Example :
-#xe vm-memory-limits-set uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f static-min=64GiB dynamic-min=64GiB dynamic-max=64GiB static-max=64GiB Start the VM. </description>
+ If the RAM editing option is graded out through XenCenter.  Solution:
+ Take a putty/ssh connection to pool master Power off the VM.  Execute the Below command to configure the new RAM:
+#xe vm-memory-limits-set uuid=&amp;lt;uuid of=&amp;quot;&amp;quot; the=&amp;quot;&amp;quot; valid=&amp;quot;&amp;quot; vm=&amp;quot;&amp;quot;&amp;gt; static-min=&amp;lt;nn&amp;gt;GiB/MiB dynamic-min=&amp;lt;nn&amp;gt;GiB/MiB dynamic-max=&amp;lt;nn&amp;gt;GiB/MiB static-max=&amp;lt;nn&amp;gt;GiB/MiB &amp;lt;/nn&amp;gt;&amp;lt;/nn&amp;gt;&amp;lt;/nn&amp;gt;&amp;lt;/nn&amp;gt;&amp;lt;/uuid&amp;gt; Example :
+#xe vm-memory-limits-set uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f static-min=64GiB dynamic-min=64GiB dynamic-max=64GiB static-max=64GiB Start the VM.</description>
     </item>
     
   </channel>

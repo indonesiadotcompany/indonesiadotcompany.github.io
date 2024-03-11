@@ -14,7 +14,7 @@
       
       <guid>https://blog.indonesiadot.com/2019/09/28/ids-tripwire/</guid>
       <description>Referensi:
-https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/ https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/ https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d </description>
+ https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/ https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/ https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d  </description>
     </item>
     
     <item>
@@ -24,28 +24,21 @@ https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-usi
       
       <guid>https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
-Firewall
-iptables
-ipset
-shorewall
-csf
-Anti Malware
-maldet (malware detection for web directory)
-IDS
-tripwire
-Identity Server
-FreeIPA (IPA = Identity, Policy, Authentication)
-Security Checking / Scanning Solution
-OpenSCAP
-Rapid7
-CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets
-TeemIP
-itop https://github.com/Combodo/iTop
-infoblox
-efficientip
-ansible-cmdb
-WAF
-http://www.waf-fle.org/ console / web view for modsecurity admin</description>
+  Firewall
+  iptables
+  ipset
+  shorewall
+  csf
+  Anti Malware
+  maldet (malware detection for web directory)
+  IDS
+  tripwire
+  Identity Server
+  FreeIPA (IPA = Identity, Policy, Authentication)
+  Security Checking / Scanning Solution
+  OpenSCAP
+  Rapid7
+  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</description>
     </item>
     
   </channel>

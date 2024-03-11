@@ -14,7 +14,7 @@
       
       <guid>https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/</guid>
       <description>Ansible and Openscap for scanning and remediation server for security compliance operating system Referensi:
-https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663 </description>
+ https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663  </description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@ https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe
       
       <guid>https://blog.indonesiadot.com/2019/11/03/openscap-reference/</guid>
       <description>Openscap Custom Profile Referensi:
-https://martin.preisler.me/2013/11/xccdf-tailoring/ https://static.open-scap.org/openscap-1.2/oscap_user_manual.html </description>
+ https://martin.preisler.me/2013/11/xccdf-tailoring/ https://static.open-scap.org/openscap-1.2/oscap_user_manual.html  </description>
     </item>
     
   </channel>

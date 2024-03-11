@@ -835,6 +835,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -842,7 +850,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -870,7 +878,7 @@
 <li><a href="https://widgitgog.birau.com/dashboard/projects">https://widgitgog.birau.com/dashboard/projects</a></li>
 </ul>
 <h3 id="change--update-hostname">change / update hostname</h3>
-<pre tabindex="0"><code>sed -i &#39;s/widgitgog/widgit/g&#39; /etc/gitlab/gitlab.rb
+<pre tabindex="0"><code>sed -i 's/widgitgog/widgit/g' /etc/gitlab/gitlab.rb
 gitlab-ctl reconfigure
 gitlab-ctl restart
 </code></pre><ul>
@@ -884,9 +892,9 @@ gitlab-ctl restart
 <h2 id="gitlab-reset-password-from-database">gitlab reset password from database</h2>
 <pre tabindex="0"><code>gitlab-rails console -e production
 user = User.where(id: 1).first
-user = User.find_by(email: &#39;admin@example.com&#39;)
-user.password = &#39;secret_pass&#39;
-user.password_confirmation = &#39;secret_pass&#39;
+user = User.find_by(email: 'admin@example.com')
+user.password = 'secret_pass'
+user.password_confirmation = 'secret_pass'
 user.save!
 </code></pre><ul>
 <li><a href="https://docs.gitlab.com/ee/security/reset_root_password.html">https://docs.gitlab.com/ee/security/reset_root_password.html</a></li>

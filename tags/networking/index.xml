@@ -25,7 +25,7 @@ network: version: 2 renderer: networkd ethernets: enp3s0: dhcp4: true To instead
       
       <guid>https://blog.indonesiadot.com/2018/03/07/winbox-under-linux/</guid>
       <description>Referensi:
-https://www.google.co.id/search?q=winbox+under+linux https://github.com/mriza/winbox-installer https://udariza.wordpress.com/ </description>
+ https://www.google.co.id/search?q=winbox+under+linux https://github.com/mriza/winbox-installer https://udariza.wordpress.com/  </description>
     </item>
     
   </channel>

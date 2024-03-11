@@ -835,6 +835,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -842,7 +850,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -879,36 +887,37 @@
 <h3 id="using-logical-or">Using Logical OR</h3>
 <p>Logical OR in bash script is used with operator -o. Below small shell script will show you to how to use logical OR ( -o ) between two conditions.</p>
 <pre tabindex="0"><code>#!/bin/bash
-read -p &#34;Enter First Numeric Value: &#34;   first
-read -p &#34;Enter Second Numeric Value: &#34;  second
+read -p &quot;Enter First Numeric Value: &quot;   first
+read -p &quot;Enter Second Numeric Value: &quot;  second
 
 if [ $first -le 10 -o $second -gt 20 ]
 then
- echo &#34;OK&#34;
+ echo &quot;OK&quot;
 else
- echo &#34;Not OK&#34;
+ echo &quot;Not OK&quot;
 fi
 </code></pre><h3 id="using-logical-and">Using Logical AND</h3>
 <p>Logical AND in bash script is used with operator -a. Below shell script will show you to how to use logical AND ( -a ) between two conditions.</p>
 <pre tabindex="0"><code>#!/bin/bash
-read -p &#34;Enter First Numeric Value: &#34;   first
-read -p &#34;Enter Second Numeric Value: &#34;  second
+read -p &quot;Enter First Numeric Value: &quot;   first
+read -p &quot;Enter Second Numeric Value: &quot;  second
 if [ $first -le 10 -a $second -gt 20 ]
 then
- echo &#34;OK&#34;
+ echo &quot;OK&quot;
 else
- echo &#34;Not OK&#34;
+ echo &quot;Not OK&quot;
 fi
 </code></pre><h3 id="using-multiple-logical-or-amp-and">Using Multiple Logical OR &amp; AND</h3>
 <p>Below example will help you to understand to how to use multiple logical operators in single statement.</p>
 <pre tabindex="0"><code>#!/bin/bash
-read -p &#34;Enter Your Number:&#34;  i
+read -p &quot;Enter Your Number:&quot;  i
 if [ ( $i -ge 10  -a  $i -le 20 ) -o ( $i -ge 100  -a  $i -le 200 ) ]
 then
- echo &#34;OK&#34;
+ echo &quot;OK&quot;
 else
- echo &#34;Not OK&#34;
+ echo &quot;Not OK&quot;
 fi
+
 </code></pre><h2 id="color-output-on-echo">Color output on echo</h2>
 <p>Ref:</p>
 <ul>
@@ -947,7 +956,7 @@ fi
 </ul>
 <p>The ^M is a carriage return character. Linux uses the line feed character to mark the end of a line, whereas Windows uses the two-character sequence CR LF. Your file has Windows line endings, which is confusing Linux.</p>
 <p>Remove the spurious CR characters. You can do it with the following command:</p>
-<pre tabindex="0"><code>sed -i -e &#39;s/\r$//&#39; create_mgw_3shelf_6xIPNI1P.sh
+<pre tabindex="0"><code>sed -i -e 's/\r$//' create_mgw_3shelf_6xIPNI1P.sh
 </code></pre><h2 id="redirect-error-output-to-file">Redirect error output to file</h2>
 <ul>
 <li><a href="https://www.cyberciti.biz/faq/linux-redirect-error-output-to-file/">https://www.cyberciti.biz/faq/linux-redirect-error-output-to-file/</a></li>

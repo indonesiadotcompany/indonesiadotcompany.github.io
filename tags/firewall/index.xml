@@ -14,28 +14,21 @@
       
       <guid>https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
-Firewall
-iptables
-ipset
-shorewall
-csf
-Anti Malware
-maldet (malware detection for web directory)
-IDS
-tripwire
-Identity Server
-FreeIPA (IPA = Identity, Policy, Authentication)
-Security Checking / Scanning Solution
-OpenSCAP
-Rapid7
-CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets
-TeemIP
-itop https://github.com/Combodo/iTop
-infoblox
-efficientip
-ansible-cmdb
-WAF
-http://www.waf-fle.org/ console / web view for modsecurity admin</description>
+  Firewall
+  iptables
+  ipset
+  shorewall
+  csf
+  Anti Malware
+  maldet (malware detection for web directory)
+  IDS
+  tripwire
+  Identity Server
+  FreeIPA (IPA = Identity, Policy, Authentication)
+  Security Checking / Scanning Solution
+  OpenSCAP
+  Rapid7
+  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</description>
     </item>
     
   </channel>

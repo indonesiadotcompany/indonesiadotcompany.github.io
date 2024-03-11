@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.106.0">
+	<meta name="generator" content="Hugo 0.92.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -836,6 +836,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -843,7 +851,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -868,6 +876,32 @@
 <div class="post">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/27/install-solr-server/">Install solr server</a></h1>
+        <span class="post-date">Sep 27, 2017</span>
+	<p>Here are the steps for Install solr server - base of search engine for magento  these steps run on ubuntu 16.04, because we follow this <a href="http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html">http://devdocs.magento.com/guides/m1x/other/ht_magento-solr.html</a>, we must install jdk 7 from ppa, but ubuntu 16.04 default with jdk 8  <!-- raw HTML omitted --><!-- raw HTML omitted -->add-apt-repository ppa:openjdk-r/ppa<!-- raw HTML omitted -->apt update<!-- raw HTML omitted -->apt-get install openjdk-7-jdk<!-- raw HTML omitted -->apt install supervisor<!-- raw HTML omitted --><!-- raw HTML omitted -->su - user<!-- raw HTML omitted -->mkdir apps &amp;&amp; cd apps<!-- raw HTML omitted -->wget <a href="https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz">https://archive.apache.org/dist/lucene/solr/3.4.0/apache-solr-3.4.0.tgz</a><!-- raw HTML omitted -->tar xzf ../apache-solr-3.4.0.tgz<!-- raw HTML omitted -->mv apache-solr-3.4.0 solr34<!-- raw HTML omitted -->cp /var/www/magento/lib/Apache/Solr/conf/* solr34/example/solr/conf/<!-- raw HTML omitted -->cat &gt;&gt; apps/solr34/example/logging.properties <!-- raw HTML omitted --><!-- raw HTML omitted --># Default global logging level:<!-- raw HTML omitted -->.level = INFO<!-- raw HTML omitted --><!-- raw HTML omitted --># Write to a file:<!-- raw HTML omitted -->handlers = java.util.logging.FileHandler<!-- raw HTML omitted --><!-- raw HTML omitted --># Write log messages in XML format:<!-- raw HTML omitted --># Use java.util.logging.SimpleFormatter to log like Solr logs to the screen by default<!-- raw HTML omitted -->java.util.logging.FileHandler.formatter = java.util.logging.XMLFormatter<!-- raw HTML omitted --><!-- raw HTML omitted --># Log to the current working directory, with log files named solrxxx.log<!-- raw HTML omitted -->java.util.logging.FileHandler.pattern = /home/ehbm2/logs/solr%u.log<!-- raw HTML omitted --><!-- raw HTML omitted -->[CTRL-C]<!-- raw HTML omitted --><!-- raw HTML omitted -->exit<!-- raw HTML omitted --><!-- raw HTML omitted -->cat &gt;&gt; /etc/supervisor/conf.d/solr.conf <!-- raw HTML omitted --><!-- raw HTML omitted -->[program:solr]<!-- raw HTML omitted -->user=ehbm2<!-- raw HTML omitted -->#directory=/home/ehbm2/apps/solr141/example<!-- raw HTML omitted -->directory=/home/ehbm2/apps/solr34/example<!-- raw HTML omitted -->command=java -Djava.util.logging.config.file=logging.properties -jar start.jar<!-- raw HTML omitted -->autostart=true<!-- raw HTML omitted -->autorestart=true<!-- raw HTML omitted --><!-- raw HTML omitted -->[CTRL-C]<!-- raw HTML omitted --><!-- raw HTML omitted -->/etc/init.d/supervisor restart<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/e-commerce/">e-commerce</a>, <a href="https://blog.indonesiadot.com/tags/magento/">magento</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/20/magento-maintenance-mode/">Magento maintenance mode</a></h1>
+        <span class="post-date">Sep 20, 2017</span>
+	<p>To set magento 2 in maintenance mode and to make nice maintenance page.<!-- raw HTML omitted --><!-- raw HTML omitted -->1. make / get maintenance image for our maintenance page, ie: maintenance.png<!-- raw HTML omitted --><!-- raw HTML omitted -->2. put at pub/errors/default/images directory under magento root directory, ie: /var/www/magento/pub/errors/default/images/maintenance.png<!-- raw HTML omitted --><!-- raw HTML omitted -->3. edit and save /var/www/magento/pub/errors/default/503.phtml<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->4. run bin/magento maintenance:enable from magento root directory<!-- raw HTML omitted --><!-- raw HTML omitted -->that&rsquo;s it, and you can see nicer maintenance mode in magento 2<!-- raw HTML omitted --><!-- raw HTML omitted -->To set magento 1 in maintenance mode and to make nice maintenance page.<!-- raw HTML omitted --><!-- raw HTML omitted -->1. make / get maintenance image for our maintenance page, ie: maintenance.png<!-- raw HTML omitted --><!-- raw HTML omitted -->2. put at errors/default/ directory under magento root directory, ie: /var/www/magento/errors/default/maintenance.png<!-- raw HTML omitted --><!-- raw HTML omitted -->3. edit and save /var/www/magento/errors/default/503.phtml <!-- raw HTML omitted --><!-- raw HTML omitted -->We are currently in Maintenance<!-- raw HTML omitted -->                <!-- raw HTML omitted -->The server is currently under maintenance to give better service<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->4. create file maintenance.flag at magento root directory<!-- raw HTML omitted --></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/e-commerce/">e-commerce</a>, <a href="https://blog.indonesiadot.com/tags/magento/">magento</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/20/belajar-kultur-spirulina/">Belajar Kultur Spirulina</a></h1>
         <span class="post-date">Sep 20, 2017</span>
 	<p>Long story short&hellip;<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->other references:<!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://drive.google.com/drive/folders/0B_EPO1EgzBbGc2RTczYxTXJoUE0?usp=sharing">https://drive.google.com/drive/folders/0B_EPO1EgzBbGc2RTczYxTXJoUE0?usp=sharing</a><!-- raw HTML omitted --></p>
@@ -881,7 +915,7 @@
     </div>
   
     <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/15/unlimited-minuman-probiotik--air-kelapa-hijau/">Unlimited Minuman Probiotik &#43; Air Kelapa Hijau</a></h1>
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2017/09/15/unlimited-minuman-probiotik-air-kelapa-hijau/">Unlimited Minuman Probiotik &#43; Air Kelapa Hijau</a></h1>
         <span class="post-date">Sep 15, 2017</span>
 	<p>Buat yang suka dengan minuman probiotik, ada tips dan trik untuk membuat persedian minuman kita menjadi unlimited :)<!-- raw HTML omitted --><!-- raw HTML omitted -->Selalu siap sedia di kulkas kapan pun kita mau tanpa harus membeli lagi *muka gretongan<!-- raw HTML omitted --><!-- raw HTML omitted -->1. Beli air kelapa muda (lebih baik lagi air kelapa hijau, tapi yang muda dan segar lebih baik, syukur kalau ngambil sendiri dan tanpa dijatuhkan, karena kualitas kelapa jika sudah terkena guncangan agak menurun sedikit)<!-- raw HTML omitted --><!-- raw HTML omitted -->2. Taruh air kelapa di botol kaca yang tertutup, ukuran 1 liter (kalau ga muat buat menjadi 2 atau 3 botol) dan simpan di kulkas tapi jangan di freezer<!-- raw HTML omitted --><!-- raw HTML omitted -->3. Beli minuman probiotik apa saja dan tuangkan sedikit di botol yang berisi air kelapa muda (probiotik akan hidup dengan bahagia di media / air yg bagus, dan air kelapa inilah media yg lumayan bagus dan mempercepat perkembangannya)<!-- raw HTML omitted --><!-- raw HTML omitted -->4. Tambahkan gula pasir sedikit saja (probiotik mengandung bakteri baik yang makanan nya biasanya yang mengandung karbohidrat / gula, pakai gula aren lebih baik lagi, cuma harus dipastikan gula aren nya yang murni asli, kayanya harus ke pembuatnya atau ga bisa beli di pasar sembarangan deh kalau gula aren ini untuk di indonesia hehe)<!-- raw HTML omitted --><!-- raw HTML omitted -->5. Tambahkan air steril bersih yang kadar PPM nya rendah untuk memperbanyaknya (bisa air RO atau air destilasi lebih baik karena air ini lebih bebas partikel / bakteri lain yg bisa mengganggu probiotik, agar probiotiknya tetap murni tidak bercampur dengan yang lainnya)<!-- raw HTML omitted --><!-- raw HTML omitted -->6. Taruh di kulkas selama 1 minggu dan setelah itu bisa di minum kapan pun kita mau.<!-- raw HTML omitted --><!-- raw HTML omitted -->7. Jika air di botol tinggal setengah bisa diulangi langkah ke 4 dan terus looping selamanya (unlimited) :)<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 
@@ -993,106 +1027,6 @@
 <h3 id="download">Download</h3>
 <p>Lanyon is developed on and hosted with GitHub. Head to the <!-- raw HTML omitted -->GitHub repository<!-- raw HTML omitted --> for downloads, bug reports, and features requests.</p>
 <p>Thanks!</p>
-
-	<hr/>
-	
-	
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2014/01/02/introducing-lanyon/">Introducing Lanyon</a></h1>
-        <span class="post-date">Jan 2, 2014</span>
-	<p>Lanyon is an unassuming <a href="http://jekyllrb.com">Jekyll</a> theme that places content first by tucking away navigation in a hidden drawer. It&rsquo;s based on <a href="http://getpoole.com">Poole</a>, the Jekyll butler.</p>
-<h3 id="built-on-poole">Built on Poole</h3>
-<p>Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by <a href="https://twitter.com/mdo">@mdo</a>. Poole, and every theme built on it (like Lanyon here) includes the following:</p>
-<ul>
-<li>Complete Jekyll setup included (layouts, config, <a href="https://blog.indonesiadot.com/404">404</a>, <a href="https://blog.indonesiadot.com/index.xml">RSS feed</a>, posts, and <a href="https://blog.indonesiadot.com/about">example page</a>)</li>
-<li>Mobile friendly design and development</li>
-<li>Easily scalable text and component sizing with <code>rem</code> units in the CSS</li>
-<li>Support for a wide gamut of HTML elements</li>
-<li>Related posts (time-based, because Jekyll) below each post</li>
-<li>Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)</li>
-</ul>
-<h3 id="lanyon-features">Lanyon features</h3>
-<p>In addition to the features of Poole, Lanyon adds the following:</p>
-<ul>
-<li>Toggleable sliding sidebar (built with only CSS) via <strong>☰</strong> link in top corner</li>
-<li>Sidebar includes support for textual modules and a dynamically generated navigation with active link support</li>
-<li>Two orientations for content and sidebar, default (left sidebar) and <a href="https://github.com/poole/lanyon#reverse-layout">reverse</a> (right sidebar), available via <code>&lt;body&gt;</code> classes</li>
-<li><a href="https://github.com/poole/lanyon#themes">Eight optional color schemes</a>, available via <code>&lt;body&gt;</code> classes</li>
-</ul>
-<p><a href="https://github.com/poole/lanyon#readme">Head to the readme</a> to learn more.</p>
-<h3 id="browser-support">Browser support</h3>
-<p>Lanyon is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.</p>
-<h3 id="download">Download</h3>
-<p>Lanyon is developed on and hosted with GitHub. Head to the <!-- raw HTML omitted -->GitHub repository<!-- raw HTML omitted --> for downloads, bug reports, and features requests.</p>
-<p>Thanks!</p>
-
-	<hr/>
-	
-	
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2014/01/01/example-content/">Example content</a></h1>
-        <span class="post-date">Jan 1, 2014</span>
-	<!-- raw HTML omitted -->
-<p>Cum sociis natoque penatibus et magnis <!-- raw HTML omitted -->dis parturient montes<!-- raw HTML omitted -->, nascetur ridiculus mus. <em>Aenean eu leo quam.</em> Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-<blockquote>
-<p>Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-</blockquote>
-<p>Etiam porta <strong>sem malesuada magna</strong> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-<h2 id="inline-html-elements">Inline HTML elements</h2>
-<p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
-<ul>
-<li><strong>To bold text</strong>, use <code>&lt;strong&gt;</code>.</li>
-<li><em>To italicize text</em>, use <code>&lt;em&gt;</code>.</li>
-<li>Abbreviations, like <!-- raw HTML omitted -->HTML<!-- raw HTML omitted --> should use <code>&lt;abbr&gt;</code>, with an optional <code>title</code> attribute for the full phrase.</li>
-<li>Citations, like <!-- raw HTML omitted -->— Mark otto<!-- raw HTML omitted -->, should use <code>&lt;cite&gt;</code>.</li>
-<li><!-- raw HTML omitted -->Deleted<!-- raw HTML omitted --> text should use <code>&lt;del&gt;</code> and <!-- raw HTML omitted -->inserted<!-- raw HTML omitted --> text should use <code>&lt;ins&gt;</code>.</li>
-<li>Superscript <!-- raw HTML omitted -->text<!-- raw HTML omitted --> uses <code>&lt;sup&gt;</code> and subscript <!-- raw HTML omitted -->text<!-- raw HTML omitted --> uses <code>&lt;sub&gt;</code>.</li>
-</ul>
-<p>Most of these elements are styled by browsers with few modifications on our part.</p>
-<h2 id="heading">Heading</h2>
-<p>Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-<h3 id="code">Code</h3>
-<p>Cum sociis natoque penatibus et magnis dis <code>code element</code> montes, nascetur ridiculus mus.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// Example can be run directly in your JavaScript console
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Create a function that takes two arguments and returns the sum of those arguments
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">adder</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Function(<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;return a + b&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Call the function
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">adder</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">6</span>);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// &gt; 8
-</span></span></span></code></pre></div>
-<p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-<h3 id="lists">Lists</h3>
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-<ul>
-<li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-<li>Donec id elit non mi porta gravida at eget metus.</li>
-<li>Nulla vitae elit libero, a pharetra augue.</li>
-</ul>
-<p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-<ol>
-<li>Vestibulum id ligula porta felis euismod semper.</li>
-<li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-<li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-</ol>
-<p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-<h3 id="tables">Tables</h3>
-<p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<!-- raw HTML omitted -->
-<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-<hr>
-<p>Want to see something else added? <!-- raw HTML omitted -->Open an issue.<!-- raw HTML omitted --></p>
 
 	<hr/>
 	

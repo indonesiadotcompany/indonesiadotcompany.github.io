@@ -13,7 +13,7 @@
       <pubDate>Thu, 12 Mar 2020 20:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/12/lvm-tips/</guid>
-      <description>resize / increase lvm lvextend --size +10G /dev/vg0/foo lvextend --size 20G /dev/vg0/foo lvdisplay /dev/vg0/foo http://www.microhowto.info/howto/increase_the_size_of_an_lvm_logical_volume.html https://linoxide.com/linux-how-to/lvm-configuration-linux/ pvresize pvresize /dev/sda3 https://www.thegeekdiary.com/centos-rhel-how-to-resize-extend-existing-physical-volume-pv/ </description>
+      <description>resize / increase lvm lvextend --size +10G /dev/vg0/foo lvextend --size 20G /dev/vg0/foo lvdisplay /dev/vg0/foo  http://www.microhowto.info/howto/increase_the_size_of_an_lvm_logical_volume.html https://linoxide.com/linux-how-to/lvm-configuration-linux/  pvresize pvresize /dev/sda3  https://www.thegeekdiary.com/centos-rhel-how-to-resize-extend-existing-physical-volume-pv/  </description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       <guid>https://blog.indonesiadot.com/2019/09/30/disk-serial-number/</guid>
       <description>Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.
 Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:
-lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb) smartctl -a /dev/sda #lihat bagian atas serial number nya udevadm info /dev/sda smartctl to get disk smart status smartctl -H /dev/sda smartctl -i /dev/sda smartctl --test=short /dev/sda #smartctl --test=long /dev/sda smartctl -a /dev/sda smartctl -a /dev/sda | grep &amp;#34;Short&amp;#34; Ref: * https://www.</description>
+ lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb) smartctl -a /dev/sda #lihat bagian atas serial number nya udevadm info /dev/sda  smartctl to get disk smart status smartctl -H /dev/sda smartctl -i /dev/sda smartctl --test=short /dev/sda #smartctl --test=long /dev/sda smartctl -a /dev/sda smartctl -a /dev/sda | grep &amp;quot;Short&amp;quot; Ref: * https://www.</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@ lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa
       <guid>https://blog.indonesiadot.com/2018/07/28/stress-test-on-linux/</guid>
       <description>yum -y install wget wget ftp://fr2.rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/stress-1.0.2-1.el7.rf.x86_64.rpm yum -y install stress-1.0.2-1.el7.rf.x86_64.rpm stress -c 8 -i 4 -t 10s stress -c 8 -i 9 -m 9 --vm-bytes 1024M On ubuntu server, use apt to install stress
 Ref:
-https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2 https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/ </description>
+ https://unix.stackexchange.com/questions/289588/no-package-stress-available-how-to-install-stress-on-centos-7-2 https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/  </description>
     </item>
     
   </channel>

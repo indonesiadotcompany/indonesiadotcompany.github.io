@@ -6,14 +6,24 @@
     <description>Recent content in security on Blog Indonesiadot.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Apr 2020 15:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Jan 2024 17:17:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Brainstorming dengan jang eby</title>
+      <link>https://blog.indonesiadot.com/2024/01/23/brainstorming-dengan-jang-eby/</link>
+      <pubDate>Tue, 23 Jan 2024 17:17:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2024/01/23/brainstorming-dengan-jang-eby/</guid>
+      <description>Meet up and brainstorming dengan jang eby  Meet up Brainstorming Etc  Referensi:
+ https://www.google.com  </description>
+    </item>
+    
     <item>
       <title>Security Compliance Baseline Benchmark</title>
       <link>https://blog.indonesiadot.com/2020/04/03/security-compliance-baseline-benchmark/</link>
       <pubDate>Fri, 03 Apr 2020 15:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/04/03/security-compliance-baseline-benchmark/</guid>
-      <description>ssg baseline https://static.open-scap.org/ https://static.open-scap.org/ssg-guides/ssg-rhel7-guide-index.html cis baseline https://www.cisecurity.org/cis-benchmarks/ https://indonesiadot.com https://birau.com </description>
+      <description>ssg baseline  https://static.open-scap.org/ https://static.open-scap.org/ssg-guides/ssg-rhel7-guide-index.html  cis baseline  https://www.cisecurity.org/cis-benchmarks/ https://indonesiadot.com https://birau.com  </description>
     </item>
     
     <item>
@@ -23,7 +33,7 @@
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-os-hardening/</guid>
       <description>Ansible OS Hardening mkdir -p /data/backups Referensi:
-https://indonesiadot.com </description>
+ https://indonesiadot.com  </description>
     </item>
     
     <item>
@@ -44,7 +54,7 @@ intinya mudah sih yg opensource, cuma kelemahan nya nempel di host dan atau nemp
       <guid>https://blog.indonesiadot.com/2019/12/04/ansible-cycle-evolution-diagram-security/</guid>
       <description>Ansible cycle evolution diagram for security searching dengan keyword: ansible security diagram
 Referensi:
-https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/ https://swimlane.com/blog/siem-soar/ https://www.ansible.com/blog/the-journey-to-security-automation </description>
+ https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-response-soar-use-cases/ https://swimlane.com/blog/siem-soar/ https://www.ansible.com/blog/the-journey-to-security-automation  </description>
     </item>
     
     <item>
@@ -55,7 +65,7 @@ https://www.dflabs.com/blog/5-common-security-orchestration-automation-and-respo
       <guid>https://blog.indonesiadot.com/2019/11/15/splunk-log-monitoring/</guid>
       <description>Download [deb](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-amd64.deb&amp;amp;wget=true&#39;) [rpm](wget -O splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-linux-2.6-x86_64.rpm&amp;amp;wget=true&#39;) [tgz](wget -O splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz &amp;lsquo;https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&amp;amp;platform=linux&amp;amp;version=8.0.0&amp;amp;product=splunk&amp;amp;filename=splunk-8.0.0-1357bef0a7f6-Linux-x86_64.tgz&amp;amp;wget=true&#39;)
 Referensi:
-https://docs.splunk.com/Documentation </description>
+ https://docs.splunk.com/Documentation  </description>
     </item>
     
     <item>
@@ -65,7 +75,7 @@ https://docs.splunk.com/Documentation </description>
       
       <guid>https://blog.indonesiadot.com/2019/11/04/ansible-and-openscap/</guid>
       <description>Ansible and Openscap for scanning and remediation server for security compliance operating system Referensi:
-https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663 </description>
+ https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe70663  </description>
     </item>
     
     <item>
@@ -75,7 +85,7 @@ https://medium.com/@jackprice/ansible-openscap-for-compliance-automation-14200fe
       
       <guid>https://blog.indonesiadot.com/2019/11/03/openscap-reference/</guid>
       <description>Openscap Custom Profile Referensi:
-https://martin.preisler.me/2013/11/xccdf-tailoring/ https://static.open-scap.org/openscap-1.2/oscap_user_manual.html </description>
+ https://martin.preisler.me/2013/11/xccdf-tailoring/ https://static.open-scap.org/openscap-1.2/oscap_user_manual.html  </description>
     </item>
     
     <item>
@@ -85,7 +95,7 @@ https://martin.preisler.me/2013/11/xccdf-tailoring/ https://static.open-scap.org
       
       <guid>https://blog.indonesiadot.com/2019/10/29/tcp-wrapper/</guid>
       <description>TCP Wrapper Referensi:
-https://www.server-world.info/en/note?os=CentOS_7&amp;amp;p=tcp_wrapper https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/ </description>
+ https://www.server-world.info/en/note?os=CentOS_7&amp;amp;p=tcp_wrapper https://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/  </description>
     </item>
     
     <item>
@@ -96,7 +106,7 @@ https://www.server-world.info/en/note?os=CentOS_7&amp;amp;p=tcp_wrapper https://
       <guid>https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/</guid>
       <description>Disable and blacklist Linux modules Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya
 blacklist firewire_core install firewire_core /bin/true Referensi:
-CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/ </description>
+ CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/  </description>
     </item>
     
     <item>
@@ -106,7 +116,7 @@ CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf https://linux-audit.com/kern
       
       <guid>https://blog.indonesiadot.com/2019/09/28/ids-tripwire/</guid>
       <description>Referensi:
-https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/ https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/ https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d </description>
+ https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/ https://www-uxsup.csx.cam.ac.uk/pub/doc/redhat/redhat7.3/rhl-rg-en-7.3/ch-tripwire.html https://blog.rapid7.com/2017/05/24/how-to-install-and-configure-tripwire-ids-on-centos-7/ https://medium.com/splunkuserdeveloperadministrator/role-your-own-file-system-monitor-with-tripwire-and-splunk-b80bd1b6e16d  </description>
     </item>
     
     <item>
@@ -116,28 +126,21 @@ https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-usi
       
       <guid>https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</guid>
       <description>Tools yang biasa digunakan pada server linux:
-Firewall
-iptables
-ipset
-shorewall
-csf
-Anti Malware
-maldet (malware detection for web directory)
-IDS
-tripwire
-Identity Server
-FreeIPA (IPA = Identity, Policy, Authentication)
-Security Checking / Scanning Solution
-OpenSCAP
-Rapid7
-CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets
-TeemIP
-itop https://github.com/Combodo/iTop
-infoblox
-efficientip
-ansible-cmdb
-WAF
-http://www.waf-fle.org/ console / web view for modsecurity admin</description>
+  Firewall
+  iptables
+  ipset
+  shorewall
+  csf
+  Anti Malware
+  maldet (malware detection for web directory)
+  IDS
+  tripwire
+  Identity Server
+  FreeIPA (IPA = Identity, Policy, Authentication)
+  Security Checking / Scanning Solution
+  OpenSCAP
+  Rapid7
+  CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</description>
     </item>
     
     <item>
@@ -146,7 +149,7 @@ http://www.waf-fle.org/ console / web view for modsecurity admin</description>
       <pubDate>Sat, 26 May 2018 07:34:00 +0000</pubDate>
       
       <guid>https://blog.indonesiadot.com/2018/05/26/belajar-privacy-basic-security-on-the-internet/</guid>
-      <description>Alamat / url untuk belajar privacy di internethttps://www.privacytools.io/dapat dari:https://www.cryptomonkeys.com/alamat lain yang menarik:https://www.infosecindustry.com/http://www.freebsd.org/</description>
+      <description>Alamat / url untuk belajar privacy di internethttps://www.privacytools.io/dapat dari:https://www.cryptomonkeys.com/alamat lain yang menarik:https://www.</description>
     </item>
     
   </channel>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.106.0">
+	<meta name="generator" content="Hugo 0.92.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -836,6 +836,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -843,7 +851,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -866,6 +874,43 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/19/nginx-tips-and-trick/">Nginx tips and trick</a></h1>
+        <span class="post-date">Feb 19, 2018</span>
+	<h2 id="nginx-location-directory">Nginx location directory</h2>
+<pre tabindex="0"><code>  location /static/ {
+    alias /web/test.example.com/static/;
+    autoindex on;
+  }
+</code></pre><ul>
+<li><a href="https://stackoverflow.com/questions/11570321/configure-nginx-with-multiple-locations-with-different-root-folders-on-subdomain">https://stackoverflow.com/questions/11570321/configure-nginx-with-multiple-locations-with-different-root-folders-on-subdomain</a></li>
+</ul>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://www.sitepoint.com/brotli-compression-wordpress/">https://www.sitepoint.com/brotli-compression-wordpress/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/tuning/">tuning</a>, <a href="https://blog.indonesiadot.com/tags/web/">web</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/17/munin-nginx/">Munin nginx</a></h1>
+        <span class="post-date">Feb 17, 2018</span>
+	<!-- raw HTML omitted -->
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/monitoring/">monitoring</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/02/16/linux-server-monitoring/">Linux server monitoring</a></h1>
@@ -950,36 +995,37 @@
 <h3 id="using-logical-or">Using Logical OR</h3>
 <p>Logical OR in bash script is used with operator -o. Below small shell script will show you to how to use logical OR ( -o ) between two conditions.</p>
 <pre tabindex="0"><code>#!/bin/bash
-read -p &#34;Enter First Numeric Value: &#34;   first
-read -p &#34;Enter Second Numeric Value: &#34;  second
+read -p &quot;Enter First Numeric Value: &quot;   first
+read -p &quot;Enter Second Numeric Value: &quot;  second
 
 if [ $first -le 10 -o $second -gt 20 ]
 then
- echo &#34;OK&#34;
+ echo &quot;OK&quot;
 else
- echo &#34;Not OK&#34;
+ echo &quot;Not OK&quot;
 fi
 </code></pre><h3 id="using-logical-and">Using Logical AND</h3>
 <p>Logical AND in bash script is used with operator -a. Below shell script will show you to how to use logical AND ( -a ) between two conditions.</p>
 <pre tabindex="0"><code>#!/bin/bash
-read -p &#34;Enter First Numeric Value: &#34;   first
-read -p &#34;Enter Second Numeric Value: &#34;  second
+read -p &quot;Enter First Numeric Value: &quot;   first
+read -p &quot;Enter Second Numeric Value: &quot;  second
 if [ $first -le 10 -a $second -gt 20 ]
 then
- echo &#34;OK&#34;
+ echo &quot;OK&quot;
 else
- echo &#34;Not OK&#34;
+ echo &quot;Not OK&quot;
 fi
 </code></pre><h3 id="using-multiple-logical-or-amp-and">Using Multiple Logical OR &amp; AND</h3>
 <p>Below example will help you to understand to how to use multiple logical operators in single statement.</p>
 <pre tabindex="0"><code>#!/bin/bash
-read -p &#34;Enter Your Number:&#34;  i
+read -p &quot;Enter Your Number:&quot;  i
 if [ ( $i -ge 10  -a  $i -le 20 ) -o ( $i -ge 100  -a  $i -le 200 ) ]
 then
- echo &#34;OK&#34;
+ echo &quot;OK&quot;
 else
- echo &#34;Not OK&#34;
+ echo &quot;Not OK&quot;
 fi
+
 </code></pre><h2 id="color-output-on-echo">Color output on echo</h2>
 <p>Ref:</p>
 <ul>
@@ -1018,7 +1064,7 @@ fi
 </ul>
 <p>The ^M is a carriage return character. Linux uses the line feed character to mark the end of a line, whereas Windows uses the two-character sequence CR LF. Your file has Windows line endings, which is confusing Linux.</p>
 <p>Remove the spurious CR characters. You can do it with the following command:</p>
-<pre tabindex="0"><code>sed -i -e &#39;s/\r$//&#39; create_mgw_3shelf_6xIPNI1P.sh
+<pre tabindex="0"><code>sed -i -e 's/\r$//' create_mgw_3shelf_6xIPNI1P.sh
 </code></pre><h2 id="redirect-error-output-to-file">Redirect error output to file</h2>
 <ul>
 <li><a href="https://www.cyberciti.biz/faq/linux-redirect-error-output-to-file/">https://www.cyberciti.biz/faq/linux-redirect-error-output-to-file/</a></li>
@@ -1078,100 +1124,6 @@ command1 -arg &gt; everything.txt 2&gt;&amp;1
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/automation/">automation</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/31/xenserver-tips-and-trick/">Xenserver tips and trick</a></h1>
-        <span class="post-date">Jan 31, 2018</span>
-	<h2 id="xenserver-resize-memory-command">xenserver resize memory command</h2>
-<p>Increase RAM for XenServer VM&rsquo;s through Command Line Interface.</p>
-<ol>
-<li>If the RAM editing option is graded out through XenCenter.</li>
-</ol>
-<p>Solution:</p>
-<ol>
-<li>Take a putty/ssh connection to pool master</li>
-<li>Power off the VM.</li>
-</ol>
-<p>Execute the Below command to configure the new RAM:</p>
-<pre tabindex="0"><code>#xe vm-memory-limits-set uuid=&lt;uuid of=&#34;&#34; the=&#34;&#34; valid=&#34;&#34; vm=&#34;&#34;&gt; static-min=&lt;nn&gt;GiB/MiB dynamic-min=&lt;nn&gt;GiB/MiB dynamic-max=&lt;nn&gt;GiB/MiB static-max=&lt;nn&gt;GiB/MiB &lt;/nn&gt;&lt;/nn&gt;&lt;/nn&gt;&lt;/nn&gt;&lt;/uuid&gt;
-</code></pre><p>Example :</p>
-<pre tabindex="0"><code>#xe vm-memory-limits-set uuid=120513b6-68ec-c0eb-ba87-b4936bbbc66f static-min=64GiB dynamic-min=64GiB dynamic-max=64GiB static-max=64GiB
-</code></pre><ol start="3">
-<li>Start the VM.</li>
-</ol>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/xenserver/">xenserver</a>, <a href="https://blog.indonesiadot.com/tags/vps/">vps</a>, <a href="https://blog.indonesiadot.com/tags/cloud/">cloud</a>, <a href="https://blog.indonesiadot.com/tags/vm/">vm</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2018/01/31/ansible-awx/">Ansible AWX</a></h1>
-        <span class="post-date">Jan 31, 2018</span>
-	<h1 id="deprecated">DEPRECATED</h1>
-<h3 id="install-latest-ansible">install latest ansible</h3>
-<pre tabindex="0"><code>apt-add-repository ppa:ansible/ansible
-[ENTER]
-apt update
-apt-get install ansible
-</code></pre><h3 id="install-latest-docker">install latest docker</h3>
-<pre tabindex="0"><code>apt-add-repository ppa:ansible/ansible
-[ENTER]
-apt update
-apt-get install ansible
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-add-apt-repository \
-&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-$(lsb_release -cs) \
-stable&#34;
-apt update
-apt-get install docker-ce
-apt install make
-apt install python-pip
-pip install docker
-pip install --upgrade pip
-apt install git
-curl -O https://raw.githubusercontent.com/geerlingguy/awx-container/master/docker-compose.yml
-docker-compose up -d
-</code></pre><p>tunggu beberapa saat lalu akses via http, misal http://localhost dengan user admin/password</p>
-<p>Ref:</p>
-<ul>
-<li><a href="http://www.nalashaa.com/setting-ci-deployment-automation-ansible/">http://www.nalashaa.com/setting-ci-deployment-automation-ansible/</a></li>
-<li><a href="https://chromatichq.com/blog/automated-servers-and-deployments-ansible-jenkins">https://chromatichq.com/blog/automated-servers-and-deployments-ansible-jenkins</a></li>
-<li><a href="https://medium.com/@tedchength/basic-deployment-with-ansible-docker-jenkins-and-git-4f3b42fb2f5e">https://medium.com/@tedchength/basic-deployment-with-ansible-docker-jenkins-and-git-4f3b42fb2f5e</a></li>
-<li><a href="https://dzone.com/articles/running-ansible-playbooks-from-jenkins">https://dzone.com/articles/running-ansible-playbooks-from-jenkins</a></li>
-<li><a href="https://www.jeffgeerling.com/blog/2017/get-started-using-ansible-awx-open-source-tower-version-one-minute">https://www.jeffgeerling.com/blog/2017/get-started-using-ansible-awx-open-source-tower-version-one-minute</a></li>
-<li><a href="https://galaxy.ansible.com/geerlingguy/jenkins/">https://galaxy.ansible.com/geerlingguy/jenkins/</a></li>
-</ul>
-<h2 id="belajar-ansible-awx-201802010830">Belajar ansible awx 201802010830</h2>
-<p>Ref:</p>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=E5XtK7mE8_0">https://www.youtube.com/watch?v=E5XtK7mE8_0</a></li>
-<li><a href="https://github.com/whiskerlabs/armsible/blob/master/local_network_inventory.py">https://github.com/whiskerlabs/armsible/blob/master/local_network_inventory.py</a></li>
-<li><a href="https://github.com/KeksiLabs/ansible-user-management-example">https://github.com/KeksiLabs/ansible-user-management-example</a></li>
-<li><a href="https://keksi.io/tutorials/2016/12/05/how-to-manage-remote-server-users-with-ansible/">https://keksi.io/tutorials/2016/12/05/how-to-manage-remote-server-users-with-ansible/</a></li>
-</ul>
-<h2 id="install-ansible-tower">install ansible tower</h2>
-<p>Ref:</p>
-<ul>
-<li><a href="https://rafishaikblog.wordpress.com/2017/01/31/ansible-tower/">https://rafishaikblog.wordpress.com/2017/01/31/ansible-tower/</a></li>
-</ul>
-<p>Ansible tower</p>
-<p>Ref:</p>
-<ul>
-<li><a href="https://oliverveits.wordpress.com/2016/06/14/it-automation-part-iv-ansible-tower-hello-world-example/amp/">https://oliverveits.wordpress.com/2016/06/14/it-automation-part-iv-ansible-tower-hello-world-example/amp/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/task/">task</a>, <a href="https://blog.indonesiadot.com/tags/todo/">todo</a>
 	 <hr/>
     </div>
   

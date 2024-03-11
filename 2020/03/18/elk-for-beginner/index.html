@@ -835,6 +835,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -842,7 +850,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -1051,7 +1059,7 @@ In addition to your ELK Server, you will want to have a few other servers that y
 <p>Open the Kibana configuration file for editing:</p>
 <pre tabindex="0"><code>$ sudo vi /opt/kibana/config/kibana.yml
 </code></pre><p>In the Kibana configuration file, find the line that specifies server.host, and replace the IP address (“0.0.0.0” by default) with “localhost”:</p>
-<pre tabindex="0"><code>server.host: &#34;localhost&#34;
+<pre tabindex="0"><code>server.host: &quot;localhost&quot;
 </code></pre><p>Save and exit. This setting makes it so Kibana will only be accessible to the localhost. This is fine because we will use an Nginx reverse proxy to allow external access.</p>
 <p>Now enable the Kibana service, and start it:</p>
 <pre tabindex="0"><code>sudo update-rc.d kibana defaults 96 9
@@ -1282,7 +1290,7 @@ Now we will configure Filebeat to connect to Logstash on our ELK Server. This se
 <pre tabindex="0"><code> ### Logstash as output
   logstash:
     # The Logstash hosts
-    hosts: [&#34;ELK_server_private_IP:5044&#34;]
+    hosts: [&quot;ELK_server_private_IP:5044&quot;]
 </code></pre><p>This configures Filebeat to connect to Logstash on your ELK Server at port 5044 (the port that we specified a Logstash input for earlier).</p>
 <p>Directly under the hosts entry, and with the same indentation, add this line in filebeat.yml file:</p>
 <pre tabindex="0"><code>bulk_max_size: 1024
@@ -1290,7 +1298,7 @@ Now we will configure Filebeat to connect to Logstash on our ELK Server. This se
 <pre tabindex="0"><code>...
     tls:
       # List of root certificates for HTTPS server verifications
-      certificate_authorities: [&#34;/etc/pki/tls/certs/logstash-forwarder.crt&#34;]
+      certificate_authorities: [&quot;/etc/pki/tls/certs/logstash-forwarder.crt&quot;]
 </code></pre><p>This configures Filebeat to use the SSL certificate that we created on the ELK Server.</p>
 <p>Save and quit.</p>
 <p>Now restart Filebeat to put our changes into place:</p>
@@ -1306,11 +1314,11 @@ sudo update-rc.d filebeat defaults 95 10
 <p>Sample Output:</p>
 <pre tabindex="0"><code>...
 {
-      &#34;_index&#34; : &#34;filebeat-2016.01.29&#34;,
-      &#34;_type&#34; : &#34;log&#34;,
-      &#34;_id&#34; : &#34;AVKO98yuaHvsHQLa53HE&#34;,
-      &#34;_score&#34; : 1.0,
-      &#34;_source&#34;:{&#34;message&#34;:&#34;Feb  3 14:34:00 rails sshd[963]: Server listening on :: port 22.&#34;,&#34;@version&#34;:&#34;1&#34;,&#34;@timestamp&#34;:&#34;2016-01-29T19:59:09.145Z&#34;,&#34;beat&#34;:{&#34;hostname&#34;:&#34;topbeat-u-03&#34;,&#34;name&#34;:&#34;topbeat-u-03&#34;},&#34;count&#34;:1,&#34;fields&#34;:null,&#34;input_type&#34;:&#34;log&#34;,&#34;offset&#34;:70,&#34;source&#34;:&#34;/var/log/auth.log&#34;,&#34;type&#34;:&#34;log&#34;,&#34;host&#34;:&#34;topbeat-u-03&#34;}
+      &quot;_index&quot; : &quot;filebeat-2016.01.29&quot;,
+      &quot;_type&quot; : &quot;log&quot;,
+      &quot;_id&quot; : &quot;AVKO98yuaHvsHQLa53HE&quot;,
+      &quot;_score&quot; : 1.0,
+      &quot;_source&quot;:{&quot;message&quot;:&quot;Feb  3 14:34:00 rails sshd[963]: Server listening on :: port 22.&quot;,&quot;@version&quot;:&quot;1&quot;,&quot;@timestamp&quot;:&quot;2016-01-29T19:59:09.145Z&quot;,&quot;beat&quot;:{&quot;hostname&quot;:&quot;topbeat-u-03&quot;,&quot;name&quot;:&quot;topbeat-u-03&quot;},&quot;count&quot;:1,&quot;fields&quot;:null,&quot;input_type&quot;:&quot;log&quot;,&quot;offset&quot;:70,&quot;source&quot;:&quot;/var/log/auth.log&quot;,&quot;type&quot;:&quot;log&quot;,&quot;host&quot;:&quot;topbeat-u-03&quot;}
     }
 ...
 </code></pre><p>If your output shows 0 total hits, Elasticsearch is not loading any logs under the index you searched for, and you should review your setup for errors. If you received the expected output, continue to the next step.</p>

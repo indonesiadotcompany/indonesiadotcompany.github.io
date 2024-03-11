@@ -835,6 +835,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -842,7 +850,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -874,8 +882,8 @@
     insertafter: ^#?server
     state: present
     block: |
-      server &#34;{{ ntp1 }}&#34;
-      server &#34;{{ ntp2 }}&#34;
+      server &quot;{{ ntp1 }}&quot;
+      server &quot;{{ ntp2 }}&quot;
   notify: restart ntp
 </code></pre><p>Referensi:</p>
 <ul>
@@ -891,23 +899,23 @@
         paths: /etc/audit/rules.d
         recurse: false
         contains: -F key=perm_mod$
-        patterns: &#39;*.rules&#39;
+        patterns: '*.rules'
       register: find_fchown
-      when: ansible_virtualization_role != &#34;guest&#34; or ansible_virtualization_type != &#34;docker&#34;
+      when: ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
     - name: If existing DAC ruleset not found, use /etc/audit/rules.d/privileged.rules as the recipient for the rule
       set_fact:
         all_files:
           - /etc/audit/rules.d/privileged.rules
       when:
         - find_fchown.matched is defined and find_fchown.matched == 0
-        - ansible_virtualization_role != &#34;guest&#34; or ansible_virtualization_type != &#34;docker&#34;
+        - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
     - name: Use matched file as the recipient for the rule
       set_fact:
         all_files:
-          - &#39;{{ find_fchown.files | map(attribute=&#39;&#39;path&#39;&#39;) | list | first }}&#39;
+          - '{{ find_fchown.files | map(attribute=''path'') | list | first }}'
       when:
         - find_fchown.matched is defined and find_fchown.matched &gt; 0
-        - ansible_virtualization_role != &#34;guest&#34; or ansible_virtualization_type != &#34;docker&#34;
+        - ansible_virtualization_role != &quot;guest&quot; or ansible_virtualization_type != &quot;docker&quot;
 </code></pre><p>Referensi:</p>
 <ul>
 <li>file remediation.yml dari oscap</li>
@@ -917,7 +925,7 @@
 <p>module ini berguna untuk edit pam service tanpa harus mengedit file nya langsung, tanpa harus menggunakan module lineinfile, blockinfile, replace, etc. Dan berikut contohnya:</p>
 <pre tabindex="0"><code>    - name: Add unlock_time argument to pam_faillock preauth
       pamd:
-        name: &#39;{{ item }}&#39;
+        name: '{{ item }}'
         type: auth
         control: required
         module_path: pam_faillock.so

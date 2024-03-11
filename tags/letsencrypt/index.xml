@@ -14,7 +14,7 @@
       
       <guid>https://blog.indonesiadot.com/2020/01/19/letsencrypt-certbot-unatteded/</guid>
       <description>Letsencrypt with certbot unatteded way This is for ubuntu linux
-add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonly --standalone --preferred-challenges http --non-interactive --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com Note: before running certbot command, you must already pointing domain / subdomain address to destination ip Referensi: https://indonesiadot.com </description>
+add-apt-repository ppa:certbot/certbot -y apt install certbot -y certbot certonly --standalone --preferred-challenges http --non-interactive --staple-ocsp --agree-tos -m widyaunix@gmail.com -d harbor.example.com Note:  before running certbot command, you must already pointing domain / subdomain address to destination ip  Referensi:  https://indonesiadot.com  </description>
     </item>
     
   </channel>

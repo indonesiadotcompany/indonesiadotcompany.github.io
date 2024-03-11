@@ -14,9 +14,9 @@
       
       <guid>https://blog.indonesiadot.com/2020/03/18/ansible-tower-for-beginner/</guid>
       <description>Before going to start the installation steps, we need to know some benefits of Ansible Tower.
-Why we need Ansible Tower and it’s benefits? Ansible Tower helps you scale IT automation, manage complex deployments and speed productivity.
-Centralize and control your IT infrastructure with a visual dashboard, role-based access control, job scheduling, integrated notifications and graphical inventory management.
-Ansible Tower’s REST API and CLI make it easy to embed Ansible Tower into existing tools and processes.</description>
+Why we need Ansible Tower and it’s benefits?   Ansible Tower helps you scale IT automation, manage complex deployments and speed productivity.
+  Centralize and control your IT infrastructure with a visual dashboard, role-based access control, job scheduling, integrated notifications and graphical inventory management.
+  Ansible Tower’s REST API and CLI make it easy to embed Ansible Tower into existing tools and processes.</description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@ Ansible Tower’s REST API and CLI make it easy to embed Ansible Tower into exis
       <pubDate>Mon, 16 Mar 2020 19:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/16/ansible-tower-log-logstash-elk/</guid>
-      <description>ansible logstash example https://github.com/widansible/elk-ansible https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html </description>
+      <description>ansible logstash example  https://github.com/widansible/elk-ansible https://docs.ansible.com/ansible-tower/3.2.4/html/administration/logging.html#elastic-stack-formerly-elk-stack https://docs.ansible.com/ansible-tower/latest/html/administration/logging.html https://docs.ansible.com/ansible/latest/plugins/callback/logstash.html  </description>
     </item>
     
     <item>
@@ -34,7 +34,7 @@ Ansible Tower’s REST API and CLI make it easy to embed Ansible Tower into exis
       <pubDate>Mon, 09 Mar 2020 17:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/09/ansible-test-implement-for-security-hardening-solution-1-briefing-session/</guid>
-      <description>Background belum adanya standarisasi system security perusahaan yang mengacu kepada baseline standarisasi internasional seperti CIS, NIST atau PCI-DSS pekerjaan manual yang sangat kompleks, lama dan berat jika harus dilakukan secara manual untuk melakukan standarisasi security system masih banyaknya server perusahaan yang non-comply dengan standarisasi sistem security yang telah dibuat oleh perusahaan Objective mengurangi serangan konfigurasi yang robust secured protocols comply kepada standarisasi internasional dan standarisasi internal perusahaan Technical Requirements Langkah 1:</description>
+      <description>Background  belum adanya standarisasi system security perusahaan yang mengacu kepada baseline standarisasi internasional seperti CIS, NIST atau PCI-DSS pekerjaan manual yang sangat kompleks, lama dan berat jika harus dilakukan secara manual untuk melakukan standarisasi security system masih banyaknya server perusahaan yang non-comply dengan standarisasi sistem security yang telah dibuat oleh perusahaan  Objective  mengurangi serangan konfigurasi yang robust secured protocols comply kepada standarisasi internasional dan standarisasi internal perusahaan  Technical Requirements Langkah 1:</description>
     </item>
     
     <item>
@@ -43,7 +43,7 @@ Ansible Tower’s REST API and CLI make it easy to embed Ansible Tower into exis
       <pubDate>Sun, 19 Jan 2020 15:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/</guid>
-      <description>Ansible Tower first Implementation Install ansible tower masukan license tambahkan access - organization tambahkan access - users tambahkan access - teams tambahkan resources - inventory siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses) chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/ tambahkan resources - projects buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine buat host client / node yang mau di manage di /etc/hosts tambahkan resources - credentials tambahkan resources - templates test launch jobs based on template yg baru dibuat Ansible tower + openscap install scap-workbench yum install scap-workbench xauth -y buat direktori report mkdir /report chgrp awx /report chmod g+s /report/ chcon -Rv --type=httpd_sys_rw_content_t /report/ ln -s /report /var/lib/awx/public/ tambahkan direktori report di nginx location /report { alias /var/lib/awx/public/report; autoindex on; } akses scap-workbench dari laptop ssh -X -C tower1 scap-workbench jalankan Scan Remote Machine (over SSH) ke ansible@client1 (jika muncul popup, pilih centos7) Save generate result html ke /report (tambahkan pembeda semisal datetime untuk membedakan tiap file report) Referensi:</description>
+      <description>Ansible Tower first Implementation  Install ansible tower masukan license tambahkan access - organization tambahkan access - users tambahkan access - teams tambahkan resources - inventory siapkan script playbook / roles (jika berupa folder, itu ditaruh di /var/lib/awx/projects, jika git, pastikan bisa di akses)  chmod g+s /var/lib/awx/projects cp -r test /var/lib/awx/projects/  tambahkan resources - projects buat ssh-keygen di server ansible tower, buat user khusus ansible, dan masukan di /etc/sudoers, lalu ssh-copy-id ke tiap node / client sesuai user yg baru dibuat / didefine buat host client / node yang mau di manage di /etc/hosts tambahkan resources - credentials tambahkan resources - templates test launch jobs based on template yg baru dibuat  Ansible tower + openscap  install scap-workbench  yum install scap-workbench xauth -y  buat direktori report  mkdir /report chgrp awx /report chmod g+s /report/ chcon -Rv --type=httpd_sys_rw_content_t /report/ ln -s /report /var/lib/awx/public/  tambahkan direktori report di nginx   location /report { alias /var/lib/awx/public/report; autoindex on; }  akses scap-workbench dari laptop  ssh -X -C tower1 scap-workbench  jalankan Scan Remote Machine (over SSH) ke ansible@client1 (jika muncul popup, pilih centos7) Save generate result html ke /report (tambahkan pembeda semisal datetime untuk membedakan tiap file report)  Referensi:</description>
     </item>
     
     <item>

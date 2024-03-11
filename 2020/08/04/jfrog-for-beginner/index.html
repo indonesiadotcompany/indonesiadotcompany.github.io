@@ -835,6 +835,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -842,7 +850,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -869,7 +877,7 @@
 <pre tabindex="0"><code>apt install wget software-properties-common apt-transport-https
 apt-get install openjdk-8-jdk openjdk-8-doc
 wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add -
-add-apt-repository &#34;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&#34;
+add-apt-repository &quot;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&quot;
 apt-get update
 apt install jfrog-artifactory-oss
 </code></pre><h2 id="membuat-repository--artifacts-baru-di-jfrog">Membuat repository / artifacts baru di jfrog</h2>
@@ -878,9 +886,9 @@ klik / pilih generic, lalu isi repository key atau nama repository dengan apa sa
 klik save
 </code></pre><h2 id="test-upload-dan-download-via-curl">test upload dan download via curl</h2>
 <p>buat dahulu bbrp file, misal test.txt, lalu upload dengan command curl</p>
-<pre tabindex="0"><code>curl -uadmin:r4hasia01 -T test.txt &#34;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&#34;
+<pre tabindex="0"><code>curl -uadmin:r4hasia01 -T test.txt &quot;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&quot;
 </code></pre><p>command untuk download memakai curl</p>
-<pre tabindex="0"><code>curl -uadmin:r4hasia01 -O &#34;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&#34;
+<pre tabindex="0"><code>curl -uadmin:r4hasia01 -O &quot;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&quot;
 </code></pre><h2 id="test-upload-dengan-playbook-script">test upload dengan playbook script</h2>
 <p>buat file jfrog-upload.yml</p>
 <pre tabindex="0"><code>- hosts: all
@@ -888,7 +896,7 @@ klik save
   connection: local
   tasks:
     - uri:
-        url: &#39;http://10.11.8.41:8081/artifactory/generic/test1.txt&#39;
+        url: 'http://10.11.8.41:8081/artifactory/generic/test1.txt'
         src: ./test1.txt
         method: PUT
         return_content: true
@@ -914,7 +922,7 @@ klik save
 </code></pre><p>dari sini bisa untuk delete file / direktori, misal delete file testdir yg sebelumnya terbuat, dengan command:</p>
 <pre tabindex="0"><code>./jfrog rt del generic/testdir
 </code></pre><p>upload semua file di direktori dan taruh di direktori juga</p>
-<pre tabindex="0"><code>./jfrog rt u &#34;testdir/&#34; generic/testdir/
+<pre tabindex="0"><code>./jfrog rt u &quot;testdir/&quot; generic/testdir/
 </code></pre>
 </div>
 

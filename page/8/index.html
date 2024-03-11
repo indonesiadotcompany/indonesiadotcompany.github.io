@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.106.0">
+	<meta name="generator" content="Hugo 0.92.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -836,6 +836,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -843,7 +851,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -866,6 +874,73 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/">Selinux Web Directory Permission</a></h1>
+        <span class="post-date">Jan 20, 2020</span>
+	<h2 id="selinux-web-directory-permission">Selinux Web Directory Permission</h2>
+<p>Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.</p>
+<p>adapun command nya sebelum bisa diakses yaitu:</p>
+<pre tabindex="0"><code>chcon -Rv --type=httpd_sys_rw_content_t /webserver
+</code></pre><p>Referensi:</p>
+<ul>
+<li><a href="https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/">https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/selinux/">selinux</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/permission/">permission</a>, <a href="https://blog.indonesiadot.com/tags/redhat/">redhat</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/">Harbor Container Registry</a></h1>
+        <span class="post-date">Jan 20, 2020</span>
+	<h2 id="harbor-install-step-by-step">harbor install step by step</h2>
+<p><a href="https://goharbor.io/docs/1.10/install-config/">https://goharbor.io/docs/1.10/install-config/</a></p>
+<ul>
+<li>install docker, docker-compose</li>
+<li>download <a href="https://github.com/goharbor/harbor/releases">https://github.com/goharbor/harbor/releases</a></li>
+<li>edit harbor.yml</li>
+</ul>
+<pre tabindex="0"><code>hostname: 10.11.8.111
+</code></pre><ul>
+<li>install</li>
+</ul>
+<pre tabindex="0"><code>./prepare
+./install.sh --with-clair --with-chartmuseum
+</code></pre><ul>
+<li>create projects dengan nama os (misalnya untuk menampung operating system)</li>
+</ul>
+<h2 id="harbor-client-push">harbor client push</h2>
+<ul>
+<li>edit /etc/docker/daemon.json</li>
+</ul>
+<pre tabindex="0"><code>{ &quot;insecure-registries&quot;:[&quot;10.11.8.111&quot;] }
+</code></pre><ul>
+<li>systemctl restart docker (hati2 jika ada container yg berjalan akan di stop)</li>
+<li>docker login 10.11.8.111</li>
+<li>docker tag centos:7 10.11.8.111/os/centos:7</li>
+<li>docker push 10.11.8.111/os/centos:7</li>
+</ul>
+<h2 id="widya-harbor-container-registry">Widya Harbor Container Registry</h2>
+<ul>
+<li><a href="https://widharbor.birau.com/">https://widharbor.birau.com/</a></li>
+</ul>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/harbor/">harbor</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/registry/">registry</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/19/ansible-tower-first-implementation/">Ansible Tower first Implementation</a></h1>
@@ -966,7 +1041,7 @@ usermod -aG docker namauser
 systemctl enable docker
 systemctl start docker
 </code></pre><h2 id="setup-docker-compose">Setup docker-compose</h2>
-<pre tabindex="0"><code>sudo curl -L &#34;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&#34; -o /usr/local/bin/docker-compose
+<pre tabindex="0"><code>sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 </code></pre><p>Referensi:</p>
@@ -991,7 +1066,7 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 <li><a href="https://widgitgog.birau.com/dashboard/projects">https://widgitgog.birau.com/dashboard/projects</a></li>
 </ul>
 <h3 id="change--update-hostname">change / update hostname</h3>
-<pre tabindex="0"><code>sed -i &#39;s/widgitgog/widgit/g&#39; /etc/gitlab/gitlab.rb
+<pre tabindex="0"><code>sed -i 's/widgitgog/widgit/g' /etc/gitlab/gitlab.rb
 gitlab-ctl reconfigure
 gitlab-ctl restart
 </code></pre><ul>
@@ -1005,9 +1080,9 @@ gitlab-ctl restart
 <h2 id="gitlab-reset-password-from-database">gitlab reset password from database</h2>
 <pre tabindex="0"><code>gitlab-rails console -e production
 user = User.where(id: 1).first
-user = User.find_by(email: &#39;admin@example.com&#39;)
-user.password = &#39;secret_pass&#39;
-user.password_confirmation = &#39;secret_pass&#39;
+user = User.find_by(email: 'admin@example.com')
+user.password = 'secret_pass'
+user.password_confirmation = 'secret_pass'
 user.save!
 </code></pre><ul>
 <li><a href="https://docs.gitlab.com/ee/security/reset_root_password.html">https://docs.gitlab.com/ee/security/reset_root_password.html</a></li>
@@ -1089,9 +1164,9 @@ virsh --help
 
 NAMA=$1
 
-if [ -z &#34;$1&#34; ]; then
- while [ -z &#34;$NAMA&#34; ]; do
-  echo -n &#34;masukan nama vm: &#34;
+if [ -z &quot;$1&quot; ]; then
+ while [ -z &quot;$NAMA&quot; ]; do
+  echo -n &quot;masukan nama vm: &quot;
   read NAMA
  done
 fi
@@ -1099,13 +1174,13 @@ fi
 virt-install \
  --name $NAMA \
  --ram 900 \
- --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&#39;unmap&#39;,format=&#39;qcow2&#39; \
+ --disk path=$NAMA.qcow,size=6,bus=scsi,discard='unmap',format='qcow2' \
  --controller type=scsi,model=virtio-scsi \
  --vcpus 1 \
  --cpu host \
  --console pty,target_type=serial \
  --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso \
- --initrd-inject=cenks.cfg --extra-args &#34;inst.ks=file:/cenks.cfg&#34; \
+ --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot; \
  --noautoconsole
 </code></pre><p>file kickstart cenks.cfg</p>
 <pre tabindex="0"><code>text
@@ -1140,15 +1215,16 @@ EOF
 chown -R widysible:widysible /home/ansible
 chmod 0600 /home/widysible/.ssh/authorized_keys
 # Allow Ansible to sudo w/o a password
-echo &#34;widysible ALL=(ALL) NOPASSWD:ALL&#34; &gt; /etc/sudoers.d/widysible
+echo &quot;widysible ALL=(ALL) NOPASSWD:ALL&quot; &gt; /etc/sudoers.d/widysible
 # trim
-sed -i &#39;s/issue_discards = 0/issue_discards = 1/&#39; /etc/lvm/lvm.conf
-echo &#34;0 0 1 0 0 fstrim /&#34; | tee /etc/cron.d/fstrim
-sed -i &#39;/ swap /s/^/#/&#39; /etc/fstab
-sed -i &#39;s/defaults/defaults,discard/&#39; /etc/fstab
+sed -i 's/issue_discards = 0/issue_discards = 1/' /etc/lvm/lvm.conf
+echo &quot;0 0 1 0 0 fstrim /&quot; | tee /etc/cron.d/fstrim
+sed -i '/ swap /s/^/#/' /etc/fstab
+sed -i 's/defaults/defaults,discard/' /etc/fstab
 echo ### Change back to terminal 1
 #chvt 1
 %end
+
 </code></pre><p>Create VM using ansible playbook</p>
 <pre tabindex="0"><code>---
 - name: create VMs
@@ -1158,32 +1234,32 @@ echo ### Change back to terminal 1
   become: true
   vars_prompt:
     - name: NAMA
-      prompt: &#34;Enter VM name&#34;
-      default: &#34;c7&#34;
+      prompt: &quot;Enter VM name&quot;
+      default: &quot;c7&quot;
       private: no
 #  vars_files:
 #    - vms.yml
 
   tasks:
     - name: get VM disks
-      command: &#34;ls /var/lib/libvirt/images&#34;
+      command: &quot;ls /var/lib/libvirt/images&quot;
       register: disks
-      changed_when: &#34;disks.rc != 0&#34;
+      changed_when: &quot;disks.rc != 0&quot;
 
     - name: get list of VMs
       virt:
-        command: &#34;list_vms&#34;
+        command: &quot;list_vms&quot;
       register: vms
 
     - name: create vm
       command: &gt;
                 virt-install --name {{ NAMA }}
                 --cpu host --vcpus 1 --ram 900
-                --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&#39;unmap&#39;,format=&#39;qcow2&#39;
+                --disk path=$NAMA.qcow,size=6,bus=scsi,discard='unmap',format='qcow2'
                 --controller type=scsi,model=virtio-scsi
                 --console pty,target_type=serial
                 --location /iso/CentOS-7.0-1406-x86_64-Minimal.iso
-                --initrd-inject=cenks.cfg --extra-args &#34;inst.ks=file:/cenks.cfg&#34;
+                --initrd-inject=cenks.cfg --extra-args &quot;inst.ks=file:/cenks.cfg&quot;
                 --noautoconsole
 </code></pre><h2 id="get-vms-ip">Get VMs IP</h2>
 <pre tabindex="0"><code>virsh domifaddr c7
@@ -1208,47 +1284,6 @@ echo ### Change back to terminal 1
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/virtualization/">virtualization</a>, <a href="https://blog.indonesiadot.com/tags/kvm/">kvm</a>, <a href="https://blog.indonesiadot.com/tags/qemu/">qemu</a>, <a href="https://blog.indonesiadot.com/tags/virt-install/">virt-install</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/05/jenkins-for-beginner/">jenkins for beginner</a></h1>
-        <span class="post-date">Dec 5, 2019</span>
-	<p>Ref:</p>
-<ul>
-<li><a href="https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded">https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded</a></li>
-<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04">https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04</a></li>
-<li><a href="https://hub.docker.com/r/bitnami/jenkins/">https://hub.docker.com/r/bitnami/jenkins/</a></li>
-<li><a href="https://github.com/jenkinsci/docker/blob/master/README.md">https://github.com/jenkinsci/docker/blob/master/README.md</a></li>
-<li><a href="https://linuxize.com/post/how-to-install-jenkins-on-centos-7/">https://linuxize.com/post/how-to-install-jenkins-on-centos-7/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/jenkins/">jenkins</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/12/05/modsecurity-waf/">Modsecurity WAF</a></h1>
-        <span class="post-date">Dec 5, 2019</span>
-	<h2 id="modsecurity-waf">Modsecurity WAF</h2>
-<p><img src="https://blog.indonesiadot.com/images/2019/modsecurity-architecture.jpg" alt="routed-lans"></p>
-<p>user yg mau sql injection di scan dulu sama modsecurity yg modsecurity baca ruleset (crs) kalau ada di rules nya di deny.
-kalau false positive, dinyatakan oleh client / developer bahwa itu sbnrnya aman, baru di exclude rule tersebut, kalau developer bisa nambel supaya bisa rubah supaya lebih sesuai ruleset nya lebih baik.</p>
-<p>intinya mudah sih yg opensource, cuma kelemahan nya nempel di host dan atau nempel di webserver, lalu kelemahan lain banyak false positive, sama ga ada ui nya, meski berjalan bagus bisa menahan serangan cuma agak sulit manage nya, terutama klo aplikasi yg ga standar, klo yg standar misal kaya wordpress mungkin lebih mudah.</p>
-<p>Referensi:</p>
-<ul>
-<li>Searching modsecurity architecture</li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/modsecurity/">modsecurity</a>, <a href="https://blog.indonesiadot.com/tags/webserver/">webserver</a>, <a href="https://blog.indonesiadot.com/tags/waf/">waf</a>
 	 <hr/>
     </div>
   

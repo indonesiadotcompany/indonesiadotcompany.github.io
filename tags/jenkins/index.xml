@@ -13,7 +13,7 @@
       <pubDate>Fri, 03 Apr 2020 15:47:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/04/03/ansible-ci-cd-cicd/</guid>
-      <description>Jenkins Ansible Tower https://plugins.jenkins.io/ansible-tower/ https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process https://dzone.com/articles/how-to-setup-continuous-delivery-environment </description>
+      <description>Jenkins Ansible Tower  https://plugins.jenkins.io/ansible-tower/ https://www.redhat.com/en/blog/take-ansible-and-jenkins-integration-next-level-cicd-ansible-tower https://www.redhat.com/en/blog/integrating-ansible-jenkins-cicd-process https://dzone.com/articles/how-to-setup-continuous-delivery-environment  </description>
     </item>
     
     <item>
@@ -23,7 +23,7 @@
       
       <guid>https://blog.indonesiadot.com/2019/12/05/jenkins-for-beginner/</guid>
       <description>Ref:
-https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04 https://hub.docker.com/r/bitnami/jenkins/ https://github.com/jenkinsci/docker/blob/master/README.md https://linuxize.com/post/how-to-install-jenkins-on-centos-7/ </description>
+ https://www.youtube.com/embed/8_D49wo6XKI?feature=player_embedded https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04 https://hub.docker.com/r/bitnami/jenkins/ https://github.com/jenkinsci/docker/blob/master/README.md https://linuxize.com/post/how-to-install-jenkins-on-centos-7/  </description>
     </item>
     
   </channel>

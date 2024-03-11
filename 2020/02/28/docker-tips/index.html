@@ -835,6 +835,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -842,7 +850,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -871,7 +879,7 @@
 <h2 id="how-to-get-ip-of-running-docker">How to get ip of running docker</h2>
 <pre tabindex="0"><code>docker ps
 docker inspect &lt;containernameorid&gt;
-docker inspect &lt;containernameorid&gt; | grep &#39;&#34;IPAddress&#34;&#39; | head -n 1
+docker inspect &lt;containernameorid&gt; | grep '&quot;IPAddress&quot;' | head -n 1
 </code></pre><p>Where head is opossite from tail, man head, man tail</p>
 <p>Ref:</p>
 <ul>
@@ -888,14 +896,14 @@ docker inspect &lt;containernameorid&gt; | grep &#39;&#34;IPAddress&#34;&#39; | 
 <pre tabindex="0"><code>FROM centos
 
 RUN yum -y install openssh-server
-RUN ssh-keygen -q -N &#34;&#34; -t dsa -f /etc/ssh/ssh_host_ecdsa_key &amp;&amp; ssh-keygen -q -N &#34;&#34; -t rsa -f /etc/ssh/ssh_host_rsa_key
+RUN ssh-keygen -q -N &quot;&quot; -t dsa -f /etc/ssh/ssh_host_ecdsa_key &amp;&amp; ssh-keygen -q -N &quot;&quot; -t rsa -f /etc/ssh/ssh_host_rsa_key
 RUN ssh-keygen -A
-RUN echo &#39;root:r4hasia&#39; | chpasswd
-RUN sed -i &#39;s/PermitRootLogin prohibit-password/PermitRootLogin yes/&#39; /etc/ssh/sshd_config
+RUN echo 'root:r4hasia' | chpasswd
+RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 ADD id_rsa.pub /root/.ssh/authorized_keys
 
 EXPOSE 22
-CMD [&#34;/usr/sbin/sshd&#34;, &#34;-D&#34;]
+CMD [&quot;/usr/sbin/sshd&quot;, &quot;-D&quot;]
 </code></pre><p>Then build to image using this command:</p>
 <pre tabindex="0"><code>docker build -t centossh ./
 docker images

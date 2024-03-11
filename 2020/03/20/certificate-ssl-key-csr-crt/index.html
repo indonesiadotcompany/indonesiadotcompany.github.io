@@ -835,6 +835,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -842,7 +850,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -950,18 +958,18 @@ sudo update-ca-certificates
 ### CA file to install (CUSTOMIZE!)
 ###
 
-certfile=&#34;root.cert.pem&#34;
-certname=&#34;My Root CA&#34;
+certfile=&quot;root.cert.pem&quot;
+certname=&quot;My Root CA&quot;
 
 
 ###
 ### For cert8 (legacy - DBM)
 ###
 
-for certDB in $(find ~/ -name &#34;cert8.db&#34;)
+for certDB in $(find ~/ -name &quot;cert8.db&quot;)
 do
     certdir=$(dirname ${certDB});
-    certutil -A -n &#34;${certname}&#34; -t &#34;TCu,Cu,Tu&#34; -i ${certfile} -d dbm:${certdir}
+    certutil -A -n &quot;${certname}&quot; -t &quot;TCu,Cu,Tu&quot; -i ${certfile} -d dbm:${certdir}
 done
 
 
@@ -969,10 +977,10 @@ done
 ### For cert9 (SQL)
 ###
 
-for certDB in $(find ~/ -name &#34;cert9.db&#34;)
+for certDB in $(find ~/ -name &quot;cert9.db&quot;)
 do
     certdir=$(dirname ${certDB});
-    certutil -A -n &#34;${certname}&#34; -t &#34;TCu,Cu,Tu&#34; -i ${certfile} -d sql:${certdir}
+    certutil -A -n &quot;${certname}&quot; -t &quot;TCu,Cu,Tu&quot; -i ${certfile} -d sql:${certdir}
 done
 </code></pre><ul>
 <li><a href="https://knowledge.digicert.com/generalinformation/INFO4448.html">https://knowledge.digicert.com/generalinformation/INFO4448.html</a></li>

@@ -13,8 +13,8 @@
       <pubDate>Thu, 10 Jun 2021 06:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2021/06/10/install-and-setup-ftp-on-freenas-11/</guid>
-      <description>Install and setup ftp on Freenas 11 Install freenas Configure via CLI Configure via web Add pool Add dataset Add group from accounts Add user from accounts Edit dataset permission based on accounts created start ftp service Referensi:
-https://www.matrix7.com.au/freenas/freenas-11-2-u7-ftp-setup/ </description>
+      <description>Install and setup ftp on Freenas 11  Install freenas Configure via CLI Configure via web Add pool Add dataset Add group from accounts Add user from accounts Edit dataset permission based on accounts created start ftp service  Referensi:
+ https://www.matrix7.com.au/freenas/freenas-11-2-u7-ftp-setup/  </description>
     </item>
     
   </channel>

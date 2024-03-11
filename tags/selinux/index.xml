@@ -16,7 +16,7 @@
       <description>Selinux Web Directory Permission Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.
 adapun command nya sebelum bisa diakses yaitu:
 chcon -Rv --type=httpd_sys_rw_content_t /webserver Referensi:
-https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/ </description>
+ https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/  </description>
     </item>
     
     <item>
@@ -29,7 +29,7 @@ https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission
 SELINUX=enforcing SELINUXTYPE=targeted semanage packages yum provides semanage yum install -y policycoreutils-python semanage list port semanage port -l | grep ssh semanage open ssh on different port add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port
 semanage port -a -t ssh_port_t -p tcp 1022 then restart sshd service
 systemctl restart sshd Referensi:
-https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/ </description>
+ https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/  </description>
     </item>
     
   </channel>

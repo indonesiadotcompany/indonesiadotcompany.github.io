@@ -13,7 +13,7 @@
       <pubDate>Wed, 18 Mar 2020 07:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/18/ubuntu-tips/</guid>
-      <description>Install specific version apt-cache policy gparted apt install gparted=0.16.1-1 https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package apport high cpu killall -9 apport service apport stop &amp;amp;&amp;amp; systemctl stop apport rm -f /var/crash/* apt-get remove apport -y </description>
+      <description>Install specific version apt-cache policy gparted apt install gparted=0.16.1-1  https://askubuntu.com/questions/428772/how-to-install-specific-version-of-some-package  apport high cpu killall -9 apport service apport stop &amp;amp;&amp;amp; systemctl stop apport rm -f /var/crash/* apt-get remove apport -y </description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Tue, 10 Mar 2020 06:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/10/lxd-lxc/</guid>
-      <description>lxc set static ip lxc stop c1 lxc network attach lxdbr0 c1 eth0 eth0 lxc config device set c1 eth0 ipv4.address 10.99.10.42 lxc start c1 https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4 lxc privileged to unprivileged Pada saat container (CT) lxc dalam unprivileged mode memiliki hak terbatas seperti akses ke device dan beberapa lainnya.
+      <description>lxc set static ip lxc stop c1 lxc network attach lxdbr0 c1 eth0 eth0 lxc config device set c1 eth0 ipv4.address 10.99.10.42 lxc start c1  https://discuss.linuxcontainers.org/t/using-static-ips-with-lxd/1291/4  lxc privileged to unprivileged Pada saat container (CT) lxc dalam unprivileged mode memiliki hak terbatas seperti akses ke device dan beberapa lainnya.
 Contoh pada saat menjalankan docker itu ada pesan error Failed to reset devices.list on /system.slice
 Workaround nya adalah dengan membuat CT menjadi privileged mode, caranya yaitu:</description>
     </item>
@@ -46,7 +46,7 @@ network: version: 2 renderer: networkd ethernets: enp3s0: dhcp4: true To instead
       <guid>https://blog.indonesiadot.com/2019/09/02/ubuntu-upgrade-14.04-to-16.04-to-18.04/</guid>
       <description>Berikut langkah yang dilakukan, tapi sebelumnya pastikan backup, backup dan backup
 sudo apt-get update sudo apt-get upgrade sudo do-release-upgrade -f DistUpgradeViewNonInteractive Referensi:
-https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04 https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4 </description>
+ https://www.google.com/search?q=ubuntu+upgrade+14.04+to+16.04 https://medium.com/@shathi.ece/upgrade-ubuntu-14-04-lts-to-ubuntu-16-04-lts-d0225503efb4  </description>
     </item>
     
   </channel>

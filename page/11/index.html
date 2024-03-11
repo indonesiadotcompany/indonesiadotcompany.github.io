@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.106.0">
+	<meta name="generator" content="Hugo 0.92.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -836,6 +836,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -843,7 +851,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -868,12 +876,69 @@
 <div class="post">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/">Android USB File Transfer</a></h1>
+        <span class="post-date">Oct 14, 2019</span>
+	<h2 id="android-usb-file-transfer">Android USB File Transfer</h2>
+<pre tabindex="0"><code>add-apt-repository ppa:webupd8team/unstable
+apt update
+apt-get install go-mtpfs
+mkdir /media/MyAndroid
+</code></pre><h3 id="mount">mount</h3>
+<pre tabindex="0"><code>go-mtpfs /media/MyAndroid
+</code></pre><h3 id="unmount">unmount</h3>
+<pre tabindex="0"><code>fusermount -u /media/MyAndroid
+</code></pre><p>or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open <a href="ftp://ip.of.android:8888">ftp://ip.of.android:8888</a>, so you can access from pc via ftp client like filezilla.</p>
+<p>Referensi:</p>
+<ul>
+<li><a href="http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html">http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html</a></li>
+<li><a href="https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu">https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/android/">android</a>, <a href="https://blog.indonesiadot.com/tags/file/">file</a>, <a href="https://blog.indonesiadot.com/tags/mtp/">mtp</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld/">Centos 7 Firewalld</a></h1>
+        <span class="post-date">Oct 14, 2019</span>
+	<h2 id="firewalld-masquerade">Firewalld masquerade</h2>
+<ul>
+<li><a href="https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/">https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/</a></li>
+</ul>
+<pre tabindex="0"><code>firewall-cmd --get-active-zones
+firewall-cmd --list-all --zone=public
+firewall-cmd --add-masquerade --zone=public --permanent
+firewall-cmd --reload
+firewall-cmd --list-all --zone=public
+</code></pre><h2 id="open-port-for-specific-ip-address">Open port for specific ip address</h2>
+<ul>
+<li><a href="https://serverfault.com/questions/684602/how-to-open-port-for-a-specific-ip-address-with-firewall-cmd-on-centos">https://serverfault.com/questions/684602/how-to-open-port-for-a-specific-ip-address-with-firewall-cmd-on-centos</a></li>
+<li><a href="https://www.liquidweb.com/kb/an-introduction-to-firewalld/">https://www.liquidweb.com/kb/an-introduction-to-firewalld/</a></li>
+</ul>
+<pre tabindex="0"><code>firewall-cmd --permanent --zone=public --add-rich-rule='
+  rule family=&quot;ipv4&quot;
+  source address=&quot;1.2.3.4/32&quot;
+  port protocol=&quot;tcp&quot; port=&quot;4567&quot; accept'
+</code></pre>
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/firewalld/">firewalld</a>, <a href="https://blog.indonesiadot.com/tags/masquerade/">masquerade</a>, <a href="https://blog.indonesiadot.com/tags/nat/">nat</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/magic-of-sed/">Magic of Sed</a></h1>
         <span class="post-date">Oct 14, 2019</span>
 	<h2 id="insert-every-line-in-linux">Insert every line in linux</h2>
-<pre tabindex="0"><code>sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &gt; aptpurge.txt
+<pre tabindex="0"><code>sed 's/^/apt-get purge -y /' aptwantopurge.txt &gt; aptpurge.txt
 </code></pre><h2 id="comment-out-a-line-that-contain-string">comment out a line that contain string</h2>
-<pre tabindex="0"><code>sed -i &#39;/ 2001 /s/^/#/&#39; file
+<pre tabindex="0"><code>sed -i '/ 2001 /s/^/#/' file
 </code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.google.com/search?q=insert+every+line+linux&amp;oq=insert+every+line+linux">https://www.google.com/search?q=insert+every+line+linux&amp;oq=insert+every+line+linux</a></li>
@@ -900,14 +965,14 @@
 apt update
 apt install dnscrypt-proxy
 </code></pre><p>Edit file /etc/dnscrypt-proxy/dnscrypt-proxy.toml dan rubah variabel <strong>server_name</strong> menjadi seperti contoh berikut:</p>
-<pre tabindex="0"><code>server_names = [&#39;cloudflare&#39;, &#39;google&#39;]
+<pre tabindex="0"><code>server_names = ['cloudflare', 'google']
 </code></pre><p>lalu restart service dnscrypt-proxy</p>
 <pre tabindex="0"><code>systemctl restart dnscrypt-proxy
 </code></pre><p>edit /etc/resolv.conf agar mengarah ke dnscrypt-proxy</p>
 <pre tabindex="0"><code>nameserver 127.0.2.1
 </code></pre><h2 id="install-dns-over-https-server">Install DNS over HTTPS server</h2>
 <h3 id="install-dengan-cara-paket-instalasi-deb">Install dengan cara paket instalasi deb</h3>
-<pre tabindex="0"><code>wget &#34;https://www.aaflalo.me/?smd_process_download=1&amp;download_id=1326&#34;
+<pre tabindex="0"><code>wget &quot;https://www.aaflalo.me/?smd_process_download=1&amp;download_id=1326&quot;
 mv index* doh-server.deb
 dpkg -i doh-server_*_amd64.deb
 </code></pre><h3 id="install-dengan-cara-compile">Install dengan cara compile</h3>
@@ -955,20 +1020,20 @@ certbot --nginx -d dns.example.com
 -------------------------------------------------------------------------------
 1: No redirect - Make no further changes to the webserver configuration.
 2: Redirect - Make all requests redirect to secure HTTPS access. Choose this for
-new sites, or if you&#39;re confident your site works on HTTPS. You can undo this
-change by editing your web server&#39;s configuration.
+new sites, or if you're confident your site works on HTTPS. You can undo this
+change by editing your web server's configuration.
 -------------------------------------------------------------------------------
-Select the appropriate number [1-2] then [enter] (press &#39;c&#39; to cancel):
+Select the appropriate number [1-2] then [enter] (press 'c' to cancel):
 </code></pre><p>I advise to choose redirect to be sure it use only HTTPS.</p>
 <p>Edit the file /etc/letsencrypt/options-ssl-nginx.conf and replace its content by this.</p>
 <pre tabindex="0"><code>ssl_session_cache shared:le_nginx_SSL:1m;
 ssl_session_timeout 1440m;
 ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
 # Enable modern TLS cipher suites
-ssl_ciphers &#39;ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256&#39;;
+ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
 # The order of cipher suites matters
 ssl_prefer_server_ciphers on;
-add_header Strict-Transport-Security &#34;max-age=31536000; includeSubDomains&#34; always;
+add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot; always;
 </code></pre><p>Then reload nginx.</p>
 <pre tabindex="0"><code>systemctl reload nginx
 </code></pre><h2 id="tips">TIPS</h2>
@@ -977,12 +1042,12 @@ add_header Strict-Transport-Security &#34;max-age=31536000; includeSubDomains&#3
 <p>lalu isi nama doh dan stamp nya seperti contoh:</p>
 <pre tabindex="0"><code>[static]
 
-[static.&#39;gcp&#39;]
-   stamp = &#39;sdns://AgcAAAAAAAAADTM0Ljg3LjExNy4xMDUADWdjcC5iaXJhdS5jb20KL2Rucy1xdWVyeQ&#39;
-[static.&#39;doh&#39;]
-   stamp = &#39;sdns://AgcAAAAAAAAACzQ1Ljc3LjM2LjU0ABJkb2guYmlyYXUuY29tOjM0NDMKL2Rucy1xdWVyeQ&#39;
+[static.'gcp']
+   stamp = 'sdns://AgcAAAAAAAAADTM0Ljg3LjExNy4xMDUADWdjcC5iaXJhdS5jb20KL2Rucy1xdWVyeQ'
+[static.'doh']
+   stamp = 'sdns://AgcAAAAAAAAACzQ1Ljc3LjM2LjU0ABJkb2guYmlyYXUuY29tOjM0NDMKL2Rucy1xdWVyeQ'
 </code></pre><p>dan tambahkan dibagian server_name menjadi seperti ini:</p>
-<pre tabindex="0"><code>server_names = [&#39;doh&#39;, &#39;gcp&#39;, &#39;cloudflare&#39;, &#39;google&#39;]
+<pre tabindex="0"><code>server_names = ['doh', 'gcp', 'cloudflare', 'google']
 </code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.aaflalo.me/2018/10/tutorial-setup-dns-over-https-server/">https://www.aaflalo.me/2018/10/tutorial-setup-dns-over-https-server/</a></li>
@@ -1027,15 +1092,15 @@ firewall-cmd --add-service=http --permanent;firewall-cmd --add-service=https --p
 systemctl restart firewalld
 </code></pre><h2 id="ansible-tower-license">Ansible tower license</h2>
 <pre tabindex="0"><code>{
-    &#34;company_name&#34;: &#34;widyamedia&#34;,
-    &#34;contact_email&#34;: &#34;widyamedia@gmail.com&#34;,
-    &#34;contact_name&#34;: &#34;widya media&#34;,
-    &#34;hostname&#34;: &#34;0f6a792b962445f2b0cd337a1ebb05c2&#34;,
-    &#34;instance_count&#34;: 10,
-    &#34;license_date&#34;: 2116912142,
-    &#34;license_key&#34;: &#34;0c8906958684422f6b25a2748a285f3c63601899b0bca26df2dc4d2805ec05c6&#34;,
-    &#34;license_type&#34;: &#34;basic&#34;,
-    &#34;subscription_name&#34;: &#34;Red Hat Ansible Tower, Self-Support (10 Managed Nodes)&#34;
+    &quot;company_name&quot;: &quot;widyamedia&quot;,
+    &quot;contact_email&quot;: &quot;widyamedia@gmail.com&quot;,
+    &quot;contact_name&quot;: &quot;widya media&quot;,
+    &quot;hostname&quot;: &quot;0f6a792b962445f2b0cd337a1ebb05c2&quot;,
+    &quot;instance_count&quot;: 10,
+    &quot;license_date&quot;: 2116912142,
+    &quot;license_key&quot;: &quot;0c8906958684422f6b25a2748a285f3c63601899b0bca26df2dc4d2805ec05c6&quot;,
+    &quot;license_type&quot;: &quot;basic&quot;,
+    &quot;subscription_name&quot;: &quot;Red Hat Ansible Tower, Self-Support (10 Managed Nodes)&quot;
 }
 </code></pre><p>Referensi:</p>
 <ul>
@@ -1071,7 +1136,7 @@ smartctl -i /dev/sda
 smartctl --test=short /dev/sda
 #smartctl --test=long /dev/sda
 smartctl -a /dev/sda
-smartctl -a /dev/sda | grep &#34;Short&#34;
+smartctl -a /dev/sda | grep &quot;Short&quot;
 
 Ref:
 
@@ -1118,7 +1183,7 @@ cd tpinews
 touch .gitignore
 git init
 git add .
-git commit -m &#39;komat kamit awal&#39;
+git commit -m 'komat kamit awal'
 git remote add origin https://tpinews.github.io.git
 git push origin master
 
@@ -1128,7 +1193,7 @@ cp -r /path/kumpulanthemeshugo/travelify themes/
 cp -r themes/travelify/exampleSite/* .
 cp /path/scripts/push-deploy.sh .
 git add .
-git commit -m &#39;komit hugo&#39;
+git commit -m 'komit hugo'
 git push origin hugo
 
 git submodule add -b master https://tpinews.github.io.git public
@@ -1140,34 +1205,34 @@ git branch -d master
 <pre tabindex="0"><code>#!/bin/sh
 # If a command fails then the deploy stops
 set -e
-printf &#34;\033[0;32mPush to branch hugo...\033[0m\n&#34;
+printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
 git add .
-msg=&#34;rebuilding site $(date)&#34;
-if [ -n &#34;$*&#34; ]; then
- msg=&#34;$*&#34;
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+ msg=&quot;$*&quot;
 fi
-git commit -m &#34;$msg&#34;
+git commit -m &quot;$msg&quot;
 git push origin hugo
 
-printf &#34;\033[0;32mDeploy public hugo to branch master...\033[0m\n&#34;
+printf &quot;\033[0;32mDeploy public hugo to branch master...\033[0m\n&quot;
 HUGO_ENV=production hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
 cd public
 git add .
-msg=&#34;rebuilding site $(date)&#34;
-if [ -n &#34;$*&#34; ]; then
-        msg=&#34;$*&#34;
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+        msg=&quot;$*&quot;
 fi
-git commit -m &#34;$msg&#34;
+git commit -m &quot;$msg&quot;
 git push origin master
 
-printf &#34;\033[0;32mPush to branch hugo...\033[0m\n&#34;
+printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
 cd ..
 git add .
-msg=&#34;rebuilding site $(date)&#34;
-if [ -n &#34;$*&#34; ]; then
-        msg=&#34;$*&#34;
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+        msg=&quot;$*&quot;
 fi
-git commit -m &#34;$msg&#34;
+git commit -m &quot;$msg&quot;
 git push origin hugo
 </code></pre><p>Note:</p>
 <p>Untuk lebih mudah tidak perlu memasukan password, bisa di buat dari menu settings account github, lalu pilih menu sebelah kiri bawah bagian Developer settings, lalu Personal access tokens dan generate new token.</p>
@@ -1203,189 +1268,6 @@ git push origin hugo
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/web/">web</a>, <a href="https://blog.indonesiadot.com/tags/markdown/">markdown</a>, <a href="https://blog.indonesiadot.com/tags/static-site-generator/">static-site-generator</a>, <a href="https://blog.indonesiadot.com/tags/ssg/">ssg</a>, <a href="https://blog.indonesiadot.com/tags/hugo/">hugo</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/04/linux-security-tools/">linux Security Tools</a></h1>
-        <span class="post-date">Sep 4, 2019</span>
-	<p>Tools yang biasa digunakan pada server linux:</p>
-<ul>
-<li>
-<p>Firewall</p>
-</li>
-<li>
-<p>iptables</p>
-</li>
-<li>
-<p>ipset</p>
-</li>
-<li>
-<p>shorewall</p>
-</li>
-<li>
-<p>csf</p>
-</li>
-<li>
-<p>Anti Malware</p>
-</li>
-<li>
-<p>maldet (malware detection for web directory)</p>
-</li>
-<li>
-<p>IDS</p>
-</li>
-<li>
-<p>tripwire</p>
-</li>
-<li>
-<p>Identity Server</p>
-</li>
-<li>
-<p><a href="https://freeipa.org">FreeIPA (IPA = Identity, Policy, Authentication)</a></p>
-</li>
-<li>
-<p>Security Checking / Scanning Solution</p>
-</li>
-<li>
-<p>OpenSCAP</p>
-</li>
-<li>
-<p>Rapid7</p>
-</li>
-<li>
-<p>CMDB (configuration management database) adalah Information Technology Infrastructure Library database used by an organization to store information about hardware and software assets</p>
-</li>
-<li>
-<p>TeemIP</p>
-</li>
-<li>
-<p>itop <a href="https://github.com/Combodo/iTop">https://github.com/Combodo/iTop</a></p>
-</li>
-<li>
-<p>infoblox</p>
-</li>
-<li>
-<p>efficientip</p>
-</li>
-<li>
-<p>ansible-cmdb</p>
-</li>
-<li>
-<p>WAF</p>
-</li>
-<li>
-<p><a href="http://www.waf-fle.org/">http://www.waf-fle.org/</a> console / web view for modsecurity admin</p>
-</li>
-<li>
-<p>modsecurity</p>
-</li>
-<li>
-<p>naxsi <a href="https://github.com/nbs-system/naxsi">https://github.com/nbs-system/naxsi</a></p>
-</li>
-<li>
-<p>shadow daemon <a href="https://shadowd.zecure.org/overview/introduction/">https://shadowd.zecure.org/overview/introduction/</a></p>
-</li>
-<li>
-<p>imperva berbayar</p>
-</li>
-<li>
-<p>Web Scanner</p>
-</li>
-<li>
-<p>nikto ( <a href="https://geekflare.com/nikto-webserver-scanner/">https://geekflare.com/nikto-webserver-scanner/</a> )</p>
-</li>
-<li>
-<p>Pentest</p>
-</li>
-<li>
-<p>owasp-zap <a href="https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b">https://medium.com/volosoft/running-penetration-tests-for-your-website-as-a-simple-developer-with-owasp-zap-493d6a7e182b</a></p>
-</li>
-<li>
-<p>nessus <a href="https://www.tenable.com/tenable-for-education">https://www.tenable.com/tenable-for-education</a></p>
-</li>
-</ul>
-<p>Referensi Openscap:</p>
-<ul>
-<li><a href="https://www.open-scap.org/">https://www.open-scap.org/</a></li>
-<li><a href="https://lifehacker.com/how-to-use-nessus-to-scan-a-network-for-vulnerabilities-1788261156">https://lifehacker.com/how-to-use-nessus-to-scan-a-network-for-vulnerabilities-1788261156</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>, <a href="https://blog.indonesiadot.com/tags/firewall/">firewall</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/ids/">ids</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/09/02/linux-server-tools/">linux Server Tools</a></h1>
-        <span class="post-date">Sep 2, 2019</span>
-	<p>Tools yang biasa digunakan pada server linux:</p>
-<ul>
-<li>
-<p>Virtualization (Desktop)</p>
-</li>
-<li>
-<p>Virtualbox</p>
-</li>
-<li>
-<p>Graphic</p>
-</li>
-<li>
-<p>Gimp</p>
-</li>
-<li>
-<p>Mail</p>
-</li>
-<li>
-<p>Thunderbird Mail (client)</p>
-</li>
-<li>
-<p>Multimedia</p>
-</li>
-<li>
-<p>Avidemux</p>
-</li>
-<li>
-<p>Video Conference</p>
-</li>
-<li>
-<p>jitsi</p>
-</li>
-<li>
-<p><a href="https://medevel.com/10-os-video-conferencing/">More and more</a></p>
-</li>
-<li>
-<p>Customer support live chat</p>
-</li>
-<li>
-<p>rocket.chat</p>
-</li>
-<li>
-<p>tawk.to</p>
-</li>
-<li>
-<p><a href="https://github.com/juliancwirko/s-chat-app">simple chat</a></p>
-</li>
-<li>
-<p>Networking</p>
-</li>
-<li>
-<p><a href="https://www.linux.com/tutorials/monitoring-network-load-nload-part-2/">nload</a></p>
-</li>
-</ul>
-<p>Untuk security tools, seperti firewall, anti malware, scanning tools, di update di halaman berikut</p>
-<ul>
-<li><a href="https://blog.indonesiadot.com/2019/09/04/linux-security-tools/">https://blog.indonesiadot.com/2019/09/04/linux-security-tools/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/tools/">tools</a>
 	 <hr/>
     </div>
   

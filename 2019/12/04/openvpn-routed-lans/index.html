@@ -835,6 +835,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -842,7 +850,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -874,9 +882,9 @@ client2 with lan 10.10.3.0/24</p>
 <p>Every machine with a LAN behind it must have IP forwarding enabled. In this example that means the server, and client1/client2. The user needed the following in his server.conf:</p>
 <pre tabindex="0"><code>route 10.10.1.0 255.255.255.0
 route 10.10.3.0 255.255.255.0
-push &#34;route 10.10.2.0 255.255.255.0&#34;
-push &#34;route 10.10.1.0 255.255.255.0&#34;
-push &#34;route 10.10.3.0 255.255.255.0&#34;
+push &quot;route 10.10.2.0 255.255.255.0&quot;
+push &quot;route 10.10.1.0 255.255.255.0&quot;
+push &quot;route 10.10.3.0 255.255.255.0&quot;
 client-to-client
 </code></pre><p>The route entries adjust the local routing table, telling it to route those networks over the vpn. The push routes are added on the clients connecting, telling them to route those networks over the vpn.</p>
 <p>You may realize that client1 should not route 10.10.1.0 traffic over the vpn, and that client2 should not route 10.10.3.0 traffic over the vpn (because those networks are local to each client). Because of the iroute entries you will see below, openvpn knows this too and skips the push for the client.</p>

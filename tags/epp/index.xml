@@ -13,11 +13,12 @@
       <pubDate>Fri, 27 Mar 2020 12:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/27/sentinelone-epp-edr-on-premise/</guid>
-      <description>Prerequisites and preparation Hardware Requirements: Management Versions Grand Canyon and later Agents 10,000 to 20,000
-CPU 16 Cores
-RAM 32 GB
-Disk Root: 16 GB, Disk 500 GB XFS
-https://support.sentinelone.com/hc/en-us/articles/360010427613-On-Prem-OVA-Prerequisites-and-Preparation</description>
+      <description>Prerequisites and preparation Hardware Requirements: Management Versions Grand Canyon and later   Agents 10,000 to 20,000
+  CPU 16 Cores
+  RAM 32 GB
+  Disk Root: 16 GB, Disk 500 GB XFS
+  https://support.sentinelone.com/hc/en-us/articles/360010427613-On-Prem-OVA-Prerequisites-and-Preparation
+  </description>
     </item>
     
   </channel>

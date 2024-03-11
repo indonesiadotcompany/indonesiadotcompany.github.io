@@ -835,6 +835,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -842,7 +850,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -884,14 +892,14 @@ mkdir /etc/docker
 # Setup daemon.
 cat &gt; /etc/docker/daemon.json &lt;&lt;EOF
 {
-  &#34;exec-opts&#34;: [&#34;native.cgroupdriver=systemd&#34;],
-  &#34;log-driver&#34;: &#34;json-file&#34;,
-  &#34;log-opts&#34;: {
-    &#34;max-size&#34;: &#34;100m&#34;
+  &quot;exec-opts&quot;: [&quot;native.cgroupdriver=systemd&quot;],
+  &quot;log-driver&quot;: &quot;json-file&quot;,
+  &quot;log-opts&quot;: {
+    &quot;max-size&quot;: &quot;100m&quot;
   },
-  &#34;storage-driver&#34;: &#34;overlay2&#34;,
-  &#34;storage-opts&#34;: [
-    &#34;overlay2.override_kernel_check=true&#34;
+  &quot;storage-driver&quot;: &quot;overlay2&quot;,
+  &quot;storage-opts&quot;: [
+    &quot;overlay2.override_kernel_check=true&quot;
   ]
 }
 EOF
@@ -910,7 +918,7 @@ cat &lt;&lt;EOF&gt;&gt; /etc/hosts
 10.128.0.30 node-2 worker-node-2
 EOF
 setenforce 0
-sed -i --follow-symlinks &#39;s/SELINUX=enforcing/SELINUX=disabled/g&#39; /etc/sysconfig/selinux
+sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 firewall-cmd --permanent --add-port=6443/tcp
 firewall-cmd --permanent --add-port=2379-2380/tcp
 firewall-cmd --permanent --add-port=10250/tcp
@@ -948,7 +956,7 @@ mkdir -p $HOME/.kube
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 kubectl get nodes
 </code></pre><h2 id="kubernetes-node">kubernetes node</h2>
-<pre tabindex="0"><code>hostnamectl set-hostname &#39;node-1&#39;
+<pre tabindex="0"><code>hostnamectl set-hostname 'node-1'
 cat &lt;&lt;EOF&gt;&gt; /etc/hosts
 10.128.0.27 master-node
 10.128.0.29 node-1 worker-node-1
@@ -956,7 +964,7 @@ cat &lt;&lt;EOF&gt;&gt; /etc/hosts
 EOF
 
 setenforce 0
-sed -i --follow-symlinks &#39;s/SELINUX=enforcing/SELINUX=disabled/g&#39; /etc/sysconfig/selinux
+sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 
 firewall-cmd --permanent --add-port=6783/tcp
 firewall-cmd --permanent --add-port=10250/tcp

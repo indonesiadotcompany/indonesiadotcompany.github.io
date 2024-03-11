@@ -14,8 +14,8 @@
       
       <guid>https://blog.indonesiadot.com/2019/09/24/hugo-hosting-dengan-github/</guid>
       <description>Ini adalah langkah yang saya lakukan untuk penempatan web hugo di github, sebelumnya buat dahulu di github nama repository agar tampil sebagai page / website, contoh:
-Nama user: tpinews Nama repositori yang harus dibuat: tpinews.github.io Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:
-mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &amp;#39;komat kamit awal&amp;#39; git remote add origin https://tpinews.github.io.git git push origin master git checkout -b hugo hugo new site .</description>
+ Nama user: tpinews Nama repositori yang harus dibuat: tpinews.github.io  Lalu kemudian pada lokal komputer dijalankan beberapa perintah berikut:
+mkdir tpinews cd tpinews touch .gitignore git init git add . git commit -m &#39;komat kamit awal&#39; git remote add origin https://tpinews.github.io.git git push origin master git checkout -b hugo hugo new site .</description>
     </item>
     
   </channel>

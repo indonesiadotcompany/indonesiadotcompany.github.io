@@ -23,8 +23,8 @@
       
       <guid>https://blog.indonesiadot.com/2018/02/04/bash-script-tips/</guid>
       <description>Bash scripting cheatsheet Referensi:
-https://devhints.io/bash bash or and How to Use Logical OR &amp;amp; AND in Shell Script with Examples Logical OR &amp;amp; AND operations are very useful where multiple conditions are used in our programs (scripts).
-OR is used between two or multiple conditions. It returns true if any one of conditions returns as true. AND is used between two or multiple conditions. It returns true only if all the conditions returns as true.</description>
+ https://devhints.io/bash  bash or and How to Use Logical OR &amp;amp; AND in Shell Script with Examples Logical OR &amp;amp; AND operations are very useful where multiple conditions are used in our programs (scripts).
+ OR is used between two or multiple conditions. It returns true if any one of conditions returns as true. AND is used between two or multiple conditions. It returns true only if all the conditions returns as true.</description>
     </item>
     
   </channel>

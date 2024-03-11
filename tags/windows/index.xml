@@ -13,7 +13,7 @@
       <pubDate>Tue, 25 Aug 2020 15:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/08/25/samba-share-windows/</guid>
-      <description>Setup samba on ubuntu linux https://adrianmejia.com/how-to-set-up-samba-in-ubuntu-linux-and-access-it-in-mac-os-and-windows/ apt install samba cifs-utils lalu edit /etc/samba/smb.conf
+      <description>Setup samba on ubuntu linux  https://adrianmejia.com/how-to-set-up-samba-in-ubuntu-linux-and-access-it-in-mac-os-and-windows/  apt install samba cifs-utils lalu edit /etc/samba/smb.conf
 systemctl restart smbd test via windows, dengan mengakses \ip.atau.hostname.server</description>
     </item>
     
@@ -23,7 +23,7 @@ systemctl restart smbd test via windows, dengan mengakses \ip.atau.hostname.serv
       <pubDate>Tue, 25 Aug 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/08/25/windows-tips/</guid>
-      <description>CURL windows https://develop.zendesk.com/hc/en-us/articles/360001068567-Installing-and-using-cURL#install http://curl.haxx.se/download.html </description>
+      <description>CURL windows  https://develop.zendesk.com/hc/en-us/articles/360001068567-Installing-and-using-cURL#install http://curl.haxx.se/download.html  </description>
     </item>
     
     <item>
@@ -34,7 +34,7 @@ systemctl restart smbd test via windows, dengan mengakses \ip.atau.hostname.serv
       <guid>https://blog.indonesiadot.com/2020/06/24/ansible-to-windows-via-winrm/</guid>
       <description>Prerequisites on windows Upgrading PowerShell and .NET Framework https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html
 Buka powershell sebagai administrator, lalu copy paste bagian berikut:
-$url = &amp;#34;https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1&amp;#34; $file = &amp;#34;$env:temp\Upgrade-PowerShell.ps1&amp;#34; $username = &amp;#34;Administrator&amp;#34; $password = &amp;#34;Password&amp;#34; (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file) Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force # Version can be 3.0, 4.0 or 5.1 &amp;amp;$file -Version 5.1 -Username $username -Password $password -Verbose Once completed, you will need to remove auto logon and set the execution policy back to the default of Restricted.</description>
+$url = &amp;quot;https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1&amp;quot; $file = &amp;quot;$env:temp\Upgrade-PowerShell.ps1&amp;quot; $username = &amp;quot;Administrator&amp;quot; $password = &amp;quot;Password&amp;quot; (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file) Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force # Version can be 3.0, 4.0 or 5.1 &amp;amp;$file -Version 5.1 -Username $username -Password $password -Verbose Once completed, you will need to remove auto logon and set the execution policy back to the default of Restricted.</description>
     </item>
     
   </channel>

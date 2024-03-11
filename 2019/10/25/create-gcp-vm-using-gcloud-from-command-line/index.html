@@ -835,6 +835,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -842,7 +850,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -879,7 +887,7 @@ EOM
 sudo yum install google-cloud-sdk
 gcloud init
 </code></pre><p>Berikut langkah yang dilakukan di OS ubuntu / debian:</p>
-<pre tabindex="0"><code>echo &#34;deb http://packages.cloud.google.com/apt cloud-sdk main&#34; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+<pre tabindex="0"><code>echo &quot;deb http://packages.cloud.google.com/apt cloud-sdk main&quot; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk
 gcloud init
@@ -889,10 +897,10 @@ gcloud init
 </code></pre><p>Berikut script 1-gcp-centos.sh</p>
 <pre tabindex="0"><code>#!/bin/bash
 
-if [ -z &#34;$1&#34; ]; then
+if [ -z &quot;$1&quot; ]; then
  NAMA=$1
- while [ -z &#34;$NAMA&#34; ]; do
-  echo &#34;masukan nama vm:&#34;
+ while [ -z &quot;$NAMA&quot; ]; do
+  echo &quot;masukan nama vm:&quot;
   read NAMA
  done
  # Create GCE VM with disk storage

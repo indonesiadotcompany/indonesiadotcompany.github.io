@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.106.0">
+	<meta name="generator" content="Hugo 0.92.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -836,6 +836,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -843,7 +851,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -868,6 +876,43 @@
 <div class="post">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/08/25/samba-share-windows/">Samba share windows</a></h1>
+        <span class="post-date">Aug 25, 2020</span>
+	<h2 id="setup-samba-on-ubuntu-linux">Setup samba on ubuntu linux</h2>
+<ul>
+<li><a href="https://adrianmejia.com/how-to-set-up-samba-in-ubuntu-linux-and-access-it-in-mac-os-and-windows/">https://adrianmejia.com/how-to-set-up-samba-in-ubuntu-linux-and-access-it-in-mac-os-and-windows/</a></li>
+</ul>
+<pre tabindex="0"><code>apt install samba cifs-utils
+</code></pre><p>lalu edit /etc/samba/smb.conf</p>
+<pre tabindex="0"><code>systemctl restart smbd
+</code></pre><p>test via windows, dengan mengakses \ip.atau.hostname.server</p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/windows/">windows</a>, <a href="https://blog.indonesiadot.com/tags/samba/">samba</a>, <a href="https://blog.indonesiadot.com/tags/share/">share</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/08/25/windows-tips/">Windows tips</a></h1>
+        <span class="post-date">Aug 25, 2020</span>
+	<h2 id="curl-windows">CURL windows</h2>
+<ul>
+<li><a href="https://develop.zendesk.com/hc/en-us/articles/360001068567-Installing-and-using-cURL#install">https://develop.zendesk.com/hc/en-us/articles/360001068567-Installing-and-using-cURL#install</a></li>
+<li><a href="http://curl.haxx.se/download.html">http://curl.haxx.se/download.html</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/windows/">windows</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/winblows/">winblows</a>, <a href="https://blog.indonesiadot.com/tags/mikocok/">mikocok</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/08/11/ansible-sudoers/">Ansible sudoers</a></h1>
         <span class="post-date">Aug 11, 2020</span>
 	<h2 id="contoh">Contoh</h2>
@@ -880,22 +925,22 @@
     - lineinfile:
         path: /etc/sudoers
         state: present
-        regexp: &#39;^%sudo&#39;
-        line: &#39;%sudo ALL=(ALL) NOPASSWD: ALL&#39;
-        validate: &#39;visudo -cf %s&#39;
+        regexp: '^%sudo'
+        line: '%sudo ALL=(ALL) NOPASSWD: ALL'
+        validate: 'visudo -cf %s'
 </code></pre><p>contoh lain</p>
-<pre tabindex="0"><code>- name: Make sure we have a &#39;wheel&#39; group
+<pre tabindex="0"><code>- name: Make sure we have a 'wheel' group
   group:
     name: wheel
     state: present
 
-- name: Allow &#39;wheel&#39; group to have passwordless sudo
+- name: Allow 'wheel' group to have passwordless sudo
   lineinfile:
     dest: /etc/sudoers
     state: present
-    regexp: &#39;^%wheel&#39;
-    line: &#39;%wheel ALL=(ALL) NOPASSWD: ALL&#39;
-    validate: &#39;visudo -cf %s&#39;
+    regexp: '^%wheel'
+    line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+    validate: 'visudo -cf %s'
 
 - name: Add sudoers users to wheel group
   user:
@@ -906,7 +951,7 @@
     createhome=yes
 
 - name: Set up authorized keys for the deployer user
-  authorized_key: user=deployer key=&#34;{{item}}&#34;
+  authorized_key: user=deployer key=&quot;{{item}}&quot;
   with_file:
     - /home/railsdev/.ssh/id_rsa.pub
 </code></pre>
@@ -926,7 +971,7 @@
 <pre tabindex="0"><code>apt install wget software-properties-common apt-transport-https
 apt-get install openjdk-8-jdk openjdk-8-doc
 wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add -
-add-apt-repository &#34;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&#34;
+add-apt-repository &quot;deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main&quot;
 apt-get update
 apt install jfrog-artifactory-oss
 </code></pre><h2 id="membuat-repository--artifacts-baru-di-jfrog">Membuat repository / artifacts baru di jfrog</h2>
@@ -935,9 +980,9 @@ klik / pilih generic, lalu isi repository key atau nama repository dengan apa sa
 klik save
 </code></pre><h2 id="test-upload-dan-download-via-curl">test upload dan download via curl</h2>
 <p>buat dahulu bbrp file, misal test.txt, lalu upload dengan command curl</p>
-<pre tabindex="0"><code>curl -uadmin:r4hasia01 -T test.txt &#34;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&#34;
+<pre tabindex="0"><code>curl -uadmin:r4hasia01 -T test.txt &quot;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&quot;
 </code></pre><p>command untuk download memakai curl</p>
-<pre tabindex="0"><code>curl -uadmin:r4hasia01 -O &#34;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&#34;
+<pre tabindex="0"><code>curl -uadmin:r4hasia01 -O &quot;http://10.11.8.41:8081/artifactory/ansible-test-report/test.txt&quot;
 </code></pre><h2 id="test-upload-dengan-playbook-script">test upload dengan playbook script</h2>
 <p>buat file jfrog-upload.yml</p>
 <pre tabindex="0"><code>- hosts: all
@@ -945,7 +990,7 @@ klik save
   connection: local
   tasks:
     - uri:
-        url: &#39;http://10.11.8.41:8081/artifactory/generic/test1.txt&#39;
+        url: 'http://10.11.8.41:8081/artifactory/generic/test1.txt'
         src: ./test1.txt
         method: PUT
         return_content: true
@@ -971,7 +1016,7 @@ klik save
 </code></pre><p>dari sini bisa untuk delete file / direktori, misal delete file testdir yg sebelumnya terbuat, dengan command:</p>
 <pre tabindex="0"><code>./jfrog rt del generic/testdir
 </code></pre><p>upload semua file di direktori dan taruh di direktori juga</p>
-<pre tabindex="0"><code>./jfrog rt u &#34;testdir/&#34; generic/testdir/
+<pre tabindex="0"><code>./jfrog rt u &quot;testdir/&quot; generic/testdir/
 </code></pre>
 	<hr/>
 	
@@ -1063,15 +1108,15 @@ iface vmbr0 inet static
 <p><a href="https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0">https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0</a></p>
 <pre tabindex="0"><code>tmux
 pve5to6
-#make sure it&#39;s ok
+#make sure it's ok
 systemctl stop pve-ha-lrm
 systemctl stop pve-ha-crm
-echo &#34;deb http://download.proxmox.com/debian/corosync-3/ stretch main&#34; &gt; /etc/apt/sources.list.d/corosync3.list
+echo &quot;deb http://download.proxmox.com/debian/corosync-3/ stretch main&quot; &gt; /etc/apt/sources.list.d/corosync3.list
 apt update
 apt dist-upgrade
 systemctl start pve-ha-lrm
 systemctl start pve-ha-crm
-sed -i &#39;s/stretch/buster/g&#39; /etc/apt/sources.list
+sed -i 's/stretch/buster/g' /etc/apt/sources.list
 apt update
 apt dist-upgrade
 rm /etc/apt/sources.list.d/corosync3.list
@@ -1134,110 +1179,6 @@ sudo iptables -X
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/redhat/">redhat</a>, <a href="https://blog.indonesiadot.com/tags/rhel/">rhel</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/06/30/ansible-postgresql/">Ansible postgresql</a></h1>
-        <span class="post-date">Jun 30, 2020</span>
-	<h2 id="requirements">Requirements</h2>
-<pre tabindex="0"><code>pip install psycopg2-binary
-</code></pre><h2 id="playbooks">playbooks</h2>
-<p>cat psql.yml</p>
-<pre tabindex="0"><code>- hosts: localhost
-  become: yes
-  gather_facts: no
-  connection: local
-
-  tasks:
-  - name: Simple select query to acme db
-    postgresql_query:
-     db: pgtower
-     login_user: pgtower
-     login_password: pgtower
-     query: SELECT version()
-    register: result
-
-  - debug:
-      var: result
-</code></pre><p>cat psqlgraf.yml</p>
-<pre tabindex="0"><code>- hosts: localhost
-  become: yes
-  gather_facts: no
-  connection: local
-
-  tasks:
-  - name: Simple select query to acme db
-    postgresql_query:
-     db: montower
-     login_host: 10.11.8.13
-     login_user: ansible
-     login_password: r4hasia
-     query: SELECT * from hosts
-    register: result
-
-  - debug:
-      var: result
-</code></pre><p>run with command:</p>
-<pre tabindex="0"><code>ansible-playbook psql.yml
-</code></pre><p>Referensi:</p>
-<ul>
-<li><a href="https://docs.ansible.com/ansible/latest/modules/postgresql_query_module.html">https://docs.ansible.com/ansible/latest/modules/postgresql_query_module.html</a></li>
-<li><a href="https://github.com/elmarx/ansible-mysql-query">https://github.com/elmarx/ansible-mysql-query</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/ansible/">ansible</a>, <a href="https://blog.indonesiadot.com/tags/postgresql/">postgresql</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/06/30/postgresql-tips/">Postgresql tips</a></h1>
-        <span class="post-date">Jun 30, 2020</span>
-	<h2 id="postgresql-export-and-import-to-mysql">Postgresql export and import to mysql</h2>
-<p>di server postgresql jalankan command berikut untuk export:</p>
-<pre tabindex="0"><code>#pg_dump --verbose --schema-only --table=xx_user --db=test --file=/tmp/montower.sql
-pg_dump --verbose --schema-only --db=montower --file=/tmp/montower.sql
-
-psql -U namauserpsql montower
-copy xx_user to &#39;/tmp/hosts.txt&#39; with (delimiter &#39;,&#39;);
-</code></pre><p>di server mysql jalankan command berikut untuk import:</p>
-<pre tabindex="0"><code>mysql --local-infile
-create database montower;
-use montower;
-#load data local infile &#39;/home/postgres/user.txt&#39; into table xx_user fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;;
-load data local infile &#39;/tmp/montower.sql&#39; fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;;
-load data local infile &#39;/tmp/hosts.txt&#39; into table hosts fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;;
-</code></pre><p>Referensi:</p>
-<ul>
-<li><a href="https://www.postgresql.org/docs/9.1/backup-dump.html">https://www.postgresql.org/docs/9.1/backup-dump.html</a></li>
-<li><a href="https://www.programmersought.com/article/23102305281/">https://www.programmersought.com/article/23102305281/</a></li>
-<li><a href="https://stackoverflow.com/questions/10762239/mysql-enable-load-data-local-infile">https://stackoverflow.com/questions/10762239/mysql-enable-load-data-local-infile</a></li>
-</ul>
-<h2 id="postgresql-show-data-tables">Postgresql show data tables</h2>
-<ul>
-<li><a href="https://kb.objectrocket.com/postgresql/connect-to-postgresql-and-show-the-table-schema-967">https://kb.objectrocket.com/postgresql/connect-to-postgresql-and-show-the-table-schema-967</a></li>
-</ul>
-<pre tabindex="0"><code>psql -h 10.11.8.16 -U awxtower1
-\c awxtower1db
-\d
-\q
-</code></pre><h2 id="postgresql-create-remote-user-and-database">Postgresql create remote user and database</h2>
-<ul>
-<li><a href="https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/">https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/</a></li>
-</ul>
-<pre tabindex="0"><code>create database awxtower1db;
-create user awxtower1 with encrypted password &#39;awxtower1&#39;;
-grant all privileges on database awxtower1 to awxtower1;
-</code></pre>
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/postgresql/">postgresql</a>, <a href="https://blog.indonesiadot.com/tags/sql/">sql</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
 	 <hr/>
     </div>
   

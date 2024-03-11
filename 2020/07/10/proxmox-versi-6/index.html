@@ -835,6 +835,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -842,7 +850,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -881,15 +889,15 @@
 <p><a href="https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0">https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0</a></p>
 <pre tabindex="0"><code>tmux
 pve5to6
-#make sure it&#39;s ok
+#make sure it's ok
 systemctl stop pve-ha-lrm
 systemctl stop pve-ha-crm
-echo &#34;deb http://download.proxmox.com/debian/corosync-3/ stretch main&#34; &gt; /etc/apt/sources.list.d/corosync3.list
+echo &quot;deb http://download.proxmox.com/debian/corosync-3/ stretch main&quot; &gt; /etc/apt/sources.list.d/corosync3.list
 apt update
 apt dist-upgrade
 systemctl start pve-ha-lrm
 systemctl start pve-ha-crm
-sed -i &#39;s/stretch/buster/g&#39; /etc/apt/sources.list
+sed -i 's/stretch/buster/g' /etc/apt/sources.list
 apt update
 apt dist-upgrade
 rm /etc/apt/sources.list.d/corosync3.list

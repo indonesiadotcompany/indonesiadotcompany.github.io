@@ -15,9 +15,9 @@
       <guid>https://blog.indonesiadot.com/2020/02/28/docker-tips/</guid>
       <description>Docker run example docker run -it alpine /bin/ash Where -i = interactive, -t make tty for the running process, /bin/ash is the command to run.
 docker run &amp;ndash;help
-How to get ip of running docker docker ps docker inspect &amp;lt;containernameorid&amp;gt; docker inspect &amp;lt;containernameorid&amp;gt; | grep &amp;#39;&amp;#34;IPAddress&amp;#34;&amp;#39; | head -n 1 Where head is opossite from tail, man head, man tail
+How to get ip of running docker docker ps docker inspect &amp;lt;containernameorid&amp;gt; docker inspect &amp;lt;containernameorid&amp;gt; | grep &#39;&amp;quot;IPAddress&amp;quot;&#39; | head -n 1 Where head is opossite from tail, man head, man tail
 Ref:
-https://docs.docker.com/engine/security/certificates/ https://docs.docker.com/engine/security/https/ https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container https://rancher.com/swarm/ https://github.com/MoimHossain/docker-viswarm https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host docker with sshd https://gist.</description>
+ https://docs.docker.com/engine/security/certificates/ https://docs.docker.com/engine/security/https/ https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container https://rancher.com/swarm/ https://github.com/MoimHossain/docker-viswarm https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host  docker with sshd https://gist.</description>
     </item>
     
     <item>
@@ -26,11 +26,9 @@ https://docs.docker.com/engine/security/certificates/ https://docs.docker.com/en
       <pubDate>Thu, 20 Feb 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/02/20/ansible-tower-tips-and-trick/</guid>
-      <description>Ansible Tower tips and trick Change admin password awx-manage changepassword admin backup and restore https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html Referensi:
-https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/ Offline ansible tower bundle https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/ wget https://releases.ansible.com/ansible-tower/setup-bundle/ansible-tower-setup-bundle-3.7.2-1.tar.gz tar xzf ansible-tower-setup-bundle-3.7.2-1.tar.gz cd ansible-tower-setup-bundle-3.7.2-1 edit inventory
-yum install yum-utils yum install createrepo mkdir bundle/el7/repos/others cd bundle/el7/repos/others cat ../../base_packages.txt | xargs yumdownloader createrepo . cat &amp;lt;&amp;lt; EOF &amp;gt;&amp;gt; ~/ansible-tower-setup-bundle-3.7.2-1/roles/repos_el/templates/tower_bundle_el7.j2 [others] name=Others baseurl=file://{{ bundle_install_folder }}/others enabled=1 gpgcheck=0 EOF setelah selesai, lalu re-package the bundle
-note:
-ada bbrp paket yg dibutuhkan sebelum menjalankan setup.</description>
+      <description>Ansible Tower tips and trick Change admin password awx-manage changepassword admin backup and restore  https://docs.ansible.com/ansible-tower/latest/html/administration/backup_restore.html  Referensi:
+ https://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html https://mohitepramod.wordpress.com/2019/01/19/ansible-tower-installation/  Offline ansible tower bundle  https://www.ansiblejunky.com/blog/create-complete-offline-ansible-tower-bundle/  wget https://releases.ansible.com/ansible-tower/setup-bundle/ansible-tower-setup-bundle-3.7.2-1.tar.gz tar xzf ansible-tower-setup-bundle-3.7.2-1.tar.gz cd ansible-tower-setup-bundle-3.7.2-1 edit inventory
+yum install yum-utils yum install createrepo mkdir bundle/el7/repos/others cd bundle/el7/repos/others cat ../../base_packages.txt | xargs yumdownloader createrepo . cat &amp;lt;&amp;lt; EOF &amp;gt;&amp;gt; ~/ansible-tower-setup-bundle-3.7.2-1/roles/repos_el/templates/tower_bundle_el7.j2 [others] name=Others baseurl=file://{{ bundle_install_folder }}/others enabled=1 gpgcheck=0 EOF setelah selesai, lalu re-package the bundle</description>
     </item>
     
     <item>
@@ -40,8 +38,7 @@ ada bbrp paket yg dibutuhkan sebelum menjalankan setup.</description>
       
       <guid>https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/</guid>
       <description>harbor install step by step https://goharbor.io/docs/1.10/install-config/
-install docker, docker-compose download https://github.com/goharbor/harbor/releases edit harbor.yml hostname: 10.11.8.111 install ./prepare ./install.sh --with-clair --with-chartmuseum create projects dengan nama os (misalnya untuk menampung operating system) harbor client push edit /etc/docker/daemon.json { &amp;#34;insecure-registries&amp;#34;:[&amp;#34;10.11.8.111&amp;#34;] } systemctl restart docker (hati2 jika ada container yg berjalan akan di stop) docker login 10.11.8.111 docker tag centos:7 10.11.8.111/os/centos:7 docker push 10.11.8.111/os/centos:7 Widya Harbor Container Registry https://widharbor.birau.com/ Referensi:
-https://indonesiadot.com </description>
+ install docker, docker-compose download https://github.com/goharbor/harbor/releases edit harbor.yml  hostname: 10.11.8.111  install  ./prepare ./install.sh --with-clair --with-chartmuseum  create projects dengan nama os (misalnya untuk menampung operating system)  harbor client push  edit /etc/docker/daemon.json  { &amp;quot;insecure-registries&amp;quot;:[&amp;quot;10.11.8.111&amp;quot;] }  systemctl restart docker (hati2 jika ada container yg berjalan akan di stop) docker login 10.11.8.111 docker tag centos:7 10.11.8.111/os/centos:7 docker push 10.11.8.111/os/centos:7  Widya Harbor Container Registry  https://widharbor.</description>
     </item>
     
     <item>
@@ -50,8 +47,8 @@ https://indonesiadot.com </description>
       <pubDate>Wed, 15 Jan 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/01/15/docker-compose-on-linux/</guid>
-      <description>Setup docker curl -fsSL https://get.docker.com/ | sh usermod -aG docker namauser systemctl enable docker systemctl start docker Setup docker-compose sudo curl -L &amp;#34;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;#34; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
-https://docs.docker.com/compose/install/ </description>
+      <description>Setup docker curl -fsSL https://get.docker.com/ | sh usermod -aG docker namauser systemctl enable docker systemctl start docker Setup docker-compose sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose Referensi:
+ https://docs.docker.com/compose/install/  </description>
     </item>
     
     <item>
@@ -60,7 +57,7 @@ https://docs.docker.com/compose/install/ </description>
       <pubDate>Mon, 02 Sep 2019 08:17:33 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/09/02/all-about-kubernetes/</guid>
-      <description>Kubernetes Container runtime with docker # Install Docker CE ## Set up the repository ### Install required packages. yum install yum-utils device-mapper-persistent-data lvm2 ### Add Docker repository. yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo ## Install Docker CE. yum update &amp;amp;&amp;amp; yum install docker-ce-18.06.2.ce ## Create /etc/docker directory. mkdir /etc/docker # Setup daemon. cat &amp;gt; /etc/docker/daemon.json &amp;lt;&amp;lt;EOF { &amp;#34;exec-opts&amp;#34;: [&amp;#34;native.cgroupdriver=systemd&amp;#34;], &amp;#34;log-driver&amp;#34;: &amp;#34;json-file&amp;#34;, &amp;#34;log-opts&amp;#34;: { &amp;#34;max-size&amp;#34;: &amp;#34;100m&amp;#34; }, &amp;#34;storage-driver&amp;#34;: &amp;#34;overlay2&amp;#34;, &amp;#34;storage-opts&amp;#34;: [ &amp;#34;overlay2.override_kernel_check=true&amp;#34; ] } EOF mkdir -p /etc/systemd/system/docker.</description>
+      <description>Kubernetes Container runtime with docker # Install Docker CE ## Set up the repository ### Install required packages. yum install yum-utils device-mapper-persistent-data lvm2 ### Add Docker repository. yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo ## Install Docker CE. yum update &amp;amp;&amp;amp; yum install docker-ce-18.06.2.ce ## Create /etc/docker directory. mkdir /etc/docker # Setup daemon. cat &amp;gt; /etc/docker/daemon.json &amp;lt;&amp;lt;EOF { &amp;quot;exec-opts&amp;quot;: [&amp;quot;native.cgroupdriver=systemd&amp;quot;], &amp;quot;log-driver&amp;quot;: &amp;quot;json-file&amp;quot;, &amp;quot;log-opts&amp;quot;: { &amp;quot;max-size&amp;quot;: &amp;quot;100m&amp;quot; }, &amp;quot;storage-driver&amp;quot;: &amp;quot;overlay2&amp;quot;, &amp;quot;storage-opts&amp;quot;: [ &amp;quot;overlay2.override_kernel_check=true&amp;quot; ] } EOF mkdir -p /etc/systemd/system/docker.</description>
     </item>
     
     <item>
@@ -70,7 +67,7 @@ https://docs.docker.com/compose/install/ </description>
       
       <guid>https://blog.indonesiadot.com/2018/07/08/docker-registry-docker-private-repository/</guid>
       <description>Ref:
-https://docs.docker.com/registry/deploying/ https://github.com/sky-uk/cleanup-docker-registry https://github.com/burnettk/delete-docker-registry-image https://stackoverflow.com/questions/29802202/docker-registry-2-0-how-to-delete-unused-images https://gist.github.com/PieterScheffers/63e4c2fd5553af8a35101b5e868a811e (Start docker registry with letsencrypt certificates (Linux Ubuntu)) </description>
+ https://docs.docker.com/registry/deploying/ https://github.com/sky-uk/cleanup-docker-registry https://github.com/burnettk/delete-docker-registry-image https://stackoverflow.com/questions/29802202/docker-registry-2-0-how-to-delete-unused-images https://gist.github.com/PieterScheffers/63e4c2fd5553af8a35101b5e868a811e (Start docker registry with letsencrypt certificates (Linux Ubuntu))  </description>
     </item>
     
   </channel>

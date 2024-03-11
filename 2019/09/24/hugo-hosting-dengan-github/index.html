@@ -835,6 +835,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -842,7 +850,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -875,7 +883,7 @@ cd tpinews
 touch .gitignore
 git init
 git add .
-git commit -m &#39;komat kamit awal&#39;
+git commit -m 'komat kamit awal'
 git remote add origin https://tpinews.github.io.git
 git push origin master
 
@@ -885,7 +893,7 @@ cp -r /path/kumpulanthemeshugo/travelify themes/
 cp -r themes/travelify/exampleSite/* .
 cp /path/scripts/push-deploy.sh .
 git add .
-git commit -m &#39;komit hugo&#39;
+git commit -m 'komit hugo'
 git push origin hugo
 
 git submodule add -b master https://tpinews.github.io.git public
@@ -897,34 +905,34 @@ git branch -d master
 <pre tabindex="0"><code>#!/bin/sh
 # If a command fails then the deploy stops
 set -e
-printf &#34;\033[0;32mPush to branch hugo...\033[0m\n&#34;
+printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
 git add .
-msg=&#34;rebuilding site $(date)&#34;
-if [ -n &#34;$*&#34; ]; then
- msg=&#34;$*&#34;
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+ msg=&quot;$*&quot;
 fi
-git commit -m &#34;$msg&#34;
+git commit -m &quot;$msg&quot;
 git push origin hugo
 
-printf &#34;\033[0;32mDeploy public hugo to branch master...\033[0m\n&#34;
+printf &quot;\033[0;32mDeploy public hugo to branch master...\033[0m\n&quot;
 HUGO_ENV=production hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
 cd public
 git add .
-msg=&#34;rebuilding site $(date)&#34;
-if [ -n &#34;$*&#34; ]; then
-        msg=&#34;$*&#34;
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+        msg=&quot;$*&quot;
 fi
-git commit -m &#34;$msg&#34;
+git commit -m &quot;$msg&quot;
 git push origin master
 
-printf &#34;\033[0;32mPush to branch hugo...\033[0m\n&#34;
+printf &quot;\033[0;32mPush to branch hugo...\033[0m\n&quot;
 cd ..
 git add .
-msg=&#34;rebuilding site $(date)&#34;
-if [ -n &#34;$*&#34; ]; then
-        msg=&#34;$*&#34;
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+        msg=&quot;$*&quot;
 fi
-git commit -m &#34;$msg&#34;
+git commit -m &quot;$msg&quot;
 git push origin hugo
 </code></pre><p>Note:</p>
 <p>Untuk lebih mudah tidak perlu memasukan password, bisa di buat dari menu settings account github, lalu pilih menu sebelah kiri bawah bagian Developer settings, lalu Personal access tokens dan generate new token.</p>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.106.0">
+	<meta name="generator" content="Hugo 0.92.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -836,6 +836,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -843,7 +851,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -868,6 +876,54 @@
 <div class="post">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/03/05/python-tips/">Python Tips</a></h1>
+        <span class="post-date">Mar 5, 2020</span>
+	<h2 id="module-python-web-server">module python web server</h2>
+<pre tabindex="0"><code>python -m SimpleHTTPServer 8001
+python -m SimpleHTTPServer 8002
+</code></pre><ul>
+<li><a href="https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver">https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver</a></li>
+<li><a href="https://www.pcsuggest.com/best-lightweight-web-server-linux/">https://www.pcsuggest.com/best-lightweight-web-server-linux/</a></li>
+</ul>
+<h2 id="multiple-python-version-on-centos-6">multiple python version on centos 6</h2>
+<p><a href="https://stackoverflow.com/questions/20842732/libpython2-7-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory">https://stackoverflow.com/questions/20842732/libpython2-7-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory</a>
+<a href="https://www.2daygeek.com/install-python-3-on-centos-6/">https://www.2daygeek.com/install-python-3-on-centos-6/</a></p>
+<pre tabindex="0"><code>yum install centos-release-scl -y
+yum --enablerepo='centos-sclo-rh' install python27-python -y
+echo &quot;/opt/rh/python27/root/usr/lib64&quot; &gt;&gt; /etc/ld.so.conf
+ldconfig
+/opt/rh/python27/root/usr/bin/python --version
+yum --enablerepo='centos-sclo-rh' install rh-python36-python
+/opt/rh/rh-python36/root/usr/bin/python --version
+</code></pre>
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/python/">python</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/28/yum-tips/">Yum tips</a></h1>
+        <span class="post-date">Feb 28, 2020</span>
+	<h2 id="yum-install-specific-version">Yum install specific version</h2>
+<pre tabindex="0"><code>yum list docker-ce.x86_64 --showduplicates
+yum list docker-ce.x86_64 --showduplicates | sort -r
+yum list docker-ce.x86_64 --showduplicates | sort -r | grep 18.09
+</code></pre><ul>
+<li><a href="https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos">https://stackoverflow.com/questions/36545206/how-to-install-specific-version-of-docker-on-centos</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/yum/">yum</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/02/28/docker-tips/">Docker Tips</a></h1>
         <span class="post-date">Feb 28, 2020</span>
 	<h2 id="docker-run-example">Docker run example</h2>
@@ -877,7 +933,7 @@
 <h2 id="how-to-get-ip-of-running-docker">How to get ip of running docker</h2>
 <pre tabindex="0"><code>docker ps
 docker inspect &lt;containernameorid&gt;
-docker inspect &lt;containernameorid&gt; | grep &#39;&#34;IPAddress&#34;&#39; | head -n 1
+docker inspect &lt;containernameorid&gt; | grep '&quot;IPAddress&quot;' | head -n 1
 </code></pre><p>Where head is opossite from tail, man head, man tail</p>
 <p>Ref:</p>
 <ul>
@@ -894,14 +950,14 @@ docker inspect &lt;containernameorid&gt; | grep &#39;&#34;IPAddress&#34;&#39; | 
 <pre tabindex="0"><code>FROM centos
 
 RUN yum -y install openssh-server
-RUN ssh-keygen -q -N &#34;&#34; -t dsa -f /etc/ssh/ssh_host_ecdsa_key &amp;&amp; ssh-keygen -q -N &#34;&#34; -t rsa -f /etc/ssh/ssh_host_rsa_key
+RUN ssh-keygen -q -N &quot;&quot; -t dsa -f /etc/ssh/ssh_host_ecdsa_key &amp;&amp; ssh-keygen -q -N &quot;&quot; -t rsa -f /etc/ssh/ssh_host_rsa_key
 RUN ssh-keygen -A
-RUN echo &#39;root:r4hasia&#39; | chpasswd
-RUN sed -i &#39;s/PermitRootLogin prohibit-password/PermitRootLogin yes/&#39; /etc/ssh/sshd_config
+RUN echo 'root:r4hasia' | chpasswd
+RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 ADD id_rsa.pub /root/.ssh/authorized_keys
 
 EXPOSE 22
-CMD [&#34;/usr/sbin/sshd&#34;, &#34;-D&#34;]
+CMD [&quot;/usr/sbin/sshd&quot;, &quot;-D&quot;]
 </code></pre><p>Then build to image using this command:</p>
 <pre tabindex="0"><code>docker build -t centossh ./
 docker images
@@ -982,8 +1038,8 @@ docker run --name centos810 --net docnet --ip 172.1.0.10 --rm -d centossh
       nameservers:
         addresses: [192.168.0.1, 8.8.8.8]
       access-points:
-        &#34;network_ssid_name&#34;:
-          password: &#34;**********&#34;
+        &quot;network_ssid_name&quot;:
+          password: &quot;**********&quot;
 </code></pre><h2 id="using-multiple-addresses-on-a-single-interface">Using multiple addresses on a single interface</h2>
 <p>The addresses key can take a list of addresses to assign to an interface:</p>
 <pre tabindex="0"><code>network:
@@ -1060,7 +1116,7 @@ bash unifi-5.12.35.sh
 3. Untuk video baru, klik set languages, lalu confirm
 4. Klik tombol ADD / Tambahkan subtitel atau CC baru.
 </code></pre><h3 id="add-watermark">Add watermark</h3>
-<pre tabindex="0"><code>ffmpeg -i input.mp4 -i watermark.png -filter_complex &#34;overlay=1500:1000&#34; output.mp4
+<pre tabindex="0"><code>ffmpeg -i input.mp4 -i watermark.png -filter_complex &quot;overlay=1500:1000&quot; output.mp4
 </code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.nesabamedia.com/cara-membuat-subtitle-video-youtube/">https://www.nesabamedia.com/cara-membuat-subtitle-video-youtube/</a></li>
@@ -1146,73 +1202,6 @@ EOF
 <li>install openldap-servers on centos (available at this blog)</li>
 <li>configure ansible tower to add authentication to ldap server as describe on the video</li>
 </ol>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/harbor/">harbor</a>, <a href="https://blog.indonesiadot.com/tags/container/">container</a>, <a href="https://blog.indonesiadot.com/tags/registry/">registry</a>, <a href="https://blog.indonesiadot.com/tags/docker/">docker</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/selinux-web-directory-permission/">Selinux Web Directory Permission</a></h1>
-        <span class="post-date">Jan 20, 2020</span>
-	<h2 id="selinux-web-directory-permission">Selinux Web Directory Permission</h2>
-<p>Di linux centos / redhat biasanya kita berhadapan dengan selinux, dan kadang mengalami kendala seperti web directory yang di buat selain di /var/www/html, misal di /webserver itu tidak bisa di akses meski sudah diarahkan root location / document root ke /webserver.</p>
-<p>adapun command nya sebelum bisa diakses yaitu:</p>
-<pre tabindex="0"><code>chcon -Rv --type=httpd_sys_rw_content_t /webserver
-</code></pre><p>Referensi:</p>
-<ul>
-<li><a href="https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/">https://www.svnlabs.com/blogs/centos-7-selinux-apache-php-writeaccess-permission/</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/selinux/">selinux</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/permission/">permission</a>, <a href="https://blog.indonesiadot.com/tags/redhat/">redhat</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2020/01/20/harbor-container-registry/">Harbor Container Registry</a></h1>
-        <span class="post-date">Jan 20, 2020</span>
-	<h2 id="harbor-install-step-by-step">harbor install step by step</h2>
-<p><a href="https://goharbor.io/docs/1.10/install-config/">https://goharbor.io/docs/1.10/install-config/</a></p>
-<ul>
-<li>install docker, docker-compose</li>
-<li>download <a href="https://github.com/goharbor/harbor/releases">https://github.com/goharbor/harbor/releases</a></li>
-<li>edit harbor.yml</li>
-</ul>
-<pre tabindex="0"><code>hostname: 10.11.8.111
-</code></pre><ul>
-<li>install</li>
-</ul>
-<pre tabindex="0"><code>./prepare
-./install.sh --with-clair --with-chartmuseum
-</code></pre><ul>
-<li>create projects dengan nama os (misalnya untuk menampung operating system)</li>
-</ul>
-<h2 id="harbor-client-push">harbor client push</h2>
-<ul>
-<li>edit /etc/docker/daemon.json</li>
-</ul>
-<pre tabindex="0"><code>{ &#34;insecure-registries&#34;:[&#34;10.11.8.111&#34;] }
-</code></pre><ul>
-<li>systemctl restart docker (hati2 jika ada container yg berjalan akan di stop)</li>
-<li>docker login 10.11.8.111</li>
-<li>docker tag centos:7 10.11.8.111/os/centos:7</li>
-<li>docker push 10.11.8.111/os/centos:7</li>
-</ul>
-<h2 id="widya-harbor-container-registry">Widya Harbor Container Registry</h2>
-<ul>
-<li><a href="https://widharbor.birau.com/">https://widharbor.birau.com/</a></li>
-</ul>
-<p>Referensi:</p>
-<ul>
-<li><a href="https://indonesiadot.com">https://indonesiadot.com</a></li>
-</ul>
 
 	<hr/>
 	

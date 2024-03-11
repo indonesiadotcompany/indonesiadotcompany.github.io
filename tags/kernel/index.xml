@@ -15,7 +15,7 @@
       <guid>https://blog.indonesiadot.com/2019/10/15/kernel-hardening-tips/</guid>
       <description>Disable and blacklist Linux modules Misal kita ingin blacklist module firewire_core, maka kita buat file /etc/modprobe.d/blacklist-firewire.conf yang isinya
 blacklist firewire_core install firewire_core /bin/true Referensi:
-CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/ </description>
+ CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v2.2.0.pdf https://linux-audit.com/kernel-hardening-disable-and-blacklist-linux-modules/  </description>
     </item>
     
   </channel>

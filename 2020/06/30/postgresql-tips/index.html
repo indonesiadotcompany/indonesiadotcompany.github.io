@@ -835,6 +835,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -842,7 +850,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -870,14 +878,14 @@
 pg_dump --verbose --schema-only --db=montower --file=/tmp/montower.sql
 
 psql -U namauserpsql montower
-copy xx_user to &#39;/tmp/hosts.txt&#39; with (delimiter &#39;,&#39;);
+copy xx_user to '/tmp/hosts.txt' with (delimiter ',');
 </code></pre><p>di server mysql jalankan command berikut untuk import:</p>
 <pre tabindex="0"><code>mysql --local-infile
 create database montower;
 use montower;
-#load data local infile &#39;/home/postgres/user.txt&#39; into table xx_user fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;;
-load data local infile &#39;/tmp/montower.sql&#39; fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;;
-load data local infile &#39;/tmp/hosts.txt&#39; into table hosts fields terminated by &#39;,&#39; lines terminated by &#39;\n&#39;;
+#load data local infile '/home/postgres/user.txt' into table xx_user fields terminated by ',' lines terminated by '\n';
+load data local infile '/tmp/montower.sql' fields terminated by ',' lines terminated by '\n';
+load data local infile '/tmp/hosts.txt' into table hosts fields terminated by ',' lines terminated by '\n';
 </code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://www.postgresql.org/docs/9.1/backup-dump.html">https://www.postgresql.org/docs/9.1/backup-dump.html</a></li>
@@ -897,7 +905,7 @@ load data local infile &#39;/tmp/hosts.txt&#39; into table hosts fields terminat
 <li><a href="https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/">https://www.cyberciti.biz/faq/howto-add-postgresql-user-account/</a></li>
 </ul>
 <pre tabindex="0"><code>create database awxtower1db;
-create user awxtower1 with encrypted password &#39;awxtower1&#39;;
+create user awxtower1 with encrypted password 'awxtower1';
 grant all privileges on database awxtower1 to awxtower1;
 </code></pre>
 </div>

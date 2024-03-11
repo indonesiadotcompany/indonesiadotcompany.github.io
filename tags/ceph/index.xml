@@ -13,8 +13,7 @@
       <pubDate>Thu, 12 Mar 2020 18:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/03/12/ceph-tips/</guid>
-      <description>remove osd systemctl stop ceph-osd.target systemctl stop ceph-osd@0 ceph osd out 0 ceph osd down 0 ceph osd destroy 0 ceph osd destroy 0 --yes-i-really-mean-it ceph osd rm 0 ceph osd crush rm osd.0 ceph auth del osd.0 ceph-volume lvm zap /dev/sdX --destroy https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87 https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/ all about pg_num https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox ceph one / single node ceph osd getcrushmap -o crush_map_compressed crushtool -d crush_map_compressed -o crush_map_decompressed vi crush_map_decompressed lalu cari bagian:
-step chooseleaf firstn 0 type host rubah menjadi:</description>
+      <description>remove osd systemctl stop ceph-osd.target systemctl stop ceph-osd@0 ceph osd out 0 ceph osd down 0 ceph osd destroy 0 ceph osd destroy 0 --yes-i-really-mean-it ceph osd rm 0 ceph osd crush rm osd.0 ceph auth del osd.0 ceph-volume lvm zap /dev/sdX --destroy  https://medium.com/@george.shuklin/how-to-remove-osd-from-ceph-cluster-b4c37cc0ec87 https://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/  all about pg_num  https://www.jamescoyle.net/how-to/1213-ceph-storage-on-proxmox  ceph one / single node ceph osd getcrushmap -o crush_map_compressed crushtool -d crush_map_compressed -o crush_map_decompressed vi crush_map_decompressed lalu cari bagian:</description>
     </item>
     
   </channel>

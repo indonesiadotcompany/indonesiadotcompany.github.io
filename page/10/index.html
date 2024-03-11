@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.106.0">
+	<meta name="generator" content="Hugo 0.92.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -836,6 +836,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -843,7 +851,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -866,6 +874,65 @@
 
 
 <div class="post">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/31/centos-syslog-server/">Centos Syslog Server</a></h1>
+        <span class="post-date">Oct 31, 2019</span>
+	<h2 id="setup-syslog-server-and-setup-syslog-client-to-it-on-centos-7">Setup Syslog Server and setup syslog client to it on Centos 7</h2>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://www.svennd.be/setup-central-syslog-server-on-centos-7/">https://www.svennd.be/setup-central-syslog-server-on-centos-7/</a></li>
+<li><a href="https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/">https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/</a></li>
+<li><a href="https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html">https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-syslog-server-on-centos-7-rhel-7.html</a></li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/syslog/">syslog</a>, <a href="https://blog.indonesiadot.com/tags/client/">client</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/31/regex-/-regexp-reference/">Regex / Regexp Reference</a></h1>
+        <span class="post-date">Oct 31, 2019</span>
+	<h2 id="regex-case-insensitive">Regex Case insensitive</h2>
+<p>(?i)</p>
+<p>Referensi:</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean">https://stackoverflow.com/questions/22961535/what-does-i-and-in-this-regex-mean</a></li>
+<li><a href="https://regex101.com/r/hE9gB4/1">https://regex101.com/r/hE9gB4/1</a></li>
+<li><a href="https://regexr.com/3f4vo">https://regexr.com/3f4vo</a></li>
+</ul>
+<h2 id="regex-to-match-string-containing-two-names">Regex to match string containing two names</h2>
+<p>###Explanation of command that i am going to write:-</p>
+<p>. means any character, digit can come in place of .</p>
+<ul>
+<li>means zero or more occurrences of thing written just previous to it.</li>
+</ul>
+<p>| means &lsquo;or&rsquo;.</p>
+<p>So,</p>
+<pre tabindex="0"><code>james.*jack
+</code></pre><p>would search james , then any number of character until jack comes.</p>
+<p>Since you want either jack.*james or james.*jack</p>
+<p>Hence Command:</p>
+<p>jack.*james|james.*jack</p>
+<p>Ref:</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/4389644/regex-to-match-string-containing-two-names-in-any-order">https://stackoverflow.com/questions/4389644/regex-to-match-string-containing-two-names-in-any-order</a></li>
+</ul>
+<h2 id="regex-not-contain-substring--a-word">Regex not contain substring / a word</h2>
+<p>Ref:</p>
+<p><a href="https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word">https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word</a></p>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/regex/">regex</a>, <a href="https://blog.indonesiadot.com/tags/regexp/">regexp</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
+	 <hr/>
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/29/linux-os-hardening/">Linux OS Hardening</a></h1>
@@ -930,8 +997,8 @@
     that: mount.size_available &gt; mount.size_total|float * 0.4
     msg: disk space has reached 60% threshold
   vars:
-    mountname: &#39;/&#39;
-    mount: &#34;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&#34;
+    mountname: '/'
+    mount: &quot;{{ ansible_mounts | selectattr('mount','equalto',mountname) | list | first }}&quot;
 </code></pre><p>atau</p>
 <pre tabindex="0"><code>- name: Ensure that free space on the tested volume is greater than 15%
   assert:
@@ -939,16 +1006,16 @@
       - mount.size_available &gt; mount.size_total|float * 0.15
     msg: Disk space has reached 85% threshold
   vars:
-    mount: &#34;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,item.mount) | list | first }}&#34;
+    mount: &quot;{{ ansible_mounts | selectattr('mount','equalto',item.mount) | list | first }}&quot;
   with_items:
-    - &#34;{{ ansible_mounts }}&#34;
+    - &quot;{{ ansible_mounts }}&quot;
 </code></pre><p>atau</p>
-<pre tabindex="0"><code>name: &#39;Ensure that free space on {{ mountname }} is grater than 30%&#39;
+<pre tabindex="0"><code>name: 'Ensure that free space on {{ mountname }} is grater than 30%'
 assert:
   that: item.size_available &gt; item.size_total|float * 0.3
-  msg: &#39;disk space has reached 70% threshold&#39;
+  msg: 'disk space has reached 70% threshold'
 when: item.mount == mountname
-with_items: &#39;{{ ansible_mounts }}&#39;
+with_items: '{{ ansible_mounts }}'
 </code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/44077630/ansible-to-check-diskspace-for-mounts-mentioned-as-variable">https://stackoverflow.com/questions/44077630/ansible-to-check-diskspace-for-mounts-mentioned-as-variable</a></li>
@@ -964,7 +1031,7 @@ with_items: &#39;{{ ansible_mounts }}&#39;
     path: /etc/
     dest: /data/backups/etc-{{ date }}.tgz
   vars:
-    date: &#34;{{ lookup(&#39;pipe&#39;, &#39;date +%Y%m%d-%H%M&#39;) }}&#34;
+    date: &quot;{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}&quot;
 </code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://serverfault.com/questions/728662/ansible-manipulate-file-with-a-date-format">https://serverfault.com/questions/728662/ansible-manipulate-file-with-a-date-format</a></li>
@@ -1217,7 +1284,7 @@ EOM
 sudo yum install google-cloud-sdk
 gcloud init
 </code></pre><p>Berikut langkah yang dilakukan di OS ubuntu / debian:</p>
-<pre tabindex="0"><code>echo &#34;deb http://packages.cloud.google.com/apt cloud-sdk main&#34; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+<pre tabindex="0"><code>echo &quot;deb http://packages.cloud.google.com/apt cloud-sdk main&quot; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk
 gcloud init
@@ -1227,10 +1294,10 @@ gcloud init
 </code></pre><p>Berikut script 1-gcp-centos.sh</p>
 <pre tabindex="0"><code>#!/bin/bash
 
-if [ -z &#34;$1&#34; ]; then
+if [ -z &quot;$1&quot; ]; then
  NAMA=$1
- while [ -z &#34;$NAMA&#34; ]; do
-  echo &#34;masukan nama vm:&#34;
+ while [ -z &quot;$NAMA&quot; ]; do
+  echo &quot;masukan nama vm:&quot;
   read NAMA
  done
  # Create GCE VM with disk storage
@@ -1295,63 +1362,6 @@ install firewire_core /bin/true
 	
 	 Tags:
 	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/kernel/">kernel</a>, <a href="https://blog.indonesiadot.com/tags/security/">security</a>, <a href="https://blog.indonesiadot.com/tags/hardening/">hardening</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/android-usb-file-transfer/">Android USB File Transfer</a></h1>
-        <span class="post-date">Oct 14, 2019</span>
-	<h2 id="android-usb-file-transfer">Android USB File Transfer</h2>
-<pre tabindex="0"><code>add-apt-repository ppa:webupd8team/unstable
-apt update
-apt-get install go-mtpfs
-mkdir /media/MyAndroid
-</code></pre><h3 id="mount">mount</h3>
-<pre tabindex="0"><code>go-mtpfs /media/MyAndroid
-</code></pre><h3 id="unmount">unmount</h3>
-<pre tabindex="0"><code>fusermount -u /media/MyAndroid
-</code></pre><p>or you can use softdatacable from damiapp at play store, after install the software then you can start the computer transfer, it will open <a href="ftp://ip.of.android:8888">ftp://ip.of.android:8888</a>, so you can access from pc via ftp client like filezilla.</p>
-<p>Referensi:</p>
-<ul>
-<li><a href="http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html">http://www.webupd8.org/2012/12/how-to-mount-android-40-ubuntu-go-mtpfs.html</a></li>
-<li><a href="https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu">https://askubuntu.com/questions/626941/how-to-access-my-androids-files-using-wi-fi-in-ubuntu</a></li>
-</ul>
-
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/tips/">tips</a>, <a href="https://blog.indonesiadot.com/tags/android/">android</a>, <a href="https://blog.indonesiadot.com/tags/file/">file</a>, <a href="https://blog.indonesiadot.com/tags/mtp/">mtp</a>
-	 <hr/>
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://blog.indonesiadot.com/2019/10/14/centos-7-firewalld/">Centos 7 Firewalld</a></h1>
-        <span class="post-date">Oct 14, 2019</span>
-	<h2 id="firewalld-masquerade">Firewalld masquerade</h2>
-<ul>
-<li><a href="https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/">https://myredhatcertification.wordpress.com/2015/04/26/firewalld-masquerade-forwarding-transparent-proxy/</a></li>
-</ul>
-<pre tabindex="0"><code>firewall-cmd --get-active-zones
-firewall-cmd --list-all --zone=public
-firewall-cmd --add-masquerade --zone=public --permanent
-firewall-cmd --reload
-firewall-cmd --list-all --zone=public
-</code></pre><h2 id="open-port-for-specific-ip-address">Open port for specific ip address</h2>
-<ul>
-<li><a href="https://serverfault.com/questions/684602/how-to-open-port-for-a-specific-ip-address-with-firewall-cmd-on-centos">https://serverfault.com/questions/684602/how-to-open-port-for-a-specific-ip-address-with-firewall-cmd-on-centos</a></li>
-<li><a href="https://www.liquidweb.com/kb/an-introduction-to-firewalld/">https://www.liquidweb.com/kb/an-introduction-to-firewalld/</a></li>
-</ul>
-<pre tabindex="0"><code>firewall-cmd --permanent --zone=public --add-rich-rule=&#39;
-  rule family=&#34;ipv4&#34;
-  source address=&#34;1.2.3.4/32&#34;
-  port protocol=&#34;tcp&#34; port=&#34;4567&#34; accept&#39;
-</code></pre>
-	<hr/>
-	
-	
-	 Tags:
-	  <a href="https://blog.indonesiadot.com/tags/linux/">linux</a>, <a href="https://blog.indonesiadot.com/tags/server/">server</a>, <a href="https://blog.indonesiadot.com/tags/centos/">centos</a>, <a href="https://blog.indonesiadot.com/tags/firewalld/">firewalld</a>, <a href="https://blog.indonesiadot.com/tags/masquerade/">masquerade</a>, <a href="https://blog.indonesiadot.com/tags/nat/">nat</a>
 	 <hr/>
     </div>
   

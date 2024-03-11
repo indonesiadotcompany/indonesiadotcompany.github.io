@@ -16,7 +16,7 @@
       <description>Pembuatan virtual machine di GCP / Google Cloud Platform menggunakan gcloud command line bermanfaat untuk mempermudah pembuatan VM tanpa harus mengakses web browser.
 Berikut langkah nya yang dilakukan di OS Centos 7:
 sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &amp;lt;&amp;lt; EOM [google-cloud-sdk] name=Google Cloud SDK baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64 enabled=1 gpgcheck=1 repo_gpgcheck=1 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg EOM sudo yum install google-cloud-sdk gcloud init Berikut langkah yang dilakukan di OS ubuntu / debian:
-echo &amp;#34;deb http://packages.cloud.google.com/apt cloud-sdk main&amp;#34; | sudo tee -a /etc/apt/sources.</description>
+echo &amp;quot;deb http://packages.cloud.google.com/apt cloud-sdk main&amp;quot; | sudo tee -a /etc/apt/sources.</description>
     </item>
     
     <item>
@@ -25,8 +25,8 @@ echo &amp;#34;deb http://packages.cloud.google.com/apt cloud-sdk main&amp;#34; |
       <pubDate>Mon, 14 Oct 2019 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2019/10/14/magic-of-sed/</guid>
-      <description>Insert every line in linux sed &amp;#39;s/^/apt-get purge -y /&amp;#39; aptwantopurge.txt &amp;gt; aptpurge.txt comment out a line that contain string sed -i &amp;#39;/ 2001 /s/^/#/&amp;#39; file Referensi:
-https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521 https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file </description>
+      <description>Insert every line in linux sed &#39;s/^/apt-get purge -y /&#39; aptwantopurge.txt &amp;gt; aptpurge.txt comment out a line that contain string sed -i &#39;/ 2001 /s/^/#/&#39; file Referensi:
+ https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+line+linux https://stackoverflow.com/questions/4080526/using-sed-to-insert-text-at-the-beginning-of-each-line https://www.google.com/search?q=sed+cheatsheet&amp;amp;oq=sed+cheatsheet https://gist.github.com/widyamedia/c6a14e81375b8c1394f14f6e5d456521 https://stackoverflow.com/questions/24883826/sed-tr-etc-how-to-comment-out-a-line-that-contains-string-in-a-file  </description>
     </item>
     
     <item>
@@ -36,8 +36,8 @@ https://www.google.com/search?q=insert+every+line+linux&amp;amp;oq=insert+every+
       
       <guid>https://blog.indonesiadot.com/2018/02/04/bash-script-tips/</guid>
       <description>Bash scripting cheatsheet Referensi:
-https://devhints.io/bash bash or and How to Use Logical OR &amp;amp; AND in Shell Script with Examples Logical OR &amp;amp; AND operations are very useful where multiple conditions are used in our programs (scripts).
-OR is used between two or multiple conditions. It returns true if any one of conditions returns as true. AND is used between two or multiple conditions. It returns true only if all the conditions returns as true.</description>
+ https://devhints.io/bash  bash or and How to Use Logical OR &amp;amp; AND in Shell Script with Examples Logical OR &amp;amp; AND operations are very useful where multiple conditions are used in our programs (scripts).
+ OR is used between two or multiple conditions. It returns true if any one of conditions returns as true. AND is used between two or multiple conditions. It returns true only if all the conditions returns as true.</description>
     </item>
     
   </channel>

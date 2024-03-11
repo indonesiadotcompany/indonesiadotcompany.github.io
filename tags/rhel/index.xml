@@ -13,8 +13,8 @@
       <pubDate>Thu, 02 Jul 2020 08:17:54 +0700</pubDate>
       
       <guid>https://blog.indonesiadot.com/2020/07/02/redhat-rhel-free-for-developer/</guid>
-      <description>Langkah Download Install Update Referensi:
-https://developers.redhat.com/blog/2016/03/31/no-cost-rhel-developer-subscription-now-available/ https://developers.redhat.com/products/rhel/download https://blog.turbonomic.com/blog/on-technology/deploying-a-red-hat-enterprise-linux-7-rhel7-on-virtualbox </description>
+      <description>Langkah  Download Install Update  Referensi:
+ https://developers.redhat.com/blog/2016/03/31/no-cost-rhel-developer-subscription-now-available/ https://developers.redhat.com/products/rhel/download https://blog.turbonomic.com/blog/on-technology/deploying-a-red-hat-enterprise-linux-7-rhel7-on-virtualbox  </description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@ https://developers.redhat.com/blog/2016/03/31/no-cost-rhel-developer-subscriptio
 SELINUX=enforcing SELINUXTYPE=targeted semanage packages yum provides semanage yum install -y policycoreutils-python semanage list port semanage port -l | grep ssh semanage open ssh on different port add ssh port 1022 at /etc/ssh/sshd_config, and before restart sshd service, add selinux config for new ssh port
 semanage port -a -t ssh_port_t -p tcp 1022 then restart sshd service
 systemctl restart sshd Referensi:
-https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/ </description>
+ https://sharadchhetri.com/2014/10/15/centos-7-rhel-7-change-openssh-port-number-selinux-enabled/  </description>
     </item>
     
   </channel>

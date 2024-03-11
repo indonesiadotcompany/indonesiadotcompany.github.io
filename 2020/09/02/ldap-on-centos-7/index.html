@@ -835,6 +835,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -842,7 +850,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -894,7 +902,7 @@ olcRootPW: {SSHA}d/thexcQUuSfe3rx3gRaEhHpNJ52N8D3
 <pre tabindex="0"><code>dn: olcDatabase={1}monitor,cn=config
 changetype: modify
 replace: olcAccess
-olcAccess: {0}to * by dn.base=&#34;gidNumber=0+uidNumber=0,cn=peercred,cn=external, cn=auth&#34; read by dn.base=&#34;cn=ldapadm,dc=itzgeek,dc=local&#34; read by * none
+olcAccess: {0}to * by dn.base=&quot;gidNumber=0+uidNumber=0,cn=peercred,cn=external, cn=auth&quot; read by dn.base=&quot;cn=ldapadm,dc=itzgeek,dc=local&quot; read by * none
 </code></pre><p>then run</p>
 <pre tabindex="0"><code>ldapmodify -Y EXTERNAL  -H ldapi:/// -f monitor.ldif
 </code></pre><h3 id="setup-ldap-database">setup ldap database</h3>
@@ -922,7 +930,7 @@ dn: ou=Group,dc=itzgeek,dc=local
 objectClass: organizationalUnit
 ou: Group
 </code></pre><p>build the directory structure</p>
-<pre tabindex="0"><code>ldapadd -x -W -D &#34;cn=ldapadm,dc=itzgeek,dc=local&#34; -f base.ldif
+<pre tabindex="0"><code>ldapadd -x -W -D &quot;cn=ldapadm,dc=itzgeek,dc=local&quot; -f base.ldif
 </code></pre><p>create ldap user, create file raj.ldif</p>
 <pre tabindex="0"><code>dn: uid=raj,ou=People,dc=itzgeek,dc=local
 objectClass: top
@@ -942,13 +950,13 @@ shadowMin: 0
 shadowMax: 99999
 shadowWarning: 7
 </code></pre><p>create it</p>
-<pre tabindex="0"><code>ldapadd -x -W -D &#34;cn=ldapadm,dc=itzgeek,dc=local&#34; -f raj.ldif
+<pre tabindex="0"><code>ldapadd -x -W -D &quot;cn=ldapadm,dc=itzgeek,dc=local&quot; -f raj.ldif
 </code></pre><p>assign password to the user</p>
-<pre tabindex="0"><code>ldappasswd -s password123 -W -D &#34;cn=ldapadm,dc=itzgeek,dc=local&#34; -x &#34;uid=raj,ou=People,dc=itzgeek,dc=local&#34;
+<pre tabindex="0"><code>ldappasswd -s password123 -W -D &quot;cn=ldapadm,dc=itzgeek,dc=local&quot; -x &quot;uid=raj,ou=People,dc=itzgeek,dc=local&quot;
 </code></pre><p>verify ldap entries</p>
 <pre tabindex="0"><code>ldapsearch -x cn=raj -b dc=itzgeek,dc=local
 </code></pre><p>to delete the user</p>
-<pre tabindex="0"><code>ldapdelete -W -D &#34;cn=ldapadm,dc=itzgeek,dc=local&#34; &#34;uid=raj,ou=People,dc=itzgeek,dc=local&#34;
+<pre tabindex="0"><code>ldapdelete -W -D &quot;cn=ldapadm,dc=itzgeek,dc=local&quot; &quot;uid=raj,ou=People,dc=itzgeek,dc=local&quot;
 </code></pre><h3 id="enable-ldap-logging">enable ldap logging</h3>
 <p>add below line to /etc/rsyslog.conf</p>
 <pre tabindex="0"><code>local4.* /var/log/ldap.log
@@ -961,7 +969,7 @@ shadowWarning: 7
 <li><a href="https://tylersguides.com/guides/configuring-openldap-authentication-centos-7/">https://tylersguides.com/guides/configuring-openldap-authentication-centos-7/</a></li>
 </ul>
 <pre tabindex="0"><code>yum install -y openldap-clients nss-pam-ldapd
-authconfig --enableldap --enableldapauth --ldapserver=192.168.1.10 --ldapbasedn=&#34;dc=itzgeek,dc=local&#34; --enablemkhomedir --update
+authconfig --enableldap --enableldapauth --ldapserver=192.168.1.10 --ldapbasedn=&quot;dc=itzgeek,dc=local&quot; --enablemkhomedir --update
 systemctl restart  nslcd
 </code></pre><h3 id="verify-ldap-login">verify ldap login</h3>
 <pre tabindex="0"><code>getent passwd raj
@@ -978,12 +986,12 @@ yum -y install phpldapadmin
     Require all granted
   &lt;/IfModule&gt;
 </code></pre><h3 id="configure-phpldapadmin">configure phpldapadmin</h3>
-<pre tabindex="0"><code>$servers-&gt;setValue(&#39;server&#39;,&#39;host&#39;,&#39;127.0.0.1&#39;);
-$servers-&gt;setValue(&#39;server&#39;,&#39;port&#39;,389);
-$servers-&gt;setValue(&#39;login&#39;,&#39;bind_id&#39;,&#39;cn=ldapadm,dc=itzgeek,dc=local&#39;);
-$servers-&gt;setValue(&#39;appearance&#39;,&#39;password_hash&#39;,&#39;ssha&#39;);
-$servers-&gt;setValue(&#39;login&#39;,&#39;attr&#39;,&#39;dn&#39;);
-//$servers-&gt;setValue(&#39;login&#39;,&#39;attr&#39;,&#39;uid&#39;);
+<pre tabindex="0"><code>$servers-&gt;setValue('server','host','127.0.0.1');
+$servers-&gt;setValue('server','port',389);
+$servers-&gt;setValue('login','bind_id','cn=ldapadm,dc=itzgeek,dc=local');
+$servers-&gt;setValue('appearance','password_hash','ssha');
+$servers-&gt;setValue('login','attr','dn');
+//$servers-&gt;setValue('login','attr','uid');
 </code></pre><p>then start httpd</p>
 <pre tabindex="0"><code>systemctl restart httpd
 </code></pre>

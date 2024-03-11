@@ -835,6 +835,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -842,7 +850,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -888,8 +896,8 @@ find . -type f -print -delete
 <pre tabindex="0"><code>docker images
 docker images | grep widharbor.birau.com
 docker images | grep widharbor.birau.com | wc -l
-docker images | grep widharbor.birau.com | awk &#39;{ print $1 &#34;:&#34; $2 }&#39;
-docker rmi `docker images | grep widharbor.birau.com | awk &#39;{ print $1 &#34;:&#34; $2 }&#39;`
+docker images | grep widharbor.birau.com | awk '{ print $1 &quot;:&quot; $2 }'
+docker rmi `docker images | grep widharbor.birau.com | awk '{ print $1 &quot;:&quot; $2 }'`
 </code></pre><ul>
 <li><a href="https://www.linuxtechi.com/awk-command-tutorial-with-examples/">https://www.linuxtechi.com/awk-command-tutorial-with-examples/</a></li>
 </ul>
@@ -909,7 +917,7 @@ losetup /dev/loop11 filesystem.img
 <li><a href="https://itsfoss.com/mount-exfat/">https://itsfoss.com/mount-exfat/</a></li>
 </ul>
 <h2 id="ssh-keygen-non-interactive">ssh-keygen non interactive</h2>
-<pre tabindex="0"><code>ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N &#34;&#34;
+<pre tabindex="0"><code>ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N &quot;&quot;
 </code></pre>
 </div>
 

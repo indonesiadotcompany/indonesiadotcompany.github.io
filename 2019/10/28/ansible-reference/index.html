@@ -835,6 +835,14 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -842,7 +850,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2024. All rights reserved.</p>
   </div>
 </div>
 
@@ -878,8 +886,8 @@
     that: mount.size_available &gt; mount.size_total|float * 0.4
     msg: disk space has reached 60% threshold
   vars:
-    mountname: &#39;/&#39;
-    mount: &#34;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,mountname) | list | first }}&#34;
+    mountname: '/'
+    mount: &quot;{{ ansible_mounts | selectattr('mount','equalto',mountname) | list | first }}&quot;
 </code></pre><p>atau</p>
 <pre tabindex="0"><code>- name: Ensure that free space on the tested volume is greater than 15%
   assert:
@@ -887,16 +895,16 @@
       - mount.size_available &gt; mount.size_total|float * 0.15
     msg: Disk space has reached 85% threshold
   vars:
-    mount: &#34;{{ ansible_mounts | selectattr(&#39;mount&#39;,&#39;equalto&#39;,item.mount) | list | first }}&#34;
+    mount: &quot;{{ ansible_mounts | selectattr('mount','equalto',item.mount) | list | first }}&quot;
   with_items:
-    - &#34;{{ ansible_mounts }}&#34;
+    - &quot;{{ ansible_mounts }}&quot;
 </code></pre><p>atau</p>
-<pre tabindex="0"><code>name: &#39;Ensure that free space on {{ mountname }} is grater than 30%&#39;
+<pre tabindex="0"><code>name: 'Ensure that free space on {{ mountname }} is grater than 30%'
 assert:
   that: item.size_available &gt; item.size_total|float * 0.3
-  msg: &#39;disk space has reached 70% threshold&#39;
+  msg: 'disk space has reached 70% threshold'
 when: item.mount == mountname
-with_items: &#39;{{ ansible_mounts }}&#39;
+with_items: '{{ ansible_mounts }}'
 </code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/44077630/ansible-to-check-diskspace-for-mounts-mentioned-as-variable">https://stackoverflow.com/questions/44077630/ansible-to-check-diskspace-for-mounts-mentioned-as-variable</a></li>
@@ -912,7 +920,7 @@ with_items: &#39;{{ ansible_mounts }}&#39;
     path: /etc/
     dest: /data/backups/etc-{{ date }}.tgz
   vars:
-    date: &#34;{{ lookup(&#39;pipe&#39;, &#39;date +%Y%m%d-%H%M&#39;) }}&#34;
+    date: &quot;{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}&quot;
 </code></pre><p>Referensi:</p>
 <ul>
 <li><a href="https://serverfault.com/questions/728662/ansible-manipulate-file-with-a-date-format">https://serverfault.com/questions/728662/ansible-manipulate-file-with-a-date-format</a></li>

@@ -14,7 +14,7 @@
       
       <guid>https://blog.indonesiadot.com/2019/12/22/simple-virtualization-linux/</guid>
       <description>List kvm using virsh virsh list virsh list --all virsh --help Create vm on kvm / qemu via libvirt with command line Pembuatan vm centos 7 script bash virtcen.sh
-#!/bin/bash NAMA=$1 if [ -z &amp;#34;$1&amp;#34; ]; then while [ -z &amp;#34;$NAMA&amp;#34; ]; do echo -n &amp;#34;masukan nama vm: &amp;#34; read NAMA done fi virt-install \ --name $NAMA \ --ram 900 \ --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&amp;#39;unmap&amp;#39;,format=&amp;#39;qcow2&amp;#39; \ --controller type=scsi,model=virtio-scsi \ --vcpus 1 \ --cpu host \ --console pty,target_type=serial \ --location /iso/CentOS-7.</description>
+#!/bin/bash NAMA=$1 if [ -z &amp;quot;$1&amp;quot; ]; then while [ -z &amp;quot;$NAMA&amp;quot; ]; do echo -n &amp;quot;masukan nama vm: &amp;quot; read NAMA done fi virt-install \ --name $NAMA \ --ram 900 \ --disk path=$NAMA.qcow,size=6,bus=scsi,discard=&#39;unmap&#39;,format=&#39;qcow2&#39; \ --controller type=scsi,model=virtio-scsi \ --vcpus 1 \ --cpu host \ --console pty,target_type=serial \ --location /iso/CentOS-7.</description>
     </item>
     
   </channel>

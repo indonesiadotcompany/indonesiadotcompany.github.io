@@ -15,8 +15,8 @@
       <guid>https://blog.indonesiadot.com/2020/03/16/qmail-toaster/</guid>
       <description>Qmail ssl letsencrypt yum install certbot python2-certbot python2-certbot-apache python2-certbot-dns-cloudflare cat &amp;lt;EOF&amp;gt; cloudflare.ini dns_cloudflare_email = user@example.com dns_cloudflare_api_key = j2c2166gd6688921b1497e7cfd6cf69f7f936 EOF certbot certonly --dns-cloudflare --dns-cloudflare-credentials cloudflare.ini dns-cloudflare-propagation-seconds 60 -d *.example.com Add to apache vhost centos
 SSLCertificateFile /etc/letsencrypt/live/example.com/cert.pem SSLCertificateKeyFile /etc/letsencrypt/live/example.com/privkey.pem Include /etc/letsencrypt/options-ssl-apache.conf SSLCertificateChainFile /etc/letsencrypt/live/example.com/fullchain.pem Add to Dovecot CentOS 6 &amp;amp; 7 (/etc/dovecot/toaster.conf)
-ssl_cert = &amp;lt;/etc/letsencrypt/live/example.com/fullchain.pem ssl_key = &amp;lt;/etc/letsencrypt/live/example.com/privkey.pem Add to Qmail CentOS 6 &amp;amp; 7
-cp -p /var/qmail/control/servercert.pem /var/qmail/control/servercert.pem.bak cat /etc/letsencrypt/live/example.com/privkey.pem /etc/letsencrypt/live/example.com/fullchain.pem &amp;gt; /var/qmail/control/servercert.</description>
+ ssl_cert = &amp;lt;/etc/letsencrypt/live/example.com/fullchain.pem ssl_key = &amp;lt;/etc/letsencrypt/live/example.com/privkey.pem Add to Qmail CentOS 6 &amp;amp; 7
+ cp -p /var/qmail/control/servercert.pem /var/qmail/control/servercert.pem.bak cat /etc/letsencrypt/live/example.com/privkey.pem /etc/letsencrypt/live/example.</description>
     </item>
     
   </channel>

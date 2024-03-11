@@ -14,9 +14,9 @@
       
       <guid>https://blog.indonesiadot.com/2020/07/10/proxmox-versi-6/</guid>
       <description>Proxmox Add ZFS Referensi:
-https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/ https://pve.proxmox.com/wiki/ZFS_on_Linux Proxmox cloud-init Ref:
-https://cloud.centos.org/centos/7/images/ https://pve.proxmox.com/wiki/Cloud-Init_Support https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/ upgrade proxmox 5 to 6 https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0
-tmux pve5to6 #make sure it&amp;#39;s ok systemctl stop pve-ha-lrm systemctl stop pve-ha-crm echo &amp;#34;deb http://download.proxmox.com/debian/corosync-3/ stretch main&amp;#34; &amp;gt; /etc/apt/sources.list.d/corosync3.list apt update apt dist-upgrade systemctl start pve-ha-lrm systemctl start pve-ha-crm sed -i &amp;#39;s/stretch/buster/g&amp;#39; /etc/apt/sources.list apt update apt dist-upgrade rm /etc/apt/sources.list.d/corosync3.list </description>
+ https://holdmybeersecurity.com/2017/05/20/installsetup-proxmox-5-0/ https://pve.proxmox.com/wiki/ZFS_on_Linux  Proxmox cloud-init Ref:
+ https://cloud.centos.org/centos/7/images/ https://pve.proxmox.com/wiki/Cloud-Init_Support https://stafwag.github.io/blog/blog/2019/03/03/howto-use-centos-cloud-images-with-cloud-init/  upgrade proxmox 5 to 6 https://pve.proxmox.com/wiki/Upgrade_from_5.x_to_6.0
+tmux pve5to6 #make sure it&#39;s ok systemctl stop pve-ha-lrm systemctl stop pve-ha-crm echo &amp;quot;deb http://download.proxmox.com/debian/corosync-3/ stretch main&amp;quot; &amp;gt; /etc/apt/sources.list.d/corosync3.list apt update apt dist-upgrade systemctl start pve-ha-lrm systemctl start pve-ha-crm sed -i &#39;s/stretch/buster/g&#39; /etc/apt/sources.list apt update apt dist-upgrade rm /etc/apt/sources.list.d/corosync3.list </description>
     </item>
     
     <item>
@@ -37,7 +37,7 @@ Setting at command line ls -l /dev/disk/by-id/ata-ST4000NM0035-1V4107_ZC198J1R l
       <guid>https://blog.indonesiadot.com/2019/09/30/disk-serial-number/</guid>
       <description>Pada saat implementasi raid software seperti menggunakan mdadm atau zfs (zfs manual atau zfs yang ada pada freenas), ada kalanya harddisk akan mengalami degraded / failure, untuk menggantinya harus diketahui serial number harddisk yang bermasalah.
 Berikut adalah langkah yang dilakukan untuk mengetahui serial number dari harddisk:
-lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb) smartctl -a /dev/sda #lihat bagian atas serial number nya udevadm info /dev/sda smartctl to get disk smart status smartctl -H /dev/sda smartctl -i /dev/sda smartctl --test=short /dev/sda #smartctl --test=long /dev/sda smartctl -a /dev/sda smartctl -a /dev/sda | grep &amp;#34;Short&amp;#34; Ref: * https://www.</description>
+ lsblk -o SERIAL /dev/sda (sesuaikan /dev/sda dengan disk yang akan dilihat, bisa /dev/sdb) smartctl -a /dev/sda #lihat bagian atas serial number nya udevadm info /dev/sda  smartctl to get disk smart status smartctl -H /dev/sda smartctl -i /dev/sda smartctl --test=short /dev/sda #smartctl --test=long /dev/sda smartctl -a /dev/sda smartctl -a /dev/sda | grep &amp;quot;Short&amp;quot; Ref: * https://www.</description>
     </item>
     
     <item>
