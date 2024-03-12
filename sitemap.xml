@@ -4,8 +4,29 @@
   <url>
     <loc>https://blog.indonesiadot.com/about/</loc>
   </url><url>
+    <loc>https://blog.indonesiadot.com/tags/aide/</loc>
+    <lastmod>2024-03-12T17:07:54+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.indonesiadot.com/2024/03/12/aide-file-integrity-monitor-fim-on-ubuntu/</loc>
+    <lastmod>2024-03-12T17:07:54+07:00</lastmod>
+  </url><url>
     <loc>https://blog.indonesiadot.com/</loc>
-    <lastmod>2024-03-10T09:15:54+07:00</lastmod>
+    <lastmod>2024-03-12T17:07:54+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.indonesiadot.com/tags/fim/</loc>
+    <lastmod>2024-03-12T17:07:54+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.indonesiadot.com/tags/hids/</loc>
+    <lastmod>2024-03-12T17:07:54+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
+    <lastmod>2024-03-12T17:07:54+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.indonesiadot.com/post/</loc>
+    <lastmod>2024-03-12T17:07:54+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.indonesiadot.com/tags/</loc>
+    <lastmod>2024-03-12T17:07:54+07:00</lastmod>
   </url><url>
     <loc>https://blog.indonesiadot.com/tags/islam/</loc>
     <lastmod>2024-03-10T09:15:54+07:00</lastmod>
@@ -13,13 +34,7 @@
     <loc>https://blog.indonesiadot.com/2024/03/10/marhaban-yaa-ramadhan-1445-hijriah/</loc>
     <lastmod>2024-03-10T09:15:54+07:00</lastmod>
   </url><url>
-    <loc>https://blog.indonesiadot.com/post/</loc>
-    <lastmod>2024-03-10T09:15:54+07:00</lastmod>
-  </url><url>
     <loc>https://blog.indonesiadot.com/tags/ramadhan/</loc>
-    <lastmod>2024-03-10T09:15:54+07:00</lastmod>
-  </url><url>
-    <loc>https://blog.indonesiadot.com/tags/</loc>
     <lastmod>2024-03-10T09:15:54+07:00</lastmod>
   </url><url>
     <loc>https://blog.indonesiadot.com/2024/01/23/brainstorming-dengan-jang-eby/</loc>
@@ -74,9 +89,6 @@
     <lastmod>2020-12-10T13:17:54+07:00</lastmod>
   </url><url>
     <loc>https://blog.indonesiadot.com/2020/12/10/alhikam-pasal-5/</loc>
-    <lastmod>2020-12-10T08:17:54+07:00</lastmod>
-  </url><url>
-    <loc>https://blog.indonesiadot.com/tags/linux/</loc>
     <lastmod>2020-12-10T08:17:54+07:00</lastmod>
   </url><url>
     <loc>https://blog.indonesiadot.com/2020/12/10/test-posting/</loc>

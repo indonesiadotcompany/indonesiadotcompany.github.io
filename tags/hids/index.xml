@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hids on Blog Indonesiadot.Com</title>
+    <link>https://blog.indonesiadot.com/tags/hids/</link>
+    <description>Recent content in hids on Blog Indonesiadot.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Mar 2024 17:07:54 +0700</lastBuildDate><atom:link href="https://blog.indonesiadot.com/tags/hids/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AIDE File Integrity Monitor (FIM) on Ubuntu</title>
+      <link>https://blog.indonesiadot.com/2024/03/12/aide-file-integrity-monitor-fim-on-ubuntu/</link>
+      <pubDate>Tue, 12 Mar 2024 17:07:54 +0700</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/2024/03/12/aide-file-integrity-monitor-fim-on-ubuntu/</guid>
+      <description>Install AIDE apt install aide Configure AIDE and initialize database root@dlp:~# vi /etc/default/aide # line 8 : if you do not use Cron job, comment out and turn to [no] #CRON_DAILY_RUN=yes root@dlp:~# vi /etc/aide/aide.conf # add to the end : set exclude directories if you need !/var/log !/var/lib/aide !/var/lib/apt !/var/lib/dpkg !/var/cache !/run # initialize database root@dlp:~# aide --init --config /etc/aide/aide.conf root@dlp:~# cp -p /var/lib/aide/aide.db.new /var/lib/aide/aide.db run checking aide --check --config /etc/aide/aide.</description>
+    </item>
+    
+  </channel>
+</rss>
