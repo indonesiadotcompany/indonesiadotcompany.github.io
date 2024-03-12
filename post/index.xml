@@ -1826,5 +1826,17 @@ Built on Poole Poole is the Jekyll Butler, serving as an upstanding and effectiv
       <description>http://indonesiadot.com</description>
     </item>
     
+    <item>
+      <title>Postfix Queue</title>
+      <link>https://blog.indonesiadot.com/1/01/01/postfix-queue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/1/01/01/postfix-queue/</guid>
+      <description>View queued mail postqueue -p View content of queue mail postcat -q [message id] Flush queued mail This command will attempt to redeliver all queued mail.
+postqueue -f Purge queued mail To purge the mail queue, we&amp;rsquo;ll use the postsuper -d command. This command has 2 execution options:
+Option 1 To purge a single email from the queue, use the postsuper -d [message id] command.
+Option 2 To purge all email from the queue, use the postsuper -d ALL command.</description>
+    </item>
+    
   </channel>
 </rss>

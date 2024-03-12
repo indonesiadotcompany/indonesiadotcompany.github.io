@@ -844,6 +844,10 @@
       
     
       
+    
+      
+    
+      
         <a class="sidebar-nav-item " href="https://blog.indonesiadot.com/thanks/">Thanks</a>
       
     
@@ -1010,6 +1014,35 @@
 	<hr/>
 	
 	
+	 <hr/>
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://blog.indonesiadot.com/1/01/01/postfix-queue/">Postfix Queue</a></h1>
+        <span class="post-date">Jan 1, 0001</span>
+	<h2 id="view-queued-mail">View queued mail</h2>
+<pre tabindex="0"><code>postqueue -p
+</code></pre><h3 id="view-content-of-queue-mail">View content of queue mail</h3>
+<pre tabindex="0"><code>postcat -q [message id]
+</code></pre><h2 id="flush-queued-mail">Flush queued mail</h2>
+<p>This command will attempt to redeliver all queued mail.</p>
+<pre tabindex="0"><code>postqueue -f
+</code></pre><h2 id="purge-queued-mail">Purge queued mail</h2>
+<p>To purge the mail queue, we&rsquo;ll use the postsuper -d command. This command has 2 execution options:</p>
+<h3 id="option-1">Option 1</h3>
+<p>To purge a single email from the queue, use the postsuper -d [message id] command.</p>
+<h3 id="option-2">Option 2</h3>
+<p>To purge all email from the queue, use the postsuper -d ALL command.</p>
+<h2 id="referensi">Referensi:</h2>
+<ul>
+<li>bismillaah</li>
+</ul>
+
+	<hr/>
+	
+	
+	 Tags:
+	  <a href="https://blog.indonesiadot.com/tags/mail/">mail</a>, <a href="https://blog.indonesiadot.com/tags/postfix/">postfix</a>, <a href="https://blog.indonesiadot.com/tags/queue/">queue</a>
 	 <hr/>
     </div>
   

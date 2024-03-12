@@ -39,5 +39,17 @@ echo &amp;quot;real.net smtp:[192.168.1.108]&amp;quot; &amp;gt;&amp;gt; /etc/pos
       <description>https://www.sophimail.com/configure-freebsd-email-server-using-postfix-dovecot-mysql-spamassassin/https://github.com/sophimail/webadminhttps://github.com/sophimail/webadmin/blob/master/INSTALLATION.mdhttps://www.cryptomonkeys.com/2016/08/building-a-mailserver/https://docs.iredmail.org/install.iredmail.on.freebsd.htmlnote:iredadmin is easiest installation with all mail server package, but for administration using iredadmin free has limited function, best for personal / one domain useispconfig nice to try :)</description>
     </item>
     
+    <item>
+      <title>Postfix Queue</title>
+      <link>https://blog.indonesiadot.com/1/01/01/postfix-queue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.indonesiadot.com/1/01/01/postfix-queue/</guid>
+      <description>View queued mail postqueue -p View content of queue mail postcat -q [message id] Flush queued mail This command will attempt to redeliver all queued mail.
+postqueue -f Purge queued mail To purge the mail queue, we&amp;rsquo;ll use the postsuper -d command. This command has 2 execution options:
+Option 1 To purge a single email from the queue, use the postsuper -d [message id] command.
+Option 2 To purge all email from the queue, use the postsuper -d ALL command.</description>
+    </item>
+    
   </channel>
 </rss>
